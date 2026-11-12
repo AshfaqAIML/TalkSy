@@ -1,0 +1,999 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "sqlite"
+  url      = env("DATABASE_URL")
+}
+
+model User {
+  id           String   @id @default(cuid())
+  email        String   @unique
+  name         String?
+  passwordHash String
+  // RBAC: student (default) | editor | teacher | admin. Staff roles unlock
+  // the CMS; only admins manage users and publish content.
+  role         String   @default("student")
+  // active | suspended. Suspended accounts fail login AND existing sessions
+  // are rejected at the session-resolution layer.
+  status       String   @default("active")
+  createdAt    DateTime @default(now())
+  updatedAt    DateTime @updatedAt
+
+  sessions              Session[]
+  lessonProgress        LessonProgress[]
+  exerciseAttempts      ExerciseAttempt[]
+  notes                 LessonNote[]
+  assessmentResults     AssessmentResult[]
+  clinicSubmissions     GrammarClinicSubmission[]
+  vocabProgress         VocabProgress[]
+  vocabReviewLogs       VocabReviewLog[]
+  vocabBookmarks        VocabBookmark[]
+  wordLists             WordList[]
+  vocabSentences        VocabSentence[]
+  vocabChallengeRuns    VocabChallengeRun[]
+  vocabSettings         VocabSettings?
+  readingProgress       ReadingProgress[]
+  readingBookmarks      ReadingBookmark[]
+  readingAttempts       ReadingAttempt[]
+  readingRuns           ReadingRun[]
+  listeningProgress     ListeningProgress[]
+  listeningAttempts     ListeningAttempt[]
+  speakingSettings      SpeakingSettings?
+  speakingProgress      SpeakingProgress[]
+  speakingAttempts      SpeakingAttempt[]
+  conversationSessions  ConversationSession[]
+  pronunciationAttempts PronunciationAttempt[]
+  writingProgress       WritingProgress[]
+  writingDrafts         WritingDraft[]
+  writingSubmissions    WritingSubmission[]
+  learnerGoals          LearnerGoals?
+  lessonConfidence      LessonConfidence[]
+  achievementUnlocks    AchievementUnlock[]
+  certificates          Certificate[]
+  stats                 UserStats?
+  tutorConversations    TutorConversation[]
+  tutorMessages         TutorMessage[]
+  tutorUsage            TutorUsage?
+  cmsEnrolments         CmsEnrolment[]
+  cmsLessonProgress     CmsLessonProgress[]
+  cmsSubmissions        CmsAssignmentSubmission[]
+  cmsAuditLogs          CmsAuditLog[]
+  cmsLessonVersions     CmsLessonVersion[]        @relation("LessonVersionEditor")
+  cmsQuestionVersions   CmsQuestionVersion[]      @relation("QuestionVersionEditor")
+}
+
+model Session {
+  id        String   @id @default(cuid())
+  token     String   @unique
+  userId    String
+  user      User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+  expiresAt DateTime
+  createdAt DateTime @default(now())
+
+  @@index([userId])
+}
+
+// Learner progress per lesson. Created on first open, but NEVER auto-completed:
+// completion is derived server-side from explicit section completions (+ passed assessment).
+model LessonProgress {
+  id                String    @id @default(cuid())
+  userId            String
+  user              User      @relation(fields: [userId], references: [id], onDelete: Cascade)
+  lessonSlug        String
+  status            String    @default("in-progress") // "in-progress" | "completed"
+  sectionsCompleted String    @default("[]") // JSON array of section ids
+  lastSectionId     String?
+  bookmarked        Boolean   @default(false)
+  completedAt       DateTime?
+  createdAt         DateTime  @default(now())
+  updatedAt         DateTime  @updatedAt
+
+  @@unique([userId, lessonSlug])
+  @@index([userId])
+}
+
+// Every graded submission is recorded: answer, correctness, hints used, time spent.
+model ExerciseAttempt {
+  id                String   @id @default(cuid())
+  userId            String
+  user              User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+  exerciseId        String
+  lessonSlug        String
+  type              String
+  difficulty        String
+  skill             String   @default("vocabulary")
+  context           String   @default("practice") // "practice" | "assessment" | "challenge"
+  // "core" = content-as-code lesson exercise, "cms" = question-bank question
+  // served from a published CMS lesson.
+  source            String   @default("core")
+  // Set when source = "cms": the immutable question version that graded this
+  // attempt. Editing the question later never rewrites this history.
+  questionVersionId String?
+  isCorrect         Boolean
+  score             Float    @default(0)
+  hintsUsed         Int      @default(0)
+  durationMs        Int      @default(0)
+  answer            String   @default("") // JSON-encoded submitted answer
+  createdAt         DateTime @default(now())
+
+  @@index([userId, exerciseId])
+  @@index([userId, lessonSlug])
+}
+
+// Free-form learner notes, one per lesson section.
+model LessonNote {
+  id         String   @id @default(cuid())
+  userId     String
+  user       User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+  lessonSlug String
+  sectionId  String
+  content    String
+  createdAt  DateTime @default(now())
+  updatedAt  DateTime @updatedAt
+
+  @@unique([userId, lessonSlug, sectionId])
+}
+
+// Grammar Error Clinic: every submitted sentence with its corrections and
+// detected error categories (used to recommend additional lessons).
+model GrammarClinicSubmission {
+  id         String   @id @default(cuid())
+  userId     String
+  user       User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+  sentence   String
+  corrected  String   @default("")
+  issues     String   @default("[]") // JSON GrammarIssue[]
+  categories String   @default("[]") // JSON error categories
+  createdAt  DateTime @default(now())
+
+  @@index([userId])
+}
+
+// End-of-lesson assessment runs. Created "pending" on start (with the
+// deterministically selected question set), finalized on submit.
+model AssessmentResult {
+  id          String    @id @default(cuid())
+  userId      String
+  user        User      @relation(fields: [userId], references: [id], onDelete: Cascade)
+  lessonSlug  String
+  status      String    @default("pending") // "pending" | "completed"
+  questionIds String    @default("[]") // JSON array of exercise ids
+  score       Float     @default(0)
+  passed      Boolean   @default(false)
+  total       Int       @default(0)
+  correct     Int       @default(0)
+  detail      String    @default("[]") // JSON per-question results
+  createdAt   DateTime  @default(now())
+  completedAt DateTime?
+
+  @@index([userId, lessonSlug])
+}
+
+// Aggregated performance counters, updated transactionally with attempts.
+model UserStats {
+  id              String   @id @default(cuid())
+  userId          String   @unique
+  user            User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+  totalAttempts   Int      @default(0)
+  correctAttempts Int      @default(0)
+  hintsUsed       Int      @default(0)
+  timeSpentMs     Int      @default(0)
+  byType          String   @default("{}") // JSON { exerciseType: { attempts, correct } }
+  byDifficulty    String   @default("{}") // JSON { difficulty: { attempts, correct } }
+  bySkill         String   @default("{}") // JSON { skill: { attempts, correct } }
+  streakDays      Int      @default(0)
+  lastActiveDay   String?
+  updatedAt       DateTime @updatedAt
+}
+
+// ---------------------------------------------------------------------------
+// Vocabulary system
+// ---------------------------------------------------------------------------
+
+// Spaced-repetition state per learner per word. Created on the first graded
+// review — NEVER just by opening a word. "Mastered" is a soft status: it still
+// schedules future reviews (intervals are capped) and any "again" demotes the
+// word back to learning.
+model VocabProgress {
+  id              String    @id @default(cuid())
+  userId          String
+  user            User      @relation(fields: [userId], references: [id], onDelete: Cascade)
+  wordId          String
+  status          String    @default("learning") // learning | reviewing | mastered
+  repetitions     Int       @default(0) // consecutive successful reviews
+  streak          Int       @default(0)
+  lapses          Int       @default(0) // times the learner forgot the word
+  ease            Float     @default(2.5) // SM-2 style ease factor
+  intervalMinutes Int       @default(0) // current scheduled interval
+  dueAt           DateTime?
+  lastReviewedAt  DateTime?
+  firstSeenAt     DateTime  @default(now())
+  totalReviews    Int       @default(0)
+  correctReviews  Int       @default(0)
+  isDifficult     Boolean   @default(false) // learner's own difficulty flag
+  createdAt       DateTime  @default(now())
+  updatedAt       DateTime  @updatedAt
+
+  @@unique([userId, wordId])
+  @@index([userId, dueAt])
+  @@index([userId, status])
+}
+
+// Every review event: what the learner did, from where, and what happened.
+// Powers the daily new-word budget, recent-performance factor and history.
+model VocabReviewLog {
+  id                String   @id @default(cuid())
+  userId            String
+  user              User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+  wordId            String
+  source            String // flashcard | challenge | sentence | daily | explore
+  action            String // grade | known | snooze | flag | unflag
+  rating            String? // again | hard | good | easy (null for non-grade actions)
+  correct           Boolean?
+  wasNew            Boolean  @default(false)
+  intervalBeforeMin Int      @default(0)
+  intervalAfterMin  Int      @default(0)
+  createdAt         DateTime @default(now())
+
+  @@index([userId, wordId])
+  @@index([userId, createdAt])
+}
+
+// Bookmarked words ("save for later"), independent of word lists.
+model VocabBookmark {
+  id        String   @id @default(cuid())
+  userId    String
+  user      User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+  wordId    String
+  createdAt DateTime @default(now())
+
+  @@unique([userId, wordId])
+  @@index([userId])
+}
+
+// Personal word lists created by the learner ("My travel words", …).
+model WordList {
+  id          String         @id @default(cuid())
+  userId      String
+  user        User           @relation(fields: [userId], references: [id], onDelete: Cascade)
+  name        String
+  description String         @default("")
+  items       WordListItem[]
+  createdAt   DateTime       @default(now())
+  updatedAt   DateTime       @updatedAt
+
+  @@index([userId])
+}
+
+model WordListItem {
+  id        String   @id @default(cuid())
+  listId    String
+  list      WordList @relation(fields: [listId], references: [id], onDelete: Cascade)
+  wordId    String
+  note      String   @default("")
+  createdAt DateTime @default(now())
+
+  @@unique([listId, wordId])
+}
+
+// Sentence practice: learner-written sentences with checker feedback.
+model VocabSentence {
+  id        String   @id @default(cuid())
+  userId    String
+  user      User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+  wordId    String
+  sentence  String
+  valid     Boolean
+  feedback  String   @default("[]") // JSON SentenceIssue[]
+  createdAt DateTime @default(now())
+
+  @@index([userId, wordId])
+  @@index([userId, createdAt])
+}
+
+// Vocabulary challenge runs. Created "pending" with the generation seed;
+// finalized on submit. Items are regenerated deterministically from the seed
+// for server-side grading.
+model VocabChallengeRun {
+  id          String    @id @default(cuid())
+  userId      String
+  user        User      @relation(fields: [userId], references: [id], onDelete: Cascade)
+  kind        String // category-quiz | meaning | spelling | arrangement | contextual-usage | matching
+  seed        Int
+  category    String?
+  total       Int       @default(0)
+  correct     Int       @default(0)
+  score       Float     @default(0)
+  durationMs  Int       @default(0)
+  status      String    @default("pending") // pending | completed
+  detail      String    @default("[]") // JSON per-item results (completed runs)
+  createdAt   DateTime  @default(now())
+  completedAt DateTime?
+
+  @@index([userId, createdAt])
+}
+
+// Per-learner spaced-repetition configuration (JSON SrsConfigOverrides on top
+// of the engine defaults — see src/lib/vocab/srs.ts).
+model VocabSettings {
+  id        String   @id @default(cuid())
+  userId    String   @unique
+  user      User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+  config    String   @default("{}") // JSON SrsConfigOverrides
+  updatedAt DateTime @updatedAt
+}
+
+// ---------------------------------------------------------------------------
+// Reading Room
+// ---------------------------------------------------------------------------
+
+// Learner progress per reading text. Created on first interaction, but NEVER
+// auto-completed: completion is derived server-side from paragraphs read +
+// a passed comprehension run.
+model ReadingProgress {
+  id              String    @id @default(cuid())
+  userId          String
+  user            User      @relation(fields: [userId], references: [id], onDelete: Cascade)
+  textId          String
+  status          String    @default("in-progress") // "in-progress" | "completed"
+  paragraphsRead  String    @default("[]") // JSON array of paragraph ids
+  lastParagraphId String?
+  bookmarked      Boolean   @default(false)
+  bestRunScore    Float     @default(0)
+  runsCompleted   Int       @default(0)
+  completedAt     DateTime?
+  createdAt       DateTime  @default(now())
+  updatedAt       DateTime  @updatedAt
+
+  @@unique([userId, textId])
+  @@index([userId])
+}
+
+// Paragraph-level bookmarks inside a reading text (paragraphId "" = whole text).
+model ReadingBookmark {
+  id          String   @id @default(cuid())
+  userId      String
+  user        User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+  textId      String
+  paragraphId String
+  createdAt   DateTime @default(now())
+
+  @@unique([userId, textId, paragraphId])
+  @@index([userId])
+}
+
+// Every graded comprehension-question submission (practice or assessment).
+model ReadingAttempt {
+  id         String   @id @default(cuid())
+  userId     String
+  user       User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+  textId     String
+  questionId String
+  skill      String // comprehension skill
+  format     String // choice | sequence | short-text
+  context    String   @default("practice") // "practice" | "assessment"
+  isCorrect  Boolean
+  score      Float    @default(0)
+  answer     String   @default("") // JSON-encoded submitted answer
+  createdAt  DateTime @default(now())
+
+  @@index([userId, textId])
+  @@index([userId, questionId])
+}
+
+// Comprehension-check runs. Created "pending" with the question set,
+// finalised on submit with the per-skill breakdown.
+model ReadingRun {
+  id          String    @id @default(cuid())
+  userId      String
+  user        User      @relation(fields: [userId], references: [id], onDelete: Cascade)
+  textId      String
+  status      String    @default("pending") // "pending" | "completed"
+  questionIds String    @default("[]") // JSON array of question ids
+  score       Float     @default(0)
+  passed      Boolean   @default(false)
+  correct     Int       @default(0)
+  total       Int       @default(0)
+  bySkill     String    @default("{}") // JSON { skill: { attempts, correct } }
+  detail      String    @default("[]") // JSON per-question results
+  createdAt   DateTime  @default(now())
+  completedAt DateTime?
+
+  @@index([userId, textId])
+}
+
+// ---------------------------------------------------------------------------
+// Listening Lab
+// ---------------------------------------------------------------------------
+
+// Learner progress per listening activity. An exercise is "completed" when it
+// has been answered correctly at least once; the activity completes when all
+// exercises are completed — never just by opening it. First-try results are
+// tracked separately to compute the activity score.
+model ListeningProgress {
+  id                 String    @id @default(cuid())
+  userId             String
+  user               User      @relation(fields: [userId], references: [id], onDelete: Cascade)
+  activityId         String
+  status             String    @default("in-progress") // "in-progress" | "completed"
+  exercisesCompleted String    @default("[]") // JSON array of exercise ids (correct ≥ once)
+  firstTryCorrect    String    @default("[]") // JSON array of exercise ids correct on first try
+  bestScore          Float     @default(0)
+  runsCompleted      Int       @default(0)
+  completedAt        DateTime?
+  createdAt          DateTime  @default(now())
+  updatedAt          DateTime  @updatedAt
+
+  @@unique([userId, activityId])
+  @@index([userId])
+}
+
+// Every graded listening-exercise submission.
+model ListeningAttempt {
+  id         String   @id @default(cuid())
+  userId     String
+  user       User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+  activityId String
+  exerciseId String
+  format     String // listen-select | listen-complete | …
+  isCorrect  Boolean
+  score      Float    @default(0)
+  hintsUsed  Int      @default(0)
+  answer     String   @default("") // JSON-encoded submitted answer
+  createdAt  DateTime @default(now())
+
+  @@index([userId, activityId])
+  @@index([userId, exerciseId])
+}
+
+// ---------------------------------------------------------------------------
+// Speaking Laboratory
+// ---------------------------------------------------------------------------
+
+// Per-learner speaking configuration: which speech-to-text provider to use,
+// how long transcripts are retained, and explicit microphone consent.
+// AUDIO IS NEVER STORED SERVER-SIDE — recordings live in the browser only,
+// long enough to be replayed and transcribed on explicit submission.
+model SpeakingSettings {
+  id            String    @id @default(cuid())
+  userId        String    @unique
+  user          User      @relation(fields: [userId], references: [id], onDelete: Cascade)
+  provider      String    @default("auto") // auto | server | browser | manual
+  retentionDays Int       @default(90) // 0 = do not store transcripts at all
+  consentedAt   DateTime? // null until the learner accepts the mic + privacy notice
+  updatedAt     DateTime  @updatedAt
+}
+
+// Progress per speaking activity. Created on first attempt — NEVER just by
+// opening. Completed only when every task has a passing attempt (graded via
+// transcript) or an explicit self-assessed pass (no-transcript fallback).
+model SpeakingProgress {
+  id                 String    @id @default(cuid())
+  userId             String
+  user               User      @relation(fields: [userId], references: [id], onDelete: Cascade)
+  activityId         String
+  tier               String // beginner | intermediate | advanced
+  status             String    @default("in-progress") // "in-progress" | "completed"
+  tasksAttempted     String    @default("[]") // JSON array of task ids attempted
+  tasksPassed        String    @default("[]") // JSON array of task ids passed
+  selfAssessedPassed String    @default("[]") // JSON task ids passed via self-assessment
+  bestScore          Float     @default(0)
+  attemptsCount      Int       @default(0)
+  completedAt        DateTime?
+  createdAt          DateTime  @default(now())
+  updatedAt          DateTime  @updatedAt
+
+  @@unique([userId, activityId])
+  @@index([userId])
+}
+
+// Every speaking submission. transcript kept per retention setting ("" when
+// retention is 0 or the purge window has passed); metrics/scores are the
+// deterministic measured results; suggestions carry AI-coach text (labeled).
+model SpeakingAttempt {
+  id           String   @id @default(cuid())
+  userId       String
+  user         User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+  activityId   String
+  taskId       String
+  kind         String // repeat-word | read-aloud | …
+  provider     String // server | browser | manual | self
+  transcript   String   @default("") // kept per retentionDays; never the audio
+  selfAssessed Boolean  @default(false)
+  durationMs   Int      @default(0)
+  wordCount    Int      @default(0)
+  score        Float    @default(0) // overall measured rubric / match score
+  scores       String   @default("{}") // JSON per-dimension measured scores
+  measured     String   @default("{}") // JSON measured metrics
+  suggestions  String   @default("null") // JSON AI suggestions (or null)
+  createdAt    DateTime @default(now())
+
+  @@index([userId, activityId])
+  @@index([userId, taskId])
+  @@index([userId, createdAt])
+}
+
+// One role-play conversation run (AI partner when reachable, authored script
+// otherwise). Turns are JSON [{role, text}]; engine says which ran.
+model ConversationSession {
+  id          String    @id @default(cuid())
+  userId      String
+  user        User      @relation(fields: [userId], references: [id], onDelete: Cascade)
+  scenarioId  String
+  level       String // beginner | intermediate | advanced
+  engine      String    @default("ai") // ai | scripted
+  status      String    @default("active") // active | completed
+  turns       String    @default("[]") // JSON {role: "partner"|"learner", text}[]
+  measured    String    @default("{}") // JSON measured stats (set on finish)
+  aiFeedback  String    @default("null") // JSON coach feedback (set on finish)
+  score       Float     @default(0)
+  createdAt   DateTime  @default(now())
+  completedAt DateTime?
+
+  @@index([userId, scenarioId])
+  @@index([userId, createdAt])
+}
+
+// Pronunciation practice submissions: what the recogniser heard (when a
+// provider ran), the match score against the target (-1 = no transcript),
+// and the learner's own playback-compare rating.
+model PronunciationAttempt {
+  id         String   @id @default(cuid())
+  userId     String
+  user       User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+  itemId     String
+  category   String // stress | sounds | rhythm | intonation
+  transcript String   @default("")
+  matchScore Float    @default(-1) // 0–1 similarity to target; -1 when no ASR
+  selfRating Int      @default(0) // 0–5 learner self-assessment after replay
+  createdAt  DateTime @default(now())
+
+  @@index([userId, category])
+  @@index([userId, createdAt])
+}
+
+// ---------------------------------------------------------------------------
+// Writing Studio
+// ---------------------------------------------------------------------------
+
+// Progress per writing assignment. Created on first draft or submission —
+// never just by opening. "Completed" requires a submission whose overall
+// rubric score reaches the assignment pass threshold. Writing scores are
+// kept entirely in these tables: they never feed the general UserStats
+// proficiency counters.
+model WritingProgress {
+  id               String    @id @default(cuid())
+  userId           String
+  user             User      @relation(fields: [userId], references: [id], onDelete: Cascade)
+  assignmentId     String
+  tier             String // beginner | elementary | intermediate | advanced
+  status           String    @default("in-progress") // "in-progress" | "completed"
+  draftsCount      Int       @default(0)
+  submissionsCount Int       @default(0)
+  bestScore        Float     @default(0)
+  lastScore        Float     @default(0)
+  completedAt      DateTime?
+  createdAt        DateTime  @default(now())
+  updatedAt        DateTime  @updatedAt
+
+  @@unique([userId, assignmentId])
+  @@index([userId])
+}
+
+// Latest autosaved draft per learner per assignment (upserted).
+model WritingDraft {
+  id           String   @id @default(cuid())
+  userId       String
+  user         User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+  assignmentId String
+  content      String   @default("")
+  wordCount    Int      @default(0)
+  charCount    Int      @default(0)
+  createdAt    DateTime @default(now())
+  updatedAt    DateTime @updatedAt
+
+  @@unique([userId, assignmentId])
+  @@index([userId])
+}
+
+// Every submitted version, with the full deterministic analysis + AI coach
+// feedback. Versions form the revision history and enable before/after
+// comparison (version n compares against version n-1).
+model WritingSubmission {
+  id           String   @id @default(cuid())
+  userId       String
+  user         User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+  assignmentId String
+  version      Int      @default(1)
+  content      String
+  wordCount    Int      @default(0)
+  charCount    Int      @default(0)
+  durationMs   Int      @default(0)
+  overall      Float    @default(0)
+  scores       String   @default("{}") // JSON { dimension: 0-100 }
+  measured     String   @default("{}") // JSON measured stats
+  issues       String   @default("[]") // JSON deterministic WritingIssue[]
+  aiFeedback   String   @default("null") // JSON AI coach payload (or null)
+  passed       Boolean  @default(false)
+  createdAt    DateTime @default(now())
+
+  @@unique([userId, assignmentId, version])
+  @@index([userId, assignmentId])
+  @@index([userId, createdAt])
+}
+
+// ---------------------------------------------------------------------------
+// Learning Progression System
+// ---------------------------------------------------------------------------
+
+// Learner-chosen point goals. Points are derived from verified activity only
+// (see src/lib/progress/facts.ts), so a goal can never be progressed by
+// passively opening content.
+model LearnerGoals {
+  id           String   @id @default(cuid())
+  userId       String   @unique
+  user         User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+  dailyPoints  Int      @default(30)
+  weeklyPoints Int      @default(150)
+  updatedAt    DateTime @updatedAt
+}
+
+// Self-reported confidence per lesson (1 = shaky … 5 = confident). Feeds the
+// revision scheduler: low confidence on a completed lesson raises revision
+// urgency. It is never displayed as a performance score.
+model LessonConfidence {
+  id         String   @id @default(cuid())
+  userId     String
+  user       User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+  lessonSlug String
+  confidence Int // 1..5
+  updatedAt  DateTime @updatedAt
+
+  @@unique([userId, lessonSlug])
+  @@index([userId])
+}
+
+// Persisted state for achievements and milestones. The unlock CONDITION is
+// always re-derived from verified activity on load; this row only caches the
+// derived unlock timestamp (so badges keep their real "earned on" date) and
+// tracks whether the learner has already seen the unlock.
+model AchievementUnlock {
+  id            String    @id @default(cuid())
+  userId        String
+  user          User      @relation(fields: [userId], references: [id], onDelete: Cascade)
+  achievementId String
+  unlockedAt    DateTime  @default(now())
+  seenAt        DateTime?
+  createdAt     DateTime  @default(now())
+
+  @@unique([userId, achievementId])
+  @@index([userId])
+}
+
+// Course completion certificates. A course is a curriculum unit (or a whole
+// level); the certificate is issued automatically when every lesson in the
+// course has a VERIFIED completion (LessonProgress.completedAt), never for
+// merely opening content.
+model Certificate {
+  id               String   @id @default(cuid())
+  userId           String
+  user             User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+  courseId         String // unit id "<level>:<n>" or level id
+  kind             String // "unit" | "level"
+  title            String
+  code             String   @unique // display / verification code
+  lessonsCompleted Int
+  issuedAt         DateTime @default(now())
+
+  @@unique([userId, courseId])
+  @@index([userId])
+}
+
+// ---------------------------------------------------------------------------
+// AI Tutor
+// ---------------------------------------------------------------------------
+
+// One chat thread per learner per teaching mode. lessonRef links a Doubt
+// Solver thread to a specific lesson or activity ("lesson:<slug>",
+// "reading:<id>", "listening:<id>", "speaking:<slug>", "writing:<slug>").
+// includeContext is the privacy switch: when false the system prompt omits
+// the learner's history snapshot entirely — the learner teaches without it.
+model TutorConversation {
+  id             String         @id @default(cuid())
+  userId         String
+  user           User           @relation(fields: [userId], references: [id], onDelete: Cascade)
+  mode           String // grammar | vocabulary | sentence | conversation | writing | listening | reading | interview | doubt
+  lessonRef      String?
+  includeContext Boolean        @default(true)
+  title          String         @default("") // derived from the first learner message
+  createdAt      DateTime       @default(now())
+  updatedAt      DateTime       @updatedAt
+  messages       TutorMessage[]
+
+  @@index([userId, updatedAt])
+}
+
+// Chat messages. userId is denormalised so rate limits and bulk deletion
+// never depend on a join. meta carries {"greeting": true} for the canned
+// opener and {"mode": …} bookkeeping — never grading data.
+model TutorMessage {
+  id             String            @id @default(cuid())
+  userId         String
+  user           User              @relation(fields: [userId], references: [id], onDelete: Cascade)
+  conversationId String
+  conversation   TutorConversation @relation(fields: [conversationId], references: [id], onDelete: Cascade)
+  role           String // "learner" | "tutor"
+  content        String
+  meta           String            @default("{}") // JSON bookkeeping
+  createdAt      DateTime          @default(now())
+
+  @@index([userId, conversationId, createdAt])
+  @@index([userId, createdAt])
+}
+
+// Per-learner daily request accounting for the tutor LLM (one row per user;
+// counters reset when `day` changes). Enforces the token/usage limits.
+model TutorUsage {
+  id          String   @id @default(cuid())
+  userId      String   @unique
+  user        User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+  day         String // YYYY-MM-DD
+  requests    Int      @default(0)
+  inputChars  Int      @default(0)
+  outputChars Int      @default(0)
+  updatedAt   DateTime @updatedAt
+}
+
+// ---------------------------------------------------------------------------
+// Content management system (CMS)
+//
+// Database-backed curriculum managed by staff through the admin UI.
+// Hierarchy: Level → Course → Module → Unit → Lesson → Blocks.
+// Quality workflow: draft → review → approved (+ `live` flag for publishing).
+// Every lesson/question edit creates an immutable version snapshot; attempts
+// pin the version they were graded against, so historical assessment data is
+// never rewritten when content changes.
+// ---------------------------------------------------------------------------
+
+// A CEFR-style learning level (Pre-A1, A1, A2 …) used to organise courses.
+model CmsLevel {
+  id          String      @id @default(cuid())
+  slug        String      @unique
+  name        String
+  description String      @default("")
+  order       Int         @default(0)
+  createdAt   DateTime    @default(now())
+  courses     CmsCourse[]
+}
+
+// A course. `status` is the working-copy workflow state; `live` controls
+// learner visibility. Only admins toggle `live`.
+model CmsCourse {
+  id          String    @id @default(cuid())
+  slug        String    @unique
+  title       String
+  description String    @default("")
+  levelId     String?
+  level       CmsLevel? @relation(fields: [levelId], references: [id], onDelete: SetNull)
+  status      String    @default("draft") // draft | review | approved
+  live        Boolean   @default(false)
+  order       Int       @default(0)
+  createdById String?
+  createdAt   DateTime  @default(now())
+  updatedAt   DateTime  @updatedAt
+
+  modules    CmsModule[]
+  enrolments CmsEnrolment[]
+}
+
+model CmsModule {
+  id          String    @id @default(cuid())
+  courseId    String
+  course      CmsCourse @relation(fields: [courseId], references: [id], onDelete: Cascade)
+  slug        String    @unique
+  title       String
+  description String    @default("")
+  order       Int       @default(0)
+  units       CmsUnit[]
+}
+
+model CmsUnit {
+  id          String      @id @default(cuid())
+  moduleId    String
+  module      CmsModule   @relation(fields: [moduleId], references: [id], onDelete: Cascade)
+  slug        String      @unique
+  title       String
+  description String      @default("")
+  order       Int         @default(0)
+  lessons     CmsLesson[]
+}
+
+// A lesson inside a unit. `version` counts working-copy saves; each save
+// appends a CmsLessonVersion snapshot. `publishedVersion` points at the
+// snapshot learners see while `live` is true — later edits never leak to the
+// live lesson until it is re-approved and re-published.
+model CmsLesson {
+  id               String    @id @default(cuid())
+  unitId           String
+  unit             CmsUnit   @relation(fields: [unitId], references: [id], onDelete: Cascade)
+  slug             String    @unique
+  title            String
+  description      String    @default("")
+  objectives       String    @default("[]") // JSON string[]
+  estimatedMinutes Int       @default(10)
+  order            Int       @default(0)
+  status           String    @default("draft") // draft | review | approved
+  live             Boolean   @default(false)
+  version          Int       @default(1)
+  publishedVersion Int?
+  publishedAt      DateTime?
+  createdById      String?
+  createdAt        DateTime  @default(now())
+  updatedAt        DateTime  @updatedAt
+
+  blocks        CmsLessonBlock[]
+  versions      CmsLessonVersion[]
+  prerequisites CmsPrerequisite[]         @relation("LessonRequires")
+  requiredBy    CmsPrerequisite[]         @relation("LessonRequired")
+  progress      CmsLessonProgress[]
+  submissions   CmsAssignmentSubmission[]
+  relatedAssets CmsAsset[]
+}
+
+// Ordered structured content block of a lesson working copy.
+// `type` is one of the CMS block kinds; `data` is the type-specific JSON.
+model CmsLessonBlock {
+  id       String    @id @default(cuid())
+  lessonId String
+  lesson   CmsLesson @relation(fields: [lessonId], references: [id], onDelete: Cascade)
+  order    Int
+  type     String
+  data     String // JSON block payload
+
+  @@index([lessonId, order])
+}
+
+// Immutable revision snapshot of a lesson (metadata + blocks).
+model CmsLessonVersion {
+  id          String    @id @default(cuid())
+  lessonId    String
+  lesson      CmsLesson @relation(fields: [lessonId], references: [id], onDelete: Cascade)
+  version     Int
+  snapshot    String // JSON { title, description, objectives, estimatedMinutes, blocks[] }
+  changedById String?
+  changedBy   User?     @relation("LessonVersionEditor", fields: [changedById], references: [id], onDelete: SetNull)
+  changeNote  String    @default("")
+  createdAt   DateTime  @default(now())
+
+  @@unique([lessonId, version])
+}
+
+// Lesson A requires lesson B to be completed first (learner-side lock).
+model CmsPrerequisite {
+  id               String    @id @default(cuid())
+  lessonId         String
+  lesson           CmsLesson @relation("LessonRequires", fields: [lessonId], references: [id], onDelete: Cascade)
+  requiresLessonId String
+  requiresLesson   CmsLesson @relation("LessonRequired", fields: [requiresLessonId], references: [id], onDelete: Cascade)
+
+  @@unique([lessonId, requiresLessonId])
+}
+
+// A question-bank question. `data` holds the full Exercise JSON (options,
+// accepted answers, feedback, hints) using the same content model as the
+// code-based exercises, so grading and client rendering are shared.
+model CmsQuestion {
+  id          String   @id @default(cuid())
+  slug        String   @unique
+  type        String // ExerciseType
+  skill       String   @default("vocabulary")
+  difficulty  String   @default("easy")
+  prompt      String
+  tags        String   @default("[]") // JSON string[] (topics)
+  data        String // JSON exercise payload (id = question id)
+  status      String   @default("draft") // draft | review | approved | published | retired
+  version     Int      @default(1)
+  createdById String?
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+
+  versions CmsQuestionVersion[]
+}
+
+// Immutable revision snapshot of a question.
+model CmsQuestionVersion {
+  id          String      @id @default(cuid())
+  questionId  String
+  question    CmsQuestion @relation(fields: [questionId], references: [id], onDelete: Cascade)
+  version     Int
+  snapshot    String // JSON { type, skill, difficulty, prompt, tags, data }
+  changedById String?
+  changedBy   User?       @relation("QuestionVersionEditor", fields: [changedById], references: [id], onDelete: SetNull)
+  changeNote  String      @default("")
+  createdAt   DateTime    @default(now())
+
+  @@unique([questionId, version])
+}
+
+// Uploaded media asset (audio or image). File bytes live on disk under
+// db/media/<id>.<ext>; only metadata is stored here.
+model CmsAsset {
+  id              String     @id @default(cuid())
+  kind            String // "audio" | "image"
+  title           String
+  fileName        String
+  mimeType        String
+  sizeBytes       Int        @default(0)
+  durationSeconds Float?
+  transcript      String     @default("")
+  language        String     @default("en")
+  pronunciation   String     @default("")
+  licence         String     @default("")
+  source          String     @default("")
+  relatedLessonId String?
+  relatedLesson   CmsLesson? @relation(fields: [relatedLessonId], references: [id], onDelete: SetNull)
+  uploadedById    String?
+  createdAt       DateTime   @default(now())
+}
+
+// Learner enrolment in a published course.
+model CmsEnrolment {
+  id        String    @id @default(cuid())
+  userId    String
+  user      User      @relation(fields: [userId], references: [id], onDelete: Cascade)
+  courseId  String
+  course    CmsCourse @relation(fields: [courseId], references: [id], onDelete: Cascade)
+  createdAt DateTime  @default(now())
+
+  @@unique([userId, courseId])
+}
+
+// Learner progress on a CMS lesson. Completion is server-verified: every
+// exercise block must have an attempt and every assignment a submission.
+model CmsLessonProgress {
+  id               String    @id @default(cuid())
+  userId           String
+  user             User      @relation(fields: [userId], references: [id], onDelete: Cascade)
+  lessonId         String
+  lesson           CmsLesson @relation(fields: [lessonId], references: [id], onDelete: Cascade)
+  status           String    @default("in-progress") // in-progress | completed
+  completedVersion Int? // lesson version that was completed
+  completedAt      DateTime?
+  createdAt        DateTime  @default(now())
+  updatedAt        DateTime  @updatedAt
+
+  @@unique([userId, lessonId])
+}
+
+// Free-text submission for an assignment block of a CMS lesson.
+model CmsAssignmentSubmission {
+  id        String    @id @default(cuid())
+  userId    String
+  user      User      @relation(fields: [userId], references: [id], onDelete: Cascade)
+  lessonId  String
+  lesson    CmsLesson @relation(fields: [lessonId], references: [id], onDelete: Cascade)
+  blockId   String
+  text      String
+  wordCount Int       @default(0)
+  createdAt DateTime  @default(now())
+
+  @@unique([userId, blockId])
+}
+
+// Append-only audit trail for the content quality workflow: who changed
+// what, when, and which status transition happened.
+model CmsAuditLog {
+  id         String   @id @default(cuid())
+  actorId    String?
+  actor      User?    @relation(fields: [actorId], references: [id], onDelete: SetNull)
+  action     String // e.g. "lesson.publish", "question.update", "user.role"
+  entityType String // course | module | unit | lesson | question | asset | user | import
+  entityId   String
+  detail     String   @default("{}") // JSON { from, to, note, … }
+  createdAt  DateTime @default(now())
+
+  @@index([entityType, entityId])
+  @@index([createdAt])
+}

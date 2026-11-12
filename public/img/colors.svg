@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 300" role="img" aria-label="A palette of ten color swatches with their English names">
+  <rect width="720" height="300" rx="16" fill="#faf7f2"/>
+  <g font-family="Verdana, Arial, sans-serif" text-anchor="middle" font-size="15">
+    <rect x="48" y="48" width="108" height="72" rx="10" fill="#e05252"/><text x="102" y="140" fill="#3d3229">red</text>
+    <rect x="192" y="48" width="108" height="72" rx="10" fill="#4f7de0"/><text x="246" y="140" fill="#3d3229">blue</text>
+    <rect x="336" y="48" width="108" height="72" rx="10" fill="#58a662"/><text x="390" y="140" fill="#3d3229">green</text>
+    <rect x="480" y="48" width="108" height="72" rx="10" fill="#e8c33e"/><text x="534" y="140" fill="#3d3229">yellow</text>
+    <rect x="48" y="168" width="108" height="72" rx="10" fill="#e08a3e"/><text x="102" y="260" fill="#3d3229">orange</text>
+    <rect x="192" y="168" width="108" height="72" rx="10" fill="#8a63d2"/><text x="246" y="260" fill="#3d3229">purple</text>
+    <rect x="336" y="168" width="108" height="72" rx="10" fill="#e894b4"/><text x="390" y="260" fill="#3d3229">pink</text>
+    <rect x="480" y="168" width="108" height="72" rx="10" fill="#8a6f52"/><text x="534" y="260" fill="#3d3229">brown</text>
+    <rect x="624" y="48" width="52" height="192" rx="10" fill="#2b241d"/><text x="650" y="262" fill="#3d3229" font-size="13">black</text>
+    <rect x="624" y="48" width="52" height="192" rx="10" fill="#2b241d"/>
+    <rect x="624" y="48" width="52" height="192" rx="10" fill="#fdfbf7"/>
+    <rect x="624" y="48" width="52" height="96" rx="10" fill="#2b241d"/>
+    <text x="650" y="262" fill="#3d3229" font-size="13">black /</text>
+    <text x="650" y="280" fill="#3d3229" font-size="13">white</text>
+  </g>
+</svg>

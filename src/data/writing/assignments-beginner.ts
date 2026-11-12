@@ -1,0 +1,280 @@
+/**
+ * Beginner writing assignments — the nine foundation micro-skills:
+ * alphabet writing, spelling, copying vocabulary, completing words,
+ * constructing simple sentences, rearranging words, and writing
+ * affirmative sentences, negative sentences and questions.
+ *
+ * Guided tasks are graded deterministically: typed answers are compared to
+ * authored targets with the engine's normalisation (case, punctuation and
+ * small typos tolerated where sensible).
+ */
+
+import type { WritingAssignment } from "./types";
+
+export const beginnerWritingAssignments: WritingAssignment[] = [
+  {
+    id: "wrt-beg-alphabet",
+    slug: "alphabet-writing",
+    tier: "beginner",
+    kind: "alphabet-writing",
+    title: "Alphabet Writing",
+    description:
+      "Type each letter you hear, then write the three 'tricky twins' in upper and lower case.",
+    estimatedMinutes: 5,
+    tags: ["alphabet", "foundations"],
+    passThreshold: 80,
+    tasks: [
+      {
+        type: "guided",
+        id: "aw1",
+        title: "Letters by sound",
+        prompt: "Listen to each letter and type it (lower case).",
+        hints: ["The letter name and its sound are different — this asks for the letter."],
+        difficulty: "easy",
+        items: [
+          { id: "i1", format: "write-word", prompt: "The first letter of the alphabet", audioText: "a", acceptedAnswers: ["a"], explanation: "'A' is written 'a' in lower case." },
+          { id: "i2", format: "write-word", prompt: "The letter that sounds like 'bee'", audioText: "b", acceptedAnswers: ["b"], explanation: "B/b — the lower case 'b' has a tall stick." },
+          { id: "i3", format: "write-word", prompt: "The letter that sounds like 'see'", audioText: "c", acceptedAnswers: ["c"], explanation: "C/c — a round letter, no stick." },
+          { id: "i4", format: "write-word", prompt: "The last letter of the alphabet", audioText: "z", acceptedAnswers: ["z"], explanation: "Z/z — zed (British) or zee (American)." },
+        ],
+      },
+      {
+        type: "guided",
+        id: "aw2",
+        title: "Tricky twins: b/d/p/q",
+        prompt: "These four letters use the same shapes. Type each pair, lower case, separated by a space.",
+        hints: ["b has the stick BEFORE the circle; d has it AFTER.", "p and q hang below the line."],
+        difficulty: "easy",
+        items: [
+          { id: "i1", format: "write-word", prompt: "Type 'b' then 'd' (lower case, space between)", acceptedAnswers: ["b d"], explanation: "b = stick then circle; d = circle then stick. Reading them backwards is the most common beginner mistake." },
+          { id: "i2", format: "write-word", prompt: "Type 'p' then 'q' (lower case, space between)", acceptedAnswers: ["p q"], explanation: "p and q are b and d hanging below the line." },
+        ],
+      },
+    ],
+  },
+  {
+    id: "wrt-beg-spelling",
+    slug: "spelling",
+    tier: "beginner",
+    kind: "spelling",
+    title: "Spelling",
+    description: "Hear a word, type it. Five everyday words with friendly spelling patterns.",
+    estimatedMinutes: 6,
+    tags: ["spelling", "listening"],
+    passThreshold: 80,
+    tasks: [
+      {
+        type: "guided",
+        id: "sp1",
+        title: "Everyday words",
+        prompt: "Press play, listen carefully, and type the word you hear.",
+        hints: ["Say the word slowly to yourself as you type.", "Double letters are the trap: 'coffee' has two f's and two e's."],
+        difficulty: "easy",
+        items: [
+          { id: "i1", format: "spell-from-clue", prompt: "A hot drink made from beans", audioText: "coffee", acceptedAnswers: ["coffee"], explanation: "coffee — double f, double e." },
+          { id: "i2", format: "spell-from-clue", prompt: "The number after eleven", audioText: "twelve", acceptedAnswers: ["twelve"], explanation: "twelve — one v, silent at the end." },
+          { id: "i3", format: "spell-from-clue", prompt: "Where you sleep at home", audioText: "bedroom", acceptedAnswers: ["bedroom"], explanation: "bedroom — two small words joined: bed + room." },
+          { id: "i4", format: "spell-from-clue", prompt: "The day after Wednesday", audioText: "thursday", acceptedAnswers: ["thursday"], explanation: "Thursday — capital T, and 'th' at the start." },
+          { id: "i5", format: "spell-from-clue", prompt: "Yellow fruit that monkeys love", audioText: "banana", acceptedAnswers: ["banana"], explanation: "banana — three a's, no other vowels." },
+        ],
+      },
+    ],
+  },
+  {
+    id: "wrt-beg-copying",
+    slug: "copying-vocabulary",
+    tier: "beginner",
+    kind: "copying-vocabulary",
+    title: "Copying Vocabulary",
+    description: "Copy classroom words exactly — capital letters, apostrophes and all.",
+    estimatedMinutes: 5,
+    tags: ["vocabulary", "accuracy"],
+    passThreshold: 80,
+    tasks: [
+      {
+        type: "guided",
+        id: "cv1",
+        title: "Copy it perfectly",
+        prompt: "Type each word exactly as shown — including capital letters.",
+        hints: ["Proper nouns (names of people, cities, languages) keep their capital letter.", "Copy apostrophes too: teacher's."],
+        difficulty: "easy",
+        items: [
+          { id: "i1", format: "write-word", prompt: "Copy: notebook", acceptedAnswers: ["notebook"], explanation: "One word, all lower case — a common object." },
+          { id: "i2", format: "write-word", prompt: "Copy: English", acceptedAnswers: ["english"], explanation: "Languages keep a capital: English, Spanish, Chinese. (The grader is case-insensitive, but remember the rule.)" },
+          { id: "i3", format: "write-word", prompt: "Copy: teacher's pen", acceptedAnswers: ["teacher's pen"], explanation: "The apostrophe shows belonging — the pen of the teacher." },
+        ],
+      },
+    ],
+  },
+  {
+    id: "wrt-beg-completing",
+    slug: "completing-words",
+    tier: "beginner",
+    kind: "completing-words",
+    title: "Completing Words",
+    description: "Fill in the missing letters — vowels, endings and silent letters.",
+    estimatedMinutes: 6,
+    tags: ["spelling", "patterns"],
+    passThreshold: 80,
+    tasks: [
+      {
+        type: "guided",
+        id: "cw1",
+        title: "Missing vowels",
+        prompt: "Type the complete word with the missing vowels filled in.",
+        hints: ["Every English word needs at least one vowel (a, e, i, o, u).", "Say the word out loud — the vowel is where your mouth opens."],
+        difficulty: "easy",
+        items: [
+          { id: "i1", format: "complete-word", prompt: "Something you read", display: "b_ _k", acceptedAnswers: ["book"], explanation: "book — a double o makes the 'oo' sound." },
+          { id: "i2", format: "complete-word", prompt: "Where you live", display: "h _ _ s e", acceptedAnswers: ["house"], explanation: "house — 'ou' together make one sound." },
+          { id: "i3", format: "complete-word", prompt: "You drink it in the morning", display: "t _ _", acceptedAnswers: ["tea"], explanation: "tea — e before a." },
+        ],
+      },
+      {
+        type: "guided",
+        id: "cw2",
+        title: "Missing endings",
+        prompt: "Type the complete word — the ending is missing.",
+        hints: ["-ing needs the full verb first.", "Plurals usually add -s, sometimes -es."],
+        difficulty: "medium",
+        items: [
+          { id: "i1", format: "complete-word", prompt: "Action happening now: read + ?", display: "read___", acceptedAnswers: ["reading"], explanation: "reading — drop nothing, just add -ing (read ends in a consonant after two vowels)." },
+          { id: "i2", format: "complete-word", prompt: "More than one box", display: "box___", acceptedAnswers: ["boxes"], explanation: "boxes — after x, s, ch, sh we add -es." },
+          { id: "i3", format: "complete-word", prompt: "More than one city", display: "cit___", acceptedAnswers: ["cities"], explanation: "cities — consonant + y becomes -ies." },
+        ],
+      },
+    ],
+  },
+  {
+    id: "wrt-beg-constructing",
+    slug: "constructing-sentences",
+    tier: "beginner",
+    kind: "constructing-sentences",
+    title: "Constructing Simple Sentences",
+    description: "Build subject + verb + object sentences from word clues.",
+    estimatedMinutes: 7,
+    tags: ["grammar", "sentences"],
+    passThreshold: 80,
+    tasks: [
+      {
+        type: "guided",
+        id: "cs1",
+        title: "Subject + verb + object",
+        prompt: "Write ONE sentence using all the words given, in the right order. End with a full stop.",
+        hints: ["English order: WHO + DOES WHAT + TO WHAT.", "Example shape: 'I read books.'"],
+        difficulty: "easy",
+        items: [
+          { id: "i1", format: "write-sentence", prompt: "Words: I / read / books", acceptedAnswers: ["i read books", "i read books."], explanation: "Subject (I) + verb (read) + object (books) — the classic SVO order." },
+          { id: "i2", format: "write-sentence", prompt: "Words: she / likes / music", acceptedAnswers: ["she likes music", "she likes music."], explanation: "Don't forget the -s: she likeS. Third person singular always takes -s in the present." },
+          { id: "i3", format: "write-sentence", prompt: "Words: we / eat / rice / every day", acceptedAnswers: ["we eat rice every day", "we eat rice every day."], explanation: "Time expressions like 'every day' usually go at the end." },
+        ],
+      },
+    ],
+  },
+  {
+    id: "wrt-beg-rearranging",
+    slug: "rearranging-words",
+    tier: "beginner",
+    kind: "rearranging-words",
+    title: "Rearranging Words",
+    description: "The words are mixed up. Type the sentence in the correct order.",
+    estimatedMinutes: 7,
+    tags: ["grammar", "word-order"],
+    passThreshold: 80,
+    tasks: [
+      {
+        type: "guided",
+        id: "rw1",
+        title: "Unscramble the sentence",
+        prompt: "Type the sentence with the words in the correct order.",
+        hints: ["Find the subject first, then the verb.", "Questions start with question words (what, where) or auxiliaries (do, is)."],
+        difficulty: "easy",
+        items: [
+          { id: "i1", format: "rearrange-sentence", prompt: "Mixed: is / my / this / book", acceptedAnswers: ["this is my book", "this is my book."], explanation: "Demonstrative (this) + verb (is) + possessive + noun." },
+          { id: "i2", format: "rearrange-sentence", prompt: "Mixed: live / in / we / London", acceptedAnswers: ["we live in london", "we live in london."], explanation: "Prepositions of place (in) come before the place." },
+          { id: "i3", format: "rearrange-sentence", prompt: "Mixed: you / do / like / coffee", acceptedAnswers: ["do you like coffee", "do you like coffee?"], explanation: "Present simple questions: Do + subject + verb + object?" },
+          { id: "i4", format: "rearrange-sentence", prompt: "Mixed: not / is / today / school / open", acceptedAnswers: ["school is not open today", "school isn't open today", "school is not open today.", "school isn't open today."], explanation: "Negatives put 'not' after the verb be; time words can end the sentence." },
+        ],
+      },
+    ],
+  },
+  {
+    id: "wrt-beg-affirmative",
+    slug: "affirmative-sentences",
+    tier: "beginner",
+    kind: "affirmative-sentences",
+    title: "Writing Affirmative Sentences",
+    description: "Turn the prompts into full positive sentences — small grammar transformations.",
+    estimatedMinutes: 7,
+    tags: ["grammar", "verbs"],
+    passThreshold: 80,
+    tasks: [
+      {
+        type: "guided",
+        id: "af1",
+        title: "Make it affirmative",
+        prompt: "Write the sentence in the positive form, using the words given.",
+        hints: ["Add -s for he/she/it.", "'I am' never changes to 'I is'."],
+        difficulty: "easy",
+        items: [
+          { id: "i1", format: "transform-sentence", prompt: "he / play / football → affirmative present simple", acceptedAnswers: ["he plays football", "he plays football."], explanation: "he + playS: third person singular adds -s in the present simple." },
+          { id: "i2", format: "transform-sentence", prompt: "they / be / happy → affirmative with 'be'", acceptedAnswers: ["they are happy", "they are happy."], explanation: "they + are — never 'they is'." },
+          { id: "i3", format: "transform-sentence", prompt: "I / can / swim → affirmative", acceptedAnswers: ["i can swim", "i can swim."], explanation: "Modals (can, must, will) take the plain verb: 'can swim', never 'can to swim'." },
+        ],
+      },
+    ],
+  },
+  {
+    id: "wrt-beg-negative",
+    slug: "negative-sentences",
+    tier: "beginner",
+    kind: "negative-sentences",
+    title: "Writing Negative Sentences",
+    description: "Say no correctly: don't, doesn't, isn't, can't.",
+    estimatedMinutes: 7,
+    tags: ["grammar", "negation"],
+    passThreshold: 80,
+    tasks: [
+      {
+        type: "guided",
+        id: "ng1",
+        title: "Make it negative",
+        prompt: "Rewrite the sentence in the negative.",
+        hints: ["I/you/we/they + don't; he/she/it + doesn't.", "After doesn't, the verb loses its -s."],
+        difficulty: "medium",
+        items: [
+          { id: "i1", format: "transform-sentence", prompt: "'She works here.' → negative", acceptedAnswers: ["she doesn't work here", "she does not work here", "she doesn't work here.", "she does not work here."], explanation: "She doesn't WORK (not 'works') — the -s moves to does." },
+          { id: "i2", format: "transform-sentence", prompt: "'I like fish.' → negative", acceptedAnswers: ["i don't like fish", "i do not like fish", "i don't like fish.", "i do not like fish."], explanation: "don't + plain verb: 'I don't like'." },
+          { id: "i3", format: "transform-sentence", prompt: "'He is at home.' → negative", acceptedAnswers: ["he isn't at home", "he is not at home", "he isn't at home.", "he is not at home."], explanation: "With 'be', the negative follows directly: is not / isn't." },
+        ],
+      },
+    ],
+  },
+  {
+    id: "wrt-beg-questions",
+    slug: "writing-questions",
+    tier: "beginner",
+    kind: "writing-questions",
+    title: "Writing Questions",
+    description: "Turn statements into questions — with do, be and question words.",
+    estimatedMinutes: 8,
+    tags: ["grammar", "questions"],
+    passThreshold: 80,
+    tasks: [
+      {
+        type: "guided",
+        id: "qz1",
+        title: "Make it a question",
+        prompt: "Rewrite as a question. Don't forget the question mark.",
+        hints: ["Present simple questions: Do/Does + subject + verb?", "With 'be', just swap: 'You are' → 'Are you'?"],
+        difficulty: "medium",
+        items: [
+          { id: "i1", format: "transform-sentence", prompt: "'You speak English.' → yes/no question", acceptedAnswers: ["do you speak english", "do you speak english?"], explanation: "Do + you + speak + object? — 'speak' stays plain." },
+          { id: "i2", format: "transform-sentence", prompt: "'She is your sister.' → yes/no question", acceptedAnswers: ["is she your sister", "is she your sister?"], explanation: "With be, the verb jumps to the front: Is she…?" },
+          { id: "i3", format: "transform-sentence", prompt: "Ask about the time (start with 'What')", acceptedAnswers: ["what time is it", "what time is it?"], explanation: "Question word + be + subject: What time is it?" },
+          { id: "i4", format: "transform-sentence", prompt: "'They live in Madrid.' → question with 'where'", acceptedAnswers: ["where do they live", "where do they live?"], explanation: "Question word + do + subject + verb: Where do they live?" },
+        ],
+      },
+    ],
+  },
+];

@@ -1,0 +1,572 @@
+/**
+ * Listening Lab — FLUENCY activities.
+ *
+ * Stages: natural English (fast, connected speech) and professional
+ * communication. (B1–B2)
+ */
+
+import type { ListeningActivity } from "./types";
+
+export const fluencyActivities: ListeningActivity[] = [
+  // =========================================================================
+  // Stage 8: Natural English — station announcements
+  // =========================================================================
+  {
+    id: "ls-f1",
+    slug: "at-the-train-station",
+    stage: "natural",
+    title: "At the Train Station",
+    description: "Announcements and fast questions with contractions — real station English.",
+    estimatedMinutes: 8,
+    tags: ["announcements", "travel", "contractions"],
+    transcriptPolicy: "locked",
+    audio: { rate: 1.0, gapMs: 550 },
+    speakers: [
+      { id: "sp1", name: "Announcer" },
+      { id: "sp2", name: "Passenger" },
+      { id: "sp3", name: "Staff" },
+    ],
+    segments: [
+      { id: "s1", speakerId: "sp1", text: "The train now arriving at platform two is the 10:15 service to Manchester. This train calls at Reading, Oxford and Coventry.", translation: "El tren que llega ahora a la vía dos es el servicio de las 10:15 a Manchester. Este tren para en Reading, Oxford y Coventry.", pauseAfterMs: 600 },
+      { id: "s2", speakerId: "sp1", text: "Attention please: the 9:40 express to Bristol has been cancelled due to signalling problems. Passengers should use the 10:05 service instead.", translation: "Atención, por favor: el expreso de las 9:40 a Bristol ha sido cancelado por problemas de señalización. Los pasajeros deben usar el servicio de las 10:05.", pauseAfterMs: 600 },
+      { id: "s3", speakerId: "sp2", text: "Sorry, d'you know if there's a cafe on this platform?", translation: "Perdone, ¿sabe si hay una cafetería en esta vía?", pauseAfterMs: 550 },
+      { id: "s4", speakerId: "sp3", text: "There's one over the bridge, on platform four — but it closes at noon.", translation: "Hay una cruzando el puente, en la vía cuatro, pero cierra al mediodía.", pauseAfterMs: 550 },
+      { id: "s5", speakerId: "sp1", text: "Would passengers for the 10:05 Bristol service please proceed to platform six, where the train is now boarding. We're sorry for the delay to this morning's journeys.", translation: "Los pasajeros del servicio de las 10:05 a Bristol, por favor, diríjanse a la vía seis, donde el tren está embarcando. Pedimos disculpas por el retraso en los viajes de esta mañana.", pauseAfterMs: 600 },
+      { id: "s6", speakerId: "sp2", text: "So we've gotta cross the bridge too. C'mon, we don't wanna miss it!", translation: "Así que tenemos que cruzar el puente también. ¡Vamos, no queremos perderlo!", pauseAfterMs: 550 },
+    ],
+    exercises: [
+      {
+        id: "x1",
+        format: "specific-info",
+        difficulty: "medium",
+        prompt: "Listen to the first announcement: which platform has the Manchester train?",
+        hints: ["It's the first number you hear."],
+        segmentIds: ["s1"],
+        options: [
+          { id: "o1", text: "Platform two" },
+          { id: "o2", text: "Platform four" },
+          { id: "o3", text: "Platform six" },
+        ],
+        correctOptionId: "o1",
+        feedback: {
+          correctAnswer: "Platform two",
+          explanation: "'The train now arriving at platform two is the 10:15 service to Manchester.'",
+          whyWrong: "Platform four has the café; platform six is for Bristol.",
+          revealSegments: ["The train now arriving at platform two is the 10:15 service to Manchester. This train calls at Reading, Oxford and Coventry."],
+        },
+      },
+      {
+        id: "x2",
+        format: "specific-info",
+        difficulty: "hard",
+        prompt: "Listen: why was the 9:40 Bristol express cancelled?",
+        hints: ["A technical word starting with S…"],
+        segmentIds: ["s2"],
+        options: [
+          { id: "o1", text: "Signalling problems" },
+          { id: "o2", text: "Bad weather" },
+          { id: "o3", text: "A staff strike" },
+        ],
+        correctOptionId: "o1",
+        feedback: {
+          correctAnswer: "Signalling problems",
+          explanation: "'…cancelled due to signalling problems' — the signals failed.",
+          revealSegments: ["Attention please: the 9:40 express to Bristol has been cancelled due to signalling problems. Passengers should use the 10:05 service instead."],
+        },
+      },
+      {
+        id: "x3",
+        format: "dictation",
+        difficulty: "hard",
+        prompt: "Dictation: type the passenger's natural, fast question. (Hint: it contains TWO contractions.)",
+        hints: ["'D'you' = do you; 'there's' = there is."],
+        segmentIds: ["s3"],
+        acceptedAnswers: [
+          "sorry d'you know if there's a cafe on this platform",
+          "sorry do you know if there's a cafe on this platform",
+          "sorry, d'you know if there's a cafe on this platform?",
+        ],
+        feedback: {
+          correctAnswer: "Sorry, d'you know if there's a cafe on this platform?",
+          explanation: "Natural speech compresses: 'do you' → 'd'you', 'there is' → 'there's'. Full form: 'Do you know if there is a café on this platform?'",
+          revealSegments: ["Sorry, d'you know if there's a cafe on this platform?"],
+        },
+      },
+      {
+        id: "x4",
+        format: "listen-complete",
+        difficulty: "hard",
+        prompt: "Listen and complete the boarding announcement: 'Would passengers for the ______ Bristol service please proceed to platform ______.'",
+        hints: ["The time and the platform are both in the sentence."],
+        segmentIds: ["s5"],
+        template: "Would passengers for the {1} Bristol service please proceed to platform {2}.",
+        blanks: [
+          { id: "b1", acceptedAnswers: ["10:05", "10 05", "ten oh five", "10.05"] },
+          { id: "b2", acceptedAnswers: ["six", "6"] },
+        ],
+        feedback: {
+          correctAnswer: "The 10:05 Bristol service, platform six",
+          explanation: "The replacement Bristol train boards at platform six.",
+          revealSegments: ["Would passengers for the 10:05 Bristol service please proceed to platform six, where the train is now boarding."],
+        },
+      },
+      {
+        id: "x5",
+        format: "overall-meaning",
+        difficulty: "hard",
+        prompt: "Listen to the last line. What does 'we don't wanna miss it' mean in full?",
+        hints: ["'Wanna' is the fast form of two words."],
+        segmentIds: ["s6"],
+        options: [
+          { id: "o1", text: "We don't want to miss the train" },
+          { id: "o2", text: "We don't know the way" },
+          { id: "o3", text: "We don't need a ticket" },
+        ],
+        correctOptionId: "o1",
+        feedback: {
+          correctAnswer: "We don't want to miss the train",
+          explanation: "'Wanna' = 'want to'. 'Gotta' = 'have got to' (must). Natural English shortens these words in speech.",
+          revealSegments: ["So we've gotta cross the bridge too. C'mon, we don't wanna miss it!"],
+        },
+      },
+    ],
+  },
+
+  // =========================================================================
+  // Stage 8: Natural English — making plans on the phone
+  // =========================================================================
+  {
+    id: "ls-f2",
+    slug: "making-plans-on-the-phone",
+    stage: "natural",
+    title: "Making Plans on the Phone",
+    description: "A quick phone call full of contractions, fillers and interruptions.",
+    estimatedMinutes: 8,
+    tags: ["phone", "contractions", "casual"],
+    transcriptPolicy: "locked",
+    audio: { rate: 1.05, gapMs: 500 },
+    speakers: [
+      { id: "sp1", name: "Priya" },
+      { id: "sp2", name: "Tom" },
+    ],
+    segments: [
+      { id: "s1", speakerId: "sp1", text: "Hey, Tom! It's Priya. I'm outside the cinema — where are you?", translation: "¡Ey, Tom! Soy Priya. Estoy fuera del cine. ¿Dónde estás?", pauseAfterMs: 500 },
+      { id: "s2", speakerId: "sp2", text: "Oh no — I'm so sorry, I'm still at work. The meeting ran late. I'm gonna be about twenty minutes.", translation: "Ay, no, lo siento mucho, sigo en el trabajo. La reunión se alargó. Tardaré unos veinte minutos.", pauseAfterMs: 500 },
+      { id: "s3", speakerId: "sp1", text: "Twenty? The film starts in ten! Can't you get a taxi?", translation: "¿Veinte? ¡La película empieza en diez! ¿No puedes tomar un taxi?", pauseAfterMs: 500 },
+      { id: "s4", speakerId: "sp2", text: "I would, but my bike's here and it's faster than a cab in this traffic. Don't worry — I'll text you if I'm late.", translation: "Lo haría, pero mi bici está aquí y es más rápida que un taxi con este tráfico. No te preocupes: te escribo si llego tarde.", pauseAfterMs: 500 },
+      { id: "s5", speakerId: "sp1", text: "Okay, okay. I'll grab the tickets and wait by the entrance. It's the eight o'clock showing, yeah?", translation: "Vale, vale. Cogeré las entradas y esperaré en la entrada. Es la sesión de las ocho, ¿verdad?", pauseAfterMs: 500 },
+      { id: "s6", speakerId: "sp2", text: "Yeah, screen seven. Oh, and I'm starving — d'you fancy grabbing a bite after?", translation: "Sí, sala siete. Ah, y me muero de hambre, ¿te apetece picar algo después?", pauseAfterMs: 500 },
+      { id: "s7", speakerId: "sp1", text: "Sure. There's a new noodle place round the corner I've been dying to try. See you in a bit!", translation: "Claro. Hay un sitio de fideos nuevo a la vuelta que estoy deseando probar. ¡Nos vemos ahora!", pauseAfterMs: 500 },
+    ],
+    exercises: [
+      {
+        id: "x1",
+        format: "specific-info",
+        difficulty: "medium",
+        prompt: "Listen: why is Tom late?",
+        hints: ["What happened at work?"],
+        segmentIds: ["s2"],
+        options: [
+          { id: "o1", text: "His meeting ran late" },
+          { id: "o2", text: "He missed his bus" },
+          { id: "o3", text: "He forgot the time" },
+        ],
+        correctOptionId: "o1",
+        feedback: {
+          correctAnswer: "His meeting ran late",
+          explanation: "'I'm still at work. The meeting ran late.'",
+          revealSegments: ["Oh no — I'm so sorry, I'm still at work. The meeting ran late. I'm gonna be about twenty minutes."],
+        },
+      },
+      {
+        id: "x2",
+        format: "specific-info",
+        difficulty: "hard",
+        prompt: "Listen: why doesn't Tom take a taxi?",
+        hints: ["What is faster than a cab in this traffic?"],
+        segmentIds: ["s4"],
+        options: [
+          { id: "o1", text: "His bike is faster in the traffic" },
+          { id: "o2", text: "Taxis are too expensive" },
+          { id: "o3", text: "There are no taxis near his office" },
+        ],
+        correctOptionId: "o1",
+        feedback: {
+          correctAnswer: "His bike is faster in the traffic",
+          explanation: "'My bike's here and it's faster than a cab in this traffic.'",
+          revealSegments: ["I would, but my bike's here and it's faster than a cab in this traffic. Don't worry — I'll text you if I'm late."],
+        },
+      },
+      {
+        id: "x3",
+        format: "dictation",
+        difficulty: "hard",
+        prompt: "Dictation: type Tom's final line — with the contraction 'd'you' and the phrase 'grabbing a bite'.",
+        hints: ["'D'you fancy…?' is a natural way to suggest something."],
+        segmentIds: ["s6"],
+        acceptedAnswers: [
+          "yeah screen seven oh and i'm starving d'you fancy grabbing a bite after",
+          "yeah, screen seven. oh, and i'm starving — d'you fancy grabbing a bite after?",
+          "yes screen seven and i'm starving do you fancy grabbing a bite after",
+        ],
+        feedback: {
+          correctAnswer: "Yeah, screen seven. Oh, and I'm starving — d'you fancy grabbing a bite after?",
+          explanation: "'D'you fancy + -ing' = a friendly suggestion. 'Grabbing a bite' = eating something.",
+          revealSegments: ["Yeah, screen seven. Oh, and I'm starving — d'you fancy grabbing a bite after?"],
+        },
+      },
+      {
+        id: "x4",
+        format: "listen-complete",
+        difficulty: "medium",
+        prompt: "Listen and complete: 'I'll grab the ______ and wait by the ______.'",
+        hints: ["One thing you buy at the cinema, one place to wait."],
+        segmentIds: ["s5"],
+        template: "I'll grab the {1} and wait by the {2}.",
+        blanks: [
+          { id: "b1", acceptedAnswers: ["tickets", "ticket"] },
+          { id: "b2", acceptedAnswers: ["entrance"] },
+        ],
+        feedback: {
+          correctAnswer: "grab the tickets, wait by the entrance",
+          explanation: "Priya takes care of the tickets and waits at the entrance.",
+          revealSegments: ["Okay, okay. I'll grab the tickets and wait by the entrance. It's the eight o'clock showing, yeah?"],
+        },
+      },
+      {
+        id: "x5",
+        format: "overall-meaning",
+        difficulty: "hard",
+        prompt: "Listen to the whole call. What is the full plan by the end?",
+        hints: ["Film first, then… where?"],
+        segmentIds: [],
+        options: [
+          { id: "o1", text: "Meet at the cinema for the 8 p.m. film on screen seven, then eat noodles nearby" },
+          { id: "o2", text: "Cancel the film and go straight to a restaurant" },
+          { id: "o3", text: "Tom books a taxi and they meet at work" },
+        ],
+        correctOptionId: "o1",
+        feedback: {
+          correctAnswer: "Film at 8 on screen seven, then noodles round the corner",
+          explanation: "Everything is resolved: Priya gets the tickets, Tom bikes over, and dinner after is at the new noodle place.",
+          revealSegments: [
+            "It's the eight o'clock showing, yeah?",
+            "Yeah, screen seven.",
+            "There's a new noodle place round the corner I've been dying to try.",
+          ],
+        },
+      },
+      {
+        id: "x6",
+        format: "listen-answer",
+        difficulty: "hard",
+        prompt: "Listen to Priya's last line: what has she been 'dying to try'?",
+        hints: ["A new place to eat, round the corner."],
+        segmentIds: ["s7"],
+        acceptedAnswers: [
+          "a new noodle place",
+          "the new noodle place round the corner",
+          "noodle place",
+        ],
+        keywords: ["noodle"],
+        feedback: {
+          correctAnswer: "A new noodle place round the corner.",
+          explanation: "'Dying to try' = wanting very much to try. The new noodle restaurant is her choice for after the film.",
+          revealSegments: ["There's a new noodle place round the corner I've been dying to try. See you in a bit!"],
+        },
+      },
+    ],
+  },
+
+  // =========================================================================
+  // Stage 9: Professional communication — job interview
+  // =========================================================================
+  {
+    id: "ls-pr1",
+    slug: "a-job-interview",
+    stage: "professional",
+    title: "A Job Interview",
+    description: "A first-round interview: strengths, weaknesses and a tricky question about the future.",
+    estimatedMinutes: 9,
+    tags: ["interview", "professional", "career"],
+    transcriptPolicy: "locked",
+    audio: { rate: 0.95, gapMs: 550 },
+    speakers: [
+      { id: "sp1", name: "Interviewer", role: "Hiring manager" },
+      { id: "sp2", name: "Candidate", role: "Marketing specialist" },
+    ],
+    segments: [
+      { id: "s1", speakerId: "sp1", text: "Thanks for coming in today, Anna. To start — tell me a little about your current role.", translation: "Gracias por venir hoy, Anna. Para empezar, cuénteme un poco sobre su puesto actual.", pauseAfterMs: 550 },
+      { id: "s2", speakerId: "sp2", text: "Of course. I've been a marketing executive at Feldt & Co for three years, mostly running social media campaigns for food brands.", translation: "Por supuesto. He sido ejecutiva de marketing en Feldt & Co durante tres años, principalmente gestionando campañas en redes sociales para marcas de alimentación.", pauseAfterMs: 550 },
+      { id: "s3", speakerId: "sp1", text: "And what would you say is your greatest strength?", translation: "¿Y cuál diría que es su mayor fortaleza?", pauseAfterMs: 550 },
+      { id: "s4", speakerId: "sp2", text: "I'm good at turning data into stories. Last year my reports convinced the board to double our video budget, and views grew by sixty per cent.", translation: "Se me da bien convertir datos en historias. El año pasado, mis informes convencieron a la junta de duplicar nuestro presupuesto de vídeo, y las visualizaciones crecieron un sesenta por ciento.", pauseAfterMs: 550 },
+      { id: "s5", speakerId: "sp1", text: "Impressive. And a weakness — something you're working on?", translation: "Impresionante. ¿Y una debilidad, algo en lo que esté trabajando?", pauseAfterMs: 550 },
+      { id: "s6", speakerId: "sp2", text: "Honestly? I used to say yes to every project. I've learned to protect deep-work time — I now block two mornings a week for strategy, and my team's output has gone up.", translation: "¿Sinceramente? Antes decía que sí a todos los proyectos. He aprendido a proteger el tiempo de concentración: ahora reservo dos mañanas a la semana para estrategia, y la producción de mi equipo ha subido.", pauseAfterMs: 550 },
+      { id: "s7", speakerId: "sp1", text: "Good answer. Final question: where do you see yourself in five years?", translation: "Buena respuesta. Última pregunta: ¿dónde se ve en cinco años?", pauseAfterMs: 550 },
+      { id: "s8", speakerId: "sp2", text: "Leading a small, creative team — ideally here, building the kind of campaigns this company is known for.", translation: "Dirigiendo un equipo pequeño y creativo, idealmente aquí, creando el tipo de campañas por las que esta empresa es conocida.", pauseAfterMs: 550 },
+      { id: "s9", speakerId: "sp1", text: "Well, we'll be in touch by Friday either way. Thanks for your time, Anna.", translation: "Bueno, le contactaremos antes del viernes de cualquier modo. Gracias por su tiempo, Anna.", pauseAfterMs: 550 },
+    ],
+    exercises: [
+      {
+        id: "x1",
+        format: "speaker-identify",
+        difficulty: "easy",
+        prompt: "Who asks 'where do you see yourself in five years?'",
+        hints: ["Who asks the questions in an interview?"],
+        segmentIds: ["s7"],
+        options: [
+          { id: "o1", text: "The interviewer" },
+          { id: "o2", text: "The candidate" },
+          { id: "o3", text: "Anna's current boss" },
+        ],
+        correctOptionId: "o1",
+        feedback: {
+          correctAnswer: "The interviewer",
+          explanation: "The hiring manager asks the classic final question; Anna answers it.",
+          revealSegments: ["Good answer. Final question: where do you see yourself in five years?"],
+        },
+      },
+      {
+        id: "x2",
+        format: "specific-info",
+        difficulty: "medium",
+        prompt: "Listen: what kind of brands does Anna work with?",
+        hints: ["A category you eat."],
+        segmentIds: ["s2"],
+        options: [
+          { id: "o1", text: "Food brands" },
+          { id: "o2", text: "Car brands" },
+          { id: "o3", text: "Sports brands" },
+        ],
+        correctOptionId: "o1",
+        feedback: {
+          correctAnswer: "Food brands",
+          explanation: "'…mostly running social media campaigns for food brands.'",
+          revealSegments: ["Of course. I've been a marketing executive at Feldt & Co for three years, mostly running social media campaigns for food brands."],
+        },
+      },
+      {
+        id: "x3",
+        format: "specific-info",
+        difficulty: "hard",
+        prompt: "Listen to Anna's strength. What happened to the video budget and the views?",
+        hints: ["One number for the budget, one for the views."],
+        segmentIds: ["s4"],
+        options: [
+          { id: "o1", text: "Budget doubled; views grew 60%" },
+          { id: "o2", text: "Budget doubled; views grew 16%" },
+          { id: "o3", text: "Budget tripled; views grew 60%" },
+        ],
+        correctOptionId: "o1",
+        feedback: {
+          correctAnswer: "Budget doubled; views grew 60%",
+          explanation: "'Convinced the board to double our video budget, and views grew by sixty per cent.'",
+          revealSegments: ["Last year my reports convinced the board to double our video budget, and views grew by sixty per cent."],
+        },
+      },
+      {
+        id: "x4",
+        format: "listen-complete",
+        difficulty: "hard",
+        prompt: "Listen and complete Anna's weakness answer: 'I've learned to protect ______ time — I now block ______ mornings a week for strategy.'",
+        hints: ["'Deep-work' and a small number."],
+        segmentIds: ["s6"],
+        template: "I've learned to protect {1} time — I now block {2} mornings a week for strategy.",
+        blanks: [
+          { id: "b1", acceptedAnswers: ["deep-work", "deep work"] },
+          { id: "b2", acceptedAnswers: ["two", "2"] },
+        ],
+        feedback: {
+          correctAnswer: "deep-work time; two mornings",
+          explanation: "A strong 'weakness' answer shows self-awareness AND a fix: protecting two mornings for strategy.",
+          revealSegments: ["I've learned to protect deep-work time — I now block two mornings a week for strategy, and my team's output has gone up."],
+        },
+      },
+      {
+        id: "x5",
+        format: "speaker-identify",
+        difficulty: "medium",
+        prompt: "Listen to the closing line. Who says 'we'll be in touch by Friday'?",
+        hints: ["Who gives the timeline — the person hiring or the person applying?"],
+        segmentIds: ["s9"],
+        options: [
+          { id: "o1", text: "The candidate" },
+          { id: "o2", text: "The interviewer" },
+          { id: "o3", text: "The receptionist" },
+        ],
+        correctOptionId: "o2",
+        feedback: {
+          correctAnswer: "The interviewer",
+          explanation: "The hiring manager closes the interview with the promise of an answer by Friday.",
+          revealSegments: ["Well, we'll be in touch by Friday either way. Thanks for your time, Anna."],
+        },
+      },
+      {
+        id: "x6",
+        format: "overall-meaning",
+        difficulty: "hard",
+        prompt: "Listen to the whole interview. How does Anna handle the weakness question?",
+        hints: ["Does she name a real weakness? Does she show how she fixed it?"],
+        segmentIds: [],
+        options: [
+          { id: "o1", text: "She admits a real past weakness and explains the system she now uses to manage it" },
+          { id: "o2", text: "She says she has no weaknesses" },
+          { id: "o3", text: "She refuses to answer the question" },
+        ],
+        correctOptionId: "o1",
+        feedback: {
+          correctAnswer: "She admits a real past weakness and explains the system she now uses to manage it",
+          explanation: "'Honestly? I used to say yes to every project' + the two-mornings fix = the textbook strong answer: honest, specific, solved.",
+          revealSegments: [
+            "Honestly? I used to say yes to every project. I've learned to protect deep-work time — I now block two mornings a week for strategy, and my team's output has gone up.",
+          ],
+        },
+      },
+    ],
+  },
+
+  // =========================================================================
+  // Stage 9: Professional communication — project meeting
+  // =========================================================================
+  {
+    id: "ls-pr2",
+    slug: "project-update-meeting",
+    stage: "professional",
+    title: "Project Update Meeting",
+    description: "A weekly stand-up with three colleagues: progress, a blocker, and next steps.",
+    estimatedMinutes: 9,
+    tags: ["meeting", "professional", "project"],
+    transcriptPolicy: "locked",
+    audio: { rate: 1.0, gapMs: 550 },
+    speakers: [
+      { id: "sp1", name: "Rita", role: "Team lead" },
+      { id: "sp2", name: "Marcus", role: "Developer" },
+      { id: "sp3", name: "Chen", role: "Designer" },
+    ],
+    segments: [
+      { id: "s1", speakerId: "sp1", text: "Morning, everyone. Quick update on the app launch — Marcus, where are we with the payments page?", translation: "Buenos días a todos. Actualización rápida del lanzamiento de la app: Marcus, ¿cómo vamos con la página de pagos?", pauseAfterMs: 550 },
+      { id: "s2", speakerId: "sp2", text: "It's nearly done — I'd say eighty per cent. But I'm blocked on the bank's test account; they promised it last week and it still hasn't arrived.", translation: "Está casi terminada, diría que al ochenta por ciento. Pero estoy bloqueado con la cuenta de pruebas del banco: la prometieron la semana pasada y sigue sin llegar.", pauseAfterMs: 550 },
+      { id: "s3", speakerId: "sp1", text: "I'll chase them today. Chen, how's the new design looking?", translation: "Yo los presionaré hoy. Chen, ¿cómo va el nuevo diseño?", pauseAfterMs: 550 },
+      { id: "s4", speakerId: "sp3", text: "The login screens are finished and with the developers. The onboarding flow needs one more round of testing with real users — I've booked sessions for Thursday.", translation: "Las pantallas de inicio de sesión están terminadas y entregadas a los desarrolladores. El flujo de registro necesita una ronda más de pruebas con usuarios reales: he reservado sesiones para el jueves.", pauseAfterMs: 550 },
+      { id: "s5", speakerId: "sp1", text: "Perfect. Can we still hit the launch date? Honestly, I'm a bit worried about the timeline.", translation: "Perfecto. ¿Podemos cumplir la fecha de lanzamiento? Sinceramente, estoy algo preocupada por el calendario.", pauseAfterMs: 550 },
+      { id: "s6", speakerId: "sp2", text: "If the bank account arrives by Wednesday, yes. Without it, we'd need at least one more week.", translation: "Si la cuenta del banco llega antes del miércoles, sí. Sin ella, necesitaríamos al menos una semana más.", pauseAfterMs: 550 },
+      { id: "s7", speakerId: "sp3", text: "And I'd rather move the launch than ship onboarding that confuses people. Quality first.", translation: "Y yo prefiero retrasar el lanzamiento antes que publicar un registro que confunda a la gente. Primero la calidad.", pauseAfterMs: 550 },
+      { id: "s8", speakerId: "sp1", text: "Agreed. So: I'll chase the bank, Chen tests on Thursday, and we decide on Friday whether to launch or move the date. Thanks, all.", translation: "De acuerdo. Entonces: yo presiono al banco, Chen hace las pruebas el jueves y el viernes decidimos si lanzamos o cambiamos la fecha. Gracias a todos.", pauseAfterMs: 550 },
+    ],
+    exercises: [
+      {
+        id: "x1",
+        format: "speaker-identify",
+        difficulty: "medium",
+        prompt: "Listen to the meeting. Who is blocked by the bank's test account?",
+        hints: ["Three colleagues: Rita, Marcus, Chen. Who works on the payments page?"],
+        segmentIds: ["s2"],
+        options: [
+          { id: "o1", text: "Rita, the team lead" },
+          { id: "o2", text: "Marcus, the developer" },
+          { id: "o3", text: "Chen, the designer" },
+        ],
+        correctOptionId: "o2",
+        feedback: {
+          correctAnswer: "Marcus, the developer",
+          explanation: "Marcus reports 'I'm blocked on the bank's test account' while working on the payments page.",
+          revealSegments: ["It's nearly done — I'd say eighty per cent. But I'm blocked on the bank's test account…"],
+        },
+      },
+      {
+        id: "x2",
+        format: "specific-info",
+        difficulty: "hard",
+        prompt: "Listen: how far along is the payments page?",
+        hints: ["A percentage."],
+        segmentIds: ["s2"],
+        options: [
+          { id: "o1", text: "About 80% done" },
+          { id: "o2", text: "About 18% done" },
+          { id: "o3", text: "Completely finished" },
+        ],
+        correctOptionId: "o1",
+        feedback: {
+          correctAnswer: "About 80% done",
+          explanation: "'It's nearly done — I'd say eighty per cent.'",
+          revealSegments: ["It's nearly done — I'd say eighty per cent."],
+        },
+      },
+      {
+        id: "x3",
+        format: "specific-info",
+        difficulty: "medium",
+        prompt: "Listen: when are Chen's user testing sessions?",
+        hints: ["A day of the week."],
+        segmentIds: ["s4"],
+        options: [
+          { id: "o1", text: "Thursday" },
+          { id: "o2", text: "Tuesday" },
+          { id: "o3", text: "Friday" },
+        ],
+        correctOptionId: "o1",
+        feedback: {
+          correctAnswer: "Thursday",
+          explanation: "'I've booked sessions for Thursday.' Listen for the TH sound — not 'Tuesday'!",
+          revealSegments: ["The onboarding flow needs one more round of testing with real users — I've booked sessions for Thursday."],
+        },
+      },
+      {
+        id: "x4",
+        format: "listen-complete",
+        difficulty: "hard",
+        prompt: "Listen and complete Marcus's condition: 'If the bank account arrives by ______, yes. Without it, we'd need at least ______.'",
+        hints: ["A day of the week, and a period of time."],
+        segmentIds: ["s6"],
+        template: "If the bank account arrives by {1}, yes. Without it, we'd need at least {2}.",
+        blanks: [
+          { id: "b1", acceptedAnswers: ["wednesday", "Wednesday"] },
+          { id: "b2", acceptedAnswers: ["one more week", "a week", "1 more week"] },
+        ],
+        feedback: {
+          correctAnswer: "by Wednesday; at least one more week",
+          explanation: "Wednesday is the deadline for the bank account; without it, the launch slips a week.",
+          revealSegments: ["If the bank account arrives by Wednesday, yes. Without it, we'd need at least one more week."],
+        },
+      },
+      {
+        id: "x5",
+        format: "speaker-identify",
+        difficulty: "hard",
+        prompt: "Who says 'Quality first' — preferring to move the launch rather than confuse users?",
+        hints: ["Who designs the onboarding?"],
+        segmentIds: ["s7"],
+        options: [
+          { id: "o1", text: "Chen, the designer" },
+          { id: "o2", text: "Rita, the team lead" },
+          { id: "o3", text: "Marcus, the developer" },
+        ],
+        correctOptionId: "o1",
+        feedback: {
+          correctAnswer: "Chen, the designer",
+          explanation: "Chen owns the onboarding design, so the quality argument is his.",
+          revealSegments: ["And I'd rather move the launch than ship onboarding that confuses people. Quality first."],
+        },
+      },
+      {
+        id: "x6",
+        format: "overall-meaning",
+        difficulty: "hard",
+        prompt: "Listen to Rita's closing summary. What is decided at the meeting?",
+        hints: ["Three actions: chase, test, decide."],
+        segmentIds: [],
+        options: [
+          { id: "o1", text: "Rita chases the bank, Chen tests Thursday, and the launch decision comes on Friday" },
+          { id: "o2", text: "The launch is cancelled completely" },
+          { id: "o3", text: "The launch date is moved to next month immediately" },
+        ],
+        correctOptionId: "o1",
+        feedback: {
+          correctAnswer: "Rita chases the bank, Chen tests Thursday, decision on Friday",
+          explanation: "The team agrees on exactly this plan — no cancellation, no immediate postponement; a data-driven Friday decision.",
+          revealSegments: ["Agreed. So: I'll chase the bank, Chen tests on Thursday, and we decide on Friday whether to launch or move the date. Thanks, all."],
+        },
+      },
+    ],
+  },
+];
