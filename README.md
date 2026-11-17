@@ -1,918 +1,1148 @@
-# EnglishPath — Learn English. Communicate. Prove it.
+# TalkSy — Learn. Practice. Speak. Excel.
 
-**EnglishPath** takes a learner from their first English word to confident
-communication — and on to an internationally recognised examination score.
-It is a complete ESL learning platform: a structured core curriculum, six
-skill laboratories (grammar, sentence construction, reading, listening,
-speaking, writing), the Word World vocabulary environment, a ten-mode AI
-English tutor, a full administrative content management system, and a
-dedicated **International Exam Preparation Academy** (IELTS and TOEFL iBT).
-Everything is backed by a server-graded exercise engine that never leaks
-answer keys to the client.
+*From Your First English Word to Confident Communication.*
 
-> **Status (2026-11-13):** functionally complete, 502 unit/route tests green,
-> 79/79 staging smoke checks green under an exact Vercel simulation,
-> production build verified. Honest open items are listed in §R and §Y.
-> A public demo runs in serverless demo mode at
-> <https://talksy-peach.vercel.app> — as of this writing it still runs the
-> pre-exam-academy build (probe: `GET /api` → 200, `GET /api/exams/overview`
-> → 404); redeploy with `vercel --prod` to include Division C.
+TalkSy is an English-learning and international examination-preparation platform designed to take learners from their first English words to confident communication and structured preparation for IELTS and TOEFL iBT.
 
-The platform is organised into **three divisions**:
+The platform brings together three connected learning experiences:
 
-| Division | Name | Scope |
-| --- | --- | --- |
-| **A** | Learn English | Learning path, CMS courses, Word World, Grammar School, Sentence Lab, Reading Room, Writing Studio |
-| **B** | Spoken English & Communication | Listening Lab, Speaking Lab, AI English Tutor |
-| **C** | International Exam Preparation Academy | IELTS & TOEFL iBT pathways, exam dashboard, timed mock tests with band scoring, versioned test specifications |
+- **Learn English:** a progressive core curriculum, structured courses, grammar, vocabulary, sentence construction, reading, and writing.
+- **Spoken English & Communication:** listening and speaking practice, pronunciation activities, conversation scenarios, and an AI English tutor.
+- **International Exam Preparation Academy:** separate IELTS and TOEFL iBT learning pathways, practice activities, timed mock examinations, scoring guidance, and study planning.
 
-This README is organised **A–Y**: each letter is one section. §V lists how to
-reproduce every number quoted here, and §Y is the meta report on how this
-document was produced.
+TalkSy is intended to be more than a collection of attractive course pages. Its educational experience is built around explanations, worked examples, guided practice, independent exercises, meaningful feedback, revision, and measurable learning progress.
+
+> **Implementation snapshot:** The supplied project README records a successful production build, 502 passing unit/route tests, 973 browser E2E checks in the regression suite, and 79/79 staging smoke checks as of 13 November 2026. These are historical project-reported results, not a fresh test run performed while preparing this document. See [Quality Assurance](#quality-assurance) and [Known Limitations](#known-limitations) for context.
+
+> **Brand note:** The supplied project README uses both “EnglishPath” and “TalkSy”, explaining that EnglishPath appears in some product documentation while TalkSy remains in the application shell and internal identifiers. This README adopts **TalkSy** as the canonical project name, consistent with the TalkSy product identity. Audit and reconcile remaining user-facing brand strings in the application before release.
 
 ---
 
-## A — About EnglishPath
+## Contents
 
-EnglishPath exists because a learner's journey has three distinct phases that
-most products blur together: *acquiring* the language (grammar, vocabulary,
-the four skills), *using* it (listening, speaking, real conversation), and
-*certifying* it (IELTS, TOEFL iBT). Each phase needs a different environment,
-different feedback and a different tone — so EnglishPath gives each phase its
-own division (§C) while keeping **one account, one progress record and one
-shared curriculum**. The exam academy (Division C) never duplicates the core
-curriculum: when an exam candidate is weak at sentence construction, the
-academy sends them back to Grammar School; when academic vocabulary is the
-gap, it sends them to Word World (§J, §K).
+- [Vision and Learning Philosophy](#vision-and-learning-philosophy)
+- [The Three Divisions](#the-three-divisions)
+- [Division A — Learn English](#division-a--learn-english)
+- [Division B — Spoken English and Communication](#division-b--spoken-english-and-communication)
+- [Division C — International Exam Preparation Academy](#division-c--international-exam-preparation-academy)
+- [Shared Learner Experience](#shared-learner-experience)
+- [AI English Tutor](#ai-english-tutor)
+- [Educational Content Standards](#educational-content-standards)
+- [Assessment, Scoring, and Content Integrity](#assessment-scoring-and-content-integrity)
+- [Admin CMS and Content Governance](#admin-cms-and-content-governance)
+- [Architecture](#architecture)
+- [Technology and Project Structure](#technology-and-project-structure)
+- [Navigation and Routes](#navigation-and-routes)
+- [Getting Started](#getting-started)
+- [Configuration](#configuration)
+- [Testing and Development Workflow](#testing-and-development-workflow)
+- [Deployment and Operations](#deployment-and-operations)
+- [Security and Privacy](#security-and-privacy)
+- [Accessibility, Responsiveness, and Design](#accessibility-responsiveness-and-design)
+- [Current Implementation Snapshot](#current-implementation-snapshot)
+- [Known Limitations](#known-limitations)
+- [Roadmap](#roadmap)
+- [Contributing](#contributing)
+- [Educational and Trademark Disclaimer](#educational-and-trademark-disclaimer)
+- [License](#license)
+- [Maintainer](#maintainer)
 
-What the running system consists of today (all counts verified from the
-repository on 2026-11-12 — see §V and §Y):
+---
 
-| Dimension | Count |
-| --- | --- |
-| Learner-facing environments | 12 (learning path, courses, Word World, six skill labs, tutor, progress, exam academy) |
-| API route handlers | 125 (`src/app/api/**/route.ts`) |
-| Prisma data models | 72 (54 core + 18 exam-academy models) |
-| Content-as-code lessons / exercises | 20 lessons / 186 exercises across 16 exercise types |
-| IELTS Academy (CMS courses) | 3 courses (Core + Academic track + General Training track) · 55 lessons · 94 question-bank exercises |
-| Vocabulary / reading / listening / speaking / writing items | 135 words · 21 texts · 32 activities · 25 activities + 11 conversation scenarios · 32 assignments |
-| Exam academy | 3 active test specifications (IELTS Academic, IELTS General Training, TOEFL iBT 2026 format — versioned & history-preserving, retired versions never re-graded) · 3 pathways (226 steps) · 45 published mocks (488 original questions, every item with difficulty + explanation) · 7 masterclass practice banks incl. the 400-item TOEFL practice library (100 Reading + 100 Listening + 200 Writing + 100 Speaking, all machine-validated originals) |
-| AI evaluation system | 10 examiner profiles (IELTS writing ×4, IELTS speaking, TOEFL writing ×3, TOEFL speaking ×2) · 4 provenance labels · revision-tracked improvement chains |
-| Study planner | 7/14/30/60/90/custom-day adaptive plans · baseline diagnostic with evidence basis · 4 honest readiness labels · in-app reminders |
-| Exam administration | question review workflow (draft → in-review → approved → published, role-gated + audit-logged) · 4 content collections with live inventories · spec version workflow with impact reports & mock relinking · live database analytics |
-| Tests | 502 unit/route tests + 973 browser E2E checks + 79 staging smoke checks (65 exam academy + 14 deployment) |
-| UI | 48 shadcn/ui primitives + 87 feature components |
+## Vision and Learning Philosophy
 
-Design principles that shape every feature (§E): grading happens
-**server-side only**; exam formats are **versioned data, never hardcoded**;
-measured results and AI suggestions are **strictly separated**; uncertain AI
-explanations are never presented as verified facts; and unknowable numbers
-are displayed as "—" rather than guessed.
+TalkSy is organised around three connected stages of language development:
 
-## B — Brand, naming & trademarks
+1. **Acquire English:** build grammar, vocabulary, sentence skills, and the foundations of the four language skills.
+2. **Use English:** develop listening comprehension, speaking confidence, pronunciation, writing ability, and practical communication.
+3. **Demonstrate proficiency:** prepare for recognised examinations through test-specific study, deliberate practice, timed assessments, and performance review.
 
-- **EnglishPath** is the product brand used in product documentation (this
-  README, `docs/PRD.md`, `docs/EXAM_ACADEMY.md`) and in the academy's
-  content credits ("original EnglishPath practice materials").
-- The **application shell still carries the legacy working name "TalkSy"** in
-  some visible strings (browser title, logo, login copy) and in internal,
-  non-user-facing identifiers: the `talksy_session` cookie name, the
-  `@talksy.app` seed-account domain, the `talksy-cms-export` bundle format,
-  and the `/tmp/talksy` serverless staging directory. The brand migration to
-  EnglishPath across UI strings is a planned, deliberately low-risk change
-  (§R); until then, "TalkSy" in the interface refers to this same product.
-- **Trademarks.** IELTS is jointly owned by the British Council, IDP: IELTS
-  Australia and Cambridge University Press & Assessment. TOEFL and TOEFL iBT
-  are registered trademarks of Educational Testing Service (ETS). EnglishPath
-  is not affiliated with, endorsed by or associated with any of them. All
-  practice questions and mock materials are original content authored for
-  this platform; format data references the official provider pages recorded
-  in each specification's `sourceRefs`.
+Each stage has its own learning environment and feedback approach, but learners should have one account, a connected learning history, and a shared progress record. The examination academy should reuse relevant general-English material rather than duplicate it. For example, a learner who struggles with sentence construction in IELTS Writing should be directed to the appropriate grammar and sentence-building lessons.
 
-## C — Composition: the three divisions
+### Core principles
+
+- **Progressive learning:** teach foundations before advanced concepts.
+- **Understand before memorising:** explain why a rule works and how it is used.
+- **Practice with purpose:** connect every important lesson to meaningful exercises.
+- **Feedback that teaches:** explain errors and show learners how to improve.
+- **Evidence-based progress:** measure demonstrated learning, not page views.
+- **Practical communication:** connect classroom concepts to everyday, academic, and professional English.
+- **Honest assessment:** distinguish measured results, AI suggestions, and unofficial score estimates.
+
+## The Three Divisions
+
+| Division | Name | Main purpose | Main environments |
+|---|---|---|---|
+| **A** | Learn English | Build general English knowledge and core language skills | Learning Path, Courses, Word World, Grammar School, Sentence Lab, Reading Room, Writing Studio |
+| **B** | Spoken English & Communication | Develop listening, speaking, pronunciation, and conversational ability | Listening Lab, Speaking Lab, AI English Tutor |
+| **C** | International Exam Preparation Academy | Prepare for IELTS and TOEFL iBT through test-specific learning and practice | Exam onboarding, learner dashboard, exam pathways, practice banks, mock library, timed test player, study planner |
 
 ```mermaid
 flowchart TB
-  subgraph DIVA["Division A — Learn English"]
-    LP["Learning path — 20 lessons, 186 exercises"]
-    CO["Courses — CMS-authored"]
-    GS["Grammar School + Error Clinic"]
-    WW["Word World — 135 words, SRS review"]
-    SL["Sentence Lab — timed building drills"]
-    RR["Reading Room — 21 levelled texts"]
-    WS["Writing Studio — 32 assignments"]
+  subgraph A[Division A — Learn English]
+    LP[Learning Path and Courses]
+    WW[Word World]
+    GS[Grammar School]
+    SL[Sentence Lab]
+    RR[Reading Room]
+    WS[Writing Studio]
   end
-  subgraph DIVB["Division B — Spoken English & Communication"]
-    LL["Listening Lab — 32 activities"]
-    SP["Speaking Lab — 25 activities, 11 scenarios, 26 pronunciation items"]
-    TU["AI English Tutor — 10 modes"]
+  subgraph B[Division B — Spoken English and Communication]
+    LL[Listening Lab]
+    SP[Speaking Lab]
+    AI[AI English Tutor]
   end
-  subgraph DIVC["Division C — International Exam Preparation Academy"]
-    ONB["Onboarding wizard — goals"]
-    DASH["Exam dashboard — 12 widgets"]
-    PATH["IELTS and TOEFL pathways"]
-    MOCK["Timed mocks + band scoring"]
-    SPEC["Versioned test specs — admin-managed"]
+  subgraph C[Division C — International Exam Preparation Academy]
+    ONB[Exam onboarding]
+    DASH[Exam dashboard]
+    PATH[IELTS and TOEFL pathways]
+    MOCK[Practice and mock tests]
+    PLAN[Personal study planner]
   end
-  PROG["Shared progress engine — skills profile, achievements, streaks"]
-  DIVA --> PROG
-  DIVB --> PROG
-  DIVC -- "estimates + recommendations" --> PROG
-  DIVC -. "reuses A and B content, never duplicates" .-> DIVA
-  DIVC -.-> DIVB
+  PROG[Shared learner profile and progress]
+  A --> PROG
+  B --> PROG
+  C --> PROG
+  C -. uses relevant core learning content .-> A
+  C -. uses communication practice .-> B
 ```
 
-**Division A — Learn English** is the common curriculum: the ordered
-learning path (Pre-A1 → A1 → Grammar Core; the A2 level is a declared
-placeholder with no units yet), staff-authored courses via the CMS, and the
-five dedicated environments — Word World, Grammar School, Sentence Lab,
-Reading Room and Writing Studio. Progress is earned by completing lesson
-sections and passing server-graded assessments — never by opening pages.
+The three divisions are separate experiences, not separate products. Learners should be able to move from a test-preparation recommendation to the relevant foundational lesson without losing their place in the academy.
 
-**Division B — Spoken English & Communication** develops the interactive
-skills: the Listening Lab (word recognition → dialogue comprehension), the
-Speaking Lab (guided activities, pronunciation training, AI conversation
-scenarios with scripted fallback, measurement reports) and the AI English
-Tutor, which also serves Divisions A and C as the always-available practice
-partner.
+---
 
-**Division C — International Exam Preparation Academy** is a deliberately
-premium, distinct experience — landing page, onboarding, dashboard, course
-pages, mock library and a timed player of its own (§J, §M, §T). IELTS and
-TOEFL iBT are prepared **completely separately**: separate course structures,
-blueprints, question types, timing rules, scoring systems, practice
-exercises, mock configurations and feedback rubrics. Nothing is
-interchangeable between the two exams. On top of the shared simulation
-engine sits an **AI-assisted writing & speaking evaluation system** (10
-examiner profiles, four provenance labels, revision-tracked improvement
-chains) that grades constructed responses against the right rubric for the
-exam, task and section — always as practice feedback, never as an official
-score. A **personalized study planner** closes the loop: it turns the
-initial assessment and a baseline diagnostic into adaptive 7–120-day
-day-by-day plans (weighted toward the weakest sections), re-weights future
-days when mocks show repeated weaknesses, and reports readiness with four
-honest labels — never a guaranteed score.
+## Division A — Learn English
 
-## D — Data model
+### General English pathway: Pre-A1 to C1
 
-One SQLite database accessed exclusively through Prisma ORM (no string SQL
-in app code). 69 models in three clusters:
+The general English programme is intended to progress from absolute beginner foundations to advanced communication. The exact live curriculum should be read from the curriculum source and CMS rather than inferred from this overview.
 
-| Cluster | Models (count) | Contents |
-| --- | --- | --- |
-| Accounts & security | User, Session, AuthThrottle, PasswordResetToken (4) | scrypt hashes, DB sessions, S1 throttling, S2 reset tokens |
-| Learner activity | progress, notes, attempts, SRS logs, bookmarks, word lists, reading/listening/speaking/writing runs, tutor conversations, goals, achievements, certificates (35) | every skill environment's state |
-| CMS + Exam academy | CMS levels, courses, modules, units, lessons, blocks, versions, prerequisites, questions, assets, enrolments, progress, submissions, audit (15) + exam domain (15) | authored content and Division C |
+| Level | Learning focus |
+|---|---|
+| Pre-A1 | Alphabet, basic sounds, greetings, essential words, introductions, and simple expressions |
+| A1 | Everyday vocabulary, basic sentence patterns, be-verbs, simple questions, and familiar situations |
+| A2 | Common tenses, everyday conversations, descriptions, short texts, and practical writing |
+| B1 | Connected speech, paragraph writing, broader vocabulary, reading strategies, and independent communication |
+| B2 | Complex grammar, discussion, extended writing, comprehension, and academic or workplace communication |
+| C1 | Nuanced vocabulary, advanced grammatical control, argumentation, fluent communication, and complex texts |
 
-The exam domain (15 models, `prisma/schema.prisma` lines 1069–1360):
+### Learning Path and Courses
 
-```mermaid
-erDiagram
-  USER ||--o| EXAM_PROFILE : "onboarding goals"
-  USER ||--o{ EXAM_SECTION_ESTIMATE : "earns estimates"
-  USER ||--o| EXAM_STUDY_PLAN : "follows plan"
-  USER ||--o{ EXAM_PATHWAY_STEP_PROGRESS : "completes steps"
-  USER ||--o{ MOCK_TEST_ATTEMPT : "takes mocks"
-  TEST_SPECIFICATION ||--o{ MOCK_TEST : "defines format"
-  TEST_SPECIFICATION ||--o{ MOCK_TEST_ATTEMPT : "pinned version"
-  MOCK_TEST ||--|{ MOCK_TEST_SECTION : "has sections"
-  MOCK_TEST_SECTION ||--|{ MOCK_TEST_QUESTION : "contains questions"
-  MOCK_TEST ||--o{ MOCK_TEST_ATTEMPT : "receives attempts"
-  MOCK_TEST_ATTEMPT ||--|{ MOCK_TEST_RESPONSE : "records answers"
-  USER ||--o{ MOCK_EVALUATION : "receives AI evaluations"
-  MOCK_EVALUATION ||--o{ MOCK_EVALUATION : "revision chain"
-  EXAM_PATHWAY ||--|{ EXAM_PATHWAY_MODULE : "has phases"
-  EXAM_PATHWAY_MODULE ||--|{ EXAM_PATHWAY_STEP : "has steps"
-  EXAM_PATHWAY_STEP ||--o{ EXAM_PATHWAY_STEP_PROGRESS : "tracked per user"
-  EXAM_RUBRIC ||..o{ MOCK_TEST_QUESTION : "grades constructed responses"
+The learning path gives learners an ordered route through the core curriculum. CMS-authored courses provide an additional way to organise content into levels, modules, units, and lessons, including prerequisites and enrolment.
 
-  TEST_SPECIFICATION {
-    string examKey
-    string variant
-    int version
-    string status
-    string sections
-    string scoringModel
-    string taskTypes
-    string sourceRefs
-    date effectiveDate
-    date lastReviewedAt
-  }
-  EXAM_PROFILE {
-    string userId
-    string examKey
-    string variant
-    string proficiency
-    float targetScore
-    date examDate
-    int dailyMinutes
-    string difficultSections
-  }
-  MOCK_TEST_ATTEMPT {
-    string userId
-    string specId
-    string status
-    string sectionScores
-    float totalScore
-    string scoreDisplay
-  }
-```
+Expected learner capabilities include:
 
-Design rules: SQLite has no enums, so every enum-like column is a string
-validated by Zod schemas in `src/lib/exams/types.ts` — the single parser for
-every structured JSON column. Constructed-response **answer keys live only
-in server-side tables** and are stripped from every client projection
-(§E, §M). Each attempt **pins the specification version** it was built with,
-so old results stay interpretable after a format change (§T).
+- Browse available learning paths and courses.
+- Open lessons in the appropriate sequence.
+- Review lesson objectives and prerequisite knowledge.
+- Complete lesson sections and assessments.
+- Continue from the last relevant learning point.
+- Track completion and assessment history.
+- Access published course content rather than unfinished editorial drafts.
 
-## E — Engineering guarantees
+### Word World — Vocabulary Development
 
-These invariants are enforced in code and covered by tests:
+Word World helps learners understand and retain English vocabulary through context and revision.
 
-1. **Server-side grading only.** Exercise answers are submitted to API
-   routes; sanitised exercise payloads never contain answer keys, feedback
-   or grading keywords (unit-tested per environment, e.g.
-   `writing.test.ts` "no model texts or grading keywords reach the client").
-2. **Exam formats are data.** No exam rule is hardcoded in a frontend
-   component; components read specifications only through
-   `src/lib/exams/*` services (§T).
-3. **Deterministic vs AI separation.** Measured scores (grading engine,
-   band arithmetic) are strictly separated from AI-generated suggestions,
-   which always carry a disclaimer. Uncertain AI grammar explanations are
-   never presented as verified facts; tutor prompts forbid it.
-4. **Published snapshots.** Learners always see the published snapshot of
-   CMS content, never a working copy; historical assessment data pins the
-   content version it was graded against and is never rewritten.
-5. **Test-database guard.** `src/lib/db.ts` refuses to run tests when
-   `NODE_ENV=test` resolves to the development database — a bare `bun test`
-   would corrupt the seed database that ships inside serverless
-   deployments. Always use `bun run test` (points at `db/test.db`).
-6. **Unknowable values show "—".** CMS analytics render only live database
-   aggregates; anything not knowable is displayed as an em dash, never
-   estimated.
-7. **Prisma everywhere.** No `$queryRaw`/string SQL in app code.
+Its documented capabilities include:
 
-## F — Feature reference
+- Vocabulary organised into categories.
+- Word meanings and usage notes.
+- Example sentences and contextual usage.
+- Synonyms, antonyms, relationships, and word families where supplied.
+- Flashcard and challenge-style practice.
+- Personal vocabulary lists.
+- Spaced-repetition-style review to revisit words over time.
 
-Learner-facing environments (routes in §N):
+Vocabulary should be taught through meaning and usage, not memorisation alone. Optional Urdu meanings may be used as a learner-support feature where available; English explanations and examples remain central to the learning process.
 
-| Environment | What it does | Notable specifics |
-| --- | --- | --- |
-| Learning path (`#/library`) | 20 code-based lessons in 4 levels (Pre-A1 4 · A1 2 · Grammar Core 14; A2 declared, no units yet) | 20 block types, each lesson ends in a server-graded assessment; difficulty curve easy 62 / medium 80 / hard 34 / challenge 10 (FINAL_REPORT §3) |
-| Courses (`#/courses`) | CMS-authored courses with levels, modules, units, lessons, prerequisites, enrolments | learners see the published snapshot only |
-| Word World (`#/vocabulary`) | 135 words in 12 categories | SM-2-style spaced repetition, 8 tabs (today/explore/flashcards/context/relationships/sentences/challenges/lists), custom lists, daily challenges |
-| Grammar School (`#/grammar`) | parts-of-speech modules, 12-tense explorer | Error Clinic diagnoses submitted sentences and recommends lessons |
-| Sentence Lab (`#/lab`) | 7-stage construction programme | timed accuracy challenges, word tiles, structure annotation |
-| Reading Room (`#/reading`) | 21 levelled texts (Pre-A1–A2 band) | glossaries, comprehension questions with skill tags, progress tracking |
-| Listening Lab (`#/listening`) | 18 activities | word recognition → dialogue comprehension; original audio |
-| Speaking Lab (`#/speaking`) | 25 activities in 4 bands, 11 conversation scenarios, 26 pronunciation items | recordings never stored; transcripts respect a 0–365-day retention setting and are deletable; AI partner with scripted fallback |
-| Writing Studio (`#/writing`) | 31 progressive assignments in 4 tiers | autosave, drafts, structured 10-dimension feedback, revision compare; writing scores stay separate from the general level |
-| AI Tutor (`#/tutor`) | 9 teaching modes | level-aware, Socratic, lesson-aware, streaming replies; per-user limits: 60 messages/day, 1 message/1.5 s |
-| My Progress (`#/progress`) | analytics dashboard | skill profiles, revision scheduler, 46 achievements (11 milestones + 35 badges), certificates, streaks that never reset real progress |
-| Exam Academy (`#/exams`) | Division C | onboarding wizard, 12-widget dashboard, per-exam course pages with separate Academic and General Training tracks, mock library (24 mocks), timed and untimed practice modes, band-scored results (§J–§T) |
+### Grammar School and Error Clinic
 
-Staff-facing: the admin CMS (`#/admin`, §G) including the exam-specification
-tab (§T).
+Grammar School provides structured explanations and grammar reference material. Its documented areas include parts of speech and a tense explorer.
 
-## G — Governance: the admin CMS
+The Error Clinic is intended to help learners submit sentences, identify likely grammar problems, understand corrections, and navigate to relevant lessons. Corrections should explain the underlying rule rather than merely replace the learner's sentence.
 
-Four roles, enforced **server-side on every route** (the client-side gate is
-cosmetic only): `student` < `editor` < `teacher` < `admin`. Editors author,
-teachers review/approve, admins publish and manage users. Every workflow
-action writes an append-only row to `CmsAuditLog` (viewable in the CMS).
+Core subject areas include:
 
-Content lifecycle (identical shape for courses, lessons and questions —
-`src/lib/cms/service.ts`):
+- Nouns, pronouns, verbs, adjectives, adverbs, and other parts of speech.
+- Subject, verb, object, and sentence components.
+- Be-verbs, auxiliary verbs, and modal verbs.
+- Tenses and verb forms.
+- Articles, determiners, prepositions, and conjunctions.
+- Affirmative, negative, and interrogative sentence structures.
+- Active and passive voice.
+- Direct and indirect speech.
+- Phrases, clauses, and conditionals.
+- Subject–verb agreement, punctuation, and common errors.
+
+### Sentence Lab
+
+Sentence Lab focuses on the construction and analysis of English sentences. It is intended to help learners understand word order, sentence patterns, and the relationship between sentence components through guided and timed activities.
+
+### Reading Room
+
+Reading Room offers level-appropriate texts and comprehension practice. Learning activities may cover:
+
+- Main idea and supporting details.
+- Finding specific information.
+- Skimming and scanning.
+- Vocabulary from context.
+- Inference, purpose, tone, and attitude.
+- Understanding paragraph structure and relationships between ideas.
+
+### Writing Studio
+
+Writing Studio supports progressive writing development, from sentence-level work to longer pieces. Its documented workflow includes assignment-based practice, drafts, autosave, feedback dimensions, and revision comparison.
+
+Writing activities may include:
+
+- Correct sentence construction.
+- Paragraph organisation and cohesion.
+- Descriptive, narrative, explanatory, and argumentative writing.
+- Emails, letters, applications, reports, and essays.
+- Editing, proofreading, grammar, and clarity.
+
+---
+
+## Division B — Spoken English and Communication
+
+### Listening Lab
+
+Listening Lab develops the ability to understand spoken English in progressively more demanding contexts. Activities should help learners recognise words, identify key information, follow conversations, and understand longer spoken material.
+
+Useful learning elements include audio playback, question practice, transcripts where appropriate, comprehension feedback, and repeated practice. Audio playback rules should match the activity's learning or assessment purpose.
+
+### Speaking Lab
+
+Speaking Lab helps learners practise producing spoken English rather than only reading about it. The documented product scope includes guided activities, conversation scenarios, and pronunciation items.
+
+Potential learning activities include:
+
+- Guided speaking prompts.
+- Everyday conversation practice.
+- Role-play and situational dialogues.
+- Pronunciation and word-stress practice.
+- Recording and playback where supported by the browser and permission settings.
+- Fluency and response-organisation practice.
+- Structured feedback and improvement suggestions.
+
+Microphone access should only be requested when a learner starts a feature that requires it. The interface should explain why permission is needed. Recording and transcript retention must follow the platform's privacy controls.
+
+### Practical Communication
+
+The spoken-English experience should connect grammar and vocabulary to real communication, including introductions, asking for information, explaining ideas, expressing opinions, participating in discussions, interviews, and academic or workplace situations.
+
+---
+
+## Division C — International Exam Preparation Academy
+
+The International Exam Preparation Academy is a separate, test-focused environment for IELTS and TOEFL iBT candidates. Each examination must retain its own task structures, timing rules, scoring logic, question types, mock configurations, and assessment rubrics.
+
+The academy should be treated as an evolving examination product. Test specifications must be maintained as versioned data and reviewed against official provider information when formats or policies change.
+
+### IELTS Preparation
+
+The academy supports separate pathways for:
+
+- IELTS Academic.
+- IELTS General Training.
+- IELTS for UKVI guidance, where relevant to the learner's intended test and application.
+
+IELTS Academic and General Training share Listening and Speaking preparation where appropriate, but their Reading and Writing preparation must remain distinct.
+
+| Skill | Preparation coverage |
+|---|---|
+| Listening | Four-part test structure, supported question types, note completion, multiple choice, matching, maps, and listening strategies |
+| Academic Reading | Passage analysis, question types, skimming, scanning, inference, vocabulary in context, and time management |
+| General Training Reading | Everyday and workplace texts, longer passages, question types, and targeted reading strategies |
+| Academic Writing Task 1 | Charts, tables, graphs, maps, processes, comparisons, overviews, and data description |
+| Writing Task 2 | Essay planning, argument development, paragraphing, coherence, vocabulary, grammar, and common essay approaches |
+| General Training Writing Task 1 | Formal, semi-formal, and informal letters, purpose, tone, organisation, and model responses |
+| Speaking | Parts 1, 2, and 3; familiar topics, cue cards, extended answers, discussion, fluency, and pronunciation |
+
+IELTS preparation material should provide:
+
+- Explanations of the test structure and task requirements.
+- Skill-specific learning pathways.
+- Original practice passages, prompts, recordings, and questions.
+- Step-by-step methods for supported question types.
+- Worked examples and model answers with detailed analysis.
+- Timed skill and section practice.
+- Full mock-test experiences where published tests are available.
+- Objective answer keys with explanations.
+- Writing and speaking feedback aligned with publicly available IELTS assessment criteria.
+- Personalised preparation plans based on the learner's current performance and target band.
+
+#### IELTS writing and speaking assessment dimensions
+
+Writing feedback should explain the public assessment dimensions:
+
+- Task Achievement or Task Response.
+- Coherence and Cohesion.
+- Lexical Resource.
+- Grammatical Range and Accuracy.
+
+Speaking feedback should explain:
+
+- Fluency and Coherence.
+- Lexical Resource.
+- Grammatical Range and Accuracy.
+- Pronunciation.
+
+The feedback should identify strengths, weaknesses, and practical next steps. It must not imply that an AI-generated estimate is an official examiner result.
+
+### TOEFL iBT Preparation
+
+The TOEFL Academy must follow the test format applicable on the date of the learner's examination. The supplied project specification records the TOEFL iBT format effective **21 January 2026**. The relevant task families are:
+
+| Section | Task types in the documented 2026 format |
+|---|---|
+| Reading | Complete the Words; Read in Daily Life; Read an Academic Passage |
+| Listening | Listen and Choose a Response; Listen to a Conversation; Listen to an Announcement; Listen to an Academic Talk |
+| Writing | Build a Sentence; Write an Email; Write for an Academic Discussion |
+| Speaking | Listen and Repeat; Take an Interview |
+
+TOEFL preparation material should provide:
+
+- An explanation of what each task measures.
+- Task instructions and expected response formats.
+- Worked examples and task-specific solving methods.
+- Original practice questions and detailed explanations where applicable.
+- Timing guidance and practice strategies.
+- Skill-specific revision material.
+- Timed section practice and mock examinations aligned with the active specification.
+- Performance reports and personalised recommendations.
+
+Reading and Listening adaptive behaviour, scoring, timing, and any score-comparison guidance must be implemented from the active versioned specification and checked against current ETS guidance. Do not reuse obsolete TOEFL task formats merely because they appear in older preparation material.
+
+### Exam Onboarding and Learner Dashboard
+
+The documented onboarding flow collects a learner's preparation goal, such as:
+
+- Examination and variant.
+- Self-reported proficiency.
+- Target score or band.
+- Planned examination date.
+- Available study time per day.
+- Sections the learner finds most difficult.
+
+The exam dashboard should bring together section estimates, strengths and weaknesses, pathways, practice recommendations, mock history, and the study plan. Estimates should be based on declared evidence and should be labelled honestly.
+
+### Exam Pathways and the Learning Bridge
+
+The academy should direct learners to relevant general-English or communication resources when a weakness is foundational. Examples:
+
+- Weak sentence construction in IELTS Writing → Grammar School and Sentence Lab.
+- Weak academic vocabulary in TOEFL Reading → Word World.
+- Weak listening comprehension → Listening Lab.
+- Weak spoken response organisation → Speaking Lab and the AI Tutor.
+
+This bridge prevents the academy from duplicating the core curriculum and gives learners a route to repair underlying skill gaps.
+
+### Practice Modes and Mock Tests
+
+The documented mock engine supports a range of exam practice modes, including:
+
+1. Full mock examination.
+2. Section-wise practice.
+3. Timed practice with a learner-selected time budget.
+4. Untimed learning practice with feedback.
+5. Previous-mistakes practice.
+6. Custom practice filtered by section, task type, and difficulty.
+
+The player should follow the active examination specification for section timing, navigation, review flags, audio replay, and other test rules. Untimed learning practice should be clearly distinguished from an exam-condition attempt.
+
+A mock-test experience should support:
+
+- Clear instructions before a test begins.
+- Section timers and remaining-time indicators.
+- Appropriate question navigation.
+- Saving answers and resuming an in-progress attempt where supported.
+- Submission confirmation.
+- Objective scoring for automatically gradable questions.
+- Constructed-response evaluation or an explicit awaiting-review status.
+- Result summaries, answer review, explanations, and next-step recommendations.
+- Historical attempts and meaningful comparisons.
+
+### Personalised Study Planner
+
+The study planner should convert a learner's target, available time, exam date, baseline diagnostic, and practice evidence into a realistic preparation schedule. It should give more attention to weaker sections and adjust recommendations when later practice shows repeated difficulties.
+
+Readiness labels should describe evidence and uncertainty. A readiness label is not a promise of a particular result.
+
+---
+
+## Shared Learner Experience
+
+The general-English programme, communication labs, and examination academy should share a consistent learner profile and progress model.
+
+The documented product scope includes:
+
+- Learning progress and completed activities.
+- Practice attempts and assessment history.
+- Skill profiles and revision recommendations.
+- Bookmarks and saved learning resources.
+- Vocabulary lists and review history.
+- Personal goals and achievements.
+- Study plans and examination goals.
+- Relevant learning reminders.
+
+Progress must reflect actual learner activity. Opening a page must not count as mastering a lesson. Missing a day should not erase completed learning or punish the learner by resetting genuine progress.
+
+---
+
+## AI English Tutor
+
+The AI English Tutor is intended to act as a context-aware learning assistant across the core curriculum and examination academy.
+
+Its documented and planned educational roles include:
+
+- Explaining grammar concepts in simple, level-appropriate language.
+- Defining unfamiliar words, expressions, and phrases.
+- Providing contextual examples.
+- Correcting learner-written sentences and explaining the corrections.
+- Supporting writing revision.
+- Guiding speaking and conversation practice.
+- Generating additional exercises for a specific topic.
+- Giving hints before revealing answers when appropriate.
+- Explaining why an answer is incorrect.
+- Supporting IELTS and TOEFL task practice with exam-specific guidance.
+
+### AI quality and reliability
+
+- Tutor responses should use the relevant lesson, learner level, and task context where available.
+- AI suggestions must be clearly distinguished from deterministic grading results.
+- Uncertain explanations must not be presented as verified facts.
+- AI-generated writing and speaking scores must be labelled as estimates or practice feedback.
+- Low-confidence or unavailable evaluations should return an explicit pending or review state rather than an invented score.
+- Provider errors, timeouts, and usage limits must not destroy learner submissions.
+- API credentials and model configuration must remain server-side.
+
+The application uses a provider-agnostic LLM seam so that AI consumers do not need to depend directly on a particular provider SDK. The supplied project documentation identifies the Z-AI SDK as the current integration.
+
+---
+
+## Educational Content Standards
+
+TalkSy must remain a real learning platform, not a collection of visually attractive but empty pages. Placeholder descriptions, repeated filler, unsupported claims, and exercises without reliable answers must not be presented as complete educational material.
+
+### Recommended lesson structure
+
+A substantial lesson should include, where relevant:
+
+1. Lesson title and introduction.
+2. Learning objectives.
+3. Prerequisite knowledge.
+4. Detailed explanation in level-appropriate language.
+5. Rules, patterns, and important distinctions.
+6. Step-by-step worked examples.
+7. Everyday, academic, or professional usage.
+8. Common mistakes and corrected examples.
+9. Guided practice.
+10. Independent exercises.
+11. Correct answers and explanations.
+12. Lesson summary and revision points.
+13. Homework or further practice.
+14. Links to related lessons.
+
+### Examination lesson structure
+
+Each IELTS or TOEFL lesson should also explain:
+
+- What the task tests.
+- How the task is presented.
+- What the learner must do.
+- Step-by-step solving strategies.
+- Time-management considerations.
+- Common mistakes.
+- Worked examples and model responses where relevant.
+- Applicable public assessment criteria.
+- Practice tasks with validated answers or evaluation guidance.
+- Further improvement strategies.
+
+### Content governance rules
+
+- Teach prerequisites before advanced concepts.
+- Use original or appropriately licensed examples and practice materials.
+- Validate answer keys with the real grading engine before publication.
+- Do not inflate question-bank totals with duplicate or meaningless items.
+- Label draft, reviewed, approved, and published content accurately.
+- Review examination-specific content against official sources.
+- Keep content and assessment data separate from presentation components.
+
+---
+
+## Assessment, Scoring, and Content Integrity
+
+The platform's assessment design follows several important rules.
+
+### Server-side grading
+
+Answer keys and grading logic must remain on the server. Exercise and mock-test payloads sent to the browser must contain only the information required to display and answer the question. They must not expose answer keys, grading keywords, hidden model answers, or pre-submission feedback.
+
+### Deterministic and AI feedback are separate
+
+Objective answer checking and score arithmetic should be deterministic wherever possible. AI-generated suggestions or evaluations must be labelled separately and should include an appropriate disclaimer.
+
+### Version-pinned examination attempts
+
+Every mock attempt should retain the examination specification version used when the attempt was created. If an examination format changes, old attempts remain interpretable and must not silently be re-graded using a newer specification.
+
+### Honest estimates
+
+- IELTS and TOEFL practice results are not official results.
+- Score conversion tables used for practice should be labelled approximate where appropriate.
+- Constructed responses that cannot be reliably evaluated should remain pending review rather than receive fabricated scores.
+- Unknown or unavailable values should be displayed as unavailable, not guessed.
+
+### Content snapshots
+
+Learners should see published CMS snapshots rather than unfinished working drafts. Historical assessments should retain the content version against which they were graded.
+
+---
+
+## Admin CMS and Content Governance
+
+The staff-facing CMS provides a controlled workflow for creating, reviewing, approving, and publishing educational content.
+
+### Roles
+
+The documented role hierarchy is:
+
+| Role | Main responsibility |
+|---|---|
+| Student | Access published learning content and personal learning records |
+| Editor | Create and edit drafts; submit content for review |
+| Teacher | Review submissions; approve or request changes |
+| Admin | Publish and unpublish content; manage users and platform configuration |
+
+Role checks must be enforced on the server for every protected operation. Hiding an admin control in the browser is not an authorisation mechanism.
+
+### Content lifecycle
 
 ```mermaid
 stateDiagram-v2
-  [*] --> draft : editor creates or edits
-  draft --> review : submit for review
-  review --> draft : reject — changes requested
-  review --> approved : teacher approves
-  approved --> live : admin publishes
-  live --> approved : admin unpublishes
-  live --> draft : edit creates new draft version
-  note right of live
-    Learners only ever see
-    the published snapshot
+  [*] --> Draft : Editor creates or edits
+  Draft --> Review : Submit for review
+  Review --> Draft : Changes requested
+  Review --> Approved : Teacher approves
+  Approved --> Published : Admin publishes
+  Published --> Approved : Admin unpublishes
+  Published --> Draft : Edit creates a new draft version
+  note right of Published
+    Learners see the published snapshot,
+    not the working draft.
   end note
 ```
 
-Other CMS capabilities: lesson editor with 15 structured block kinds;
-question bank covering all 16 exercise types with review workflow and
-version history; audio/image uploads (25 MB, MIME allowlist, duration,
-transcript, IPA, licence, source); user management (roles, suspension,
-aggregate-only progress monitoring — no password hashes, no per-learner
-content exposure); course JSON import/export with validation, preview and
-no-overwrite semantics; dashboard analytics (live aggregates only, §E.6).
-Since the exam academy, the CMS also hosts **test-specification management
-and the mock-test lifecycle** (§T).
+### Documented CMS capabilities
 
-## H — High-level architecture
+- Course, module, unit, lesson, and lesson-block authoring.
+- Question bank authoring across supported exercise types.
+- Review workflow and version history.
+- Audio and image asset management with validation metadata.
+- Course import and export with validation and preview.
+- User and role management.
+- Aggregate learning analytics.
+- Append-only audit trail for workflow actions.
+- Examination specification management.
+- Mock-test publishing and archiving.
 
-One Next.js application, one public route, one database:
+The CMS should not expose password hashes or private learner content to staff who do not need access to it. Analytics should use appropriate aggregates and access controls.
+
+---
+
+## Architecture
+
+TalkSy is documented as a single Next.js application with a single public application entry point and hash-based navigation for the learner-facing single-page experience. Server route handlers provide the API layer, Prisma provides database access, and SQLite is the documented local and bundled demonstration database.
 
 ```mermaid
 flowchart TB
-  subgraph CLIENT["Browser — single page app"]
-    UI["React 19 UI<br/>48 shadcn/ui primitives + 84 feature components<br/>hash router, Zustand store"]
+  subgraph BROWSER[Browser — learner and staff application]
+    UI[React interface]
+    ROUTER[Hash-based navigation]
+    STORE[Client state and typed API client]
+    UI --> ROUTER
+    UI --> STORE
   end
-  subgraph SERVER["Next.js server (route handlers)"]
-    API["110 API route handlers<br/>auth · curriculum · skills · cms · exams"]
-    AUTH["session auth + S1 throttle + S2 reset"]
-    ENGINE["shared exercise engine<br/>grading · sanitising · progress"]
-    EXAMS["exam services<br/>specs · scoring · diagnostics · mocks"]
-    CMS["CMS services<br/>rbac · workflow · versioning · audit"]
-    TUTOR["tutor + LLM seam"]
+  subgraph APP[Next.js application server]
+    API[API route handlers]
+    AUTH[Authentication and access control]
+    LEARN[Learning and exercise services]
+    CMS[CMS and content workflow]
+    EXAM[Exam specification, mock, scoring and study-plan services]
+    TUTOR[AI tutor and evaluation services]
+    API --> AUTH
+    API --> LEARN
+    API --> CMS
+    API --> EXAM
+    API --> TUTOR
   end
-  DB[("SQLite via Prisma<br/>68 models")]
-  LLM["z-ai SDK<br/>server-only credentials"]
-  STT["Web Speech API<br/>+ server STT"]
-  UI -->|"fetch JSON, same-origin"| API
-  API --> AUTH
-  API --> ENGINE
-  API --> EXAMS
-  API --> CMS
-  API --> TUTOR
-  ENGINE --> DB
-  EXAMS --> DB
-  CMS --> DB
+  DB[(SQLite through Prisma)]
+  LLM[Server-side LLM provider integration]
+  STORE -->|Same-origin requests| API
   AUTH --> DB
+  LEARN --> DB
+  CMS --> DB
+  EXAM --> DB
   TUTOR --> LLM
-  UI --> STT
 ```
 
-Hash routing keeps the whole learner app on the single public `/` route
-(ADR-003, §N) — one deployable entry point, multi-page behaviour, and SSR
-that always renders the home route without hydration mismatches. AI
-features go through a provider-agnostic seam (`src/lib/llm`) so the z-ai SDK
-stays confined to server modules; when credentials or the provider are
-unavailable, AI features degrade gracefully (scripted conversation
-fallback, null AI suggestions with measured feedback intact, "awaiting
-review" for exam constructed responses) rather than failing.
+### Main architecture boundaries
 
-## I — Installation & configuration
+| Layer | Responsibility |
+|---|---|
+| Browser application | Navigation, learner dashboard, lesson player, labs, examination interfaces, admin interface |
+| API route handlers | Validated requests, authentication, authorisation, and application operations |
+| Learning services | Exercise delivery, grading, progress, vocabulary, reading, listening, speaking, and writing |
+| CMS services | Role checks, content workflow, versioning, publishing, import/export, and audit history |
+| Examination services | Versioned specifications, pathways, mock tests, scoring, evaluation, diagnostics, and planning |
+| Data layer | Users, sessions, learning activity, CMS content, examination data, and audit records |
+| AI integration | Provider-independent access to tutoring and assisted evaluation |
 
-Requirements: Bun 1.1+ (recommended) or Node.js 20+; a modern browser
-(Web Speech features need Chrome/Edge/Safari; localhost counts as a secure
-context for microphone access).
+### Data model
+
+The Prisma schema groups data into three broad domains:
+
+1. **Accounts and security:** users, sessions, authentication throttling, and password-reset tokens.
+2. **Learner activity:** progress, notes, attempts, spaced-repetition records, bookmarks, vocabulary lists, skill activity, tutor conversations, goals, achievements, and certificates.
+3. **CMS and examination academy:** content structures, lesson versions, prerequisites, questions, assets, enrolments, examination specifications, rubrics, pathways, mock tests, attempts, responses, and evaluations.
+
+The exact number of Prisma models and API route handlers is intentionally not repeated here because the supplied README contains conflicting counts for those inventories. Use the schema and the repository's fact-generation script as the source of truth when reporting exact totals.
+
+### Examination data relationships
+
+The examination domain connects learner profiles and goals to versioned specifications, pathways, mock tests, attempts, responses, and evaluations. A mock test is associated with a specification; an attempt retains the specification version used for that test. This is essential for preserving the meaning of historical results when an examination provider changes its format.
+
+### Validation and database access
+
+- Prisma ORM is the documented data-access layer.
+- Structured JSON fields and enum-like values should be parsed and validated through shared schemas.
+- Avoid ad-hoc string SQL in application services.
+- Preserve database constraints and referential integrity.
+- Keep answer keys and grading data in server-only projections.
+
+---
+
+## Technology and Project Structure
+
+The supplied project documentation identifies the following technology and implementation choices. Check `package.json`, the lockfile, configuration files, and source tree for the exact versions currently installed.
+
+| Area | Technology / approach |
+|---|---|
+| Application framework | Next.js |
+| UI | React 19 and TypeScript |
+| Component system | shadcn/ui-based primitives and feature components |
+| Client state | Zustand and a typed API client |
+| Routing | Hash-based learner navigation under the public `/` route |
+| Database | SQLite |
+| ORM | Prisma |
+| Input validation | Zod schemas in shared service boundaries |
+| AI integration | Z-AI SDK behind a provider-agnostic server-side LLM interface |
+| Speech features | Browser speech capabilities and related recording/transcription services where enabled |
+| Testing | Bun test runner and browser E2E scripts using `agent-browser` |
+| Package/runtime tooling | Bun; Node.js is also documented as an alternative runtime for supported environments |
+
+### Project structure
+
+The following is a logical guide to the documented repository. Confirm exact file names and directories in the current checkout before editing them.
+
+```text
+.
+├── prisma/
+│   └── schema.prisma             # Relational data model
+├── docs/
+│   ├── PRD.md                    # Product requirements
+│   ├── EXAM_ACADEMY.md           # IELTS and TOEFL academy specification
+│   ├── DEPLOYMENT.md             # Deployment, backup and recovery guide
+│   ├── ENGINE.md                 # Learning and exercise engine
+│   └── ...                       # Feature specifications and ADRs
+├── scripts/
+│   ├── readme-facts.ts           # Repository inventory / README fact sheet
+│   ├── restore-seed-db.ts        # Restore seed database where applicable
+│   ├── staging-smoke-exams.sh    # Exam-academy staging smoke tests
+│   ├── staging-smoke-vercel.sh   # Deployment and security smoke tests
+│   └── e2e*.sh                   # Browser end-to-end suites
+├── src/
+│   ├── app/
+│   │   ├── page.tsx              # Public application entry point
+│   │   └── api/                  # API route handlers
+│   ├── components/
+│   │   ├── ui/                   # Reusable UI primitives
+│   │   └── app/                  # Learner, CMS and exam feature components
+│   ├── data/                     # Typed content-as-code modules
+│   ├── hooks/                    # Routing, speech and recording hooks
+│   └── lib/
+│       ├── auth/                 # Authentication and security services
+│       ├── engine/               # Exercise delivery, grading and progress
+│       ├── cms/                  # CMS workflow and access control
+│       ├── exams/                # Specs, scoring, mocks, diagnostics and plans
+│       ├── llm/                  # Provider-independent AI integration
+│       └── ...                   # Skill and learner services
+├── db/
+│   ├── custom.db                 # Local/deployment seed database, if supplied
+│   └── media/                    # Media assets, if supplied
+├── worklog.md                   # Development handover, if maintained in repo
+└── README.md
+```
+
+The operational handover path used by the development workflow is `/home/z/my-project/worklog.md`. It may be outside the Git repository depending on the environment.
+
+---
+
+## Navigation and Routes
+
+The documented learner application uses hash-based navigation under `/`. The following routes are recorded in the supplied project README; verify the current route table in the hash-router implementation if it changes.
+
+| Route | Environment |
+|---|---|
+| `#/` | Home |
+| `#/login`, `#/register`, `#/reset/<token>` | Authentication and password reset |
+| `#/library`, `#/lesson/<slug>` | Learning path and lesson player |
+| `#/courses`, `#/course/<slug>`, `#/course-lesson/<slug>` | CMS-authored courses |
+| `#/vocabulary/<tab>` | Word World |
+| `#/grammar`, `#/grammar/tenses`, `#/grammar/clinic` | Grammar School and Error Clinic |
+| `#/lab` | Sentence Lab |
+| `#/reading/<slug>` | Reading Room |
+| `#/listening/<slug>` | Listening Lab |
+| `#/speaking`, `#/speaking/activity/<slug>`, `#/speaking/conversation/<slug>` | Speaking Lab |
+| `#/writing`, `#/writing/a/<slug>` | Writing Studio |
+| `#/tutor`, `#/tutor/c/<id>`, `#/tutor/lesson/<ref>` | AI English Tutor |
+| `#/progress/<tab>` | My Progress |
+| `#/exams` and `#/exams/*` | International Exam Preparation Academy |
+| `#/admin` | Admin CMS |
+
+---
+
+## Getting Started
+
+### Prerequisites
+
+The supplied project documentation records these requirements:
+
+- Bun 1.1+ (recommended), or a supported Node.js 20+ environment.
+- Git.
+- A modern browser.
+- A writable SQLite database location for local development.
+- Microphone permissions for speaking or recording activities that use them.
+- Server-side AI provider configuration for live AI features, where enabled.
+
+### Clone the repository
 
 ```bash
-git clone <repository-url> englishpath && cd englishpath
+git clone <repository-url>
+cd <project-directory>
+```
+
+### Install dependencies
+
+```bash
 bun install
-bun run db:push             # create the SQLite schema
-bun run dev                 # http://localhost:3000
 ```
 
-Configuration is intentionally minimal:
+### Initialise the local database
 
-- `DATABASE_URL` (optional locally) — SQLite file path. Unset, it defaults
-  to the repository's `db/custom.db`; the bundled `.env` sets it to that
-  same file. Tests always use `db/test.db` via `bun run test`.
-- No other environment variables. AI credentials live in a server-side SDK
-  configuration file, never exposed to the client.
-
-The first login provisions the self-healing seed — idempotently re-checked
-on every login: three staff accounts (`admin@` / `editor@` /
-`teacher@talksy.app` — public default passwords in `src/lib/cms/seed.ts`,
-forced change on first login) and the starter CMS course. The demo learner
-(`demo@talksy.app` / `demo1234`, advertised on the login screen) is
-re-created on demand if missing.
-
-Database lifecycle commands (`prisma db push` for dev, `migrate dev` /
-`migrate deploy` for production), backups and rollback: §O and
-`docs/DEPLOYMENT.md`.
-
-## J — Journeys
-
-Three personas (full PRD in `docs/PRD.md`), one platform:
-
-- **Absolute beginner ("Sofia")** — registers, lands on the learning path at
-  Pre-A1 "Hello!", follows guided lesson ordering with translations and
-  per-line audio, graduates into Grammar Core. No placement test exists
-  (§R); the path is ordered and progress-driven instead.
-- **Communicator ("Diego")** — has grammar but freezes when speaking: lives
-  in Division B (Listening Lab, Speaking Lab conversations with the AI
-  partner and measurement reports, Tutor conversation mode).
-- **Exam candidate ("Amara")** — enters Division C: onboarding wizard
-  (which exam → variant → CEFR self-rating → target score → exam date →
-  daily minutes → most difficult sections), then works the loop below.
-  Goals can be changed at any time; switching exam resets estimates and
-  pathway progress for honesty.
-
-```mermaid
-flowchart TB
-  START(["Enters the academy"]) --> ONB["Onboarding wizard:<br/>exam · variant · CEFR rating · target score<br/>exam date · daily minutes · hard sections"]
-  ONB --> DASH["Exam dashboard — 12 widgets (§F)"]
-  DASH --> EST["Section estimates:<br/>CEFR self-rating + curriculum analytics<br/>+ latest mock (highest weight)"]
-  EST --> RECO["Strengths and weaknesses<br/>per section"]
-  RECO --> BRIDGE["Recommendation bridge into Division A/B:<br/>IELTS Writing + weak sentence construction<br/>→ Grammar School · Sentence Lab<br/>TOEFL Reading + weak academic vocabulary<br/>→ Word World"]
-  BRIDGE --> PLAN["Daily study plan fitted to daily minutes<br/>and exam countdown; mocks accelerate<br/>in the final third"]
-  PLAN --> STUDY["Study: pathway steps in Division A/B<br/>+ academy drills"]
-  STUDY --> MOCK["Timed mock — official section timings"]
-  MOCK --> SCORE["Objective items machine-marked;<br/>writing and speaking rubric-graded"]
-  SCORE --> EST
-  SCORE --> RESULT["Result view + updated dashboard"]
+```bash
+bun run db:push
 ```
 
-The loop is the product: mock evidence sharpens estimates, estimates drive
-recommendations, recommendations route the candidate back into the common
-curriculum — which is never duplicated (§K "the bridge").
+This command is documented for local schema setup. For production, use the migration and deployment process in `docs/DEPLOYMENT.md`; do not use a development schema-push command as a substitute for a reviewed production migration process.
 
-## K — Key concepts
+### Start the development server
 
-| Concept | Meaning |
-| --- | --- |
-| Content-as-code | The curriculum, grammar, vocabulary, reading, listening, speaking and writing libraries are typed TypeScript modules (`src/data/**`) — compiled, validated and versioned with the app; no seeding step needed |
-| Published snapshot | Learners see only published CMS content; the working copy is invisible until an admin publishes |
-| Versioned test specification | An exam's format is a database record with a version, status, effective date and source references — not code (§T) |
-| Spec pinning | Every mock attempt records which spec version it was built with; historical results stay interpretable after format changes |
-| The bridge | The rule table + recommendation flow that maps exam weaknesses to common-curriculum lessons; the anti-duplication mechanism of Division C |
-| Band arithmetic | IELTS: 0–9 per section, overall = mean of four rounded to the nearest half (quarters round up). TOEFL iBT (2026 format): 1–6 bands per section with the same mean-and-half rounding, dual-reported with the legacy 0–120 scale during the 2026–2028 transition |
-| Safe projection | Server-side view of an exercise or mock question with answer keys, feedback and grading keywords stripped before anything reaches the client |
-| SRS | Spaced-repetition scheduling of vocabulary review (SM-2 style) |
-| Streaks that never punish | Missing days never resets real progress; streaks are encouragement, not a penalty system |
-| Serverless demo mode | On Vercel, the bundled seed database is copied to writable `/tmp` once per function instance so a read-only host still works; data is ephemeral by design (§O) |
-
-## L — Learning content inventory
-
-<<<<<<< HEAD
-=======
-<<<<<<< HEAD
->>>>>>> 2b1168b3cb6064a05edf09310c505cf6efb21e8a
-All counts computed from the repository on 2026-11-12
-(`bun scripts/readme-facts.ts`, §V):
-
-| Content | Count | Source module |
-| --- | --- | --- |
-| Curriculum lessons | 20 (Pre-A1 4 · A1 2 · Grammar Core 14) | `src/data/curriculum` |
-| Lesson block types | 20 (all 20 used) | `src/data/curriculum/types.ts` |
-| Exercise types | 16 (all 16 used) | `src/data/curriculum/types.ts` |
-| Curriculum exercises | 186 (122 grammar-weighted) | `src/data/curriculum` |
-| CMS lesson block kinds | 15 | `src/data/cms/types.ts` |
-| Vocabulary words / categories | 135 / 12 | `src/data/vocabulary` |
-| Reading texts | 21 (Pre-A1–A2 band) | `src/data/reading` |
-| Listening activities | 18 | `src/data/listening` |
-| Speaking activities / scenarios / pronunciation items | 22 / 11 / 26 | `src/data/speaking` |
-| Writing assignments | 31 (4 tiers) | `src/data/writing` |
-| Tutor modes | 9 | `src/data/tutor` |
-| Achievements | 46 (11 milestones + 35 badges) | `src/data/progress` |
-| Test specifications | 3 active (IELTS Academic v1 · IELTS General Training v1 · TOEFL iBT v1) | `db/custom.db` |
-| Exam rubrics | 4 (IELTS writing · IELTS speaking · TOEFL writing · TOEFL speaking interview) | `db/custom.db` |
-| Pathways / modules / steps | 2 / 8 / 45 | `db/custom.db` |
-| Pathway step references | 31 curriculum refs (vocabulary 5 · tutor 5 · writing 5 · listening 4 · reading 4 · grammar 3 · speaking 3 · lab 2) + 14 academy drills | `db/custom.db` |
-| Published sample mocks | 2 (IELTS Academic Sample Mock 1 · TOEFL iBT Sample Mock 1, 2026 format) | `db/custom.db` |
-| Mock sections / questions | 8 / 32 | `db/custom.db` |
-
-Support translations are Spanish only; the UI chrome is English-only (§R).
-
-## M — Mock tests & scoring
-
-Mocks are configured per exam **from the active specification** (§T) —
-official section timings, exam question types, section order. The engine
-supports 13 question types (Zod-validated payloads in
-`src/lib/exams/types.ts`): MCQ single, MCQ multi, True/False/Not Given,
-matching, fill-blank, Complete-the-Words, sentence reconstruction,
-dictation, listen-and-repeat, writing task, email/letter writing, academic
-discussion, speaking task.
-
-```mermaid
-flowchart TB
-  LIB["Mock library — published mocks + assembled sets"] --> START["Start attempt<br/>one in-progress attempt per mock<br/>one of six practice modes"]
-  START --> PLAY["Player<br/>answer keys stripped from every payload<br/>navigation policy per section, per spec"]
-  PLAY -->|"PATCH — answers, flags and time saved one by one, resumable<br/>(time-only saves never touch answers)"| PLAY
-  PLAY -->|"POST submit (confirmation dialog)"| OBJ["Objective grading<br/>tolerance rules: case, punctuation, number words<br/>partial credit where appropriate"]
-  PLAY -->|"constructed responses"| CR["Writing, email and speaking tasks"]
-  CR --> AI["AI rubric grading<br/>via the provider-agnostic LLM seam"]
-  AI -->|"provider unavailable or low confidence"| PENDING["Status: pending review<br/>result labelled provisional — no invented score"]
-  OBJ --> BANDS["Section bands from the spec's<br/>raw-to-band conversion tables<br/>(documented as approximate)"]
-  AI --> BANDS
-  PENDING --> BANDS
-  BANDS --> OVERALL["Overall band<br/>IELTS 0–9 · TOEFL 1–6 (+ legacy 0–120 dual report)"]
-  OVERALL --> REFRESH["Estimates refreshed<br/>latest mock carries the highest weight (§J)"]
-  REFRESH --> RESULT["Result view<br/>per-answer inspection (given vs key + explanation),<br/>time spent, unanswered, recommendations"]
-  RESULT --> HIST["History<br/>trends (exam-condition runs only)<br/>same-type + same-version comparisons"]
-  HIST -->|"wrong/unanswered items"| MIST["Previous-mistakes practice"]
-  MIST --> START
+```bash
+bun run dev
 ```
 
-**Six practice modes, one spec-driven engine:** full mock examination,
-section-wise practice (assembled from the published pool with the official
-section clock), timed practice (own minute budget, split across sections),
-untimed learning practice (no locks; per-item answer checking with
-explanations, available only in this mode), previous-mistakes practice
-(re-assembles exactly the questions you got wrong or skipped), and custom
-practice (filters on sections, task types and difficulty 1–5). Assembled
-sets are ordinary MockTest rows, so attempts, results and history treat
-them like any other test.
+Open the local address printed by the development server (the documented default is `http://localhost:3000`).
 
-**Examination realism is data, not code:** each spec section carries a
-`navigation` policy (within-section movement, back-to-section, flag for
-review, audio replay). Under exam timing the player follows it exactly —
-sections lock when finished or expired, the clock cannot be paused, audio
-plays once, TOEFL Listening moves forward only and offers no flags, IELTS
-allows free movement and mark-for-review. Old mocks pinned to pre-engine
-spec versions fall forward to the active spec's policy (grading stays
-pinned forever). Untimed runs relax navigation and replay and are labelled
-as non-exam-condition on every report.
+### Demo learner
 
-**IELTS for UKVI** is selectable at onboarding: the same test (identical
-format, timing and difficulty), taken in person as a Secure English
-Language Test — the specs, mocks and pathways are shared, the guidance is
-official (component minimums, Life Skills is a different test).
+The supplied project README documents a demo learner account as:
 
-Fairness rules: section bands use published practice conversion tables
-documented as approximate (official forms vary); ungradable constructed
-responses stay "awaiting review" and the result is labelled provisional
-rather than guessed. Answer keys never reach the client before submission —
-verified by an explicit smoke-test check (§Q). Every question carries
-difficulty (1–5), a post-submission explanation, source
-(`original-practice`) and content status; every report carries the
-integrity note (estimate, not an official IELTS or ETS score).
-
-## N — Navigation & routing
-
-ADR-003: the whole learner app lives on the single public `/` route and
-navigates with the URL hash (one deployable entry point, multi-page
-behaviour, SSR-safe via `useSyncExternalStore`). Route table
-(`src/hooks/use-hash-route.ts`):
-
-| Hash route | View |
-| --- | --- |
-| `#/` · `#/login` · `#/register` · `#/reset/<token>` | home / auth / password reset |
-| `#/library` · `#/lesson/<slug>` | learning path / lesson player |
-| `#/courses` · `#/course/<slug>` · `#/course-lesson/<slug>` | CMS courses |
-| `#/vocabulary/<tab>` · `#/grammar` · `#/grammar/tenses` · `#/grammar/clinic` · `#/lab` | Word World / Grammar School / Sentence Lab |
-| `#/reading/<slug>` · `#/listening/<slug>` | Reading Room / Listening Lab |
-| `#/speaking` · `#/speaking/activity/<slug>` · `#/speaking/conversation/<slug>` | Speaking Lab |
-| `#/writing` · `#/writing/a/<slug>` | Writing Studio |
-| `#/tutor` · `#/tutor/c/<id>` · `#/tutor/lesson/<ref>` | AI Tutor |
-| `#/progress/<tab>` | My Progress (`#/dashboard` is a legacy alias) |
-| `#/exams` · `#/exams/onboarding` · `#/exams/dashboard` · `#/exams/course/<examKey>/<variant?>` · `#/exams/mocks` · `#/exams/mock/<attemptId>` · `#/exams/result/<attemptId>` | Exam Academy (Division C) |
-| `#/admin` | Admin CMS (staff) |
-
-## O — Operations & deployment
-
-Three supported modes (`docs/DEPLOYMENT.md` is the full guide):
-
-1. **Local development** — `bun run dev` on `:3000`, SQLite at
-   `db/custom.db`, dev log teed to `dev.log`.
-2. **Self-hosted production** — `bun run build` (standalone output) →
-   `prisma migrate deploy` → start behind a TLS proxy; set the `Secure`
-   cookie attribute for HTTPS. One SQLite file ⇒ single writer; scale-out
-   path is Postgres by changing the Prisma datasource. Nightly backup cron
-   recipe (VACUUM INTO / `.backup` + media rsync + 14-day retention),
-   restore drill and the three-level rollback procedure (app / database /
-   content) are documented.
-3. **Serverless demo mode (Vercel & friends)** — SQLite needs a writable
-   file and directory, but serverless filesystems are read-only. `src/lib/db.ts`
-   detects `VERCEL=1` and copies the bundled seed database to
-   `/tmp/talksy/custom.db` once per function instance
-   (`outputFileTracingIncludes` ships `db/custom.db` + `db/media` inside
-   every API function; Prisma `binaryTargets` cover the platform runtimes).
-   Works with zero environment variables; **data is ephemeral by design**
-   (resets when the instance recycles; instances do not share writes). AI
-   features degrade gracefully without SDK credentials (§H). For durable
-   data, move to a hosted database (Neon/Supabase/Turso).
-
-Operational endpoints: `GET /api` returns
-`{ ok, uptimeSeconds, timestamp }` for uptime monitors. Content workflow
-changes are visible in the CMS audit log. Known observability gaps (no
-structured logging, metrics export or error tracking yet): §R.
-
-## P — Performance
-
-Measured values on record (FINAL_REPORT §6, dev-mode measurements; the
-production bundle was measured as part of the 2026-11-12 build
-verification):
-
-| Metric | Measured |
-| --- | --- |
-| Page HTML | 27 ms, 56 KB server-rendered shell |
-| API latency (warm, dev) | 30–130 ms across curriculum/progress/CMS/stats |
-| Browser load event (dev) | ~0.7 s |
-| Dev JS transfer | 1.6 MB unminified (Turbopack dev) |
-| Production build | completes clean (exit 0, standalone) — re-verified 2026-11-12 |
-
-Known hotspots (documented, acceptable at current scale): no API response
-caching (all dynamic; audio cached 1 h private); a small N+1 in lesson-block
-saving (≤ 10 questions per lesson); SQLite single-writer.
-
-## Q — Quality assurance
-
-The quality gates for every change: `bunx tsc --noEmit` clean, `bun run
-lint` clean (0 errors, 0 warnings), `bun run test` green, affected E2E
-suites green.
-
-| Layer | Size | Last full result |
-| --- | --- | --- |
-| Unit / route tests (`bun run test`, 36 files) | 502 tests, 9,355 `expect()` calls | **502 pass / 0 fail — re-run 2026-11-13** |
-| Browser E2E (12 suites in `scripts/e2e*.sh`, agent-browser CLI) | 973 checks | exam admin 91/91 + CMS 59/59 + exam engine 54/54 + AI evaluation 34/34 + study planner 74/74 **re-run 2026-11-13**; remaining suites green at delivery audit (FINAL_REPORT §2); two historical flakes root-caused and fixed |
-| Staging smoke, exam academy (`scripts/staging-smoke-exams.sh`) | 65 checks | **65/65 — re-run 2026-11-12** under exact Vercel simulation (VERCEL=1, no env, read-only bundle): overview, onboarding, all dashboard widgets, pathways, answer-key stripping, full attempt lifecycle with raw-score assertions, spec versioning, RBAC gates, audit trail |
-| Staging smoke, deployment & security (`scripts/staging-smoke-vercel.sh`) | 14 checks | **14/14 — re-run 2026-11-12**: register/login, seed content, first-login gate, S1 lockout 429, S2 single-use reset, read-only filesystem |
-| Live AI reliability (`scripts/ai-reliability.ts`) | 5 checks | 5/5 at delivery audit (FINAL_REPORT §7) |
-
-Content-level QA worth knowing: all 186/186 curriculum answer keys are
-provably solvable through the real grading engine (no impossible
-questions); accessibility was audited by execution (keyboard navigation,
-landmarks, WCAG AA contrast in both themes, reduced-motion, responsive
-375–1920 px) with screen-reader field testing still open (§R).
-
-## R — Roadmap & known limitations
-
-Honest list, split by whether it is already fixed:
-
-**Resolved since the delivery audit (FINAL_REPORT §5/§8):** S1 auth
-throttling (per-account 5/15 min + per-IP 30/15 min login locks with
-escalating strikes; caps on register/forgot/reset — `src/lib/auth-throttle.ts`);
-S2 password reset (sha256-at-rest single-use tokens, 30-min TTL, session
-revocation, log delivery); first-login password gate for seeded staff; the
-production build and a staging smoke suite.
-
-**Open — product:**
-
-- No placement test; the path is ordered and progress-driven, not
-  placement-driven.
-- Support translations Spanish-only; UI chrome English-only.
-- Exam academy next steps (PRD §8): full-length question banks, email
-  delivery for reset links (today: server log), teacher-side review UI for
-  pending constructed responses, recorded listening audio (browser speech
-  synthesis is used today), durable hosted-database deployment option.
-- Brand migration: replace the remaining "TalkSy" UI strings and internal
-  identifiers with EnglishPath (§B).
-
-**Open — engineering:**
-
-- Observability: no structured JSON logging, metrics export or error
-  tracking (Sentry-class); only `GET /api` health + audit log.
-- Remaining security findings from the audit, all Low/Info: upload MIME
-  trusted from client (served with stored content type), no CSRF tokens
-  (relies on SameSite=Lax), session cookie `Secure` flag to set behind TLS,
-  session tokens stored as plain opaque strings, seed staff passwords
-  public until first login, media readable by any authenticated user.
-- Screen-reader field testing (NVDA/JAWS/VoiceOver) not performed.
-- Speaking microphone capture verified through the typed-fallback contract
-  in automated runs (headless-browser limitation).
-- CMS authoring is desktop-oriented. Serverless demo mode is ephemeral by
-  design (§O).
-
-## S — Security & privacy
-
-Verified invariants (FINAL_REPORT §5 + 2026-11-12 re-verification):
-
-- **Passwords**: scrypt hashing (node:crypto — Vercel-safe).
-- **Sessions**: opaque 32-byte tokens in the DB; expiry and suspension
-  enforced at resolution (suspension logs the user out everywhere).
-- **S1 throttling** (`src/lib/auth-throttle.ts`): per-account (5 failures /
-  15 min) and per-IP (30 / 15 min) login locks with escalating repeat
-  offences; per-IP caps on registration (120/15 min) and both password
-  reset endpoints (10/15 min). Attempts during a lock change nothing
-  (tested — smoke check expects 429).
-- **S2 password reset** (`src/lib/password-reset.ts`): 48-hex single-use
-  tokens stored only as SHA-256 hashes, 30-minute TTL, whole-account
-  session revocation on success, delivery via server log until email
-  infrastructure exists.
-- **First-login gate**: seeded staff accounts with public default passwords
-  must choose their own password; every CMS and exam-admin API route
-  rejects them (403) until they do.
-- **RBAC server-side** on every admin route; ownership scoping on every
-  learner route; answer keys and grading data stripped server-side
-  (§E.1).
-- **Privacy**: speaking recordings are never stored; transcripts respect a
-  0–365-day retention setting and can be deleted at any time; tutor
-  conversations are per-user with delete; CMS user management exposes
-  aggregates only, never password hashes or per-learner content.
-- **Uploads**: 25 MB cap, `audio/*`|`image/*` MIME allowlist, alphanumeric
-  filenames, served with the stored content type.
-
-```mermaid
-sequenceDiagram
-  actor L as Learner
-  participant A as /api/auth
-  participant D as SQLite
-  L->>A: POST /login (email, password)
-  A->>D: read throttle counters (per account + per IP)
-  alt locked — 5 acct / 15 min or 30 IP / 15 min
-    A-->>L: 429 locked (attempt changes nothing)
-  else not locked
-    A->>D: verify scrypt hash, create session
-    A-->>L: 200 + session cookie
-  end
-  L->>A: POST /forgot (email)
-  A->>D: store sha256(token), TTL 30 min, single use
-  A-->>L: reset link delivered via server log
-  L->>A: POST /reset (token, new password)
-  A->>D: consume token once, update hash, revoke all sessions
-  A-->>L: 200 — sign in with the new password
-  Note over A,D: Seeded staff additionally face the<br/>first-login password gate (mustChangePassword)<br/>before any CMS or exam-admin action.
+```text
+Email:    demo@talksy.app
+Password: demo1234
 ```
 
-## T — Test specifications (format versioning)
-
-Every examination format is **data, not code**. A `TestSpecification`
-record carries: examination name, exam key + variant, version, status
-(draft / active / retired), effective date, section configuration, task
-types, timing, scoring model, source references (official provider URLs
-with retrieval dates) and last-reviewed date.
-
-```mermaid
-stateDiagram-v2
-  [*] --> draft : admin creates vN+1<br/>(pre-filled from the current spec)
-  draft --> active : admin activates<br/>(previous active auto-retires)
-  active --> retired : superseded by a newer activation
-  retired --> active : rollback — retire the newer,<br/>newest retired version restores
-  draft --> deleted : only drafts can be discarded
-  note right of active
-    Exactly one active spec per exam+variant.
-    Mock attempts pin the version they
-    were built with — old results stay
-    interpretable after format changes.
-  end note
-```
-
-Why this exists — two worked examples live in the database today. The
-**TOEFL iBT 2026 overhaul** (effective 21 Jan 2026): two-stage adaptive
-Reading/Listening, an 11-item speaking interview, sentence-reconstruction
-writing items and the new 1–6 band scale (dual-reported with legacy 0–120
-during the 2026–2028 transition). And the **IELTS mid-2026 delivery change**:
-paper-based IELTS was withdrawn and every test became computer-delivered
-(with a Writing on Paper option in selected markets), which invalidated the
-old Listening transfer-time guidance — so both IELTS specs were re-researched
-from the official pages and seeded as **v2 (effective 1 July 2026)**, v1
-retired as history. When ETS or IELTS change a format again, an
-administrator opens the Exam specs tab → New draft (auto-incremented,
-pre-filled) → edits what changed → Activate. Learner-facing components
-follow the active spec; historical attempts keep their pinned version.
-Every lifecycle action is admin-only (RBAC) and audit-logged to the shared
-CMS trail; the staff first-login gate covers these surfaces automatically.
-
-Current active specifications (from the seed database): IELTS Academic v2,
-IELTS General Training v2 (both effective 1 July 2026 — the verified
-mid-2026 computer-delivered format, with v1 retired as history) and TOEFL
-iBT (2026 format) v1 — each with official source references and review
-dates. An exam variant appears in the academy's "available examinations"
-only when it has an active spec **and** at least one published mock.
-
-## U — Usage — daily workflows
-
-**Learner (Divisions A/B):** register (or demo login) → follow the learning
-path; supplement with Word World daily challenges, Grammar School when a
-lesson is unclear, the skill labs for targeted practice; check My Progress
-for the revision scheduler and achievements.
-
-**Exam candidate (Division C):** `#/exams` → onboarding wizard → dashboard
-(§J loop). Take the sample mock early — the estimate engine weights the
-latest mock most heavily, so real evidence replaces self-assessment as you
-go. Follow the daily plan; the recommendation cards deep-link into
-Divisions A/B, which is by design (§K "the bridge").
-
-**Editor:** author and edit courses/lessons/questions in `#/admin`; submit
-for review; never see live control.
-
-**Teacher:** review submitted content; approve or request changes; can
-archive mocks; cannot publish.
-
-**Admin:** publish/unpublish, manage users and suspensions, import/export
-course bundles, view the audit trail — and maintain the exam academy:
-activate new test-specification versions when providers change formats and
-publish/archive mock tests (§T).
-
-**Operator:** `GET /api` for uptime; nightly SQLite + media backups; the
-three-level rollback procedure (app / database / content) in
-`docs/DEPLOYMENT.md` §8.
-
-## V — Verification — reproduce every claim
-
-Every number in this README comes from one of these commands (the meta
-report, §Y, records which were re-run on 2026-11-12):
-
-| Claim family | Command |
-| --- | --- |
-| All content counts (§A, §F, §L) | `bun scripts/readme-facts.ts` |
-| Unit / route tests | `bun run test` (expects `db/test.db`; a bare `bun test` is refused by the guard in `src/lib/db.ts`) |
-| Exam-academy smoke (65 checks) | `bun run build && bash scripts/staging-smoke-exams.sh` |
-| Deployment / security smoke (14 checks) | `bun run build && bash scripts/staging-smoke-vercel.sh` |
-| Browser E2E (973 checks; needs the dev server + `agent-browser` CLI) | `./scripts/e2e*.sh` (12 suites, incl. exam admin + exam engine + AI evaluation + study planner) |
-| Live AI behaviour (5 checks) | `bun scripts/ai-reliability.ts` |
-| Type / lint gates | `bunx tsc --noEmit && bun run lint` |
-| Production build | `bun run build` |
-| Seed database reset after local tests | `bun scripts/restore-seed-db.ts` |
-
-## W — What's inside
-
-```
-prisma/schema.prisma        68 models: users, sessions, throttling, reset tokens,
-                            learner activity, CMS content, exam domain
-docs/                       PRD · EXAM_ACADEMY · DEPLOYMENT · ENGINE · GRAMMAR_SCHOOL
-                            VOCABULARY · READING_LISTENING · PROGRESSION · TUTOR · ADR-003
-FINAL_REPORT.md             honest production-readiness audit (evidence-based)
-scripts/                    seed · seed-exams · 12 E2E suites · 2 staging smokes
-                            readme-facts (this README's fact sheet) · audits
-src/
-  app/page.tsx              the single public route — SPA shell + hash router
-  app/api/                  110 route handlers (auth, skills, cms, exams)
-  components/ui/            48 shadcn/ui primitives
-  components/app/           84 feature components (lesson, 6 labs, tutor,
-                            progress, admin, courses, exams)
-  data/                     content-as-code: curriculum, grammar, vocabulary,
-                            reading, listening, speaking, writing, tutor, cms
-  lib/
-    auth.ts auth-throttle.ts password-reset.ts   scrypt, S1, S2
-    db.ts                   runtime DATABASE_URL resolution (+ serverless /tmp staging)
-    engine/                 shared exercise engine: grading, sanitising, progress
-    cms/                    rbac, service, analytics, portability, seed
-    exams/                  specs, scoring, diagnostics, recommend, study-plan,
-                            pathways, mock-engine, ai-grade, types (Zod)
-    tutor/ llm/ vocab/ speaking/ reading/ writing/ listening/ progress/
-    client/                 typed API client + Zustand store
-  hooks/                    hash router, speech, recorder
-db/                         custom.db (dev + deployment seed, git-bundled)
-                            media/ (uploads) · test.db is created by bun run test
-```
-
-## X — eXtending the platform
-
-- **Add a new examination** (e.g. PTE Academic): create a draft
-  `TestSpecification` via the admin tab (or `scripts/seed-exams.ts` as a
-  starting point), add its band arithmetic to `src/lib/exams/scoring.ts`
-  behind the spec's scoring model, author a rubric and a pathway whose
-  steps reference the existing curriculum, then activate. No frontend
-  component hardcodes an exam rule (§E.2).
-- **Add curriculum content**: typed modules under `src/data/**`
-  (content-as-code, integrity-tested) for the code-based library, or the
-  CMS workflow (§G) for staff-authored courses.
-- **Add a tutor mode**: definition object in `src/data/tutor/modes.ts` with
-  its system prompt; the ten-mode engine handles the rest.
-- **Swap the AI provider**: implement the seam in `src/lib/llm` — every AI
-  consumer (tutor, writing suggestions, exam rubric grading) goes through
-  it, so no feature code changes.
-- **Scale the database**: change the Prisma datasource provider and
-  re-run migrations (§O, `docs/DEPLOYMENT.md` §7).
-
-## Y — Meta report (about this README)
-
-**Method.** This README was produced on **12 November 2026** from the
-repository at commit `3649aef` ("Exam Preparation Academy (Division C) +
-restored S1/S2 auth security and Vercel deployment layer"). Every count was
-computed, not remembered: `scripts/readme-facts.ts` (added with this
-README; read-only) prints the fact sheet behind §A, §F, §L and §W, and the
-meta-verification below re-ran the executable gates.
-
-**Re-verified by execution on 2026-11-12:**
-
-| Check | Result |
-| --- | --- |
-| `bun run test` | 484 pass / 0 fail (35 files, 9,261 assertions) |
-| `bun run build` | exit 0, standalone output |
-| `scripts/staging-smoke-exams.sh` | 65/65 |
-| `scripts/staging-smoke-vercel.sh` | 14/14 |
-| `bun scripts/readme-facts.ts` | every §L count regenerated |
-| Live demo probe | `GET /api` → 200 · `GET /api/exams/overview` → 404 (demo runs the pre-exam-academy build, stated in the header) |
-
-**Cited, not re-run today:** the remaining browser E2E suites and 5 live AI
-reliability checks (last full run recorded in `FINAL_REPORT.md`, whose
-method section states everything there was actually executed); the dev-mode
-performance numbers (FINAL_REPORT §6); the difficulty-curve and
-grammar-weighting splits (FINAL_REPORT §3).
-
-**Factual corrections made against the previous README** (evidence that
-this document is generated from the repository, not copied): pronunciation
-items are **26**, not 27 (counted from `src/data/speaking/pronunciation.ts`);
-`.env.example` **does not exist** — configuration is one optional
-`DATABASE_URL` (§I); the test total is 366, not 343; the exam domain has
-**14** models (the commit message's "13" undercounts the schema); API
-route handlers number 110.
-
-**Honesty boundaries.** This README deliberately does not claim: production
-database durability on serverless hosts (ephemeral by design, §O); email
-delivery of password-reset links (server log, §S); placement testing
-(§R); screen-reader certification (§R); or that the brand migration from
-the legacy working name "TalkSy" to EnglishPath is complete in UI strings
-(§B). Numbers that could not be re-verified today are attributed to their
-source document rather than presented as current measurements.
-
-**Scope note.** The task that produced this README was documentation-only:
-no application code was changed for it. The only code addition is
-`scripts/readme-facts.ts`, the read-only verification script that backs
-§V — so that "no fabrication" remains a reproducible property, not a
-promise.
-
-
-
-
-
+Treat these credentials as demonstration-only. Do not use them for a real account or production administration. Confirm that the demo user is enabled in the database currently being used. Seeded staff accounts must change their initial passwords before performing protected CMS or examination-administration actions.
 
 ---
 
-## 👤 Let's Connect
+## Configuration
 
-**Ishfaq Dar | Data Analyst, Ai Engineer & Developer**
+### Database
 
-📧 Email: [dar1.ishfaq36@gmail.com](https://mail.google.com/mail/?view=cm&fs=1&to=dar1.ishfaq36@gmail.com)  
-💼 LinkedIn: [Ishfaq Dar](https://www.linkedin.com/in/ishfaq-dar-aaa277240/)  
-🐙 GitHub: [AshfaqAIML](https://github.com/AshfaqAIML)  
-🌐 Portfolio: [AI & ML Portfolio](https://ai-and-ml-portfolio.vercel.app/)  
+`DATABASE_URL` is documented as optional for local development. When it is not set, the application defaults to the repository's `db/custom.db` SQLite file. Confirm the current database resolver in `src/lib/db.ts` before changing runtime configuration.
+
+Tests are documented to use a separate `db/test.db` database through `bun run test`. Do not run test commands in a way that points at the development or seed database.
+
+### AI provider
+
+AI credentials are held in server-side SDK configuration and must never be exposed to browser code. The application is designed to route tutor and evaluation requests through the provider-independent LLM interface.
+
+### Environment-file guidance
+
+The supplied project audit states that the repository does not contain an `.env.example` file and that `DATABASE_URL` is the only documented optional environment variable. Do not assume that `cp .env.example .env` works. Check the actual configuration files before adding environment variables, and create a sanitised example file only when the project needs one.
+
+Never commit:
+
+- API keys or provider credentials.
+- Production database URLs or passwords.
+- Session or signing secrets.
+- Real learner data or private uploaded content.
 
 ---
 
+## Testing and Development Workflow
+
+### Standard quality gates
+
+Run the checks supported by the repository:
+
+```bash
+bunx tsc --noEmit
+bun run lint
+bun run test
+bun run build
+```
+
+The project documentation specifically warns that tests must be run through `bun run test`, which points to `db/test.db`. A bare `bun test` may bypass the intended database setup and is guarded against in the documented database layer. Do not remove or bypass that safeguard.
+
+### Browser E2E tests
+
+Start the application and inspect the available browser automation commands before testing:
+
+```bash
+agent-browser --help
+```
+
+The supplied project documents browser suites under `scripts/e2e*.sh`. These cover learner flows, the CMS, examination administration, mock-test behaviour, AI evaluation, and study planning. Run the affected suite after changing a feature, and run the broader regression set before release where practical.
+
+### Staging smoke tests
+
+```bash
+bun run build
+bash scripts/staging-smoke-exams.sh
+bash scripts/staging-smoke-vercel.sh
+```
+
+These scripts are documented as staging checks for the examination academy, deployment simulation, and security-related flows. Confirm their prerequisites and current implementation before running them.
+
+### AI reliability checks
+
+```bash
+bun scripts/ai-reliability.ts
+```
+
+This check depends on the configured AI provider and should be reported as blocked—not passed—when credentials or provider access are unavailable.
+
+### Development-cycle workflow
+
+Every significant development cycle should:
+
+1. Read `/home/z/my-project/worklog.md` before making changes.
+2. Inspect the actual repository and compare it with the handover document.
+3. Run the relevant existing tests and browser QA before substantial development.
+4. Prioritise build failures, runtime problems, data-integrity issues, broken learner journeys, and security issues.
+5. Implement the most valuable next improvement using the existing architecture.
+6. Add or update tests for the changed behaviour.
+7. Run type checks, lint, tests, and production build.
+8. Verify the affected user journey with `agent-browser`.
+9. Update the worklog with completed work, test evidence, unresolved issues, and next priorities.
+
+A test must be reported as passed only if it was actually run successfully. If a check could not be executed, record why.
+
+---
+
+## Deployment and Operations
+
+The supplied deployment notes describe three operating modes.
+
+### Local development
+
+- Run the Next.js development server with `bun run dev`.
+- Use the local SQLite database, documented as `db/custom.db` by default.
+- Use the isolated test database for automated tests.
+
+### Self-hosted production
+
+The documented production process is based on a production build, database migration deployment, and running the application behind a TLS-enabled reverse proxy.
+
+Operational considerations:
+
+- SQLite is a single-writer database and is suitable only for deployments whose concurrency and durability needs fit that model.
+- Enable secure cookies when running behind HTTPS.
+- Back up the database and media assets.
+- Test restoration, not just backup creation.
+- Follow the deployment guide's application, database, and content rollback procedures.
+- Consider a hosted relational database such as PostgreSQL when a durable multi-instance deployment or higher write concurrency is required. The datasource migration must be implemented and tested; changing a URL alone may not be sufficient.
+
+### Serverless demonstration mode
+
+The supplied project documentation describes a Vercel-compatible demonstration mode that copies the bundled SQLite seed database to a writable temporary directory for each function instance.
+
+Important limitations:
+
+- Data written in this mode is ephemeral.
+- Function instances do not share their temporary database state.
+- Data may reset when instances recycle.
+- This mode is suitable for a demonstration, not durable learner records.
+- Durable production use requires a shared persistent database and an appropriate migration/deployment design.
+
+The project README's 13 November 2026 snapshot reports that the public demo at `https://talksy-peach.vercel.app` was still running a pre-exam-academy build: `GET /api` returned 200, while `GET /api/exams/overview` returned 404. Check the deployed build before presenting the public demo as a complete demonstration of Division C.
+
+### Operational health
+
+The documented health endpoint is:
+
+```text
+GET /api
+```
+
+It returns basic service health information, including uptime and timestamp. The supplied audit identifies structured logging, metrics export, and centralised error tracking as areas for improvement.
+
+---
+
+## Security and Privacy
+
+TalkSy may process account information, learning history, written submissions, microphone input, transcripts, and AI conversation content. These data require appropriate access controls, retention rules, and user-facing transparency.
+
+### Documented security controls
+
+The supplied project README records the following controls:
+
+- Passwords hashed with `scrypt`.
+- Database-backed opaque session tokens with expiry and suspension checks.
+- Login throttling by account and IP address.
+- Registration and password-reset rate limits.
+- Single-use password-reset tokens stored as SHA-256 hashes with a limited lifetime.
+- Session revocation after successful password reset.
+- A first-login password-change gate for seeded staff accounts.
+- Server-side role-based access control for CMS and examination administration.
+- Ownership checks for learner-specific routes and records.
+- Server-side stripping of answer keys and grading data from client payloads.
+- File upload size and MIME-type restrictions.
+- User-level controls for deleting tutor conversations and managing transcript retention.
+
+### Privacy expectations
+
+- Collect only information needed for a clear product purpose.
+- Explain microphone and recording use before requesting permission.
+- Do not store speaking recordings unless a clearly disclosed feature requires it.
+- Apply configured retention periods to transcripts and allow deletion where supported.
+- Protect learner notes, submissions, progress, and tutor conversations from other users.
+- Avoid placing secrets, personal information, or complete learner submissions in logs.
+- Clearly disclose when content is sent to an AI provider.
+- Apply appropriate rate limits and abuse controls to public API routes.
+- Validate uploaded files and avoid trusting client-supplied metadata without server-side checks.
+
+### Security items requiring continued review
+
+The supplied audit also lists low/informational findings and operational gaps that should remain on the security backlog, including CSRF protections, secure-cookie deployment configuration, session-token storage hardening, upload content-type validation, access scope for uploaded media, and email delivery for password reset. Reassess these findings against the current code and deployment before treating them as resolved.
+
+---
+
+## Accessibility, Responsiveness, and Design
+
+TalkSy's interface should be polished, calm, welcoming, and focused on learning. Visual design should help learners understand where they are, what they should do next, and how they are progressing.
+
+### Brand palette
+
+| Token | Role | Hex |
+|---|---|---|
+| Navy | Primary dark foundation | `#0B1F46` |
+| Blue | Primary action and navigation | `#1E88E5` |
+| Cyan | Supporting accent | `#06B6D4` |
+| Orange | Highlight and emphasis | `#FF8A00` |
+| Gold | Secondary highlight | `#FFC247` |
+
+### Design principles
+
+- Establish a clear type scale and information hierarchy.
+- Use consistent spacing, alignment, borders, and surface treatments.
+- Maintain accessible contrast in both light and dark themes.
+- Use responsive layouts across mobile, tablet, and desktop.
+- Provide visible hover, focus, active, disabled, loading, success, and error states.
+- Keep lesson pages focused and reduce unnecessary distractions.
+- Use motion to communicate state or provide feedback, not as decoration alone.
+- Respect `prefers-reduced-motion`.
+- Use semantic structure, keyboard navigation, accessible labels, and descriptive validation errors.
+- Provide text alternatives for meaningful audio and visual learning material where appropriate.
+
+The supplied project audit records keyboard navigation, landmarks, contrast, reduced-motion, and responsive checks, while also noting that screen-reader field testing with NVDA, JAWS, or VoiceOver had not been completed at that time.
+
+---
+
+## Current Implementation Snapshot
+
+This section summarises the implementation described in the supplied project README. It is not a substitute for inspecting the current source code or deployment.
+
+### Documented learner environments
+
+| Environment | Documented implementation |
+|---|---|
+| Learning Path | Content-as-code curriculum with lesson blocks and server-graded exercises |
+| Courses | CMS-authored courses with levels, modules, units, lessons, prerequisites, and enrolments |
+| Word World | Vocabulary categories, flashcards, challenges, personal lists, and spaced-repetition-style review |
+| Grammar School | Grammar learning modules, tense reference, and Error Clinic |
+| Sentence Lab | Structured sentence-building practice and timed challenges |
+| Reading Room | Levelled texts, glossaries, comprehension questions, and progress tracking |
+| Listening Lab | Listening activities from word recognition through dialogue comprehension |
+| Speaking Lab | Guided speaking activities, conversation scenarios, and pronunciation practice |
+| Writing Studio | Progressive writing assignments, drafts, autosave, feedback, and revision comparison |
+| AI Tutor | Context-aware tutoring modes and conversation support |
+| My Progress | Learner analytics, skill profiles, revision, goals, achievements, and certificates |
+| Exam Academy | Onboarding, dashboard, separate exam pathways, mock library, timed player, and study planning |
+
+### Documented examination specifications
+
+The supplied README records three active, versioned specifications in the seed database:
+
+- IELTS Academic v2.
+- IELTS General Training v2.
+- TOEFL iBT 2026-format v1.
+
+It also records official source references and review dates in specification data. The supplied notes state that IELTS v2 specifications were introduced with an effective date of 1 July 2026 and that the previous version was retired as history. Re-check official provider guidance before relying on these details for a future examination date.
+
+### Documented QA snapshot
+
+| Quality area | Result recorded in the supplied project README | Date / qualification |
+|---|---:|---|
+| Unit and route tests | 502 passed, 0 failed | Re-run recorded on 13 November 2026 |
+| Browser E2E suite inventory | 973 checks across 12 suites | Some suites re-run on 13 November; remaining suites referenced from the delivery audit |
+| Exam-academy staging smoke | 65/65 | Re-run recorded on 12 November 2026 under a Vercel-style simulation |
+| Deployment and security smoke | 14/14 | Re-run recorded on 12 November 2026 |
+| Combined staging smoke | 79/79 | 65 exam checks + 14 deployment/security checks |
+| Production build | Successful | Re-verified on 12 November 2026 |
+| Live AI reliability | 5/5 | Recorded in the delivery audit; not described as re-run on 13 November |
+
+Reproduce the checks using the commands in [Testing and Development Workflow](#testing-and-development-workflow). Do not treat these historical results as proof that the current checkout or latest deployment is still passing.
+
+### Inventory-count note
+
+The supplied README contains conflicting counts for API route handlers, Prisma models, some skill-content inventories, mock tests, pathways, and component totals. To avoid publishing incorrect numbers, this consolidated README describes the capabilities without repeating those disputed totals. Where available, run:
+
+```bash
+bun scripts/readme-facts.ts
+```
+
+Then reconcile the generated output with the current source tree and database before publishing exact counts.
+
+---
+
+## Known Limitations
+
+The following items are identified in the supplied project README and should be rechecked against the current checkout.
+
+### Product and learning experience
+
+- A dedicated placement test was not implemented in the recorded snapshot; the learning path is ordered and progress-driven.
+- Support translations were documented as Spanish-only, while the UI chrome was English-only. Optional Urdu learning support should be treated as a separate enhancement unless implemented in the current build.
+- Some examination content and question-bank expansion work may remain dependent on ongoing content authoring and review.
+- A teacher-facing review workflow for pending constructed responses was listed as a next step.
+- Recorded listening audio was listed as an improvement area where browser speech synthesis was being used.
+
+### Operations and engineering
+
+- Password-reset delivery was documented through server logs rather than an email delivery service.
+- The Vercel SQLite demonstration mode is ephemeral and does not provide durable or shared learner data.
+- Structured JSON logging, metrics export, and centralised error tracking were identified as observability gaps.
+- Screen-reader field testing was not completed in the recorded accessibility audit.
+- Microphone capture was validated through a typed fallback in automated headless-browser runs; full real-device microphone testing remained a separate verification need.
+- CMS authoring was described as desktop-oriented.
+- Some security findings remained open for review, including CSRF protections, session-token storage, upload content-type trust, cookie configuration, and media access scope.
+
+These are not assertions that the issues remain unresolved today. Verify each item against the code, deployment, and current worklog before closing it.
+
+---
+
+## Roadmap
+
+Priorities should be chosen from the current repository audit, not treated as a promise that every item below is still outstanding.
+
+### Product and learner experience
+
+- [ ] Add or complete a placement and diagnostic assessment where appropriate.
+- [ ] Complete and review the levelled Pre-A1 to C1 content pathway.
+- [ ] Continue expanding substantial lessons, worked examples, and validated exercises.
+- [ ] Improve vocabulary revision, grammar diagnostics, and learner-specific recommendations.
+- [ ] Expand practical speaking scenarios and listening resources.
+- [ ] Improve learner-facing accessibility, including screen-reader testing.
+
+### IELTS and TOEFL academy
+
+- [ ] Continue expanding original, quality-reviewed question banks.
+- [ ] Complete teacher-side review for constructed responses that require human assessment.
+- [ ] Keep test specifications and task information aligned with current official sources.
+- [ ] Improve format-accurate timed practice and mock coverage.
+- [ ] Refine transparent AI feedback and learner revision histories.
+- [ ] Improve target-score study planning and evidence-based readiness reporting.
+
+### Platform and operations
+
+- [ ] Add reliable email delivery for password-reset links and relevant notifications.
+- [ ] Improve structured logging, metrics, and error monitoring.
+- [ ] Review remaining authentication, session, upload, and CSRF hardening opportunities.
+- [ ] Provide a durable hosted-database deployment for production learner records.
+- [ ] Improve media access controls and retention management.
+- [ ] Complete end-to-end brand-string consistency across documentation, UI, and metadata.
+
+---
+
+## Contributing
+
+Contributions should improve learner outcomes, content quality, security, accessibility, reliability, or maintainability.
+
+Before submitting a change:
+
+1. Read the project documentation and current worklog.
+2. Inspect the implementation and follow existing conventions.
+3. Keep changes focused and avoid unnecessary rewrites.
+4. Add or update tests for changed behaviour.
+5. Validate educational content and answer keys.
+6. Check responsive layouts and accessibility for interface changes.
+7. Run relevant type, lint, test, build, and browser checks.
+8. Update the relevant documentation and handover notes.
+9. Never commit secrets, real learner data, or unlicensed learning materials.
+
+For IELTS and TOEFL content, create original or appropriately licensed practice material. Do not reproduce complete copyrighted commercial books or test papers.
+
+---
+
+## Educational and Trademark Disclaimer
+
+TalkSy is an independent English-learning and examination-preparation platform. Unless a separate, verifiable agreement exists, TalkSy must not imply that it is operated, endorsed, certified, or officially affiliated with IELTS, the British Council, IDP: IELTS Australia, Cambridge University Press & Assessment, or Educational Testing Service (ETS).
+
+IELTS is jointly owned by the British Council, IDP: IELTS Australia, and Cambridge University Press & Assessment. TOEFL and TOEFL iBT are trademarks of ETS. Their names are used only to identify the examinations for which the platform provides preparation material.
+
+Practice questions and mock materials should be original or appropriately licensed. Test-format information should be checked against official provider guidance and kept under review.
+
+Any TalkSy-generated band, score, or readiness estimate is **practice feedback only**. It is not an official IELTS result, TOEFL score, certificate, or guarantee of examination performance. Candidates must confirm the current test format, accepted test type, registration conditions, and score requirements with the relevant examination provider and receiving institution.
+
+---
+
+## License
+
+A repository licence was not identified in the supplied README. Before distributing the project or accepting external contributions, add the chosen `LICENSE` file and confirm the rights covering source code, educational content, brand assets, images, audio, and other media.
+
+Unless a licence is added, do not assume that the repository or its contents may be reused, redistributed, or modified by others.
+
+---
+
+## Maintainer
+
+**Ishfaq Dar** — Data Analyst, AI Engineer & Developer
+
+- **Email:** [dar1.ishfaq36@gmail.com](mailto:dar1.ishfaq36@gmail.com)
+- **LinkedIn:** [Ishfaq Dar](https://www.linkedin.com/in/ishfaq-dar-aaa277240/)
+- **GitHub:** [AshfaqAIML](https://github.com/AshfaqAIML)
+- **Portfolio:** [AI & ML Portfolio](https://ai-and-ml-portfolio.vercel.app/)
+
+---
+
+<p align="center">
+  <strong>TalkSy</strong><br />
+  Learn. Practice. Speak. Excel.<br />
+  <em>From Your First English Word to Confident Communication.</em>
+</p>
