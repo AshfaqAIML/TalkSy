@@ -897,12 +897,7 @@ no application code was changed for it. The only code addition is
 `scripts/readme-facts.ts`, the read-only verification script that backs
 §V — so that "no fabrication" remains a reproducible property, not a
 promise.
-<<<<<<< HEAD
-=======
-=======
-See **FINAL_REPORT.md** for the honest production-readiness audit:
-completed vs. untested functionality, security and performance findings, and
-known limitations.
+
 
 
 
@@ -920,5 +915,4 @@ known limitations.
 🌐 Portfolio: [AI & ML Portfolio](https://ai-and-ml-portfolio.vercel.app/)  
 
 ---
->>>>>>> a005a005420c39472fee43c7d91d391924c7f674
->>>>>>> 2b1168b3cb6064a05edf09310c505cf6efb21e8a
+
