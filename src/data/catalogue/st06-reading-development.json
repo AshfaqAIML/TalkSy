@@ -1,0 +1,99 @@
+{
+  "id": "st06",
+  "order": 6,
+  "title": "Reading Development",
+  "cefr": "A1 → B2",
+  "goal": "Develop reading from first word recognition to critical reading of articles and extended texts, with strategies for main ideas, context, inference and summarisation.",
+  "entryRequirements": ["st05-exit"],
+  "modules": [
+    {
+      "id": "st06-m01",
+      "title": "Reading Foundations",
+      "description": "From word recognition and sentence reading to short passages and dialogues — reading to understand, at A1.",
+      "entryRequirements": ["st02-exit"],
+      "units": [
+        {
+          "id": "st06-m01-u01",
+          "title": "Words and Sentences",
+          "lessons": [
+            {"id": "st06-m01-u01-l01", "title": "Word Recognition", "cefr": "A1", "minutes": 12, "objectives": ["Recognise learned vocabulary instantly in new contexts", "Use context to read unfamiliar words"], "topics": ["word-recognition", "reading-fluency", "context-words"], "practice": ["speed-recognition", "read-and-choose", "read-along"], "assessment": "Recognise 20 of 24 target words in context within time limits", "skills": ["reading", "listening"]},
+            {"id": "st06-m01-u01-l02", "title": "Sentence Reading", "cefr": "A1", "minutes": 12, "objectives": ["Read sentences with basic fluency", "Confirm understanding by matching sentences to pictures and paraphrases"], "topics": ["sentence-reading", "fluency", "comprehension-checks"], "practice": ["read-and-match", "read-along", "paraphrase-choose"], "assessment": "Read 10 sentences aloud smoothly and match 9 to meanings", "skills": ["reading", "listening", "speaking"]}
+          ],
+          "checkpoint": {"criteria": "Read words and sentences fluently with demonstrated understanding", "passThreshold": 80}
+        },
+        {
+          "id": "st06-m01-u02",
+          "title": "First Texts",
+          "lessons": [
+            {"id": "st06-m01-u02-l01", "title": "Short Passages", "cefr": "A1", "minutes": 12, "objectives": ["Read a 3-5 sentence passage for basic meaning", "Answer literal comprehension questions"], "topics": ["short-passages", "literal-comprehension", "basic-questions"], "practice": ["read-and-answer", "read-along", "true-false-checks"], "assessment": "Answer 8 of 10 literal questions on a short passage", "skills": ["reading", "listening"]},
+            {"id": "st06-m01-u02-l02", "title": "Dialogues", "cefr": "A1", "minutes": 12, "objectives": ["Read conversational texts and follow who says what", "Understand short functional exchanges (shop, bus, phone)"], "topics": ["dialogues", "turn-taking", "functional-reading"], "practice": ["dialogue-reading", "role-read-aloud", "comprehension-quiz"], "assessment": "Follow a 10-line dialogue and complete 4 comprehension and 2 gap tasks", "skills": ["reading", "listening", "speaking"]}
+          ],
+          "checkpoint": {"criteria": "Read short passages and dialogues with literal understanding", "passThreshold": 80}
+        }
+      ]
+    },
+    {
+      "id": "st06-m02",
+      "title": "Building Comprehension",
+      "description": "Longer texts and the core comprehension strategies: paragraph reading, stories, main ideas, context clues and inferencing, at A2.",
+      "entryRequirements": ["st03-exit"],
+      "units": [
+        {
+          "id": "st06-m02-u01",
+          "title": "Longer Texts",
+          "lessons": [
+            {"id": "st06-m02-u01-l01", "title": "Paragraph Reading", "cefr": "A2", "minutes": 12, "objectives": ["Follow a 2-3 paragraph text", "Track topic development across paragraphs"], "topics": ["paragraph-reading", "topic-tracking", "multi-paragraph-texts"], "practice": ["read-and-order", "read-and-answer", "read-along"], "assessment": "Answer 8 of 10 questions spanning a 3-paragraph text", "skills": ["reading", "listening"]},
+            {"id": "st06-m02-u01-l02", "title": "Stories", "cefr": "A2", "minutes": 12, "objectives": ["Follow narrative sequence: beginning, problem, resolution", "Retell a story in 5 sentences"], "topics": ["stories", "narrative-sequence", "retelling"], "practice": ["story-reading", "sequence-ordering", "retell-task"], "assessment": "Retell a read story in 5 ordered sentences", "skills": ["reading", "speaking", "listening"]}
+          ],
+          "checkpoint": {"criteria": "Read multi-paragraph texts and stories and retell them", "passThreshold": 80}
+        },
+        {
+          "id": "st06-m02-u02",
+          "title": "Comprehension Skills",
+          "lessons": [
+            {"id": "st06-m02-u02-l01", "title": "Finding Main Ideas", "cefr": "A2", "minutes": 12, "objectives": ["Find the topic and main idea of a paragraph", "Distinguish main ideas from supporting details"], "topics": ["main-idea", "topic-sentences", "supporting-details"], "practice": ["choose-the-main-idea", "underline-key-sentences", "write-a-title"], "assessment": "Identify main ideas of 5 paragraphs and write 2 accurate titles", "skills": ["reading", "writing"]},
+            {"id": "st06-m02-u02-l02", "title": "Understanding Context and Inferencing", "cefr": "A2", "minutes": 12, "objectives": ["Use context clues for unknown words", "Make simple inferences and justify them from the text"], "topics": ["context-clues", "guessing-meaning", "inference"], "practice": ["guess-the-word", "inference-quiz", "justify-from-text"], "assessment": "Infer 8 of 10 word meanings from context and justify 3 inferences", "skills": ["reading"]}
+          ],
+          "checkpoint": {"criteria": "Find main ideas, use context and make justified inferences", "passThreshold": 80}
+        }
+      ]
+    },
+    {
+      "id": "st06-m03",
+      "title": "Reading Genres",
+      "description": "Reading across text types — descriptive, informational and articles — building genre awareness, at B1.",
+      "entryRequirements": ["st05-exit"],
+      "units": [
+        {
+          "id": "st06-m03-u01",
+          "title": "Genre Reading",
+          "lessons": [
+            {"id": "st06-m03-u01-l01", "title": "Descriptive Passages", "cefr": "B1", "minutes": 12, "objectives": ["Read descriptions of places, people and processes", "Extract sensory and spatial details"], "topics": ["descriptive-texts", "detail-extraction", "place-descriptions"], "practice": ["read-and-visualise", "detail-quiz", "draw-what-you-read"], "assessment": "Extract 10 accurate details from a descriptive passage", "skills": ["reading", "listening"]},
+            {"id": "st06-m03-u01-l02", "title": "Informational Texts", "cefr": "B1", "minutes": 12, "objectives": ["Read for facts, steps and definitions", "Use headings and layout to navigate"], "topics": ["informational-texts", "text-features", "reading-for-facts"], "practice": ["scan-for-information", "read-and-complete-table", "fact-quiz"], "assessment": "Complete a fact table from an informational text with 9 of 10 correct", "skills": ["reading", "writing"]},
+            {"id": "st06-m03-u01-l03", "title": "Articles", "cefr": "B1", "minutes": 12, "objectives": ["Read news-style articles with headline and structure awareness", "Separate reported facts from opinions"], "topics": ["articles", "headline-reading", "fact-versus-opinion"], "practice": ["article-reading", "fact-or-opinion", "headline-match"], "assessment": "Read an article and classify 10 statements as fact or opinion with 8 correct", "skills": ["reading", "listening"]}
+          ],
+          "checkpoint": {"criteria": "Read the three core genres with genre-appropriate strategies", "passThreshold": 80}
+        }
+      ]
+    },
+    {
+      "id": "st06-m04",
+      "title": "Critical Reading",
+      "description": "Reading for depth at B2: summarisation, author's purpose and tone, and inference with evaluation.",
+      "entryRequirements": ["st04-m05-exit"],
+      "units": [
+        {
+          "id": "st06-m04-u01",
+          "title": "Reading for Depth",
+          "lessons": [
+            {"id": "st06-m04-u01-l01", "title": "Summarisation", "cefr": "B2", "minutes": 12, "objectives": ["Summarise a text in a fixed number of sentences", "Select essential information and drop examples and repetition"], "topics": ["summarisation", "essential-information", "condensing"], "practice": ["summary-writing", "sentence-limits", "peer-comparison"], "assessment": "Write a 3-sentence summary of a 300-word text capturing all key points", "skills": ["reading", "writing"]},
+            {"id": "st06-m04-u01-l02", "title": "Author's Purpose and Tone", "cefr": "B2", "minutes": 12, "objectives": ["Identify why a text was written: inform, persuade, entertain", "Read tone from word choice"], "topics": ["authors-purpose", "tone", "word-choice-analysis"], "practice": ["purpose-quiz", "tone-identification", "evidence-hunt"], "assessment": "Identify purpose and tone of 5 texts with evidence from word choice", "skills": ["reading"]},
+            {"id": "st06-m04-u01-l03", "title": "Reading for Meaning: Inference and Evaluation", "cefr": "B2", "minutes": 12, "objectives": ["Draw and support deeper inferences", "Evaluate arguments and evidence quality"], "topics": ["advanced-inference", "evaluation", "argument-analysis"], "practice": ["inference-with-evidence", "evaluate-the-argument", "discussion-prompts"], "assessment": "Answer 8 inference/evaluation questions with textual evidence", "skills": ["reading", "writing", "speaking"]}
+          ],
+          "checkpoint": {"criteria": "Summarise, infer and evaluate extended texts with evidence", "passThreshold": 80}
+        }
+      ]
+    }
+  ],
+  "exitAssessment": {"id": "st06-exit", "title": "Reading Development Exit Test", "criteria": "Read graded texts from A1 to B2: literal and inferential comprehension, main idea identification, context vocabulary, fact versus opinion, summarisation of a 300-word text, and evidence-based inference.", "passThreshold": 75, "minutes": 25, "unlocks": ["st07"]}
+}

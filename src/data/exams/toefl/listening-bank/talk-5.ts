@@ -1,0 +1,298 @@
+/**
+ * TOEFL Listening Practice Library — Listen to an Academic Talk, batch 5
+ * (PROMPT 49). Difficulty 5: five lectures at the hardest tier — layered
+ * qualifications, terms defined mid-flight, and conclusions held to their
+ * evidence.
+ *
+ * All scripts are original TalkSy practice material; established knowledge only.
+ */
+
+import { TOEFL_LISTENING_BANK_SOURCE_NOTE, type ToeflListeningExercise } from "./types";
+
+export const talk5Exercises: ToeflListeningExercise[] = [
+  {
+    slug: "toefl-lb-talk-21", title: "Naming an epoch", taskType: "academic-talk",
+    scene: "earth science lecture", difficulty: 5, estimatedMinutes: 7,
+    intro: "You will hear part of a lecture on geological time. Answer the questions about the content.",
+    speakers: [{ id: "pr", name: "Professor", role: "lecturer in earth science", accent: "british" }],
+    segments: [
+      { id: "s1", speakerId: "pr", text: "A working group of geologists spent a decade on a question that sounds like trivia and is a matter of definition with consequences: whether the present should be formally designated a new epoch, named for the human species." },
+      { id: "s2", speakerId: "pr", text: "The case for the proposal is stratigraphic: the record being laid down now differs from the record beneath it in ways that will persist — radionuclides from weapons testing, plastics, concrete, altered carbon chemistry, and a layer of species changes that future geologists, if any, will read as a boundary." },
+      { id: "s3", speakerId: "pr", text: "The case against is procedural. Epochs are defined by marker evidence in the rock, and the rules require agreement on where the boundary sits. Opponents argue the signals are real but young, and that naming the present from within it is a category error." },
+      { id: "s4", speakerId: "pr", text: "In twenty twenty-four the proposal was defeated by a large majority of the commission, and the present remains within the Holocene at the level of formal nomenclature." },
+      { id: "s5", speakerId: "pr", text: "The distinction the reporting missed: the scientific case for the scale of human alteration is separate from the stratigraphic question of naming — and the voters document that alteration daily." },
+      { id: "s6", speakerId: "pr", text: "The voters were, in the main, scientists whose daily work documents that alteration — the detail that makes the misreading impossible to sustain." },
+      { id: "s7", speakerId: "pr", text: "What the episode shows is that names carry work: a formal term signals that a question has been decided by agreed procedures — and refusing it, by the same procedures, is a judgement about rules, not substance." },
+      { id: "s8", speakerId: "pr", text: "The closing sentence is about scope: the vote was, strictly, about a word, made by the people whose job is to decide about words." },
+    ],
+    transcriptNote: "The lecture's key move is separating two questions — earth-system impact and stratigraphic naming — and noting who the voters were. The close is about scope.",
+    targetSkill: "academic-listening",
+    questions: [
+      {
+        no: 1, stem: "What is the stratigraphic case FOR the proposal?",
+        options: ["Public opinion", "Persistent markers in the record now being laid down: radionuclides, plastics, concrete, altered carbon chemistry, species changes", "Economics", "Politics"],
+        correct: 1,
+        meta: { skills: ["academic-listening", "details"], keywords: ["radionuclides from weapons testing, plastics, concrete, alte"], explanation: "The case is a list of stratal markers. The item checks the list as delivered. The audible clue is \u201cradionuclides from weapons testing, plastics, concrete, alte\u201d: catch it and the keyed answer follows." },
+      },
+      {
+        no: 2, stem: "What is the opponents' procedural argument?",
+        options: ["The signals are false", "The signals are real but young, the boundary lacks agreed definition, and naming the present from within the present is a category error", "Geology is finished", "The name is ugly"],
+        correct: 1,
+        meta: { skills: ["details"], keywords: ["the signals are real but young"], explanation: "The objection is about rules of formal stratigraphy. The item checks the argument as summarised. Listen for \u201cthe signals are real but young, that the boundary has not be\u201d — that phrase in the script settles the item." },
+      },
+      {
+        no: 3, stem: "What happened in twenty twenty-four?",
+        options: ["The proposal passed", "It was defeated by a large majority; the present remains within the Holocene at the level of formal nomenclature", "It was postponed", "It was never voted on"],
+        correct: 1,
+        meta: { skills: ["details"], keywords: ["defeated by a large majority of the commission"], explanation: "The outcome and its scope are both stated. The item checks both as one fact. Answer anchored in the recording: \u201cdefeated by a vote… a large majority against\u201d — hear that phrase and the item resolves." },
+      },
+      {
+        no: 4, stem: "What distinction does the professor ask students to carry?",
+        options: ["Impact equals naming", "The earth-system case for human alteration is separate from the stratigraphic question of naming — and the misreading denies the first", "Voters deny science", "Names are trivial"],
+        correct: 1,
+        meta: { skills: ["details"], keywords: ["the scientific case for the scale of human alteration"], explanation: "The two questions are separated explicitly. The item checks the distinction the reporting missed. The audible clue is \u201cthe scientific case for the scale of human alteration… is se\u201d: catch it and the keyed answer follows." },
+      },
+      {
+        no: 5, stem: "What detail makes the misreading impossible to sustain?",
+        options: ["The vote was unanimous", "The voters were, in the main, scientists whose daily work documents that alteration", "The media apologised", "The group resigned"],
+        correct: 1,
+        meta: { skills: ["details"], keywords: ["The voters were, in the main, scientists whose daily work documents that alteration"], explanation: "Who voted is the decisive fact. The item checks the detail as stated. Listen for \u201cthe voters themselves were, in the main, scientists whose da\u201d — that phrase in the script settles the item." },
+      },
+      {
+        no: 6, stem: "What is the closing sentence about scope?",
+        options: ["The vote decided everything", "The vote was, strictly, about a word, made by the people whose job is to decide about words — and both frustration and satisfaction respond to a decision the word was never asked to make", "Words are unimportant", "Science is undemocratic"],
+        correct: 1,
+        meta: { skills: ["details"], keywords: ["about a word, made by the people whose job is to decide abou"], explanation: "The final sentence deflates both reactions. The item checks the scope formula as delivered. Answer anchored in the recording: \u201cabout a word, made by the people whose job is to decide abou\u201d — hear that phrase and the item resolves." },
+      },
+    ],
+    source: TOEFL_LISTENING_BANK_SOURCE_NOTE,
+  },
+  {
+    slug: "toefl-lb-talk-22", title: "Gene drives", taskType: "academic-talk",
+    scene: "biotechnology lecture", difficulty: 5, estimatedMinutes: 7,
+    intro: "You will hear part of a lecture on engineered inheritance. Answer the questions about the content.",
+    speakers: [{ id: "pr", name: "Professor", role: "lecturer in biotechnology", accent: "north-american" }],
+    segments: [
+      { id: "s1", speakerId: "pr", text: "In ordinary inheritance, a gene variant present in one parent has a one-in-two chance of appearing in each child, and a variant that harms its carrier tends to be removed over generations. A gene drive is a mechanism that breaks both rules." },
+      { id: "s2", speakerId: "pr", text: "Engineered to copy itself into the corresponding position on the other chromosome, it is inherited by nearly all offspring rather than half, and it therefore spreads through a wild population even where it reduces the fitness of the individuals carrying it." },
+      { id: "s3", speakerId: "pr", text: "The mathematics is unusual and consequential: within a limited number of generations, a drive released in modest numbers can approach fixation in a population connected by breeding." },
+      { id: "s4", speakerId: "pr", text: "The applications proposed are, in the main, public-health and conservation ones — suppressing disease-transmitting mosquitoes, or removing invasive mammals from islands." },
+      { id: "s5", speakerId: "pr", text: "The technical results in contained studies are encouraging, and I want the next point heard precisely, because it is the lecture's centre. The distinctive property that raises the stakes is irreversibility at the population scale: a released drive does not stop at a border, does not expire with the individuals released, and cannot be recalled by any action short of releasing another drive designed to overwrite the first." },
+      { id: "s6", speakerId: "pr", text: "This is why the governance discussion is structured differently from other biotechnology debates: containment and reversibility, which are the standard answers to engineered-risk objections, are precisely the properties the technology is designed to lack." },
+      { id: "s7", speakerId: "pr", text: "The response within the field has been to invent governance rather than wait for it: staged testing frameworks with defined exit points, molecular brakes built into the construct, and an international consultation record unusual in its early timing, conducted before rather than after any field use." },
+      { id: "s8", speakerId: "pr", text: "The closing sentence, and it is about institutions, not molecules: whether these arrangements suffice is an open question in the full sense — and it is the one on which the technology's future will be decided, since the science, on its own, has already shown that the copying works." },
+    ],
+    transcriptNote: "The lecture's centre is the designed absence of containment and reversibility. The close separates molecules from institutions.",
+    targetSkill: "academic-listening",
+    questions: [
+      {
+        no: 1, stem: "What two ordinary rules does a drive break?",
+        options: ["Chemistry and physics", "The one-in-two inheritance chance, and the removal of harmful variants over generations", "Cell division and growth", "Mutation and repair"],
+        correct: 1,
+        meta: { skills: ["academic-listening", "details"], keywords: ["a one-in-two chance of appearing in each child, and a varian"], explanation: "The premise states both rules before breaking them. The item checks the pair. The audible clue is \u201ca one-in-two chance of appearing in each child, and a varian\u201d: catch it and the keyed answer follows." },
+      },
+      {
+        no: 2, stem: "How is the copying achieved?",
+        options: ["By surgery", "The construct copies itself into the corresponding position on the other chromosome", "By diet", "By radiation"],
+        correct: 1,
+        meta: { skills: ["details"], keywords: ["Engineered to copy itself into the corresponding position on"], explanation: "The mechanism is positional self-copying. The item checks it as stated. Listen for \u201cEngineered to copy itself into the corresponding position on\u201d — that phrase in the script settles the item." },
+      },
+      {
+        no: 3, stem: "What are the main proposed applications?",
+        options: ["Human enhancement", "Suppressing disease-transmitting mosquitoes and removing invasive mammals from islands", "Crops only", "Livestock colour"],
+        correct: 1,
+        meta: { skills: ["details"], keywords: ["public-health and conservation ones"], explanation: "The two named domains are public health and island conservation. The item checks them as given. Answer anchored in the recording: \u201csuppressing populations of mosquitoes that transmit human di\u201d — hear that phrase and the item resolves." },
+      },
+      {
+        no: 4, stem: "What is the lecture's central point about the technology?",
+        options: ["It is easily contained", "Irreversibility at population scale: it does not stop at borders, does not expire, and cannot be recalled except by another drive overwriting the first", "It is cheap", "It is untested"],
+        correct: 1,
+        meta: { skills: ["main-ideas"], keywords: ["does not stop at a border, does not expire with the individu"], explanation: "The designed absence of safeguards is the centre. The item checks the triple as stated. The audible clue is \u201cdoes not stop at a border, does not expire with the individu\u201d: catch it and the keyed answer follows." },
+      },
+      {
+        no: 5, stem: "Why is the governance discussion structured differently?",
+        options: ["Biotechnology is new", "Containment and reversibility — the standard answers to engineered-risk objections — are precisely the properties the technology is designed to lack", "Lawyers are cautious", "Public opinion polls"],
+        correct: 1,
+        meta: { skills: ["comprehension"], keywords: ["are precisely the properties the technology is designed to l"], explanation: "The inversion is the reason. The item checks it as worded. Listen for \u201care precisely the properties the technology is designed to l\u201d — that phrase in the script settles the item." },
+      },
+      {
+        no: 6, stem: "What is the closing sentence about institutions?",
+        options: ["Governance is settled", "Whether the arrangements suffice is an open question — and it is the one on which the technology's future will be decided, since the science has already shown the copying works", "Molecules decide", "The field is closing"],
+        correct: 1,
+        meta: { skills: ["details"], keywords: ["an open question in the full sense"], explanation: "The close divides settled science from open governance. The item checks the division as delivered. Answer anchored in the recording: \u201can open question in the full sense… since the science, on it\u201d — hear that phrase and the item resolves." },
+      },
+    ],
+    source: TOEFL_LISTENING_BANK_SOURCE_NOTE,
+  },
+  {
+    slug: "toefl-lb-talk-23", title: "The particles that pass through everything", taskType: "academic-talk",
+    scene: "particle physics lecture", difficulty: 5, estimatedMinutes: 7,
+    intro: "You will hear part of a lecture on neutrinos. Answer the questions about the content.",
+    speakers: [{ id: "pr", name: "Professor", role: "lecturer in particle physics", accent: "australian" }],
+    segments: [
+      { id: "s1", speakerId: "pr", text: "Neutrinos are particles of almost nothing: no charge, a mass so small it was long undetectable, and a reluctance to interact that lets trillions pass through a body each second." },
+      { id: "s2", speakerId: "pr", text: "They are produced wherever nuclear processes occur — in the sun's core, in the upper atmosphere where cosmic rays strike it, in reactors and in supernovae. Detection is patience and scale: experiments are built underground, of enormous volume, running for years, to catch the rare recoil when one strikes an atom." },
+      { id: "s3", speakerId: "pr", text: "The scientific history is a series of inferences from missing quantities, and I want the pattern heard. Its existence was proposed to balance the books of a radioactive decay whose energy did not add up; its first detection, decades later, confirmed the bookkeeping." },
+      { id: "s4", speakerId: "pr", text: "The subsequent finding carried the same flavour: solar neutrinos arrived fewer than the sun's physics predicted, and the resolution — that the particles change type in flight — required mass, revising the standard's zero." },
+      { id: "s5", speakerId: "pr", text: "That discovery opened the current chapter: neutrinos as probes of the most distant events. Detectors have recorded a handful of particles from beyond the solar system, energetic enough to mark their sources as among the most violent places known." },
+      { id: "s6", speakerId: "pr", text: "A burst of neutrinos arrived from a supernova hours before its light — an early warning inherent in the particle's ability to leave a collapsing star unimpeded." },
+      { id: "s7", speakerId: "pr", text: "What the field promises in the long run extends beyond astronomy, and here is the honest position stated once: neutrinos are the only known particles whose behaviour differs between matter and antimatter versions in a way that is measured but not understood, which makes them a candidate thread in the oldest unsolved problem of cosmology — why the universe contains matter at all." },
+      { id: "s8", speakerId: "pr", text: "The closing formula, and it is a formula about patience: the thread is held, and nothing more is known than that it is worth pulling — a sentence that describes much of the best science, and all of its patience." },
+    ],
+    transcriptNote: "The pattern to hear is inference vindicated: existence from missing energy, then mass from the solar shortage. The close is the thread formula.",
+    targetSkill: "academic-listening",
+    questions: [
+      {
+        no: 1, stem: "How are neutrino experiments designed, and why?",
+        options: ["Above ground for access", "Underground, enormous, running for years — because almost all neutrinos pass through any apparatus, so the rare recoil must be waited for", "Small and fast", "Airborne"],
+        correct: 1,
+        meta: { skills: ["academic-listening", "comprehension"], keywords: ["experiments are built underground"], explanation: "The design follows the interaction rate. The item checks the design and its reason together. The audible clue is \u201cbuilt underground, of enormous volume, and run for years, to\u201d: catch it and the keyed answer follows." },
+      },
+      {
+        no: 2, stem: "How was the particle's existence first proposed?",
+        options: ["By observation", "To balance the books of a radioactive decay whose energy did not add up — confirmed decades later", "By accident", "By theory of gravity"],
+        correct: 1,
+        meta: { skills: ["details"], keywords: ["proposed to balance the books of a radioactive decay whose e"], explanation: "The inference preceded the detection. The item checks the pattern's first step. Listen for \u201cproposed to balance the books of a radioactive decay whose e\u201d — that phrase in the script settles the item." },
+      },
+      {
+        no: 3, stem: "What did the solar shortage resolve into?",
+        options: ["A broken sun", "The particles change type in flight, which required mass — revising the standard's zero", "Fewer reactions", "A new element"],
+        correct: 1,
+        meta: { skills: ["details"], keywords: ["that the particles change type in flight"], explanation: "Oscillation implied mass. The item checks the resolution and the revision. Answer anchored in the recording: \u201cthat the particles change type in flight — required that the\u201d — hear that phrase and the item resolves." },
+      },
+      {
+        no: 4, stem: "What early-warning event is described?",
+        options: ["A power cut", "A burst of neutrinos arrived from a supernova hours before its light, leaving the collapsing star unimpeded while the light fought through the layers", "An eclipse", "A solar flare"],
+        correct: 1,
+        meta: { skills: ["details"], keywords: ["arrived from a supernova hours before its light"], explanation: "The neutrinos outrun the light. The item checks the observation and its mechanism. The audible clue is \u201carriving from a supernova hours before its light became visi\u201d: catch it and the keyed answer follows." },
+      },
+      {
+        no: 5, stem: "What makes neutrinos a candidate thread in cosmology's oldest problem?",
+        options: ["Their speed", "Their matter and antimatter versions behave differently in a way measured but not understood — touching why the universe contains matter at all", "Their charge", "Their number"],
+        correct: 1,
+        meta: { skills: ["details"], keywords: ["differs between matter and antimatter versions in a way that"], explanation: "The asymmetry is the datum. The item checks the property and its connection. Listen for \u201cdiffers between matter and antimatter versions in a way that\u201d — that phrase in the script settles the item." },
+      },
+      {
+        no: 6, stem: "What is the closing formula about patience?",
+        options: ["The thread is cut", "The thread is held, and nothing more is known than that it is worth pulling", "The thread is forgotten", "The thread is woven"],
+        correct: 1,
+        meta: { skills: ["details"], keywords: ["the thread is held, and nothing more is known than that it i"], explanation: "The final sentence commits to inquiry without promising results. The item checks it as worded. Answer anchored in the recording: \u201cthe thread is held, and nothing more is known than that it i\u201d — hear that phrase and the item resolves." },
+      },
+    ],
+    source: TOEFL_LISTENING_BANK_SOURCE_NOTE,
+  },
+  {
+    slug: "toefl-lb-talk-24", title: "Migration as inheritance and learning", taskType: "academic-talk",
+    scene: "ornithology lecture", difficulty: 5, estimatedMinutes: 7,
+    intro: "You will hear part of a lecture on bird migration. Answer the questions about the content.",
+    speakers: [{ id: "pr", name: "Professor", role: "lecturer in zoology", accent: "british" }],
+    segments: [
+      { id: "s1", speakerId: "pr", text: "Every year, birds weighing a few grams cross deserts, seas and ranges on journeys of thousands of kilometres, returning to the same breeding site within days of the same date." },
+      { id: "s2", speakerId: "pr", text: "The finding that organises them all is inheritance: the itinerary is largely written before the bird flies, in genes, and refined afterward by experience." },
+      { id: "s3", speakerId: "pr", text: "The guidance systems run in layers, and I want the layers in order. The simplest is innate direction: a fledgling on its first journey flies a compass heading it was born with, for a duration it was born with." },
+      { id: "s4", speakerId: "pr", text: "The sun provides one compass, compensated for its movement across the sky by an internal clock; the stars provide another, learned in the nest from the rotation pattern of the night sky; and the earth's magnetic field provides a third, whose receptors are still being identified." },
+      { id: "s5", speakerId: "pr", text: "Layered on top comes true navigation: the capacity, once a bird has been somewhere, to return there from an unfamiliar release point — which implies a map sense whose substrate remains one of the field's open problems." },
+      { id: "s6", speakerId: "pr", text: "The journeys are timed and fuelled like planned expeditions, and the currency deserves note. Before departure, migrants undergo hyperphagia — eating far beyond normal — and deposit fat at rates that can double their mass; the fat is the fuel, and departures are timed to weather systems, particularly for sea crossings, where birds wait for following winds." },
+      { id: "s7", speakerId: "pr", text: "Ringing and, latterly, tracking devices have replaced inference with observation: individual birds are now followed across whole routes, the tracks showing both the inherited program and the corrections experience adds." },
+      { id: "s8", speakerId: "pr", text: "The sentence to take away, and it is about conservation, not romance: a migrant depends on a chain of sites — breeding ground, staging wetlands, wintering range — and the loss of any link breaks the chain, which is why the international treaties exist: no single country's protection can cover a bird that spends its year in several." },
+    ],
+    transcriptNote: "The layers arrive in order: innate direction, three compasses, true navigation, then fuelling. The close is the chain-of-sites conservation logic.",
+    targetSkill: "academic-listening",
+    questions: [
+      {
+        no: 1, stem: "What finding organises all the mechanisms?",
+        options: ["Learning from parents", "Inheritance — the itinerary is largely written in genes before the first flight, refined afterward by experience", "Weather only", "Group travel"],
+        correct: 1,
+        meta: { skills: ["academic-listening", "details"], keywords: ["the finding that organises them all is inheritance"], explanation: "The organising claim is stated early. The item checks it with its refinement clause. The audible clue is \u201cthe finding that organises them all is inheritance\u201d: catch it and the keyed answer follows." },
+      },
+      {
+        no: 2, stem: "What does a young bird do on its first migration?",
+        options: ["Follows its parents", "Flies an inherited compass direction for an inherited length of time", "Waits for a guide", "Flies at random"],
+        correct: 1,
+        meta: { skills: ["details"], keywords: ["flies a compass heading it was born with, for a duration it "], explanation: "The simplest layer is the innate program. The item checks it as described. Listen for \u201cflies a compass heading it was born with, for a duration it \u201d — that phrase in the script settles the item." },
+      },
+      {
+        no: 3, stem: "How is the sun's movement compensated, and how is the star compass learned?",
+        options: ["By trial and error; it is innate", "By an internal clock; the star compass is learned in the nest from the rotation pattern of the night sky", "By the flock; by song", "It is not; it is not"],
+        correct: 1,
+        meta: { skills: ["details"], keywords: ["compensated for its movement across the sky by an internal c"], explanation: "Two compasses, two mechanisms. The item checks both as paired. Answer anchored in the recording: \u201ccompensated for its movement across the sky by an internal c\u201d — hear that phrase and the item resolves." },
+      },
+      {
+        no: 4, stem: "What is hyperphagia, and what does it achieve?",
+        options: ["A disease; weakness", "Eating far beyond normal before departure, depositing fat at rates that can double mass — the fat is the fuel", "A call; navigation", "A moult; colour"],
+        correct: 1,
+        meta: { skills: ["details"], keywords: ["migrants undergo hyperphagia — eating far beyond normal — an"], explanation: "The term is glossed with its function. The item checks the gloss and the outcome. The audible clue is \u201cmigrants undergo hyperphagia — eating far beyond normal — an\u201d: catch it and the keyed answer follows." },
+      },
+      {
+        no: 5, stem: "What have tracking devices replaced?",
+        options: ["Ringing entirely", "Inference with observation — following individuals across whole routes, showing both program and corrections", "Genetics", "Theory"],
+        correct: 1,
+        meta: { skills: ["details"], keywords: ["Ringing and, latterly, tracking devices have replaced infere"], explanation: "The epistemic upgrade is stated. The item checks what changed. Listen for \u201cRinging and, latterly, tracking devices have replaced infere\u201d — that phrase in the script settles the item." },
+      },
+      {
+        no: 6, stem: "What is the closing conservation sentence?",
+        options: ["Migration is safe", "A migrant depends on a chain of sites, and the loss of any link breaks the chain — hence treaties, because no single country's protection covers a bird that spends its year in several", "Birds need no help", "Wetlands are optional"],
+        correct: 1,
+        meta: { skills: ["details"], keywords: ["the loss of any link breaks the chain, which is why the inte"], explanation: "The close derives policy from the chain logic. The item checks the reasoning as delivered. Answer anchored in the recording: \u201cthe loss of any link breaks the chain, which is why the inte\u201d — hear that phrase and the item resolves." },
+      },
+    ],
+    source: TOEFL_LISTENING_BANK_SOURCE_NOTE,
+  },
+  {
+    slug: "toefl-lb-talk-25", title: "Gentrification: two markets, one street", taskType: "academic-talk",
+    scene: "urban sociology lecture", difficulty: 5, estimatedMinutes: 7,
+    intro: "You will hear part of a lecture on urban change. Answer the questions about the content.",
+    speakers: [{ id: "pr", name: "Professor", role: "lecturer in urban sociology", accent: "north-american" }],
+    segments: [
+      { id: "s1", speakerId: "pr", text: "The term was coined in the nineteen-sixties to describe what happened when middle-class buyers began moving into working-class London districts: the arrival was described, in the period's metaphor, as if a gentry were colonising the neighbourhood from within." },
+      { id: "s2", speakerId: "pr", text: "The word has since travelled wherever rising rents push one population out and pull another in, and the definitional disputes are not pedantry: each definition decides who is counted as harmed and what policy is judged relevant." },
+      { id: "s3", speakerId: "pr", text: "The mechanism is best described as a race between two markets. Housing is cheap relative to location; artists, students and low-income professionals move in on the low prices; cafés and reputation raise desirability; rents rise; the original residents, then the earlier arrivals themselves, are priced out." },
+      { id: "s4", speakerId: "pr", text: "One caveat, verbatim: where new construction is constrained, the second wave meets a fixed stock, and displacement is correspondingly sharper." },
+      { id: "s5", speakerId: "pr", text: "Now the evidence, which is more careful than the rhetoric. Studies tracking individual households over time find direct displacement real but smaller than public discussion assumes, and the larger effect exclusion: original residents move less often, while who moves in changes the area's character and services." },
+      { id: "s6", speakerId: "pr", text: "The visible transformation of a street, on this evidence, is more about replacement than eviction — which is why the argument so often talks past itself, with one side describing who left and the other describing who arrived." },
+      { id: "s7", speakerId: "pr", text: "The policy responses divide by which cause they target: rent regulation and tenancy protection aim at the displacement margin; increasing supply aims at the price margin; and public or community land ownership aims at the margin neither market instrument reaches, taking appreciation out of private hands." },
+      { id: "s8", speakerId: "pr", text: "The closing claim, and it is a claim about the nature of the choice: each of these works somewhere and fails somewhere, and the choice among them is less a technical finding than a decision about whose interests the housing system is for — a decision the word keeps forcing, which is precisely why the word survives." },
+    ],
+    transcriptNote: "The lecture's key evidence is the longitudinal finding: displacement smaller than assumed, exclusion larger. The close maps policies to margins and ends on the distributive decision.",
+    targetSkill: "academic-listening",
+    questions: [
+      {
+        no: 1, stem: "When was the term coined, and from what metaphor?",
+        options: ["The 1890s, from banking", "The 1960s, describing middle-class buyers as if a gentry were colonising working-class districts from within", "The 1920s, from theatre", "The 2000s, from computing"],
+        correct: 1,
+        meta: { skills: ["academic-listening", "details"], keywords: ["as if a gentry were colonising the neighbourhood from within"], explanation: "The origin and figure are given together. The item checks both as stated. The audible clue is \u201cas if a gentry were colonising the neighbourhood from within\u201d: catch it and the keyed answer follows." },
+      },
+      {
+        no: 2, stem: "Why are the definitional disputes not pedantry?",
+        options: ["Scholars enjoy them", "Each definition decides who is counted as harmed and what policy is judged relevant", "Courts require them", "The word is new"],
+        correct: 1,
+        meta: { skills: ["comprehension"], keywords: ["each definition decides who is counted as harmed and what po"], explanation: "The stakes follow from the definition. The item checks the reason as worded. Listen for \u201ceach definition decides who is counted as harmed and what po\u201d — that phrase in the script settles the item." },
+      },
+      {
+        no: 3, stem: "What is the verbatim caveat to the supply-and-demand story?",
+        options: ["Prices never rise", "Where new construction is constrained, the second wave meets a fixed stock, and displacement is correspondingly sharper", "Supply is infinite", "Demand is fixed"],
+        correct: 1,
+        meta: { skills: ["details"], keywords: ["where new construction is constrained"], explanation: "The caveat is requested verbatim. The item checks it as stated. Answer anchored in the recording: \u201cin cities where new construction is constrained, the second \u201d — hear that phrase and the item resolves." },
+      },
+      {
+        no: 4, stem: "What did longitudinal household studies find?",
+        options: ["Displacement is total", "Direct displacement is real but smaller than assumed; the larger effect is exclusion — original residents move less often while who moves in changes", "No one moves", "Only the rich move out"],
+        correct: 1,
+        meta: { skills: ["details"], keywords: ["real but smaller than public discussion assumes"], explanation: "The finding distinguishes displacement from exclusion. The item checks the distinction as summarised. The audible clue is \u201creal but smaller than public discussion assumes, and that th\u201d: catch it and the keyed answer follows." },
+      },
+      {
+        no: 5, stem: "Why does the argument talk past itself?",
+        options: ["Data is missing", "One side describes who left and the other describes who arrived — replacement, not eviction, explains the visible street", "Nobody studies it", "Definitions are fixed"],
+        correct: 1,
+        meta: { skills: ["speaker-intention"], keywords: ["more about replacement than eviction, which is why the argum"], explanation: "The two descriptions attach to two processes. The item checks the explanation of the mutual deafness. Listen for \u201cmore about replacement than eviction, which is why the argum\u201d — that phrase in the script settles the item." },
+      },
+      {
+        no: 6, stem: "What is the closing claim about the choice?",
+        options: ["One policy is proven best", "The choice is less a technical finding than a decision about whose interests the housing system is for — which the word keeps forcing, and which is why the word survives", "Policy is irrelevant", "Cities cannot act"],
+        correct: 1,
+        meta: { skills: ["details"], keywords: ["less a technical finding than a decision about whose interes"], explanation: "The close reclassifies the question as distributive. The item checks the reclassification as delivered. Answer anchored in the recording: \u201cless a technical finding than a decision about whose interes\u201d — hear that phrase and the item resolves." },
+      },
+    ],
+    source: TOEFL_LISTENING_BANK_SOURCE_NOTE,
+  },
+];

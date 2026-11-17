@@ -1,0 +1,768 @@
+/**
+ * TOEFL Writing Practice Library — Build a Sentence, grammar, batch 2
+ * (PROMPT 50). Exercises toefl-wb-sent-31…40: tense choice, determiners,
+ * perfect tenses with since and for, subjunctives, wishes, nominal clauses,
+ * tense consistency and participle clauses. Completes four exercises per
+ * tier for the grammar focus.
+ *
+ * All sentences are original TalkSy practice material.
+ */
+
+import { TOEFL_WRITING_BANK_SOURCE_NOTE, type ToeflSentenceExercise } from "./types";
+
+export const sentenceGrammar2Exercises: ToeflSentenceExercise[] = [
+  {
+    taskType: "build-sentence",
+    slug: "toefl-wb-sent-31",
+    title: "Simple past or continuous",
+    focus: "grammar",
+    difficulty: 1,
+    estimatedMinutes: 6,
+    instructions: "Each sentence below uses the past simple and the past continuous in the wrong places. Rewrite it so the interrupted action and the interrupting action carry the right forms.",
+    taskRequirements: [
+      "Use the continuous for the longer background action.",
+      "Use the simple form for the short interrupting event.",
+      "Keep while and when with their natural partners.",
+    ],
+    timeGuidance: "One minute per item; decide which action was in progress.",
+    items: [
+      {
+        no: 1, kind: "correct",
+        prompt: "This sentence has one tense error. Rewrite it correctly.",
+        source: "The tutor was checking the register when the fire alarm was sounding.",
+        answer: "The tutor was checking the register when the fire alarm sounded.",
+        meta: {
+          explanation: "The checking is the longer background action, while the alarm is a short event that interrupts it, so the alarm takes the past simple sounded inside the when-clause.",
+          grammarNote: "When-clauses carry the interrupting simple past; while-clauses carry the continuous.",
+        },
+      },
+      {
+        no: 2, kind: "correct",
+        prompt: "This sentence has one tense error. Rewrite it correctly.",
+        source: "While the technician repaired the projector, the students took notes by hand.",
+        answer: "While the technician was repairing the projector, the students took notes by hand.",
+        meta: {
+          explanation: "The repairing ran continuously in the background while the note-taking happened, so the while-clause needs the past continuous was repairing to mark that duration.",
+          grammarNote: "While signals an ongoing action and pairs naturally with the continuous.",
+        },
+      },
+      {
+        no: 3, kind: "correct",
+        prompt: "This sentence has one tense error. Rewrite it correctly.",
+        source: "I read the assigned chapter when the lights went out.",
+        answer: "I was reading the assigned chapter when the lights went out.",
+        meta: {
+          explanation: "The reading was in progress when the blackout interrupted it, so the main clause needs the past continuous was reading; the short event stays in the simple past in the when-clause.",
+          grammarNote: "The interrupted action takes the continuous; the interruption takes the simple past.",
+        },
+      },
+      {
+        no: 4, kind: "correct",
+        prompt: "This sentence has one tense error. Rewrite it correctly.",
+        source: "The demonstrators were marching past the library when the dean was appearing at the door.",
+        answer: "The demonstrators were marching past the library when the dean appeared at the door.",
+        meta: {
+          explanation: "Appearing at the door is a single momentary event inside the longer march, so it takes the simple past appeared; the marching keeps its continuous form as the background.",
+          grammarNote: "Momentary verbs resist the continuous and default to the simple past.",
+        },
+      },
+    ],
+    modelResponse: "The keyed sentences give every while-background its continuous and every when-interruption its simple past: was checking when sounded, was repairing while took, was reading when went out, were marching when appeared.",
+    responseAnalysis: "The picture-frame metaphor carries the rule: the continuous draws the frame, the simple past drops the event into it. Learners who ask which action was already running when the other one happened choose the right forms without hesitation.",
+    usefulExpressions: [
+      "background continuous",
+      "interrupting simple past",
+      "while versus when",
+      "frame and event",
+    ],
+    grammarObservations: [
+      "English encodes aspectual prominence in morphology: the continuous marks the action worth watching, the simple past marks the change.",
+      "Verbs of momentary appearance and perception resist the continuous, which keeps appeared and saw simple even mid-narrative.",
+    ],
+    commonMistakes: [
+      "Giving both clauses the continuous, which erases the interruption contrast.",
+      "Leaving the longer action in the simple past, flattening the narrative into a sequence of points.",
+    ],
+    independentAssignment: "Describe one interrupted moment from your week in a single two-clause sentence, then label the frame and the event.",
+    source: TOEFL_WRITING_BANK_SOURCE_NOTE,
+  },
+  {
+    taskType: "build-sentence",
+    slug: "toefl-wb-sent-32",
+    title: "Singulars that should be plural",
+    focus: "grammar",
+    difficulty: 1,
+    estimatedMinutes: 6,
+    instructions: "Each sentence uses a singular form where a plural belongs, or the reverse. Rewrite it with the noun's number corrected and any agreement repaired.",
+    taskRequirements: [
+      "Fix the noun's number where the meaning demands it.",
+      "Repair any agreement the change triggers.",
+      "Change nothing else in the sentence beyond the repair itself.",
+    ],
+    timeGuidance: "One minute per item; check the determiner for the number clue.",
+    items: [
+      {
+        no: 1, kind: "correct",
+        prompt: "This sentence has one number error. Rewrite it correctly.",
+        source: "The report compares three university's funding models.",
+        answer: "The report compares three universities' funding models.",
+        meta: {
+          explanation: "Three requires a plural noun, so universities takes the plural, and the possessive apostrophe moves after the plural marker; three university's mixes a plural determiner with a singular possessive.",
+          grammarNote: "Plural possessives place the apostrophe after the s: universities'.",
+        },
+      },
+      {
+        no: 2, kind: "correct",
+        prompt: "This sentence has one number error. Rewrite it correctly.",
+        source: "She has two more year before her final exams.",
+        answer: "She has two more years before her final exams.",
+        meta: {
+          explanation: "The numeral two demands a plural noun, so years is required; two more year is a number mismatch that careful writing must repair.",
+          grammarNote: "Numerals above one always pair with plural nouns.",
+        },
+      },
+      {
+        no: 3, kind: "correct",
+        prompt: "This sentence has one number error. Rewrite it correctly.",
+        source: "All the equipments in the lab were recalibrated.",
+        answer: "All the equipment in the lab was recalibrated.",
+        meta: {
+          explanation: "Equipment is uncountable and has no plural form, so the noun stays singular and the verb agrees with was; the plural equipments does not exist in standard English.",
+          grammarNote: "Equipment, furniture and information are uncountable and never pluralise.",
+        },
+      },
+      {
+        no: 4, kind: "correct",
+        prompt: "This sentence has one number error. Rewrite it correctly.",
+        source: "One of my classmate speaks four languages fluently.",
+        answer: "One of my classmates speaks four languages fluently.",
+        meta: {
+          explanation: "The phrase one of always takes a plural noun because it selects from a group, so classmates is required while the verb stays singular to agree with one.",
+          grammarNote: "One of plus plural noun, with a singular verb agreeing with one.",
+        },
+      },
+    ],
+    modelResponse: "The keyed repairs pluralise universities, years and classmates after their plural determiners, and return equipment to its uncountable singular with the verb was, showing both directions of the number rule working.",
+    responseAnalysis: "Number errors cluster around three triggers: numerals, one of, and uncountables. Learners who check the determiner against the noun's form, and remember the short list of never-plural nouns, clear this family of errors quickly.",
+    usefulExpressions: [
+      "numerals take plurals",
+      "one of plus plural",
+      "uncountables never pluralise",
+      "apostrophe after the plural",
+    ],
+    grammarObservations: [
+      "English marks number on the noun itself, so determiner and noun must display matching plurality.",
+      "A small set of everyday nouns — equipment, information, advice — resist pluralisation entirely.",
+    ],
+    commonMistakes: [
+      "Adding an s to uncountables like equipment, copying the plural habits of first languages.",
+      "Leaving the noun singular after numerals, producing two year or three university errors.",
+    ],
+    independentAssignment: "Write four sentences using two numerals, one of and one uncountable noun, checking each noun's number against its determiner.",
+    source: TOEFL_WRITING_BANK_SOURCE_NOTE,
+  },
+  {
+    taskType: "build-sentence",
+    slug: "toefl-wb-sent-33",
+    title: "Comparison shapes",
+    focus: "grammar",
+    difficulty: 2,
+    estimatedMinutes: 7,
+    instructions: "Each sentence misforms a comparative or superlative. Rewrite it with the correct shape, whether -er, more, or the irregular form.",
+    taskRequirements: [
+      "Use -er only with short adjectives and adverbs.",
+      "Use more with longer adjectives, never together with -er.",
+      "Give irregulars their own comparative and superlative forms.",
+    ],
+    timeGuidance: "Ninety seconds per item; syllable count decides the shape.",
+    items: [
+      {
+        no: 1, kind: "correct",
+        prompt: "This sentence has one comparison error. Rewrite it correctly.",
+        source: "The second lecture was more easier to follow than the first.",
+        answer: "The second lecture was easier to follow than the first.",
+        meta: {
+          explanation: "Easy already forms its comparative with -er, so adding more doubles the marker; easier alone carries the comparison, and more easier is a doubled comparative that standard English bars.",
+          grammarNote: "Short adjectives take -er alone; more and -er never combine.",
+        },
+      },
+      {
+        no: 2, kind: "correct",
+        prompt: "This sentence has one comparison error. Rewrite it correctly.",
+        source: "This is the most old edition of the laboratory manual.",
+        answer: "This is the oldest edition of the laboratory manual.",
+        meta: {
+          explanation: "Old is a short adjective with the irregular-adjacent superlative oldest, so most old is barred; the superlative marker attaches directly to the adjective.",
+          grammarNote: "One-syllable adjectives take -est directly, with no most.",
+        },
+      },
+      {
+        no: 3, kind: "correct",
+        prompt: "This sentence has one comparison error. Rewrite it correctly.",
+        source: "The evening cohort is more bigger than anyone predicted.",
+        answer: "The evening cohort is bigger than anyone predicted.",
+        meta: {
+          explanation: "Big forms its comparative as bigger alone, so the extra more doubles the marker; the repair keeps the single comparative that the short adjective requires.",
+          grammarNote: "One-syllable adjectives take -er and never combine with more.",
+        },
+      },
+      {
+        no: 4, kind: "correct",
+        prompt: "This sentence has one comparison error. Rewrite it correctly.",
+        source: "The results were more better than the pilot study predicted.",
+        answer: "The results were better than the pilot study predicted.",
+        meta: {
+          explanation: "Better is already the irregular comparative of good, so more better doubles a marker that exists; better alone expresses the comparison the sentence needs.",
+          grammarNote: "Good, better, best carries its own comparison and never takes more or most.",
+        },
+      },
+    ],
+    modelResponse: "The keyed repairs strip every doubled marker in the set: easier, oldest and bigger each stand alone with their suffixes, better drops its extra more entirely, and each finished comparison carries exactly one marker and no more.",
+    responseAnalysis: "Comparison errors are almost always doubled markers. The rule of thumb is exclusive: short adjectives take suffixes, long adjectives take more, irregulars take their own forms, and no two markers may combine.",
+    usefulExpressions: [
+      "one marker only",
+      "short adjective, -er",
+      "long adjective, more",
+      "irregulars carry their own",
+    ],
+    grammarObservations: [
+      "English comparative morphology is an either-or system, which is why more easier and most old sound wrong to every fluent ear.",
+      "A handful of high-frequency adjectives are fully irregular, and good is the most frequently mistreated of them.",
+    ],
+    commonMistakes: [
+      "Doubling markers for emphasis, producing more better and more easier.",
+      "Applying most to one-syllable adjectives instead of -est.",
+    ],
+    independentAssignment: "Compare three things in your study space using one short adjective, one long adjective and one irregular, with a single marker each.",
+    source: TOEFL_WRITING_BANK_SOURCE_NOTE,
+  },
+  {
+    taskType: "build-sentence",
+    slug: "toefl-wb-sent-34",
+    title: "Since and for with the perfect",
+    focus: "grammar",
+    difficulty: 3,
+    estimatedMinutes: 7,
+    instructions: "Each sentence misuses since, for or ago with its tense. Rewrite it with the right time marker and the matching perfect form.",
+    taskRequirements: [
+      "Use since with starting points, for with durations.",
+      "Keep present perfect for unfinished periods.",
+      "Reserve ago for finished points with past simple.",
+    ],
+    timeGuidance: "Ninety seconds per item; classify the time expression as point, duration or finished distance.",
+    items: [
+      {
+        no: 1, kind: "correct",
+        prompt: "This sentence has one time-marker error. Rewrite it correctly.",
+        source: "She has supervised the lab for 2022.",
+        answer: "She has supervised the lab since 2022.",
+        meta: {
+          explanation: "The year 2022 is a starting point, not a duration, so the marker must be since; for pairs with lengths of time such as for three years, which the sentence does not contain.",
+          grammarNote: "Since takes a point; for takes a measured duration.",
+        },
+      },
+      {
+        no: 2, kind: "correct",
+        prompt: "This sentence has one time-marker error. Rewrite it correctly.",
+        source: "The reading group has met since six semesters.",
+        answer: "The reading group has met for six semesters.",
+        meta: {
+          explanation: "Six semesters is a duration, so for is the required marker; since would demand a named starting point like since last autumn, which the sentence does not supply.",
+          grammarNote: "Quantified periods always follow for inside a perfect tense.",
+        },
+      },
+      {
+        no: 3, kind: "correct",
+        prompt: "This sentence has one time-marker error. Rewrite it correctly.",
+        source: "The consortium published the framework three years before and it has shaped policy since then.",
+        answer: "The consortium published the framework three years ago and it has shaped policy since then.",
+        meta: {
+          explanation: "Measured back from now, the distance belongs to ago, which pairs with the past simple; three years before would measure from a past reference point and cannot start this sentence.",
+          grammarNote: "Ago counts backwards from now with the past simple; before counts from a past moment.",
+        },
+      },
+      {
+        no: 4, kind: "correct",
+        prompt: "This sentence has one time-marker error. Rewrite it correctly.",
+        source: "He is studying biology since he left college.",
+        answer: "He has studied biology since he left college.",
+        alternatives: ["He has been studying biology since he left college."],
+        meta: {
+          explanation: "Since plus a past-simple clause demands a perfect in the main clause, so is studying must become has studied or has been studying; the present continuous cannot span a since-period.",
+          grammarNote: "Since-clauses license present perfect or perfect continuous in the main clause.",
+        },
+      },
+    ],
+    modelResponse: "The keyed repairs pair since with the starting year, for with the six-semester duration, and perfect forms with the since-clause; the ago sentence now anchors its past-simple event correctly before the since-then perfect clause.",
+    responseAnalysis: "The three markers carve up time differently: since names a start, for measures a length, ago counts backwards. Learners who classify the expression before choosing the tense find the perfect system assembles itself.",
+    usefulExpressions: [
+      "since the starting point",
+      "for the duration",
+      "ago with past simple",
+      "perfect after since",
+    ],
+    grammarObservations: [
+      "The perfect tenses exist precisely to talk about periods that connect a past point to now, which is what since marks.",
+      "Ago belongs to finished time and therefore drags its clause into the simple past every time.",
+    ],
+    commonMistakes: [
+      "Using for with a named date instead of a measured length.",
+      "Leaving a present continuous in the main clause after since.",
+    ],
+    independentAssignment: "Write three sentences about one hobby using since, for and ago correctly, and name the tense each marker forced.",
+    source: TOEFL_WRITING_BANK_SOURCE_NOTE,
+  },
+  {
+    taskType: "build-sentence",
+    slug: "toefl-wb-sent-35",
+    title: "Verbs that demand the subjunctive",
+    focus: "grammar",
+    difficulty: 4,
+    estimatedMinutes: 8,
+    instructions: "Certain verbs and adjectives trigger the bare subjunctive in their that-clauses. Each sentence below misses it. Rewrite it with the base form the trigger demands.",
+    taskRequirements: [
+      "Use the base form after suggest, recommend, insist and demand.",
+      "Keep the base form even for third-person subjects.",
+      "Leave factual that-clauses in the indicative.",
+    ],
+    timeGuidance: "Two minutes per item; find the trigger word first.",
+    items: [
+      {
+        no: 1, kind: "correct",
+        prompt: "This sentence needs the subjunctive. Rewrite it correctly.",
+        source: "The panel recommended that the abstract is shortened by a third.",
+        answer: "The panel recommended that the abstract be shortened by a third.",
+        meta: {
+          explanation: "Recommend triggers the mandative subjunctive, so the that-clause uses the base form be regardless of the singular subject; is belongs to factual clauses, not mandated ones.",
+          grammarNote: "After recommend, suggest and demand, that-clauses take the base form be.",
+        },
+      },
+      {
+        no: 2, kind: "correct",
+        prompt: "This sentence needs the subjunctive. Rewrite it correctly.",
+        source: "It is essential that every candidate submits two references.",
+        answer: "It is essential that every candidate submit two references.",
+        meta: {
+          explanation: "The adjective essential is a mandative trigger, so the subjunctive submit drops the third-person s; the indicative submits would state a fact rather than a requirement.",
+          grammarNote: "Essential, vital and important license the bare subjunctive in formal that-clauses.",
+        },
+      },
+      {
+        no: 3, kind: "correct",
+        prompt: "This sentence needs the subjunctive. Rewrite it correctly.",
+        source: "The union insisted that the risk assessment was published before the reopening.",
+        answer: "The union insisted that the risk assessment be published before the reopening.",
+        meta: {
+          explanation: "Insist in its demanding sense triggers the subjunctive, so was becomes be; the union is mandating an action, not reporting one, and the clause must show that.",
+          grammarNote: "Insist demands the subjunctive when it presses for action, but the indicative when it asserts a belief.",
+        },
+      },
+      {
+        no: 4, kind: "correct",
+        prompt: "This sentence needs the subjunctive. Rewrite it correctly.",
+        source: "The regulations require that each lab submits its chemical inventory annually.",
+        answer: "The regulations require that each lab submit its chemical inventory annually.",
+        meta: {
+          explanation: "Require is the final common trigger, and the subjunctive submit drops the s that the indicative would carry; the regulation is a standing mandate, so the base form is the formal choice.",
+          grammarNote: "Require plus that-clause takes the base form in regulatory writing.",
+        },
+      },
+    ],
+    modelResponse: "Every keyed clause drops its indicative ending after a mandative trigger: be shortened, submit, be published, submit again, each base form standing where an ordinary clause would show tense agreement.",
+    responseAnalysis: "The subjunctive survives in English almost only in mandates, so the search image is the trigger verb or adjective. Learners who memorise the short trigger list — suggest, recommend, insist, demand, require, essential — spot these instantly in exam reading too.",
+    usefulExpressions: [
+      "mandative subjunctive",
+      "base form after suggest",
+      "essential that he submit",
+      "drop the third-person s",
+    ],
+    grammarObservations: [
+      "The mandative subjunctive uses the bare base form for every subject, which is why be is its most visible signature.",
+      "British English often replaces it with should plus verb, but the base form remains the standard in formal international writing.",
+    ],
+    commonMistakes: [
+      "Restoring tense agreement inside mandated clauses, writing is or submits where be and submit belong.",
+      "Confusing insist's two senses and using the subjunctive for a simple assertion.",
+    ],
+    independentAssignment: "Write three mandates from your department using recommend, require and essential, each with a correct subjunctive clause.",
+    source: TOEFL_WRITING_BANK_SOURCE_NOTE,
+  },
+  {
+    taskType: "build-sentence",
+    slug: "toefl-wb-sent-36",
+    title: "Wishes point backwards",
+    focus: "grammar",
+    difficulty: 4,
+    estimatedMinutes: 8,
+    instructions: "Wish clauses step one tense away from reality. Each sentence below breaks that rule. Rewrite it with the correct backshifted form.",
+    taskRequirements: [
+      "Use past forms for present wishes.",
+      "Use past perfect for past wishes.",
+      "Use would for wishes about changeable behaviour.",
+    ],
+    timeGuidance: "Two minutes per item; decide first what time the wish lives in.",
+    items: [
+      {
+        no: 1, kind: "correct",
+        prompt: "This sentence has one wish-clause error. Rewrite it correctly.",
+        source: "I wish the library is open on Sunday evenings.",
+        answer: "I wish the library were open on Sunday evenings.",
+        alternatives: ["I wish the library was open on Sunday evenings."],
+        meta: {
+          explanation: "A wish about the present steps back to the past form, so were — or informally was — replaces is; the present tense cannot describe an unreal present inside a wish.",
+          grammarNote: "Present wishes use were or was, never is; were is the formal choice.",
+        },
+      },
+      {
+        no: 2, kind: "correct",
+        prompt: "This sentence has one wish-clause error. Rewrite it correctly.",
+        source: "She wishes she attended the methods workshop last month.",
+        answer: "She wishes she had attended the methods workshop last month.",
+        meta: {
+          explanation: "The workshop happened last month, so the wish is about the past and needs the past perfect had attended; the plain past attended would describe a present wish instead.",
+          grammarNote: "Past wishes backshift two steps to the past perfect.",
+        },
+      },
+      {
+        no: 3, kind: "correct",
+        prompt: "This sentence has one wish-clause error. Rewrite it correctly.",
+        source: "I wish the seminar wouldn't clash with my lab session every week.",
+        answer: "I wish the seminar didn't clash with my lab session every week.",
+        meta: {
+          explanation: "The clash is a standing state, not a changeable action, so the wish takes didn't clash rather than wouldn't; would is reserved for wishes about someone's wilful behaviour.",
+          grammarNote: "Would in wishes targets annoying voluntary actions, not fixed states.",
+        },
+      },
+      {
+        no: 4, kind: "correct",
+        prompt: "This sentence has one wish-clause error. Rewrite it correctly.",
+        source: "We wish the coordinator has replied to our funding query.",
+        answer: "We wish the coordinator had replied to our funding query.",
+        meta: {
+          explanation: "The absent reply already belongs to the past, so the wish takes the past perfect had replied; has replied is present perfect and cannot express unreality about finished time.",
+          grammarNote: "Unfulfilled past hopes always surface as wish plus past perfect.",
+        },
+      },
+    ],
+    modelResponse: "The keyed wishes read were open for the present state, had attended and had replied for the past, and didn't clash for the standing schedule, each form one or two steps behind the reality.",
+    responseAnalysis: "Wish grammar is unreality grammar: the clause always lags behind the real time by one step. Learners who first date the wish — present, past, or someone's behaviour — then apply the lag produce flawless wish sentences.",
+    usefulExpressions: [
+      "one step behind reality",
+      "were for present wishes",
+      "past perfect for past wishes",
+      "would for wilful behaviour",
+    ],
+    grammarObservations: [
+      "The past forms inside wish clauses do not mean past time; they mean distance from reality.",
+      "Would inside wishes expresses the wisher's irritation at an agent's repeated voluntary action.",
+    ],
+    commonMistakes: [
+      "Leaving the present tense inside the wish, as in wish the library is open.",
+      "Using would for states and schedules, where only actions under someone's control qualify.",
+    ],
+    independentAssignment: "Write three wishes about this term — one present state, one past event, one habit of a classmate — with correctly backshifted clauses.",
+    source: TOEFL_WRITING_BANK_SOURCE_NOTE,
+  },
+  {
+    taskType: "build-sentence",
+    slug: "toefl-wb-sent-37",
+    title: "Nominal clauses agree alone",
+    focus: "grammar",
+    difficulty: 5,
+    estimatedMinutes: 9,
+    instructions: "When a whole clause acts as the subject, the verb is singular no matter how plural the clause's own nouns are. Each sentence below breaks that rule. Rewrite it with correct agreement.",
+    taskRequirements: [
+      "Treat a clausal subject as singular.",
+      "Keep the verb singular after what, whether and that clauses.",
+      "Preserve the order of ideas in the sentence.",
+    ],
+    timeGuidance: "Two minutes per item; bracket the whole clause subject before touching the verb.",
+    items: [
+      {
+        no: 1, kind: "correct",
+        prompt: "This sentence has one agreement error. Rewrite it correctly.",
+        source: "What the results show are the limits of the sample.",
+        answer: "What the results show is the limits of the sample.",
+        meta: {
+          explanation: "The subject is the entire clause what the results show, and clausal subjects are singular, so the verb must be is; the plural limits sits inside the complement and cannot govern agreement.",
+          grammarNote: "What-clauses act as singular subjects even when their complements are plural.",
+        },
+      },
+      {
+        no: 2, kind: "correct",
+        prompt: "This sentence has one agreement error. Rewrite it correctly.",
+        source: "Whether the findings generalise depend on the population sampled.",
+        answer: "Whether the findings generalise depends on the population sampled.",
+        meta: {
+          explanation: "The whether-clause is the subject as a whole unit, so it takes the singular verb depends; the plural findings inside the clause is invisible to agreement.",
+          grammarNote: "Whether-clauses, like all clausal subjects, take singular verbs.",
+        },
+      },
+      {
+        no: 3, kind: "correct",
+        prompt: "This sentence has one agreement error. Rewrite it correctly.",
+        source: "That two reviewers disagreed were noted in the editorial.",
+        answer: "That two reviewers disagreed was noted in the editorial.",
+        meta: {
+          explanation: "The that-clause naming the disagreement is one nominal subject, so the passive verb must be was noted; the embedded plural reviewers never reaches the main verb.",
+          grammarNote: "That-clause subjects are singular, no matter what nouns they contain.",
+        },
+      },
+      {
+        no: 4, kind: "correct",
+        prompt: "This sentence has one agreement error. Rewrite it correctly.",
+        source: "How the tutors divide the marking loads remain undecided.",
+        answer: "How the tutors divide the marking loads remains undecided.",
+        meta: {
+          explanation: "The how-clause is the grammatical subject and takes remains; the decision is about one undetermined matter, however many tutors and loads the clause mentions.",
+          grammarNote: "How-clause subjects behave like it: grammatically singular every time.",
+        },
+      },
+    ],
+    modelResponse: "Each keyed sentence gives its clausal subject a singular verb: what the results show is, whether the findings generalise depends, that two reviewers disagreed was, how the tutors divide remains.",
+    responseAnalysis: "A clause cannot be plural because plurality belongs to nouns, and a clause is not a noun but a unit. Learners who bracket the clausal subject and mentally replace it with it or this repair these sentences on sight — and meet the same structure in reading passages.",
+    usefulExpressions: [
+      "clausal subjects are singular",
+      "bracket the clause",
+      "replace it with it",
+      "one unit, one verb",
+    ],
+    grammarObservations: [
+      "Nominal clauses occupy the subject slot as indivisible units, which forces singular agreement throughout.",
+      "The complement after be may be plural without dragging the verb along, because agreement looks only leftward at the subject.",
+    ],
+    commonMistakes: [
+      "Matching the verb to the nearest plural noun inside the clause.",
+      "Treating what-clauses as plural when their complement happens to be plural.",
+    ],
+    independentAssignment: "Write three sentences beginning with what, whether and that clauses, each with a correctly singular main verb.",
+    source: TOEFL_WRITING_BANK_SOURCE_NOTE,
+  },
+  {
+    taskType: "build-sentence",
+    slug: "toefl-wb-sent-38",
+    title: "Tense discipline across a paragraph",
+    focus: "grammar",
+    difficulty: 5,
+    estimatedMinutes: 9,
+    instructions: "Each two-clause sentence lets one tense slip out of line with the others. Rewrite it so every verb sits in the tense the sequence of events demands.",
+    taskRequirements: [
+      "Anchor each sentence's primary time.",
+      "Use past perfect only for events before that anchor.",
+      "Keep general truths in the present.",
+    ],
+    timeGuidance: "Two minutes per item; draw the timeline of the two events before choosing forms.",
+    items: [
+      {
+        no: 1, kind: "correct",
+        prompt: "This sentence has one tense error. Rewrite it correctly.",
+        source: "The researchers discovered that the sensor drifts after prolonged use.",
+        answer: "The researchers discovered that the sensor drifted after prolonged use.",
+        meta: {
+          explanation: "The discovery lies in the past and its reported finding backshifts with it, so drifted aligns with discovered; present drifts would present the claim as news rather than as the study's reported result.",
+          grammarNote: "Reported findings backshift with their reporting verb unless they are timeless truths.",
+        },
+      },
+      {
+        no: 2, kind: "correct",
+        prompt: "This sentence has one tense error. Rewrite it correctly.",
+        source: "The review confirmed that the procedure has improved since the pilot.",
+        answer: "The review confirmed that the procedure had improved since the pilot.",
+        meta: {
+          explanation: "The improvement happened before the confirmation, so the earlier-in-the-past event takes the past perfect had improved; the present perfect has improved would tie the claim to now rather than to the review.",
+          grammarNote: "Past-before-past sequences require the past perfect for the earlier event.",
+        },
+      },
+      {
+        no: 3, kind: "correct",
+        prompt: "This sentence has one tense error. Rewrite it correctly.",
+        source: "Galileo showed that the moons of Jupiter orbits a planet other than Earth.",
+        answer: "Galileo showed that the moons of Jupiter orbited a planet other than Earth.",
+        meta: {
+          explanation: "The reported claim backshifts with the past verb showed, so orbited is required; the further error in the source, orbits agreeing with the plural moons, disappears in the same repair.",
+          grammarNote: "Reported observations backshift with their anchor verb and keep their own agreement.",
+        },
+      },
+      {
+        no: 4, kind: "correct",
+        prompt: "This sentence has one tense error. Rewrite it correctly.",
+        source: "The committee explained that the deadline extension applies only to documented cases.",
+        answer: "The committee explained that the deadline extension applied only to documented cases.",
+        meta: {
+          explanation: "The explanation is a past report of a then-current rule, so applied backshifts with explained; keeping applies would quote the rule as standing policy rather than as what the committee explained.",
+          grammarNote: "Past reporting of a rule that may since have changed still takes the backshifted form.",
+        },
+      },
+    ],
+    modelResponse: "The keyed sentences backshift each reported claim into line with its past anchor: drifted and orbited with discovered and showed, had improved for the earlier event, applied for the explained rule.",
+    responseAnalysis: "Tense discipline is timeline discipline: anchor the reporting moment, then place every reported event relative to it. Learners who sketch the two or three events in order stop choosing tenses by feel and start choosing them by sequence.",
+    usefulExpressions: [
+      "anchor the reporting verb",
+      "backshift the reported claim",
+      "past perfect for earlier events",
+      "timeline before tense",
+    ],
+    grammarObservations: [
+      "Sequence-of-tense rules keep reported claims anchored to their source, which is why academic prose backshifts so consistently.",
+      "Only genuinely timeless truths resist backshift, and writers must judge that boundary case by case.",
+    ],
+    commonMistakes: [
+      "Quoting past reports in the present, which quietly updates claims their authors never made now.",
+      "Skipping the past perfect for the earlier of two past events, flattening the sequence.",
+    ],
+    independentAssignment: "Find a two-clause sentence with a past reporting verb in a news article, and check whether every reported tense aligns with it.",
+    source: TOEFL_WRITING_BANK_SOURCE_NOTE,
+  },
+  {
+    taskType: "build-sentence",
+    slug: "toefl-wb-sent-39",
+    title: "Participle clauses with the right subject",
+    focus: "grammar",
+    difficulty: 5,
+    estimatedMinutes: 9,
+    instructions: "Participle clauses borrow their subject from the main clause. Each sentence below mismatches the two. Rewrite it so the participle's understood subject matches the main clause's subject.",
+    taskRequirements: [
+      "Make the participle describe the main clause's subject.",
+      "Keep the participle clause where it is.",
+      "Preserve the sentence's meaning.",
+    ],
+    timeGuidance: "Two minutes per item; name the main subject before judging the participle.",
+    items: [
+      {
+        no: 1, kind: "correct",
+        prompt: "This sentence has a dangling participle. Rewrite it correctly.",
+        source: "Having reviewed the manuscript twice, the conclusion still seemed unclear.",
+        answer: "Having reviewed the manuscript twice, the reviewers still found the conclusion unclear.",
+        meta: {
+          explanation: "The reviewing was done by people, but the original main subject is the conclusion, which cannot review anything; the repair names the reviewers as the main subject so the participle attaches correctly.",
+          grammarNote: "An opening perfect participle must share its subject with the main clause.",
+        },
+      },
+      {
+        no: 2, kind: "correct",
+        prompt: "This sentence has a dangling participle. Rewrite it correctly.",
+        source: "While measuring the samples, the centrifuge malfunctioned.",
+        answer: "While measuring the samples, the technician found the centrifuge malfunctioning.",
+        alternatives: ["While the technician was measuring the samples, the centrifuge malfunctioned."],
+        meta: {
+          explanation: "The measuring needs a human subject, but the original main clause offers the centrifuge; the repair gives the technician the main subject role, or converts the participle into a full clause as the alternative shows.",
+          grammarNote: "Reduced time clauses inherit their subject from the main clause they front.",
+        },
+      },
+      {
+        no: 3, kind: "correct",
+        prompt: "This sentence has a dangling participle. Rewrite it correctly.",
+        source: "After completing the ethics module, the lab access card was activated.",
+        answer: "After completing the ethics module, the student had the lab access card activated.",
+        alternatives: ["After completing the ethics module, the student received an activated lab access card."],
+        meta: {
+          explanation: "The completing belongs to a student, not to the card; the repair promotes the student to main subject so the participle's doer and the clause's subject coincide.",
+          grammarNote: "Passive main clauses are the most common cause of dangling participles.",
+        },
+      },
+      {
+        no: 4, kind: "correct",
+        prompt: "This sentence has a dangling participle. Rewrite it correctly.",
+        source: "Comparing the two datasets, several outliers became obvious.",
+        answer: "Comparing the two datasets, the analyst noticed several obvious outliers.",
+        meta: {
+          explanation: "Datasets do not compare themselves, and outliers cannot do the comparing; the analyst becomes the main subject, and the comparing participle attaches to a person who can actually compare.",
+          grammarNote: "Present participles name actions of the main subject, so that subject must be a plausible actor.",
+        },
+      },
+    ],
+    modelResponse: "Each repair re-seats the main subject so the participle has a real owner: reviewers found, the technician found, the student had, the analyst noticed — every participle now describes its clause's subject doing the leading action.",
+    responseAnalysis: "The dangling participle is a subject-agreement error in disguise: the reader hunts the main subject and finds the wrong actor. Learners who read their opening participle and then immediately check the main verb's subject catch these every time, in writing and in the test's error-recognition items.",
+    usefulExpressions: [
+      "dangling participle",
+      "name the actor",
+      "passive mains are the trap",
+      "participle borrows the subject",
+    ],
+    grammarObservations: [
+      "Participle clauses are grammatical shorthand, and shorthand only works when both halves share one subject.",
+      "Passive main clauses invite danglers because they hide the true actor, which is why formal style guides single them out.",
+    ],
+    commonMistakes: [
+      "Leaving the participle attached to a passive subject that cannot perform its action.",
+      "Fixing the sentence by deleting the participle, which loses the information it carried.",
+    ],
+    independentAssignment: "Write two sentences opening with Having finished and While reading, and verify each main subject can actually perform the participle's action.",
+    source: TOEFL_WRITING_BANK_SOURCE_NOTE,
+  },
+  {
+    taskType: "build-sentence",
+    slug: "toefl-wb-sent-40",
+    title: "Causatives and their objects",
+    focus: "grammar",
+    difficulty: 5,
+    estimatedMinutes: 9,
+    instructions: "Causative verbs decide what form their second verb takes. Each sentence below chooses the wrong one. Rewrite it with the pattern its causative requires.",
+    taskRequirements: [
+      "Use the base form after make and let.",
+      "Use the to-infinitive after ask, allow and persuade.",
+      "Use the participle after have and get in passive senses.",
+    ],
+    timeGuidance: "Two minutes per item; the causative verb dictates the complement, so identify it first.",
+    items: [
+      {
+        no: 1, kind: "correct",
+        prompt: "This sentence has one causative error. Rewrite it correctly.",
+        source: "The supervisor made the student to rerun the analysis.",
+        answer: "The supervisor made the student rerun the analysis.",
+        meta: {
+          explanation: "Make takes a bare infinitive: made the student rerun, with no to; ask and persuade need to, but make, let and have do not, and mixing the patterns is the error here.",
+          grammarNote: "Make plus object plus base form; the to belongs to ask-type causatives.",
+        },
+      },
+      {
+        no: 2, kind: "correct",
+        prompt: "This sentence has one causative error. Rewrite it correctly.",
+        source: "The archivist let the visiting scholar to photograph the manuscript.",
+        answer: "The archivist let the visiting scholar photograph the manuscript.",
+        meta: {
+          explanation: "Let, like make, selects the bare infinitive, so photograph loses its to; permission verbs in this family never take the infinitive marker.",
+          grammarNote: "Let plus object plus base form, with no to in any register.",
+        },
+      },
+      {
+        no: 3, kind: "correct",
+        prompt: "This sentence has one causative error. Rewrite it correctly.",
+        source: "The panel allowed the candidate submitting late evidence.",
+        answer: "The panel allowed the candidate to submit late evidence.",
+        meta: {
+          explanation: "Allow belongs to the to-infinitive family, so the repair reads allowed the candidate to submit; the bare gerund submitting is not licensed after allow with an object.",
+          grammarNote: "Allow and permit plus object plus to-infinitive; the gerund appears only without an object.",
+        },
+      },
+      {
+        no: 4, kind: "correct",
+        prompt: "This sentence has one causative error. Rewrite it correctly.",
+        source: "The department had the obsolete projectors removing from the lecture rooms.",
+        answer: "The department had the obsolete projectors removed from the lecture rooms.",
+        meta: {
+          explanation: "Have in its service causative takes the past participle: had the projectors removed, meaning someone removed them; the active removing would need a different subject structure entirely.",
+          grammarNote: "Have plus object plus participle expresses arranged service or experience.",
+        },
+      },
+    ],
+    modelResponse: "The keyed causatives sort into their three families: made and let take bare forms, allowed takes to submit, and had takes the participle removed, each complement dictated by its causative verb.",
+    responseAnalysis: "Causative patterns are verb-list knowledge: make, let, have take bare or participle forms, while ask, allow, persuade take to. Learners who group the verbs into families stop treating all causatives alike, which is the root of every error here.",
+    usefulExpressions: [
+      "made him rerun",
+      "let her photograph",
+      "allowed him to submit",
+      "had it removed",
+    ],
+    grammarObservations: [
+      "The causative verb owns the complement choice, so the second verb's form is predictable from the first verb alone.",
+      "Have plus participle encodes arranged service, a structure academic writing uses constantly for laboratory and administrative work.",
+    ],
+    commonMistakes: [
+      "Adding to after make and let, importing the pattern of ask and allow.",
+      "Using the active -ing form after have instead of the participle.",
+    ],
+    independentAssignment: "Write four sentences about services you arranged this month, using make, let, allow and have each once with the correct complement.",
+    source: TOEFL_WRITING_BANK_SOURCE_NOTE,
+  },
+];

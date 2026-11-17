@@ -1,0 +1,673 @@
+/**
+ * Reading Room — ELEMENTARY library (A1–A2).
+ *
+ * Text types: short stories, everyday dialogues, simple descriptive
+ * passages and short informational texts.
+ */
+
+import type { ReadingText } from "./types";
+
+export const elementaryTexts: ReadingText[] = [
+  // -------------------------------------------------------------------------
+  // Short story 1
+  // -------------------------------------------------------------------------
+  {
+    id: "rd-e1",
+    slug: "the-lost-key",
+    level: "elementary",
+    category: "short-stories",
+    title: "The Lost Key",
+    description: "A short story about Tom's busy morning and one small, important key.",
+    estimatedMinutes: 5,
+    tags: ["story", "past simple", "daily life"],
+    paragraphs: [
+      { id: "p1", text: "Tom got up late on Monday morning. It was eight o'clock and work started at half past eight. He dressed quickly, drank his coffee and ran out of the house.", translation: "Tom se levantó tarde el lunes por la mañana. Eran las ocho y el trabajo empezaba a las ocho y media. Se vistió rápido, bebió su café y salió corriendo de la casa." },
+      { id: "p2", text: "At the bus stop, Tom put his hand in his pocket. He wanted his phone. But his hand found something else: his house key! His phone was still on the kitchen table.", translation: "En la parada del autobús, Tom metió la mano en el bolsillo. Buscaba su teléfono. Pero su mano encontró otra cosa: ¡la llave de su casa! Su teléfono seguía sobre la mesa de la cocina." },
+      { id: "p3", text: "The bus came and Tom got on. At work, his boss sent him a message: 'Where are you? The meeting is at nine.' Tom looked at his watch. It was ten to nine.", translation: "El autobús llegó y Tom subió. En el trabajo, su jefe le envió un mensaje: '¿Dónde estás? La reunión es a las nueve.' Tom miró su reloj. Eran las diez para las nueve." },
+      { id: "p4", text: "Tom arrived at the office at nine o'clock. The meeting was short, and after the meeting his boss smiled. 'Good news, Tom. The client liked your idea. You can lead the new project!'", translation: "Tom llegó a la oficina a las nueve. La reunión fue corta y, después, su jefe sonrió. 'Buenas noticias, Tom. Al cliente le gustó tu idea. ¡Puedes dirigir el nuevo proyecto!'" },
+      { id: "p5", text: "That evening, Tom walked home with a big smile. Then he stopped at his front door. He put his hand in his pocket — no key. He put his hand in his bag — no key. 'Oh no,' said Tom. 'The key is at the office!'", translation: "Esa tarde, Tom caminó a casa con una gran sonrisa. Luego se detuvo ante la puerta de su casa. Metió la mano en el bolsillo: nada de llave. Metió la mano en su bolso: nada de llave. 'Ay, no', dijo Tom. '¡La llave está en la oficina!'" },
+    ],
+    glossary: [
+      { term: "got up", partOfSpeech: "verb", definition: "Past of 'get up' — to leave your bed after sleeping.", translation: "se levantó", example: "Tom got up late on Monday." },
+      { term: "pocket", partOfSpeech: "noun", definition: "A small bag sewn into clothes for keeping things.", translation: "bolsillo", example: "There is a coin in my pocket." },
+      { term: "meeting", partOfSpeech: "noun", definition: "When people come together to talk about work.", translation: "reunión", example: "We have a meeting every Monday." },
+      { term: "smile", partOfSpeech: "verb", definition: "To make a happy face.", translation: "sonreír", example: "She smiled when she saw the gift." },
+      { term: "lead", partOfSpeech: "verb", definition: "To be in charge of a project or team.", translation: "dirigir", example: "Maria leads the sales team." },
+    ],
+    questions: [
+      {
+        id: "q1",
+        format: "choice",
+        skill: "detail",
+        difficulty: "easy",
+        prompt: "What time did Tom get up?",
+        hints: ["The first paragraph tells you."],
+        options: [
+          { id: "o1", text: "Half past eight" },
+          { id: "o2", text: "Eight o'clock" },
+          { id: "o3", text: "Ten to nine" },
+        ],
+        correctOptionId: "o2",
+        feedback: {
+          correctAnswer: "Eight o'clock",
+          explanation: "Paragraph 1 says 'It was eight o'clock' when he got up — and work started at half past eight.",
+        },
+      },
+      {
+        id: "q2",
+        format: "choice",
+        skill: "detail",
+        difficulty: "easy",
+        prompt: "Where was Tom's phone?",
+        hints: ["He left it at home."],
+        options: [
+          { id: "o1", text: "In his pocket" },
+          { id: "o2", text: "On the kitchen table" },
+          { id: "o3", text: "At the office" },
+        ],
+        correctOptionId: "o2",
+        feedback: {
+          correctAnswer: "On the kitchen table",
+          explanation: "Paragraph 2: 'His phone was still on the kitchen table.'",
+        },
+      },
+      {
+        id: "q3",
+        format: "sequence",
+        skill: "sequencing",
+        difficulty: "medium",
+        prompt: "Put these events from the story in the correct order.",
+        hints: ["Morning first, evening last. What did Tom's boss do before Tom smiled?"],
+        events: [
+          { id: "e1", text: "Tom finds his house key in his pocket" },
+          { id: "e2", text: "Tom's boss gives him the new project" },
+          { id: "e3", text: "Tom gets up late" },
+          { id: "e4", text: "Tom cannot open his front door" },
+        ],
+        correctOrder: ["e3", "e1", "e2", "e4"],
+        feedback: {
+          correctAnswer: "Gets up late → finds the house key → gets the new project → cannot open his door",
+          explanation: "The story follows this order: late start (p1), key in pocket (p2), new project (p4), locked out in the evening (p5).",
+          whyWrong: "Remember: the good news comes before the evening problem at the door.",
+        },
+      },
+      {
+        id: "q4",
+        format: "choice",
+        skill: "vocabulary-context",
+        difficulty: "medium",
+        prompt: "In paragraph 4, 'You can lead the new project' — what does 'lead' mean?",
+        hints: ["Is Tom now the boss of the project or only a helper?"],
+        options: [
+          { id: "o1", text: "To be in charge of it" },
+          { id: "o2", text: "To leave it" },
+          { id: "o3", text: "To pay for it" },
+        ],
+        correctOptionId: "o1",
+        feedback: {
+          correctAnswer: "To be in charge of it",
+          explanation: "'Lead' means to direct or manage. Tom's boss liked his idea, so Tom will manage the project.",
+        },
+      },
+      {
+        id: "q5",
+        format: "choice",
+        skill: "inference",
+        difficulty: "medium",
+        prompt: "Why can't Tom open his door in the evening?",
+        hints: ["Where was the key the last time he saw it?"],
+        options: [
+          { id: "o1", text: "He gave the key to his boss" },
+          { id: "o2", text: "He left the key at the office" },
+          { id: "o3", text: "The door is broken" },
+        ],
+        correctOptionId: "o2",
+        feedback: {
+          correctAnswer: "He left the key at the office",
+          explanation: "Tom says 'The key is at the office!' — he was so happy about the project that he forgot it.",
+          whyWrong: "The text never mentions giving the key to anyone, and nothing is broken — Tom simply forgot the key.",
+        },
+      },
+      {
+        id: "q6",
+        format: "choice",
+        skill: "summarisation",
+        difficulty: "medium",
+        prompt: "Which sentence is the best summary of the whole story?",
+        hints: ["A summary covers beginning, middle and end."],
+        options: [
+          { id: "o1", text: "Tom has a busy day at work, gets good news, but ends the day locked out of his house." },
+          { id: "o2", text: "Tom buys a new phone because he loses his old one." },
+          { id: "o3", text: "Tom's boss is angry because Tom is late for the meeting." },
+        ],
+        correctOptionId: "o1",
+        feedback: {
+          correctAnswer: "Tom has a busy day at work, gets good news, but ends the day locked out of his house.",
+          explanation: "This summary covers the whole day: the busy morning, the good news at work, and the final problem at the door.",
+          whyWrong: "Tom never buys a phone, and his boss is not angry — the meeting ends with good news.",
+        },
+      },
+    ],
+    passScore: 0.6,
+  },
+
+  // -------------------------------------------------------------------------
+  // Short story 2
+  // -------------------------------------------------------------------------
+  {
+    id: "rd-e2",
+    slug: "a-rainy-sunday",
+    level: "elementary",
+    category: "short-stories",
+    title: "A Rainy Sunday",
+    description: "Emma wants to go to the beach, but the rain has other plans.",
+    estimatedMinutes: 5,
+    tags: ["story", "weather", "family"],
+    paragraphs: [
+      { id: "p1", text: "On Sunday morning, Emma opened her eyes and listened. Rain! It rained on the windows and it rained on the roof. 'No beach today,' she thought sadly.", translation: "El domingo por la mañana, Emma abrió los ojos y escuchó. ¡Llovía! Llovía sobre las ventanas y llovía sobre el techo. 'Hoy no hay playa', pensó con tristeza." },
+      { id: "p2", text: "Emma loved the beach. She loved the sand, the sea and the ice cream shop next to the bus station. But her family could not go to the beach in the rain.", translation: "A Emma le encantaba la playa. Le encantaban la arena, el mar y la tienda de helados junto a la estación de autobús. Pero su familia no podía ir a la playa con lluvia." },
+      { id: "p3", text: "After breakfast, Emma's little brother Sam had an idea. 'Let's make a beach in the living room!' He put a big blue blanket on the floor. 'This is the sea!'", translation: "Después del desayuno, Sam, el hermano pequeño de Emma, tuvo una idea. '¡Hagamos una playa en el salón!' Puso una manta azul grande en el suelo. '¡Esto es el mar!'" },
+      { id: "p4", text: "Emma and Sam put on their swimming sunglasses and sat on the blanket. Dad made 'ice cream' with bananas and yoghurt, and Mum found a CD with sea sounds.", translation: "Emma y Sam se pusieron sus gafas de sol de piscina y se sentaron en la manta. Papá hizo 'helado' con plátanos y yogur, y mamá encontró un CD con sonidos del mar." },
+      { id: "p5", text: "It rained all day, but the family laughed all day too. In the evening, Emma wrote in her diary: 'Best beach day ever — and I never left the living room!'", translation: "Llovió todo el día, pero la familia también se rió todo el día. Por la tarde, Emma escribió en su diario: '¡El mejor día de playa de todos, y nunca salí del salón!'" },
+    ],
+    glossary: [
+      { term: "roof", partOfSpeech: "noun", definition: "The top cover of a house.", translation: "techo", example: "The cat is on the roof." },
+      { term: "blanket", partOfSpeech: "noun", definition: "A thick warm cover, like a bed cover.", translation: "manta", example: "It's cold — bring a blanket." },
+      { term: "living room", partOfSpeech: "noun", definition: "The room in a house where the family sits and talks.", translation: "salón", example: "We watch TV in the living room." },
+      { term: "yoghurt", partOfSpeech: "noun", definition: "A soft white food made from milk.", translation: "yogur", example: "I have yoghurt and fruit for breakfast." },
+      { term: "laugh", partOfSpeech: "verb", definition: "To make a happy sound when something is funny.", translation: "reírse", example: "The joke was so funny, we laughed a lot." },
+    ],
+    questions: [
+      {
+        id: "q1",
+        format: "choice",
+        skill: "detail",
+        difficulty: "easy",
+        prompt: "Why was Emma sad on Sunday morning?",
+        hints: ["What weather stopped her plan?"],
+        options: [
+          { id: "o1", text: "It was raining, so no beach" },
+          { id: "o2", text: "Her brother took her blanket" },
+          { id: "o3", text: "The ice cream shop was closed" },
+        ],
+        correctOptionId: "o1",
+        feedback: {
+          correctAnswer: "It was raining, so no beach",
+          explanation: "Paragraph 1: it rained, and her family could not go to the beach in the rain.",
+        },
+      },
+      {
+        id: "q2",
+        format: "choice",
+        skill: "detail",
+        difficulty: "easy",
+        prompt: "What did Sam use as the 'sea'?",
+        hints: ["What colour is the sea?"],
+        options: [
+          { id: "o1", text: "A blue blanket" },
+          { id: "o2", text: "A big towel" },
+          { id: "o3", text: "The garden grass" },
+        ],
+        correctOptionId: "o1",
+        feedback: {
+          correctAnswer: "A blue blanket",
+          explanation: "Sam put 'a big blue blanket on the floor' and said 'This is the sea!'",
+        },
+      },
+      {
+        id: "q3",
+        format: "choice",
+        skill: "vocabulary-context",
+        difficulty: "medium",
+        prompt: "In paragraph 5, what does 'Best beach day ever' mean?",
+        hints: ["Emma compares this day with other beach days."],
+        options: [
+          { id: "o1", text: "Better than every other beach day" },
+          { id: "o2", text: "Her first beach day" },
+          { id: "o3", text: "A normal day at the beach" },
+        ],
+        correctOptionId: "o1",
+        feedback: {
+          correctAnswer: "Better than every other beach day",
+          explanation: "'Ever' compares with all other days — Emma means this fun day at home was even better than real beach days.",
+        },
+      },
+      {
+        id: "q4",
+        format: "sequence",
+        skill: "sequencing",
+        difficulty: "medium",
+        prompt: "Put the family's 'beach day' in order.",
+        hints: ["First the blanket, then the sunglasses, then the food and sounds."],
+        events: [
+          { id: "e1", text: "Dad makes banana 'ice cream'" },
+          { id: "e2", text: "Sam puts a blanket on the floor" },
+          { id: "e3", text: "Emma hears the rain and feels sad" },
+          { id: "e4", text: "Emma writes in her diary" },
+        ],
+        correctOrder: ["e3", "e2", "e1", "e4"],
+        feedback: {
+          correctAnswer: "Emma feels sad → blanket on the floor → banana 'ice cream' → diary",
+          explanation: "The story moves from the sad rainy morning (p1) to Sam's idea (p3), the family fun (p4) and the happy ending in the diary (p5).",
+        },
+      },
+      {
+        id: "q5",
+        format: "choice",
+        skill: "authors-purpose",
+        difficulty: "medium",
+        prompt: "Why did the writer write this story?",
+        hints: ["How does the story end? What feeling does it give?"],
+        options: [
+          { id: "o1", text: "To teach readers the rules of swimming" },
+          { id: "o2", text: "To show that a fun day is possible even when plans change" },
+          { id: "o3", text: "To explain why it rains in autumn" },
+        ],
+        correctOptionId: "o2",
+        feedback: {
+          correctAnswer: "To show that a fun day is possible even when plans change",
+          explanation: "The story turns a sad rainy day into the 'best beach day ever' — the message is about making the best of a change.",
+        },
+      },
+      {
+        id: "q6",
+        format: "short-text",
+        skill: "summarisation",
+        difficulty: "medium",
+        prompt: "In one sentence, what did the family do when they could not go to the beach?",
+        hints: ["Where was their 'beach'? What did they make?"],
+        acceptedAnswers: [
+          "They made a beach in the living room with a blanket and banana ice cream",
+          "They made a beach in the living room",
+          "They played beach at home",
+        ],
+        keywords: ["living room", "beach"],
+        feedback: {
+          correctAnswer: "They made a beach in the living room with a blanket and 'ice cream'.",
+          explanation: "The family created their own beach at home — that is the heart of the story.",
+        },
+      },
+    ],
+    passScore: 0.6,
+  },
+
+  // -------------------------------------------------------------------------
+  // Everyday dialogue
+  // -------------------------------------------------------------------------
+  {
+    id: "rd-e3",
+    slug: "at-the-coffee-shop",
+    level: "elementary",
+    category: "everyday-dialogues",
+    title: "At the Coffee Shop",
+    description: "A real conversation between a customer and a barista. Ready to order?",
+    estimatedMinutes: 5,
+    tags: ["dialogue", "food and drink", "shopping"],
+    paragraphs: [
+      { id: "p1", text: "Barista: Good morning! What can I get you?", translation: "Camarero: ¡Buenos días! ¿Qué le pongo?" },
+      { id: "p2", text: "Customer: Hi! Can I have a medium latte, please?", translation: "Cliente: ¡Hola! ¿Me pone un latte mediano, por favor?" },
+      { id: "p3", text: "Barista: Sure. Would you like anything to eat? We have fresh croissants today.", translation: "Camarero: Claro. ¿Quiere algo para comer? Hoy tenemos croissants frescos." },
+      { id: "p4", text: "Customer: Hmm, how much is the croissant?", translation: "Cliente: Hmm, ¿cuánto cuesta el croissant?" },
+      { id: "p5", text: "Barista: It's two pounds fifty. The latte is three pounds, so that's five fifty together.", translation: "Camarero: Son dos libras con cincuenta. El latte son tres libras, así que en total cinco con cincuenta." },
+      { id: "p6", text: "Customer: OK, I'll take the croissant too. Here's six pounds.", translation: "Cliente: Vale, también me llevo el croissant. Aquí tiene seis libras." },
+      { id: "p7", text: "Barista: Great! Here's your change — fifty pence. Your order will be ready in five minutes. Have a nice day!", translation: "Camarero: ¡Genial! Aquí tiene su cambio: cincuenta peniques. Su pedido estará listo en cinco minutos. ¡Que tenga un buen día!" },
+    ],
+    glossary: [
+      { term: "medium", partOfSpeech: "adjective", definition: "Not big and not small; the middle size.", translation: "mediano", example: "I'd like a medium cola, please." },
+      { term: "fresh", partOfSpeech: "adjective", definition: "New and just made; not old.", translation: "fresco", example: "This bread is fresh from the oven." },
+      { term: "change", partOfSpeech: "noun", definition: "The money you get back when you pay with more than the price.", translation: "cambio (vuelto)", example: "Here is your change: one euro." },
+      { term: "order", partOfSpeech: "noun", definition: "The food and drinks that a customer asks for.", translation: "pedido", example: "Your order is ready." },
+      { term: "ready", partOfSpeech: "adjective", definition: "Finished and prepared.", translation: "listo", example: "Dinner is ready!" },
+    ],
+    questions: [
+      {
+        id: "q1",
+        format: "choice",
+        skill: "detail",
+        difficulty: "easy",
+        prompt: "What does the customer order to drink?",
+        hints: ["Look at the second line."],
+        options: [
+          { id: "o1", text: "A medium latte" },
+          { id: "o2", text: "A small coffee" },
+          { id: "o3", text: "A tea" },
+        ],
+        correctOptionId: "o1",
+        feedback: {
+          correctAnswer: "A medium latte",
+          explanation: "The customer says: 'Can I have a medium latte, please?'",
+        },
+      },
+      {
+        id: "q2",
+        format: "choice",
+        skill: "detail",
+        difficulty: "medium",
+        prompt: "How much does the customer pay in total?",
+        hints: ["Latte + croissant = ?"],
+        options: [
+          { id: "o1", text: "Two pounds fifty" },
+          { id: "o2", text: "Five pounds fifty" },
+          { id: "o3", text: "Six pounds fifty" },
+        ],
+        correctOptionId: "o2",
+        feedback: {
+          correctAnswer: "Five pounds fifty",
+          explanation: "The latte is three pounds and the croissant is two fifty — together five pounds fifty.",
+          whyWrong: "Six pounds is the money the customer GAVE, not the price.",
+        },
+      },
+      {
+        id: "q3",
+        format: "choice",
+        skill: "vocabulary-context",
+        difficulty: "medium",
+        prompt: "In the last line, what is 'your change'?",
+        hints: ["The customer paid six pounds for a five-fifty order."],
+        options: [
+          { id: "o1", text: "The money the shop gives back" },
+          { id: "o2", text: "A different coffee" },
+          { id: "o3", text: "The shop's address" },
+        ],
+        correctOptionId: "o1",
+        feedback: {
+          correctAnswer: "The money the shop gives back",
+          explanation: "'Change' is the money you receive back when you pay more than the price — here, fifty pence.",
+        },
+      },
+      {
+        id: "q4",
+        format: "choice",
+        skill: "inference",
+        difficulty: "medium",
+        prompt: "Why does the customer ask 'How much is the croissant?' before buying it?",
+        hints: ["What do you think about before paying?"],
+        options: [
+          { id: "o1", text: "To decide if the price is OK for them" },
+          { id: "o2", text: "Because the barista was unfriendly" },
+          { id: "o3", text: "Because the croissant looked bad" },
+        ],
+        correctOptionId: "o1",
+        feedback: {
+          correctAnswer: "To decide if the price is OK for them",
+          explanation: "People usually ask prices before buying to decide if they want to spend the money — then the customer says 'OK, I'll take it.'",
+        },
+      },
+      {
+        id: "q5",
+        format: "choice",
+        skill: "main-idea",
+        difficulty: "easy",
+        prompt: "Where does this conversation take place?",
+        hints: ["Latte, croissant, barista…"],
+        options: [
+          { id: "o1", text: "In a coffee shop" },
+          { id: "o2", text: "In a school" },
+          { id: "o3", text: "At a bus station" },
+        ],
+        correctOptionId: "o1",
+        feedback: {
+          correctAnswer: "In a coffee shop",
+          explanation: "A barista serves a latte and a croissant — this is a coffee shop conversation.",
+        },
+      },
+    ],
+    passScore: 0.6,
+  },
+
+  // -------------------------------------------------------------------------
+  // Simple descriptive passage
+  // -------------------------------------------------------------------------
+  {
+    id: "rd-e4",
+    slug: "my-hometown-by-the-sea",
+    level: "elementary",
+    category: "descriptive",
+    title: "My Hometown by the Sea",
+    description: "Nina describes the small town where she grew up.",
+    estimatedMinutes: 5,
+    tags: ["description", "towns", "hometown"],
+    paragraphs: [
+      { id: "p1", text: "My name is Nina, and I come from a small town by the sea. My hometown is called Porto Verde, and about four thousand people live there.", translation: "Me llamo Nina y vengo de un pueblo pequeño junto al mar. Mi pueblo natal se llama Porto Verde y unas cuatro mil personas viven allí." },
+      { id: "p2", text: "Our town has one long street with shops and cafés. In the morning, fishermen sell fresh fish at the little market near the port.", translation: "Nuestro pueblo tiene una calle larga con tiendas y cafés. Por la mañana, los pescadores venden pescado fresco en el pequeño mercado cerca del puerto." },
+      { id: "p3", text: "The best place in Porto Verde is the beach. The sand is soft and the water is clean. Children build sandcastles and old men play cards under the trees.", translation: "El mejor lugar de Porto Verde es la playa. La arena es suave y el agua está limpia. Los niños hacen castillos de arena y los ancianos juegan a las cartas bajo los árboles." },
+      { id: "p4", text: "In summer, many tourists visit our town. The streets are busy and the cafés are full. But in winter, Porto Verde is quiet, and you can hear the sea from every street.", translation: "En verano, muchos turistas visitan nuestro pueblo. Las calles están concurridas y los cafés están llenos. Pero en invierno, Porto Verde es tranquilo y se puede escuchar el mar desde cada calle." },
+      { id: "p5", text: "I live in a big city now, but every summer I go home. When I see the port and the beach, I always feel happy.", translation: "Ahora vivo en una gran ciudad, pero cada verano voy a casa. Cuando veo el puerto y la playa, siempre me siento feliz." },
+    ],
+    glossary: [
+      { term: "hometown", partOfSpeech: "noun", definition: "The town where you were born or grew up.", translation: "pueblo natal", example: "My hometown is very small." },
+      { term: "fishermen", partOfSpeech: "noun", definition: "People who catch fish for work.", translation: "pescadores", example: "The fishermen start work at dawn." },
+      { term: "soft", partOfSpeech: "adjective", definition: "Nice to touch; not hard.", translation: "suave", example: "This pillow is very soft." },
+      { term: "tourist", partOfSpeech: "noun", definition: "A person who travels for fun on holiday.", translation: "turista", example: "Tourists take photos of the old church." },
+      { term: "quiet", partOfSpeech: "adjective", definition: "With little noise; calm.", translation: "tranquilo", example: "The library is quiet." },
+    ],
+    questions: [
+      {
+        id: "q1",
+        format: "choice",
+        skill: "detail",
+        difficulty: "easy",
+        prompt: "How many people live in Porto Verde?",
+        hints: ["Paragraph 1 has the number."],
+        options: [
+          { id: "o1", text: "About four thousand" },
+          { id: "o2", text: "About four hundred" },
+          { id: "o3", text: "About forty thousand" },
+        ],
+        correctOptionId: "o1",
+        feedback: {
+          correctAnswer: "About four thousand",
+          explanation: "Paragraph 1: 'about four thousand people live there.'",
+        },
+      },
+      {
+        id: "q2",
+        format: "choice",
+        skill: "detail",
+        difficulty: "easy",
+        prompt: "What do the fishermen do in the morning?",
+        hints: ["They work near the port."],
+        options: [
+          { id: "o1", text: "They sell fresh fish at the market" },
+          { id: "o2", text: "They play cards under the trees" },
+          { id: "o3", text: "They build sandcastles" },
+        ],
+        correctOptionId: "o1",
+        feedback: {
+          correctAnswer: "They sell fresh fish at the market",
+          explanation: "Paragraph 2: fishermen sell fresh fish at the little market near the port.",
+          whyWrong: "Playing cards is what the old men do; children build the sandcastles.",
+        },
+      },
+      {
+        id: "q3",
+        format: "choice",
+        skill: "vocabulary-context",
+        difficulty: "medium",
+        prompt: "In paragraph 4, 'Porto Verde is quiet' in winter means…",
+        hints: ["Quiet is about sound and calm."],
+        options: [
+          { id: "o1", text: "There is little noise and few people" },
+          { id: "o2", text: "The town is closed" },
+          { id: "o3", text: "The people are sad" },
+        ],
+        correctOptionId: "o1",
+        feedback: {
+          correctAnswer: "There is little noise and few people",
+          explanation: "In winter there are no tourists, so the town is calm — you can even hear the sea from every street.",
+        },
+      },
+      {
+        id: "q4",
+        format: "choice",
+        skill: "inference",
+        difficulty: "medium",
+        prompt: "What can you guess about Nina's feelings for her hometown?",
+        hints: ["What happens every summer? How does she feel at the port?"],
+        options: [
+          { id: "o1", text: "She loves it and misses it" },
+          { id: "o2", text: "She thinks it is too noisy" },
+          { id: "o3", text: "She never wants to return" },
+        ],
+        correctOptionId: "o1",
+        feedback: {
+          correctAnswer: "She loves it and misses it",
+          explanation: "She travels home every summer and feels happy when she sees the port and beach — she clearly loves her town.",
+        },
+      },
+      {
+        id: "q5",
+        format: "choice",
+        skill: "main-idea",
+        difficulty: "medium",
+        prompt: "What is the main idea of this text?",
+        hints: ["What does Nina describe from start to end?"],
+        options: [
+          { id: "o1", text: "What Nina's seaside hometown is like and why she loves it" },
+          { id: "o2", text: "How to catch fish in the early morning" },
+          { id: "o3", text: "The best hotels for summer tourists" },
+        ],
+        correctOptionId: "o1",
+        feedback: {
+          correctAnswer: "What Nina's seaside hometown is like and why she loves it",
+          explanation: "Every paragraph describes the town — its street, market, beach, seasons — and Nina's love for it.",
+        },
+      },
+    ],
+    passScore: 0.6,
+  },
+
+  // -------------------------------------------------------------------------
+  // Short informational text
+  // -------------------------------------------------------------------------
+  {
+    id: "rd-e5",
+    slug: "the-blue-whale",
+    level: "elementary",
+    category: "informational",
+    title: "The Blue Whale",
+    description: "Real facts about the biggest animal that has ever lived.",
+    estimatedMinutes: 5,
+    tags: ["animals", "nature", "facts"],
+    paragraphs: [
+      { id: "p1", text: "The blue whale is the biggest animal on Earth — bigger than any dinosaur! An adult blue whale can be 30 metres long, as long as three buses.", translation: "La ballena azul es el animal más grande de la Tierra, ¡más grande que cualquier dinosaurio! Una ballena azul adulta puede medir 30 metros, tan larga como tres autobuses." },
+      { id: "p2", text: "Blue whales live in all the oceans of the world. They usually travel alone or in pairs, and they swim from cold waters to warm waters every year.", translation: "Las ballenas azules viven en todos los océanos del mundo. Normalmente viajan solas o en parejas, y nadan de aguas frías a aguas cálidas cada año." },
+      { id: "p3", text: "Here is a surprising fact: this giant animal eats some of the smallest animals in the sea — tiny krill. One blue whale can eat four million krill in a single day.", translation: "He aquí un dato sorprendente: este animal gigante come algunos de los animales más pequeños del mar, el krill diminuto. Una ballena azul puede comer cuatro millones de krill en un solo día." },
+      { id: "p4", text: "A baby blue whale, called a calf, drinks 500 litres of its mother's milk every day. It grows very fast — about 90 kilograms each day!", translation: "Una cría de ballena azul, llamada ballenato, bebe 500 litros de leche de su madre cada día. Crece muy rápido: ¡unos 90 kilogramos al día!" },
+      { id: "p5", text: "Blue whales are in danger. There are only about 10,000 to 25,000 of them in the oceans. People hunt them less now, but ships and fishing nets are still a big problem for these gentle giants.", translation: "Las ballenas azules están en peligro. Solo quedan entre 10.000 y 25.000 en los océanos. Ahora la gente las caza menos, pero los barcos y las redes de pesca siguen siendo un gran problema para estos gigantes amables." },
+    ],
+    glossary: [
+      { term: "adult", partOfSpeech: "adjective / noun", definition: "Fully grown; not a child or baby.", translation: "adulto", example: "An adult elephant weighs 5,000 kg." },
+      { term: "ocean", partOfSpeech: "noun", definition: "A very large sea.", translation: "océano", example: "The Pacific is the biggest ocean." },
+      { term: "krill", partOfSpeech: "noun", definition: "Very small sea animals that whales eat.", translation: "krill", example: "Krill swim in huge groups." },
+      { term: "calf", partOfSpeech: "noun", definition: "A baby whale (or cow).", translation: "ballenato / cría", example: "The calf stays near its mother." },
+      { term: "in danger", partOfSpeech: "phrase", definition: "At risk of disappearing or dying.", translation: "en peligro", example: "This bird is in danger of extinction." },
+    ],
+    questions: [
+      {
+        id: "q1",
+        format: "choice",
+        skill: "detail",
+        difficulty: "easy",
+        prompt: "How long can an adult blue whale be?",
+        hints: ["Compare it with buses."],
+        options: [
+          { id: "o1", text: "Three metres" },
+          { id: "o2", text: "Thirty metres" },
+          { id: "o3", text: "Three hundred metres" },
+        ],
+        correctOptionId: "o2",
+        feedback: {
+          correctAnswer: "Thirty metres",
+          explanation: "Paragraph 1: 'An adult blue whale can be 30 metres long, as long as three buses.'",
+        },
+      },
+      {
+        id: "q2",
+        format: "choice",
+        skill: "detail",
+        difficulty: "medium",
+        prompt: "How much milk does a baby whale drink each day?",
+        hints: ["It's a big number with 'litres'."],
+        options: [
+          { id: "o1", text: "50 litres" },
+          { id: "o2", text: "500 litres" },
+          { id: "o3", text: "5,000 litres" },
+        ],
+        correctOptionId: "o2",
+        feedback: {
+          correctAnswer: "500 litres",
+          explanation: "Paragraph 4: 'A baby blue whale… drinks 500 litres of its mother's milk every day.'",
+        },
+      },
+      {
+        id: "q3",
+        format: "choice",
+        skill: "vocabulary-context",
+        difficulty: "medium",
+        prompt: "In paragraph 5, what are 'these gentle giants'?",
+        hints: ["Which animals are giant but calm?"],
+        options: [
+          { id: "o1", text: "The blue whales" },
+          { id: "o2", text: "The fishing nets" },
+          { id: "o3", text: "The ships" },
+        ],
+        correctOptionId: "o1",
+        feedback: {
+          correctAnswer: "The blue whales",
+          explanation: "'Gentle giants' means very big animals that are calm and not dangerous — the blue whales of this text.",
+        },
+      },
+      {
+        id: "q4",
+        format: "choice",
+        skill: "inference",
+        difficulty: "medium",
+        prompt: "Why does the writer say the krill fact is 'surprising'?",
+        hints: ["Big animal… small food?"],
+        options: [
+          { id: "o1", text: "Because the biggest animal eats some of the smallest animals" },
+          { id: "o2", text: "Because krill are dangerous to whales" },
+          { id: "o3", text: "Because whales never eat" },
+        ],
+        correctOptionId: "o1",
+        feedback: {
+          correctAnswer: "Because the biggest animal eats some of the smallest animals",
+          explanation: "We expect a giant animal to hunt big prey — learning that it eats tiny krill surprises us.",
+        },
+      },
+      {
+        id: "q5",
+        format: "choice",
+        skill: "authors-purpose",
+        difficulty: "medium",
+        prompt: "Why did the writer write this text?",
+        hints: ["Facts, numbers, and a warning at the end…"],
+        options: [
+          { id: "o1", text: "To tell a funny story about a whale" },
+          { id: "o2", text: "To give information about blue whales and the dangers they face" },
+          { id: "o3", text: "To teach readers how to swim in the ocean" },
+        ],
+        correctOptionId: "o2",
+        feedback: {
+          correctAnswer: "To give information about blue whales and the dangers they face",
+          explanation: "The text is full of facts (size, food, babies) and ends with the danger to whales — the purpose is to inform.",
+        },
+      },
+      {
+        id: "q6",
+        format: "short-text",
+        skill: "detail",
+        difficulty: "medium",
+        prompt: "What are the tiny animals that blue whales eat? (one word)",
+        hints: ["It starts with K."],
+        acceptedAnswers: ["krill"],
+        feedback: {
+          correctAnswer: "krill",
+          explanation: "Blue whales eat tiny krill — up to four million in one day!",
+        },
+      },
+    ],
+    passScore: 0.6,
+  },
+];

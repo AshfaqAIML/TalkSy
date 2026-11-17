@@ -1,0 +1,81 @@
+{
+  "id": "st05",
+  "order": 5,
+  "title": "Types of Sentences",
+  "cefr": "A2 → B1",
+  "goal": "Classify and control sentences by communicative purpose and by structure — kept strictly as two separate classification systems — then transform, combine, expand and correct sentences with accuracy.",
+  "entryRequirements": ["st04-exit"],
+  "modules": [
+    {
+      "id": "st05-m01",
+      "title": "Sentence Purpose",
+      "description": "Classification by communicative purpose: declarative (assertive), interrogative, imperative and exclamatory. Purpose says what a sentence DOES — it is independent of its internal structure.",
+      "units": [
+        {
+          "id": "st05-m01-u01",
+          "title": "The Four Purposes",
+          "lessons": [
+            {"id": "st05-m01-u01-l01", "title": "Declarative (Assertive) Sentences", "cefr": "A2", "minutes": 12, "objectives": ["Recognise and write statements that give information or opinions", "End statements with a full stop"], "topics": ["declarative", "assertive", "statements", "purpose-classification"], "practice": ["purpose-identification", "write-statements", "punctuation-drill"], "assessment": "Classify 10 sentences by purpose and write 4 correct declaratives", "skills": ["reading", "writing", "speaking"]},
+            {"id": "st05-m01-u01-l02", "title": "Interrogative Sentences", "cefr": "A2", "minutes": 12, "objectives": ["Recognise and write questions ending with a question mark", "Use inverted and WH-question forms across purposes"], "topics": ["interrogative", "questions", "question-mark"], "practice": ["purpose-identification", "question-building", "interview-game"], "assessment": "Write 5 questions (yes/no and WH) correctly punctuated", "skills": ["reading", "writing", "speaking", "listening"]},
+            {"id": "st05-m01-u01-l03", "title": "Imperative Sentences", "cefr": "A2", "minutes": 12, "objectives": ["Give instructions, commands, invitations and warnings with the base verb", "Soften imperatives with please and let's"], "topics": ["imperative", "commands-instructions", "lets-forms"], "practice": ["instruction-writing", "guided-dialogue", "error-correction"], "assessment": "Give 6 instructions including one with let's and one negative imperative", "skills": ["reading", "writing", "speaking", "listening"]},
+            {"id": "st05-m01-u01-l04", "title": "Exclamatory Sentences", "cefr": "A2", "minutes": 12, "objectives": ["Express strong feeling with what and how exclamations", "Punctuate exclamations correctly"], "topics": ["exclamatory", "what-how-exclamations", "exclamation-mark"], "practice": ["exclamation-transformations", "purpose-identification", "speaking-prompts"], "assessment": "Transform 5 statements into exclamations and classify purpose of 10 mixed sentences", "skills": ["reading", "writing", "speaking"]}
+          ],
+          "checkpoint": {"criteria": "Classify and produce all four sentence purposes, correctly distinguished from structure", "passThreshold": 80}
+        }
+      ]
+    },
+    {
+      "id": "st05-m02",
+      "title": "Sentence Structure",
+      "description": "Classification by internal structure: simple, compound, complex and compound-complex. Structure says how a sentence is BUILT (clause count and type) — it is independent of purpose.",
+      "units": [
+        {
+          "id": "st05-m02-u01",
+          "title": "The Four Structures",
+          "lessons": [
+            {"id": "st05-m02-u01-l01", "title": "Simple Sentences", "cefr": "A2", "minutes": 12, "objectives": ["Recognise one-clause sentences including compound subjects and verbs", "Avoid the fragment trap when writing simply"], "topics": ["simple-sentences", "one-clause", "compound-subject-verb"], "practice": ["clause-counting", "simple-sentence-writing", "fragment-fixing"], "assessment": "Identify simple sentences in 10 items including tricky compound subjects", "skills": ["reading", "writing"]},
+            {"id": "st05-m02-u01-l02", "title": "Compound Sentences", "cefr": "B1", "minutes": 12, "objectives": ["Join independent clauses with and, but, or, so and semicolons", "Avoid comma splices and run-ons"], "topics": ["compound-sentences", "coordinating-conjunctions", "comma-splices"], "practice": ["sentence-combination", "error-correction", "guided-writing"], "assessment": "Combine 8 of 10 clause pairs correctly and fix 3 comma splices", "skills": ["reading", "writing"]},
+            {"id": "st05-m02-u01-l03", "title": "Complex Sentences", "cefr": "B1", "minutes": 12, "objectives": ["Build sentences with subordinate clauses (because, although, when, if, relative)", "Place commas around non-essential clauses"], "topics": ["complex-sentences", "subordinate-clauses", "clause-commas"], "practice": ["sentence-combination", "clause-identification", "guided-writing"], "assessment": "Build 8 complex sentences from prompts and identify clause types", "skills": ["reading", "writing"]},
+            {"id": "st05-m02-u01-l04", "title": "Compound-Complex Sentences", "cefr": "B1", "minutes": 12, "objectives": ["Combine at least two independent and one dependent clause", "Classify any sentence by both purpose AND structure independently"], "topics": ["compound-complex", "mixed-structures", "two-classification-systems"], "practice": ["sentence-combination", "full-classification-quiz", "guided-writing"], "assessment": "Write 4 compound-complex sentences and classify 10 sentences by both systems with at least 80 percent accuracy", "skills": ["reading", "writing"]}
+          ],
+          "checkpoint": {"criteria": "Build and classify all four sentence structures, independently of purpose", "passThreshold": 80}
+        }
+      ]
+    },
+    {
+      "id": "st05-m03",
+      "title": "Sentence Operations",
+      "description": "Working with sentences: polarity and question formation, transformation, combination, expansion and correction — the production skills that make classification useful.",
+      "units": [
+        {
+          "id": "st05-m03-u01",
+          "title": "Polarity and Questions",
+          "lessons": [
+            {"id": "st05-m03-u01-l01", "title": "Affirmative and Negative Forms", "cefr": "A2", "minutes": 12, "objectives": ["Shift polarity accurately across tenses", "Avoid double negatives"], "topics": ["affirmative-negative", "polarity-shift", "double-negatives"], "practice": ["transformation-drill", "error-correction", "translation-exercise"], "assessment": "Transform 10 sentences across polarity with 9 correct", "skills": ["reading", "writing"]},
+            {"id": "st05-m03-u01-l02", "title": "Yes/No Questions and WH-Questions", "cefr": "A2", "minutes": 12, "objectives": ["Form both question families across tenses", "Match question types to communication needs"], "topics": ["yes-no-questions", "wh-questions", "question-choice"], "practice": ["question-building", "question-transformations", "interview-game"], "assessment": "Build 10 questions across tenses with 9 correct", "skills": ["listening", "speaking", "reading", "writing"]}
+          ],
+          "checkpoint": {"criteria": "Control polarity and question formation across tenses", "passThreshold": 80}
+        },
+        {
+          "id": "st05-m03-u02",
+          "title": "Transformation and Combination",
+          "lessons": [
+            {"id": "st05-m03-u02-l01", "title": "Sentence Transformation", "cefr": "B1", "minutes": 12, "objectives": ["Rewrite sentences keeping meaning identical (voice, structure, word order changes)", "Apply exam-style transformation techniques"], "topics": ["transformation", "same-meaning-rewrites", "exam-technique"], "practice": ["transformation-drill", "same-meaning-check", "timed-practice"], "assessment": "Complete 10 transformations keeping meaning with 8 correct", "skills": ["reading", "writing"]},
+            {"id": "st05-m03-u02-l02", "title": "Sentence Combination", "cefr": "B1", "minutes": 12, "objectives": ["Combine short sentences into simple, compound and complex forms as needed", "Choose combinations that improve flow"], "topics": ["combination", "clause-choice", "style-choices"], "practice": ["sentence-combination", "style-comparison", "guided-writing"], "assessment": "Combine 6 sentence groups into well-formed varied sentences", "skills": ["reading", "writing"]}
+          ],
+          "checkpoint": {"criteria": "Transform and combine sentences while preserving meaning", "passThreshold": 80}
+        },
+        {
+          "id": "st05-m03-u03",
+          "title": "Expansion and Correction",
+          "lessons": [
+            {"id": "st05-m03-u03-l01", "title": "Sentence Expansion", "cefr": "B1", "minutes": 12, "objectives": ["Add adjectives, adverbs, phrases and clauses purposefully", "Expand without losing clarity or correctness"], "topics": ["expansion", "adding-detail", "style-control"], "practice": ["expansion-ladder", "describe-more", "guided-writing"], "assessment": "Expand 5 base sentences in stages, keeping every version grammatical", "skills": ["reading", "writing", "speaking"]},
+            {"id": "st05-m03-u03-l02", "title": "Sentence Correction", "cefr": "B1", "minutes": 12, "objectives": ["Diagnose and fix fragments, splices, agreement and tense errors", "Self-edit with a systematic checklist"], "topics": ["sentence-correction", "error-diagnosis", "editing-checklist"], "practice": ["error-correction", "find-the-mistakes", "peer-editing-simulation"], "assessment": "Correct 12 of 15 faulty sentences and justify the fixes", "skills": ["reading", "writing"]}
+          ],
+          "checkpoint": {"criteria": "Expand and correct sentences with control and clear justification", "passThreshold": 80}
+        }
+      ]
+    }
+  ],
+  "exitAssessment": {"id": "st05-exit", "title": "Sentence Types Exit Test", "criteria": "Classify 20 sentences by purpose AND by structure as independent systems (no conflation); transform polarity and questions across tenses; combine and expand sentences accurately; diagnose and correct 15 faulty sentences including fragments, splices and agreement errors.", "passThreshold": 75, "minutes": 25, "unlocks": ["st06"]}
+}

@@ -1,0 +1,765 @@
+/**
+ * TOEFL Writing Practice Library — Build a Sentence, grammar, batch 1
+ * (PROMPT 50). Exercises toefl-wb-sent-21…30: agreement, tense, articles,
+ * prepositions, verb forms, uncountables and comparatives repaired through
+ * error-correction items. Two exercises per tier across d1–d5.
+ *
+ * All sentences are original TalkSy practice material.
+ */
+
+import { TOEFL_WRITING_BANK_SOURCE_NOTE, type ToeflSentenceExercise } from "./types";
+
+export const sentenceGrammar1Exercises: ToeflSentenceExercise[] = [
+  {
+    taskType: "build-sentence",
+    slug: "toefl-wb-sent-21",
+    title: "One subject, one matching verb",
+    focus: "grammar",
+    difficulty: 1,
+    estimatedMinutes: 6,
+    instructions: "Every sentence below contains one agreement error between its subject and verb. Find the error and rewrite the sentence with the verb matched to its true subject.",
+    taskRequirements: [
+      "Change only the verb form that disagrees.",
+      "Ignore prepositional phrases between subject and verb.",
+      "Keep every other word exactly as given.",
+    ],
+    timeGuidance: "One minute per item; underline the subject mentally before you touch the verb.",
+    items: [
+      {
+        no: 1, kind: "correct",
+        prompt: "This sentence has one agreement error. Rewrite it correctly.",
+        source: "The list of required readings were posted this morning.",
+        answer: "The list of required readings was posted this morning.",
+        meta: {
+          explanation: "The subject is the singular noun list, not the plural readings inside the prepositional phrase; the verb must therefore be was, and the phrase of required readings cannot govern agreement.",
+          grammarNote: "A prepositional phrase after the subject never changes agreement; the head noun decides.",
+        },
+      },
+      {
+        no: 2, kind: "correct",
+        prompt: "This sentence has one agreement error. Rewrite it correctly.",
+        source: "Each of the lab stations have its own power supply.",
+        answer: "Each of the lab stations has its own power supply.",
+        meta: {
+          explanation: "Each is the subject and is grammatically singular, so the verb must be has; the plural stations sits inside the of-phrase and cannot pull the verb into plural agreement.",
+          grammarNote: "Quantifiers like each and every are singular even when they describe many items.",
+        },
+      },
+      {
+        no: 3, kind: "correct",
+        prompt: "This sentence has one agreement error. Rewrite it correctly.",
+        source: "The information about the field trip are on the noticeboard.",
+        answer: "The information about the field trip is on the noticeboard.",
+        meta: {
+          explanation: "Information is an uncountable noun and therefore singular, so it takes the verb is; the phrase about the field trip only adds detail and plays no role in the agreement.",
+          grammarNote: "Uncountable nouns like information, advice and research always take singular verbs.",
+        },
+      },
+      {
+        no: 4, kind: "correct",
+        prompt: "This sentence has one agreement error. Rewrite it correctly.",
+        source: "Everyone in the seminar group have signed the consent form.",
+        answer: "Everyone in the seminar group has signed the consent form.",
+        meta: {
+          explanation: "Everyone is a singular indefinite pronoun despite its plural feel, so the verb becomes has; the prepositional phrase in the seminar group does not alter the pronoun's number.",
+          grammarNote: "Indefinite pronouns ending in -one and -body are grammatically singular.",
+        },
+      },
+    ],
+    modelResponse: "The keyed repairs keep the head nouns in charge: list takes was, each takes has, information takes is, everyone takes has. In all four sentences the distracting plural sits safely inside a prepositional phrase.",
+    responseAnalysis: "Agreement errors hide behind of-phrases, and the cure is mechanical: strike every phrase between subject and verb, then match the survivor. Learners who perform that deletion consistently stop being fooled by nearby plurals.",
+    usefulExpressions: [
+      "head noun decides",
+      "ignore the prepositional phrase",
+      "uncountable means singular",
+      "everyone is singular",
+    ],
+    grammarObservations: [
+      "English agreement looks exclusively at the grammatical subject, never at the noun nearest the verb.",
+      "Uncountable and indefinite nouns form the two biggest classes of deceptive subjects for learners.",
+    ],
+    commonMistakes: [
+      "Matching the verb to the nearest noun rather than to the subject head.",
+      "Treating everyone and information as plural because their meanings feel plural.",
+    ],
+    independentAssignment: "Collect five sentences from a textbook chapter, bracket each subject head, and check every verb's agreement.",
+    source: TOEFL_WRITING_BANK_SOURCE_NOTE,
+  },
+  {
+    taskType: "build-sentence",
+    slug: "toefl-wb-sent-22",
+    title: "A or an, the or nothing",
+    focus: "grammar",
+    difficulty: 1,
+    estimatedMinutes: 6,
+    instructions: "Each sentence below carries one article error — a missing article, a wrong choice between a and an, or an article where none belongs. Repair the sentence with the correct form.",
+    taskRequirements: [
+      "Choose a or an by the first sound of the next word.",
+      "Use the only for specific, identified things.",
+      "Remove articles before plural or uncountable general nouns.",
+    ],
+    timeGuidance: "One minute per item; say the phrase aloud in your head to hear the sound rule.",
+    items: [
+      {
+        no: 1, kind: "correct",
+        prompt: "This sentence has one article error. Rewrite it correctly.",
+        source: "She is doing an Master's degree in structural engineering.",
+        answer: "She is doing a Master's degree in structural engineering.",
+        meta: {
+          explanation: "Master's begins with a consonant sound, so the article must be a; the choice between a and an depends on pronunciation, never on the letter that happens to be written first.",
+          grammarNote: "The a/an choice follows the first sound, so a Master's but an MBA.",
+        },
+      },
+      {
+        no: 2, kind: "correct",
+        prompt: "This sentence has one article error. Rewrite it correctly.",
+        source: "The professors usually reply to emails within two days.",
+        answer: "Professors usually reply to emails within two days.",
+        meta: {
+          explanation: "Professors here means professors in general, a plural generic noun that takes no article; the would wrongly point at one specific set of professors known to the reader.",
+          grammarNote: "Plural nouns used generically drop the article entirely.",
+        },
+      },
+      {
+        no: 3, kind: "correct",
+        prompt: "This sentence has one article error. Rewrite it correctly.",
+        source: "He missed a bus he takes every morning.",
+        answer: "He missed the bus he takes every morning.",
+        meta: {
+          explanation: "The bus is identified by its defining relative clause he takes every morning, so a specific reading is forced and the article must be the rather than a.",
+          grammarNote: "A noun defined by a following clause becomes specific and takes the.",
+        },
+      },
+      {
+        no: 4, kind: "correct",
+        prompt: "This sentence has one article error. Rewrite it correctly.",
+        source: "The honesty is the best policy in academic work.",
+        answer: "Honesty is the best policy in academic work.",
+        meta: {
+          explanation: "Honesty is an abstract uncountable noun used in its general sense, so it takes no article at all; the best policy stays specific because the superlative identifies it.",
+          grammarNote: "Abstract nouns in general statements drop the article; superlatives keep it.",
+        },
+      },
+    ],
+    modelResponse: "The keyed repairs read: a Master's for the consonant sound, zero article for generic professors, the bus for the defined one, and zero article for abstract honesty, each change driven by sound or specificity.",
+    responseAnalysis: "Article choices compress two questions into one: what sound comes next, and is the noun specific? Learners who ask both questions in order resolve almost every article decision, because the errors cluster at exactly those two junctions.",
+    usefulExpressions: [
+      "first sound rule",
+      "generic plural, no article",
+      "defined noun takes the",
+      "abstract general nouns drop the",
+    ],
+    grammarObservations: [
+      "English articles encode definiteness rather than quantity, which is why identification, not number, usually settles the.",
+      "Superlatives and ordinals behave like identifiers and therefore attract the almost without exception.",
+    ],
+    commonMistakes: [
+      "Choosing an before written vowels that carry consonant sounds, as in an university or an Master's.",
+      "Adding the before abstract nouns in general claims, a transfer pattern from many first languages.",
+    ],
+    independentAssignment: "Take one paragraph from your own writing and justify every article in it with the sound rule or the specificity rule.",
+    source: TOEFL_WRITING_BANK_SOURCE_NOTE,
+  },
+  {
+    taskType: "build-sentence",
+    slug: "toefl-wb-sent-23",
+    title: "Verbs that refuse -ed",
+    focus: "grammar",
+    difficulty: 2,
+    estimatedMinutes: 7,
+    instructions: "Each sentence hides one irregular past form used incorrectly. Rewrite the sentence with the right form of the irregular verb.",
+    taskRequirements: [
+      "Use the correct irregular past or participle.",
+      "Change nothing else in the sentence.",
+      "Keep past participles after have, has or had.",
+    ],
+    timeGuidance: "Ninety seconds per item; the three columns of an irregular verb are the whole toolkit.",
+    items: [
+      {
+        no: 1, kind: "correct",
+        prompt: "This sentence has one irregular-verb error. Rewrite it correctly.",
+        source: "The seminar teached two different citation styles.",
+        answer: "The seminar taught two different citation styles.",
+        meta: {
+          explanation: "Teach is irregular and forms its past as taught; there is no teached in English, and the past simple here has no auxiliary that could license a participle anyway.",
+          grammarNote: "Irregular verbs replace the -ed pattern with a vowel change: teach, taught, taught.",
+        },
+      },
+      {
+        no: 2, kind: "correct",
+        prompt: "This sentence has one irregular-verb error. Rewrite it correctly.",
+        source: "The archivists have wrote a summary of the collection.",
+        answer: "The archivists have written a summary of the collection.",
+        meta: {
+          explanation: "After the auxiliary have the verb must be the past participle written; wrote is the past simple form and cannot follow have in a perfect construction.",
+          grammarNote: "Perfect tenses always take the third column: write, wrote, written.",
+        },
+      },
+      {
+        no: 3, kind: "correct",
+        prompt: "This sentence has one irregular-verb error. Rewrite it correctly.",
+        source: "She goed to the printing office before the deadline.",
+        answer: "She went to the printing office before the deadline.",
+        meta: {
+          explanation: "Go is irregular and its past simple is went; the -ed spelling goed does not exist, and no auxiliary is present that could demand a participle instead.",
+          grammarNote: "Go changes its stem vowel completely: go, went, gone.",
+        },
+      },
+      {
+        no: 4, kind: "correct",
+        prompt: "This sentence has one irregular-verb error. Rewrite it correctly.",
+        source: "The results have showed a steady improvement since March.",
+        answer: "The results have shown a steady improvement since March.",
+        meta: {
+          explanation: "Show has the irregular participle shown alongside the regular variant showed, but in the perfect with have the preferred and examined form is shown; precision writing chooses it.",
+          grammarNote: "Some verbs keep both participle forms, and formal prose prefers the irregular one.",
+        },
+      },
+    ],
+    modelResponse: "The keyed sentences use taught after a bare past slot, written and shown after have, and went as the past simple of go, matching each irregular verb to the slot its tense demands.",
+    responseAnalysis: "Irregular verb errors are memory errors, not logic errors, so the fix is a three-column habit: base, past, participle. Learners who recite the columns of the twenty most frequent irregular verbs remove this entire error family from their writing.",
+    usefulExpressions: [
+      "past simple column",
+      "participle after have",
+      "vowel change pattern",
+      "irregular set",
+    ],
+    grammarObservations: [
+      "English kept strong verbs from its Germanic past, and they survive precisely in the most frequent vocabulary.",
+      "The presence of an auxiliary is the signal that selects the participle column rather than the past-simple column.",
+    ],
+    commonMistakes: [
+      "Building participles with -ed on irregular stems, as in have went or have wrote.",
+      "Using the past simple after have because the two columns sound equally finished.",
+    ],
+    independentAssignment: "List the ten irregular verbs you use most in your own writing and recite their three columns from memory.",
+    source: TOEFL_WRITING_BANK_SOURCE_NOTE,
+  },
+  {
+    taskType: "build-sentence",
+    slug: "toefl-wb-sent-24",
+    title: "Prepositions of time and place",
+    focus: "grammar",
+    difficulty: 2,
+    estimatedMinutes: 7,
+    instructions: "Each sentence contains exactly one wrong preposition of time or place. Identify it and rewrite the sentence with the preposition English actually uses.",
+    taskRequirements: [
+      "Change only the preposition.",
+      "Respect the fixed partnerships between preposition and time expression.",
+      "Keep the rest of the sentence untouched.",
+    ],
+    timeGuidance: "Ninety seconds per item; collocation memory beats logic here.",
+    items: [
+      {
+        no: 1, kind: "correct",
+        prompt: "This sentence has one wrong preposition. Rewrite it correctly.",
+        source: "The guest lecture is in Tuesday at the medical campus.",
+        answer: "The guest lecture is on Tuesday at the medical campus.",
+        meta: {
+          explanation: "Days of the week take on, while in belongs to months, years and longer periods; the place phrase with at is correct because the campus is treated as a point location.",
+          grammarNote: "On pairs with named days and dates; in pairs with months, seasons and years.",
+        },
+      },
+      {
+        no: 2, kind: "correct",
+        prompt: "This sentence has one wrong preposition. Rewrite it correctly.",
+        source: "The induction meeting starts in nine o'clock sharp.",
+        answer: "The induction meeting starts at nine o'clock sharp.",
+        meta: {
+          explanation: "Clock times pair with at, while in belongs to parts of the day and longer periods; nine o'clock is a point on the clock, so the preposition must be at.",
+          grammarNote: "At pairs with clock times; in pairs with mornings, months and years.",
+        },
+      },
+      {
+        no: 3, kind: "correct",
+        prompt: "This sentence has one wrong preposition. Rewrite it correctly.",
+        source: "The results will be published on the end of the month.",
+        answer: "The results will be published at the end of the month.",
+        meta: {
+          explanation: "The fixed expression is at the end of, whatever the learner's intuition about on may suggest; end points pair with at in English time expressions.",
+          grammarNote: "At the end of and at the beginning of are fixed partnerships that resist substitution.",
+        },
+      },
+      {
+        no: 4, kind: "correct",
+        prompt: "This sentence has one wrong preposition. Rewrite it correctly.",
+        source: "She arrived to the conference hall twenty minutes early.",
+        answer: "She arrived at the conference hall twenty minutes early.",
+        meta: {
+          explanation: "Arrive partners with at for points and in for enclosed areas, never with to; the destination after arrive is marked by at here because the hall is a point on the journey.",
+          grammarNote: "Arrive at a place, arrive in a city or country; to belongs to movement verbs like go.",
+        },
+      },
+    ],
+    modelResponse: "The keyed repairs are on Tuesday for the day, at the end of the fixed phrase, and at the conference hall after arrive; item two was already correct and stays untouched, training the judgment to leave well alone.",
+    responseAnalysis: "Prepositions are partnerships, not geometry: on Monday, at the end, arrive at. Learners who memorise the pairings rather than reasoning from their first language correct these instantly, and recognising a correct sentence as correct is itself a tested skill.",
+    usefulExpressions: [
+      "on Monday",
+      "at the end of",
+      "arrive at",
+      "during the period",
+    ],
+    grammarObservations: [
+      "Time prepositions scale with the length of the expression: at for points, on for days, in for periods.",
+      "Movement verbs select their own prepositions, and arrive takes at where go takes to.",
+    ],
+    commonMistakes: [
+      "Transferring to after arrive from its translation in the first language.",
+      "Choosing in for days of the week because days feel like short periods.",
+    ],
+    independentAssignment: "Write your schedule for one week using on, at, in and until at least twice each, then check each preposition against its partnership.",
+    source: TOEFL_WRITING_BANK_SOURCE_NOTE,
+  },
+  {
+    taskType: "build-sentence",
+    slug: "toefl-wb-sent-25",
+    title: "Fewer mistakes, less noise",
+    focus: "grammar",
+    difficulty: 3,
+    estimatedMinutes: 7,
+    instructions: "Each sentence misuses a quantifier with a countable or uncountable noun. Rewrite it with the quantifier that matches the noun's countability.",
+    taskRequirements: [
+      "Use fewer with countable plurals.",
+      "Use less with uncountables.",
+      "Keep number words consistent with countability.",
+    ],
+    timeGuidance: "Ninety seconds per item; classify the noun before choosing the quantifier.",
+    items: [
+      {
+        no: 1, kind: "correct",
+        prompt: "This sentence has one quantifier error. Rewrite it correctly.",
+        source: "There were less applicants than the programme expected.",
+        answer: "There were fewer applicants than the programme expected.",
+        meta: {
+          explanation: "Applicants is a countable plural noun, so the comparative quantifier must be fewer; less belongs to uncountable quantities like money, time or noise.",
+          grammarNote: "Fewer counts separate items you can number; less measures uncountable bulk.",
+        },
+      },
+      {
+        no: 2, kind: "correct",
+        prompt: "This sentence has one quantifier error. Rewrite it correctly.",
+        source: "The tutor gave him less books to read over the break.",
+        answer: "The tutor gave him fewer books to read over the break.",
+        meta: {
+          explanation: "Books are countable, and even a casual register cannot license less with a plural noun in careful writing; fewer is the only formally correct choice.",
+          grammarNote: "Countable plurals demand fewer in formal academic English.",
+        },
+      },
+      {
+        no: 3, kind: "correct",
+        prompt: "This sentence has one quantifier error. Rewrite it correctly.",
+        source: "How many time do we have for the presentation?",
+        answer: "How much time do we have for the presentation?",
+        meta: {
+          explanation: "Time in the sense of duration is uncountable, so the question word must be how much; how many works only with nouns you can count one by one.",
+          grammarNote: "How many asks about countable items; how much asks about uncountable amounts.",
+        },
+      },
+      {
+        no: 4, kind: "correct",
+        prompt: "This sentence has one quantifier error. Rewrite it correctly.",
+        source: "The report contains less tables than the previous edition.",
+        answer: "The report contains fewer tables than the previous edition.",
+        meta: {
+          explanation: "Tables are countable items, so the comparative quantifier must be fewer; less would measure an uncountable mass like data or information, which tables are not.",
+          grammarNote: "Countable nouns in the plural always take fewer in formal comparisons.",
+        },
+      },
+    ],
+    modelResponse: "The keyed repairs replace less with fewer before the countable plurals applicants, books and tables, and how many with how much before uncountable time; every corrected noun is classified before its quantifier is chosen.",
+    responseAnalysis: "The decision is a one-question test: can I count these directly? If yes, fewer and how many; if no, less and how much. Learners who pause to classify the noun eliminate a whole family of errors that careful readers notice immediately.",
+    usefulExpressions: [
+      "fewer counts",
+      "less measures",
+      "how much time",
+      "classify the noun first",
+    ],
+    grammarObservations: [
+      "Countability is a property English assigns per noun, and time is uncountable while moments and minutes are not.",
+      "Quantifier errors survive in casual speech, which is exactly why careful writing must monitor them deliberately.",
+    ],
+    commonMistakes: [
+      "Using less with plural nouns because shop signs do it, importing an informal habit into formal prose.",
+      "Asking how many time, transferring the countable treatment of clock units onto duration itself.",
+    ],
+    independentAssignment: "Write five sentences about your study load, using fewer, less, how many and how much each at least once, and label every noun's countability.",
+    source: TOEFL_WRITING_BANK_SOURCE_NOTE,
+  },
+  {
+    taskType: "build-sentence",
+    slug: "toefl-wb-sent-26",
+    title: "Gerund or infinitive",
+    focus: "grammar",
+    difficulty: 3,
+    estimatedMinutes: 8,
+    instructions: "Certain verbs demand a gerund, others an infinitive, and a few change meaning. Rewrite each sentence with the form its verb requires.",
+    taskRequirements: [
+      "Match the main verb to its required complement form.",
+      "Keep the meaning of the sentence unchanged.",
+      "Leave prepositions with their gerunds.",
+    ],
+    timeGuidance: "Two minutes per item; the main verb is the signal.",
+    items: [
+      {
+        no: 1, kind: "correct",
+        prompt: "This sentence has one complement error. Rewrite it correctly.",
+        source: "The committee decided postponing the defence by a week.",
+        answer: "The committee decided to postpone the defence by a week.",
+        meta: {
+          explanation: "Decide selects the infinitive, so to postpone is required; the gerund postponing cannot serve as this verb's complement, whatever the learner's instinct suggests.",
+          grammarNote: "Decide, hope, plan and promise all take the to-infinitive.",
+        },
+      },
+      {
+        no: 2, kind: "correct",
+        prompt: "This sentence has one complement error. Rewrite it correctly.",
+        source: "She avoided to cite the disputed dataset.",
+        answer: "She avoided citing the disputed dataset.",
+        meta: {
+          explanation: "Avoid is one of the verbs that require a direct gerund, so citing replaces to cite; no infinitive complement is available after avoid in standard English.",
+          grammarNote: "Avoid, enjoy, finish and suggest take bare gerunds.",
+        },
+      },
+      {
+        no: 3, kind: "correct",
+        prompt: "This sentence has one complement error. Rewrite it correctly.",
+        source: "The team is considering to run a second survey.",
+        answer: "The team is considering running a second survey.",
+        meta: {
+          explanation: "Consider takes a gerund complement, so running is the required form; the to-infinitive after consider is a very frequent learner error that formal writing must eliminate.",
+          grammarNote: "Consider, discuss and mention all govern gerunds directly, with no to-form allowed.",
+        },
+      },
+      {
+        no: 4, kind: "correct",
+        prompt: "This sentence has one complement error. Rewrite it correctly.",
+        source: "He apologised for to arrive late to the supervision meeting.",
+        answer: "He apologised for arriving late to the supervision meeting.",
+        meta: {
+          explanation: "The preposition for demands a gerund, and arriving is the only form that can follow it; prepositions in English are always followed by -ing forms, never by to-infinitives.",
+          grammarNote: "After any preposition the complement is a gerund.",
+        },
+      },
+    ],
+    modelResponse: "The keyed repairs give decide its to-infinitive, avoid and consider their direct gerunds, and the preposition for its obligatory gerund arriving, showing both the verb-governed and the preposition-governed complement rules working side by side.",
+    responseAnalysis: "Complement choice is a property of the governing word: learners must know their verb lists. The two reliable rules — decide takes to, every preposition takes -ing — cover a large share of real usage and are worth overlearning until they are automatic.",
+    usefulExpressions: [
+      "decided to postpone",
+      "avoided citing",
+      "considering running",
+      "preposition plus gerund",
+    ],
+    grammarObservations: [
+      "Verb complementation is lexical: the verb itself, not a general principle, chooses between gerund and infinitive.",
+      "Prepositions are the one environment where the gerund is completely obligatory in English.",
+    ],
+    commonMistakes: [
+      "Placing to plus verb after avoid, consider or enjoy, the classic transfer error.",
+      "Leaving a bare preposition followed by an infinitive, as in for to arrive.",
+    ],
+    independentAssignment: "Write one sentence each with decide, avoid, consider and look forward to, checking the complement form of every verb.",
+    source: TOEFL_WRITING_BANK_SOURCE_NOTE,
+  },
+  {
+    taskType: "build-sentence",
+    slug: "toefl-wb-sent-27",
+    title: "The passive engine",
+    focus: "grammar",
+    difficulty: 3,
+    estimatedMinutes: 8,
+    instructions: "Each sentence below misforms its passive voice. Find the broken link in the auxiliary chain and rewrite the sentence with be and the participle correctly assembled.",
+    taskRequirements: [
+      "Match be to the tense of the original.",
+      "Use the past participle, never the past simple.",
+      "Keep the by-phrase where one is given.",
+    ],
+    timeGuidance: "Two minutes per item; build be plus participle before adding the tail.",
+    items: [
+      {
+        no: 1, kind: "correct",
+        prompt: "This sentence has one passive error. Rewrite it correctly.",
+        source: "The proposals was reviewed by two independent referees.",
+        answer: "The proposals were reviewed by two independent referees.",
+        meta: {
+          explanation: "The plural subject the proposals requires the plural auxiliary were; the participle reviewed is correct, and only the agreement of be needs repair in this past passive.",
+          grammarNote: "The passive auxiliary be still agrees with the subject it fronts.",
+        },
+      },
+      {
+        no: 2, kind: "correct",
+        prompt: "This sentence has one passive error. Rewrite it correctly.",
+        source: "The questionnaires were distribute to every seminar group.",
+        answer: "The questionnaires were distributed to every seminar group.",
+        meta: {
+          explanation: "The passive auxiliary were is correctly plural, but the verb after it must be the participle distributed rather than the bare distribute; be in a passive is always followed by a participle form.",
+          grammarNote: "The slot directly after be in a passive holds a past participle, never a base form.",
+        },
+      },
+      {
+        no: 3, kind: "correct",
+        prompt: "This sentence has one passive error. Rewrite it correctly.",
+        source: "The field data is collect by trained volunteers every spring.",
+        answer: "The field data is collected by trained volunteers every spring.",
+        meta: {
+          explanation: "The passive requires the participle collected, not the bare form collect; the auxiliary is agrees with the uncountable data, so only the verb form after be needs the -ed ending restored.",
+          grammarNote: "The word after be in a passive is always a participle.",
+        },
+      },
+      {
+        no: 4, kind: "correct",
+        prompt: "This sentence has one passive error. Rewrite it correctly.",
+        source: "The results will announced at the departmental meeting.",
+        answer: "The results will be announced at the departmental meeting.",
+        meta: {
+          explanation: "A future passive needs the full auxiliary chain will be plus participle; dropping be leaves a future active shape that cannot follow will, so be must be inserted before announced.",
+          grammarNote: "Modal passives keep be between the modal and the participle.",
+        },
+      },
+    ],
+    modelResponse: "The keyed passives read were reviewed with plural agreement, were distributed with its participle restored after the plural auxiliary, is collected with its participle rebuilt, and will be announced with be reinserted after the modal.",
+    responseAnalysis: "Every passive is a chain — be, tensed and agreeing, then the participle — and errors are almost always a missing link. Learners who draft the chain in order, tense be, then attach the participle, produce correct passives at any tense.",
+    usefulExpressions: [
+      "be plus participle",
+      "modal keeps be",
+      "agreement travels to be",
+      "perfect passive stack",
+    ],
+    grammarObservations: [
+      "The passive moves the patient to subject position, so agreement obligations move with it onto the auxiliary be.",
+      "Modal verbs cannot attach directly to a participle, which forces be into the chain in every modal passive.",
+    ],
+    commonMistakes: [
+      "Omitting be after will or can, producing will announced.",
+      "Using the bare form or past simple where the participle is obligatory.",
+    ],
+    independentAssignment: "Write one passive sentence in each of four tenses — past, present perfect, future and modal — and label the auxiliary chain in each.",
+    source: TOEFL_WRITING_BANK_SOURCE_NOTE,
+  },
+  {
+    taskType: "build-sentence",
+    slug: "toefl-wb-sent-28",
+    title: "Relative pronouns choose their nouns",
+    focus: "grammar",
+    difficulty: 4,
+    estimatedMinutes: 8,
+    instructions: "Each sentence uses the wrong relative pronoun or omits one that cannot be omitted. Rewrite it with the correct choice for its noun and role.",
+    taskRequirements: [
+      "Use who for people and which for things.",
+      "Use whom after a preposition.",
+      "Keep the relative pronoun when it is the subject of its clause.",
+    ],
+    timeGuidance: "Two minutes per item; identify the antecedent and the pronoun's role inside its clause.",
+    items: [
+      {
+        no: 1, kind: "correct",
+        prompt: "This sentence has one relative-pronoun error. Rewrite it correctly.",
+        source: "The tutor which runs the writing clinic is on leave.",
+        answer: "The tutor who runs the writing clinic is on leave.",
+        meta: {
+          explanation: "The antecedent tutor is a person, so the pronoun must be who; which belongs to things, and its use for people is the single most visible relative-pronoun error in learner writing.",
+          grammarNote: "Who serves people in subject and object roles; which serves things.",
+        },
+      },
+      {
+        no: 2, kind: "correct",
+        prompt: "This sentence has one relative-pronoun error. Rewrite it correctly.",
+        source: "The grant, that was awarded in May, funds three PhD posts.",
+        answer: "The grant, which was awarded in May, funds three PhD posts.",
+        meta: {
+          explanation: "Non-defining relative clauses set off by commas can only use which for things; that is barred from non-defining clauses, so the commas force the which form here.",
+          grammarNote: "That never introduces a non-defining clause; commas exclude it.",
+        },
+      },
+      {
+        no: 3, kind: "correct",
+        prompt: "This sentence has one relative-pronoun error. Rewrite it correctly.",
+        source: "The professor with who the panel consulted has withdrawn.",
+        answer: "The professor with whom the panel consulted has withdrawn.",
+        meta: {
+          explanation: "A relative pronoun that directly follows a preposition must take the object form whom; who cannot sit after with, and moving the pronoun away from the preposition would be the only alternative.",
+          grammarNote: "Preposition plus whom is the formal order; stranded who is the informal alternative.",
+        },
+      },
+      {
+        no: 4, kind: "correct",
+        prompt: "This sentence has one relative-pronoun error. Rewrite it correctly.",
+        source: "The study surveyed students speak two or more languages.",
+        answer: "The study surveyed students who speak two or more languages.",
+        meta: {
+          explanation: "The relative pronoun who is the subject of speak and subjects cannot be omitted, so it must be restored; only object pronouns are deletable in relative clauses.",
+          grammarNote: "Subject relative pronouns are obligatory; only objects may drop out.",
+        },
+      },
+    ],
+    modelResponse: "The keyed repairs give the tutor who, the non-defining clause which, the preposition its whom, and restore the obligatory subject pronoun who before speak, each choice driven by the antecedent and the pronoun's role.",
+    responseAnalysis: "Three questions resolve every relative-pronoun decision: person or thing, defining or non-defining, subject or object. Learners who answer them in order stop writing which for people and learn that commas quietly ban that from the clause.",
+    usefulExpressions: [
+      "who for people",
+      "which after a comma",
+      "preposition plus whom",
+      "subjects cannot drop",
+    ],
+    grammarObservations: [
+      "The defining versus non-defining distinction controls the that-or-which choice more than the noun does.",
+      "Only object relative pronouns may be omitted, which is why subject gaps produce ungrammatical strings.",
+    ],
+    commonMistakes: [
+      "Extending which to human antecedents, the most frequent learner substitution.",
+      "Stranding who after a preposition in formal writing where whom is expected.",
+    ],
+    independentAssignment: "Combine five pairs of sentences using who, which and whom correctly, including one non-defining clause with commas.",
+    source: TOEFL_WRITING_BANK_SOURCE_NOTE,
+  },
+  {
+    taskType: "build-sentence",
+    slug: "toefl-wb-sent-29",
+    title: "Conditional gears",
+    focus: "grammar",
+    difficulty: 4,
+    estimatedMinutes: 9,
+    instructions: "Each sentence slips a conditional into the wrong gear. Rewrite it so the if-clause and main clause tenses match the intended meaning.",
+    taskRequirements: [
+      "Match tense pairs to the condition type.",
+      "Keep would out of the if-clause.",
+      "Preserve the sentence's intended time reference.",
+    ],
+    timeGuidance: "Two minutes per item; classify the condition first, then set both tenses.",
+    items: [
+      {
+        no: 1, kind: "correct",
+        prompt: "This sentence has one conditional error. Rewrite it correctly.",
+        source: "If the library will close at six, we should leave our bags there earlier.",
+        answer: "If the library closes at six, we should leave our bags there earlier.",
+        meta: {
+          explanation: "A first conditional keeps the if-clause in the present simple and reserves will for the main clause; the planned closing time is a present-tense condition, so closes replaces will close.",
+          grammarNote: "Will never enters an if-clause that states a plain future condition.",
+        },
+      },
+      {
+        no: 2, kind: "correct",
+        prompt: "This sentence has one conditional error. Rewrite it correctly.",
+        source: "If the pilot scheme succeeded, the university would have extended it.",
+        answer: "If the pilot scheme had succeeded, the university would have extended it.",
+        meta: {
+          explanation: "The main clause is a third conditional, so the if-clause must move to past perfect had succeeded; mixing a past-simple condition with a would-have result leaves the gears mismatched.",
+          grammarNote: "Third conditionals pair past perfect with would have plus participle.",
+        },
+      },
+      {
+        no: 3, kind: "correct",
+        prompt: "This sentence has one conditional error. Rewrite it correctly.",
+        source: "If I would know the questionnaire results, I would redesign module two.",
+        answer: "If I knew the questionnaire results, I would redesign module two.",
+        meta: {
+          explanation: "Second conditionals use the past simple in the if-clause, so knew replaces would know; would belongs only in the main clause, and its double appearance here breaks the hypothetical pattern.",
+          grammarNote: "Would is barred from the if-clause in pure hypotheticals.",
+        },
+      },
+      {
+        no: 4, kind: "correct",
+        prompt: "This sentence has one conditional error. Rewrite it correctly.",
+        source: "If the reviewer had flagged the error, the paper would be rejected now.",
+        answer: "If the reviewer had flagged the error, the paper would have been rejected now.",
+        alternatives: ["If the reviewer had flagged the error, the paper would be rejected now."],
+        meta: {
+          explanation: "The keyed repair completes the third conditional with would have been rejected; the alternative accepts a legitimate mixed conditional in which a past condition produces a present state, so both are defensible readings.",
+          grammarNote: "Mixed conditionals exist, but the tenses must still track the time of each clause.",
+        },
+      },
+    ],
+    modelResponse: "The keyed repairs restore present simple after if in the first conditional, past perfect for the third, past simple for the second, and accept both the pure third conditional and the legitimate mixed reading in the last item.",
+    responseAnalysis: "Conditionals are tense gears that must mesh: classify the condition's reality and time, then set each clause accordingly. Learners who first decide what the sentence means — real future, unreal present, unfulfilled past — choose the right pair without memorising tables.",
+    usefulExpressions: [
+      "no would after if",
+      "present simple in first conditionals",
+      "past perfect in third",
+      "gears must mesh",
+    ],
+    grammarObservations: [
+      "The if-clause carries tense, not modality, which is why would can never appear inside a plain condition.",
+      "Mixed conditionals are grammatical when each clause keeps its own time reference consistent with its meaning.",
+    ],
+    commonMistakes: [
+      "Placing will or would inside the if-clause, the most frequent conditional error in learner writing.",
+      "Pairing a past-simple condition with a would-have result, mixing second and third gears.",
+    ],
+    independentAssignment: "Write one sentence in each conditional type about your own studies, and label the tense in both clauses.",
+    source: TOEFL_WRITING_BANK_SOURCE_NOTE,
+  },
+  {
+    taskType: "build-sentence",
+    slug: "toefl-wb-sent-30",
+    title: "Reported speech rewinds tense",
+    focus: "grammar",
+    difficulty: 5,
+    estimatedMinutes: 9,
+    instructions: "Reporting past speech rewinds tenses and shifts pronouns and time words. Each sentence below breaks one of those rules. Rewrite it as correct reported speech.",
+    taskRequirements: [
+      "Rewind the tense one step where the report is in the past.",
+      "Shift pronouns and time words consistently.",
+      "Keep the reporting verb's tense in charge.",
+    ],
+    timeGuidance: "Two minutes per item; check tense, pronouns and time words in that order.",
+    items: [
+      {
+        no: 1, kind: "correct",
+        prompt: "This reported sentence has one error. Rewrite it correctly.",
+        source: "The supervisor said that she will read the draft over the weekend.",
+        answer: "The supervisor said that she would read the draft over the weekend.",
+        meta: {
+          explanation: "Past reporting rewinds will to would; the promise sits in the past, so the modal must shift back one step alongside the reporting verb said.",
+          grammarNote: "Reported in the past, will becomes would and can becomes could.",
+        },
+      },
+      {
+        no: 2, kind: "correct",
+        prompt: "This reported sentence has one error. Rewrite it correctly.",
+        source: "The dean announced that the ceremony takes place the following week.",
+        answer: "The dean announced that the ceremony would take place the following week.",
+        alternatives: ["The dean announced that the ceremony was to take place the following week."],
+        meta: {
+          explanation: "A future event announced in the past must be reported with a past-shifted form, so would take place or was to take place replaces the present takes place; the time shift the following week is already correct.",
+          grammarNote: "Reported futures need a past modal or past arrangement form.",
+        },
+      },
+      {
+        no: 3, kind: "correct",
+        prompt: "This reported sentence has one error. Rewrite it correctly.",
+        source: "She reminded us that the ethics training had to be finished by tomorrow.",
+        answer: "She reminded us that the ethics training had to be finished by the following day.",
+        meta: {
+          explanation: "Time words shift with the reporting moment: tomorrow, spoken in the past, becomes the following day; the past modal had to is already correctly rewound.",
+          grammarNote: "Time and place words shift in reported speech: tomorrow to the following day, here to there.",
+        },
+      },
+      {
+        no: 4, kind: "correct",
+        prompt: "This reported sentence has one error. Rewrite it correctly.",
+        source: "The applicants wrote that they have attached their transcripts.",
+        answer: "The applicants wrote that they had attached their transcripts.",
+        meta: {
+          explanation: "The attaching happened before the writing, so the past perfect had attached is required after the past reporting verb; the present perfect have attached cannot survive in a past report.",
+          grammarNote: "Earlier-in-the-past events rewind to past perfect in reported sequences.",
+        },
+      },
+    ],
+    modelResponse: "The keyed reports rewind will to would, future the ceremony to would take place, tomorrow to the following day, and have attached to had attached, applying the backshift, pronoun and time-word rules in turn.",
+    responseAnalysis: "Backshift is systematic: one step back in tense, pronouns re-anchored to the reporter, and time words re-measured from the reporting moment. Learners who run the three checks in order produce reported speech that reads naturally rather than translated.",
+    usefulExpressions: [
+      "backshift one step",
+      "would after said",
+      "the following day",
+      "past perfect for earlier events",
+    ],
+    grammarObservations: [
+      "The reporting verb's past tense is the engine that drags every subordinate tense one step backwards.",
+      "Time and place words are deictic: they measure from the speaker, so reported speech must re-measure them.",
+    ],
+    commonMistakes: [
+      "Leaving will or the present perfect inside a past report, breaking the backshift chain.",
+      "Keeping tomorrow inside reported speech, which places the event in the wrong week.",
+    ],
+    independentAssignment: "Report three things a classmate told you this week, checking tense, pronouns and time words for each one.",
+    source: TOEFL_WRITING_BANK_SOURCE_NOTE,
+  },
+];

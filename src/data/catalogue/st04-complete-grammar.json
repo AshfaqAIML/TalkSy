@@ -1,0 +1,278 @@
+{
+  "id": "st04",
+  "order": 4,
+  "title": "Complete Grammar",
+  "cefr": "A1 → B2",
+  "goal": "Master the complete English grammar system — parts of speech, all twelve tenses, and the advanced structures — always through meaning and real use, never formulas without context.",
+  "entryRequirements": ["st03-exit"],
+  "modules": [
+    {
+      "id": "st04-m01",
+      "title": "Parts of Speech",
+      "description": "The nine word classes with their subcategories, uses, examples and the common errors learners make with each.",
+      "units": [
+        {
+          "id": "st04-m01-u01",
+          "title": "Nouns",
+          "lessons": [
+            {"id": "st04-m01-u01-l01", "title": "Nouns: Types and Uses", "cefr": "A1", "minutes": 12, "objectives": ["Classify common, proper, countable and uncountable nouns", "Use nouns in all five sentence patterns"], "topics": ["nouns", "common-proper", "countable-uncountable"], "practice": ["noun-sorting", "countable-or-not", "sentence-building"], "assessment": "Classify 16 of 18 nouns correctly by type", "skills": ["reading", "writing", "listening"]},
+            {"id": "st04-m01-u01-l02", "title": "Nouns: Common Errors", "cefr": "A2", "minutes": 10, "objectives": ["Avoid plural errors like informations and advices", "Use articles correctly with common nouns"], "topics": ["noun-errors", "uncountable-traps", "plural-mistakes"], "practice": ["error-correction", "find-the-mistake", "spelling-dictation"], "assessment": "Correct 8 of 10 noun errors in learner-typical sentences", "skills": ["reading", "writing"]}
+          ],
+          "checkpoint": {"criteria": "Classify nouns by type and fix common noun errors", "passThreshold": 80}
+        },
+        {
+          "id": "st04-m01-u02",
+          "title": "Pronouns",
+          "lessons": [
+            {"id": "st04-m01-u02-l01", "title": "Pronouns: Types and Uses", "cefr": "A1", "minutes": 12, "objectives": ["Use subject, object and possessive pronouns", "Choose reflexive pronouns like myself where needed"], "topics": ["pronouns", "subject-object-possessive", "reflexives"], "practice": ["choose-the-pronoun", "rewrite-with-pronouns", "fill-the-gap"], "assessment": "Use all pronoun types correctly in 12 of 14 items", "skills": ["reading", "writing", "listening"]},
+            {"id": "st04-m01-u02-l02", "title": "Pronoun Agreement and Errors", "cefr": "A2", "minutes": 10, "objectives": ["Match pronouns to their nouns in number and gender", "Avoid errors like between you and I"], "topics": ["pronoun-agreement", "common-pronoun-errors"], "practice": ["error-correction", "agreement-drill", "rewrite-the-sentence"], "assessment": "Fix 8 of 10 pronoun errors correctly", "skills": ["reading", "writing"]}
+          ],
+          "checkpoint": {"criteria": "Use pronouns accurately and fix agreement errors", "passThreshold": 80}
+        },
+        {
+          "id": "st04-m01-u03",
+          "title": "Verbs",
+          "lessons": [
+            {"id": "st04-m01-u03-l01", "title": "Verbs: Types and Uses", "cefr": "A1", "minutes": 12, "objectives": ["Tell action, linking and helping verbs apart", "Match verbs to the sentence patterns they fit"], "topics": ["verbs", "action-linking-helping", "verb-types"], "practice": ["verb-sorting", "choose-the-verb", "pattern-match"], "assessment": "Classify 15 of 18 verbs by type and use each in a pattern", "skills": ["reading", "writing", "listening"]},
+            {"id": "st04-m01-u03-l02", "title": "Verb Forms and Patterns", "cefr": "A2", "minutes": 12, "objectives": ["Use base, past, past participle and -ing forms", "Learn which verbs take -ing and which take to"], "topics": ["verb-forms", "five-forms", "verb-patterns-intro"], "practice": ["form-tables", "fill-the-correct-form", "pattern-quiz"], "assessment": "Supply correct forms for 12 of 14 verbs in context", "skills": ["reading", "writing"]}
+          ],
+          "checkpoint": {"criteria": "Use verb types, forms and basic patterns correctly", "passThreshold": 80}
+        },
+        {
+          "id": "st04-m01-u04",
+          "title": "Adjectives and Adverbs",
+          "lessons": [
+            {"id": "st04-m01-u04-l01", "title": "Adjectives: Types, Order and Uses", "cefr": "A2", "minutes": 12, "objectives": ["Use fact and opinion adjectives", "Order adjectives correctly: a big old red box"], "topics": ["adjectives", "adjective-order", "gradable-adjectives"], "practice": ["order-the-adjectives", "choose-the-adjective", "describe-and-compare"], "assessment": "Order adjectives correctly in 8 of 10 noun phrases", "skills": ["reading", "writing", "speaking"]},
+            {"id": "st04-m01-u04-l02", "title": "Adverbs: Types and Position", "cefr": "A2", "minutes": 12, "objectives": ["Use adverbs of manner, time, frequency and degree", "Place adverbs correctly in a sentence"], "topics": ["adverbs", "adverb-types", "adverb-position"], "practice": ["adverb-sorting", "place-the-adverb", "transformation-drill"], "assessment": "Place and choose adverbs correctly in 10 of 12 items", "skills": ["reading", "writing", "listening"]},
+            {"id": "st04-m01-u04-l03", "title": "Adjective and Adverb Errors", "cefr": "A2", "minutes": 10, "objectives": ["Choose good vs well and similar pairs correctly", "Fix double-comparative and wrong-form errors"], "topics": ["adjective-adverb-errors", "good-versus-well", "common-mistakes"], "practice": ["error-correction", "choose-the-form", "explain-the-rule"], "assessment": "Correct 8 of 10 adjective/adverb errors and explain two rules", "skills": ["reading", "writing"]}
+          ],
+          "checkpoint": {"criteria": "Use adjectives and adverbs with correct order, position and form", "passThreshold": 80}
+        },
+        {
+          "id": "st04-m01-u05",
+          "title": "Prepositions, Conjunctions and Interjections",
+          "lessons": [
+            {"id": "st04-m01-u05-l01", "title": "Prepositions of Place, Time and Movement", "cefr": "A2", "minutes": 12, "objectives": ["Use in, on, at for time as well as place", "Use movement prepositions like to, into, through"], "topics": ["prepositions", "place-time-movement", "preposition-collocations"], "practice": ["choose-the-preposition", "picture-description", "time-expressions"], "assessment": "Choose correct prepositions in 12 of 14 items", "skills": ["reading", "writing", "listening"]},
+            {"id": "st04-m01-u05-l02", "title": "Conjunctions: and, but, or, because, so", "cefr": "A1", "minutes": 12, "objectives": ["Join ideas with coordinating conjunctions", "Link causes and results with because and so"], "topics": ["conjunctions", "coordinating", "cause-and-result"], "practice": ["sentence-combination", "choose-the-conjunction", "guided-writing"], "assessment": "Combine 8 of 10 sentence pairs with correct conjunctions", "skills": ["reading", "writing"]},
+            {"id": "st04-m01-u05-l03", "title": "Interjections and Parts-of-Speech Review", "cefr": "A2", "minutes": 12, "objectives": ["Recognise interjections like oh, wow and ouch in speech", "Identify all nine word classes in real sentences"], "topics": ["interjections", "word-class-review", "mixed-analysis"], "practice": ["mixed-quiz", "label-every-word", "error-correction"], "assessment": "Label 40 words in a text by part of speech with at least 85 percent accuracy", "skills": ["reading", "listening"]}
+          ],
+          "checkpoint": {"criteria": "Identify and use all nine word classes, including interjections, in context", "passThreshold": 80}
+        }
+      ]
+    },
+    {
+      "id": "st04-m02",
+      "title": "The Tense System and Present Tenses",
+      "description": "The map of the English tense system, then the four present tenses. Every tense unit covers, across two lessons: meaning and use, structure, affirmative, negative, interrogative and WH forms, verb forms, auxiliary verbs, time expressions, everyday examples, dialogue examples, common mistakes, translation exercises, sentence transformation, and speaking and writing practice.",
+      "units": [
+        {
+          "id": "st04-m02-u01",
+          "title": "The Tense System",
+          "lessons": [
+            {"id": "st04-m02-u01-l01", "title": "The English Tense System: An Overview", "cefr": "A1", "minutes": 12, "objectives": ["Understand time (past, present, future) and aspect (simple, continuous, perfect)", "Read the 12-tense map without fear"], "topics": ["tense-system", "time-and-aspect", "tense-map"], "practice": ["tense-map-quiz", "name-the-combination", "overview-discussion"], "assessment": "Explain time versus aspect and locate all 12 tenses on the map", "skills": ["reading", "listening", "speaking"]}
+          ],
+          "checkpoint": {"criteria": "Navigate the 12-tense map: time crossed with aspect", "passThreshold": 80}
+        },
+        {
+          "id": "st04-m02-u02",
+          "title": "Present Simple",
+          "lessons": [
+            {"id": "st04-m02-u02-l01", "title": "Present Simple: Form and Meaning", "cefr": "A1", "minutes": 12, "objectives": ["Build affirmative, negative and interrogative forms with do/does", "Use the third-person -s correctly", "Understand the meaning: habits, facts, schedules"], "topics": ["present-simple", "structure", "affirmative-negative-question", "third-person-s", "meaning-habits-facts"], "practice": ["form-drill", "transformation-drill", "wh-question-building"], "assessment": "Produce all four form types (affirmative, negative, yes/no, WH) with 9 of 10 correct", "skills": ["reading", "writing", "listening"]},
+            {"id": "st04-m02-u02-l02", "title": "Present Simple: Use and Practice", "cefr": "A1", "minutes": 12, "objectives": ["Use time expressions like always, usually, every day", "Hear present simple in everyday dialogues", "Avoid the he-go error and other common mistakes"], "topics": ["present-simple-use", "frequency-adverbs", "dialogue-examples", "common-mistakes"], "practice": ["guided-dialogue", "error-correction", "translation-exercise", "speaking-prompts", "guided-writing"], "assessment": "Complete a daily-routine dialogue and a 5-sentence habit paragraph with at least 80 percent accuracy", "skills": ["listening", "speaking", "reading", "writing"]}
+          ],
+          "checkpoint": {"criteria": "Use present simple for routines and facts with correct forms, time expressions and third-person -s", "passThreshold": 80}
+        },
+        {
+          "id": "st04-m02-u03",
+          "title": "Present Continuous",
+          "lessons": [
+            {"id": "st04-m02-u03-l01", "title": "Present Continuous: Form and Meaning", "cefr": "A1", "minutes": 12, "objectives": ["Build forms with be + verb-ing", "Understand the meaning: happening now, temporary, changing", "Distinguish stative verbs rarely used in -ing"], "topics": ["present-continuous", "be-plus-ing", "meaning-now-temporary", "stative-verbs"], "practice": ["form-drill", "transformation-drill", "stative-verb-quiz"], "assessment": "Produce all four form types correctly in 9 of 10 items", "skills": ["reading", "writing", "listening"]},
+            {"id": "st04-m02-u03-l02", "title": "Present Continuous: Use and Practice", "cefr": "A1", "minutes": 12, "objectives": ["Use now, at the moment and today", "Describe pictures and ongoing activities in speech and writing", "Choose between present simple and continuous correctly"], "topics": ["present-continuous-use", "time-expressions", "simple-versus-continuous", "common-mistakes"], "practice": ["picture-description", "guided-dialogue", "translation-exercise", "speaking-prompts", "guided-writing"], "assessment": "Describe 3 pictures and complete a now-versus-always contrast task with 80 percent accuracy", "skills": ["listening", "speaking", "reading", "writing"]}
+          ],
+          "checkpoint": {"criteria": "Use present continuous for now and temporary situations and contrast it with present simple", "passThreshold": 80}
+        },
+        {
+          "id": "st04-m02-u04",
+          "title": "Present Perfect",
+          "lessons": [
+            {"id": "st04-m02-u04-l01", "title": "Present Perfect: Form and Meaning", "cefr": "A2", "minutes": 12, "objectives": ["Build forms with have/has + past participle", "Understand the meaning: experience, unfinished time, result now", "Write regular and learn the key irregular participles"], "topics": ["present-perfect", "have-plus-participle", "meaning-experience-result", "irregular-participles"], "practice": ["form-drill", "participle-tables", "transformation-drill"], "assessment": "Produce correct forms in 9 of 10 items using 8 target participles", "skills": ["reading", "writing", "listening"]},
+            {"id": "st04-m02-u04-l02", "title": "Present Perfect: Use and Practice", "cefr": "A2", "minutes": 12, "objectives": ["Use ever, never, already, yet and just", "Tell experiences: I have visited Japan", "Avoid mixing present perfect with past time words"], "topics": ["present-perfect-use", "ever-never-already-yet", "perfect-versus-past", "common-mistakes"], "practice": ["experience-interview", "guided-dialogue", "translation-exercise", "error-correction", "speaking-prompts"], "assessment": "Complete an experiences interview and 5-sentence experience paragraph with 80 percent accuracy", "skills": ["listening", "speaking", "reading", "writing"]}
+          ],
+          "checkpoint": {"criteria": "Use present perfect for experiences and results with correct participles and time words", "passThreshold": 80}
+        },
+        {
+          "id": "st04-m02-u05",
+          "title": "Present Perfect Continuous",
+          "lessons": [
+            {"id": "st04-m02-u05-l01", "title": "Present Perfect Continuous: Form and Meaning", "cefr": "B1", "minutes": 12, "objectives": ["Build forms with have/has been + verb-ing", "Understand the meaning: duration up to now"], "topics": ["present-perfect-continuous", "have-been-ing", "meaning-duration"], "practice": ["form-drill", "transformation-drill", "form-contrast"], "assessment": "Produce correct forms in 8 of 10 items", "skills": ["reading", "writing", "listening"]},
+            {"id": "st04-m02-u05-l02", "title": "Present Perfect Continuous: Use and Practice", "cefr": "B1", "minutes": 12, "objectives": ["Use for and since with duration", "Explain ongoing activities and their visible results", "Choose between perfect and perfect continuous"], "topics": ["for-and-since", "duration-expressions", "perfect-versus-perfect-continuous", "common-mistakes"], "practice": ["guided-dialogue", "speaking-prompts", "translation-exercise", "error-correction", "guided-writing"], "assessment": "Contrast for/since correctly in 9 of 10 items and give a 4-sentence duration account", "skills": ["listening", "speaking", "reading", "writing"]}
+          ],
+          "checkpoint": {"criteria": "Use present perfect continuous for duration with for/since and contrast it with present perfect", "passThreshold": 80}
+        }
+      ]
+    },
+    {
+      "id": "st04-m03",
+      "title": "Past Tenses",
+      "description": "The four past tenses, each with the full attribute set across two lessons: meaning, forms, auxiliaries, time expressions, dialogues, mistakes, translation, transformation and production practice.",
+      "units": [
+        {
+          "id": "st04-m03-u01",
+          "title": "Past Simple",
+          "lessons": [
+            {"id": "st04-m03-u01-l01", "title": "Past Simple: Form and Meaning", "cefr": "A1", "minutes": 12, "objectives": ["Form regular past with -ed and use the 20 most common irregulars", "Build negatives and questions with did", "Understand the meaning: finished actions at a finished time"], "topics": ["past-simple", "regular-irregular", "did-forms", "meaning-finished-past"], "practice": ["form-drill", "irregular-verb-tables", "transformation-drill"], "assessment": "Produce all four form types with 9 of 10 correct, using 15 irregular verbs", "skills": ["reading", "writing", "listening"]},
+            {"id": "st04-m03-u01-l02", "title": "Past Simple: Use and Practice", "cefr": "A1", "minutes": 12, "objectives": ["Use yesterday, last week and ago", "Narrate a finished event in order", "Avoid the did-went double-past error"], "topics": ["past-simple-use", "yesterday-last-ago", "narration", "common-mistakes"], "practice": ["storytelling-task", "guided-dialogue", "translation-exercise", "error-correction", "guided-writing"], "assessment": "Tell a 6-sentence yesterday story and write it with 80 percent accuracy", "skills": ["listening", "speaking", "reading", "writing"]}
+          ],
+          "checkpoint": {"criteria": "Narrate finished past events with regular and irregular verbs", "passThreshold": 80}
+        },
+        {
+          "id": "st04-m03-u02",
+          "title": "Past Continuous",
+          "lessons": [
+            {"id": "st04-m03-u02-l01", "title": "Past Continuous: Form and Meaning", "cefr": "A2", "minutes": 12, "objectives": ["Build forms with was/were + verb-ing", "Understand the meaning: in progress at a past moment"], "topics": ["past-continuous", "was-were-ing", "meaning-past-in-progress"], "practice": ["form-drill", "transformation-drill", "form-contrast"], "assessment": "Produce correct forms in 9 of 10 items", "skills": ["reading", "writing", "listening"]},
+            {"id": "st04-m03-u02-l02", "title": "Past Continuous: Use and Practice", "cefr": "A2", "minutes": 12, "objectives": ["Set scenes and describe interrupted actions with when and while", "Combine past simple and continuous in stories", "Avoid was-were confusion"], "topics": ["when-while", "scene-setting", "simple-plus-continuous", "common-mistakes"], "practice": ["storytelling-task", "guided-dialogue", "translation-exercise", "error-correction", "speaking-prompts"], "assessment": "Tell an interrupted-action story of 6 sentences with both tenses used correctly", "skills": ["listening", "speaking", "reading", "writing"]}
+          ],
+          "checkpoint": {"criteria": "Describe past scenes and interruptions with past continuous plus past simple", "passThreshold": 80}
+        },
+        {
+          "id": "st04-m03-u03",
+          "title": "Past Perfect",
+          "lessons": [
+            {"id": "st04-m03-u03-l01", "title": "Past Perfect: Form and Meaning", "cefr": "B1", "minutes": 12, "objectives": ["Build forms with had + past participle", "Understand the meaning: the earlier of two past events"], "topics": ["past-perfect", "had-plus-participle", "meaning-earlier-past"], "practice": ["form-drill", "transformation-drill", "timeline-labelling"], "assessment": "Produce correct forms in 8 of 10 items and label event order on timelines", "skills": ["reading", "writing", "listening"]},
+            {"id": "st04-m03-u03-l02", "title": "Past Perfect: Use and Practice", "cefr": "B1", "minutes": 12, "objectives": ["Use before, after and already to sequence events", "Narrate cause-and-effect past chains", "Use past perfect only where sequence is not already clear"], "topics": ["before-after-already", "past-ordering", "common-mistakes", "narrative-sequencing"], "practice": ["storytelling-task", "translation-exercise", "error-correction", "guided-writing", "speaking-prompts"], "assessment": "Rewrite 5 two-event sentences with past perfect correctly and narrate one chain", "skills": ["listening", "speaking", "reading", "writing"]}
+          ],
+          "checkpoint": {"criteria": "Order past events with past perfect where needed", "passThreshold": 80}
+        },
+        {
+          "id": "st04-m03-u04",
+          "title": "Past Perfect Continuous",
+          "lessons": [
+            {"id": "st04-m03-u04-l01", "title": "Past Perfect Continuous: Form and Meaning", "cefr": "B1", "minutes": 12, "objectives": ["Build forms with had been + verb-ing", "Understand the meaning: duration before a past point"], "topics": ["past-perfect-continuous", "had-been-ing", "meaning-past-duration"], "practice": ["form-drill", "transformation-drill", "form-contrast"], "assessment": "Produce correct forms in 8 of 10 items", "skills": ["reading", "writing", "listening"]},
+            {"id": "st04-m03-u04-l02", "title": "Past Perfect Continuous: Use and Practice", "cefr": "B1", "minutes": 12, "objectives": ["Explain past causes: I was tired because I had been working", "Combine with past simple narration", "Choose between past perfect and past perfect continuous"], "topics": ["past-causes", "duration-before-past", "form-choice", "common-mistakes"], "practice": ["cause-explanation", "storytelling-task", "translation-exercise", "error-correction", "speaking-prompts"], "assessment": "Explain 5 past situations using the correct perfect form with 80 percent accuracy", "skills": ["listening", "speaking", "reading", "writing"]}
+          ],
+          "checkpoint": {"criteria": "Use past perfect continuous for duration-before-past causes", "passThreshold": 80}
+        }
+      ]
+    },
+    {
+      "id": "st04-m04",
+      "title": "Future Tenses",
+      "description": "The four future tenses plus the other ways English talks about the future — each with the full attribute set across form, meaning and production practice.",
+      "units": [
+        {
+          "id": "st04-m04-u01",
+          "title": "Future Simple: will",
+          "lessons": [
+            {"id": "st04-m04-u01-l01", "title": "Future Simple (will): Form and Meaning", "cefr": "A2", "minutes": 12, "objectives": ["Build forms with will + base verb, negatives and questions", "Understand the meaning: predictions, promises, spontaneous decisions"], "topics": ["future-simple", "will-forms", "meaning-prediction-promise"], "practice": ["form-drill", "transformation-drill", "wh-question-building"], "assessment": "Produce all four form types with 9 of 10 correct", "skills": ["reading", "writing", "listening"]},
+            {"id": "st04-m04-u01-l02", "title": "Future Simple (will): Use and Practice", "cefr": "A2", "minutes": 12, "objectives": ["Use tomorrow, next week and in 2030", "Make offers and promises in dialogue", "Avoid writing I will to go"], "topics": ["future-time-expressions", "offers-promises", "dialogue-examples", "common-mistakes"], "practice": ["guided-dialogue", "prediction-game", "translation-exercise", "error-correction", "speaking-prompts"], "assessment": "Make 5 predictions and 3 offers in a dialogue with 80 percent accuracy", "skills": ["listening", "speaking", "reading", "writing"]}
+          ],
+          "checkpoint": {"criteria": "Use will for predictions, promises and offers", "passThreshold": 80}
+        },
+        {
+          "id": "st04-m04-u02",
+          "title": "Future Continuous",
+          "lessons": [
+            {"id": "st04-m04-u02-l01", "title": "Future Continuous: Form and Meaning", "cefr": "B1", "minutes": 12, "objectives": ["Build forms with will be + verb-ing", "Understand the meaning: in progress at a future time"], "topics": ["future-continuous", "will-be-ing", "meaning-future-in-progress"], "practice": ["form-drill", "transformation-drill", "form-contrast"], "assessment": "Produce correct forms in 8 of 10 items", "skills": ["reading", "writing", "listening"]},
+            {"id": "st04-m04-u02-l02", "title": "Future Continuous: Use and Practice", "cefr": "B1", "minutes": 12, "objectives": ["Describe what will be happening at a set future time", "Make polite inquiries about someone's plans"], "topics": ["future-arrangements", "polite-inquiries", "common-mistakes"], "practice": ["guided-dialogue", "speaking-prompts", "translation-exercise", "error-correction", "guided-writing"], "assessment": "Describe 5 future-time scenes with correct forms and register", "skills": ["listening", "speaking", "reading", "writing"]}
+          ],
+          "checkpoint": {"criteria": "Describe in-progress future situations with future continuous", "passThreshold": 80}
+        },
+        {
+          "id": "st04-m04-u03",
+          "title": "Future Perfect",
+          "lessons": [
+            {"id": "st04-m04-u03-l01", "title": "Future Perfect: Form and Meaning", "cefr": "B2", "minutes": 12, "objectives": ["Build forms with will have + past participle", "Understand the meaning: completed before a future point"], "topics": ["future-perfect", "will-have-participle", "meaning-completed-by-then"], "practice": ["form-drill", "timeline-labelling", "transformation-drill"], "assessment": "Produce correct forms in 8 of 10 items", "skills": ["reading", "writing", "listening"]},
+            {"id": "st04-m04-u03-l02", "title": "Future Perfect: Use and Practice", "cefr": "B2", "minutes": 12, "objectives": ["Use by and by the time with future perfect", "Project completed milestones in professional contexts"], "topics": ["by-the-time", "future-milestones", "common-mistakes"], "practice": ["milestone-planning", "translation-exercise", "error-correction", "guided-writing", "speaking-prompts"], "assessment": "Write a 4-sentence project forecast using by + future perfect correctly", "skills": ["listening", "speaking", "reading", "writing"]}
+          ],
+          "checkpoint": {"criteria": "Express future completion points with future perfect", "passThreshold": 80}
+        },
+        {
+          "id": "st04-m04-u04",
+          "title": "Future Perfect Continuous",
+          "lessons": [
+            {"id": "st04-m04-u04-l01", "title": "Future Perfect Continuous: Form and Meaning", "cefr": "B2", "minutes": 12, "objectives": ["Build forms with will have been + verb-ing", "Understand the meaning: duration up to a future point"], "topics": ["future-perfect-continuous", "will-have-been-ing", "meaning-future-duration"], "practice": ["form-drill", "form-contrast", "transformation-drill"], "assessment": "Produce correct forms in 8 of 10 items", "skills": ["reading", "writing", "listening"]},
+            {"id": "st04-m04-u04-l02", "title": "Future Perfect Continuous: Use and Practice", "cefr": "B2", "minutes": 12, "objectives": ["Talk about how long something will have been running", "Choose among all four future perfect/continuous forms accurately"], "topics": ["duration-to-future-point", "future-form-choice", "common-mistakes"], "practice": ["form-choice-drill", "translation-exercise", "error-correction", "speaking-prompts", "guided-writing"], "assessment": "Select correct future forms in 8 of 10 contrast items", "skills": ["listening", "speaking", "reading", "writing"]}
+          ],
+          "checkpoint": {"criteria": "Use future perfect continuous for future durations and choose among future forms", "passThreshold": 80}
+        },
+        {
+          "id": "st04-m04-u05",
+          "title": "Other Futures",
+          "lessons": [
+            {"id": "st04-m04-u05-l01", "title": "Going To, Present Continuous and Present Simple for Future", "cefr": "A2", "minutes": 12, "objectives": ["Use going to for plans and evidence-based predictions", "Use present continuous for fixed arrangements", "Use present simple for timetables"], "topics": ["going-to", "arrangements", "timetables", "future-choice"], "practice": ["form-choice-drill", "planning-dialogue", "translation-exercise", "error-correction"], "assessment": "Choose the right future form in 8 of 10 situations and justify two choices", "skills": ["listening", "speaking", "reading", "writing"]}
+          ],
+          "checkpoint": {"criteria": "Select correctly among will, going to, present continuous and present simple futures", "passThreshold": 80}
+        }
+      ]
+    },
+    {
+      "id": "st04-m05",
+      "title": "Additional Grammar",
+      "description": "The complete remaining grammar system: agreement and modality, voice and reported speech, articles, determiners, quantifiers and comparison, conditionals, relative clauses, gerunds, infinitives, participles, question tags, phrasal verbs, linking words, prepositions, punctuation, capitalisation and common errors.",
+      "units": [
+        {
+          "id": "st04-m05-u01",
+          "title": "Agreement and Modality",
+          "lessons": [
+            {"id": "st04-m05-u01-l01", "title": "Subject-Verb Agreement: Advanced Rules", "cefr": "A2", "minutes": 12, "objectives": ["Agree with tricky subjects like everyone, news and neither", "Agree across there is/are and subject phrases"], "topics": ["subject-verb-agreement", "tricky-subjects", "agreement-rules"], "practice": ["agreement-drill", "error-correction", "choose-the-form"], "assessment": "Choose correct verb forms for 9 of 10 tricky subjects", "skills": ["reading", "writing", "listening"]},
+            {"id": "st04-m05-u01-l02", "title": "Modal Verbs: can, could, may, might, must, should, will, would", "cefr": "A2", "minutes": 12, "objectives": ["Use core modals for ability, permission, possibility, necessity and advice", "Keep the base verb after modals"], "topics": ["modal-verbs", "ability-permission-necessity", "base-verb-rule"], "practice": ["modal-match", "fill-the-modal", "guided-dialogue"], "assessment": "Use all eight core modals correctly in 10 of 12 items", "skills": ["listening", "speaking", "reading", "writing"]},
+            {"id": "st04-m05-u01-l03", "title": "Modal Verbs: Semi-Modals and Perfect Modals", "cefr": "B1", "minutes": 12, "objectives": ["Use have to, need to, should have and must have", "Express past obligation and past deduction"], "topics": ["semi-modals", "perfect-modals", "past-deduction"], "practice": ["form-drill", "meaning-quiz", "error-correction", "speaking-prompts"], "assessment": "Express past advice and deduction correctly in 8 of 10 items", "skills": ["listening", "speaking", "reading", "writing"]}
+          ],
+          "checkpoint": {"criteria": "Use the full modal system including semi-modals and perfect modals", "passThreshold": 80}
+        },
+        {
+          "id": "st04-m05-u02",
+          "title": "Voice and Speech",
+          "lessons": [
+            {"id": "st04-m05-u02-l01", "title": "Active and Passive Voice: Forms and Uses", "cefr": "B1", "minutes": 12, "objectives": ["Form the passive with be + past participle", "Understand when passive is the right choice"], "topics": ["passive-voice", "be-plus-participle", "when-to-use-passive"], "practice": ["form-drill", "active-or-passive", "guided-writing"], "assessment": "Form passive correctly in 9 of 10 items and justify 2 passive choices", "skills": ["reading", "writing", "listening"]},
+            {"id": "st04-m05-u02-l02", "title": "Passive across Tenses and Transformations", "cefr": "B1", "minutes": 12, "objectives": ["Transform active to passive in the main tenses", "Keep or drop the by-agent sensibly"], "topics": ["passive-tenses", "active-to-passive", "by-agent"], "practice": ["transformation-drill", "error-correction", "translation-exercise"], "assessment": "Transform 8 of 10 sentences across 5 tenses correctly", "skills": ["reading", "writing"]},
+            {"id": "st04-m05-u02-l03", "title": "Direct and Indirect Speech: Statements and Questions", "cefr": "B1", "minutes": 12, "objectives": ["Report statements with tense backshift", "Report yes/no and WH-questions correctly"], "topics": ["reported-speech", "tense-backshift", "reported-questions"], "practice": ["transformation-drill", "report-the-dialogue", "error-correction"], "assessment": "Report 8 of 10 items with correct backshift and word order", "skills": ["reading", "writing", "listening"]},
+            {"id": "st04-m05-u02-l04", "title": "Indirect Speech: Commands, Requests and Time Changes", "cefr": "B1", "minutes": 12, "objectives": ["Report commands and requests with tell/ask + to", "Shift time and place words: now → then, here → there"], "topics": ["reported-commands", "time-place-shifts", "say-versus-tell"], "practice": ["transformation-drill", "error-correction", "guided-writing"], "assessment": "Report commands and shift time words correctly in 8 of 10 items", "skills": ["reading", "writing", "listening"]}
+          ],
+          "checkpoint": {"criteria": "Transform voice and speech accurately across tenses and sentence types", "passThreshold": 80}
+        },
+        {
+          "id": "st04-m05-u03",
+          "title": "Articles, Determiners, Quantifiers and Comparison",
+          "lessons": [
+            {"id": "st04-m05-u03-l01", "title": "Articles: a, an, the — Complete Guide", "cefr": "A2", "minutes": 12, "objectives": ["Choose between a/an, the and no article", "Handle first-mention versus known-reference patterns"], "topics": ["articles", "zero-article", "first-mention-rule"], "practice": ["article-choice-drill", "error-correction", "guided-writing"], "assessment": "Choose correct article treatment in 12 of 14 contexts", "skills": ["reading", "writing"]},
+            {"id": "st04-m05-u03-l02", "title": "Determiners", "cefr": "A2", "minutes": 12, "objectives": ["Use possessive, demonstrative and quantifier determiners together with nouns", "Avoid stacking determiners incorrectly"], "topics": ["determiners", "determiner-types", "determiner-order"], "practice": ["choose-the-determiner", "error-correction", "sentence-building"], "assessment": "Use determiners correctly in 10 of 12 sentences", "skills": ["reading", "writing"]},
+            {"id": "st04-m05-u03-l03", "title": "Quantifiers: some, any, much, many, a few, a little", "cefr": "A2", "minutes": 12, "objectives": ["Match quantifiers to countable and uncountable nouns", "Use some/any in statements, negatives and questions"], "topics": ["quantifiers", "countable-uncountable", "some-any"], "practice": ["quantifier-match", "fill-the-quantifier", "error-correction"], "assessment": "Choose correct quantifiers in 10 of 12 items", "skills": ["reading", "writing", "listening"]},
+            {"id": "st04-m05-u03-l04", "title": "Degrees of Comparison", "cefr": "A2", "minutes": 12, "objectives": ["Form comparatives and superlatives including irregulars", "Use as...as, than and the + superlative"], "topics": ["comparison", "comparative-superlative", "as-as-than", "irregular-comparatives"], "practice": ["form-drill", "complete-the-comparison", "error-correction", "speaking-prompts"], "assessment": "Form and use all three degrees correctly in 10 of 12 items", "skills": ["reading", "writing", "speaking"]}
+          ],
+          "checkpoint": {"criteria": "Use articles, determiners, quantifiers and comparison forms accurately", "passThreshold": 80}
+        },
+        {
+          "id": "st04-m05-u04",
+          "title": "Complex Structures",
+          "lessons": [
+            {"id": "st04-m05-u04-l01", "title": "Conditionals: Zero, First and Second", "cefr": "B1", "minutes": 12, "objectives": ["Distinguish real and unreal conditions", "Form the zero, first and second conditionals with correct verb chains"], "topics": ["conditionals", "zero-first-second", "if-clauses"], "practice": ["form-drill", "complete-the-conditional", "situational-dialogues"], "assessment": "Choose and form the right conditional in 9 of 10 items", "skills": ["listening", "speaking", "reading", "writing"]},
+            {"id": "st04-m05-u04-l02", "title": "Conditionals: Third and Mixed", "cefr": "B2", "minutes": 12, "objectives": ["Form the third conditional for past regrets", "Handle mixed conditionals and I wish / if only"], "topics": ["third-conditional", "mixed-conditionals", "wish-if-only"], "practice": ["form-drill", "regret-expressions", "transformation-drill"], "assessment": "Express past unreal conditions correctly in 8 of 10 items", "skills": ["listening", "speaking", "reading", "writing"]},
+            {"id": "st04-m05-u04-l03", "title": "Relative Clauses: Defining", "cefr": "B1", "minutes": 12, "objectives": ["Join sentences with who, which, that, where and when", "Choose the correct relative pronoun as subject or object"], "topics": ["relative-clauses", "defining-clauses", "relative-pronouns"], "practice": ["sentence-combination", "choose-the-pronoun", "transformation-drill"], "assessment": "Combine 8 of 10 sentence pairs with defining relative clauses", "skills": ["reading", "writing"]},
+            {"id": "st04-m05-u04-l04", "title": "Relative Clauses: Non-Defining and Reduced", "cefr": "B2", "minutes": 12, "objectives": ["Punctuate non-defining clauses with commas", "Reduce clauses to phrases: the man sitting there"], "topics": ["non-defining-clauses", "reduced-clauses", "clause-punctuation"], "practice": ["transformation-drill", "punctuation-correction", "guided-writing"], "assessment": "Distinguish and punctuate defining versus non-defining clauses in 8 of 10 items", "skills": ["reading", "writing"]},
+            {"id": "st04-m05-u04-l05", "title": "Gerunds and Infinitives: Basics", "cefr": "B1", "minutes": 12, "objectives": ["Use gerunds after prepositions and enjoy-type verbs", "Use infinitives after want-type verbs"], "topics": ["gerunds", "infinitives", "verb-patterns"], "practice": ["pattern-quiz", "fill-the-form", "error-correction"], "assessment": "Choose gerund or infinitive correctly in 10 of 12 items", "skills": ["reading", "writing", "listening"]},
+            {"id": "st04-m05-u04-l06", "title": "Gerunds and Infinitives: Verb Patterns", "cefr": "B2", "minutes": 12, "objectives": ["Handle verbs that change meaning with gerund versus infinitive", "Use infinitives of purpose and after adjectives"], "topics": ["meaning-change-verbs", "infinitive-of-purpose", "advanced-patterns"], "practice": ["meaning-contrast-quiz", "transformation-drill", "error-correction", "guided-writing"], "assessment": "Explain and use 6 meaning-change verbs correctly", "skills": ["reading", "writing", "speaking"]},
+            {"id": "st04-m05-u04-l07", "title": "Participles: Present and Past", "cefr": "B2", "minutes": 12, "objectives": ["Use participial adjectives: interesting versus interested", "Open sentences with participle phrases correctly"], "topics": ["participles", "participial-adjectives", "participle-phrases"], "practice": ["form-choice-drill", "sentence-combination", "error-correction"], "assessment": "Use participle forms correctly in 9 of 10 items including 2 phrase openers", "skills": ["reading", "writing"]}
+          ],
+          "checkpoint": {"criteria": "Build complex sentences with conditionals, relative clauses, gerund/infinitive patterns and participles", "passThreshold": 80}
+        },
+        {
+          "id": "st04-m05-u05",
+          "title": "Sentence Mechanics and Verb Phrases",
+          "lessons": [
+            {"id": "st04-m05-u05-l01", "title": "Question Tags", "cefr": "A2", "minutes": 12, "objectives": ["Attach correct question tags: positive statement, negative tag", "Use tags for checking and conversation flow"], "topics": ["question-tags", "polarity-reversal", "tag-intonation"], "practice": ["tag-drill", "respond-with-tags", "listening-comprehension"], "assessment": "Form correct tags for 9 of 10 statements", "skills": ["listening", "speaking", "reading", "writing"]},
+            {"id": "st04-m05-u05-l02", "title": "Phrasal Verbs: Common Combinations", "cefr": "B1", "minutes": 12, "objectives": ["Learn 15 high-frequency phrasal verbs with real meanings", "Use them in natural dialogue"], "topics": ["phrasal-verbs", "high-frequency-phrasals", "phrasal-meanings"], "practice": ["match-the-meaning", "fill-the-particle", "guided-dialogue"], "assessment": "Use 12 of 15 target phrasal verbs correctly in context", "skills": ["listening", "speaking", "reading", "writing"]},
+            {"id": "st04-m05-u05-l03", "title": "Phrasal Verbs: Separable, Inseparable and Three-Word", "cefr": "B1", "minutes": 12, "objectives": ["Place objects correctly with separable phrasals", "Use three-word phrasals like look forward to and put up with"], "topics": ["separable-phrasals", "three-word-phrasals", "object-placement"], "practice": ["word-order-drill", "transformation-drill", "error-correction"], "assessment": "Order objects correctly in 9 of 10 phrasal sentences", "skills": ["reading", "writing", "listening"]},
+            {"id": "st04-m05-u05-l04", "title": "Linking Words and Advanced Conjunctions", "cefr": "B1", "minutes": 12, "objectives": ["Use however, although, despite and therefore", "Signal contrast, cause and result in writing"], "topics": ["linking-words", "contrast-cause-result", "discourse-markers"], "practice": ["choose-the-linker", "sentence-combination", "guided-writing"], "assessment": "Use 8 linkers correctly across a short opinion paragraph", "skills": ["reading", "writing"]},
+            {"id": "st04-m05-u05-l05", "title": "Prepositions: Advanced Patterns", "cefr": "B1", "minutes": 12, "objectives": ["Learn verb + preposition and adjective + preposition collocations", "Avoid the most common preposition errors"], "topics": ["preposition-collocations", "dependent-prepositions", "error-prone-pairs"], "practice": ["collocation-drill", "error-correction", "fill-the-preposition"], "assessment": "Choose correct prepositions in 12 of 14 collocation items", "skills": ["reading", "writing", "listening"]},
+            {"id": "st04-m05-u05-l06", "title": "Punctuation", "cefr": "A2", "minutes": 12, "objectives": ["Use end punctuation, commas, apostrophes and question marks", "Punctuate lists and direct speech"], "topics": ["punctuation", "commas", "apostrophes", "direct-speech-punctuation"], "practice": ["punctuate-the-text", "error-correction", "copy-editing"], "assessment": "Correctly punctuate a 10-sentence text with 80 percent accuracy", "skills": ["reading", "writing"]},
+            {"id": "st04-m05-u05-l07", "title": "Capitalisation Rules", "cefr": "A2", "minutes": 10, "objectives": ["Capitalise names, places, days, months, languages and titles", "Fix capitalisation in real texts"], "topics": ["capitalisation", "proper-nouns", "titles-and-languages"], "practice": ["capitalise-the-text", "error-correction", "copy-editing"], "assessment": "Fix 10 of 12 capitalisation errors", "skills": ["reading", "writing"]},
+            {"id": "st04-m05-u05-l08", "title": "Common Grammatical Errors", "cefr": "B1", "minutes": 12, "objectives": ["Diagnose the 15 most frequent learner errors", "Self-edit written work using a checklist"], "topics": ["common-errors", "error-patterns", "self-editing"], "practice": ["error-correction", "find-the-mistakes", "editing-checklist"], "assessment": "Identify and correct 12 of 15 planted errors in a text", "skills": ["reading", "writing"]}
+          ],
+          "checkpoint": {"criteria": "Apply mechanics, phrasal verbs and error-awareness in editing tasks", "passThreshold": 80}
+        }
+      ]
+    }
+  ],
+  "exitAssessment": {"id": "st04-exit", "title": "Complete Grammar Exit Test", "criteria": "Parts of speech analysis; all 12 tenses in form and use (transformation, error correction, translation); modal system; passive and reported speech transformations; articles, quantifiers and comparison; conditionals and relative clauses; gerund/infinitive patterns; punctuation and capitalisation; error diagnosis. Meaning-first: every item asks what the sentence communicates, not only its form.", "passThreshold": 75, "minutes": 30, "unlocks": ["st05"]}
+}

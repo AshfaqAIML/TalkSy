@@ -1,0 +1,164 @@
+{
+  "id": "st01",
+  "order": 1,
+  "title": "English from Absolute Zero",
+  "cefr": "Pre-A1",
+  "goal": "Take a learner with zero English to full alphabetic literacy: recognising, naming, writing and sounding out all 26 letters, and reading and spelling their first words and sentences.",
+  "entryRequirements": [],
+  "modules": [
+    {
+      "id": "st01-m01",
+      "title": "Understanding English",
+      "description": "What English is, what a language is, how spoken and written English differ, and how the building blocks from letters to sentences fit together.",
+      "units": [
+        {
+          "id": "st01-m01-u01",
+          "title": "Language and English",
+          "lessons": [
+            {"id": "st01-m01-u01-l01", "title": "What Is a Language? What Is English?", "cefr": "Pre-A1", "minutes": 12, "objectives": ["Explain in simple words what a language is", "Recognise English words in everyday pictures and sounds"], "topics": ["what-is-language", "what-is-english", "english-everywhere"], "practice": ["picture-matching", "listen-and-point", "first-words"], "assessment": "Identify 8 of 10 English words from pictures and audio", "skills": ["listening", "reading"]},
+            {"id": "st01-m01-u01-l02", "title": "Spoken versus Written English", "cefr": "Pre-A1", "minutes": 10, "objectives": ["Tell spoken English from written English apart", "Match short spoken phrases to their written form"], "topics": ["spoken-english", "written-english", "speech-versus-text"], "practice": ["audio-to-text-matching", "listen-and-choose"], "assessment": "Match 5 of 6 spoken phrases to written phrases", "skills": ["listening", "reading"]}
+          ],
+          "checkpoint": {"criteria": "Distinguish spoken from written English samples and identify English among other languages", "passThreshold": 80}
+        },
+        {
+          "id": "st01-m01-u02",
+          "title": "How English Works",
+          "lessons": [
+            {"id": "st01-m01-u02-l01", "title": "Letters, Sounds, Words, Phrases and Sentences", "cefr": "Pre-A1", "minutes": 12, "objectives": ["Order the building blocks from letter to sentence", "Hear the difference between a word and a phrase"], "topics": ["building-blocks", "letter-to-sentence", "phrase-versus-sentence"], "practice": ["sorting-task", "listen-and-order", "word-or_phrase-quiz"], "assessment": "Order the five building blocks correctly and classify 8 of 10 examples", "skills": ["listening", "reading"]},
+            {"id": "st01-m01-u02-l02", "title": "How English Communication Works", "cefr": "Pre-A1", "minutes": 10, "objectives": ["Understand communication as message sent and received", "Respond to simple greetings and instructions"], "topics": ["communication-basics", "message-and-response", "real-examples"], "practice": ["guided-dialogue", "respond-quickly"], "assessment": "Respond appropriately to 4 of 5 simple prompts", "skills": ["listening", "speaking"]},
+            {"id": "st01-m01-u02-l03", "title": "Introduction to Reading and Writing", "cefr": "Pre-A1", "minutes": 10, "objectives": ["Say what reading and writing are for", "Trace and copy first letters and words"], "topics": ["why-we-read", "why-we-write", "first-tracing"], "practice": ["letter-tracing", "copy-the-word", "read-along"], "assessment": "Trace or copy 5 letters and read 3 first words aloud", "skills": ["reading", "writing"]}
+          ],
+          "checkpoint": {"criteria": "Order building blocks letter to sentence and complete a first read-and-copy task", "passThreshold": 80}
+        }
+      ]
+    },
+    {
+      "id": "st01-m02",
+      "title": "English Alphabet",
+      "description": "All 26 letters: names, recognition, uppercase and lowercase forms, handwriting, vowels versus consonants, sequencing, missing letters and capitalisation basics.",
+      "units": [
+        {
+          "id": "st01-m02-u01",
+          "title": "Letter Recognition",
+          "lessons": [
+            {"id": "st01-m02-u01-l01", "title": "The Alphabet A-Z: Letter Names and Sequence", "cefr": "Pre-A1", "minutes": 12, "objectives": ["Say the 26 letter names in order", "Recognise letters heard aloud"], "topics": ["alphabet", "letter-names", "alphabet-sequence"], "practice": ["alphabet-song", "listen-and-point", "letter-match"], "assessment": "Name all 26 letters in order; recognise 10 of 10 letters by name", "skills": ["listening", "speaking", "reading"]},
+            {"id": "st01-m02-u01-l02", "title": "Uppercase Letters (Capitals)", "cefr": "Pre-A1", "minutes": 10, "objectives": ["Recognise all uppercase letters", "Write uppercase letters from memory or by copying"], "topics": ["uppercase", "capital-letters", "letter-formation"], "practice": ["letter-tracing", "find-the-letter", "write-from-memory"], "assessment": "Identify and write 26 of 26 uppercase letters", "skills": ["reading", "writing"]},
+            {"id": "st01-m02-u01-l03", "title": "Lowercase Letters", "cefr": "Pre-A1", "minutes": 10, "objectives": ["Recognise all lowercase letters", "Write lowercase letters from memory or by copying"], "topics": ["lowercase", "small-letters", "letter-formation"], "practice": ["letter-tracing", "find-the-letter", "write-from-memory"], "assessment": "Identify and write 26 of 26 lowercase letters", "skills": ["reading", "writing"]},
+            {"id": "st01-m02-u01-l04", "title": "Matching Uppercase and Lowercase", "cefr": "Pre-A1", "minutes": 10, "objectives": ["Match every uppercase letter to its lowercase partner", "Read words with mixed case"], "topics": ["case-matching", "mixed-case", "letter-pairs"], "practice": ["matching-game", "pair-the-letters", "mixed-case-reading"], "assessment": "Match 26 of 26 upper/lowercase pairs; read 5 mixed-case words", "skills": ["reading"]}
+          ],
+          "checkpoint": {"criteria": "Name, recognise and match all 26 letters in both cases", "passThreshold": 90}
+        },
+        {
+          "id": "st01-m02-u02",
+          "title": "Vowels and Consonants",
+          "lessons": [
+            {"id": "st01-m02-u02-l01", "title": "Vowels: A, E, I, O, U", "cefr": "Pre-A1", "minutes": 10, "objectives": ["Name the five (sometimes six) vowel letters", "Pick vowels out of any word"], "topics": ["vowels", "vowel-letters", "a-e-i-o-u"], "practice": ["sort-vowels", "find-the-vowel", "listen-and-identify"], "assessment": "Identify vowels in 8 of 10 words", "skills": ["reading", "listening"]},
+            {"id": "st01-m02-u02-l02", "title": "Consonants", "cefr": "Pre-A1", "minutes": 10, "objectives": ["Recognise the 20 consonant letters", "Separate vowels from consonants in words"], "topics": ["consonants", "consonant-letters", "vowel-versus-consonant"], "practice": ["sorting-task", "find-the-consonant", "word-analysis"], "assessment": "Classify 20 of 20 letters as vowel or consonant", "skills": ["reading"]}
+          ],
+          "checkpoint": {"criteria": "Classify all 26 letters as vowels or consonants", "passThreshold": 90}
+        },
+        {
+          "id": "st01-m02-u03",
+          "title": "Alphabet Skills",
+          "lessons": [
+            {"id": "st01-m02-u03-l01", "title": "Alphabet Sequencing", "cefr": "Pre-A1", "minutes": 10, "objectives": ["Say which letter comes before or after another", "Order shuffled letters correctly"], "topics": ["sequencing", "before-and-after", "alphabet-order"], "practice": ["what-comes-next", "order-the-letters", "alphabet-quiz"], "assessment": "Answer 8 of 10 before/after questions correctly", "skills": ["reading", "listening"]},
+            {"id": "st01-m02-u03-l02", "title": "Identifying Missing Letters", "cefr": "Pre-A1", "minutes": 10, "objectives": ["Find the missing letter in a sequence", "Spell simple letter sequences from memory"], "topics": ["missing-letters", "gaps", "sequence-completion"], "practice": ["fill-the-gap", "find-the-missing-letter", "spelling-dictation"], "assessment": "Fill 8 of 10 missing letters correctly", "skills": ["reading", "writing"]},
+            {"id": "st01-m02-u03-l03", "title": "Capitalisation Basics", "cefr": "Pre-A1", "minutes": 10, "objectives": ["Use a capital letter for I, names and sentence starts", "Spot wrongly lowercase or uppercase text"], "topics": ["capitalisation", "sentence-start", "names-and-i"], "practice": ["error-correction", "rewrite-with-capitals", "choose-capital-or-lower"], "assessment": "Correct 8 of 10 capitalisation errors", "skills": ["reading", "writing"]}
+          ],
+          "checkpoint": {"criteria": "Sequence the alphabet, find missing letters and apply capitalisation basics", "passThreshold": 80}
+        },
+        {
+          "id": "st01-m02-u04",
+          "title": "Writing and Review",
+          "lessons": [
+            {"id": "st01-m02-u04-l01", "title": "Letter Writing Practice", "cefr": "Pre-A1", "minutes": 12, "objectives": ["Form all 26 letters by hand or keyboard with correct shape", "Write the alphabet from memory in under two minutes"], "topics": ["handwriting", "letter-formation", "keyboard-typing"], "practice": ["letter-tracing", "write-the-alphabet", "typing-practice"], "assessment": "Write all 26 letters legibly from dictation", "skills": ["writing", "listening"]},
+            {"id": "st01-m02-u04-l02", "title": "Alphabet Review and Exercises", "cefr": "Pre-A1", "minutes": 12, "objectives": ["Consolidate the whole alphabet: names, forms, order, case", "Self-check readiness for phonics"], "topics": ["alphabet-review", "mixed-exercises", "readiness-check"], "practice": ["mixed-quiz", "alphabet-games", "self-assessment"], "assessment": "Score at least 90 percent on the mixed alphabet review", "skills": ["reading", "writing", "listening", "speaking"]}
+          ],
+          "checkpoint": {"criteria": "Pass the mixed alphabet review: names, cases, order, vowels and capitals", "passThreshold": 90}
+        }
+      ]
+    },
+    {
+      "id": "st01-m03",
+      "title": "Phonics and Sounds",
+      "description": "Letter names versus letter sounds, short and long vowels, consonants, blends, digraphs, letter combinations and the honest truth about sound-spelling patterns and their exceptions.",
+      "units": [
+        {
+          "id": "st01-m03-u01",
+          "title": "Sound Awareness",
+          "lessons": [
+            {"id": "st01-m03-u01-l01", "title": "Letter Names versus Letter Sounds", "cefr": "Pre-A1", "minutes": 12, "objectives": ["Tell a letter's name from its sound", "Produce the common sound of each letter"], "topics": ["name-versus-sound", "letter-sounds", "phonemic-awareness"], "practice": ["listen-and-repeat", "name-or-sound-quiz", "minimal-pairs"], "assessment": "Give the correct sound for 20 of 26 letters", "skills": ["listening", "speaking"]},
+            {"id": "st01-m03-u01-l02", "title": "Basic Sound Awareness", "cefr": "Pre-A1", "minutes": 10, "objectives": ["Hear beginning and ending sounds of words", "Recognise rhyming words"], "topics": ["beginning-sounds", "ending-sounds", "rhyme"], "practice": ["same-first-sound", "rhyme-match", "sound-sorting"], "assessment": "Identify beginning sounds of 8 of 10 words and 4 of 5 rhymes", "skills": ["listening"]}
+          ],
+          "checkpoint": {"criteria": "Distinguish letter names from sounds and isolate beginning, ending and rhyming sounds", "passThreshold": 80}
+        },
+        {
+          "id": "st01-m03-u02",
+          "title": "Vowel Sounds",
+          "lessons": [
+            {"id": "st01-m03-u02-l01", "title": "Short Vowel Sounds", "cefr": "Pre-A1", "minutes": 12, "objectives": ["Hear and say the five short vowel sounds", "Connect short vowels to example words like cat and bed"], "topics": ["short-vowels", "a-e-i-o-u-sounds", "sound-examples"], "practice": ["listen-and-repeat", "sort-by-vowel-sound", "minimal-pairs"], "assessment": "Sort 10 of 12 words by their short vowel sound", "skills": ["listening", "speaking"]},
+            {"id": "st01-m03-u02-l02", "title": "Long Vowel Sounds", "cefr": "Pre-A1", "minutes": 12, "objectives": ["Hear and say the five long vowel sounds", "Contrast short and long vowel pairs like cat and cake"], "topics": ["long-vowels", "short-versus-long", "silent-e-intro"], "practice": ["listen-and-contrast", "sort-by-vowel-sound", "minimal-pairs"], "assessment": "Distinguish short from long vowels in 10 of 12 items", "skills": ["listening", "speaking"]}
+          ],
+          "checkpoint": {"criteria": "Discriminate and produce all short and long vowel sounds", "passThreshold": 80}
+        },
+        {
+          "id": "st01-m03-u03",
+          "title": "Consonant Sounds",
+          "lessons": [
+            {"id": "st01-m03-u03-l01", "title": "Common Consonant Sounds", "cefr": "Pre-A1", "minutes": 12, "objectives": ["Produce the common sound of each consonant", "Match consonant sounds to letters and words"], "topics": ["consonant-sounds", "sound-symbol", "examples"], "practice": ["listen-and-repeat", "sound-to-letter", "word-match"], "assessment": "Match consonant sounds to letters in 18 of 20 items", "skills": ["listening", "speaking", "reading"]},
+            {"id": "st01-m03-u03-l02", "title": "Consonant Blends", "cefr": "Pre-A1", "minutes": 12, "objectives": ["Blend two or three consonants together like bl, cr and st", "Hear blends at the start and end of words"], "topics": ["blends", "initial-blends", "final-blends"], "practice": ["blending-drill", "find-the-blend", "listen-and-build"], "assessment": "Identify and pronounce 8 of 10 common blends", "skills": ["listening", "speaking", "reading"]},
+            {"id": "st01-m03-u03-l03", "title": "Digraphs: ch, sh, th, ph, wh", "cefr": "Pre-A1", "minutes": 12, "objectives": ["Say the single sound of each digraph", "Recognise digraphs inside simple words"], "topics": ["digraphs", "two-letters-one-sound", "ch-sh-th"], "practice": ["listen-and-repeat", "digraph-spotting", "word-match"], "assessment": "Identify digraph sounds in 8 of 10 words", "skills": ["listening", "speaking", "reading"]}
+          ],
+          "checkpoint": {"criteria": "Produce consonant sounds, blends and digraphs in isolation and in words", "passThreshold": 80}
+        },
+        {
+          "id": "st01-m03-u04",
+          "title": "Sound and Spelling Patterns",
+          "lessons": [
+            {"id": "st01-m03-u04-l01", "title": "Common Letter Combinations", "cefr": "Pre-A1", "minutes": 10, "objectives": ["Recognise frequent pairs like ee, oo, ai and oa", "Read simple words containing these combinations"], "topics": ["letter-combinations", "ee-oo-ai-oa", "pattern-reading"], "practice": ["pattern-spotting", "read-the-word", "listen-and-choose"], "assessment": "Read 8 of 10 words with common letter combinations", "skills": ["reading", "listening"]},
+            {"id": "st01-m03-u04-l02", "title": "Sound Recognition Practice", "cefr": "Pre-A1", "minutes": 10, "objectives": ["Identify sounds in the beginning, middle and end of words", "Match identical sounds across different words"], "topics": ["sound-position", "sound-matching", "ear-training"], "practice": ["where-is-the-sound", "same-sound-different-word", "audio-quiz"], "assessment": "Locate target sounds in 8 of 10 words", "skills": ["listening"]},
+            {"id": "st01-m03-u04-l03", "title": "Pronunciation Basics", "cefr": "Pre-A1", "minutes": 10, "objectives": ["Pronounce practised sounds clearly", "Slow down and self-correct when a sound is unclear"], "topics": ["clear-pronunciation", "slow-speech", "self-correction"], "practice": ["listen-and-repeat", "shadowing", "record-and-compare"], "assessment": "Repeat 10 target words recognisably in speech-recognition practice", "skills": ["listening", "speaking"]},
+            {"id": "st01-m03-u04-l04", "title": "Sound and Spelling Relationships: Patterns and Exceptions", "cefr": "Pre-A1", "minutes": 12, "objectives": ["Use reliable patterns such as short vowels in CVC words", "Accept and expect exceptions: same sound spelled differently, silent letters, words like said and one"], "topics": ["patterns-and-exceptions", "silent-letters", "irregular-words", "spelling-is-not-perfectly-regular"], "practice": ["pattern-or-exception", "irregular-word-recognition", "discussion-of-examples"], "assessment": "Sort 12 words into pattern-following and exception groups with at least 10 correct", "skills": ["reading", "listening", "speaking"]}
+          ],
+          "checkpoint": {"criteria": "Apply common sound-spelling patterns and state clearly that English spelling has exceptions", "passThreshold": 80}
+        }
+      ]
+    },
+    {
+      "id": "st01-m04",
+      "title": "First Reading Skills",
+      "description": "Blending letters into words, first CVC reading, word patterns, sight words, phrases, simple sentences and the first spelling exercises.",
+      "units": [
+        {
+          "id": "st01-m04-u01",
+          "title": "Reading Words",
+          "lessons": [
+            {"id": "st01-m04-u01-l01", "title": "Combining Letters: Blending", "cefr": "Pre-A1", "minutes": 12, "objectives": ["Blend two and three sounds into words", "Read nonsense practice syllables to master the mechanic"], "topics": ["blending", "sound-combining", "cvc-intro"], "practice": ["blending-drill", "sound-boxes", "read-aloud"], "assessment": "Blend 8 of 10 two- and three-sound items into words", "skills": ["reading", "speaking"]},
+            {"id": "st01-m04-u01-l02", "title": "Reading Simple Words (CVC)", "cefr": "Pre-A1", "minutes": 12, "objectives": ["Read consonant-vowel-consonant words like cat, bed and sit", "Match read words to pictures"], "topics": ["cvc-words", "word-reading", "word-to-picture"], "practice": ["read-the-word", "word-to-picture", "timed-reading"], "assessment": "Read 12 of 15 CVC words correctly", "skills": ["reading"]},
+            {"id": "st01-m04-u01-l03", "title": "Recognising Common Word Patterns", "cefr": "Pre-A1", "minutes": 10, "objectives": ["Read word families like -at, -an and -ig", "Generate new family members by changing the first letter"], "topics": ["word-families", "rhyme-patterns", "analogies"], "practice": ["word-family-builder", "change-the-first-letter", "read-the-family"], "assessment": "Build and read 8 of 10 word-family members", "skills": ["reading"]}
+          ],
+          "checkpoint": {"criteria": "Blend sounds and read CVC words and simple word families", "passThreshold": 80}
+        },
+        {
+          "id": "st01-m04-u02",
+          "title": "Reading Phrases and Sentences",
+          "lessons": [
+            {"id": "st01-m04-u02-l01", "title": "Reading Short Phrases", "cefr": "Pre-A1", "minutes": 10, "objectives": ["Read two- and three-word phrases smoothly", "Match phrases to pictures"], "topics": ["phrases", "phrase-reading", "fluency-start"], "practice": ["read-the-phrase", "phrase-to-picture", "repeated-reading"], "assessment": "Read 8 of 10 short phrases aloud correctly", "skills": ["reading", "listening"]},
+            {"id": "st01-m04-u02-l02", "title": "Basic Sight Vocabulary", "cefr": "Pre-A1", "minutes": 12, "objectives": ["Recognise the 20 most frequent English words instantly", "Read sight words inside simple sentences"], "topics": ["sight-words", "high-frequency-words", "the-is-and-to"], "practice": ["flashcards", "sight-word-sentences", "speed-recognition"], "assessment": "Recognise 18 of 20 sight words on sight", "skills": ["reading"]},
+            {"id": "st01-m04-u02-l03", "title": "Reading Simple Sentences", "cefr": "Pre-A1", "minutes": 12, "objectives": ["Read 3-6 word sentences with understanding", "Show comprehension by choosing the matching picture"], "topics": ["simple-sentences", "reading-comprehension", "sentence-to-picture"], "practice": ["read-and-choose", "read-along", "listen-and-check"], "assessment": "Read 6 of 8 simple sentences and match them to meanings", "skills": ["reading", "listening"]}
+          ],
+          "checkpoint": {"criteria": "Read sight words, phrases and simple sentences with understanding", "passThreshold": 80}
+        },
+        {
+          "id": "st01-m04-u03",
+          "title": "First Spelling",
+          "lessons": [
+            {"id": "st01-m04-u03-l01", "title": "Initial Spelling Exercises", "cefr": "Pre-A1", "minutes": 12, "objectives": ["Spell practised CVC words from sounds", "Apply beginning capitalisation and end punctuation"], "topics": ["spelling-from-sounds", "cvc-spelling", "first-punctuation"], "practice": ["spelling-dictation", "build-the-word", "self-check"], "assessment": "Spell 8 of 10 dictated words correctly", "skills": ["listening", "writing"]}
+          ],
+          "checkpoint": {"criteria": "Spell practised CVC words from dictation with basic punctuation", "passThreshold": 80}
+        }
+      ]
+    }
+  ],
+  "exitAssessment": {"id": "st01-exit", "title": "Foundations Exit Test", "criteria": "Alphabet names, cases and order; vowel and consonant sounds including blends and digraphs; read 15 CVC and pattern words; recognise 20 sight words; read 5 simple sentences; spell 10 dictated words. The test explicitly includes irregular items so learners meet exceptions honestly.", "passThreshold": 75, "minutes": 20, "unlocks": ["st02"]}
+}

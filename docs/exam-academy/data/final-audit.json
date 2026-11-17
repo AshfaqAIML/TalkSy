@@ -1,0 +1,1922 @@
+{
+  "auditDate": "2026-11-16",
+  "lessons": {
+    "totalLive": 263,
+    "archived": 31,
+    "byStage": {
+      "placeholder": 0,
+      "incomplete": 0,
+      "substantive": 0,
+      "practice-ready": 263,
+      "reviewed": 0,
+      "published": 0
+    },
+    "belowPracticeReady": []
+  },
+  "chapters": [
+    {
+      "course": "ielts-academy-academic",
+      "moduleSlug": "module-3a-academic-reading",
+      "unitSlug": "reading-foundations",
+      "title": "Reading foundations",
+      "lessons": 15,
+      "liveLessons": 15,
+      "worstStage": "practice-ready",
+      "lessonStages": [
+        "practice-ready",
+        "practice-ready",
+        "practice-ready",
+        "practice-ready",
+        "practice-ready",
+        "practice-ready",
+        "practice-ready",
+        "practice-ready",
+        "practice-ready",
+        "practice-ready",
+        "practice-ready",
+        "practice-ready",
+        "practice-ready",
+        "practice-ready",
+        "practice-ready"
+      ],
+      "dimensions": {
+        "lessons-complete": true,
+        "teaching-words": 14450,
+        "explanation-depth": true,
+        "examples": 15,
+        "examples-present": true,
+        "strategies-present": true,
+        "strategy-blocks": 81,
+        "practice-questions": 75,
+        "answer-keys-verified": true,
+        "answer-explanations": true,
+        "difficulty-set": true,
+        "difficulty-mix": "easy+medium+hard",
+        "assessments": 90
+      }
+    },
+    {
+      "course": "ielts-academy-academic",
+      "moduleSlug": "module-3a-academic-reading",
+      "unitSlug": "areading-question-types",
+      "title": "Every question type in depth",
+      "lessons": 13,
+      "liveLessons": 13,
+      "worstStage": "practice-ready",
+      "lessonStages": [
+        "practice-ready",
+        "practice-ready",
+        "practice-ready",
+        "practice-ready",
+        "practice-ready",
+        "practice-ready",
+        "practice-ready",
+        "practice-ready",
+        "practice-ready",
+        "practice-ready",
+        "practice-ready",
+        "practice-ready",
+        "practice-ready"
+      ],
+      "dimensions": {
+        "lessons-complete": true,
+        "teaching-words": 12500,
+        "explanation-depth": true,
+        "examples": 13,
+        "examples-present": true,
+        "strategies-present": true,
+        "strategy-blocks": 94,
+        "practice-questions": 65,
+        "answer-keys-verified": true,
+        "answer-explanations": true,
+        "difficulty-set": true,
+        "difficulty-mix": "easy+medium+hard",
+        "assessments": 78
+      }
+    },
+    {
+      "course": "ielts-academy-academic",
+      "moduleSlug": "module-4a-academic-writing",
+      "unitSlug": "awriting-foundations",
+      "title": "Writing foundations",
+      "lessons": 11,
+      "liveLessons": 11,
+      "worstStage": "practice-ready",
+      "lessonStages": [
+        "practice-ready",
+        "practice-ready",
+        "practice-ready",
+        "practice-ready",
+        "practice-ready",
+        "practice-ready",
+        "practice-ready",
+        "practice-ready",
+        "practice-ready",
+        "practice-ready",
+        "practice-ready"
+      ],
+      "dimensions": {
+        "lessons-complete": true,
+        "teaching-words": 25194,
+        "explanation-depth": true,
+        "examples": 11,
+        "examples-present": true,
+        "strategies-present": true,
+        "strategy-blocks": 49,
+        "practice-questions": 60,
+        "answer-keys-verified": true,
+        "answer-explanations": true,
+        "difficulty-set": true,
+        "difficulty-mix": "easy+medium+hard",
+        "assessments": 82
+      }
+    },
+    {
+      "course": "ielts-academy-academic",
+      "moduleSlug": "module-4a-academic-writing",
+      "unitSlug": "awriting-task1",
+      "title": "Task 1 — every visual family",
+      "lessons": 7,
+      "liveLessons": 7,
+      "worstStage": "practice-ready",
+      "lessonStages": [
+        "practice-ready",
+        "practice-ready",
+        "practice-ready",
+        "practice-ready",
+        "practice-ready",
+        "practice-ready",
+        "practice-ready"
+      ],
+      "dimensions": {
+        "lessons-complete": true,
+        "teaching-words": 17367,
+        "explanation-depth": true,
+        "examples": 7,
+        "examples-present": true,
+        "strategies-present": true,
+        "strategy-blocks": 29,
+        "practice-questions": 42,
+        "answer-keys-verified": true,
+        "answer-explanations": true,
+        "difficulty-set": true,
+        "difficulty-mix": "easy+medium+hard",
+        "assessments": 56
+      }
+    },
+    {
+      "course": "ielts-academy-academic",
+      "moduleSlug": "module-4a-academic-writing",
+      "unitSlug": "awriting-task2",
+      "title": "Task 2 — every essay family",
+      "lessons": 7,
+      "liveLessons": 7,
+      "worstStage": "practice-ready",
+      "lessonStages": [
+        "practice-ready",
+        "practice-ready",
+        "practice-ready",
+        "practice-ready",
+        "practice-ready",
+        "practice-ready",
+        "practice-ready"
+      ],
+      "dimensions": {
+        "lessons-complete": true,
+        "teaching-words": 19578,
+        "explanation-depth": true,
+        "examples": 7,
+        "examples-present": true,
+        "strategies-present": true,
+        "strategy-blocks": 15,
+        "practice-questions": 35,
+        "answer-keys-verified": true,
+        "answer-explanations": true,
+        "difficulty-set": true,
+        "difficulty-mix": "easy+medium+hard",
+        "assessments": 49
+      }
+    },
+    {
+      "course": "ielts-academy-academic",
+      "moduleSlug": "module-4a-academic-writing",
+      "unitSlug": "awriting-assessment",
+      "title": "Assessment and model answers",
+      "lessons": 2,
+      "liveLessons": 2,
+      "worstStage": "practice-ready",
+      "lessonStages": [
+        "practice-ready",
+        "practice-ready"
+      ],
+      "dimensions": {
+        "lessons-complete": true,
+        "teaching-words": 4664,
+        "explanation-depth": true,
+        "examples": 3,
+        "examples-present": true,
+        "strategies-present": true,
+        "strategy-blocks": 10,
+        "practice-questions": 10,
+        "answer-keys-verified": true,
+        "answer-explanations": true,
+        "difficulty-set": true,
+        "difficulty-mix": "easy+medium+hard",
+        "assessments": 14
+      }
+    },
+    {
+      "course": "ielts-academy-core",
+      "moduleSlug": "module-1-introduction",
+      "unitSlug": "orientation",
+      "title": "Orientation",
+      "lessons": 3,
+      "liveLessons": 3,
+      "worstStage": "practice-ready",
+      "lessonStages": [
+        "practice-ready",
+        "practice-ready",
+        "practice-ready"
+      ],
+      "dimensions": {
+        "lessons-complete": true,
+        "teaching-words": 3432,
+        "explanation-depth": true,
+        "examples": 4,
+        "examples-present": true,
+        "strategies-present": true,
+        "strategy-blocks": 7,
+        "practice-questions": 17,
+        "answer-keys-verified": true,
+        "answer-explanations": true,
+        "difficulty-set": true,
+        "difficulty-mix": "easy+medium+hard",
+        "assessments": 20
+      }
+    },
+    {
+      "course": "ielts-academy-core",
+      "moduleSlug": "module-1-introduction",
+      "unitSlug": "scores-and-assessment",
+      "title": "Band scores and assessment",
+      "lessons": 3,
+      "liveLessons": 3,
+      "worstStage": "practice-ready",
+      "lessonStages": [
+        "practice-ready",
+        "practice-ready",
+        "practice-ready"
+      ],
+      "dimensions": {
+        "lessons-complete": true,
+        "teaching-words": 3233,
+        "explanation-depth": true,
+        "examples": 4,
+        "examples-present": true,
+        "strategies-present": true,
+        "strategy-blocks": 3,
+        "practice-questions": 17,
+        "answer-keys-verified": true,
+        "answer-explanations": true,
+        "difficulty-set": true,
+        "difficulty-mix": "medium+hard+easy",
+        "assessments": 20
+      }
+    },
+    {
+      "course": "ielts-academy-core",
+      "moduleSlug": "module-1-introduction",
+      "unitSlug": "strategy-and-time",
+      "title": "Preparation strategy and time",
+      "lessons": 3,
+      "liveLessons": 3,
+      "worstStage": "practice-ready",
+      "lessonStages": [
+        "practice-ready",
+        "practice-ready",
+        "practice-ready"
+      ],
+      "dimensions": {
+        "lessons-complete": true,
+        "teaching-words": 2846,
+        "explanation-depth": true,
+        "examples": 3,
+        "examples-present": true,
+        "strategies-present": true,
+        "strategy-blocks": 17,
+        "practice-questions": 15,
+        "answer-keys-verified": true,
+        "answer-explanations": true,
+        "difficulty-set": true,
+        "difficulty-mix": "medium+hard+easy",
+        "assessments": 18
+      }
+    },
+    {
+      "course": "ielts-academy-core",
+      "moduleSlug": "module-1-introduction",
+      "unitSlug": "delivery-and-test-day",
+      "title": "Delivery, registration and test day",
+      "lessons": 4,
+      "liveLessons": 4,
+      "worstStage": "practice-ready",
+      "lessonStages": [
+        "practice-ready",
+        "practice-ready",
+        "practice-ready",
+        "practice-ready"
+      ],
+      "dimensions": {
+        "lessons-complete": true,
+        "teaching-words": 3702,
+        "explanation-depth": true,
+        "examples": 4,
+        "examples-present": true,
+        "strategies-present": true,
+        "strategy-blocks": 9,
+        "practice-questions": 20,
+        "answer-keys-verified": true,
+        "answer-explanations": true,
+        "difficulty-set": true,
+        "difficulty-mix": "medium+hard+easy",
+        "assessments": 24
+      }
+    },
+    {
+      "course": "ielts-academy-core",
+      "moduleSlug": "module-2-listening",
+      "unitSlug": "exam-fundamentals",
+      "title": "Examination fundamentals",
+      "lessons": 6,
+      "liveLessons": 6,
+      "worstStage": "practice-ready",
+      "lessonStages": [
+        "practice-ready",
+        "practice-ready",
+        "practice-ready",
+        "practice-ready",
+        "practice-ready",
+        "practice-ready"
+      ],
+      "dimensions": {
+        "lessons-complete": true,
+        "teaching-words": 5682,
+        "explanation-depth": true,
+        "examples": 6,
+        "examples-present": true,
+        "strategies-present": true,
+        "strategy-blocks": 11,
+        "practice-questions": 34,
+        "answer-keys-verified": true,
+        "answer-explanations": true,
+        "difficulty-set": true,
+        "difficulty-mix": "medium+easy+hard",
+        "assessments": 40
+      }
+    },
+    {
+      "course": "ielts-academy-core",
+      "moduleSlug": "module-2-listening",
+      "unitSlug": "core-skills",
+      "title": "The twelve core listening skills",
+      "lessons": 12,
+      "liveLessons": 12,
+      "worstStage": "practice-ready",
+      "lessonStages": [
+        "practice-ready",
+        "practice-ready",
+        "practice-ready",
+        "practice-ready",
+        "practice-ready",
+        "practice-ready",
+        "practice-ready",
+        "practice-ready",
+        "practice-ready",
+        "practice-ready",
+        "practice-ready",
+        "practice-ready"
+      ],
+      "dimensions": {
+        "lessons-complete": true,
+        "teaching-words": 12477,
+        "explanation-depth": true,
+        "examples": 19,
+        "examples-present": true,
+        "strategies-present": true,
+        "strategy-blocks": 48,
+        "practice-questions": 72,
+        "answer-keys-verified": true,
+        "answer-explanations": true,
+        "difficulty-set": true,
+        "difficulty-mix": "medium+easy+hard",
+        "assessments": 84
+      }
+    },
+    {
+      "course": "ielts-academy-core",
+      "moduleSlug": "module-2-listening",
+      "unitSlug": "listening-question-types",
+      "title": "Every question type in depth",
+      "lessons": 9,
+      "liveLessons": 9,
+      "worstStage": "practice-ready",
+      "lessonStages": [
+        "practice-ready",
+        "practice-ready",
+        "practice-ready",
+        "practice-ready",
+        "practice-ready",
+        "practice-ready",
+        "practice-ready",
+        "practice-ready",
+        "practice-ready"
+      ],
+      "dimensions": {
+        "lessons-complete": true,
+        "teaching-words": 12765,
+        "explanation-depth": true,
+        "examples": 18,
+        "examples-present": true,
+        "strategies-present": true,
+        "strategy-blocks": 46,
+        "practice-questions": 54,
+        "answer-keys-verified": true,
+        "answer-explanations": true,
+        "difficulty-set": true,
+        "difficulty-mix": "medium+hard+easy",
+        "assessments": 63
+      }
+    },
+    {
+      "course": "ielts-academy-core",
+      "moduleSlug": "module-2-listening",
+      "unitSlug": "parts-in-depth",
+      "title": "The four parts in depth",
+      "lessons": 5,
+      "liveLessons": 4,
+      "worstStage": "practice-ready",
+      "lessonStages": [
+        "practice-ready",
+        "practice-ready",
+        "practice-ready",
+        "practice-ready"
+      ],
+      "dimensions": {
+        "lessons-complete": true,
+        "teaching-words": 4460,
+        "explanation-depth": true,
+        "examples": 8,
+        "examples-present": true,
+        "strategies-present": true,
+        "strategy-blocks": 10,
+        "practice-questions": 24,
+        "answer-keys-verified": true,
+        "answer-explanations": true,
+        "difficulty-set": true,
+        "difficulty-mix": "medium+easy+hard",
+        "assessments": 28
+      }
+    },
+    {
+      "course": "ielts-academy-core",
+      "moduleSlug": "module-5-speaking",
+      "unitSlug": "speaking-foundations",
+      "title": "Speaking foundations",
+      "lessons": 10,
+      "liveLessons": 10,
+      "worstStage": "practice-ready",
+      "lessonStages": [
+        "practice-ready",
+        "practice-ready",
+        "practice-ready",
+        "practice-ready",
+        "practice-ready",
+        "practice-ready",
+        "practice-ready",
+        "practice-ready",
+        "practice-ready",
+        "practice-ready"
+      ],
+      "dimensions": {
+        "lessons-complete": true,
+        "teaching-words": 22444,
+        "explanation-depth": true,
+        "examples": 10,
+        "examples-present": true,
+        "strategies-present": true,
+        "strategy-blocks": 29,
+        "practice-questions": 60,
+        "answer-keys-verified": true,
+        "answer-explanations": true,
+        "difficulty-set": true,
+        "difficulty-mix": "easy+medium+hard",
+        "assessments": 80
+      }
+    },
+    {
+      "course": "ielts-academy-core",
+      "moduleSlug": "module-5-speaking",
+      "unitSlug": "speaking-part1-topics",
+      "title": "Part 1 — the nineteen topic sets",
+      "lessons": 19,
+      "liveLessons": 19,
+      "worstStage": "practice-ready",
+      "lessonStages": [
+        "practice-ready",
+        "practice-ready",
+        "practice-ready",
+        "practice-ready",
+        "practice-ready",
+        "practice-ready",
+        "practice-ready",
+        "practice-ready",
+        "practice-ready",
+        "practice-ready",
+        "practice-ready",
+        "practice-ready",
+        "practice-ready",
+        "practice-ready",
+        "practice-ready",
+        "practice-ready",
+        "practice-ready",
+        "practice-ready",
+        "practice-ready"
+      ],
+      "dimensions": {
+        "lessons-complete": true,
+        "teaching-words": 44441,
+        "explanation-depth": true,
+        "examples": 19,
+        "examples-present": true,
+        "strategies-present": true,
+        "strategy-blocks": 26,
+        "practice-questions": 114,
+        "answer-keys-verified": true,
+        "answer-explanations": true,
+        "difficulty-set": true,
+        "difficulty-mix": "easy+medium+hard",
+        "assessments": 152
+      }
+    },
+    {
+      "course": "ielts-academy-core",
+      "moduleSlug": "module-5-speaking",
+      "unitSlug": "speaking-part2-craft",
+      "title": "Part 2 — the cue-card craft",
+      "lessons": 8,
+      "liveLessons": 8,
+      "worstStage": "practice-ready",
+      "lessonStages": [
+        "practice-ready",
+        "practice-ready",
+        "practice-ready",
+        "practice-ready",
+        "practice-ready",
+        "practice-ready",
+        "practice-ready",
+        "practice-ready"
+      ],
+      "dimensions": {
+        "lessons-complete": true,
+        "teaching-words": 17793,
+        "explanation-depth": true,
+        "examples": 8,
+        "examples-present": true,
+        "strategies-present": true,
+        "strategy-blocks": 15,
+        "practice-questions": 46,
+        "answer-keys-verified": true,
+        "answer-explanations": true,
+        "difficulty-set": true,
+        "difficulty-mix": "easy+medium+hard",
+        "assessments": 62
+      }
+    },
+    {
+      "course": "ielts-academy-core",
+      "moduleSlug": "module-5-speaking",
+      "unitSlug": "speaking-part2-cards",
+      "title": "Part 2 — the eleven cue-card families",
+      "lessons": 11,
+      "liveLessons": 11,
+      "worstStage": "practice-ready",
+      "lessonStages": [
+        "practice-ready",
+        "practice-ready",
+        "practice-ready",
+        "practice-ready",
+        "practice-ready",
+        "practice-ready",
+        "practice-ready",
+        "practice-ready",
+        "practice-ready",
+        "practice-ready",
+        "practice-ready"
+      ],
+      "dimensions": {
+        "lessons-complete": true,
+        "teaching-words": 34653,
+        "explanation-depth": true,
+        "examples": 11,
+        "examples-present": true,
+        "strategies-present": true,
+        "strategy-blocks": 30,
+        "practice-questions": 56,
+        "answer-keys-verified": true,
+        "answer-explanations": true,
+        "difficulty-set": true,
+        "difficulty-mix": "medium+hard",
+        "assessments": 78
+      }
+    },
+    {
+      "course": "ielts-academy-core",
+      "moduleSlug": "module-5-speaking",
+      "unitSlug": "speaking-part3-discussion",
+      "title": "Part 3 — discussion",
+      "lessons": 11,
+      "liveLessons": 11,
+      "worstStage": "practice-ready",
+      "lessonStages": [
+        "practice-ready",
+        "practice-ready",
+        "practice-ready",
+        "practice-ready",
+        "practice-ready",
+        "practice-ready",
+        "practice-ready",
+        "practice-ready",
+        "practice-ready",
+        "practice-ready",
+        "practice-ready"
+      ],
+      "dimensions": {
+        "lessons-complete": true,
+        "teaching-words": 30058,
+        "explanation-depth": true,
+        "examples": 14,
+        "examples-present": true,
+        "strategies-present": true,
+        "strategy-blocks": 21,
+        "practice-questions": 66,
+        "answer-keys-verified": true,
+        "answer-explanations": true,
+        "difficulty-set": true,
+        "difficulty-mix": "easy+medium+hard",
+        "assessments": 88
+      }
+    },
+    {
+      "course": "ielts-academy-core",
+      "moduleSlug": "module-5-speaking",
+      "unitSlug": "speaking-pronunciation",
+      "title": "Pronunciation",
+      "lessons": 10,
+      "liveLessons": 10,
+      "worstStage": "practice-ready",
+      "lessonStages": [
+        "practice-ready",
+        "practice-ready",
+        "practice-ready",
+        "practice-ready",
+        "practice-ready",
+        "practice-ready",
+        "practice-ready",
+        "practice-ready",
+        "practice-ready",
+        "practice-ready"
+      ],
+      "dimensions": {
+        "lessons-complete": true,
+        "teaching-words": 21889,
+        "explanation-depth": true,
+        "examples": 11,
+        "examples-present": true,
+        "strategies-present": true,
+        "strategy-blocks": 24,
+        "practice-questions": 50,
+        "answer-keys-verified": true,
+        "answer-explanations": true,
+        "difficulty-set": true,
+        "difficulty-mix": "easy+medium+hard",
+        "assessments": 70
+      }
+    },
+    {
+      "course": "ielts-academy-core",
+      "moduleSlug": "module-6-band-development",
+      "unitSlug": "band-ladder",
+      "title": "The band ladder",
+      "lessons": 6,
+      "liveLessons": 6,
+      "worstStage": "practice-ready",
+      "lessonStages": [
+        "practice-ready",
+        "practice-ready",
+        "practice-ready",
+        "practice-ready",
+        "practice-ready",
+        "practice-ready"
+      ],
+      "dimensions": {
+        "lessons-complete": true,
+        "teaching-words": 2483,
+        "explanation-depth": true,
+        "examples": 6,
+        "examples-present": true,
+        "strategies-present": true,
+        "strategy-blocks": 6,
+        "practice-questions": 10,
+        "answer-keys-verified": true,
+        "answer-explanations": true,
+        "difficulty-set": true,
+        "difficulty-mix": "medium+easy+hard",
+        "assessments": 10
+      }
+    },
+    {
+      "course": "ielts-academy-core",
+      "moduleSlug": "module-7-exam-strategies",
+      "unitSlug": "strategy",
+      "title": "Strategy",
+      "lessons": 5,
+      "liveLessons": 5,
+      "worstStage": "practice-ready",
+      "lessonStages": [
+        "practice-ready",
+        "practice-ready",
+        "practice-ready",
+        "practice-ready",
+        "practice-ready"
+      ],
+      "dimensions": {
+        "lessons-complete": true,
+        "teaching-words": 1538,
+        "explanation-depth": true,
+        "examples": 5,
+        "examples-present": true,
+        "strategies-present": true,
+        "strategy-blocks": 7,
+        "practice-questions": 6,
+        "answer-keys-verified": true,
+        "answer-explanations": true,
+        "difficulty-set": true,
+        "difficulty-mix": "medium",
+        "assessments": 6
+      }
+    },
+    {
+      "course": "ielts-academy-core",
+      "moduleSlug": "module-8-mocks",
+      "unitSlug": "mock-system",
+      "title": "Using the mock library",
+      "lessons": 1,
+      "liveLessons": 1,
+      "worstStage": "practice-ready",
+      "lessonStages": [
+        "practice-ready"
+      ],
+      "dimensions": {
+        "lessons-complete": true,
+        "teaching-words": 464,
+        "explanation-depth": true,
+        "examples": 1,
+        "examples-present": true,
+        "strategies-present": true,
+        "strategy-blocks": 2,
+        "practice-questions": 2,
+        "answer-keys-verified": true,
+        "answer-explanations": true,
+        "difficulty-set": true,
+        "difficulty-mix": "medium+easy",
+        "assessments": 2
+      }
+    },
+    {
+      "course": "ielts-academy-general-training",
+      "moduleSlug": "module-3g-gt-reading",
+      "unitSlug": "gt-reading-practical",
+      "title": "Practical reading, section by section",
+      "lessons": 7,
+      "liveLessons": 7,
+      "worstStage": "practice-ready",
+      "lessonStages": [
+        "practice-ready",
+        "practice-ready",
+        "practice-ready",
+        "practice-ready",
+        "practice-ready",
+        "practice-ready",
+        "practice-ready"
+      ],
+      "dimensions": {
+        "lessons-complete": true,
+        "teaching-words": 5842,
+        "explanation-depth": true,
+        "examples": 7,
+        "examples-present": true,
+        "strategies-present": true,
+        "strategy-blocks": 36,
+        "practice-questions": 35,
+        "answer-keys-verified": true,
+        "answer-explanations": true,
+        "difficulty-set": true,
+        "difficulty-mix": "easy+medium+hard",
+        "assessments": 42
+      }
+    },
+    {
+      "course": "ielts-academy-general-training",
+      "moduleSlug": "module-4g-gt-writing",
+      "unitSlug": "gwriting-foundations",
+      "title": "Writing foundations",
+      "lessons": 11,
+      "liveLessons": 11,
+      "worstStage": "practice-ready",
+      "lessonStages": [
+        "practice-ready",
+        "practice-ready",
+        "practice-ready",
+        "practice-ready",
+        "practice-ready",
+        "practice-ready",
+        "practice-ready",
+        "practice-ready",
+        "practice-ready",
+        "practice-ready",
+        "practice-ready"
+      ],
+      "dimensions": {
+        "lessons-complete": true,
+        "teaching-words": 27592,
+        "explanation-depth": true,
+        "examples": 11,
+        "examples-present": true,
+        "strategies-present": true,
+        "strategy-blocks": 38,
+        "practice-questions": 60,
+        "answer-keys-verified": true,
+        "answer-explanations": true,
+        "difficulty-set": true,
+        "difficulty-mix": "easy+medium+hard",
+        "assessments": 82
+      }
+    },
+    {
+      "course": "ielts-academy-general-training",
+      "moduleSlug": "module-4g-gt-writing",
+      "unitSlug": "gwriting-letters",
+      "title": "Task 1 — the letter course",
+      "lessons": 11,
+      "liveLessons": 11,
+      "worstStage": "practice-ready",
+      "lessonStages": [
+        "practice-ready",
+        "practice-ready",
+        "practice-ready",
+        "practice-ready",
+        "practice-ready",
+        "practice-ready",
+        "practice-ready",
+        "practice-ready",
+        "practice-ready",
+        "practice-ready",
+        "practice-ready"
+      ],
+      "dimensions": {
+        "lessons-complete": true,
+        "teaching-words": 28750,
+        "explanation-depth": true,
+        "examples": 11,
+        "examples-present": true,
+        "strategies-present": true,
+        "strategy-blocks": 12,
+        "practice-questions": 66,
+        "answer-keys-verified": true,
+        "answer-explanations": true,
+        "difficulty-set": true,
+        "difficulty-mix": "easy+medium+hard",
+        "assessments": 88
+      }
+    },
+    {
+      "course": "ielts-academy-general-training",
+      "moduleSlug": "module-4g-gt-writing",
+      "unitSlug": "gwriting-task2",
+      "title": "Task 2 — the everyday essay",
+      "lessons": 7,
+      "liveLessons": 7,
+      "worstStage": "practice-ready",
+      "lessonStages": [
+        "practice-ready",
+        "practice-ready",
+        "practice-ready",
+        "practice-ready",
+        "practice-ready",
+        "practice-ready",
+        "practice-ready"
+      ],
+      "dimensions": {
+        "lessons-complete": true,
+        "teaching-words": 20273,
+        "explanation-depth": true,
+        "examples": 7,
+        "examples-present": true,
+        "strategies-present": true,
+        "strategy-blocks": 9,
+        "practice-questions": 35,
+        "answer-keys-verified": true,
+        "answer-explanations": true,
+        "difficulty-set": true,
+        "difficulty-mix": "easy+medium+hard",
+        "assessments": 49
+      }
+    },
+    {
+      "course": "ielts-academy-general-training",
+      "moduleSlug": "module-4g-gt-writing",
+      "unitSlug": "gwriting-assessment",
+      "title": "Assessment",
+      "lessons": 1,
+      "liveLessons": 1,
+      "worstStage": "practice-ready",
+      "lessonStages": [
+        "practice-ready"
+      ],
+      "dimensions": {
+        "lessons-complete": true,
+        "teaching-words": 3146,
+        "explanation-depth": true,
+        "examples": 1,
+        "examples-present": true,
+        "strategies-present": true,
+        "strategy-blocks": 4,
+        "practice-questions": 5,
+        "answer-keys-verified": true,
+        "answer-explanations": true,
+        "difficulty-set": true,
+        "difficulty-mix": "easy+medium+hard",
+        "assessments": 7
+      }
+    },
+    {
+      "course": "toefl-ibt-academy",
+      "moduleSlug": "toefl-module-1-fundamentals",
+      "unitSlug": "toefl-orientation",
+      "title": "The test and the 2026 format",
+      "lessons": 3,
+      "liveLessons": 3,
+      "worstStage": "practice-ready",
+      "lessonStages": [
+        "practice-ready",
+        "practice-ready",
+        "practice-ready"
+      ],
+      "dimensions": {
+        "lessons-complete": true,
+        "teaching-words": 2839,
+        "explanation-depth": true,
+        "examples": 4,
+        "examples-present": true,
+        "strategies-present": true,
+        "strategy-blocks": 8,
+        "practice-questions": 17,
+        "answer-keys-verified": true,
+        "answer-explanations": true,
+        "difficulty-set": true,
+        "difficulty-mix": "easy+medium+hard",
+        "assessments": 20
+      }
+    },
+    {
+      "course": "toefl-ibt-academy",
+      "moduleSlug": "toefl-module-1-fundamentals",
+      "unitSlug": "toefl-scores",
+      "title": "The 1–6 band scale and your score report",
+      "lessons": 2,
+      "liveLessons": 2,
+      "worstStage": "practice-ready",
+      "lessonStages": [
+        "practice-ready",
+        "practice-ready"
+      ],
+      "dimensions": {
+        "lessons-complete": true,
+        "teaching-words": 1756,
+        "explanation-depth": true,
+        "examples": 2,
+        "examples-present": true,
+        "strategies-present": true,
+        "strategy-blocks": 2,
+        "practice-questions": 11,
+        "answer-keys-verified": true,
+        "answer-explanations": true,
+        "difficulty-set": true,
+        "difficulty-mix": "hard+medium+easy",
+        "assessments": 13
+      }
+    },
+    {
+      "course": "toefl-ibt-academy",
+      "moduleSlug": "toefl-module-1-fundamentals",
+      "unitSlug": "toefl-strategy",
+      "title": "Strategy, time and test day",
+      "lessons": 3,
+      "liveLessons": 3,
+      "worstStage": "practice-ready",
+      "lessonStages": [
+        "practice-ready",
+        "practice-ready",
+        "practice-ready"
+      ],
+      "dimensions": {
+        "lessons-complete": true,
+        "teaching-words": 2519,
+        "explanation-depth": true,
+        "examples": 3,
+        "examples-present": true,
+        "strategies-present": true,
+        "strategy-blocks": 12,
+        "practice-questions": 15,
+        "answer-keys-verified": true,
+        "answer-explanations": true,
+        "difficulty-set": true,
+        "difficulty-mix": "easy+medium+hard",
+        "assessments": 18
+      }
+    },
+    {
+      "course": "toefl-ibt-academy",
+      "moduleSlug": "toefl-module-2-reading",
+      "unitSlug": "toefl-reading-overview",
+      "title": "The section",
+      "lessons": 1,
+      "liveLessons": 1,
+      "worstStage": "practice-ready",
+      "lessonStages": [
+        "practice-ready"
+      ],
+      "dimensions": {
+        "lessons-complete": true,
+        "teaching-words": 2070,
+        "explanation-depth": true,
+        "examples": 1,
+        "examples-present": true,
+        "strategies-present": true,
+        "strategy-blocks": 4,
+        "practice-questions": 5,
+        "answer-keys-verified": true,
+        "answer-explanations": true,
+        "difficulty-set": true,
+        "difficulty-mix": "easy+medium+hard",
+        "assessments": 6
+      }
+    },
+    {
+      "course": "toefl-ibt-academy",
+      "moduleSlug": "toefl-module-2-reading",
+      "unitSlug": "toefl-reading-tasks",
+      "title": "The three task types",
+      "lessons": 3,
+      "liveLessons": 3,
+      "worstStage": "practice-ready",
+      "lessonStages": [
+        "practice-ready",
+        "practice-ready",
+        "practice-ready"
+      ],
+      "dimensions": {
+        "lessons-complete": true,
+        "teaching-words": 5891,
+        "explanation-depth": true,
+        "examples": 6,
+        "examples-present": true,
+        "strategies-present": true,
+        "strategy-blocks": 13,
+        "practice-questions": 18,
+        "answer-keys-verified": true,
+        "answer-explanations": true,
+        "difficulty-set": true,
+        "difficulty-mix": "easy+medium+hard",
+        "assessments": 24
+      }
+    },
+    {
+      "course": "toefl-ibt-academy",
+      "moduleSlug": "toefl-module-2-reading",
+      "unitSlug": "toefl-reading-skills",
+      "title": "Reading skills",
+      "lessons": 4,
+      "liveLessons": 4,
+      "worstStage": "practice-ready",
+      "lessonStages": [
+        "practice-ready",
+        "practice-ready",
+        "practice-ready",
+        "practice-ready"
+      ],
+      "dimensions": {
+        "lessons-complete": true,
+        "teaching-words": 7873,
+        "explanation-depth": true,
+        "examples": 7,
+        "examples-present": true,
+        "strategies-present": true,
+        "strategy-blocks": 11,
+        "practice-questions": 24,
+        "answer-keys-verified": true,
+        "answer-explanations": true,
+        "difficulty-set": true,
+        "difficulty-mix": "medium+hard+easy",
+        "assessments": 30
+      }
+    },
+    {
+      "course": "toefl-ibt-academy",
+      "moduleSlug": "toefl-module-3-listening",
+      "unitSlug": "toefl-listening-overview",
+      "title": "The section",
+      "lessons": 1,
+      "liveLessons": 1,
+      "worstStage": "practice-ready",
+      "lessonStages": [
+        "practice-ready"
+      ],
+      "dimensions": {
+        "lessons-complete": true,
+        "teaching-words": 2038,
+        "explanation-depth": true,
+        "examples": 2,
+        "examples-present": true,
+        "strategies-present": true,
+        "strategy-blocks": 5,
+        "practice-questions": 6,
+        "answer-keys-verified": true,
+        "answer-explanations": true,
+        "difficulty-set": true,
+        "difficulty-mix": "easy+medium+hard",
+        "assessments": 8
+      }
+    },
+    {
+      "course": "toefl-ibt-academy",
+      "moduleSlug": "toefl-module-3-listening",
+      "unitSlug": "toefl-listening-tasks",
+      "title": "The four task types",
+      "lessons": 4,
+      "liveLessons": 4,
+      "worstStage": "practice-ready",
+      "lessonStages": [
+        "practice-ready",
+        "practice-ready",
+        "practice-ready",
+        "practice-ready"
+      ],
+      "dimensions": {
+        "lessons-complete": true,
+        "teaching-words": 7808,
+        "explanation-depth": true,
+        "examples": 10,
+        "examples-present": true,
+        "strategies-present": true,
+        "strategy-blocks": 8,
+        "practice-questions": 24,
+        "answer-keys-verified": true,
+        "answer-explanations": true,
+        "difficulty-set": true,
+        "difficulty-mix": "medium+easy+hard",
+        "assessments": 30
+      }
+    },
+    {
+      "course": "toefl-ibt-academy",
+      "moduleSlug": "toefl-module-3-listening",
+      "unitSlug": "toefl-listening-skills",
+      "title": "Listening skills",
+      "lessons": 5,
+      "liveLessons": 5,
+      "worstStage": "practice-ready",
+      "lessonStages": [
+        "practice-ready",
+        "practice-ready",
+        "practice-ready",
+        "practice-ready",
+        "practice-ready"
+      ],
+      "dimensions": {
+        "lessons-complete": true,
+        "teaching-words": 9291,
+        "explanation-depth": true,
+        "examples": 14,
+        "examples-present": true,
+        "strategies-present": true,
+        "strategy-blocks": 15,
+        "practice-questions": 30,
+        "answer-keys-verified": true,
+        "answer-explanations": true,
+        "difficulty-set": true,
+        "difficulty-mix": "medium+easy+hard",
+        "assessments": 38
+      }
+    },
+    {
+      "course": "toefl-ibt-academy",
+      "moduleSlug": "toefl-module-4-writing",
+      "unitSlug": "toefl-writing-overview",
+      "title": "The section",
+      "lessons": 1,
+      "liveLessons": 1,
+      "worstStage": "practice-ready",
+      "lessonStages": [
+        "practice-ready"
+      ],
+      "dimensions": {
+        "lessons-complete": true,
+        "teaching-words": 2090,
+        "explanation-depth": true,
+        "examples": 2,
+        "examples-present": true,
+        "strategies-present": true,
+        "strategy-blocks": 4,
+        "practice-questions": 5,
+        "answer-keys-verified": true,
+        "answer-explanations": true,
+        "difficulty-set": true,
+        "difficulty-mix": "easy+medium",
+        "assessments": 6
+      }
+    },
+    {
+      "course": "toefl-ibt-academy",
+      "moduleSlug": "toefl-module-4-writing",
+      "unitSlug": "toefl-build-sentence",
+      "title": "Build a Sentence",
+      "lessons": 2,
+      "liveLessons": 2,
+      "worstStage": "practice-ready",
+      "lessonStages": [
+        "practice-ready",
+        "practice-ready"
+      ],
+      "dimensions": {
+        "lessons-complete": true,
+        "teaching-words": 3911,
+        "explanation-depth": true,
+        "examples": 2,
+        "examples-present": true,
+        "strategies-present": true,
+        "strategy-blocks": 3,
+        "practice-questions": 12,
+        "answer-keys-verified": true,
+        "answer-explanations": true,
+        "difficulty-set": true,
+        "difficulty-mix": "easy+medium+hard",
+        "assessments": 14
+      }
+    },
+    {
+      "course": "toefl-ibt-academy",
+      "moduleSlug": "toefl-module-4-writing",
+      "unitSlug": "toefl-email",
+      "title": "Write an Email",
+      "lessons": 1,
+      "liveLessons": 1,
+      "worstStage": "practice-ready",
+      "lessonStages": [
+        "practice-ready"
+      ],
+      "dimensions": {
+        "lessons-complete": true,
+        "teaching-words": 2120,
+        "explanation-depth": true,
+        "examples": 2,
+        "examples-present": true,
+        "strategies-present": true,
+        "strategy-blocks": 1,
+        "practice-questions": 6,
+        "answer-keys-verified": true,
+        "answer-explanations": true,
+        "difficulty-set": true,
+        "difficulty-mix": "medium+easy+hard",
+        "assessments": 8
+      }
+    },
+    {
+      "course": "toefl-ibt-academy",
+      "moduleSlug": "toefl-module-4-writing",
+      "unitSlug": "toefl-discussion",
+      "title": "Write for an Academic Discussion",
+      "lessons": 2,
+      "liveLessons": 2,
+      "worstStage": "practice-ready",
+      "lessonStages": [
+        "practice-ready",
+        "practice-ready"
+      ],
+      "dimensions": {
+        "lessons-complete": true,
+        "teaching-words": 3622,
+        "explanation-depth": true,
+        "examples": 3,
+        "examples-present": true,
+        "strategies-present": true,
+        "strategy-blocks": 3,
+        "practice-questions": 12,
+        "answer-keys-verified": true,
+        "answer-explanations": true,
+        "difficulty-set": true,
+        "difficulty-mix": "hard+medium+easy",
+        "assessments": 16
+      }
+    },
+    {
+      "course": "toefl-ibt-academy",
+      "moduleSlug": "toefl-module-5-speaking",
+      "unitSlug": "toefl-speaking-overview",
+      "title": "The section",
+      "lessons": 1,
+      "liveLessons": 1,
+      "worstStage": "practice-ready",
+      "lessonStages": [
+        "practice-ready"
+      ],
+      "dimensions": {
+        "lessons-complete": true,
+        "teaching-words": 2205,
+        "explanation-depth": true,
+        "examples": 2,
+        "examples-present": true,
+        "strategies-present": true,
+        "strategy-blocks": 1,
+        "practice-questions": 6,
+        "answer-keys-verified": true,
+        "answer-explanations": true,
+        "difficulty-set": true,
+        "difficulty-mix": "easy+medium+hard",
+        "assessments": 7
+      }
+    },
+    {
+      "course": "toefl-ibt-academy",
+      "moduleSlug": "toefl-module-5-speaking",
+      "unitSlug": "toefl-listen-repeat",
+      "title": "Listen and Repeat",
+      "lessons": 2,
+      "liveLessons": 2,
+      "worstStage": "practice-ready",
+      "lessonStages": [
+        "practice-ready",
+        "practice-ready"
+      ],
+      "dimensions": {
+        "lessons-complete": true,
+        "teaching-words": 3863,
+        "explanation-depth": true,
+        "examples": 3,
+        "examples-present": true,
+        "strategies-present": true,
+        "strategy-blocks": 4,
+        "practice-questions": 12,
+        "answer-keys-verified": true,
+        "answer-explanations": true,
+        "difficulty-set": true,
+        "difficulty-mix": "medium+hard+easy",
+        "assessments": 14
+      }
+    },
+    {
+      "course": "toefl-ibt-academy",
+      "moduleSlug": "toefl-module-5-speaking",
+      "unitSlug": "toefl-interview",
+      "title": "Take an Interview",
+      "lessons": 2,
+      "liveLessons": 2,
+      "worstStage": "practice-ready",
+      "lessonStages": [
+        "practice-ready",
+        "practice-ready"
+      ],
+      "dimensions": {
+        "lessons-complete": true,
+        "teaching-words": 3936,
+        "explanation-depth": true,
+        "examples": 3,
+        "examples-present": true,
+        "strategies-present": true,
+        "strategy-blocks": 2,
+        "practice-questions": 12,
+        "answer-keys-verified": true,
+        "answer-explanations": true,
+        "difficulty-set": true,
+        "difficulty-mix": "medium+hard+easy",
+        "assessments": 16
+      }
+    },
+    {
+      "course": "toefl-ibt-academy",
+      "moduleSlug": "toefl-module-6-language",
+      "unitSlug": "toefl-language-words",
+      "title": "Academic words",
+      "lessons": 2,
+      "liveLessons": 2,
+      "worstStage": "practice-ready",
+      "lessonStages": [
+        "practice-ready",
+        "practice-ready"
+      ],
+      "dimensions": {
+        "lessons-complete": true,
+        "teaching-words": 4036,
+        "explanation-depth": true,
+        "examples": 3,
+        "examples-present": true,
+        "strategies-present": true,
+        "strategy-blocks": 5,
+        "practice-questions": 12,
+        "answer-keys-verified": true,
+        "answer-explanations": true,
+        "difficulty-set": true,
+        "difficulty-mix": "medium+easy+hard",
+        "assessments": 14
+      }
+    },
+    {
+      "course": "toefl-ibt-academy",
+      "moduleSlug": "toefl-module-6-language",
+      "unitSlug": "toefl-language-sentences",
+      "title": "Sentence craft",
+      "lessons": 2,
+      "liveLessons": 2,
+      "worstStage": "practice-ready",
+      "lessonStages": [
+        "practice-ready",
+        "practice-ready"
+      ],
+      "dimensions": {
+        "lessons-complete": true,
+        "teaching-words": 3928,
+        "explanation-depth": true,
+        "examples": 3,
+        "examples-present": true,
+        "strategies-present": true,
+        "strategy-blocks": 3,
+        "practice-questions": 12,
+        "answer-keys-verified": true,
+        "answer-explanations": true,
+        "difficulty-set": true,
+        "difficulty-mix": "medium+easy+hard",
+        "assessments": 16
+      }
+    },
+    {
+      "course": "toefl-ibt-academy",
+      "moduleSlug": "toefl-module-6-language",
+      "unitSlug": "toefl-language-expression",
+      "title": "Expression",
+      "lessons": 2,
+      "liveLessons": 2,
+      "worstStage": "practice-ready",
+      "lessonStages": [
+        "practice-ready",
+        "practice-ready"
+      ],
+      "dimensions": {
+        "lessons-complete": true,
+        "teaching-words": 3979,
+        "explanation-depth": true,
+        "examples": 4,
+        "examples-present": true,
+        "strategies-present": true,
+        "strategy-blocks": 22,
+        "practice-questions": 12,
+        "answer-keys-verified": true,
+        "answer-explanations": true,
+        "difficulty-set": true,
+        "difficulty-mix": "medium+hard+easy",
+        "assessments": 16
+      }
+    },
+    {
+      "course": "toefl-ibt-academy",
+      "moduleSlug": "toefl-module-7-practice",
+      "unitSlug": "toefl-practice-system",
+      "title": "The practice system",
+      "lessons": 1,
+      "liveLessons": 1,
+      "worstStage": "practice-ready",
+      "lessonStages": [
+        "practice-ready"
+      ],
+      "dimensions": {
+        "lessons-complete": true,
+        "teaching-words": 1914,
+        "explanation-depth": true,
+        "examples": 1,
+        "examples-present": true,
+        "strategies-present": true,
+        "strategy-blocks": 4,
+        "practice-questions": 6,
+        "answer-keys-verified": true,
+        "answer-explanations": true,
+        "difficulty-set": true,
+        "difficulty-mix": "easy+medium+hard",
+        "assessments": 7
+      }
+    },
+    {
+      "course": "toefl-ibt-academy",
+      "moduleSlug": "toefl-module-7-practice",
+      "unitSlug": "toefl-adaptive-practice",
+      "title": "Adaptive practice",
+      "lessons": 1,
+      "liveLessons": 1,
+      "worstStage": "practice-ready",
+      "lessonStages": [
+        "practice-ready"
+      ],
+      "dimensions": {
+        "lessons-complete": true,
+        "teaching-words": 1828,
+        "explanation-depth": true,
+        "examples": 2,
+        "examples-present": true,
+        "strategies-present": true,
+        "strategy-blocks": 1,
+        "practice-questions": 6,
+        "answer-keys-verified": true,
+        "answer-explanations": true,
+        "difficulty-set": true,
+        "difficulty-mix": "easy+medium+hard",
+        "assessments": 7
+      }
+    },
+    {
+      "course": "toefl-ibt-academy",
+      "moduleSlug": "toefl-module-7-practice",
+      "unitSlug": "toefl-performance",
+      "title": "Performance reports",
+      "lessons": 1,
+      "liveLessons": 1,
+      "worstStage": "practice-ready",
+      "lessonStages": [
+        "practice-ready"
+      ],
+      "dimensions": {
+        "lessons-complete": true,
+        "teaching-words": 1897,
+        "explanation-depth": true,
+        "examples": 1,
+        "examples-present": true,
+        "strategies-present": true,
+        "strategy-blocks": 1,
+        "practice-questions": 6,
+        "answer-keys-verified": true,
+        "answer-explanations": true,
+        "difficulty-set": true,
+        "difficulty-mix": "medium+easy+hard",
+        "assessments": 8
+      }
+    }
+  ],
+  "placeholderHits": [],
+  "validation": {
+    "blockingCount": 0,
+    "warningCount": 0,
+    "byCategory": {
+      "missing-answer-key": 0,
+      "multiple-correct": 0,
+      "incorrect-answer": 0,
+      "broken-audio": 0,
+      "invalid-passage-ref": 0,
+      "invalid-question-type": 0,
+      "duplicate-question": 0,
+      "outdated-format": 0
+    },
+    "checked": {
+      "mockQuestions": 268,
+      "cmsExercises": 1491,
+      "lessons": 294,
+      "audioAssets": 1,
+      "specs": 4,
+      "practiceLibraryItems": 950
+    },
+    "blockingIssues": [],
+    "warnings": []
+  },
+  "questionBank": {
+    "total": 950,
+    "byExam": {
+      "ielts": 450,
+      "toefl": 500
+    },
+    "byReviewStatus": {
+      "ai-reviewed": 950
+    }
+  },
+  "mocks": {
+    "total": 50,
+    "perExam": [
+      {
+        "exam": "IELTS/ACADEMIC",
+        "mocks": 26,
+        "questions": 233,
+        "keyed": 185,
+        "explained": 233,
+        "timingOk": 43,
+        "timingTotal": 43
+      },
+      {
+        "exam": "IELTS/GENERAL_TRAINING",
+        "mocks": 13,
+        "questions": 103,
+        "keyed": 81,
+        "explained": 103,
+        "timingOk": 19,
+        "timingTotal": 19
+      },
+      {
+        "exam": "TOEFL_IBT/STANDARD",
+        "mocks": 11,
+        "questions": 242,
+        "keyed": 223,
+        "explained": 242,
+        "timingOk": 23,
+        "timingTotal": 23
+      }
+    ]
+  },
+  "specs": [
+    {
+      "id": "cmwfrmwsy0000o8otkwz780km",
+      "examKey": "IELTS",
+      "variant": "ACADEMIC",
+      "name": "IELTS Academic",
+      "version": 1,
+      "status": "active",
+      "effectiveDate": "2026-07-01",
+      "lastReviewedAt": "2026-11-12",
+      "sections": [
+        {
+          "key": "listening",
+          "timingSec": 1800,
+          "officialTimingSec": 1800,
+          "timingOk": true,
+          "items": 40,
+          "officialItems": 40,
+          "itemsOk": true
+        },
+        {
+          "key": "reading",
+          "timingSec": 3600,
+          "officialTimingSec": 3600,
+          "timingOk": true,
+          "items": 40,
+          "officialItems": 40,
+          "itemsOk": true
+        },
+        {
+          "key": "writing",
+          "timingSec": 3600,
+          "officialTimingSec": 3600,
+          "timingOk": true,
+          "items": 2,
+          "officialItems": 2,
+          "itemsOk": true
+        },
+        {
+          "key": "speaking",
+          "timingSec": 780,
+          "officialTimingSec": 660,
+          "timingOk": true,
+          "items": 3,
+          "officialItems": 3,
+          "itemsOk": true
+        }
+      ],
+      "allTimingOk": true,
+      "allItemsOk": true,
+      "sourceRefs": 9
+    },
+    {
+      "id": "cmwfrmwt10001o8otapls6i7m",
+      "examKey": "IELTS",
+      "variant": "GENERAL_TRAINING",
+      "name": "IELTS General Training",
+      "version": 1,
+      "status": "active",
+      "effectiveDate": "2026-07-01",
+      "lastReviewedAt": "2026-11-12",
+      "sections": [
+        {
+          "key": "listening",
+          "timingSec": 1800,
+          "officialTimingSec": 1800,
+          "timingOk": true,
+          "items": 40,
+          "officialItems": 40,
+          "itemsOk": true
+        },
+        {
+          "key": "reading",
+          "timingSec": 3600,
+          "officialTimingSec": 3600,
+          "timingOk": true,
+          "items": 40,
+          "officialItems": 40,
+          "itemsOk": true
+        },
+        {
+          "key": "writing",
+          "timingSec": 3600,
+          "officialTimingSec": 3600,
+          "timingOk": true,
+          "items": 2,
+          "officialItems": 2,
+          "itemsOk": true
+        },
+        {
+          "key": "speaking",
+          "timingSec": 780,
+          "officialTimingSec": 660,
+          "timingOk": true,
+          "items": 3,
+          "officialItems": 3,
+          "itemsOk": true
+        }
+      ],
+      "allTimingOk": true,
+      "allItemsOk": true,
+      "sourceRefs": 9
+    },
+    {
+      "id": "cmwiqhr1m0000u85tw7upxknf",
+      "examKey": "TOEFL_IBT",
+      "variant": "STANDARD",
+      "name": "TOEFL iBT (2026 format)",
+      "version": 2,
+      "status": "active",
+      "effectiveDate": "2026-01-21",
+      "lastReviewedAt": "2026-11-12",
+      "sections": [
+        {
+          "key": "reading",
+          "timingSec": 1800,
+          "officialTimingSec": 1800,
+          "timingOk": true,
+          "items": 50,
+          "officialItems": 50,
+          "itemsOk": true
+        },
+        {
+          "key": "listening",
+          "timingSec": 1740,
+          "officialTimingSec": 1740,
+          "timingOk": true,
+          "items": 47,
+          "officialItems": 47,
+          "itemsOk": true
+        },
+        {
+          "key": "speaking",
+          "timingSec": 480,
+          "officialTimingSec": 480,
+          "timingOk": true,
+          "items": 11,
+          "officialItems": 11,
+          "itemsOk": true
+        },
+        {
+          "key": "writing",
+          "timingSec": 1380,
+          "officialTimingSec": 1380,
+          "timingOk": true,
+          "items": 12,
+          "officialItems": 12,
+          "itemsOk": true
+        }
+      ],
+      "allTimingOk": true,
+      "allItemsOk": true,
+      "sourceRefs": 3
+    },
+    {
+      "id": "cmwfrmwt40002o8ot291ean16",
+      "examKey": "TOEFL_IBT",
+      "variant": "STANDARD",
+      "name": "TOEFL iBT (2026 format)",
+      "version": 1,
+      "status": "retired",
+      "effectiveDate": "2026-01-21",
+      "lastReviewedAt": "2026-11-12",
+      "sections": [
+        {
+          "key": "reading",
+          "timingSec": 1800,
+          "officialTimingSec": 1800,
+          "timingOk": true,
+          "items": 50,
+          "officialItems": 50,
+          "itemsOk": true
+        },
+        {
+          "key": "listening",
+          "timingSec": 1740,
+          "officialTimingSec": 1740,
+          "timingOk": true,
+          "items": 47,
+          "officialItems": 47,
+          "itemsOk": true
+        },
+        {
+          "key": "speaking",
+          "timingSec": 480,
+          "officialTimingSec": 480,
+          "timingOk": true,
+          "items": 11,
+          "officialItems": 11,
+          "itemsOk": true
+        },
+        {
+          "key": "writing",
+          "timingSec": 1380,
+          "officialTimingSec": 1380,
+          "timingOk": true,
+          "items": 12,
+          "officialItems": 12,
+          "itemsOk": true
+        }
+      ],
+      "allTimingOk": true,
+      "allItemsOk": true,
+      "sourceRefs": 3
+    }
+  ],
+  "rubrics": [
+    {
+      "key": "IELTS/ielts.writing",
+      "steps": 9,
+      "criteriaPerStep": 4,
+      "fullyWordedSteps": 9,
+      "scores": [
+        9,
+        8,
+        7,
+        6,
+        5,
+        4,
+        3,
+        2,
+        1
+      ],
+      "complete": true
+    },
+    {
+      "key": "IELTS/ielts.speaking",
+      "steps": 9,
+      "criteriaPerStep": 4,
+      "fullyWordedSteps": 9,
+      "scores": [
+        9,
+        8,
+        7,
+        6,
+        5,
+        4,
+        3,
+        2,
+        1
+      ],
+      "complete": true
+    },
+    {
+      "key": "TOEFL_IBT/toefl.writing",
+      "steps": 6,
+      "criteriaPerStep": 3,
+      "fullyWordedSteps": 6,
+      "scores": [
+        6,
+        5,
+        4,
+        3,
+        2,
+        1
+      ],
+      "complete": true
+    },
+    {
+      "key": "TOEFL_IBT/toefl.speaking",
+      "steps": 6,
+      "criteriaPerStep": 3,
+      "fullyWordedSteps": 6,
+      "scores": [
+        6,
+        5,
+        4,
+        3,
+        2,
+        1
+      ],
+      "complete": true
+    }
+  ]
+}

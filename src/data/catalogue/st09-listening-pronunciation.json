@@ -1,0 +1,99 @@
+{
+  "id": "st09",
+  "order": 9,
+  "title": "Listening and Pronunciation",
+  "cefr": "A1 → B2",
+  "goal": "Train the ear and the voice: from individual sounds to fast natural speech, with word and sentence stress, rhythm, intonation, connected speech, accents and dictation.",
+  "entryRequirements": ["st08-exit"],
+  "modules": [
+    {
+      "id": "st09-m01",
+      "title": "Listening Foundations",
+      "description": "Hearing English at its smallest units: individual sounds, single words, short sentences and dialogues, at A1.",
+      "entryRequirements": ["st01-m03-exit"],
+      "units": [
+        {
+          "id": "st09-m01-u01",
+          "title": "Sounds, Words and Sentences",
+          "lessons": [
+            {"id": "st09-m01-u01-l01", "title": "Individual Sounds and Words", "cefr": "A1", "minutes": 12, "objectives": ["Hear the difference between similar sounds (minimal pairs)", "Recognise learned words from sound alone"], "topics": ["individual-sounds", "minimal-pairs", "word-recognition"], "practice": ["minimal-pairs", "listen-and-choose", "sound-sorting"], "assessment": "Discriminate 12 of 14 minimal pairs and identify 15 of 16 words by ear", "skills": ["listening", "speaking"]},
+            {"id": "st09-m01-u01-l02", "title": "Short Sentences", "cefr": "A1", "minutes": 12, "objectives": ["Understand short spoken sentences without text support", "Match spoken sentences to situations"], "topics": ["short-sentences", "audio-only-comprehension", "situation-matching"], "practice": ["listen-and-choose", "audio-quiz", "listen-and-act"], "assessment": "Understand 9 of 10 short spoken sentences on first hearing", "skills": ["listening"]},
+            {"id": "st09-m01-u01-l03", "title": "Dialogues", "cefr": "A1", "minutes": 12, "objectives": ["Follow 6-10 line everyday dialogues", "Identify speakers, setting and purpose"], "topics": ["dialogue-listening", "speaker-identification", "gist-listening"], "practice": ["dialogue-comprehension", "listen-for-gist", "detail-quiz"], "assessment": "Answer 8 of 10 questions on everyday dialogues", "skills": ["listening"]}
+          ],
+          "checkpoint": {"criteria": "Understand sounds, words, sentences and short dialogues by ear", "passThreshold": 80}
+        }
+      ]
+    },
+    {
+      "id": "st09-m02",
+      "title": "The Music of English",
+      "description": "The prosody system: word stress, sentence stress, connected speech, rhythm and intonation — what makes English sound English.",
+      "entryRequirements": ["st01-m03-exit"],
+      "units": [
+        {
+          "id": "st09-m02-u01",
+          "title": "Stress and Rhythm",
+          "lessons": [
+            {"id": "st09-m02-u01-l01", "title": "Word Stress", "cefr": "A2", "minutes": 12, "objectives": ["Hear and produce stressed syllables in 2-4 syllable words", "Recognise stress shifts: PHOtograph → phoTOgrapher"], "topics": ["word-stress", "syllable-stress", "stress-shifts"], "practice": ["stress-marking", "listen-and-repeat", "shadowing"], "assessment": "Mark and produce correct stress in 12 of 14 words", "skills": ["listening", "speaking"]},
+            {"id": "st09-m02-u01-l02", "title": "Sentence Stress and Rhythm", "cefr": "A2", "minutes": 12, "objectives": ["Hear which words carry meaning in a sentence", "Produce the stressed-timed rhythm of English"], "topics": ["sentence-stress", "content-versus-function-words", "rhythm"], "practice": ["stress-tapping", "shadowing", "rhythm-imitation"], "assessment": "Identify stressed words in 8 sentences and shadow them naturally", "skills": ["listening", "speaking"]}
+          ],
+          "checkpoint": {"criteria": "Use word and sentence stress correctly in perception and production", "passThreshold": 80}
+        },
+        {
+          "id": "st09-m02-u02",
+          "title": "Flow and Intonation",
+          "lessons": [
+            {"id": "st09-m02-u02-l01", "title": "Connected Speech", "cefr": "B1", "minutes": 12, "objectives": ["Recognise linking, reduction and contractions in fast speech (gonna, wanna, cup of → cuppa)", "Understand words that merge together"], "topics": ["connected-speech", "linking", "reductions", "contractions-in-speech"], "practice": ["decoding-fast-speech", "listen-and-transcribe", "shadowing"], "assessment": "Decode 12 of 15 connected-speech items correctly", "skills": ["listening", "speaking"]},
+            {"id": "st09-m02-u02-l02", "title": "Rhythm and Intonation", "cefr": "B1", "minutes": 12, "objectives": ["Hear rising versus falling intonation and what each signals", "Use intonation for questions, lists, surprise and boredom"], "topics": ["intonation", "rise-fall-meaning", "attitude-signals"], "practice": ["intonation-matching", "listen-and-repeat", "attitude-quiz"], "assessment": "Match intonation to meaning in 10 items and produce 4 patterns", "skills": ["listening", "speaking"]}
+          ],
+          "checkpoint": {"criteria": "Understand and produce connected speech and meaningful intonation", "passThreshold": 80}
+        }
+      ]
+    },
+    {
+      "id": "st09-m03",
+      "title": "Listening Beyond Basics",
+      "description": "Extended and varied listening: stories, conversations, natural spoken English, different accents and dictation practice.",
+      "entryRequirements": ["st02-exit"],
+      "units": [
+        {
+          "id": "st09-m03-u01",
+          "title": "Extended Listening",
+          "lessons": [
+            {"id": "st09-m03-u01-l01", "title": "Stories", "cefr": "A2", "minutes": 12, "objectives": ["Follow a 2-3 minute audio story", "Track characters and sequence without text"], "topics": ["story-listening", "sequence-tracking", "extended-audio"], "practice": ["listen-and-order", "story-quiz", "retell-from-audio"], "assessment": "Answer 8 of 10 questions on an audio story", "skills": ["listening"]},
+            {"id": "st09-m03-u01-l02", "title": "Conversations", "cefr": "B1", "minutes": 12, "objectives": ["Follow natural two-person conversations", "Track opinions, agreement and topic changes"], "topics": ["conversation-listening", "opinion-tracking", "topic-shifts"], "practice": ["conversation-comprehension", "gist-quiz", "attitude-questions"], "assessment": "Answer 8 of 10 questions including 2 opinion/attitude items", "skills": ["listening"]},
+            {"id": "st09-m03-u01-l03", "title": "Natural Spoken English", "cefr": "B1", "minutes": 12, "objectives": ["Handle hesitations, false starts and fillers in real speech", "Catch the point despite unknown words"], "topics": ["natural-speech", "fillers-hesitations", "tolerance-of-unknowns"], "practice": ["authentic-clips", "gist-first-listening", "transcript-reveal"], "assessment": "Identify main points of 5 natural-speed clips on first listening", "skills": ["listening"]}
+          ],
+          "checkpoint": {"criteria": "Follow extended stories, conversations and natural speech", "passThreshold": 80}
+        },
+        {
+          "id": "st09-m03-u02",
+          "title": "Variety and Precision",
+          "lessons": [
+            {"id": "st09-m03-u02-l01", "title": "Different English Accents", "cefr": "B1", "minutes": 12, "objectives": ["Recognise the main accent families (British, American, Australian, Indian, others)", "Adapt listening to accent variation"], "topics": ["accents", "accent-familiarity", "listening-flexibility"], "practice": ["accent-comparison", "same-text-different-accents", "accent-quiz"], "assessment": "Understand the same content in 3 different accents with 80 percent accuracy", "skills": ["listening"]},
+            {"id": "st09-m03-u02-l02", "title": "Dictation", "cefr": "B1", "minutes": 12, "objectives": ["Write down spoken sentences with accurate spelling and punctuation", "Use sound-spelling knowledge to self-correct"], "topics": ["dictation", "sound-to-spelling", "self-correction"], "practice": ["spelling-dictation", "sentence-dictation", "error-analysis"], "assessment": "Transcribe 8 of 10 dictated sentences with at most minor errors", "skills": ["listening", "writing"]}
+          ],
+          "checkpoint": {"criteria": "Listen accurately across accents and transcribe speech correctly", "passThreshold": 80}
+        }
+      ]
+    },
+    {
+      "id": "st09-m04",
+      "title": "Listening Mastery",
+      "description": "B2-level listening: fast natural speech and strategic comprehension.",
+      "entryRequirements": ["st09-m03-exit"],
+      "units": [
+        {
+          "id": "st09-m04-u01",
+          "title": "Advanced Listening",
+          "lessons": [
+            {"id": "st09-m04-u01-l01", "title": "Understanding Fast, Natural Speech", "cefr": "B2", "minutes": 12, "objectives": ["Follow native-speed speech on familiar and new topics", "Recover meaning from partial understanding"], "topics": ["fast-speech", "native-speed", "recovery-strategies"], "practice": ["authentic-clips", "speed-training", "gist-plus-detail"], "assessment": "Answer 8 of 10 questions on native-speed audio", "skills": ["listening"]},
+            {"id": "st09-m04-u01-l02", "title": "Comprehension Strategies and Review", "cefr": "B2", "minutes": 12, "objectives": ["Apply prediction, keyword and inference strategies while listening", "Self-assess listening strengths and gaps"], "topics": ["listening-strategies", "prediction", "self-assessment"], "practice": ["strategy-practice", "listening-portfolio", "review-quiz"], "assessment": "Apply 3 named strategies on a new audio text and self-assess accurately", "skills": ["listening", "speaking"]}
+          ],
+          "checkpoint": {"criteria": "Listen strategically to fast speech and self-assess honestly", "passThreshold": 80}
+        }
+      ]
+    }
+  ],
+  "exitAssessment": {"id": "st09-exit", "title": "Listening and Pronunciation Exit Test", "criteria": "Minimal-pair discrimination; word and sentence stress production; connected-speech decoding; comprehension of a native-speed conversation with inference items; comprehension across two accents; dictation of 8 sentences. Pronunciation graded for intelligibility, never for native-likeness.", "passThreshold": 75, "minutes": 25, "unlocks": ["st10"]}
+}

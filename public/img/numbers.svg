@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 240" role="img" aria-label="Ten coloured circles numbered 1 to 10 with their English words">
+  <rect width="720" height="240" rx="16" fill="#faf7f2"/>
+  <g font-family="Georgia, 'Times New Roman', serif" text-anchor="middle">
+    <circle cx="60" cy="70" r="34" fill="#e05252"/><text x="60" y="80" font-size="30" fill="#fff">1</text><text x="60" y="140" font-size="18" fill="#3d3229">one</text>
+    <circle cx="132" cy="70" r="34" fill="#4f7de0"/><text x="132" y="80" font-size="30" fill="#fff">2</text><text x="132" y="140" font-size="18" fill="#3d3229">two</text>
+    <circle cx="204" cy="70" r="34" fill="#58a662"/><text x="204" y="80" font-size="30" fill="#fff">3</text><text x="204" y="140" font-size="18" fill="#3d3229">three</text>
+    <circle cx="276" cy="70" r="34" fill="#e0b23e"/><text x="276" y="80" font-size="30" fill="#fff">4</text><text x="276" y="140" font-size="18" fill="#3d3229">four</text>
+    <circle cx="348" cy="70" r="34" fill="#e08a3e"/><text x="348" y="80" font-size="30" fill="#fff">5</text><text x="348" y="140" font-size="18" fill="#3d3229">five</text>
+    <circle cx="420" cy="70" r="34" fill="#8a63d2"/><text x="420" y="80" font-size="30" fill="#fff">6</text><text x="420" y="140" font-size="18" fill="#3d3229">six</text>
+    <circle cx="492" cy="70" r="34" fill="#54b8a8"/><text x="492" y="80" font-size="30" fill="#fff">7</text><text x="492" y="140" font-size="18" fill="#3d3229">seven</text>
+    <circle cx="564" cy="70" r="34" fill="#d2659a"/><text x="564" y="80" font-size="30" fill="#fff">8</text><text x="564" y="140" font-size="18" fill="#3d3229">eight</text>
+    <circle cx="636" cy="70" r="34" fill="#8a6f52"/><text x="636" y="80" font-size="30" fill="#fff">9</text><text x="636" y="140" font-size="18" fill="#3d3229">nine</text>
+    <circle cx="60" cy="190" r="30" fill="#3d3229"/><text x="60" y="199" font-size="26" fill="#fff">10</text><text x="60" y="232" font-size="16" fill="#3d3229">ten</text>
+  </g>
+  <g font-family="Verdana, Arial, sans-serif" fill="#6b5d4f" font-size="15">
+    <text x="360" y="200" text-anchor="middle">Count the circles — one to ten!</text>
+  </g>
+</svg>

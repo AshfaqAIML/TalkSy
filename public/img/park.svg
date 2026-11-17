@@ -1,0 +1,66 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 360" role="img" aria-label="A sunny park: a boy sits reading under a big tree, a dog runs with a yellow ball, two ducks swim in a small lake">
+  <rect width="720" height="360" rx="16" fill="#e8f4fd"/>
+  <!-- Sky -->
+  <circle cx="620" cy="70" r="42" fill="#f7c948"/>
+  <circle cx="620" cy="70" r="56" fill="#f7c948" opacity="0.25"/>
+  <g fill="#ffffff" opacity="0.9">
+    <ellipse cx="150" cy="70" rx="52" ry="20"/>
+    <ellipse cx="190" cy="60" rx="40" ry="18"/>
+    <ellipse cx="440" cy="52" rx="46" ry="17"/>
+    <ellipse cx="480" cy="62" rx="34" ry="14"/>
+  </g>
+  <!-- Ground -->
+  <path d="M0 260 Q 180 232 360 252 T 720 244 L720 360 L0 360 Z" fill="#7cb86a"/>
+  <path d="M0 292 Q 240 272 480 290 T 720 282 L720 360 L0 360 Z" fill="#68a75b"/>
+  <!-- Big tree -->
+  <rect x="212" y="150" width="26" height="110" rx="8" fill="#8a5a33"/>
+  <circle cx="225" cy="118" r="58" fill="#4e9152"/>
+  <circle cx="188" cy="146" r="40" fill="#5aa45e"/>
+  <circle cx="262" cy="146" r="40" fill="#447f48"/>
+  <!-- Boy reading under the tree -->
+  <g>
+    <circle cx="212" cy="232" r="14" fill="#f2c19a"/>
+    <path d="M212 246 q -18 6 -20 26 l 40 0 q -2 -20 -20 -26" fill="#4f7de0"/>
+    <rect x="192" y="272" width="16" height="26" rx="6" fill="#3d4f7d"/>
+    <rect x="216" y="272" width="16" height="26" rx="6" fill="#3d4f7d"/>
+    <rect x="196" y="226" width="34" height="10" rx="3" fill="#e07a3f" transform="rotate(-8 213 231)"/>
+  </g>
+  <!-- Dog running with a yellow ball -->
+  <g transform="translate(430,236)">
+    <ellipse cx="0" cy="26" rx="34" ry="16" fill="#c98d4f"/>
+    <circle cx="34" cy="8" r="13" fill="#c98d4f"/>
+    <circle cx="38" cy="5" r="3" fill="#3d3229"/>
+    <path d="M28 -2 l -4 -10 l 10 4 Z" fill="#a9763f"/>
+    <path d="M40 0 l 12 -4 l -2 8 Z" fill="#a9763f"/>
+    <rect x="-30" y="16" width="9" height="20" rx="4" fill="#b57c42"/>
+    <rect x="22" y="18" width="9" height="20" rx="4" fill="#b57c42"/>
+    <rect x="-12" y="34" width="8" height="16" rx="4" fill="#b57c42"/>
+    <rect x="8" y="34" width="8" height="16" rx="4" fill="#b57c42"/>
+    <path d="M-34 18 q -16 -14 -8 -24" stroke="#a9763f" stroke-width="5" fill="none" stroke-linecap="round"/>
+    <circle cx="-46" cy="-10" r="13" fill="#f7c948"/>
+    <path d="M-46 -23 q 4 -6 0 -10 M-46 -23 q -4 -6 0 -10" stroke="#d9a520" stroke-width="3" fill="none" stroke-linecap="round"/>
+  </g>
+  <!-- Little lake with two ducks -->
+  <ellipse cx="120" cy="322" rx="120" ry="26" fill="#5aa7d6"/>
+  <ellipse cx="120" cy="322" rx="100" ry="18" fill="#79bce2"/>
+  <!-- Duck 1 -->
+  <g transform="translate(86,314)">
+    <ellipse cx="0" cy="8" rx="18" ry="11" fill="#f5f2e8"/>
+    <circle cx="14" cy="-4" r="8" fill="#f5f2e8"/>
+    <path d="M21 -5 l 8 2 l -8 3 Z" fill="#e07a3f"/>
+    <circle cx="17" cy="-6" r="1.6" fill="#3d3229"/>
+  </g>
+  <!-- Duck 2 -->
+  <g transform="translate(150,326)">
+    <ellipse cx="0" cy="8" rx="16" ry="10" fill="#f5f2e8"/>
+    <circle cx="12" cy="-3" r="7" fill="#f5f2e8"/>
+    <path d="M18 -4 l 7 2 l -7 3 Z" fill="#e07a3f"/>
+    <circle cx="15" cy="-5" r="1.4" fill="#3d3229"/>
+  </g>
+  <!-- Small flowers -->
+  <g>
+    <circle cx="330" cy="300" r="5" fill="#e05252"/><circle cx="342" cy="306" r="4" fill="#f7c948"/>
+    <circle cx="560" cy="290" r="5" fill="#e05252"/><circle cx="574" cy="296" r="4" fill="#f7c948"/>
+    <circle cx="650" cy="320" r="5" fill="#b06ad4"/><circle cx="664" cy="314" r="4" fill="#f7c948"/>
+  </g>
+</svg>

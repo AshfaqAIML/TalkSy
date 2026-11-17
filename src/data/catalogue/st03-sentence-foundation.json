@@ -1,0 +1,102 @@
+{
+  "id": "st03",
+  "order": 3,
+  "title": "Sentence Foundation",
+  "cefr": "A1",
+  "goal": "Construct the learner's first English sentences with correct word order, the five basic sentence patterns, and essential question and negation forms.",
+  "entryRequirements": ["st02-exit"],
+  "modules": [
+    {
+      "id": "st03-m01",
+      "title": "Sentence Basics",
+      "description": "What a sentence is, complete versus incomplete sentences, subject, predicate, verb, object and complement, English word order and the five basic sentence patterns.",
+      "units": [
+        {
+          "id": "st03-m01-u01",
+          "title": "What Is a Sentence?",
+          "lessons": [
+            {"id": "st03-m01-u01-l01", "title": "What Is a Sentence? Complete versus Incomplete", "cefr": "A1", "minutes": 12, "objectives": ["Tell a complete sentence from an incomplete fragment", "Finish fragments into full sentences"], "topics": ["sentence-definition", "complete-versus-incomplete", "fragments"], "practice": ["sentence-or-fragment", "finish-the-sentence", "error-correction"], "assessment": "Classify 10 items as sentence or fragment and fix 3 fragments", "skills": ["reading", "writing", "listening"]},
+            {"id": "st03-m01-u01-l02", "title": "Subject and Predicate", "cefr": "A1", "minutes": 12, "objectives": ["Find the subject of a sentence", "Find the predicate (what is said about the subject)"], "topics": ["subject", "predicate", "sentence-parts"], "practice": ["find-the-subject", "find-the-predicate", "sentence-splitting"], "assessment": "Split 8 of 10 sentences into subject and predicate correctly", "skills": ["reading", "writing"]},
+            {"id": "st03-m01-u01-l03", "title": "Verb, Object and Complement", "cefr": "A1", "minutes": 12, "objectives": ["Identify the verb in any practised sentence", "Recognise objects and complements after the verb"], "topics": ["verb", "object", "complement", "sentence-roles"], "practice": ["find-the-verb", "verb-and-what-follows", "labelling-task"], "assessment": "Label verb, object and complement correctly in 8 of 10 sentences", "skills": ["reading", "writing"]}
+          ],
+          "checkpoint": {"criteria": "Identify sentence parts (subject, predicate, verb, object, complement) and distinguish sentences from fragments", "passThreshold": 80}
+        },
+        {
+          "id": "st03-m01-u02",
+          "title": "Sentence Patterns",
+          "lessons": [
+            {"id": "st03-m01-u02-l01", "title": "Word Order: Subject + Verb and Subject + Verb + Object", "cefr": "A1", "minutes": 12, "objectives": ["Apply English subject-first word order", "Build SV and SVO sentences from prompts"], "topics": ["word-order", "subject-verb", "subject-verb-object"], "practice": ["sentence-building", "word-order-drill", "translation-exercise"], "assessment": "Build 8 of 10 correct SV/SVO sentences from scrambled words", "skills": ["reading", "writing", "speaking"]},
+            {"id": "st03-m01-u02-l02", "title": "Subject + Verb + Complement", "cefr": "A1", "minutes": 12, "objectives": ["Use SVC sentences with be and other linking verbs", "Understand that the complement describes the subject"], "topics": ["svc-pattern", "linking-verbs", "description-sentences"], "practice": ["pattern-drill", "complete-the-sentence", "error-correction"], "assessment": "Produce 6 of 8 correct SVC sentences describing people and things", "skills": ["reading", "writing"]},
+            {"id": "st03-m01-u02-l03", "title": "Subject + Verb + Indirect Object + Direct Object", "cefr": "A1", "minutes": 12, "objectives": ["Build SVoO sentences like She gave me a book", "Switch between the two object orders with to and for"], "topics": ["svoo-pattern", "indirect-object", "give-show-send"], "practice": ["pattern-drill", "rewrite-with-to", "sentence-building"], "assessment": "Rewrite 6 of 8 SVoO sentences in the alternative order correctly", "skills": ["reading", "writing"]},
+            {"id": "st03-m01-u02-l04", "title": "Subject + Verb + Object + Complement", "cefr": "A1", "minutes": 12, "objectives": ["Build SVOC sentences like They made her happy", "Distinguish SVOC from SVO and SVC"], "topics": ["svoc-pattern", "object-complement", "make-and-name"], "practice": ["pattern-drill", "choose-the-pattern", "sentence-building"], "assessment": "Classify and build SVOC sentences correctly in 7 of 9 items", "skills": ["reading", "writing"]}
+          ],
+          "checkpoint": {"criteria": "Use all five sentence patterns with correct word order", "passThreshold": 80}
+        }
+      ]
+    },
+    {
+      "id": "st03-m02",
+      "title": "Essential Sentence Words",
+      "description": "The workhorse words of sentences: be, have and do verbs with helping verbs, pronouns, articles, determiners, basic adjectives, adverbs and prepositions.",
+      "units": [
+        {
+          "id": "st03-m02-u01",
+          "title": "Be, Have, Do",
+          "lessons": [
+            {"id": "st03-m02-u01-l01", "title": "Be Verbs: am, is, are", "cefr": "A1", "minutes": 12, "objectives": ["Use am, is and are with the right subject", "Contract forms like I'm and she's"], "topics": ["be-verbs", "am-is-are", "contractions"], "practice": ["fill-the-gap", "transformation-drill", "guided-dialogue"], "assessment": "Complete 10 of 12 sentences with the correct be verb", "skills": ["listening", "speaking", "reading", "writing"]},
+            {"id": "st03-m02-u01-l02", "title": "Have Verbs: have, has", "cefr": "A1", "minutes": 12, "objectives": ["Use have and has correctly", "Talk about possession: I have a sister"], "topics": ["have-has", "possession", "have-got"], "practice": ["fill-the-gap", "speaking-prompts", "error-correction"], "assessment": "Use have/has correctly in 9 of 10 possession sentences", "skills": ["listening", "speaking", "reading", "writing"]},
+            {"id": "st03-m02-u01-l03", "title": "Do Verbs: do, does", "cefr": "A1", "minutes": 12, "objectives": ["Use do and does as main verbs and in questions", "Form short answers: Yes, I do"], "topics": ["do-does", "questions-with-do", "short-answers"], "practice": ["question-building", "short-answer-drill", "guided-dialogue"], "assessment": "Build 8 of 10 do/does questions with short answers", "skills": ["listening", "speaking", "reading", "writing"]},
+            {"id": "st03-m02-u01-l04", "title": "Basic Helping Verbs", "cefr": "A1", "minutes": 12, "objectives": ["Recognise be, have and do as helping verbs", "Understand which helping verb each tense needs"], "topics": ["helping-verbs", "auxiliaries", "verb-groups"], "practice": ["find-the-helper", "main-or-helper-quiz", "transformation-drill"], "assessment": "Identify helping verbs in 8 of 10 sentences and say what they do", "skills": ["reading", "writing", "listening"]}
+          ],
+          "checkpoint": {"criteria": "Use be, have and do as main and helping verbs with correct forms", "passThreshold": 80}
+        },
+        {
+          "id": "st03-m02-u02",
+          "title": "Pronouns, Articles and Determiners",
+          "lessons": [
+            {"id": "st03-m02-u02-l01", "title": "Pronouns: I, you, he, she, it, we, they", "cefr": "A1", "minutes": 12, "objectives": ["Use subject pronouns correctly", "Replace nouns with pronouns in sentences"], "topics": ["pronouns", "subject-pronouns", "noun-replacement"], "practice": ["replace-the-noun", "choose-the-pronoun", "sentence-rewriting"], "assessment": "Use correct pronouns in 10 of 12 items", "skills": ["reading", "writing", "listening"]},
+            {"id": "st03-m02-u02-l02", "title": "Articles: a, an, the", "cefr": "A1", "minutes": 12, "objectives": ["Choose a or an by sound", "Use the for specific things and a/an for general"], "topics": ["articles", "a-an-the", "definite-indefinite"], "practice": ["a-or-an", "the-or-a", "error-correction"], "assessment": "Choose correct articles in 9 of 10 sentences and explain 2 choices", "skills": ["reading", "writing"]},
+            {"id": "st03-m02-u02-l03", "title": "Determiners: this, that, these, those", "cefr": "A1", "minutes": 12, "objectives": ["Choose this/that/these/those by distance and number", "Point things out in real situations"], "topics": ["determiners", "this-that-these-those", "near-and-far"], "practice": ["choose-the-determiner", "point-and-say", "picture-quiz"], "assessment": "Use the four demonstratives correctly in 9 of 10 items", "skills": ["listening", "speaking", "reading", "writing"]}
+          ],
+          "checkpoint": {"criteria": "Use pronouns, articles and demonstrative determiners accurately", "passThreshold": 80}
+        },
+        {
+          "id": "st03-m02-u03",
+          "title": "Describing Words and Prepositions",
+          "lessons": [
+            {"id": "st03-m02-u03-l01", "title": "Basic Adjectives", "cefr": "A1", "minutes": 12, "objectives": ["Use common adjectives before nouns and after be", "Put adjectives in the right place"], "topics": ["adjectives", "adjective-position", "describing-words"], "practice": ["describe-the-picture", "fill-the-adjective", "error-correction"], "assessment": "Place adjectives correctly in 9 of 10 sentences", "skills": ["reading", "writing", "speaking"]},
+            {"id": "st03-m02-u03-l02", "title": "Basic Adverbs", "cefr": "A1", "minutes": 12, "objectives": ["Form adverbs with -ly and use them to describe actions", "Place adverbs like well and fast correctly"], "topics": ["adverbs", "adverb-formation", "describing-actions"], "practice": ["adjective-to-adverb", "choose-adverb-or-adjective", "sentence-building"], "assessment": "Use adverbs correctly in 8 of 10 sentences", "skills": ["reading", "writing"]},
+            {"id": "st03-m02-u03-l03", "title": "Prepositions: in, on, at", "cefr": "A1", "minutes": 12, "objectives": ["Use in, on and at for places", "Understand the general size rule with common exceptions"], "topics": ["prepositions", "in-on-at-places", "preposition-examples"], "practice": ["choose-the-preposition", "where-is-it", "picture-description"], "assessment": "Choose correct prepositions in 9 of 12 place items", "skills": ["reading", "writing", "listening"]}
+          ],
+          "checkpoint": {"criteria": "Describe with adjectives and adverbs and use in/on/at for places", "passThreshold": 80}
+        }
+      ]
+    },
+    {
+      "id": "st03-m03",
+      "title": "Making Sentences",
+      "description": "Affirmative and negative sentences, yes/no questions, WH-questions and subject-verb agreement — putting everything together into real sentence production.",
+      "units": [
+        {
+          "id": "st03-m03-u01",
+          "title": "Polarity and Questions",
+          "lessons": [
+            {"id": "st03-m03-u01-l01", "title": "Affirmative and Negative Sentences", "cefr": "A1", "minutes": 12, "objectives": ["Make sentences negative with not and n't", "Use no as a determiner in simple denials"], "topics": ["affirmative", "negative", "not-contractions"], "practice": ["transformation-drill", "make-it-negative", "error-correction"], "assessment": "Transform 9 of 10 affirmative sentences into correct negatives", "skills": ["reading", "writing", "speaking"]},
+            {"id": "st03-m03-u01-l02", "title": "Yes/No Questions", "cefr": "A1", "minutes": 12, "objectives": ["Invert be and do to form yes/no questions", "Answer with short answers"], "topics": ["yes-no-questions", "inversion", "short-answers"], "practice": ["question-building", "answer-quickly", "guided-dialogue"], "assessment": "Build 9 of 10 yes/no questions and answer with short forms", "skills": ["listening", "speaking", "reading", "writing"]},
+            {"id": "st03-m03-u01-l03", "title": "WH-Questions: what, where, who, when, why, how", "cefr": "A1", "minutes": 12, "objectives": ["Build WH-questions with be and do", "Choose the right question word for each answer"], "topics": ["wh-questions", "question-words", "question-to-answer"], "practice": ["choose-the-question-word", "question-building", "interview-game"], "assessment": "Match 6 question words to answers and build 8 of 10 WH-questions", "skills": ["listening", "speaking", "reading", "writing"]}
+          ],
+          "checkpoint": {"criteria": "Form affirmative, negative, yes/no and WH-questions and answer them", "passThreshold": 80}
+        },
+        {
+          "id": "st03-m03-u02",
+          "title": "Agreement",
+          "lessons": [
+            {"id": "st03-m03-u02-l01", "title": "Subject-Verb Agreement Basics", "cefr": "A1", "minutes": 12, "objectives": ["Match verbs to singular and plural subjects", "Spot and fix agreement errors like he go"], "topics": ["subject-verb-agreement", "third-person-s", "agreement-errors"], "practice": ["agreement-drill", "error-correction", "transformation-drill"], "assessment": "Fix 8 of 10 agreement errors and produce 5 correct sentences", "skills": ["reading", "writing", "listening"]}
+          ],
+          "checkpoint": {"criteria": "Apply subject-verb agreement in production and correction tasks", "passThreshold": 80}
+        }
+      ]
+    }
+  ],
+  "exitAssessment": {"id": "st03-exit", "title": "Sentence Builder Exit Test", "criteria": "Identify sentence parts; build all five patterns; use be/have/do, pronouns, articles, determiners and prepositions; make negatives, yes/no questions and WH-questions; apply subject-verb agreement in writing and a short spoken interview.", "passThreshold": 75, "minutes": 25, "unlocks": ["st04"]}
+}

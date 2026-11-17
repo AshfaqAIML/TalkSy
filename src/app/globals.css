@@ -1,0 +1,888 @@
+@import "tailwindcss";
+@import "tw-animate-css";
+
+@custom-variant dark (&:is(.dark *));
+
+/* ============================================================================
+   TALKSY PREMIUM DESIGN SYSTEM — living token source
+   Docs: docs/design/TALKSY_DESIGN_SYSTEM.md
+   Structure: 1) brand primitives  2) light theme  3) dark theme
+              4) Tailwind theme mapping  5) signature effects  6) base layer
+   ========================================================================== */
+
+/* ----------------------------------------------------------------------------
+   1. BRAND PRIMITIVES — pinned hex values, shared by both themes.
+   Do not override these per-theme; derive theme colors from them instead.
+   -------------------------------------------------------------------------- */
+:root {
+  /* Brand core (as specified by the brand brief) */
+  --brand-navy: #0b1f46;
+  --brand-blue: #1e88e5;
+  --brand-cyan: #06b6d4;
+  --brand-orange: #ff8a00;
+  --brand-gold: #ffc247;
+
+  /* Brand extension — indigo & violet tones for the gradient system */
+  --brand-indigo: #4f46e5;
+  --brand-indigo-soft: #818cf8;
+  --brand-violet: #8b5cf6;
+  --brand-violet-soft: #c4b5fd;
+
+  /* Gradient system (restrained — surfaces & accents, never body text) */
+  --gradient-brand: linear-gradient(135deg, #1e88e5 0%, #4f46e5 52%, #8b5cf6 100%);
+  --gradient-deep: linear-gradient(135deg, #0b1f46 0%, #1668c4 100%);
+  --gradient-fresh: linear-gradient(135deg, #06b6d4 0%, #1e88e5 100%);
+  --gradient-warm: linear-gradient(135deg, #ff8a00 0%, #ffc247 100%);
+  /* Text-safe gradient (every stop ≥ 4.5:1 on white — display headings only) */
+  --gradient-text: linear-gradient(120deg, #1668c4 0%, #4f46e5 55%, #7c3aed 100%);
+
+  /* Layout widths */
+  --container-page: 72rem;    /* main app shell (≈ max-w-6xl) */
+  --container-narrow: 64rem;  /* focus views (≈ max-w-5xl) */
+  --container-reading: 56rem; /* reading / writing detail */
+  --container-text: 42rem;    /* auth, gates, narrow forms */
+  --measure: 66ch;            /* comfortable reading measure */
+
+  /* Radius scale */
+  --radius: 0.75rem;
+
+  /* Elevation — navy-tinted shadows (light enough to work on both themes) */
+  --shadow-xs: 0 1px 2px 0 rgb(11 31 70 / 0.06);
+  --shadow-sm: 0 1px 3px 0 rgb(11 31 70 / 0.08), 0 1px 2px -1px rgb(11 31 70 / 0.06);
+  --shadow-md: 0 4px 8px -2px rgb(11 31 70 / 0.1), 0 2px 4px -2px rgb(11 31 70 / 0.06);
+  --shadow-lg: 0 12px 20px -6px rgb(11 31 70 / 0.14), 0 4px 8px -4px rgb(11 31 70 / 0.08);
+  --shadow-xl: 0 24px 40px -12px rgb(11 31 70 / 0.18);
+  --shadow-2xl: 0 36px 64px -16px rgb(11 31 70 / 0.24);
+  /* Accent glows — used sparingly for feature moments */
+  --shadow-glow-blue: 0 0 0 1px rgb(30 136 229 / 0.18), 0 8px 32px -8px rgb(30 136 229 / 0.35);
+  --shadow-glow-violet: 0 0 0 1px rgb(139 92 246 / 0.18), 0 8px 32px -8px rgb(139 92 246 / 0.35);
+  --shadow-glow-gold: 0 0 0 1px rgb(255 194 71 / 0.28), 0 8px 32px -8px rgb(255 194 71 / 0.4);
+
+  /* Motion */
+  --duration-fast: 150ms;
+  --duration-base: 200ms;
+  --duration-slow: 320ms;
+  --ease-out: cubic-bezier(0.22, 1, 0.36, 1);
+  --ease-spring: cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+/* ----------------------------------------------------------------------------
+   2. LIGHT THEME — warm readable neutrals, navy ink, sophisticated accents.
+   -------------------------------------------------------------------------- */
+:root {
+  --background: #fafaf8;            /* warm paper */
+  --foreground: #1b2540;            /* navy ink */
+
+  --card: #ffffff;
+  --card-foreground: #1b2540;
+  --popover: #ffffff;
+  --popover-foreground: #1b2540;
+
+  --primary: #0b1f46;               /* brand navy — confident primary actions */
+  --primary-foreground: #ffffff;
+  --secondary: #edf1f8;             /* cool blue-gray surface */
+  --secondary-foreground: #1b3a6b;
+  --muted: #f1f2f5;
+  --muted-foreground: #5a6274;
+  --accent: #e8f0fb;                /* light blue hover/accent surface */
+  --accent-foreground: #14376b;
+
+  --destructive: #dc2626;
+  --destructive-foreground: #ffffff;
+
+  --border: #e5e7ec;
+  --input: #d9dde5;
+  --ring: #1e88e5;                  /* brand-blue focus ring (3.5:1 UI) */
+
+  /* Semantic status — solid pairs (bg + on-bg text), text-safe on white */
+  --success: #15803d;
+  --success-foreground: #ffffff;
+  --warning: #b45309;
+  --warning-foreground: #ffffff;
+  --info: #0369a1;
+  --info-foreground: #ffffff;
+  --correct: #15803d;               /* grading: correct */
+  --correct-foreground: #ffffff;
+  --incorrect: #b91c1c;             /* grading: incorrect */
+  --incorrect-foreground: #ffffff;
+
+  /* Skill palette — one hue per skill, AA on white, used on every surface */
+  --skill-reading: #1668c4;
+  --skill-listening: #0e7490;
+  --skill-speaking: #c2410c;
+  --skill-writing: #7c3aed;
+  --skill-vocabulary: #4f46e5;
+  --skill-grammar: #a16207;
+
+  /* Grammatical role palette — Grammar School, Sentence Lab, Error Clinic.
+     Content roles get hue; function words use neutral muted tokens. */
+  --role-subject: #1668c4;
+  --role-verb: #7c3aed;
+  --role-object: #15803d;
+  --role-complement: #4f46e5;
+  --role-modifier: #c2410c;
+  --role-auxiliary: #a16207;
+  --role-negation: #b91c1c;
+  --role-question: #0e7490;
+
+  /* Charts — brand ramp */
+  --chart-1: #1e88e5;
+  --chart-2: #06b6d4;
+  --chart-3: #4f46e5;
+  --chart-4: #ff8a00;
+  --chart-5: #ffc247;
+
+  /* Sidebar */
+  --sidebar: #f6f8fb;
+  --sidebar-foreground: #1b2540;
+  --sidebar-primary: #0b1f46;
+  --sidebar-primary-foreground: #ffffff;
+  --sidebar-accent: #e8f0fb;
+  --sidebar-accent-foreground: #14376b;
+  --sidebar-border: #e5e7ec;
+  --sidebar-ring: #1e88e5;
+}
+
+/* ----------------------------------------------------------------------------
+   3. DARK THEME — deep navy backgrounds, refined blue/violet highlights,
+      luminous gold accents. Text pairs verified ≥ 4.5:1 on card surfaces.
+   -------------------------------------------------------------------------- */
+.dark {
+  --background: #0a1526;            /* deep navy canvas */
+  --foreground: #e9eef8;
+
+  --card: #101e38;                  /* elevated navy surface */
+  --card-foreground: #e9eef8;
+  --popover: #142442;
+  --popover-foreground: #e9eef8;
+
+  --primary: #4d9fea;               /* luminous blue (text AA 5.9–6.5 on surfaces) */
+  --primary-foreground: #06122a;    /* deep-navy text on luminous blue */
+  --secondary: #1b2c4e;
+  --secondary-foreground: #dce6f7;
+  --muted: #18263f;
+  --muted-foreground: #9aa8c3;
+  --accent: #16294a;
+  --accent-foreground: #d7e6fb;
+
+  --destructive: #f87171;           /* light red solid + dark text */
+  --destructive-foreground: #0a1526;
+
+  --border: rgb(255 255 255 / 0.1);
+  --input: rgb(255 255 255 / 0.14);
+  --ring: #4d9fea;
+
+  /* Semantic status — light solids with dark on-bg text (and AA as text) */
+  --success: #4ade80;
+  --success-foreground: #052e12;
+  --warning: #fbbf24;
+  --warning-foreground: #3b2a05;
+  --info: #38bdf8;
+  --info-foreground: #082f49;
+  --correct: #4ade80;
+  --correct-foreground: #052e12;
+  --incorrect: #f87171;
+  --incorrect-foreground: #2b0808;
+
+  /* Skill palette — luminous dark variants */
+  --skill-reading: #6fb3f2;
+  --skill-listening: #22d3ee;
+  --skill-speaking: #fb923c;
+  --skill-writing: #a78bfa;
+  --skill-vocabulary: #818cf8;
+  --skill-grammar: #fcd34d;
+
+  /* Grammatical role palette — luminous dark variants */
+  --role-subject: #6fb3f2;
+  --role-verb: #a78bfa;
+  --role-object: #4ade80;
+  --role-complement: #818cf8;
+  --role-modifier: #fb923c;
+  --role-auxiliary: #fcd34d;
+  --role-negation: #f87171;
+  --role-question: #22d3ee;
+
+  /* Charts — luminous brand ramp */
+  --chart-1: #6fb3f2;
+  --chart-2: #22d3ee;
+  --chart-3: #818cf8;
+  --chart-4: #fb923c;
+  --chart-5: #fcd34d;
+
+  /* Sidebar */
+  --sidebar: #0d1b31;
+  --sidebar-foreground: #e9eef8;
+  --sidebar-primary: #4d9fea;
+  --sidebar-primary-foreground: #06122a;
+  --sidebar-accent: #16294a;
+  --sidebar-accent-foreground: #d7e6fb;
+  --sidebar-border: rgb(255 255 255 / 0.1);
+  --sidebar-ring: #4d9fea;
+
+  /* Dark elevation — near-black depth, navy glows */
+  --shadow-xs: 0 1px 2px 0 rgb(0 0 0 / 0.4);
+  --shadow-sm: 0 1px 3px 0 rgb(0 0 0 / 0.45), 0 1px 2px -1px rgb(0 0 0 / 0.4);
+  --shadow-md: 0 4px 8px -2px rgb(0 0 0 / 0.45), 0 2px 4px -2px rgb(0 0 0 / 0.4);
+  --shadow-lg: 0 12px 20px -6px rgb(0 0 0 / 0.55), 0 4px 8px -4px rgb(0 0 0 / 0.45);
+  --shadow-xl: 0 24px 40px -12px rgb(0 0 0 / 0.6);
+  --shadow-2xl: 0 36px 64px -16px rgb(0 0 0 / 0.65);
+  --shadow-glow-blue: 0 0 0 1px rgb(77 159 234 / 0.25), 0 8px 32px -8px rgb(30 136 229 / 0.45);
+  --shadow-glow-violet: 0 0 0 1px rgb(167 139 250 / 0.25), 0 8px 32px -8px rgb(139 92 246 / 0.45);
+  --shadow-glow-gold: 0 0 0 1px rgb(252 211 77 / 0.3), 0 8px 32px -8px rgb(255 194 71 / 0.45);
+}
+
+
+/* ----------------------------------------------------------------------------
+   3b. LEGACY PALETTE BRIDGE — pre-redesign scale names on the new brand.
+   The PROMPT 52 redesign renamed the palette, but ~280 components still
+   reference the original scale utilities (ink/sand/grove/sun/clay, the
+   numeric brand ramp, paper/line, gold, phase hues). This bridge re-points
+   every legacy name at the new brand system so nothing renders unstyled,
+   and inverts ink/brand per the original dark-theme convention
+   (low numbers = dark surfaces, high numbers = luminous text).
+   All text-bearing steps are WCAG-AA verified by tests/design-system.test.ts.
+   -------------------------------------------------------------------------- */
+:root {
+  /* Brand ramp — the brand-blue hue family (500 = brand-blue itself) */
+  --brand-50: #eff6ff;
+  --brand-100: #dbeafe;
+  --brand-200: #bfdbfe;
+  --brand-300: #93c5fd;
+  --brand-400: #60a5fa;
+  --brand-500: #1e88e5;
+  --brand-600: #1668c4;   /* solid w/ white text (5.5:1) */
+  --brand-700: #1259a8;   /* text on light (7.0:1) */
+  --brand-800: #0d3f80;
+  --brand-900: #0b1f46;   /* brand navy */
+  --brand-950: #081634;
+
+  /* Ink ramp — neutral navy-gray text & UI scale */
+  --ink-50: #f6f8fb;
+  --ink-100: #eef1f6;
+  --ink-200: #dde3ec;
+  --ink-300: #c2ccdb;
+  --ink-400: #7e8ca4;     /* non-text UI (icons, dots) */
+  --ink-500: #64748c;     /* secondary text (4.6:1 on paper) */
+  --ink-600: #5a6274;     /* = muted-foreground */
+  --ink-700: #49536a;
+  --ink-800: #2c3a5c;
+  --ink-900: #1b2540;     /* = foreground (body text) */
+  --ink-950: #101a30;
+
+  /* Sand — quiet neutral surfaces */
+  --sand-50: #fcfcfe;
+  --sand-100: #f1f2f5;    /* = muted */
+  --sand-200: #edf1f8;    /* = secondary */
+  --sand-300: #e5e7ec;    /* = border */
+
+  /* Grove — success green */
+  --grove-50: #f0fdf4;
+  --grove-100: #dcfce7;
+  --grove-300: #86efac;
+  --grove-400: #4ade80;
+  --grove-500: #22c55e;
+  --grove-600: #15803d;   /* solid w/ white text (5.0:1) */
+  --grove-700: #166534;   /* text on light (7.1:1) */
+  --grove-900: #14532d;
+
+  /* Sun — warning amber */
+  --sun-50: #fffbeb;
+  --sun-100: #fef3c7;
+  --sun-400: #fbbf24;
+  --sun-500: #f59e0b;
+  --sun-600: #b45309;     /* solid w/ white text (5.0:1) */
+  --sun-700: #92400e;     /* text on light (7.1:1) */
+
+  /* Clay — danger red */
+  --clay-50: #fef2f2;
+  --clay-100: #fee2e2;
+  --clay-400: #f87171;
+  --clay-500: #ef4444;
+  --clay-600: #dc2626;    /* = destructive (4.8:1 w/ white) */
+  --clay-700: #b91c1c;    /* = incorrect (6.5:1 text) */
+  --clay-900: #7f1d1d;
+
+  /* Paper & line — page/neutral surfaces */
+  --paper: #fafaf8;       /* = background */
+  --line: #e5e7ec;        /* = border */
+  --line-strong: #d1d5dd;
+
+  /* Gold — achievement & XP (brand gold family) */
+  --gold: #e8a93e;        /* icon-grade gold */
+  --gold-600: #a16207;    /* text-safe gold on light (5.0:1) */
+  --gold-foreground: #3a2b05; /* dark text on gold fills (8.1:1) */
+
+  /* Phase palette — the seven exercise phases, AA with white text */
+  --phase-guided: #0e7490;
+  --phase-independent: #7c3aed;
+  --phase-speaking: #c2410c;
+  --phase-listening: #a16207;
+  --phase-reading: #1668c4;
+  --phase-writing: #15803d;
+  --phase-assessment: #0369a1;
+}
+
+/* Dark theme: ink/brand ramps invert (low = dark surface, high = luminous
+   text), status hues turn luminous, surfaces become navy. */
+.dark {
+  --brand-50: #081634;
+  --brand-100: #16294a;   /* = accent (dark) */
+  --brand-200: #1d3a6e;
+  --brand-300: #2a4d8f;
+  --brand-400: #6fb3f2;
+  --brand-500: #4d9fea;   /* = primary (dark) */
+  --brand-600: #4d9fea;
+  --brand-700: #6fb3f2;   /* luminous text (7.4:1 on dark card) */
+  --brand-800: #a5c8f5;
+  --brand-900: #d7e6fb;
+  --brand-950: #eaf2fc;
+
+  --ink-50: #0a1526;      /* = background (dark) */
+  --ink-100: #101e38;     /* = card (dark) */
+  --ink-200: #162442;
+  --ink-300: #26365a;
+  --ink-400: #8fa0bd;     /* non-text UI on dark */
+  --ink-500: #9aa8c3;     /* = muted-foreground (dark) */
+  --ink-600: #b6c2d9;
+  --ink-700: #d3dcef;
+  --ink-800: #e2e9f5;
+  --ink-900: #e9eef8;     /* = foreground (dark) */
+  --ink-950: #f4f7fc;
+
+  --sand-50: #0d1b31;
+  --sand-100: #162442;
+  --sand-200: #1b2c4e;    /* = secondary (dark) */
+  --sand-300: #24365c;
+
+  --grove-50: #0d2818;
+  --grove-100: #143324;
+  --grove-300: #166534;
+  --grove-400: #4ade80;
+  --grove-500: #34d399;
+  --grove-600: #4ade80;
+  --grove-700: #86efac;   /* luminous text (11.8:1) */
+  --grove-900: #bbf7d0;
+
+  --sun-50: #291f05;
+  --sun-100: #33270a;
+  --sun-400: #fbbf24;
+  --sun-500: #f59e0b;
+  --sun-600: #fbbf24;
+  --sun-700: #fcd34d;     /* luminous text (11.5:1) */
+
+  --clay-50: #2b1112;
+  --clay-100: #3b1a1c;
+  --clay-400: #f87171;
+  --clay-500: #ef4444;
+  --clay-600: #f87171;    /* = destructive (dark) */
+  --clay-700: #fca5a5;    /* luminous text (8.8:1) */
+  --clay-900: #fecaca;
+
+  --paper: #0a1526;       /* = background (dark) */
+  --line: rgb(255 255 255 / 0.12);
+  --line-strong: rgb(255 255 255 / 0.22);
+
+  --gold: #fcd34d;
+  --gold-600: #fcd34d;
+  --gold-foreground: #3a2b05;
+
+  /* Phase hues — luminous on the dark canvas (≥3:1, chip/text safe) */
+  --phase-guided: #22d3ee;
+  --phase-independent: #a78bfa;
+  --phase-speaking: #fb923c;
+  --phase-listening: #fcd34d;
+  --phase-reading: #6fb3f2;
+  --phase-writing: #4ade80;
+  --phase-assessment: #38bdf8;
+}
+
+/* ----------------------------------------------------------------------------
+   4. TAILWIND THEME MAPPING — exposes every token as a utility.
+   e.g. --color-success → bg-success / text-success / border-success
+        --font-heading   → font-heading
+        --shadow-glow-blue → shadow-glow-blue
+   -------------------------------------------------------------------------- */
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --font-sans: var(--font-inter), ui-sans-serif, system-ui, sans-serif;
+  --font-heading: var(--font-poppins), var(--font-inter), ui-sans-serif, sans-serif;
+  --font-mono: var(--font-geist-mono), ui-monospace, "SFMono-Regular", monospace;
+  --color-sidebar-ring: var(--sidebar-ring);
+  --color-sidebar-border: var(--sidebar-border);
+  --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
+  --color-sidebar-accent: var(--sidebar-accent);
+  --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
+  --color-sidebar-primary: var(--sidebar-primary);
+  --color-sidebar-foreground: var(--sidebar-foreground);
+  --color-sidebar: var(--sidebar);
+  --color-chart-5: var(--chart-5);
+  --color-chart-4: var(--chart-4);
+  --color-chart-3: var(--chart-3);
+  --color-chart-2: var(--chart-2);
+  --color-chart-1: var(--chart-1);
+  --color-ring: var(--ring);
+  --color-input: var(--input);
+  --color-border: var(--border);
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-accent: var(--accent);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-muted: var(--muted);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-secondary: var(--secondary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-primary: var(--primary);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-popover: var(--popover);
+  --color-card-foreground: var(--card-foreground);
+  --color-card: var(--card);
+
+  /* Semantic status */
+  --color-success: var(--success);
+  --color-success-foreground: var(--success-foreground);
+  --color-warning: var(--warning);
+  --color-warning-foreground: var(--warning-foreground);
+  --color-info: var(--info);
+  --color-info-foreground: var(--info-foreground);
+  --color-correct: var(--correct);
+  --color-correct-foreground: var(--correct-foreground);
+  --color-incorrect: var(--incorrect);
+  --color-incorrect-foreground: var(--incorrect-foreground);
+
+  /* Brand primitives (bg-brand-blue, text-brand-gold, …) */
+  --color-brand-navy: var(--brand-navy);
+  --color-brand-blue: var(--brand-blue);
+  --color-brand-cyan: var(--brand-cyan);
+  --color-brand-orange: var(--brand-orange);
+  --color-brand-gold: var(--brand-gold);
+  --color-brand-indigo: var(--brand-indigo);
+  --color-brand-indigo-soft: var(--brand-indigo-soft);
+  --color-brand-violet: var(--brand-violet);
+  --color-brand-violet-soft: var(--brand-violet-soft);
+
+  /* Skill palette (bg-skill-reading, text-skill-writing, …) */
+  --color-skill-reading: var(--skill-reading);
+  --color-skill-listening: var(--skill-listening);
+  --color-skill-speaking: var(--skill-speaking);
+  --color-skill-writing: var(--skill-writing);
+  --color-skill-vocabulary: var(--skill-vocabulary);
+  --color-skill-grammar: var(--skill-grammar);
+
+  /* Grammatical roles (bg-role-verb, text-role-subject, …) */
+  --color-role-subject: var(--role-subject);
+  --color-role-verb: var(--role-verb);
+  --color-role-object: var(--role-object);
+  --color-role-complement: var(--role-complement);
+  --color-role-modifier: var(--role-modifier);
+  --color-role-auxiliary: var(--role-auxiliary);
+  --color-role-negation: var(--role-negation);
+  --color-role-question: var(--role-question);
+
+  /* Elevation & glow utilities (shadow-md, shadow-glow-blue, …) */
+  --shadow-xs: var(--shadow-xs);
+  --shadow-sm: var(--shadow-sm);
+  --shadow-md: var(--shadow-md);
+  --shadow-lg: var(--shadow-lg);
+  --shadow-xl: var(--shadow-xl);
+  --shadow-2xl: var(--shadow-2xl);
+  --shadow-glow-blue: var(--shadow-glow-blue);
+  --shadow-glow-violet: var(--shadow-glow-violet);
+  --shadow-glow-gold: var(--shadow-glow-gold);
+
+  /* Legacy palette bridge (utilities: bg-ink-500, text-grove-700, …) */
+  --color-brand-50: var(--brand-50);
+  --color-brand-100: var(--brand-100);
+  --color-brand-200: var(--brand-200);
+  --color-brand-300: var(--brand-300);
+  --color-brand-400: var(--brand-400);
+  --color-brand-500: var(--brand-500);
+  --color-brand-600: var(--brand-600);
+  --color-brand-700: var(--brand-700);
+  --color-brand-800: var(--brand-800);
+  --color-brand-900: var(--brand-900);
+  --color-brand-950: var(--brand-950);
+  --color-ink-50: var(--ink-50);
+  --color-ink-100: var(--ink-100);
+  --color-ink-200: var(--ink-200);
+  --color-ink-300: var(--ink-300);
+  --color-ink-400: var(--ink-400);
+  --color-ink-500: var(--ink-500);
+  --color-ink-600: var(--ink-600);
+  --color-ink-700: var(--ink-700);
+  --color-ink-800: var(--ink-800);
+  --color-ink-900: var(--ink-900);
+  --color-ink-950: var(--ink-950);
+  --color-sand-50: var(--sand-50);
+  --color-sand-100: var(--sand-100);
+  --color-sand-200: var(--sand-200);
+  --color-sand-300: var(--sand-300);
+  --color-grove-50: var(--grove-50);
+  --color-grove-100: var(--grove-100);
+  --color-grove-300: var(--grove-300);
+  --color-grove-400: var(--grove-400);
+  --color-grove-500: var(--grove-500);
+  --color-grove-600: var(--grove-600);
+  --color-grove-700: var(--grove-700);
+  --color-grove-900: var(--grove-900);
+  --color-sun-50: var(--sun-50);
+  --color-sun-100: var(--sun-100);
+  --color-sun-400: var(--sun-400);
+  --color-sun-500: var(--sun-500);
+  --color-sun-600: var(--sun-600);
+  --color-sun-700: var(--sun-700);
+  --color-clay-50: var(--clay-50);
+  --color-clay-100: var(--clay-100);
+  --color-clay-400: var(--clay-400);
+  --color-clay-500: var(--clay-500);
+  --color-clay-600: var(--clay-600);
+  --color-clay-700: var(--clay-700);
+  --color-clay-900: var(--clay-900);
+  --color-paper: var(--paper);
+  --color-line: var(--line);
+  --color-line-strong: var(--line-strong);
+  --color-gold: var(--gold);
+  --color-gold-600: var(--gold-600);
+  --color-gold-foreground: var(--gold-foreground);
+  --color-phase-guided: var(--phase-guided);
+  --color-phase-independent: var(--phase-independent);
+  --color-phase-speaking: var(--phase-speaking);
+  --color-phase-listening: var(--phase-listening);
+  --color-phase-reading: var(--phase-reading);
+  --color-phase-writing: var(--phase-writing);
+  --color-phase-assessment: var(--phase-assessment);
+
+  /* Radius scale (rounded-sm … rounded-xl) */
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+
+  /* Display type (landing hero) — text-display */
+  --text-display: 3.25rem;
+  --text-display--line-height: 1.08;
+  --text-display--letter-spacing: -0.02em;
+  --text-display--font-weight: 700;
+
+  /* Motion keyframe registrations (used by .animate-accordion-* etc.) */
+  --animate-accordion-down: accordion-down 0.28s var(--ease-out);
+  --animate-accordion-up: accordion-up 0.24s var(--ease-out);
+}
+
+/* ----------------------------------------------------------------------------
+   5. SIGNATURE VISUAL EFFECTS — a restrained, reusable collection.
+   Rules of restraint:
+   • one ambient glow per page (hero only)
+   • gradient text only on display headings (≥ text-3xl)
+   • animated borders only on ONE feature element per view
+   • glass surfaces only over ambient/mesh backdrops or nav overlays
+   -------------------------------------------------------------------------- */
+@layer components {
+  /* Gradient text — display headings only; every stop ≥ 4.5:1 on white */
+  .text-gradient {
+    background-image: var(--gradient-text);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+  }
+
+  /* Gradient surfaces */
+  .bg-gradient-brand { background-image: var(--gradient-brand); }
+  .bg-gradient-deep { background-image: var(--gradient-deep); }
+  .bg-gradient-fresh { background-image: var(--gradient-fresh); }
+  .bg-gradient-warm { background-image: var(--gradient-warm); }
+
+  /* Soft ambient glow — page-level hero atmosphere (one per page) */
+  .ambient-glow { position: relative; isolation: isolate; }
+  .ambient-glow::before {
+    content: "";
+    position: absolute;
+    inset: -1px;
+    z-index: -1;
+    pointer-events: none;
+    background:
+      radial-gradient(42rem 22rem at 12% -4%, color-mix(in oklab, var(--brand-blue) 14%, transparent), transparent 70%),
+      radial-gradient(38rem 20rem at 88% 0%, color-mix(in oklab, var(--brand-violet) 12%, transparent), transparent 70%),
+      radial-gradient(30rem 18rem at 55% 108%, color-mix(in oklab, var(--brand-cyan) 10%, transparent), transparent 70%);
+  }
+
+  /* Subtle background mesh — quiet section differentiation */
+  .mesh-subtle {
+    background-image:
+      radial-gradient(color-mix(in oklab, var(--brand-blue) 7%, transparent) 1px, transparent 1px),
+      radial-gradient(color-mix(in oklab, var(--brand-violet) 5%, transparent) 1px, transparent 1px);
+    background-size: 28px 28px, 28px 28px;
+    background-position: 0 0, 14px 14px;
+  }
+
+  /* Gradient border — static (feature cards) */
+  .gradient-border {
+    border: 1px solid transparent;
+    background:
+      linear-gradient(var(--card), var(--card)) padding-box,
+      var(--gradient-brand) border-box;
+  }
+
+  /* Animated gradient border — one feature element per view only */
+  @property --gb-angle {
+    syntax: "<angle>";
+    initial-value: 0deg;
+    inherits: false;
+  }
+  .gradient-border-animated {
+    border: 1px solid transparent;
+    background:
+      linear-gradient(var(--card), var(--card)) padding-box,
+      conic-gradient(from var(--gb-angle), #1e88e5, #8b5cf6, #06b6d4, #1e88e5) border-box;
+    animation: gb-rotate 8s linear infinite;
+  }
+  @keyframes gb-rotate {
+    to { --gb-angle: 360deg; }
+  }
+
+  /* Layered translucent surface — over ambient/mesh backdrops */
+  .surface-glass {
+    background: color-mix(in oklab, var(--card) 78%, transparent);
+    backdrop-filter: blur(14px) saturate(1.1);
+    -webkit-backdrop-filter: blur(14px) saturate(1.1);
+  }
+
+  /* Refined card hover lift — pair with border-color change at call site */
+  .lift-hover {
+    transition:
+      transform var(--duration-base) var(--ease-out),
+      box-shadow var(--duration-base) var(--ease-out),
+      border-color var(--duration-base) var(--ease-out);
+  }
+  .lift-hover:hover {
+    transform: translateY(-2px);
+  }
+
+  /* Animated progress indicator shimmer (busy determinate bars) */
+  .progress-shimmer { position: relative; overflow: hidden; }
+  .progress-shimmer::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(100deg, transparent 20%, rgb(255 255 255 / 0.45) 50%, transparent 80%);
+    transform: translateX(-100%);
+    animation: shimmer 2.4s var(--ease-out) infinite;
+  }
+  @keyframes shimmer {
+    to { transform: translateX(100%); }
+  }
+
+  /* Smooth section entrance — apply to view roots, once per mount */
+  .section-enter {
+    animation: section-enter var(--duration-slow) var(--ease-out) both;
+  }
+  @keyframes section-enter {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: none; }
+  }
+
+  /* Soft live-status dot pulse */
+  .pulse-soft {
+    animation: pulse-soft 2.4s ease-in-out infinite;
+  }
+  @keyframes pulse-soft {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0.5; }
+  }
+
+  /* ------------------------------------------------------------------
+     MOTION UTILITIES — CSS half of the motion design system.
+     JS half (Framer Motion variants): src/lib/motion.ts
+     Rules: transform/opacity only; ≤ 320ms for UI feedback; loops ≥ 2s.
+     ------------------------------------------------------------------ */
+
+  /* Tactile press — buttons and selectable tiles (pairs with any variant) */
+  .press {
+    transition: transform var(--duration-fast) var(--ease-out);
+  }
+  .press:active {
+    transform: scale(0.97);
+  }
+
+  /* Standard interactive-card hover (upgraded lift-hover with press) */
+  .card-interactive {
+    transition:
+      transform var(--duration-base) var(--ease-out),
+      box-shadow var(--duration-base) var(--ease-out),
+      border-color var(--duration-base) var(--ease-out);
+  }
+  .card-interactive:hover {
+    transform: translateY(-2px);
+  }
+  .card-interactive:active {
+    transform: translateY(0) scale(0.99);
+  }
+
+  /* Pure-CSS stagger for simple lists (set --stagger-i on children) */
+  .stagger-in > * {
+    animation: stagger-rise var(--duration-slow) var(--ease-out) both;
+    animation-delay: calc(min(var(--stagger-i, 0), 10) * 30ms);
+  }
+  @keyframes stagger-rise {
+    from { opacity: 0; transform: translateY(8px); }
+    to { opacity: 1; transform: none; }
+  }
+
+  /* Success flash — exercise graded correct (border + soft green wash) */
+  .flash-success {
+    animation: flash-success var(--duration-slow) var(--ease-out);
+  }
+  @keyframes flash-success {
+    0% { box-shadow: 0 0 0 0 rgb(21 128 61 / 0.25); }
+    100% { box-shadow: 0 0 0 10px rgb(21 128 61 / 0); }
+  }
+
+  /* Achievement unlock — gold ring settles behind the medal */
+  .unlock-glow {
+    animation: unlock-glow 0.9s var(--ease-out) both;
+  }
+  @keyframes unlock-glow {
+    0% { box-shadow: 0 0 0 0 rgb(255 194 71 / 0.55); }
+    60% { box-shadow: 0 0 0 8px rgb(255 194 71 / 0.18); }
+    100% { box-shadow: 0 0 0 12px rgb(255 194 71 / 0); }
+  }
+
+  /* Slow float for decorative elements (JS <Float> for richer control) */
+  .float-y {
+    animation: float-y 6s ease-in-out infinite;
+  }
+  .float-y-slow {
+    animation: float-y 9s ease-in-out infinite;
+  }
+  @keyframes float-y {
+    0%, 100% { transform: translateY(-6px); }
+    50% { transform: translateY(6px); }
+  }
+
+  /* Animated background gradient — slow 14s pan, one panel per view max */
+  .gradient-pan {
+    background-size: 200% 200%;
+    animation: gradient-pan 14s ease-in-out infinite;
+  }
+  @keyframes gradient-pan {
+    0%, 100% { background-position: 0% 0%; }
+    50% { background-position: 100% 100%; }
+  }
+
+  /* Skeleton shimmer — brand-tinted sweep (upgrade of animate-pulse) */
+  .skeleton-shimmer {
+    position: relative;
+    overflow: hidden;
+    background: color-mix(in oklab, var(--muted-foreground) 12%, transparent);
+  }
+  .skeleton-shimmer::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    transform: translateX(-100%);
+    background: linear-gradient(
+      100deg,
+      transparent 20%,
+      color-mix(in oklab, var(--card) 65%, transparent) 50%,
+      transparent 80%
+    );
+    animation: shimmer 2.2s var(--ease-out) infinite;
+  }
+
+  /* Recording state — microphone halo (follows the --incorrect token) */
+  .mic-live {
+    animation: mic-live 1.8s ease-in-out infinite;
+  }
+  @keyframes mic-live {
+    0%, 100% { box-shadow: 0 0 0 0 color-mix(in oklab, var(--incorrect) 45%, transparent); }
+    50% { box-shadow: 0 0 0 12px color-mix(in oklab, var(--incorrect) 0%, transparent); }
+  }
+
+  /* Audio playing — equalizer bars (set per-bar --bar-i for phase offset) */
+  .eq-bar {
+    transform-origin: bottom;
+    animation: eq-bar 1s ease-in-out infinite;
+    animation-delay: calc(var(--bar-i, 0) * 0.12s);
+  }
+  @keyframes eq-bar {
+    0%, 100% { transform: scaleY(0.35); }
+    50% { transform: scaleY(1); }
+  }
+
+  /* Indeterminate progress bar slide (used by <Progress indeterminate>) */
+  @keyframes progress-slide {
+    0% { transform: translateX(-120%); }
+    100% { transform: translateX(320%); }
+  }
+
+  /* Radix accordion height animation (exposes --radix-accordion-content-height) */
+  @keyframes accordion-down {
+    from { height: 0; }
+    to { height: var(--radix-accordion-content-height); }
+  }
+  @keyframes accordion-up {
+    from { height: var(--radix-accordion-content-height); }
+    to { height: 0; }
+  }
+}
+
+/* ----------------------------------------------------------------------------
+   6. BASE LAYER
+   -------------------------------------------------------------------------- */
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+  html {
+    scroll-behavior: smooth;
+  }
+  body {
+    @apply bg-background font-sans text-foreground antialiased;
+    text-rendering: optimizeLegibility;
+  }
+  /* Poppins for headings, Inter for everything else */
+  h1, h2, h3, h4 {
+    font-family: var(--font-poppins), var(--font-inter), ui-sans-serif, sans-serif;
+    letter-spacing: -0.015em;
+  }
+  /* Accessible focus indicator — visible on all interactive elements */
+  :focus-visible {
+    outline: 2px solid var(--ring);
+    outline-offset: 2px;
+  }
+  /* Interactive elements clear the sticky page header when scrolled into
+     view (programmatic scrollIntoView, browser find, a11y navigation). */
+  button,
+  a,
+  input,
+  textarea,
+  select,
+  [role="button"],
+  [role="radio"],
+  [role="tab"] {
+    scroll-margin-top: 5rem;
+  }
+}
+
+/* Respect users who prefer reduced motion: keep only opacity-safe fades. */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+/* Print safety: scroll-gated entrances (JS <Reveal>) must never hide content
+   when the page is printed or saved as PDF — force final states. */
+@media print {
+  [data-print-safe],
+  [style*="opacity"] {
+    opacity: 1 !important;
+    transform: none !important;
+  }
+}

@@ -1,0 +1,103 @@
+{
+  "id": "st07",
+  "order": 7,
+  "title": "Writing Development",
+  "cefr": "A1 → B2",
+  "goal": "Develop writing from alphabet and word spelling to structured essays, summaries and professional communication, with feedback at every step.",
+  "entryRequirements": ["st06-exit"],
+  "modules": [
+    {
+      "id": "st07-m01",
+      "title": "From Letters to Sentences",
+      "description": "The mechanics of writing: letter formation, word spelling, sentence writing and expansion, at A1.",
+      "entryRequirements": ["st01-exit"],
+      "units": [
+        {
+          "id": "st07-m01-u01",
+          "title": "Writing Mechanics",
+          "lessons": [
+            {"id": "st07-m01-u01-l01", "title": "Alphabet Writing and Word Spelling", "cefr": "A1", "minutes": 12, "objectives": ["Write all 26 letters by hand or keyboard fluently", "Spell the first 60 core words correctly"], "topics": ["handwriting", "spelling", "core-word-spelling"], "practice": ["spelling-dictation", "write-from-memory", "typing-practice"], "assessment": "Spell 18 of 20 dictated core words correctly with proper letter forms", "skills": ["writing", "listening"]},
+            {"id": "st07-m01-u01-l02", "title": "Sentence Writing", "cefr": "A1", "minutes": 12, "objectives": ["Write grammatical sentences from prompts", "Apply capitalisation and end punctuation consistently"], "topics": ["sentence-writing", "punctuation", "prompt-writing"], "practice": ["picture-prompts", "guided-writing", "error-correction"], "assessment": "Write 8 prompted sentences with 7 grammatical and correctly punctuated", "skills": ["writing", "reading"]},
+            {"id": "st07-m01-u01-l03", "title": "Sentence Expansion", "cefr": "A1", "minutes": 12, "objectives": ["Expand simple sentences with adjectives, adverbs and phrases", "Keep expanded sentences correct"], "topics": ["sentence-expansion", "adding-detail", "writing-fluency"], "practice": ["expansion-ladder", "describe-more", "guided-writing"], "assessment": "Expand 5 sentences correctly in two stages each", "skills": ["writing", "reading"]}
+          ],
+          "checkpoint": {"criteria": "Write correctly spelled, punctuated and expanded sentences from prompts", "passThreshold": 80}
+        }
+      ]
+    },
+    {
+      "id": "st07-m02",
+      "title": "Paragraphs",
+      "description": "Connected writing at A2: joining sentences, paragraph construction, topic sentences, supporting details and conclusions.",
+      "entryRequirements": ["st03-exit"],
+      "units": [
+        {
+          "id": "st07-m02-u01",
+          "title": "Paragraph Construction",
+          "lessons": [
+            {"id": "st07-m02-u01-l01", "title": "Connected Sentences", "cefr": "A2", "minutes": 12, "objectives": ["Link sentences with and, but, so, because and then", "Keep pronoun reference clear across sentences"], "topics": ["connected-writing", "linking-words", "pronoun-reference"], "practice": ["sentence-combination", "guided-writing", "coherence-quiz"], "assessment": "Turn 6 sentence groups into connected mini-texts with correct linkers", "skills": ["writing", "reading"]},
+            {"id": "st07-m02-u01-l02", "title": "Topic Sentences", "cefr": "A2", "minutes": 12, "objectives": ["Write a clear topic sentence", "Recognise and repair off-topic sentences"], "topics": ["topic-sentence", "paragraph-unity", "staying-on-topic"], "practice": ["write-the-topic-sentence", "odd-sentence-out", "paragraph-analysis"], "assessment": "Write 4 topic sentences and identify 4 off-topic sentences", "skills": ["writing", "reading"]},
+            {"id": "st07-m02-u01-l03", "title": "Supporting Details", "cefr": "A2", "minutes": 12, "objectives": ["Support topic sentences with 2-3 relevant details", "Use examples, reasons and facts as support"], "topics": ["supporting-details", "examples-reasons", "paragraph-body"], "practice": ["add-the-support", "detail-relevance-quiz", "guided-writing"], "assessment": "Develop 3 topic sentences into full paragraphs with relevant support", "skills": ["writing", "reading"]},
+            {"id": "st07-m02-u01-l04", "title": "Conclusions", "cefr": "A2", "minutes": 12, "objectives": ["End paragraphs with a closing sentence", "Restate or reflect without repeating word-for-word"], "topics": ["concluding-sentences", "paragraph-endings", "restatement"], "practice": ["write-the-conclusion", "match-conclusion", "guided-writing"], "assessment": "Complete 3 paragraphs with appropriate closing sentences", "skills": ["writing", "reading"]}
+          ],
+          "checkpoint": {"criteria": "Write unified, supported, well-closed paragraphs", "passThreshold": 80}
+        }
+      ]
+    },
+    {
+      "id": "st07-m03",
+      "title": "Writing Genres",
+      "description": "Real writing purposes at B1: descriptive, narrative and opinion writing, plus practical texts — letters, applications, emails, notices and reports.",
+      "entryRequirements": ["st05-exit"],
+      "units": [
+        {
+          "id": "st07-m03-u01",
+          "title": "Creative and Personal Writing",
+          "lessons": [
+            {"id": "st07-m03-u01-l01", "title": "Descriptive Writing", "cefr": "B1", "minutes": 12, "objectives": ["Describe a place or person with sensory detail", "Organise description spatially or by importance"], "topics": ["descriptive-writing", "sensory-detail", "organisation"], "practice": ["describe-a-place", "guided-writing", "detail-upgrade"], "assessment": "Write a 120-word description with at least 5 specific details", "skills": ["writing", "reading"]},
+            {"id": "st07-m03-u01-l02", "title": "Narrative Writing", "cefr": "B1", "minutes": 12, "objectives": ["Tell a story with clear sequence and one turning point", "Use past tenses consistently in narration"], "topics": ["narrative-writing", "story-structure", "past-tense-narration"], "practice": ["story-planning", "guided-writing", "sequence-check"], "assessment": "Write a 150-word story with clear beginning, problem and resolution", "skills": ["writing", "reading"]},
+            {"id": "st07-m03-u01-l03", "title": "Opinion Writing", "cefr": "B1", "minutes": 12, "objectives": ["State an opinion and support it with two reasons and an example", "Use opinion language: I think, in my view"], "topics": ["opinion-writing", "reasons-and-examples", "opinion-language"], "practice": ["opinion-paragraph", "reason-support-drill", "guided-writing"], "assessment": "Write a structured opinion paragraph: opinion, 2 reasons, 1 example", "skills": ["writing", "reading"]}
+          ],
+          "checkpoint": {"criteria": "Write descriptive, narrative and opinion texts of 120-150 words with structure", "passThreshold": 80}
+        },
+        {
+          "id": "st07-m03-u02",
+          "title": "Practical Writing",
+          "lessons": [
+            {"id": "st07-m03-u02-l01", "title": "Letters", "cefr": "B1", "minutes": 12, "objectives": ["Write a personal letter with greeting, body and sign-off", "Match register to recipient"], "topics": ["letter-format", "personal-letters", "register"], "practice": ["letter-template", "guided-writing", "register-quiz"], "assessment": "Write a correct 100-word personal letter with proper format", "skills": ["writing", "reading"]},
+            {"id": "st07-m03-u02-l02", "title": "Applications", "cefr": "B1", "minutes": 12, "objectives": ["Write a short, honest application (course, membership, job)", "Present relevant personal information clearly"], "topics": ["applications", "formal-writing-intro", "self-presentation"], "practice": ["application-drafting", "guided-writing", "improve-the-draft"], "assessment": "Write a 100-word application including all required elements", "skills": ["writing", "reading"]},
+            {"id": "st07-m03-u02-l03", "title": "Emails and Notices", "cefr": "B1", "minutes": 12, "objectives": ["Write clear emails with subject, greeting, purpose and closing", "Write short public notices with the key information first"], "topics": ["email-format", "notices", "clarity-first"], "practice": ["email-writing", "notice-writing", "clarity-editing"], "assessment": "Write one request email and one notice, both complete and clear", "skills": ["writing", "reading"]},
+            {"id": "st07-m03-u02-l04", "title": "Reports", "cefr": "B1", "minutes": 12, "objectives": ["Structure a short factual report: introduction, findings, conclusion", "Keep report language objective"], "topics": ["report-structure", "objective-language", "sections"], "practice": ["report-planning", "guided-writing", "objectivity-editing"], "assessment": "Write a 150-word report with three labelled sections", "skills": ["writing", "reading"]}
+          ],
+          "checkpoint": {"criteria": "Produce the five practical text types with correct formats and register", "passThreshold": 80}
+        }
+      ]
+    },
+    {
+      "id": "st07-m04",
+      "title": "Advanced Writing",
+      "description": "B2 writing: full essays, summaries and professional communication.",
+      "entryRequirements": ["st04-m05-exit"],
+      "units": [
+        {
+          "id": "st07-m04-u01",
+          "title": "Essays and Summaries",
+          "lessons": [
+            {"id": "st07-m04-u01-l01", "title": "Essay Writing", "cefr": "B2", "minutes": 12, "objectives": ["Plan and write a 250-word essay: introduction, two body paragraphs, conclusion", "Support arguments with linked reasons"], "topics": ["essay-structure", "thesis", "argument-support"], "practice": ["essay-planning", "guided-writing", "structure-review"], "assessment": "Write a 250-word essay with clear structure and support", "skills": ["writing", "reading"]},
+            {"id": "st07-m04-u01-l02", "title": "Summaries", "cefr": "B2", "minutes": 12, "objectives": ["Summarise a 350-word text in about 80 words in own words", "Preserve the source meaning without copying phrases"], "topics": ["summary-writing", "paraphrase", "word-limits"], "practice": ["paraphrase-drill", "summary-writing", "accuracy-check"], "assessment": "Write an 80-word summary that preserves all key points in own words", "skills": ["reading", "writing"]}
+          ],
+          "checkpoint": {"criteria": "Write structured essays and accurate summaries within word limits", "passThreshold": 80}
+        },
+        {
+          "id": "st07-m04-u02",
+          "title": "Professional Communication",
+          "lessons": [
+            {"id": "st07-m04-u02-l01", "title": "Professional Emails and Messages", "cefr": "B2", "minutes": 12, "objectives": ["Write polite, clear workplace emails: request, update, follow-up", "Choose appropriate tone and level of formality"], "topics": ["professional-email", "tone-control", "workplace-writing"], "practice": ["email-scenarios", "tone-rewrite", "guided-writing"], "assessment": "Write 3 workplace emails (request, update, follow-up) with correct tone", "skills": ["writing", "reading"]},
+            {"id": "st07-m04-u02-l02", "title": "Professional Reports and Documents", "cefr": "B2", "minutes": 12, "objectives": ["Write a structured professional document with headings and data references", "Keep language precise and impersonal where required"], "topics": ["professional-reports", "document-structure", "precise-language"], "practice": ["report-drafting", "heading-structure", "precision-editing"], "assessment": "Write a 200-word structured document referencing given data correctly", "skills": ["writing", "reading"]}
+          ],
+          "checkpoint": {"criteria": "Produce professional documents with correct tone, structure and precision", "passThreshold": 80}
+        }
+      ]
+    }
+  ],
+  "exitAssessment": {"id": "st07-exit", "title": "Writing Development Exit Test", "criteria": "Mechanics and spelling accuracy; a structured 150-word narrative or opinion text; one practical text (email or letter) with correct format and register; a 250-word essay with introduction, support and conclusion; an 80-word summary preserving key points.", "passThreshold": 75, "minutes": 30, "unlocks": ["st08"]}
+}

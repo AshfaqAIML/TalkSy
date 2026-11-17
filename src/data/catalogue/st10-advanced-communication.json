@@ -1,0 +1,96 @@
+{
+  "id": "st10",
+  "order": 10,
+  "title": "Advanced Communication",
+  "cefr": "B2 → C1",
+  "goal": "Integrate everything into fluent, spontaneous, persuasive and professional English — debate, presentations, interviews, idiomatic range, critical reading and formal writing at C1.",
+  "entryRequirements": ["st09-exit"],
+  "modules": [
+    {
+      "id": "st10-m01",
+      "title": "Fluency and Expression",
+      "description": "Fluency development, spontaneous conversation, advanced storytelling and persuasive communication at B2.",
+      "entryRequirements": ["st05-exit", "st08-m04-exit"],
+      "units": [
+        {
+          "id": "st10-m01-u01",
+          "title": "Fluency",
+          "lessons": [
+            {"id": "st10-m01-u01-l01", "title": "Fluency Development", "cefr": "B2", "minutes": 12, "objectives": ["Speak at length with reduced hesitation", "Use fillers and reformulation naturally instead of stopping"], "topics": ["fluency", "hesitation-management", "speaking-at-length"], "practice": ["fluency-tasks", "monologue-timer", "record-and-review"], "assessment": "Speak for 2 minutes on a familiar topic with natural flow", "skills": ["listening", "speaking"]},
+            {"id": "st10-m01-u01-l02", "title": "Spontaneous Conversation", "cefr": "B2", "minutes": 12, "objectives": ["React and respond in real time without scripts", "Handle unexpected questions and topic changes"], "topics": ["spontaneous-speaking", "real-time-response", "topic-changes"], "practice": ["rapid-response", "conversation-tennis", "role-play"], "assessment": "Sustain an unscripted 3-minute conversation on new topics", "skills": ["listening", "speaking"]}
+          ],
+          "checkpoint": {"criteria": "Speak spontaneously at length on familiar and new topics", "passThreshold": 80}
+        },
+        {
+          "id": "st10-m01-u02",
+          "title": "Narrative and Persuasion",
+          "lessons": [
+            {"id": "st10-m01-u02-l01", "title": "Advanced Storytelling", "cefr": "B2", "minutes": 12, "objectives": ["Tell engaging stories with tension, pacing and point of view", "Use narrative tenses and dramatic devices naturally"], "topics": ["advanced-storytelling", "narrative-devices", "audience-engagement"], "practice": ["storytelling-task", "structure-workshop", "peer-feedback"], "assessment": "Tell a 2-3 minute story with clear structure and engagement", "skills": ["listening", "speaking"]},
+            {"id": "st10-m01-u02-l02", "title": "Persuasive Communication", "cefr": "B2", "minutes": 12, "objectives": ["Build a persuasive case: claim, reasons, evidence, call to action", "Anticipate and answer objections"], "topics": ["persuasion", "argument-building", "handling-objections"], "practice": ["persuasion-frames", "pitch-practice", "role-play"], "assessment": "Deliver a 90-second persuasive pitch handling one objection", "skills": ["listening", "speaking"]}
+          ],
+          "checkpoint": {"criteria": "Tell advanced stories and build persuasive cases", "passThreshold": 80}
+        }
+      ]
+    },
+    {
+      "id": "st10-m02",
+      "title": "Formal and Professional",
+      "description": "Presentations, professional discussions and advanced interviews at B2→C1.",
+      "entryRequirements": ["st08-m04-exit"],
+      "units": [
+        {
+          "id": "st10-m02-u01",
+          "title": "Presenting and Discussing",
+          "lessons": [
+            {"id": "st10-m02-u01-l01", "title": "Presentations", "cefr": "C1", "minutes": 12, "objectives": ["Structure and deliver a 5-minute presentation with slides or notes", "Handle audience questions fluently"], "topics": ["presentations", "talk-architecture", "qa-handling"], "practice": ["presentation-building", "delivery-practice", "qa-drill"], "assessment": "Deliver a structured 5-minute presentation and field 3 questions", "skills": ["listening", "speaking"]},
+            {"id": "st10-m02-u01-l02", "title": "Professional Discussions", "cefr": "C1", "minutes": 12, "objectives": ["Argue a position in professional discussions with nuance", "Disagree constructively and build on others' points"], "topics": ["professional-discussions", "nuanced-argument", "constructive-disagreement"], "practice": ["discussion-circle", "position-defence", "role-play"], "assessment": "Defend a position across 6 discussion turns with nuance", "skills": ["listening", "speaking"]}
+          ],
+          "checkpoint": {"criteria": "Present and discuss professionally at C1 interaction standards", "passThreshold": 80}
+        },
+        {
+          "id": "st10-m02-u02",
+          "title": "Interviews",
+          "lessons": [
+            {"id": "st10-m02-u02-l01", "title": "Advanced Interviews", "cefr": "B2", "minutes": 12, "objectives": ["Answer competency and behavioural questions with STAR structure", "Handle salary, weakness and pressure questions"], "topics": ["advanced-interviews", "star-method", "difficult-questions"], "practice": ["mock-interview", "answer-frames", "pressure-scenarios"], "assessment": "Complete a 10-minute mock interview with structured, specific answers", "skills": ["listening", "speaking"]}
+          ],
+          "checkpoint": {"criteria": "Perform in advanced interview formats with structured answers", "passThreshold": 80}
+        }
+      ]
+    },
+    {
+      "id": "st10-m03",
+      "title": "Precision and Depth",
+      "description": "C1 language mastery: advanced vocabulary, idiomatic expressions, debate, critical reading and formal writing.",
+      "entryRequirements": ["st04-m05-exit", "st06-m04-exit", "st07-m04-exit"],
+      "units": [
+        {
+          "id": "st10-m03-u01",
+          "title": "Language Mastery",
+          "lessons": [
+            {"id": "st10-m03-u01-l01", "title": "Advanced Vocabulary", "cefr": "C1", "minutes": 12, "objectives": ["Use precise, nuanced word choices (mitigate versus reduce)", "Build topic vocabulary for abstract discussion"], "topics": ["advanced-vocabulary", "nuance", "precision-word-choice"], "practice": ["nuance-quiz", "word-upgrade", "topic-word-banks"], "assessment": "Choose precise words in 12 of 14 nuance items and use 5 in speech", "skills": ["reading", "writing", "speaking", "listening"]},
+            {"id": "st10-m03-u01-l02", "title": "Idiomatic Expressions", "cefr": "C1", "minutes": 12, "objectives": ["Understand and use 20 core idioms, collocations and register markers", "Avoid idioms in inappropriate registers"], "topics": ["idioms", "collocations", "register-awareness"], "practice": ["idiom-matching", "register-quiz", "contextual-use"], "assessment": "Use 8 of 10 target idioms correctly in context", "skills": ["listening", "speaking", "reading"]}
+          ],
+          "checkpoint": {"criteria": "Use advanced vocabulary and idioms with precision and register awareness", "passThreshold": 80}
+        },
+        {
+          "id": "st10-m03-u02",
+          "title": "Critical Skills",
+          "lessons": [
+            {"id": "st10-m03-u02-l01", "title": "Debate", "cefr": "C1", "minutes": 12, "objectives": ["Build and rebut arguments in a formal debate format", "Use debate language: signposting, concession, rebuttal"], "topics": ["debate", "rebuttal", "formal-argument"], "practice": ["debate-motion", "rebuttal-drill", "debate-role-play"], "assessment": "Deliver a 2-minute argument and one structured rebuttal", "skills": ["listening", "speaking"]},
+            {"id": "st10-m03-u02-l02", "title": "Critical Reading", "cefr": "C1", "minutes": 12, "objectives": ["Analyse argumentation, bias and evidence in demanding texts", "Compare positions across sources"], "topics": ["critical-reading", "bias-analysis", "source-comparison"], "practice": ["argument-mapping", "bias-spotting", "source-comparison"], "assessment": "Map an author's argument and identify 3 bias instances with evidence", "skills": ["reading", "writing"]}
+          ],
+          "checkpoint": {"criteria": "Debate formally and read critically at C1", "passThreshold": 80}
+        },
+        {
+          "id": "st10-m03-u03",
+          "title": "Formal Writing",
+          "lessons": [
+            {"id": "st10-m03-u03-l01", "title": "Formal Writing", "cefr": "C1", "minutes": 12, "objectives": ["Write formal, well-structured texts (reports, essays, proposals) with C1 control", "Match tone, cohesion and register to purpose and audience"], "topics": ["formal-writing", "cohesion-devices", "register-control"], "practice": ["formal-essay", "proposal-writing", "cohesion-editing"], "assessment": "Write a 350-word formal text with coherent argumentation and register control", "skills": ["reading", "writing"]}
+          ],
+          "checkpoint": {"criteria": "Produce formal C1 writing with full cohesion and register control", "passThreshold": 80}
+        }
+      ]
+    }
+  ],
+  "exitAssessment": {"id": "st10-exit", "title": "Advanced Communication Exit Test (Program Completion)", "criteria": "A 5-minute presentation with Q&A; a formal debate exchange (argument plus rebuttal); a 10-minute advanced interview; a 350-word formal essay; critical reading analysis of a demanding text; idiomatic and precise vocabulary in use. Passing certifies TalkSy Complete English completion at the C1 standard.", "passThreshold": 75, "minutes": 30, "unlocks": ["program-completion"]}
+}

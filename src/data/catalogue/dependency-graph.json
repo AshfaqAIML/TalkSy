@@ -1,0 +1,6374 @@
+{
+  "nodes": [
+    {
+      "id": "talksy-complete-english",
+      "kind": "course",
+      "label": "TalkSy Complete English"
+    },
+    {
+      "id": "st01",
+      "kind": "stage",
+      "label": "English from Absolute Zero",
+      "cefr": "Pre-A1"
+    },
+    {
+      "id": "st01-m01",
+      "kind": "module",
+      "label": "Understanding English"
+    },
+    {
+      "id": "st01-m01-u01",
+      "kind": "unit",
+      "label": "Language and English"
+    },
+    {
+      "id": "st01-m01-u01-checkpoint",
+      "kind": "checkpoint",
+      "label": "Language and English — checkpoint"
+    },
+    {
+      "id": "st01-m01-u01-l01",
+      "kind": "lesson",
+      "label": "What Is a Language? What Is English?",
+      "cefr": "Pre-A1",
+      "minutes": 12
+    },
+    {
+      "id": "st01-m01-u01-l02",
+      "kind": "lesson",
+      "label": "Spoken versus Written English",
+      "cefr": "Pre-A1",
+      "minutes": 10
+    },
+    {
+      "id": "st01-m01-u02",
+      "kind": "unit",
+      "label": "How English Works"
+    },
+    {
+      "id": "st01-m01-u02-checkpoint",
+      "kind": "checkpoint",
+      "label": "How English Works — checkpoint"
+    },
+    {
+      "id": "st01-m01-u02-l01",
+      "kind": "lesson",
+      "label": "Letters, Sounds, Words, Phrases and Sentences",
+      "cefr": "Pre-A1",
+      "minutes": 12
+    },
+    {
+      "id": "st01-m01-u02-l02",
+      "kind": "lesson",
+      "label": "How English Communication Works",
+      "cefr": "Pre-A1",
+      "minutes": 10
+    },
+    {
+      "id": "st01-m01-u02-l03",
+      "kind": "lesson",
+      "label": "Introduction to Reading and Writing",
+      "cefr": "Pre-A1",
+      "minutes": 10
+    },
+    {
+      "id": "st01-m01-exit",
+      "kind": "exit",
+      "label": "Understanding English — module complete"
+    },
+    {
+      "id": "st01-m02",
+      "kind": "module",
+      "label": "English Alphabet"
+    },
+    {
+      "id": "st01-m02-u01",
+      "kind": "unit",
+      "label": "Letter Recognition"
+    },
+    {
+      "id": "st01-m02-u01-checkpoint",
+      "kind": "checkpoint",
+      "label": "Letter Recognition — checkpoint"
+    },
+    {
+      "id": "st01-m02-u01-l01",
+      "kind": "lesson",
+      "label": "The Alphabet A-Z: Letter Names and Sequence",
+      "cefr": "Pre-A1",
+      "minutes": 12
+    },
+    {
+      "id": "st01-m02-u01-l02",
+      "kind": "lesson",
+      "label": "Uppercase Letters (Capitals)",
+      "cefr": "Pre-A1",
+      "minutes": 10
+    },
+    {
+      "id": "st01-m02-u01-l03",
+      "kind": "lesson",
+      "label": "Lowercase Letters",
+      "cefr": "Pre-A1",
+      "minutes": 10
+    },
+    {
+      "id": "st01-m02-u01-l04",
+      "kind": "lesson",
+      "label": "Matching Uppercase and Lowercase",
+      "cefr": "Pre-A1",
+      "minutes": 10
+    },
+    {
+      "id": "st01-m02-u02",
+      "kind": "unit",
+      "label": "Vowels and Consonants"
+    },
+    {
+      "id": "st01-m02-u02-checkpoint",
+      "kind": "checkpoint",
+      "label": "Vowels and Consonants — checkpoint"
+    },
+    {
+      "id": "st01-m02-u02-l01",
+      "kind": "lesson",
+      "label": "Vowels: A, E, I, O, U",
+      "cefr": "Pre-A1",
+      "minutes": 10
+    },
+    {
+      "id": "st01-m02-u02-l02",
+      "kind": "lesson",
+      "label": "Consonants",
+      "cefr": "Pre-A1",
+      "minutes": 10
+    },
+    {
+      "id": "st01-m02-u03",
+      "kind": "unit",
+      "label": "Alphabet Skills"
+    },
+    {
+      "id": "st01-m02-u03-checkpoint",
+      "kind": "checkpoint",
+      "label": "Alphabet Skills — checkpoint"
+    },
+    {
+      "id": "st01-m02-u03-l01",
+      "kind": "lesson",
+      "label": "Alphabet Sequencing",
+      "cefr": "Pre-A1",
+      "minutes": 10
+    },
+    {
+      "id": "st01-m02-u03-l02",
+      "kind": "lesson",
+      "label": "Identifying Missing Letters",
+      "cefr": "Pre-A1",
+      "minutes": 10
+    },
+    {
+      "id": "st01-m02-u03-l03",
+      "kind": "lesson",
+      "label": "Capitalisation Basics",
+      "cefr": "Pre-A1",
+      "minutes": 10
+    },
+    {
+      "id": "st01-m02-u04",
+      "kind": "unit",
+      "label": "Writing and Review"
+    },
+    {
+      "id": "st01-m02-u04-checkpoint",
+      "kind": "checkpoint",
+      "label": "Writing and Review — checkpoint"
+    },
+    {
+      "id": "st01-m02-u04-l01",
+      "kind": "lesson",
+      "label": "Letter Writing Practice",
+      "cefr": "Pre-A1",
+      "minutes": 12
+    },
+    {
+      "id": "st01-m02-u04-l02",
+      "kind": "lesson",
+      "label": "Alphabet Review and Exercises",
+      "cefr": "Pre-A1",
+      "minutes": 12
+    },
+    {
+      "id": "st01-m02-exit",
+      "kind": "exit",
+      "label": "English Alphabet — module complete"
+    },
+    {
+      "id": "st01-m03",
+      "kind": "module",
+      "label": "Phonics and Sounds"
+    },
+    {
+      "id": "st01-m03-u01",
+      "kind": "unit",
+      "label": "Sound Awareness"
+    },
+    {
+      "id": "st01-m03-u01-checkpoint",
+      "kind": "checkpoint",
+      "label": "Sound Awareness — checkpoint"
+    },
+    {
+      "id": "st01-m03-u01-l01",
+      "kind": "lesson",
+      "label": "Letter Names versus Letter Sounds",
+      "cefr": "Pre-A1",
+      "minutes": 12
+    },
+    {
+      "id": "st01-m03-u01-l02",
+      "kind": "lesson",
+      "label": "Basic Sound Awareness",
+      "cefr": "Pre-A1",
+      "minutes": 10
+    },
+    {
+      "id": "st01-m03-u02",
+      "kind": "unit",
+      "label": "Vowel Sounds"
+    },
+    {
+      "id": "st01-m03-u02-checkpoint",
+      "kind": "checkpoint",
+      "label": "Vowel Sounds — checkpoint"
+    },
+    {
+      "id": "st01-m03-u02-l01",
+      "kind": "lesson",
+      "label": "Short Vowel Sounds",
+      "cefr": "Pre-A1",
+      "minutes": 12
+    },
+    {
+      "id": "st01-m03-u02-l02",
+      "kind": "lesson",
+      "label": "Long Vowel Sounds",
+      "cefr": "Pre-A1",
+      "minutes": 12
+    },
+    {
+      "id": "st01-m03-u03",
+      "kind": "unit",
+      "label": "Consonant Sounds"
+    },
+    {
+      "id": "st01-m03-u03-checkpoint",
+      "kind": "checkpoint",
+      "label": "Consonant Sounds — checkpoint"
+    },
+    {
+      "id": "st01-m03-u03-l01",
+      "kind": "lesson",
+      "label": "Common Consonant Sounds",
+      "cefr": "Pre-A1",
+      "minutes": 12
+    },
+    {
+      "id": "st01-m03-u03-l02",
+      "kind": "lesson",
+      "label": "Consonant Blends",
+      "cefr": "Pre-A1",
+      "minutes": 12
+    },
+    {
+      "id": "st01-m03-u03-l03",
+      "kind": "lesson",
+      "label": "Digraphs: ch, sh, th, ph, wh",
+      "cefr": "Pre-A1",
+      "minutes": 12
+    },
+    {
+      "id": "st01-m03-u04",
+      "kind": "unit",
+      "label": "Sound and Spelling Patterns"
+    },
+    {
+      "id": "st01-m03-u04-checkpoint",
+      "kind": "checkpoint",
+      "label": "Sound and Spelling Patterns — checkpoint"
+    },
+    {
+      "id": "st01-m03-u04-l01",
+      "kind": "lesson",
+      "label": "Common Letter Combinations",
+      "cefr": "Pre-A1",
+      "minutes": 10
+    },
+    {
+      "id": "st01-m03-u04-l02",
+      "kind": "lesson",
+      "label": "Sound Recognition Practice",
+      "cefr": "Pre-A1",
+      "minutes": 10
+    },
+    {
+      "id": "st01-m03-u04-l03",
+      "kind": "lesson",
+      "label": "Pronunciation Basics",
+      "cefr": "Pre-A1",
+      "minutes": 10
+    },
+    {
+      "id": "st01-m03-u04-l04",
+      "kind": "lesson",
+      "label": "Sound and Spelling Relationships: Patterns and Exceptions",
+      "cefr": "Pre-A1",
+      "minutes": 12
+    },
+    {
+      "id": "st01-m03-exit",
+      "kind": "exit",
+      "label": "Phonics and Sounds — module complete"
+    },
+    {
+      "id": "st01-m04",
+      "kind": "module",
+      "label": "First Reading Skills"
+    },
+    {
+      "id": "st01-m04-u01",
+      "kind": "unit",
+      "label": "Reading Words"
+    },
+    {
+      "id": "st01-m04-u01-checkpoint",
+      "kind": "checkpoint",
+      "label": "Reading Words — checkpoint"
+    },
+    {
+      "id": "st01-m04-u01-l01",
+      "kind": "lesson",
+      "label": "Combining Letters: Blending",
+      "cefr": "Pre-A1",
+      "minutes": 12
+    },
+    {
+      "id": "st01-m04-u01-l02",
+      "kind": "lesson",
+      "label": "Reading Simple Words (CVC)",
+      "cefr": "Pre-A1",
+      "minutes": 12
+    },
+    {
+      "id": "st01-m04-u01-l03",
+      "kind": "lesson",
+      "label": "Recognising Common Word Patterns",
+      "cefr": "Pre-A1",
+      "minutes": 10
+    },
+    {
+      "id": "st01-m04-u02",
+      "kind": "unit",
+      "label": "Reading Phrases and Sentences"
+    },
+    {
+      "id": "st01-m04-u02-checkpoint",
+      "kind": "checkpoint",
+      "label": "Reading Phrases and Sentences — checkpoint"
+    },
+    {
+      "id": "st01-m04-u02-l01",
+      "kind": "lesson",
+      "label": "Reading Short Phrases",
+      "cefr": "Pre-A1",
+      "minutes": 10
+    },
+    {
+      "id": "st01-m04-u02-l02",
+      "kind": "lesson",
+      "label": "Basic Sight Vocabulary",
+      "cefr": "Pre-A1",
+      "minutes": 12
+    },
+    {
+      "id": "st01-m04-u02-l03",
+      "kind": "lesson",
+      "label": "Reading Simple Sentences",
+      "cefr": "Pre-A1",
+      "minutes": 12
+    },
+    {
+      "id": "st01-m04-u03",
+      "kind": "unit",
+      "label": "First Spelling"
+    },
+    {
+      "id": "st01-m04-u03-checkpoint",
+      "kind": "checkpoint",
+      "label": "First Spelling — checkpoint"
+    },
+    {
+      "id": "st01-m04-u03-l01",
+      "kind": "lesson",
+      "label": "Initial Spelling Exercises",
+      "cefr": "Pre-A1",
+      "minutes": 12
+    },
+    {
+      "id": "st01-m04-exit",
+      "kind": "exit",
+      "label": "First Reading Skills — module complete"
+    },
+    {
+      "id": "st01-exit",
+      "kind": "exit",
+      "label": "Foundations Exit Test",
+      "cefr": "Pre-A1",
+      "minutes": 20
+    },
+    {
+      "id": "st02",
+      "kind": "stage",
+      "label": "Word Building and Vocabulary",
+      "cefr": "Pre-A1 → A1"
+    },
+    {
+      "id": "st02-m01",
+      "kind": "module",
+      "label": "Word Knowledge"
+    },
+    {
+      "id": "st02-m01-u01",
+      "kind": "unit",
+      "label": "What Is a Word?"
+    },
+    {
+      "id": "st02-m01-u01-checkpoint",
+      "kind": "checkpoint",
+      "label": "What Is a Word? — checkpoint"
+    },
+    {
+      "id": "st02-m01-u01-l01",
+      "kind": "lesson",
+      "label": "What Is a Word? Word Structure",
+      "cefr": "Pre-A1",
+      "minutes": 12
+    },
+    {
+      "id": "st02-m01-u01-l02",
+      "kind": "lesson",
+      "label": "Letters and Syllables",
+      "cefr": "Pre-A1",
+      "minutes": 12
+    },
+    {
+      "id": "st02-m01-u01-l03",
+      "kind": "lesson",
+      "label": "Three-Letter and Four-Letter Words",
+      "cefr": "Pre-A1",
+      "minutes": 12
+    },
+    {
+      "id": "st02-m01-u02",
+      "kind": "unit",
+      "label": "Spelling Patterns and Families"
+    },
+    {
+      "id": "st02-m01-u02-checkpoint",
+      "kind": "checkpoint",
+      "label": "Spelling Patterns and Families — checkpoint"
+    },
+    {
+      "id": "st02-m01-u02-l01",
+      "kind": "lesson",
+      "label": "Common Spelling Patterns",
+      "cefr": "Pre-A1",
+      "minutes": 12
+    },
+    {
+      "id": "st02-m01-u02-l02",
+      "kind": "lesson",
+      "label": "Word Families",
+      "cefr": "Pre-A1",
+      "minutes": 12
+    },
+    {
+      "id": "st02-m01-u03",
+      "kind": "unit",
+      "label": "Building Words"
+    },
+    {
+      "id": "st02-m01-u03-checkpoint",
+      "kind": "checkpoint",
+      "label": "Building Words — checkpoint"
+    },
+    {
+      "id": "st02-m01-u03-l01",
+      "kind": "lesson",
+      "label": "Compound Words",
+      "cefr": "A1",
+      "minutes": 12
+    },
+    {
+      "id": "st02-m01-u03-l02",
+      "kind": "lesson",
+      "label": "Prefixes",
+      "cefr": "A1",
+      "minutes": 12
+    },
+    {
+      "id": "st02-m01-u03-l03",
+      "kind": "lesson",
+      "label": "Suffixes",
+      "cefr": "A1",
+      "minutes": 12
+    },
+    {
+      "id": "st02-m01-u03-l04",
+      "kind": "lesson",
+      "label": "Word Formation Overview",
+      "cefr": "A1",
+      "minutes": 10
+    },
+    {
+      "id": "st02-m01-exit",
+      "kind": "exit",
+      "label": "Word Knowledge — module complete"
+    },
+    {
+      "id": "st02-m02",
+      "kind": "module",
+      "label": "Word Meaning and Relationships"
+    },
+    {
+      "id": "st02-m02-u01",
+      "kind": "unit",
+      "label": "Word Forms"
+    },
+    {
+      "id": "st02-m02-u01-checkpoint",
+      "kind": "checkpoint",
+      "label": "Word Forms — checkpoint"
+    },
+    {
+      "id": "st02-m02-u01-l01",
+      "kind": "lesson",
+      "label": "Singular and Plural Forms",
+      "cefr": "A1",
+      "minutes": 12
+    },
+    {
+      "id": "st02-m02-u02",
+      "kind": "unit",
+      "label": "Meaning Relations"
+    },
+    {
+      "id": "st02-m02-u02-checkpoint",
+      "kind": "checkpoint",
+      "label": "Meaning Relations — checkpoint"
+    },
+    {
+      "id": "st02-m02-u02-l01",
+      "kind": "lesson",
+      "label": "Synonyms",
+      "cefr": "A1",
+      "minutes": 12
+    },
+    {
+      "id": "st02-m02-u02-l02",
+      "kind": "lesson",
+      "label": "Antonyms",
+      "cefr": "A1",
+      "minutes": 12
+    },
+    {
+      "id": "st02-m02-u02-l03",
+      "kind": "lesson",
+      "label": "Homophones",
+      "cefr": "A1",
+      "minutes": 12
+    },
+    {
+      "id": "st02-m02-u02-l04",
+      "kind": "lesson",
+      "label": "Homonyms",
+      "cefr": "A1",
+      "minutes": 12
+    },
+    {
+      "id": "st02-m02-u02-l05",
+      "kind": "lesson",
+      "label": "Collocations",
+      "cefr": "A1",
+      "minutes": 12
+    },
+    {
+      "id": "st02-m02-u03",
+      "kind": "unit",
+      "label": "Multi-Word Verbs"
+    },
+    {
+      "id": "st02-m02-u03-checkpoint",
+      "kind": "checkpoint",
+      "label": "Multi-Word Verbs — checkpoint"
+    },
+    {
+      "id": "st02-m02-u03-l01",
+      "kind": "lesson",
+      "label": "Phrasal Verbs: Introduction",
+      "cefr": "A1",
+      "minutes": 12
+    },
+    {
+      "id": "st02-m02-exit",
+      "kind": "exit",
+      "label": "Word Meaning and Relationships — module complete"
+    },
+    {
+      "id": "st02-m03",
+      "kind": "module",
+      "label": "People and Emotions"
+    },
+    {
+      "id": "st02-m03-u01",
+      "kind": "unit",
+      "label": "People and Relationships"
+    },
+    {
+      "id": "st02-m03-u01-checkpoint",
+      "kind": "checkpoint",
+      "label": "People and Relationships — checkpoint"
+    },
+    {
+      "id": "st02-m03-u01-l01",
+      "kind": "lesson",
+      "label": "People Words: Who We Are",
+      "cefr": "A1",
+      "minutes": 12
+    },
+    {
+      "id": "st02-m03-u01-l02",
+      "kind": "lesson",
+      "label": "Relationships: Family, Friends and Others",
+      "cefr": "A1",
+      "minutes": 12
+    },
+    {
+      "id": "st02-m03-u02",
+      "kind": "unit",
+      "label": "Family"
+    },
+    {
+      "id": "st02-m03-u02-checkpoint",
+      "kind": "checkpoint",
+      "label": "Family — checkpoint"
+    },
+    {
+      "id": "st02-m03-u02-l01",
+      "kind": "lesson",
+      "label": "Family Members",
+      "cefr": "A1",
+      "minutes": 12
+    },
+    {
+      "id": "st02-m03-u02-l02",
+      "kind": "lesson",
+      "label": "Talking about Your Family",
+      "cefr": "A1",
+      "minutes": 12
+    },
+    {
+      "id": "st02-m03-u03",
+      "kind": "unit",
+      "label": "Emotions"
+    },
+    {
+      "id": "st02-m03-u03-checkpoint",
+      "kind": "checkpoint",
+      "label": "Emotions — checkpoint"
+    },
+    {
+      "id": "st02-m03-u03-l01",
+      "kind": "lesson",
+      "label": "Feelings and Emotions",
+      "cefr": "A1",
+      "minutes": 12
+    },
+    {
+      "id": "st02-m03-exit",
+      "kind": "exit",
+      "label": "People and Emotions — module complete"
+    },
+    {
+      "id": "st02-m04",
+      "kind": "module",
+      "label": "Body and Health"
+    },
+    {
+      "id": "st02-m04-u01",
+      "kind": "unit",
+      "label": "Body"
+    },
+    {
+      "id": "st02-m04-u01-checkpoint",
+      "kind": "checkpoint",
+      "label": "Body — checkpoint"
+    },
+    {
+      "id": "st02-m04-u01-l01",
+      "kind": "lesson",
+      "label": "Parts of the Body",
+      "cefr": "A1",
+      "minutes": 12
+    },
+    {
+      "id": "st02-m04-u01-l02",
+      "kind": "lesson",
+      "label": "Describing People and Bodies",
+      "cefr": "A1",
+      "minutes": 12
+    },
+    {
+      "id": "st02-m04-u02",
+      "kind": "unit",
+      "label": "Health"
+    },
+    {
+      "id": "st02-m04-u02-checkpoint",
+      "kind": "checkpoint",
+      "label": "Health — checkpoint"
+    },
+    {
+      "id": "st02-m04-u02-l01",
+      "kind": "lesson",
+      "label": "Health and Illness Words",
+      "cefr": "A1",
+      "minutes": 12
+    },
+    {
+      "id": "st02-m04-u02-l02",
+      "kind": "lesson",
+      "label": "At the Doctor: First Conversation",
+      "cefr": "A1",
+      "minutes": 12
+    },
+    {
+      "id": "st02-m04-exit",
+      "kind": "exit",
+      "label": "Body and Health — module complete"
+    },
+    {
+      "id": "st02-m05",
+      "kind": "module",
+      "label": "Home, Food and Clothes"
+    },
+    {
+      "id": "st02-m05-u01",
+      "kind": "unit",
+      "label": "Home"
+    },
+    {
+      "id": "st02-m05-u01-checkpoint",
+      "kind": "checkpoint",
+      "label": "Home — checkpoint"
+    },
+    {
+      "id": "st02-m05-u01-l01",
+      "kind": "lesson",
+      "label": "Rooms and Furniture",
+      "cefr": "A1",
+      "minutes": 12
+    },
+    {
+      "id": "st02-m05-u01-l02",
+      "kind": "lesson",
+      "label": "Things at Home",
+      "cefr": "A1",
+      "minutes": 12
+    },
+    {
+      "id": "st02-m05-u02",
+      "kind": "unit",
+      "label": "Food"
+    },
+    {
+      "id": "st02-m05-u02-checkpoint",
+      "kind": "checkpoint",
+      "label": "Food — checkpoint"
+    },
+    {
+      "id": "st02-m05-u02-l01",
+      "kind": "lesson",
+      "label": "Food and Drink",
+      "cefr": "A1",
+      "minutes": 12
+    },
+    {
+      "id": "st02-m05-u02-l02",
+      "kind": "lesson",
+      "label": "Meals and Eating",
+      "cefr": "A1",
+      "minutes": 12
+    },
+    {
+      "id": "st02-m05-u03",
+      "kind": "unit",
+      "label": "Clothes"
+    },
+    {
+      "id": "st02-m05-u03-checkpoint",
+      "kind": "checkpoint",
+      "label": "Clothes — checkpoint"
+    },
+    {
+      "id": "st02-m05-u03-l01",
+      "kind": "lesson",
+      "label": "Clothes and Accessories",
+      "cefr": "A1",
+      "minutes": 12
+    },
+    {
+      "id": "st02-m05-u03-l02",
+      "kind": "lesson",
+      "label": "Describing Clothes",
+      "cefr": "A1",
+      "minutes": 12
+    },
+    {
+      "id": "st02-m05-exit",
+      "kind": "exit",
+      "label": "Home, Food and Clothes — module complete"
+    },
+    {
+      "id": "st02-m06",
+      "kind": "module",
+      "label": "Numbers, Time, Colours and Shopping"
+    },
+    {
+      "id": "st02-m06-u01",
+      "kind": "unit",
+      "label": "Numbers"
+    },
+    {
+      "id": "st02-m06-u01-checkpoint",
+      "kind": "checkpoint",
+      "label": "Numbers — checkpoint"
+    },
+    {
+      "id": "st02-m06-u01-l01",
+      "kind": "lesson",
+      "label": "Numbers 1-20",
+      "cefr": "A1",
+      "minutes": 12
+    },
+    {
+      "id": "st02-m06-u01-l02",
+      "kind": "lesson",
+      "label": "Numbers 20-100 and Beyond",
+      "cefr": "A1",
+      "minutes": 12
+    },
+    {
+      "id": "st02-m06-u02",
+      "kind": "unit",
+      "label": "Time"
+    },
+    {
+      "id": "st02-m06-u02-checkpoint",
+      "kind": "checkpoint",
+      "label": "Time — checkpoint"
+    },
+    {
+      "id": "st02-m06-u02-l01",
+      "kind": "lesson",
+      "label": "Telling the Time",
+      "cefr": "A1",
+      "minutes": 12
+    },
+    {
+      "id": "st02-m06-u03",
+      "kind": "unit",
+      "label": "Days and Months"
+    },
+    {
+      "id": "st02-m06-u03-checkpoint",
+      "kind": "checkpoint",
+      "label": "Days and Months — checkpoint"
+    },
+    {
+      "id": "st02-m06-u03-l01",
+      "kind": "lesson",
+      "label": "Days, Months and Dates",
+      "cefr": "A1",
+      "minutes": 12
+    },
+    {
+      "id": "st02-m06-u04",
+      "kind": "unit",
+      "label": "Colours"
+    },
+    {
+      "id": "st02-m06-u04-checkpoint",
+      "kind": "checkpoint",
+      "label": "Colours — checkpoint"
+    },
+    {
+      "id": "st02-m06-u04-l01",
+      "kind": "lesson",
+      "label": "Colours and Shades",
+      "cefr": "A1",
+      "minutes": 12
+    },
+    {
+      "id": "st02-m06-u05",
+      "kind": "unit",
+      "label": "Shopping"
+    },
+    {
+      "id": "st02-m06-u05-checkpoint",
+      "kind": "checkpoint",
+      "label": "Shopping — checkpoint"
+    },
+    {
+      "id": "st02-m06-u05-l01",
+      "kind": "lesson",
+      "label": "Shops and Products",
+      "cefr": "A1",
+      "minutes": 12
+    },
+    {
+      "id": "st02-m06-u05-l02",
+      "kind": "lesson",
+      "label": "Money and Prices",
+      "cefr": "A1",
+      "minutes": 12
+    },
+    {
+      "id": "st02-m06-exit",
+      "kind": "exit",
+      "label": "Numbers, Time, Colours and Shopping — module complete"
+    },
+    {
+      "id": "st02-m07",
+      "kind": "module",
+      "label": "The World Around Us"
+    },
+    {
+      "id": "st02-m07-u01",
+      "kind": "unit",
+      "label": "Weather"
+    },
+    {
+      "id": "st02-m07-u01-checkpoint",
+      "kind": "checkpoint",
+      "label": "Weather — checkpoint"
+    },
+    {
+      "id": "st02-m07-u01-l01",
+      "kind": "lesson",
+      "label": "Weather Words",
+      "cefr": "A1",
+      "minutes": 12
+    },
+    {
+      "id": "st02-m07-u02",
+      "kind": "unit",
+      "label": "Animals"
+    },
+    {
+      "id": "st02-m07-u02-checkpoint",
+      "kind": "checkpoint",
+      "label": "Animals — checkpoint"
+    },
+    {
+      "id": "st02-m07-u02-l01",
+      "kind": "lesson",
+      "label": "Animals and Pets",
+      "cefr": "A1",
+      "minutes": 12
+    },
+    {
+      "id": "st02-m07-u03",
+      "kind": "unit",
+      "label": "Transportation"
+    },
+    {
+      "id": "st02-m07-u03-checkpoint",
+      "kind": "checkpoint",
+      "label": "Transportation — checkpoint"
+    },
+    {
+      "id": "st02-m07-u03-l01",
+      "kind": "lesson",
+      "label": "Transport and Getting Around",
+      "cefr": "A1",
+      "minutes": 12
+    },
+    {
+      "id": "st02-m07-u04",
+      "kind": "unit",
+      "label": "Travel"
+    },
+    {
+      "id": "st02-m07-u04-checkpoint",
+      "kind": "checkpoint",
+      "label": "Travel — checkpoint"
+    },
+    {
+      "id": "st02-m07-u04-l01",
+      "kind": "lesson",
+      "label": "Travel Words and Places",
+      "cefr": "A1",
+      "minutes": 12
+    },
+    {
+      "id": "st02-m07-u04-l02",
+      "kind": "lesson",
+      "label": "Travel Situations: Airport and Hotel",
+      "cefr": "A1",
+      "minutes": 12
+    },
+    {
+      "id": "st02-m07-u05",
+      "kind": "unit",
+      "label": "Environment"
+    },
+    {
+      "id": "st02-m07-u05-checkpoint",
+      "kind": "checkpoint",
+      "label": "Environment — checkpoint"
+    },
+    {
+      "id": "st02-m07-u05-l01",
+      "kind": "lesson",
+      "label": "Nature and the Environment",
+      "cefr": "A1",
+      "minutes": 12
+    },
+    {
+      "id": "st02-m07-exit",
+      "kind": "exit",
+      "label": "The World Around Us — module complete"
+    },
+    {
+      "id": "st02-m08",
+      "kind": "module",
+      "label": "School, Work and Society"
+    },
+    {
+      "id": "st02-m08-u01",
+      "kind": "unit",
+      "label": "Education"
+    },
+    {
+      "id": "st02-m08-u01-checkpoint",
+      "kind": "checkpoint",
+      "label": "Education — checkpoint"
+    },
+    {
+      "id": "st02-m08-u01-l01",
+      "kind": "lesson",
+      "label": "School and University Words",
+      "cefr": "A1",
+      "minutes": 12
+    },
+    {
+      "id": "st02-m08-u01-l02",
+      "kind": "lesson",
+      "label": "Subjects and the Classroom",
+      "cefr": "A1",
+      "minutes": 12
+    },
+    {
+      "id": "st02-m08-u02",
+      "kind": "unit",
+      "label": "Jobs"
+    },
+    {
+      "id": "st02-m08-u02-checkpoint",
+      "kind": "checkpoint",
+      "label": "Jobs — checkpoint"
+    },
+    {
+      "id": "st02-m08-u02-l01",
+      "kind": "lesson",
+      "label": "Jobs and Work Words",
+      "cefr": "A1",
+      "minutes": 12
+    },
+    {
+      "id": "st02-m08-u02-l02",
+      "kind": "lesson",
+      "label": "Describing Your Job",
+      "cefr": "A1",
+      "minutes": 12
+    },
+    {
+      "id": "st02-m08-u03",
+      "kind": "unit",
+      "label": "Workplace"
+    },
+    {
+      "id": "st02-m08-u03-checkpoint",
+      "kind": "checkpoint",
+      "label": "Workplace — checkpoint"
+    },
+    {
+      "id": "st02-m08-u03-l01",
+      "kind": "lesson",
+      "label": "The Workplace and Office Words",
+      "cefr": "A2",
+      "minutes": 12
+    },
+    {
+      "id": "st02-m08-u03-l02",
+      "kind": "lesson",
+      "label": "Colleagues and Work Life",
+      "cefr": "A2",
+      "minutes": 12
+    },
+    {
+      "id": "st02-m08-u04",
+      "kind": "unit",
+      "label": "Technology"
+    },
+    {
+      "id": "st02-m08-u04-checkpoint",
+      "kind": "checkpoint",
+      "label": "Technology — checkpoint"
+    },
+    {
+      "id": "st02-m08-u04-l01",
+      "kind": "lesson",
+      "label": "Everyday Technology",
+      "cefr": "A2",
+      "minutes": 12
+    },
+    {
+      "id": "st02-m08-u04-l02",
+      "kind": "lesson",
+      "label": "Using Phones and Computers",
+      "cefr": "A2",
+      "minutes": 12
+    },
+    {
+      "id": "st02-m08-u05",
+      "kind": "unit",
+      "label": "Society"
+    },
+    {
+      "id": "st02-m08-u05-checkpoint",
+      "kind": "checkpoint",
+      "label": "Society — checkpoint"
+    },
+    {
+      "id": "st02-m08-u05-l01",
+      "kind": "lesson",
+      "label": "People and Places in Society",
+      "cefr": "A2",
+      "minutes": 12
+    },
+    {
+      "id": "st02-m08-exit",
+      "kind": "exit",
+      "label": "School, Work and Society — module complete"
+    },
+    {
+      "id": "st02-exit",
+      "kind": "exit",
+      "label": "Word Builder Exit Test",
+      "cefr": "Pre-A1 → A1",
+      "minutes": 25
+    },
+    {
+      "id": "st03",
+      "kind": "stage",
+      "label": "Sentence Foundation",
+      "cefr": "A1"
+    },
+    {
+      "id": "st03-m01",
+      "kind": "module",
+      "label": "Sentence Basics"
+    },
+    {
+      "id": "st03-m01-u01",
+      "kind": "unit",
+      "label": "What Is a Sentence?"
+    },
+    {
+      "id": "st03-m01-u01-checkpoint",
+      "kind": "checkpoint",
+      "label": "What Is a Sentence? — checkpoint"
+    },
+    {
+      "id": "st03-m01-u01-l01",
+      "kind": "lesson",
+      "label": "What Is a Sentence? Complete versus Incomplete",
+      "cefr": "A1",
+      "minutes": 12
+    },
+    {
+      "id": "st03-m01-u01-l02",
+      "kind": "lesson",
+      "label": "Subject and Predicate",
+      "cefr": "A1",
+      "minutes": 12
+    },
+    {
+      "id": "st03-m01-u01-l03",
+      "kind": "lesson",
+      "label": "Verb, Object and Complement",
+      "cefr": "A1",
+      "minutes": 12
+    },
+    {
+      "id": "st03-m01-u02",
+      "kind": "unit",
+      "label": "Sentence Patterns"
+    },
+    {
+      "id": "st03-m01-u02-checkpoint",
+      "kind": "checkpoint",
+      "label": "Sentence Patterns — checkpoint"
+    },
+    {
+      "id": "st03-m01-u02-l01",
+      "kind": "lesson",
+      "label": "Word Order: Subject + Verb and Subject + Verb + Object",
+      "cefr": "A1",
+      "minutes": 12
+    },
+    {
+      "id": "st03-m01-u02-l02",
+      "kind": "lesson",
+      "label": "Subject + Verb + Complement",
+      "cefr": "A1",
+      "minutes": 12
+    },
+    {
+      "id": "st03-m01-u02-l03",
+      "kind": "lesson",
+      "label": "Subject + Verb + Indirect Object + Direct Object",
+      "cefr": "A1",
+      "minutes": 12
+    },
+    {
+      "id": "st03-m01-u02-l04",
+      "kind": "lesson",
+      "label": "Subject + Verb + Object + Complement",
+      "cefr": "A1",
+      "minutes": 12
+    },
+    {
+      "id": "st03-m01-exit",
+      "kind": "exit",
+      "label": "Sentence Basics — module complete"
+    },
+    {
+      "id": "st03-m02",
+      "kind": "module",
+      "label": "Essential Sentence Words"
+    },
+    {
+      "id": "st03-m02-u01",
+      "kind": "unit",
+      "label": "Be, Have, Do"
+    },
+    {
+      "id": "st03-m02-u01-checkpoint",
+      "kind": "checkpoint",
+      "label": "Be, Have, Do — checkpoint"
+    },
+    {
+      "id": "st03-m02-u01-l01",
+      "kind": "lesson",
+      "label": "Be Verbs: am, is, are",
+      "cefr": "A1",
+      "minutes": 12
+    },
+    {
+      "id": "st03-m02-u01-l02",
+      "kind": "lesson",
+      "label": "Have Verbs: have, has",
+      "cefr": "A1",
+      "minutes": 12
+    },
+    {
+      "id": "st03-m02-u01-l03",
+      "kind": "lesson",
+      "label": "Do Verbs: do, does",
+      "cefr": "A1",
+      "minutes": 12
+    },
+    {
+      "id": "st03-m02-u01-l04",
+      "kind": "lesson",
+      "label": "Basic Helping Verbs",
+      "cefr": "A1",
+      "minutes": 12
+    },
+    {
+      "id": "st03-m02-u02",
+      "kind": "unit",
+      "label": "Pronouns, Articles and Determiners"
+    },
+    {
+      "id": "st03-m02-u02-checkpoint",
+      "kind": "checkpoint",
+      "label": "Pronouns, Articles and Determiners — checkpoint"
+    },
+    {
+      "id": "st03-m02-u02-l01",
+      "kind": "lesson",
+      "label": "Pronouns: I, you, he, she, it, we, they",
+      "cefr": "A1",
+      "minutes": 12
+    },
+    {
+      "id": "st03-m02-u02-l02",
+      "kind": "lesson",
+      "label": "Articles: a, an, the",
+      "cefr": "A1",
+      "minutes": 12
+    },
+    {
+      "id": "st03-m02-u02-l03",
+      "kind": "lesson",
+      "label": "Determiners: this, that, these, those",
+      "cefr": "A1",
+      "minutes": 12
+    },
+    {
+      "id": "st03-m02-u03",
+      "kind": "unit",
+      "label": "Describing Words and Prepositions"
+    },
+    {
+      "id": "st03-m02-u03-checkpoint",
+      "kind": "checkpoint",
+      "label": "Describing Words and Prepositions — checkpoint"
+    },
+    {
+      "id": "st03-m02-u03-l01",
+      "kind": "lesson",
+      "label": "Basic Adjectives",
+      "cefr": "A1",
+      "minutes": 12
+    },
+    {
+      "id": "st03-m02-u03-l02",
+      "kind": "lesson",
+      "label": "Basic Adverbs",
+      "cefr": "A1",
+      "minutes": 12
+    },
+    {
+      "id": "st03-m02-u03-l03",
+      "kind": "lesson",
+      "label": "Prepositions: in, on, at",
+      "cefr": "A1",
+      "minutes": 12
+    },
+    {
+      "id": "st03-m02-exit",
+      "kind": "exit",
+      "label": "Essential Sentence Words — module complete"
+    },
+    {
+      "id": "st03-m03",
+      "kind": "module",
+      "label": "Making Sentences"
+    },
+    {
+      "id": "st03-m03-u01",
+      "kind": "unit",
+      "label": "Polarity and Questions"
+    },
+    {
+      "id": "st03-m03-u01-checkpoint",
+      "kind": "checkpoint",
+      "label": "Polarity and Questions — checkpoint"
+    },
+    {
+      "id": "st03-m03-u01-l01",
+      "kind": "lesson",
+      "label": "Affirmative and Negative Sentences",
+      "cefr": "A1",
+      "minutes": 12
+    },
+    {
+      "id": "st03-m03-u01-l02",
+      "kind": "lesson",
+      "label": "Yes/No Questions",
+      "cefr": "A1",
+      "minutes": 12
+    },
+    {
+      "id": "st03-m03-u01-l03",
+      "kind": "lesson",
+      "label": "WH-Questions: what, where, who, when, why, how",
+      "cefr": "A1",
+      "minutes": 12
+    },
+    {
+      "id": "st03-m03-u02",
+      "kind": "unit",
+      "label": "Agreement"
+    },
+    {
+      "id": "st03-m03-u02-checkpoint",
+      "kind": "checkpoint",
+      "label": "Agreement — checkpoint"
+    },
+    {
+      "id": "st03-m03-u02-l01",
+      "kind": "lesson",
+      "label": "Subject-Verb Agreement Basics",
+      "cefr": "A1",
+      "minutes": 12
+    },
+    {
+      "id": "st03-m03-exit",
+      "kind": "exit",
+      "label": "Making Sentences — module complete"
+    },
+    {
+      "id": "st03-exit",
+      "kind": "exit",
+      "label": "Sentence Builder Exit Test",
+      "cefr": "A1",
+      "minutes": 25
+    },
+    {
+      "id": "st04",
+      "kind": "stage",
+      "label": "Complete Grammar",
+      "cefr": "A1 → B2"
+    },
+    {
+      "id": "st04-m01",
+      "kind": "module",
+      "label": "Parts of Speech"
+    },
+    {
+      "id": "st04-m01-u01",
+      "kind": "unit",
+      "label": "Nouns"
+    },
+    {
+      "id": "st04-m01-u01-checkpoint",
+      "kind": "checkpoint",
+      "label": "Nouns — checkpoint"
+    },
+    {
+      "id": "st04-m01-u01-l01",
+      "kind": "lesson",
+      "label": "Nouns: Types and Uses",
+      "cefr": "A1",
+      "minutes": 12
+    },
+    {
+      "id": "st04-m01-u01-l02",
+      "kind": "lesson",
+      "label": "Nouns: Common Errors",
+      "cefr": "A2",
+      "minutes": 10
+    },
+    {
+      "id": "st04-m01-u02",
+      "kind": "unit",
+      "label": "Pronouns"
+    },
+    {
+      "id": "st04-m01-u02-checkpoint",
+      "kind": "checkpoint",
+      "label": "Pronouns — checkpoint"
+    },
+    {
+      "id": "st04-m01-u02-l01",
+      "kind": "lesson",
+      "label": "Pronouns: Types and Uses",
+      "cefr": "A1",
+      "minutes": 12
+    },
+    {
+      "id": "st04-m01-u02-l02",
+      "kind": "lesson",
+      "label": "Pronoun Agreement and Errors",
+      "cefr": "A2",
+      "minutes": 10
+    },
+    {
+      "id": "st04-m01-u03",
+      "kind": "unit",
+      "label": "Verbs"
+    },
+    {
+      "id": "st04-m01-u03-checkpoint",
+      "kind": "checkpoint",
+      "label": "Verbs — checkpoint"
+    },
+    {
+      "id": "st04-m01-u03-l01",
+      "kind": "lesson",
+      "label": "Verbs: Types and Uses",
+      "cefr": "A1",
+      "minutes": 12
+    },
+    {
+      "id": "st04-m01-u03-l02",
+      "kind": "lesson",
+      "label": "Verb Forms and Patterns",
+      "cefr": "A2",
+      "minutes": 12
+    },
+    {
+      "id": "st04-m01-u04",
+      "kind": "unit",
+      "label": "Adjectives and Adverbs"
+    },
+    {
+      "id": "st04-m01-u04-checkpoint",
+      "kind": "checkpoint",
+      "label": "Adjectives and Adverbs — checkpoint"
+    },
+    {
+      "id": "st04-m01-u04-l01",
+      "kind": "lesson",
+      "label": "Adjectives: Types, Order and Uses",
+      "cefr": "A2",
+      "minutes": 12
+    },
+    {
+      "id": "st04-m01-u04-l02",
+      "kind": "lesson",
+      "label": "Adverbs: Types and Position",
+      "cefr": "A2",
+      "minutes": 12
+    },
+    {
+      "id": "st04-m01-u04-l03",
+      "kind": "lesson",
+      "label": "Adjective and Adverb Errors",
+      "cefr": "A2",
+      "minutes": 10
+    },
+    {
+      "id": "st04-m01-u05",
+      "kind": "unit",
+      "label": "Prepositions, Conjunctions and Interjections"
+    },
+    {
+      "id": "st04-m01-u05-checkpoint",
+      "kind": "checkpoint",
+      "label": "Prepositions, Conjunctions and Interjections — checkpoint"
+    },
+    {
+      "id": "st04-m01-u05-l01",
+      "kind": "lesson",
+      "label": "Prepositions of Place, Time and Movement",
+      "cefr": "A2",
+      "minutes": 12
+    },
+    {
+      "id": "st04-m01-u05-l02",
+      "kind": "lesson",
+      "label": "Conjunctions: and, but, or, because, so",
+      "cefr": "A1",
+      "minutes": 12
+    },
+    {
+      "id": "st04-m01-u05-l03",
+      "kind": "lesson",
+      "label": "Interjections and Parts-of-Speech Review",
+      "cefr": "A2",
+      "minutes": 12
+    },
+    {
+      "id": "st04-m01-exit",
+      "kind": "exit",
+      "label": "Parts of Speech — module complete"
+    },
+    {
+      "id": "st04-m02",
+      "kind": "module",
+      "label": "The Tense System and Present Tenses"
+    },
+    {
+      "id": "st04-m02-u01",
+      "kind": "unit",
+      "label": "The Tense System"
+    },
+    {
+      "id": "st04-m02-u01-checkpoint",
+      "kind": "checkpoint",
+      "label": "The Tense System — checkpoint"
+    },
+    {
+      "id": "st04-m02-u01-l01",
+      "kind": "lesson",
+      "label": "The English Tense System: An Overview",
+      "cefr": "A1",
+      "minutes": 12
+    },
+    {
+      "id": "st04-m02-u02",
+      "kind": "unit",
+      "label": "Present Simple"
+    },
+    {
+      "id": "st04-m02-u02-checkpoint",
+      "kind": "checkpoint",
+      "label": "Present Simple — checkpoint"
+    },
+    {
+      "id": "st04-m02-u02-l01",
+      "kind": "lesson",
+      "label": "Present Simple: Form and Meaning",
+      "cefr": "A1",
+      "minutes": 12
+    },
+    {
+      "id": "st04-m02-u02-l02",
+      "kind": "lesson",
+      "label": "Present Simple: Use and Practice",
+      "cefr": "A1",
+      "minutes": 12
+    },
+    {
+      "id": "st04-m02-u03",
+      "kind": "unit",
+      "label": "Present Continuous"
+    },
+    {
+      "id": "st04-m02-u03-checkpoint",
+      "kind": "checkpoint",
+      "label": "Present Continuous — checkpoint"
+    },
+    {
+      "id": "st04-m02-u03-l01",
+      "kind": "lesson",
+      "label": "Present Continuous: Form and Meaning",
+      "cefr": "A1",
+      "minutes": 12
+    },
+    {
+      "id": "st04-m02-u03-l02",
+      "kind": "lesson",
+      "label": "Present Continuous: Use and Practice",
+      "cefr": "A1",
+      "minutes": 12
+    },
+    {
+      "id": "st04-m02-u04",
+      "kind": "unit",
+      "label": "Present Perfect"
+    },
+    {
+      "id": "st04-m02-u04-checkpoint",
+      "kind": "checkpoint",
+      "label": "Present Perfect — checkpoint"
+    },
+    {
+      "id": "st04-m02-u04-l01",
+      "kind": "lesson",
+      "label": "Present Perfect: Form and Meaning",
+      "cefr": "A2",
+      "minutes": 12
+    },
+    {
+      "id": "st04-m02-u04-l02",
+      "kind": "lesson",
+      "label": "Present Perfect: Use and Practice",
+      "cefr": "A2",
+      "minutes": 12
+    },
+    {
+      "id": "st04-m02-u05",
+      "kind": "unit",
+      "label": "Present Perfect Continuous"
+    },
+    {
+      "id": "st04-m02-u05-checkpoint",
+      "kind": "checkpoint",
+      "label": "Present Perfect Continuous — checkpoint"
+    },
+    {
+      "id": "st04-m02-u05-l01",
+      "kind": "lesson",
+      "label": "Present Perfect Continuous: Form and Meaning",
+      "cefr": "B1",
+      "minutes": 12
+    },
+    {
+      "id": "st04-m02-u05-l02",
+      "kind": "lesson",
+      "label": "Present Perfect Continuous: Use and Practice",
+      "cefr": "B1",
+      "minutes": 12
+    },
+    {
+      "id": "st04-m02-exit",
+      "kind": "exit",
+      "label": "The Tense System and Present Tenses — module complete"
+    },
+    {
+      "id": "st04-m03",
+      "kind": "module",
+      "label": "Past Tenses"
+    },
+    {
+      "id": "st04-m03-u01",
+      "kind": "unit",
+      "label": "Past Simple"
+    },
+    {
+      "id": "st04-m03-u01-checkpoint",
+      "kind": "checkpoint",
+      "label": "Past Simple — checkpoint"
+    },
+    {
+      "id": "st04-m03-u01-l01",
+      "kind": "lesson",
+      "label": "Past Simple: Form and Meaning",
+      "cefr": "A1",
+      "minutes": 12
+    },
+    {
+      "id": "st04-m03-u01-l02",
+      "kind": "lesson",
+      "label": "Past Simple: Use and Practice",
+      "cefr": "A1",
+      "minutes": 12
+    },
+    {
+      "id": "st04-m03-u02",
+      "kind": "unit",
+      "label": "Past Continuous"
+    },
+    {
+      "id": "st04-m03-u02-checkpoint",
+      "kind": "checkpoint",
+      "label": "Past Continuous — checkpoint"
+    },
+    {
+      "id": "st04-m03-u02-l01",
+      "kind": "lesson",
+      "label": "Past Continuous: Form and Meaning",
+      "cefr": "A2",
+      "minutes": 12
+    },
+    {
+      "id": "st04-m03-u02-l02",
+      "kind": "lesson",
+      "label": "Past Continuous: Use and Practice",
+      "cefr": "A2",
+      "minutes": 12
+    },
+    {
+      "id": "st04-m03-u03",
+      "kind": "unit",
+      "label": "Past Perfect"
+    },
+    {
+      "id": "st04-m03-u03-checkpoint",
+      "kind": "checkpoint",
+      "label": "Past Perfect — checkpoint"
+    },
+    {
+      "id": "st04-m03-u03-l01",
+      "kind": "lesson",
+      "label": "Past Perfect: Form and Meaning",
+      "cefr": "B1",
+      "minutes": 12
+    },
+    {
+      "id": "st04-m03-u03-l02",
+      "kind": "lesson",
+      "label": "Past Perfect: Use and Practice",
+      "cefr": "B1",
+      "minutes": 12
+    },
+    {
+      "id": "st04-m03-u04",
+      "kind": "unit",
+      "label": "Past Perfect Continuous"
+    },
+    {
+      "id": "st04-m03-u04-checkpoint",
+      "kind": "checkpoint",
+      "label": "Past Perfect Continuous — checkpoint"
+    },
+    {
+      "id": "st04-m03-u04-l01",
+      "kind": "lesson",
+      "label": "Past Perfect Continuous: Form and Meaning",
+      "cefr": "B1",
+      "minutes": 12
+    },
+    {
+      "id": "st04-m03-u04-l02",
+      "kind": "lesson",
+      "label": "Past Perfect Continuous: Use and Practice",
+      "cefr": "B1",
+      "minutes": 12
+    },
+    {
+      "id": "st04-m03-exit",
+      "kind": "exit",
+      "label": "Past Tenses — module complete"
+    },
+    {
+      "id": "st04-m04",
+      "kind": "module",
+      "label": "Future Tenses"
+    },
+    {
+      "id": "st04-m04-u01",
+      "kind": "unit",
+      "label": "Future Simple: will"
+    },
+    {
+      "id": "st04-m04-u01-checkpoint",
+      "kind": "checkpoint",
+      "label": "Future Simple: will — checkpoint"
+    },
+    {
+      "id": "st04-m04-u01-l01",
+      "kind": "lesson",
+      "label": "Future Simple (will): Form and Meaning",
+      "cefr": "A2",
+      "minutes": 12
+    },
+    {
+      "id": "st04-m04-u01-l02",
+      "kind": "lesson",
+      "label": "Future Simple (will): Use and Practice",
+      "cefr": "A2",
+      "minutes": 12
+    },
+    {
+      "id": "st04-m04-u02",
+      "kind": "unit",
+      "label": "Future Continuous"
+    },
+    {
+      "id": "st04-m04-u02-checkpoint",
+      "kind": "checkpoint",
+      "label": "Future Continuous — checkpoint"
+    },
+    {
+      "id": "st04-m04-u02-l01",
+      "kind": "lesson",
+      "label": "Future Continuous: Form and Meaning",
+      "cefr": "B1",
+      "minutes": 12
+    },
+    {
+      "id": "st04-m04-u02-l02",
+      "kind": "lesson",
+      "label": "Future Continuous: Use and Practice",
+      "cefr": "B1",
+      "minutes": 12
+    },
+    {
+      "id": "st04-m04-u03",
+      "kind": "unit",
+      "label": "Future Perfect"
+    },
+    {
+      "id": "st04-m04-u03-checkpoint",
+      "kind": "checkpoint",
+      "label": "Future Perfect — checkpoint"
+    },
+    {
+      "id": "st04-m04-u03-l01",
+      "kind": "lesson",
+      "label": "Future Perfect: Form and Meaning",
+      "cefr": "B2",
+      "minutes": 12
+    },
+    {
+      "id": "st04-m04-u03-l02",
+      "kind": "lesson",
+      "label": "Future Perfect: Use and Practice",
+      "cefr": "B2",
+      "minutes": 12
+    },
+    {
+      "id": "st04-m04-u04",
+      "kind": "unit",
+      "label": "Future Perfect Continuous"
+    },
+    {
+      "id": "st04-m04-u04-checkpoint",
+      "kind": "checkpoint",
+      "label": "Future Perfect Continuous — checkpoint"
+    },
+    {
+      "id": "st04-m04-u04-l01",
+      "kind": "lesson",
+      "label": "Future Perfect Continuous: Form and Meaning",
+      "cefr": "B2",
+      "minutes": 12
+    },
+    {
+      "id": "st04-m04-u04-l02",
+      "kind": "lesson",
+      "label": "Future Perfect Continuous: Use and Practice",
+      "cefr": "B2",
+      "minutes": 12
+    },
+    {
+      "id": "st04-m04-u05",
+      "kind": "unit",
+      "label": "Other Futures"
+    },
+    {
+      "id": "st04-m04-u05-checkpoint",
+      "kind": "checkpoint",
+      "label": "Other Futures — checkpoint"
+    },
+    {
+      "id": "st04-m04-u05-l01",
+      "kind": "lesson",
+      "label": "Going To, Present Continuous and Present Simple for Future",
+      "cefr": "A2",
+      "minutes": 12
+    },
+    {
+      "id": "st04-m04-exit",
+      "kind": "exit",
+      "label": "Future Tenses — module complete"
+    },
+    {
+      "id": "st04-m05",
+      "kind": "module",
+      "label": "Additional Grammar"
+    },
+    {
+      "id": "st04-m05-u01",
+      "kind": "unit",
+      "label": "Agreement and Modality"
+    },
+    {
+      "id": "st04-m05-u01-checkpoint",
+      "kind": "checkpoint",
+      "label": "Agreement and Modality — checkpoint"
+    },
+    {
+      "id": "st04-m05-u01-l01",
+      "kind": "lesson",
+      "label": "Subject-Verb Agreement: Advanced Rules",
+      "cefr": "A2",
+      "minutes": 12
+    },
+    {
+      "id": "st04-m05-u01-l02",
+      "kind": "lesson",
+      "label": "Modal Verbs: can, could, may, might, must, should, will, would",
+      "cefr": "A2",
+      "minutes": 12
+    },
+    {
+      "id": "st04-m05-u01-l03",
+      "kind": "lesson",
+      "label": "Modal Verbs: Semi-Modals and Perfect Modals",
+      "cefr": "B1",
+      "minutes": 12
+    },
+    {
+      "id": "st04-m05-u02",
+      "kind": "unit",
+      "label": "Voice and Speech"
+    },
+    {
+      "id": "st04-m05-u02-checkpoint",
+      "kind": "checkpoint",
+      "label": "Voice and Speech — checkpoint"
+    },
+    {
+      "id": "st04-m05-u02-l01",
+      "kind": "lesson",
+      "label": "Active and Passive Voice: Forms and Uses",
+      "cefr": "B1",
+      "minutes": 12
+    },
+    {
+      "id": "st04-m05-u02-l02",
+      "kind": "lesson",
+      "label": "Passive across Tenses and Transformations",
+      "cefr": "B1",
+      "minutes": 12
+    },
+    {
+      "id": "st04-m05-u02-l03",
+      "kind": "lesson",
+      "label": "Direct and Indirect Speech: Statements and Questions",
+      "cefr": "B1",
+      "minutes": 12
+    },
+    {
+      "id": "st04-m05-u02-l04",
+      "kind": "lesson",
+      "label": "Indirect Speech: Commands, Requests and Time Changes",
+      "cefr": "B1",
+      "minutes": 12
+    },
+    {
+      "id": "st04-m05-u03",
+      "kind": "unit",
+      "label": "Articles, Determiners, Quantifiers and Comparison"
+    },
+    {
+      "id": "st04-m05-u03-checkpoint",
+      "kind": "checkpoint",
+      "label": "Articles, Determiners, Quantifiers and Comparison — checkpoint"
+    },
+    {
+      "id": "st04-m05-u03-l01",
+      "kind": "lesson",
+      "label": "Articles: a, an, the — Complete Guide",
+      "cefr": "A2",
+      "minutes": 12
+    },
+    {
+      "id": "st04-m05-u03-l02",
+      "kind": "lesson",
+      "label": "Determiners",
+      "cefr": "A2",
+      "minutes": 12
+    },
+    {
+      "id": "st04-m05-u03-l03",
+      "kind": "lesson",
+      "label": "Quantifiers: some, any, much, many, a few, a little",
+      "cefr": "A2",
+      "minutes": 12
+    },
+    {
+      "id": "st04-m05-u03-l04",
+      "kind": "lesson",
+      "label": "Degrees of Comparison",
+      "cefr": "A2",
+      "minutes": 12
+    },
+    {
+      "id": "st04-m05-u04",
+      "kind": "unit",
+      "label": "Complex Structures"
+    },
+    {
+      "id": "st04-m05-u04-checkpoint",
+      "kind": "checkpoint",
+      "label": "Complex Structures — checkpoint"
+    },
+    {
+      "id": "st04-m05-u04-l01",
+      "kind": "lesson",
+      "label": "Conditionals: Zero, First and Second",
+      "cefr": "B1",
+      "minutes": 12
+    },
+    {
+      "id": "st04-m05-u04-l02",
+      "kind": "lesson",
+      "label": "Conditionals: Third and Mixed",
+      "cefr": "B2",
+      "minutes": 12
+    },
+    {
+      "id": "st04-m05-u04-l03",
+      "kind": "lesson",
+      "label": "Relative Clauses: Defining",
+      "cefr": "B1",
+      "minutes": 12
+    },
+    {
+      "id": "st04-m05-u04-l04",
+      "kind": "lesson",
+      "label": "Relative Clauses: Non-Defining and Reduced",
+      "cefr": "B2",
+      "minutes": 12
+    },
+    {
+      "id": "st04-m05-u04-l05",
+      "kind": "lesson",
+      "label": "Gerunds and Infinitives: Basics",
+      "cefr": "B1",
+      "minutes": 12
+    },
+    {
+      "id": "st04-m05-u04-l06",
+      "kind": "lesson",
+      "label": "Gerunds and Infinitives: Verb Patterns",
+      "cefr": "B2",
+      "minutes": 12
+    },
+    {
+      "id": "st04-m05-u04-l07",
+      "kind": "lesson",
+      "label": "Participles: Present and Past",
+      "cefr": "B2",
+      "minutes": 12
+    },
+    {
+      "id": "st04-m05-u05",
+      "kind": "unit",
+      "label": "Sentence Mechanics and Verb Phrases"
+    },
+    {
+      "id": "st04-m05-u05-checkpoint",
+      "kind": "checkpoint",
+      "label": "Sentence Mechanics and Verb Phrases — checkpoint"
+    },
+    {
+      "id": "st04-m05-u05-l01",
+      "kind": "lesson",
+      "label": "Question Tags",
+      "cefr": "A2",
+      "minutes": 12
+    },
+    {
+      "id": "st04-m05-u05-l02",
+      "kind": "lesson",
+      "label": "Phrasal Verbs: Common Combinations",
+      "cefr": "B1",
+      "minutes": 12
+    },
+    {
+      "id": "st04-m05-u05-l03",
+      "kind": "lesson",
+      "label": "Phrasal Verbs: Separable, Inseparable and Three-Word",
+      "cefr": "B1",
+      "minutes": 12
+    },
+    {
+      "id": "st04-m05-u05-l04",
+      "kind": "lesson",
+      "label": "Linking Words and Advanced Conjunctions",
+      "cefr": "B1",
+      "minutes": 12
+    },
+    {
+      "id": "st04-m05-u05-l05",
+      "kind": "lesson",
+      "label": "Prepositions: Advanced Patterns",
+      "cefr": "B1",
+      "minutes": 12
+    },
+    {
+      "id": "st04-m05-u05-l06",
+      "kind": "lesson",
+      "label": "Punctuation",
+      "cefr": "A2",
+      "minutes": 12
+    },
+    {
+      "id": "st04-m05-u05-l07",
+      "kind": "lesson",
+      "label": "Capitalisation Rules",
+      "cefr": "A2",
+      "minutes": 10
+    },
+    {
+      "id": "st04-m05-u05-l08",
+      "kind": "lesson",
+      "label": "Common Grammatical Errors",
+      "cefr": "B1",
+      "minutes": 12
+    },
+    {
+      "id": "st04-m05-exit",
+      "kind": "exit",
+      "label": "Additional Grammar — module complete"
+    },
+    {
+      "id": "st04-exit",
+      "kind": "exit",
+      "label": "Complete Grammar Exit Test",
+      "cefr": "A1 → B2",
+      "minutes": 30
+    },
+    {
+      "id": "st05",
+      "kind": "stage",
+      "label": "Types of Sentences",
+      "cefr": "A2 → B1"
+    },
+    {
+      "id": "st05-m01",
+      "kind": "module",
+      "label": "Sentence Purpose"
+    },
+    {
+      "id": "st05-m01-u01",
+      "kind": "unit",
+      "label": "The Four Purposes"
+    },
+    {
+      "id": "st05-m01-u01-checkpoint",
+      "kind": "checkpoint",
+      "label": "The Four Purposes — checkpoint"
+    },
+    {
+      "id": "st05-m01-u01-l01",
+      "kind": "lesson",
+      "label": "Declarative (Assertive) Sentences",
+      "cefr": "A2",
+      "minutes": 12
+    },
+    {
+      "id": "st05-m01-u01-l02",
+      "kind": "lesson",
+      "label": "Interrogative Sentences",
+      "cefr": "A2",
+      "minutes": 12
+    },
+    {
+      "id": "st05-m01-u01-l03",
+      "kind": "lesson",
+      "label": "Imperative Sentences",
+      "cefr": "A2",
+      "minutes": 12
+    },
+    {
+      "id": "st05-m01-u01-l04",
+      "kind": "lesson",
+      "label": "Exclamatory Sentences",
+      "cefr": "A2",
+      "minutes": 12
+    },
+    {
+      "id": "st05-m01-exit",
+      "kind": "exit",
+      "label": "Sentence Purpose — module complete"
+    },
+    {
+      "id": "st05-m02",
+      "kind": "module",
+      "label": "Sentence Structure"
+    },
+    {
+      "id": "st05-m02-u01",
+      "kind": "unit",
+      "label": "The Four Structures"
+    },
+    {
+      "id": "st05-m02-u01-checkpoint",
+      "kind": "checkpoint",
+      "label": "The Four Structures — checkpoint"
+    },
+    {
+      "id": "st05-m02-u01-l01",
+      "kind": "lesson",
+      "label": "Simple Sentences",
+      "cefr": "A2",
+      "minutes": 12
+    },
+    {
+      "id": "st05-m02-u01-l02",
+      "kind": "lesson",
+      "label": "Compound Sentences",
+      "cefr": "B1",
+      "minutes": 12
+    },
+    {
+      "id": "st05-m02-u01-l03",
+      "kind": "lesson",
+      "label": "Complex Sentences",
+      "cefr": "B1",
+      "minutes": 12
+    },
+    {
+      "id": "st05-m02-u01-l04",
+      "kind": "lesson",
+      "label": "Compound-Complex Sentences",
+      "cefr": "B1",
+      "minutes": 12
+    },
+    {
+      "id": "st05-m02-exit",
+      "kind": "exit",
+      "label": "Sentence Structure — module complete"
+    },
+    {
+      "id": "st05-m03",
+      "kind": "module",
+      "label": "Sentence Operations"
+    },
+    {
+      "id": "st05-m03-u01",
+      "kind": "unit",
+      "label": "Polarity and Questions"
+    },
+    {
+      "id": "st05-m03-u01-checkpoint",
+      "kind": "checkpoint",
+      "label": "Polarity and Questions — checkpoint"
+    },
+    {
+      "id": "st05-m03-u01-l01",
+      "kind": "lesson",
+      "label": "Affirmative and Negative Forms",
+      "cefr": "A2",
+      "minutes": 12
+    },
+    {
+      "id": "st05-m03-u01-l02",
+      "kind": "lesson",
+      "label": "Yes/No Questions and WH-Questions",
+      "cefr": "A2",
+      "minutes": 12
+    },
+    {
+      "id": "st05-m03-u02",
+      "kind": "unit",
+      "label": "Transformation and Combination"
+    },
+    {
+      "id": "st05-m03-u02-checkpoint",
+      "kind": "checkpoint",
+      "label": "Transformation and Combination — checkpoint"
+    },
+    {
+      "id": "st05-m03-u02-l01",
+      "kind": "lesson",
+      "label": "Sentence Transformation",
+      "cefr": "B1",
+      "minutes": 12
+    },
+    {
+      "id": "st05-m03-u02-l02",
+      "kind": "lesson",
+      "label": "Sentence Combination",
+      "cefr": "B1",
+      "minutes": 12
+    },
+    {
+      "id": "st05-m03-u03",
+      "kind": "unit",
+      "label": "Expansion and Correction"
+    },
+    {
+      "id": "st05-m03-u03-checkpoint",
+      "kind": "checkpoint",
+      "label": "Expansion and Correction — checkpoint"
+    },
+    {
+      "id": "st05-m03-u03-l01",
+      "kind": "lesson",
+      "label": "Sentence Expansion",
+      "cefr": "B1",
+      "minutes": 12
+    },
+    {
+      "id": "st05-m03-u03-l02",
+      "kind": "lesson",
+      "label": "Sentence Correction",
+      "cefr": "B1",
+      "minutes": 12
+    },
+    {
+      "id": "st05-m03-exit",
+      "kind": "exit",
+      "label": "Sentence Operations — module complete"
+    },
+    {
+      "id": "st05-exit",
+      "kind": "exit",
+      "label": "Sentence Types Exit Test",
+      "cefr": "A2 → B1",
+      "minutes": 25
+    },
+    {
+      "id": "st06",
+      "kind": "stage",
+      "label": "Reading Development",
+      "cefr": "A1 → B2"
+    },
+    {
+      "id": "st06-m01",
+      "kind": "module",
+      "label": "Reading Foundations"
+    },
+    {
+      "id": "st06-m01-u01",
+      "kind": "unit",
+      "label": "Words and Sentences"
+    },
+    {
+      "id": "st06-m01-u01-checkpoint",
+      "kind": "checkpoint",
+      "label": "Words and Sentences — checkpoint"
+    },
+    {
+      "id": "st06-m01-u01-l01",
+      "kind": "lesson",
+      "label": "Word Recognition",
+      "cefr": "A1",
+      "minutes": 12
+    },
+    {
+      "id": "st06-m01-u01-l02",
+      "kind": "lesson",
+      "label": "Sentence Reading",
+      "cefr": "A1",
+      "minutes": 12
+    },
+    {
+      "id": "st06-m01-u02",
+      "kind": "unit",
+      "label": "First Texts"
+    },
+    {
+      "id": "st06-m01-u02-checkpoint",
+      "kind": "checkpoint",
+      "label": "First Texts — checkpoint"
+    },
+    {
+      "id": "st06-m01-u02-l01",
+      "kind": "lesson",
+      "label": "Short Passages",
+      "cefr": "A1",
+      "minutes": 12
+    },
+    {
+      "id": "st06-m01-u02-l02",
+      "kind": "lesson",
+      "label": "Dialogues",
+      "cefr": "A1",
+      "minutes": 12
+    },
+    {
+      "id": "st06-m01-exit",
+      "kind": "exit",
+      "label": "Reading Foundations — module complete"
+    },
+    {
+      "id": "st06-m02",
+      "kind": "module",
+      "label": "Building Comprehension"
+    },
+    {
+      "id": "st06-m02-u01",
+      "kind": "unit",
+      "label": "Longer Texts"
+    },
+    {
+      "id": "st06-m02-u01-checkpoint",
+      "kind": "checkpoint",
+      "label": "Longer Texts — checkpoint"
+    },
+    {
+      "id": "st06-m02-u01-l01",
+      "kind": "lesson",
+      "label": "Paragraph Reading",
+      "cefr": "A2",
+      "minutes": 12
+    },
+    {
+      "id": "st06-m02-u01-l02",
+      "kind": "lesson",
+      "label": "Stories",
+      "cefr": "A2",
+      "minutes": 12
+    },
+    {
+      "id": "st06-m02-u02",
+      "kind": "unit",
+      "label": "Comprehension Skills"
+    },
+    {
+      "id": "st06-m02-u02-checkpoint",
+      "kind": "checkpoint",
+      "label": "Comprehension Skills — checkpoint"
+    },
+    {
+      "id": "st06-m02-u02-l01",
+      "kind": "lesson",
+      "label": "Finding Main Ideas",
+      "cefr": "A2",
+      "minutes": 12
+    },
+    {
+      "id": "st06-m02-u02-l02",
+      "kind": "lesson",
+      "label": "Understanding Context and Inferencing",
+      "cefr": "A2",
+      "minutes": 12
+    },
+    {
+      "id": "st06-m02-exit",
+      "kind": "exit",
+      "label": "Building Comprehension — module complete"
+    },
+    {
+      "id": "st06-m03",
+      "kind": "module",
+      "label": "Reading Genres"
+    },
+    {
+      "id": "st06-m03-u01",
+      "kind": "unit",
+      "label": "Genre Reading"
+    },
+    {
+      "id": "st06-m03-u01-checkpoint",
+      "kind": "checkpoint",
+      "label": "Genre Reading — checkpoint"
+    },
+    {
+      "id": "st06-m03-u01-l01",
+      "kind": "lesson",
+      "label": "Descriptive Passages",
+      "cefr": "B1",
+      "minutes": 12
+    },
+    {
+      "id": "st06-m03-u01-l02",
+      "kind": "lesson",
+      "label": "Informational Texts",
+      "cefr": "B1",
+      "minutes": 12
+    },
+    {
+      "id": "st06-m03-u01-l03",
+      "kind": "lesson",
+      "label": "Articles",
+      "cefr": "B1",
+      "minutes": 12
+    },
+    {
+      "id": "st06-m03-exit",
+      "kind": "exit",
+      "label": "Reading Genres — module complete"
+    },
+    {
+      "id": "st06-m04",
+      "kind": "module",
+      "label": "Critical Reading"
+    },
+    {
+      "id": "st06-m04-u01",
+      "kind": "unit",
+      "label": "Reading for Depth"
+    },
+    {
+      "id": "st06-m04-u01-checkpoint",
+      "kind": "checkpoint",
+      "label": "Reading for Depth — checkpoint"
+    },
+    {
+      "id": "st06-m04-u01-l01",
+      "kind": "lesson",
+      "label": "Summarisation",
+      "cefr": "B2",
+      "minutes": 12
+    },
+    {
+      "id": "st06-m04-u01-l02",
+      "kind": "lesson",
+      "label": "Author's Purpose and Tone",
+      "cefr": "B2",
+      "minutes": 12
+    },
+    {
+      "id": "st06-m04-u01-l03",
+      "kind": "lesson",
+      "label": "Reading for Meaning: Inference and Evaluation",
+      "cefr": "B2",
+      "minutes": 12
+    },
+    {
+      "id": "st06-m04-exit",
+      "kind": "exit",
+      "label": "Critical Reading — module complete"
+    },
+    {
+      "id": "st06-exit",
+      "kind": "exit",
+      "label": "Reading Development Exit Test",
+      "cefr": "A1 → B2",
+      "minutes": 25
+    },
+    {
+      "id": "st07",
+      "kind": "stage",
+      "label": "Writing Development",
+      "cefr": "A1 → B2"
+    },
+    {
+      "id": "st07-m01",
+      "kind": "module",
+      "label": "From Letters to Sentences"
+    },
+    {
+      "id": "st07-m01-u01",
+      "kind": "unit",
+      "label": "Writing Mechanics"
+    },
+    {
+      "id": "st07-m01-u01-checkpoint",
+      "kind": "checkpoint",
+      "label": "Writing Mechanics — checkpoint"
+    },
+    {
+      "id": "st07-m01-u01-l01",
+      "kind": "lesson",
+      "label": "Alphabet Writing and Word Spelling",
+      "cefr": "A1",
+      "minutes": 12
+    },
+    {
+      "id": "st07-m01-u01-l02",
+      "kind": "lesson",
+      "label": "Sentence Writing",
+      "cefr": "A1",
+      "minutes": 12
+    },
+    {
+      "id": "st07-m01-u01-l03",
+      "kind": "lesson",
+      "label": "Sentence Expansion",
+      "cefr": "A1",
+      "minutes": 12
+    },
+    {
+      "id": "st07-m01-exit",
+      "kind": "exit",
+      "label": "From Letters to Sentences — module complete"
+    },
+    {
+      "id": "st07-m02",
+      "kind": "module",
+      "label": "Paragraphs"
+    },
+    {
+      "id": "st07-m02-u01",
+      "kind": "unit",
+      "label": "Paragraph Construction"
+    },
+    {
+      "id": "st07-m02-u01-checkpoint",
+      "kind": "checkpoint",
+      "label": "Paragraph Construction — checkpoint"
+    },
+    {
+      "id": "st07-m02-u01-l01",
+      "kind": "lesson",
+      "label": "Connected Sentences",
+      "cefr": "A2",
+      "minutes": 12
+    },
+    {
+      "id": "st07-m02-u01-l02",
+      "kind": "lesson",
+      "label": "Topic Sentences",
+      "cefr": "A2",
+      "minutes": 12
+    },
+    {
+      "id": "st07-m02-u01-l03",
+      "kind": "lesson",
+      "label": "Supporting Details",
+      "cefr": "A2",
+      "minutes": 12
+    },
+    {
+      "id": "st07-m02-u01-l04",
+      "kind": "lesson",
+      "label": "Conclusions",
+      "cefr": "A2",
+      "minutes": 12
+    },
+    {
+      "id": "st07-m02-exit",
+      "kind": "exit",
+      "label": "Paragraphs — module complete"
+    },
+    {
+      "id": "st07-m03",
+      "kind": "module",
+      "label": "Writing Genres"
+    },
+    {
+      "id": "st07-m03-u01",
+      "kind": "unit",
+      "label": "Creative and Personal Writing"
+    },
+    {
+      "id": "st07-m03-u01-checkpoint",
+      "kind": "checkpoint",
+      "label": "Creative and Personal Writing — checkpoint"
+    },
+    {
+      "id": "st07-m03-u01-l01",
+      "kind": "lesson",
+      "label": "Descriptive Writing",
+      "cefr": "B1",
+      "minutes": 12
+    },
+    {
+      "id": "st07-m03-u01-l02",
+      "kind": "lesson",
+      "label": "Narrative Writing",
+      "cefr": "B1",
+      "minutes": 12
+    },
+    {
+      "id": "st07-m03-u01-l03",
+      "kind": "lesson",
+      "label": "Opinion Writing",
+      "cefr": "B1",
+      "minutes": 12
+    },
+    {
+      "id": "st07-m03-u02",
+      "kind": "unit",
+      "label": "Practical Writing"
+    },
+    {
+      "id": "st07-m03-u02-checkpoint",
+      "kind": "checkpoint",
+      "label": "Practical Writing — checkpoint"
+    },
+    {
+      "id": "st07-m03-u02-l01",
+      "kind": "lesson",
+      "label": "Letters",
+      "cefr": "B1",
+      "minutes": 12
+    },
+    {
+      "id": "st07-m03-u02-l02",
+      "kind": "lesson",
+      "label": "Applications",
+      "cefr": "B1",
+      "minutes": 12
+    },
+    {
+      "id": "st07-m03-u02-l03",
+      "kind": "lesson",
+      "label": "Emails and Notices",
+      "cefr": "B1",
+      "minutes": 12
+    },
+    {
+      "id": "st07-m03-u02-l04",
+      "kind": "lesson",
+      "label": "Reports",
+      "cefr": "B1",
+      "minutes": 12
+    },
+    {
+      "id": "st07-m03-exit",
+      "kind": "exit",
+      "label": "Writing Genres — module complete"
+    },
+    {
+      "id": "st07-m04",
+      "kind": "module",
+      "label": "Advanced Writing"
+    },
+    {
+      "id": "st07-m04-u01",
+      "kind": "unit",
+      "label": "Essays and Summaries"
+    },
+    {
+      "id": "st07-m04-u01-checkpoint",
+      "kind": "checkpoint",
+      "label": "Essays and Summaries — checkpoint"
+    },
+    {
+      "id": "st07-m04-u01-l01",
+      "kind": "lesson",
+      "label": "Essay Writing",
+      "cefr": "B2",
+      "minutes": 12
+    },
+    {
+      "id": "st07-m04-u01-l02",
+      "kind": "lesson",
+      "label": "Summaries",
+      "cefr": "B2",
+      "minutes": 12
+    },
+    {
+      "id": "st07-m04-u02",
+      "kind": "unit",
+      "label": "Professional Communication"
+    },
+    {
+      "id": "st07-m04-u02-checkpoint",
+      "kind": "checkpoint",
+      "label": "Professional Communication — checkpoint"
+    },
+    {
+      "id": "st07-m04-u02-l01",
+      "kind": "lesson",
+      "label": "Professional Emails and Messages",
+      "cefr": "B2",
+      "minutes": 12
+    },
+    {
+      "id": "st07-m04-u02-l02",
+      "kind": "lesson",
+      "label": "Professional Reports and Documents",
+      "cefr": "B2",
+      "minutes": 12
+    },
+    {
+      "id": "st07-m04-exit",
+      "kind": "exit",
+      "label": "Advanced Writing — module complete"
+    },
+    {
+      "id": "st07-exit",
+      "kind": "exit",
+      "label": "Writing Development Exit Test",
+      "cefr": "A1 → B2",
+      "minutes": 30
+    },
+    {
+      "id": "st08",
+      "kind": "stage",
+      "label": "Practical Spoken English",
+      "cefr": "A1 → B1"
+    },
+    {
+      "id": "st08-m01",
+      "kind": "module",
+      "label": "Everyday Talk"
+    },
+    {
+      "id": "st08-m01-u01",
+      "kind": "unit",
+      "label": "Greetings and Introductions"
+    },
+    {
+      "id": "st08-m01-u01-checkpoint",
+      "kind": "checkpoint",
+      "label": "Greetings and Introductions — checkpoint"
+    },
+    {
+      "id": "st08-m01-u01-l01",
+      "kind": "lesson",
+      "label": "Greetings",
+      "cefr": "A1",
+      "minutes": 12
+    },
+    {
+      "id": "st08-m01-u01-l02",
+      "kind": "lesson",
+      "label": "Self-Introduction",
+      "cefr": "A1",
+      "minutes": 12
+    },
+    {
+      "id": "st08-m01-u01-l03",
+      "kind": "lesson",
+      "label": "Family Introduction",
+      "cefr": "A1",
+      "minutes": 12
+    },
+    {
+      "id": "st08-m01-u02",
+      "kind": "unit",
+      "label": "Daily Life"
+    },
+    {
+      "id": "st08-m01-u02-checkpoint",
+      "kind": "checkpoint",
+      "label": "Daily Life — checkpoint"
+    },
+    {
+      "id": "st08-m01-u02-l01",
+      "kind": "lesson",
+      "label": "Daily Routines",
+      "cefr": "A1",
+      "minutes": 12
+    },
+    {
+      "id": "st08-m01-u02-l02",
+      "kind": "lesson",
+      "label": "Asking Questions",
+      "cefr": "A1",
+      "minutes": 12
+    },
+    {
+      "id": "st08-m01-exit",
+      "kind": "exit",
+      "label": "Everyday Talk — module complete"
+    },
+    {
+      "id": "st08-m02",
+      "kind": "module",
+      "label": "Getting Things Done"
+    },
+    {
+      "id": "st08-m02-u01",
+      "kind": "unit",
+      "label": "Help and Instructions"
+    },
+    {
+      "id": "st08-m02-u01-checkpoint",
+      "kind": "checkpoint",
+      "label": "Help and Instructions — checkpoint"
+    },
+    {
+      "id": "st08-m02-u01-l01",
+      "kind": "lesson",
+      "label": "Asking for Help",
+      "cefr": "A1",
+      "minutes": 12
+    },
+    {
+      "id": "st08-m02-u01-l02",
+      "kind": "lesson",
+      "label": "Giving Instructions",
+      "cefr": "A1",
+      "minutes": 12
+    },
+    {
+      "id": "st08-m02-u02",
+      "kind": "unit",
+      "label": "Opinions, Requests and Preferences"
+    },
+    {
+      "id": "st08-m02-u02-checkpoint",
+      "kind": "checkpoint",
+      "label": "Opinions, Requests and Preferences — checkpoint"
+    },
+    {
+      "id": "st08-m02-u02-l01",
+      "kind": "lesson",
+      "label": "Expressing Opinions",
+      "cefr": "A2",
+      "minutes": 12
+    },
+    {
+      "id": "st08-m02-u02-l02",
+      "kind": "lesson",
+      "label": "Making Requests",
+      "cefr": "A2",
+      "minutes": 12
+    },
+    {
+      "id": "st08-m02-u02-l03",
+      "kind": "lesson",
+      "label": "Expressing Preferences",
+      "cefr": "A2",
+      "minutes": 12
+    },
+    {
+      "id": "st08-m02-exit",
+      "kind": "exit",
+      "label": "Getting Things Done — module complete"
+    },
+    {
+      "id": "st08-m03",
+      "kind": "module",
+      "label": "Out and About"
+    },
+    {
+      "id": "st08-m03-u01",
+      "kind": "unit",
+      "label": "Shopping and Dining"
+    },
+    {
+      "id": "st08-m03-u01-checkpoint",
+      "kind": "checkpoint",
+      "label": "Shopping and Dining — checkpoint"
+    },
+    {
+      "id": "st08-m03-u01-l01",
+      "kind": "lesson",
+      "label": "Shopping",
+      "cefr": "A2",
+      "minutes": 12
+    },
+    {
+      "id": "st08-m03-u01-l02",
+      "kind": "lesson",
+      "label": "Restaurants",
+      "cefr": "A2",
+      "minutes": 12
+    },
+    {
+      "id": "st08-m03-u02",
+      "kind": "unit",
+      "label": "Travel and Communication"
+    },
+    {
+      "id": "st08-m03-u02-checkpoint",
+      "kind": "checkpoint",
+      "label": "Travel and Communication — checkpoint"
+    },
+    {
+      "id": "st08-m03-u02-l01",
+      "kind": "lesson",
+      "label": "Travel",
+      "cefr": "A2",
+      "minutes": 12
+    },
+    {
+      "id": "st08-m03-u02-l02",
+      "kind": "lesson",
+      "label": "Telephone Conversations",
+      "cefr": "A2",
+      "minutes": 12
+    },
+    {
+      "id": "st08-m03-exit",
+      "kind": "exit",
+      "label": "Out and About — module complete"
+    },
+    {
+      "id": "st08-m04",
+      "kind": "module",
+      "label": "Structured Speaking"
+    },
+    {
+      "id": "st08-m04-u01",
+      "kind": "unit",
+      "label": "Learning and Working"
+    },
+    {
+      "id": "st08-m04-u01-checkpoint",
+      "kind": "checkpoint",
+      "label": "Learning and Working — checkpoint"
+    },
+    {
+      "id": "st08-m04-u01-l01",
+      "kind": "lesson",
+      "label": "Classroom Communication",
+      "cefr": "B1",
+      "minutes": 12
+    },
+    {
+      "id": "st08-m04-u01-l02",
+      "kind": "lesson",
+      "label": "Workplace Communication",
+      "cefr": "B1",
+      "minutes": 12
+    },
+    {
+      "id": "st08-m04-u02",
+      "kind": "unit",
+      "label": "Social and Narrative"
+    },
+    {
+      "id": "st08-m04-u02-checkpoint",
+      "kind": "checkpoint",
+      "label": "Social and Narrative — checkpoint"
+    },
+    {
+      "id": "st08-m04-u02-l01",
+      "kind": "lesson",
+      "label": "Social Conversations",
+      "cefr": "B1",
+      "minutes": 12
+    },
+    {
+      "id": "st08-m04-u02-l02",
+      "kind": "lesson",
+      "label": "Storytelling",
+      "cefr": "B1",
+      "minutes": 12
+    },
+    {
+      "id": "st08-m04-u03",
+      "kind": "unit",
+      "label": "High-Stakes Speaking"
+    },
+    {
+      "id": "st08-m04-u03-checkpoint",
+      "kind": "checkpoint",
+      "label": "High-Stakes Speaking — checkpoint"
+    },
+    {
+      "id": "st08-m04-u03-l01",
+      "kind": "lesson",
+      "label": "Interviews",
+      "cefr": "B1",
+      "minutes": 12
+    },
+    {
+      "id": "st08-m04-u03-l02",
+      "kind": "lesson",
+      "label": "Group Discussions",
+      "cefr": "B1",
+      "minutes": 12
+    },
+    {
+      "id": "st08-m04-u03-l03",
+      "kind": "lesson",
+      "label": "Public Speaking",
+      "cefr": "B1",
+      "minutes": 12
+    },
+    {
+      "id": "st08-m04-exit",
+      "kind": "exit",
+      "label": "Structured Speaking — module complete"
+    },
+    {
+      "id": "st08-exit",
+      "kind": "exit",
+      "label": "Spoken English Exit Test",
+      "cefr": "A1 → B1",
+      "minutes": 20
+    },
+    {
+      "id": "st09",
+      "kind": "stage",
+      "label": "Listening and Pronunciation",
+      "cefr": "A1 → B2"
+    },
+    {
+      "id": "st09-m01",
+      "kind": "module",
+      "label": "Listening Foundations"
+    },
+    {
+      "id": "st09-m01-u01",
+      "kind": "unit",
+      "label": "Sounds, Words and Sentences"
+    },
+    {
+      "id": "st09-m01-u01-checkpoint",
+      "kind": "checkpoint",
+      "label": "Sounds, Words and Sentences — checkpoint"
+    },
+    {
+      "id": "st09-m01-u01-l01",
+      "kind": "lesson",
+      "label": "Individual Sounds and Words",
+      "cefr": "A1",
+      "minutes": 12
+    },
+    {
+      "id": "st09-m01-u01-l02",
+      "kind": "lesson",
+      "label": "Short Sentences",
+      "cefr": "A1",
+      "minutes": 12
+    },
+    {
+      "id": "st09-m01-u01-l03",
+      "kind": "lesson",
+      "label": "Dialogues",
+      "cefr": "A1",
+      "minutes": 12
+    },
+    {
+      "id": "st09-m01-exit",
+      "kind": "exit",
+      "label": "Listening Foundations — module complete"
+    },
+    {
+      "id": "st09-m02",
+      "kind": "module",
+      "label": "The Music of English"
+    },
+    {
+      "id": "st09-m02-u01",
+      "kind": "unit",
+      "label": "Stress and Rhythm"
+    },
+    {
+      "id": "st09-m02-u01-checkpoint",
+      "kind": "checkpoint",
+      "label": "Stress and Rhythm — checkpoint"
+    },
+    {
+      "id": "st09-m02-u01-l01",
+      "kind": "lesson",
+      "label": "Word Stress",
+      "cefr": "A2",
+      "minutes": 12
+    },
+    {
+      "id": "st09-m02-u01-l02",
+      "kind": "lesson",
+      "label": "Sentence Stress and Rhythm",
+      "cefr": "A2",
+      "minutes": 12
+    },
+    {
+      "id": "st09-m02-u02",
+      "kind": "unit",
+      "label": "Flow and Intonation"
+    },
+    {
+      "id": "st09-m02-u02-checkpoint",
+      "kind": "checkpoint",
+      "label": "Flow and Intonation — checkpoint"
+    },
+    {
+      "id": "st09-m02-u02-l01",
+      "kind": "lesson",
+      "label": "Connected Speech",
+      "cefr": "B1",
+      "minutes": 12
+    },
+    {
+      "id": "st09-m02-u02-l02",
+      "kind": "lesson",
+      "label": "Rhythm and Intonation",
+      "cefr": "B1",
+      "minutes": 12
+    },
+    {
+      "id": "st09-m02-exit",
+      "kind": "exit",
+      "label": "The Music of English — module complete"
+    },
+    {
+      "id": "st09-m03",
+      "kind": "module",
+      "label": "Listening Beyond Basics"
+    },
+    {
+      "id": "st09-m03-u01",
+      "kind": "unit",
+      "label": "Extended Listening"
+    },
+    {
+      "id": "st09-m03-u01-checkpoint",
+      "kind": "checkpoint",
+      "label": "Extended Listening — checkpoint"
+    },
+    {
+      "id": "st09-m03-u01-l01",
+      "kind": "lesson",
+      "label": "Stories",
+      "cefr": "A2",
+      "minutes": 12
+    },
+    {
+      "id": "st09-m03-u01-l02",
+      "kind": "lesson",
+      "label": "Conversations",
+      "cefr": "B1",
+      "minutes": 12
+    },
+    {
+      "id": "st09-m03-u01-l03",
+      "kind": "lesson",
+      "label": "Natural Spoken English",
+      "cefr": "B1",
+      "minutes": 12
+    },
+    {
+      "id": "st09-m03-u02",
+      "kind": "unit",
+      "label": "Variety and Precision"
+    },
+    {
+      "id": "st09-m03-u02-checkpoint",
+      "kind": "checkpoint",
+      "label": "Variety and Precision — checkpoint"
+    },
+    {
+      "id": "st09-m03-u02-l01",
+      "kind": "lesson",
+      "label": "Different English Accents",
+      "cefr": "B1",
+      "minutes": 12
+    },
+    {
+      "id": "st09-m03-u02-l02",
+      "kind": "lesson",
+      "label": "Dictation",
+      "cefr": "B1",
+      "minutes": 12
+    },
+    {
+      "id": "st09-m03-exit",
+      "kind": "exit",
+      "label": "Listening Beyond Basics — module complete"
+    },
+    {
+      "id": "st09-m04",
+      "kind": "module",
+      "label": "Listening Mastery"
+    },
+    {
+      "id": "st09-m04-u01",
+      "kind": "unit",
+      "label": "Advanced Listening"
+    },
+    {
+      "id": "st09-m04-u01-checkpoint",
+      "kind": "checkpoint",
+      "label": "Advanced Listening — checkpoint"
+    },
+    {
+      "id": "st09-m04-u01-l01",
+      "kind": "lesson",
+      "label": "Understanding Fast, Natural Speech",
+      "cefr": "B2",
+      "minutes": 12
+    },
+    {
+      "id": "st09-m04-u01-l02",
+      "kind": "lesson",
+      "label": "Comprehension Strategies and Review",
+      "cefr": "B2",
+      "minutes": 12
+    },
+    {
+      "id": "st09-m04-exit",
+      "kind": "exit",
+      "label": "Listening Mastery — module complete"
+    },
+    {
+      "id": "st09-exit",
+      "kind": "exit",
+      "label": "Listening and Pronunciation Exit Test",
+      "cefr": "A1 → B2",
+      "minutes": 25
+    },
+    {
+      "id": "st10",
+      "kind": "stage",
+      "label": "Advanced Communication",
+      "cefr": "B2 → C1"
+    },
+    {
+      "id": "st10-m01",
+      "kind": "module",
+      "label": "Fluency and Expression"
+    },
+    {
+      "id": "st10-m01-u01",
+      "kind": "unit",
+      "label": "Fluency"
+    },
+    {
+      "id": "st10-m01-u01-checkpoint",
+      "kind": "checkpoint",
+      "label": "Fluency — checkpoint"
+    },
+    {
+      "id": "st10-m01-u01-l01",
+      "kind": "lesson",
+      "label": "Fluency Development",
+      "cefr": "B2",
+      "minutes": 12
+    },
+    {
+      "id": "st10-m01-u01-l02",
+      "kind": "lesson",
+      "label": "Spontaneous Conversation",
+      "cefr": "B2",
+      "minutes": 12
+    },
+    {
+      "id": "st10-m01-u02",
+      "kind": "unit",
+      "label": "Narrative and Persuasion"
+    },
+    {
+      "id": "st10-m01-u02-checkpoint",
+      "kind": "checkpoint",
+      "label": "Narrative and Persuasion — checkpoint"
+    },
+    {
+      "id": "st10-m01-u02-l01",
+      "kind": "lesson",
+      "label": "Advanced Storytelling",
+      "cefr": "B2",
+      "minutes": 12
+    },
+    {
+      "id": "st10-m01-u02-l02",
+      "kind": "lesson",
+      "label": "Persuasive Communication",
+      "cefr": "B2",
+      "minutes": 12
+    },
+    {
+      "id": "st10-m01-exit",
+      "kind": "exit",
+      "label": "Fluency and Expression — module complete"
+    },
+    {
+      "id": "st10-m02",
+      "kind": "module",
+      "label": "Formal and Professional"
+    },
+    {
+      "id": "st10-m02-u01",
+      "kind": "unit",
+      "label": "Presenting and Discussing"
+    },
+    {
+      "id": "st10-m02-u01-checkpoint",
+      "kind": "checkpoint",
+      "label": "Presenting and Discussing — checkpoint"
+    },
+    {
+      "id": "st10-m02-u01-l01",
+      "kind": "lesson",
+      "label": "Presentations",
+      "cefr": "C1",
+      "minutes": 12
+    },
+    {
+      "id": "st10-m02-u01-l02",
+      "kind": "lesson",
+      "label": "Professional Discussions",
+      "cefr": "C1",
+      "minutes": 12
+    },
+    {
+      "id": "st10-m02-u02",
+      "kind": "unit",
+      "label": "Interviews"
+    },
+    {
+      "id": "st10-m02-u02-checkpoint",
+      "kind": "checkpoint",
+      "label": "Interviews — checkpoint"
+    },
+    {
+      "id": "st10-m02-u02-l01",
+      "kind": "lesson",
+      "label": "Advanced Interviews",
+      "cefr": "B2",
+      "minutes": 12
+    },
+    {
+      "id": "st10-m02-exit",
+      "kind": "exit",
+      "label": "Formal and Professional — module complete"
+    },
+    {
+      "id": "st10-m03",
+      "kind": "module",
+      "label": "Precision and Depth"
+    },
+    {
+      "id": "st10-m03-u01",
+      "kind": "unit",
+      "label": "Language Mastery"
+    },
+    {
+      "id": "st10-m03-u01-checkpoint",
+      "kind": "checkpoint",
+      "label": "Language Mastery — checkpoint"
+    },
+    {
+      "id": "st10-m03-u01-l01",
+      "kind": "lesson",
+      "label": "Advanced Vocabulary",
+      "cefr": "C1",
+      "minutes": 12
+    },
+    {
+      "id": "st10-m03-u01-l02",
+      "kind": "lesson",
+      "label": "Idiomatic Expressions",
+      "cefr": "C1",
+      "minutes": 12
+    },
+    {
+      "id": "st10-m03-u02",
+      "kind": "unit",
+      "label": "Critical Skills"
+    },
+    {
+      "id": "st10-m03-u02-checkpoint",
+      "kind": "checkpoint",
+      "label": "Critical Skills — checkpoint"
+    },
+    {
+      "id": "st10-m03-u02-l01",
+      "kind": "lesson",
+      "label": "Debate",
+      "cefr": "C1",
+      "minutes": 12
+    },
+    {
+      "id": "st10-m03-u02-l02",
+      "kind": "lesson",
+      "label": "Critical Reading",
+      "cefr": "C1",
+      "minutes": 12
+    },
+    {
+      "id": "st10-m03-u03",
+      "kind": "unit",
+      "label": "Formal Writing"
+    },
+    {
+      "id": "st10-m03-u03-checkpoint",
+      "kind": "checkpoint",
+      "label": "Formal Writing — checkpoint"
+    },
+    {
+      "id": "st10-m03-u03-l01",
+      "kind": "lesson",
+      "label": "Formal Writing",
+      "cefr": "C1",
+      "minutes": 12
+    },
+    {
+      "id": "st10-m03-exit",
+      "kind": "exit",
+      "label": "Precision and Depth — module complete"
+    },
+    {
+      "id": "st10-exit",
+      "kind": "exit",
+      "label": "Advanced Communication Exit Test (Program Completion)",
+      "cefr": "B2 → C1",
+      "minutes": 30
+    }
+  ],
+  "edges": [
+    {
+      "from": "st01-m01-u01-l01",
+      "to": "st01-m01-u01-l02",
+      "kind": "sequence"
+    },
+    {
+      "from": "st01-m01-u01-l02",
+      "to": "st01-m01-u01-checkpoint",
+      "kind": "sequence"
+    },
+    {
+      "from": "st01-m01-u01-checkpoint",
+      "to": "st01-m01-u02-l01",
+      "kind": "sequence"
+    },
+    {
+      "from": "st01-m01-u02-l01",
+      "to": "st01-m01-u02-l02",
+      "kind": "sequence"
+    },
+    {
+      "from": "st01-m01-u02-l02",
+      "to": "st01-m01-u02-l03",
+      "kind": "sequence"
+    },
+    {
+      "from": "st01-m01-u02-l03",
+      "to": "st01-m01-u02-checkpoint",
+      "kind": "sequence"
+    },
+    {
+      "from": "st01-m01-u02-checkpoint",
+      "to": "st01-m01-exit",
+      "kind": "sequence"
+    },
+    {
+      "from": "st01-m01-exit",
+      "to": "st01-m02-u01-l01",
+      "kind": "sequence"
+    },
+    {
+      "from": "st01-m02-u01-l01",
+      "to": "st01-m02-u01-l02",
+      "kind": "sequence"
+    },
+    {
+      "from": "st01-m02-u01-l02",
+      "to": "st01-m02-u01-l03",
+      "kind": "sequence"
+    },
+    {
+      "from": "st01-m02-u01-l03",
+      "to": "st01-m02-u01-l04",
+      "kind": "sequence"
+    },
+    {
+      "from": "st01-m02-u01-l04",
+      "to": "st01-m02-u01-checkpoint",
+      "kind": "sequence"
+    },
+    {
+      "from": "st01-m02-u01-checkpoint",
+      "to": "st01-m02-u02-l01",
+      "kind": "sequence"
+    },
+    {
+      "from": "st01-m02-u02-l01",
+      "to": "st01-m02-u02-l02",
+      "kind": "sequence"
+    },
+    {
+      "from": "st01-m02-u02-l02",
+      "to": "st01-m02-u02-checkpoint",
+      "kind": "sequence"
+    },
+    {
+      "from": "st01-m02-u01-checkpoint",
+      "to": "st01-m02-u03-l01",
+      "kind": "sequence"
+    },
+    {
+      "from": "st01-m02-u02-checkpoint",
+      "to": "st01-m02-u03-l01",
+      "kind": "sequence"
+    },
+    {
+      "from": "st01-m02-u03-l01",
+      "to": "st01-m02-u03-l02",
+      "kind": "sequence"
+    },
+    {
+      "from": "st01-m02-u03-l02",
+      "to": "st01-m02-u03-l03",
+      "kind": "sequence"
+    },
+    {
+      "from": "st01-m02-u03-l03",
+      "to": "st01-m02-u03-checkpoint",
+      "kind": "sequence"
+    },
+    {
+      "from": "st01-m02-u01-checkpoint",
+      "to": "st01-m02-u04-l01",
+      "kind": "sequence"
+    },
+    {
+      "from": "st01-m02-u02-checkpoint",
+      "to": "st01-m02-u04-l01",
+      "kind": "sequence"
+    },
+    {
+      "from": "st01-m02-u03-checkpoint",
+      "to": "st01-m02-u04-l01",
+      "kind": "sequence"
+    },
+    {
+      "from": "st01-m02-u04-l01",
+      "to": "st01-m02-u04-l02",
+      "kind": "sequence"
+    },
+    {
+      "from": "st01-m02-u04-l02",
+      "to": "st01-m02-u04-checkpoint",
+      "kind": "sequence"
+    },
+    {
+      "from": "st01-m02-u04-checkpoint",
+      "to": "st01-m02-exit",
+      "kind": "sequence"
+    },
+    {
+      "from": "st01-m01-exit",
+      "to": "st01-m03-u01-l01",
+      "kind": "sequence"
+    },
+    {
+      "from": "st01-m02-exit",
+      "to": "st01-m03-u01-l01",
+      "kind": "sequence"
+    },
+    {
+      "from": "st01-m03-u01-l01",
+      "to": "st01-m03-u01-l02",
+      "kind": "sequence"
+    },
+    {
+      "from": "st01-m03-u01-l02",
+      "to": "st01-m03-u01-checkpoint",
+      "kind": "sequence"
+    },
+    {
+      "from": "st01-m03-u01-checkpoint",
+      "to": "st01-m03-u02-l01",
+      "kind": "sequence"
+    },
+    {
+      "from": "st01-m03-u02-l01",
+      "to": "st01-m03-u02-l02",
+      "kind": "sequence"
+    },
+    {
+      "from": "st01-m03-u02-l02",
+      "to": "st01-m03-u02-checkpoint",
+      "kind": "sequence"
+    },
+    {
+      "from": "st01-m03-u01-checkpoint",
+      "to": "st01-m03-u03-l01",
+      "kind": "sequence"
+    },
+    {
+      "from": "st01-m03-u02-checkpoint",
+      "to": "st01-m03-u03-l01",
+      "kind": "sequence"
+    },
+    {
+      "from": "st01-m03-u03-l01",
+      "to": "st01-m03-u03-l02",
+      "kind": "sequence"
+    },
+    {
+      "from": "st01-m03-u03-l02",
+      "to": "st01-m03-u03-l03",
+      "kind": "sequence"
+    },
+    {
+      "from": "st01-m03-u03-l03",
+      "to": "st01-m03-u03-checkpoint",
+      "kind": "sequence"
+    },
+    {
+      "from": "st01-m03-u01-checkpoint",
+      "to": "st01-m03-u04-l01",
+      "kind": "sequence"
+    },
+    {
+      "from": "st01-m03-u02-checkpoint",
+      "to": "st01-m03-u04-l01",
+      "kind": "sequence"
+    },
+    {
+      "from": "st01-m03-u03-checkpoint",
+      "to": "st01-m03-u04-l01",
+      "kind": "sequence"
+    },
+    {
+      "from": "st01-m03-u04-l01",
+      "to": "st01-m03-u04-l02",
+      "kind": "sequence"
+    },
+    {
+      "from": "st01-m03-u04-l02",
+      "to": "st01-m03-u04-l03",
+      "kind": "sequence"
+    },
+    {
+      "from": "st01-m03-u04-l03",
+      "to": "st01-m03-u04-l04",
+      "kind": "sequence"
+    },
+    {
+      "from": "st01-m03-u04-l04",
+      "to": "st01-m03-u04-checkpoint",
+      "kind": "sequence"
+    },
+    {
+      "from": "st01-m03-u04-checkpoint",
+      "to": "st01-m03-exit",
+      "kind": "sequence"
+    },
+    {
+      "from": "st01-m01-exit",
+      "to": "st01-m04-u01-l01",
+      "kind": "sequence"
+    },
+    {
+      "from": "st01-m02-exit",
+      "to": "st01-m04-u01-l01",
+      "kind": "sequence"
+    },
+    {
+      "from": "st01-m03-exit",
+      "to": "st01-m04-u01-l01",
+      "kind": "sequence"
+    },
+    {
+      "from": "st01-m04-u01-l01",
+      "to": "st01-m04-u01-l02",
+      "kind": "sequence"
+    },
+    {
+      "from": "st01-m04-u01-l02",
+      "to": "st01-m04-u01-l03",
+      "kind": "sequence"
+    },
+    {
+      "from": "st01-m04-u01-l03",
+      "to": "st01-m04-u01-checkpoint",
+      "kind": "sequence"
+    },
+    {
+      "from": "st01-m04-u01-checkpoint",
+      "to": "st01-m04-u02-l01",
+      "kind": "sequence"
+    },
+    {
+      "from": "st01-m04-u02-l01",
+      "to": "st01-m04-u02-l02",
+      "kind": "sequence"
+    },
+    {
+      "from": "st01-m04-u02-l02",
+      "to": "st01-m04-u02-l03",
+      "kind": "sequence"
+    },
+    {
+      "from": "st01-m04-u02-l03",
+      "to": "st01-m04-u02-checkpoint",
+      "kind": "sequence"
+    },
+    {
+      "from": "st01-m04-u01-checkpoint",
+      "to": "st01-m04-u03-l01",
+      "kind": "sequence"
+    },
+    {
+      "from": "st01-m04-u02-checkpoint",
+      "to": "st01-m04-u03-l01",
+      "kind": "sequence"
+    },
+    {
+      "from": "st01-m04-u03-l01",
+      "to": "st01-m04-u03-checkpoint",
+      "kind": "sequence"
+    },
+    {
+      "from": "st01-m04-u03-checkpoint",
+      "to": "st01-m04-exit",
+      "kind": "sequence"
+    },
+    {
+      "from": "st01-m04-exit",
+      "to": "st01-exit",
+      "kind": "sequence"
+    },
+    {
+      "from": "st01-exit",
+      "to": "st02",
+      "kind": "entry"
+    },
+    {
+      "from": "st02-m01-u01-l01",
+      "to": "st02-m01-u01-l02",
+      "kind": "sequence"
+    },
+    {
+      "from": "st02-m01-u01-l02",
+      "to": "st02-m01-u01-l03",
+      "kind": "sequence"
+    },
+    {
+      "from": "st02-m01-u01-l03",
+      "to": "st02-m01-u01-checkpoint",
+      "kind": "sequence"
+    },
+    {
+      "from": "st02-m01-u01-checkpoint",
+      "to": "st02-m01-u02-l01",
+      "kind": "sequence"
+    },
+    {
+      "from": "st02-m01-u02-l01",
+      "to": "st02-m01-u02-l02",
+      "kind": "sequence"
+    },
+    {
+      "from": "st02-m01-u02-l02",
+      "to": "st02-m01-u02-checkpoint",
+      "kind": "sequence"
+    },
+    {
+      "from": "st02-m01-u01-checkpoint",
+      "to": "st02-m01-u03-l01",
+      "kind": "sequence"
+    },
+    {
+      "from": "st02-m01-u02-checkpoint",
+      "to": "st02-m01-u03-l01",
+      "kind": "sequence"
+    },
+    {
+      "from": "st02-m01-u03-l01",
+      "to": "st02-m01-u03-l02",
+      "kind": "sequence"
+    },
+    {
+      "from": "st02-m01-u03-l02",
+      "to": "st02-m01-u03-l03",
+      "kind": "sequence"
+    },
+    {
+      "from": "st02-m01-u03-l03",
+      "to": "st02-m01-u03-l04",
+      "kind": "sequence"
+    },
+    {
+      "from": "st02-m01-u03-l04",
+      "to": "st02-m01-u03-checkpoint",
+      "kind": "sequence"
+    },
+    {
+      "from": "st02-m01-u03-checkpoint",
+      "to": "st02-m01-exit",
+      "kind": "sequence"
+    },
+    {
+      "from": "st02-m01-exit",
+      "to": "st02-m02-u01-l01",
+      "kind": "sequence"
+    },
+    {
+      "from": "st02-m02-u01-l01",
+      "to": "st02-m02-u01-checkpoint",
+      "kind": "sequence"
+    },
+    {
+      "from": "st02-m02-u01-checkpoint",
+      "to": "st02-m02-u02-l01",
+      "kind": "sequence"
+    },
+    {
+      "from": "st02-m02-u02-l01",
+      "to": "st02-m02-u02-l02",
+      "kind": "sequence"
+    },
+    {
+      "from": "st02-m02-u02-l02",
+      "to": "st02-m02-u02-l03",
+      "kind": "sequence"
+    },
+    {
+      "from": "st02-m02-u02-l03",
+      "to": "st02-m02-u02-l04",
+      "kind": "sequence"
+    },
+    {
+      "from": "st02-m02-u02-l04",
+      "to": "st02-m02-u02-l05",
+      "kind": "sequence"
+    },
+    {
+      "from": "st02-m02-u02-l05",
+      "to": "st02-m02-u02-checkpoint",
+      "kind": "sequence"
+    },
+    {
+      "from": "st02-m02-u01-checkpoint",
+      "to": "st02-m02-u03-l01",
+      "kind": "sequence"
+    },
+    {
+      "from": "st02-m02-u02-checkpoint",
+      "to": "st02-m02-u03-l01",
+      "kind": "sequence"
+    },
+    {
+      "from": "st02-m02-u03-l01",
+      "to": "st02-m02-u03-checkpoint",
+      "kind": "sequence"
+    },
+    {
+      "from": "st02-m02-u03-checkpoint",
+      "to": "st02-m02-exit",
+      "kind": "sequence"
+    },
+    {
+      "from": "st02-m01-exit",
+      "to": "st02-m03-u01-l01",
+      "kind": "sequence"
+    },
+    {
+      "from": "st02-m02-exit",
+      "to": "st02-m03-u01-l01",
+      "kind": "sequence"
+    },
+    {
+      "from": "st02-m03-u01-l01",
+      "to": "st02-m03-u01-l02",
+      "kind": "sequence"
+    },
+    {
+      "from": "st02-m03-u01-l02",
+      "to": "st02-m03-u01-checkpoint",
+      "kind": "sequence"
+    },
+    {
+      "from": "st02-m03-u01-checkpoint",
+      "to": "st02-m03-u02-l01",
+      "kind": "sequence"
+    },
+    {
+      "from": "st02-m03-u02-l01",
+      "to": "st02-m03-u02-l02",
+      "kind": "sequence"
+    },
+    {
+      "from": "st02-m03-u02-l02",
+      "to": "st02-m03-u02-checkpoint",
+      "kind": "sequence"
+    },
+    {
+      "from": "st02-m03-u01-checkpoint",
+      "to": "st02-m03-u03-l01",
+      "kind": "sequence"
+    },
+    {
+      "from": "st02-m03-u02-checkpoint",
+      "to": "st02-m03-u03-l01",
+      "kind": "sequence"
+    },
+    {
+      "from": "st02-m03-u03-l01",
+      "to": "st02-m03-u03-checkpoint",
+      "kind": "sequence"
+    },
+    {
+      "from": "st02-m03-u03-checkpoint",
+      "to": "st02-m03-exit",
+      "kind": "sequence"
+    },
+    {
+      "from": "st02-m01-exit",
+      "to": "st02-m04-u01-l01",
+      "kind": "sequence"
+    },
+    {
+      "from": "st02-m02-exit",
+      "to": "st02-m04-u01-l01",
+      "kind": "sequence"
+    },
+    {
+      "from": "st02-m03-exit",
+      "to": "st02-m04-u01-l01",
+      "kind": "sequence"
+    },
+    {
+      "from": "st02-m04-u01-l01",
+      "to": "st02-m04-u01-l02",
+      "kind": "sequence"
+    },
+    {
+      "from": "st02-m04-u01-l02",
+      "to": "st02-m04-u01-checkpoint",
+      "kind": "sequence"
+    },
+    {
+      "from": "st02-m04-u01-checkpoint",
+      "to": "st02-m04-u02-l01",
+      "kind": "sequence"
+    },
+    {
+      "from": "st02-m04-u02-l01",
+      "to": "st02-m04-u02-l02",
+      "kind": "sequence"
+    },
+    {
+      "from": "st02-m04-u02-l02",
+      "to": "st02-m04-u02-checkpoint",
+      "kind": "sequence"
+    },
+    {
+      "from": "st02-m04-u02-checkpoint",
+      "to": "st02-m04-exit",
+      "kind": "sequence"
+    },
+    {
+      "from": "st02-m01-exit",
+      "to": "st02-m05-u01-l01",
+      "kind": "sequence"
+    },
+    {
+      "from": "st02-m02-exit",
+      "to": "st02-m05-u01-l01",
+      "kind": "sequence"
+    },
+    {
+      "from": "st02-m03-exit",
+      "to": "st02-m05-u01-l01",
+      "kind": "sequence"
+    },
+    {
+      "from": "st02-m04-exit",
+      "to": "st02-m05-u01-l01",
+      "kind": "sequence"
+    },
+    {
+      "from": "st02-m05-u01-l01",
+      "to": "st02-m05-u01-l02",
+      "kind": "sequence"
+    },
+    {
+      "from": "st02-m05-u01-l02",
+      "to": "st02-m05-u01-checkpoint",
+      "kind": "sequence"
+    },
+    {
+      "from": "st02-m05-u01-checkpoint",
+      "to": "st02-m05-u02-l01",
+      "kind": "sequence"
+    },
+    {
+      "from": "st02-m05-u02-l01",
+      "to": "st02-m05-u02-l02",
+      "kind": "sequence"
+    },
+    {
+      "from": "st02-m05-u02-l02",
+      "to": "st02-m05-u02-checkpoint",
+      "kind": "sequence"
+    },
+    {
+      "from": "st02-m05-u01-checkpoint",
+      "to": "st02-m05-u03-l01",
+      "kind": "sequence"
+    },
+    {
+      "from": "st02-m05-u02-checkpoint",
+      "to": "st02-m05-u03-l01",
+      "kind": "sequence"
+    },
+    {
+      "from": "st02-m05-u03-l01",
+      "to": "st02-m05-u03-l02",
+      "kind": "sequence"
+    },
+    {
+      "from": "st02-m05-u03-l02",
+      "to": "st02-m05-u03-checkpoint",
+      "kind": "sequence"
+    },
+    {
+      "from": "st02-m05-u03-checkpoint",
+      "to": "st02-m05-exit",
+      "kind": "sequence"
+    },
+    {
+      "from": "st02-m01-exit",
+      "to": "st02-m06-u01-l01",
+      "kind": "sequence"
+    },
+    {
+      "from": "st02-m02-exit",
+      "to": "st02-m06-u01-l01",
+      "kind": "sequence"
+    },
+    {
+      "from": "st02-m03-exit",
+      "to": "st02-m06-u01-l01",
+      "kind": "sequence"
+    },
+    {
+      "from": "st02-m04-exit",
+      "to": "st02-m06-u01-l01",
+      "kind": "sequence"
+    },
+    {
+      "from": "st02-m05-exit",
+      "to": "st02-m06-u01-l01",
+      "kind": "sequence"
+    },
+    {
+      "from": "st02-m06-u01-l01",
+      "to": "st02-m06-u01-l02",
+      "kind": "sequence"
+    },
+    {
+      "from": "st02-m06-u01-l02",
+      "to": "st02-m06-u01-checkpoint",
+      "kind": "sequence"
+    },
+    {
+      "from": "st02-m06-u01-checkpoint",
+      "to": "st02-m06-u02-l01",
+      "kind": "sequence"
+    },
+    {
+      "from": "st02-m06-u02-l01",
+      "to": "st02-m06-u02-checkpoint",
+      "kind": "sequence"
+    },
+    {
+      "from": "st02-m06-u01-checkpoint",
+      "to": "st02-m06-u03-l01",
+      "kind": "sequence"
+    },
+    {
+      "from": "st02-m06-u02-checkpoint",
+      "to": "st02-m06-u03-l01",
+      "kind": "sequence"
+    },
+    {
+      "from": "st02-m06-u03-l01",
+      "to": "st02-m06-u03-checkpoint",
+      "kind": "sequence"
+    },
+    {
+      "from": "st02-m06-u01-checkpoint",
+      "to": "st02-m06-u04-l01",
+      "kind": "sequence"
+    },
+    {
+      "from": "st02-m06-u02-checkpoint",
+      "to": "st02-m06-u04-l01",
+      "kind": "sequence"
+    },
+    {
+      "from": "st02-m06-u03-checkpoint",
+      "to": "st02-m06-u04-l01",
+      "kind": "sequence"
+    },
+    {
+      "from": "st02-m06-u04-l01",
+      "to": "st02-m06-u04-checkpoint",
+      "kind": "sequence"
+    },
+    {
+      "from": "st02-m06-u01-checkpoint",
+      "to": "st02-m06-u05-l01",
+      "kind": "sequence"
+    },
+    {
+      "from": "st02-m06-u02-checkpoint",
+      "to": "st02-m06-u05-l01",
+      "kind": "sequence"
+    },
+    {
+      "from": "st02-m06-u03-checkpoint",
+      "to": "st02-m06-u05-l01",
+      "kind": "sequence"
+    },
+    {
+      "from": "st02-m06-u04-checkpoint",
+      "to": "st02-m06-u05-l01",
+      "kind": "sequence"
+    },
+    {
+      "from": "st02-m06-u05-l01",
+      "to": "st02-m06-u05-l02",
+      "kind": "sequence"
+    },
+    {
+      "from": "st02-m06-u05-l02",
+      "to": "st02-m06-u05-checkpoint",
+      "kind": "sequence"
+    },
+    {
+      "from": "st02-m06-u05-checkpoint",
+      "to": "st02-m06-exit",
+      "kind": "sequence"
+    },
+    {
+      "from": "st02-m01-exit",
+      "to": "st02-m07-u01-l01",
+      "kind": "sequence"
+    },
+    {
+      "from": "st02-m02-exit",
+      "to": "st02-m07-u01-l01",
+      "kind": "sequence"
+    },
+    {
+      "from": "st02-m03-exit",
+      "to": "st02-m07-u01-l01",
+      "kind": "sequence"
+    },
+    {
+      "from": "st02-m04-exit",
+      "to": "st02-m07-u01-l01",
+      "kind": "sequence"
+    },
+    {
+      "from": "st02-m05-exit",
+      "to": "st02-m07-u01-l01",
+      "kind": "sequence"
+    },
+    {
+      "from": "st02-m06-exit",
+      "to": "st02-m07-u01-l01",
+      "kind": "sequence"
+    },
+    {
+      "from": "st02-m07-u01-l01",
+      "to": "st02-m07-u01-checkpoint",
+      "kind": "sequence"
+    },
+    {
+      "from": "st02-m07-u01-checkpoint",
+      "to": "st02-m07-u02-l01",
+      "kind": "sequence"
+    },
+    {
+      "from": "st02-m07-u02-l01",
+      "to": "st02-m07-u02-checkpoint",
+      "kind": "sequence"
+    },
+    {
+      "from": "st02-m07-u01-checkpoint",
+      "to": "st02-m07-u03-l01",
+      "kind": "sequence"
+    },
+    {
+      "from": "st02-m07-u02-checkpoint",
+      "to": "st02-m07-u03-l01",
+      "kind": "sequence"
+    },
+    {
+      "from": "st02-m07-u03-l01",
+      "to": "st02-m07-u03-checkpoint",
+      "kind": "sequence"
+    },
+    {
+      "from": "st02-m07-u01-checkpoint",
+      "to": "st02-m07-u04-l01",
+      "kind": "sequence"
+    },
+    {
+      "from": "st02-m07-u02-checkpoint",
+      "to": "st02-m07-u04-l01",
+      "kind": "sequence"
+    },
+    {
+      "from": "st02-m07-u03-checkpoint",
+      "to": "st02-m07-u04-l01",
+      "kind": "sequence"
+    },
+    {
+      "from": "st02-m07-u04-l01",
+      "to": "st02-m07-u04-l02",
+      "kind": "sequence"
+    },
+    {
+      "from": "st02-m07-u04-l02",
+      "to": "st02-m07-u04-checkpoint",
+      "kind": "sequence"
+    },
+    {
+      "from": "st02-m07-u01-checkpoint",
+      "to": "st02-m07-u05-l01",
+      "kind": "sequence"
+    },
+    {
+      "from": "st02-m07-u02-checkpoint",
+      "to": "st02-m07-u05-l01",
+      "kind": "sequence"
+    },
+    {
+      "from": "st02-m07-u03-checkpoint",
+      "to": "st02-m07-u05-l01",
+      "kind": "sequence"
+    },
+    {
+      "from": "st02-m07-u04-checkpoint",
+      "to": "st02-m07-u05-l01",
+      "kind": "sequence"
+    },
+    {
+      "from": "st02-m07-u05-l01",
+      "to": "st02-m07-u05-checkpoint",
+      "kind": "sequence"
+    },
+    {
+      "from": "st02-m07-u05-checkpoint",
+      "to": "st02-m07-exit",
+      "kind": "sequence"
+    },
+    {
+      "from": "st02-m01-exit",
+      "to": "st02-m08-u01-l01",
+      "kind": "sequence"
+    },
+    {
+      "from": "st02-m02-exit",
+      "to": "st02-m08-u01-l01",
+      "kind": "sequence"
+    },
+    {
+      "from": "st02-m03-exit",
+      "to": "st02-m08-u01-l01",
+      "kind": "sequence"
+    },
+    {
+      "from": "st02-m04-exit",
+      "to": "st02-m08-u01-l01",
+      "kind": "sequence"
+    },
+    {
+      "from": "st02-m05-exit",
+      "to": "st02-m08-u01-l01",
+      "kind": "sequence"
+    },
+    {
+      "from": "st02-m06-exit",
+      "to": "st02-m08-u01-l01",
+      "kind": "sequence"
+    },
+    {
+      "from": "st02-m07-exit",
+      "to": "st02-m08-u01-l01",
+      "kind": "sequence"
+    },
+    {
+      "from": "st02-m08-u01-l01",
+      "to": "st02-m08-u01-l02",
+      "kind": "sequence"
+    },
+    {
+      "from": "st02-m08-u01-l02",
+      "to": "st02-m08-u01-checkpoint",
+      "kind": "sequence"
+    },
+    {
+      "from": "st02-m08-u01-checkpoint",
+      "to": "st02-m08-u02-l01",
+      "kind": "sequence"
+    },
+    {
+      "from": "st02-m08-u02-l01",
+      "to": "st02-m08-u02-l02",
+      "kind": "sequence"
+    },
+    {
+      "from": "st02-m08-u02-l02",
+      "to": "st02-m08-u02-checkpoint",
+      "kind": "sequence"
+    },
+    {
+      "from": "st02-m08-u01-checkpoint",
+      "to": "st02-m08-u03-l01",
+      "kind": "sequence"
+    },
+    {
+      "from": "st02-m08-u02-checkpoint",
+      "to": "st02-m08-u03-l01",
+      "kind": "sequence"
+    },
+    {
+      "from": "st02-m08-u03-l01",
+      "to": "st02-m08-u03-l02",
+      "kind": "sequence"
+    },
+    {
+      "from": "st02-m08-u03-l02",
+      "to": "st02-m08-u03-checkpoint",
+      "kind": "sequence"
+    },
+    {
+      "from": "st02-m08-u01-checkpoint",
+      "to": "st02-m08-u04-l01",
+      "kind": "sequence"
+    },
+    {
+      "from": "st02-m08-u02-checkpoint",
+      "to": "st02-m08-u04-l01",
+      "kind": "sequence"
+    },
+    {
+      "from": "st02-m08-u03-checkpoint",
+      "to": "st02-m08-u04-l01",
+      "kind": "sequence"
+    },
+    {
+      "from": "st02-m08-u04-l01",
+      "to": "st02-m08-u04-l02",
+      "kind": "sequence"
+    },
+    {
+      "from": "st02-m08-u04-l02",
+      "to": "st02-m08-u04-checkpoint",
+      "kind": "sequence"
+    },
+    {
+      "from": "st02-m08-u01-checkpoint",
+      "to": "st02-m08-u05-l01",
+      "kind": "sequence"
+    },
+    {
+      "from": "st02-m08-u02-checkpoint",
+      "to": "st02-m08-u05-l01",
+      "kind": "sequence"
+    },
+    {
+      "from": "st02-m08-u03-checkpoint",
+      "to": "st02-m08-u05-l01",
+      "kind": "sequence"
+    },
+    {
+      "from": "st02-m08-u04-checkpoint",
+      "to": "st02-m08-u05-l01",
+      "kind": "sequence"
+    },
+    {
+      "from": "st02-m08-u05-l01",
+      "to": "st02-m08-u05-checkpoint",
+      "kind": "sequence"
+    },
+    {
+      "from": "st02-m08-u05-checkpoint",
+      "to": "st02-m08-exit",
+      "kind": "sequence"
+    },
+    {
+      "from": "st02-m08-exit",
+      "to": "st02-exit",
+      "kind": "sequence"
+    },
+    {
+      "from": "st01-exit",
+      "to": "st02-m01-u01-l01",
+      "kind": "entry"
+    },
+    {
+      "from": "st02-exit",
+      "to": "st03",
+      "kind": "entry"
+    },
+    {
+      "from": "st03-m01-u01-l01",
+      "to": "st03-m01-u01-l02",
+      "kind": "sequence"
+    },
+    {
+      "from": "st03-m01-u01-l02",
+      "to": "st03-m01-u01-l03",
+      "kind": "sequence"
+    },
+    {
+      "from": "st03-m01-u01-l03",
+      "to": "st03-m01-u01-checkpoint",
+      "kind": "sequence"
+    },
+    {
+      "from": "st03-m01-u01-checkpoint",
+      "to": "st03-m01-u02-l01",
+      "kind": "sequence"
+    },
+    {
+      "from": "st03-m01-u02-l01",
+      "to": "st03-m01-u02-l02",
+      "kind": "sequence"
+    },
+    {
+      "from": "st03-m01-u02-l02",
+      "to": "st03-m01-u02-l03",
+      "kind": "sequence"
+    },
+    {
+      "from": "st03-m01-u02-l03",
+      "to": "st03-m01-u02-l04",
+      "kind": "sequence"
+    },
+    {
+      "from": "st03-m01-u02-l04",
+      "to": "st03-m01-u02-checkpoint",
+      "kind": "sequence"
+    },
+    {
+      "from": "st03-m01-u02-checkpoint",
+      "to": "st03-m01-exit",
+      "kind": "sequence"
+    },
+    {
+      "from": "st03-m01-exit",
+      "to": "st03-m02-u01-l01",
+      "kind": "sequence"
+    },
+    {
+      "from": "st03-m02-u01-l01",
+      "to": "st03-m02-u01-l02",
+      "kind": "sequence"
+    },
+    {
+      "from": "st03-m02-u01-l02",
+      "to": "st03-m02-u01-l03",
+      "kind": "sequence"
+    },
+    {
+      "from": "st03-m02-u01-l03",
+      "to": "st03-m02-u01-l04",
+      "kind": "sequence"
+    },
+    {
+      "from": "st03-m02-u01-l04",
+      "to": "st03-m02-u01-checkpoint",
+      "kind": "sequence"
+    },
+    {
+      "from": "st03-m02-u01-checkpoint",
+      "to": "st03-m02-u02-l01",
+      "kind": "sequence"
+    },
+    {
+      "from": "st03-m02-u02-l01",
+      "to": "st03-m02-u02-l02",
+      "kind": "sequence"
+    },
+    {
+      "from": "st03-m02-u02-l02",
+      "to": "st03-m02-u02-l03",
+      "kind": "sequence"
+    },
+    {
+      "from": "st03-m02-u02-l03",
+      "to": "st03-m02-u02-checkpoint",
+      "kind": "sequence"
+    },
+    {
+      "from": "st03-m02-u01-checkpoint",
+      "to": "st03-m02-u03-l01",
+      "kind": "sequence"
+    },
+    {
+      "from": "st03-m02-u02-checkpoint",
+      "to": "st03-m02-u03-l01",
+      "kind": "sequence"
+    },
+    {
+      "from": "st03-m02-u03-l01",
+      "to": "st03-m02-u03-l02",
+      "kind": "sequence"
+    },
+    {
+      "from": "st03-m02-u03-l02",
+      "to": "st03-m02-u03-l03",
+      "kind": "sequence"
+    },
+    {
+      "from": "st03-m02-u03-l03",
+      "to": "st03-m02-u03-checkpoint",
+      "kind": "sequence"
+    },
+    {
+      "from": "st03-m02-u03-checkpoint",
+      "to": "st03-m02-exit",
+      "kind": "sequence"
+    },
+    {
+      "from": "st03-m01-exit",
+      "to": "st03-m03-u01-l01",
+      "kind": "sequence"
+    },
+    {
+      "from": "st03-m02-exit",
+      "to": "st03-m03-u01-l01",
+      "kind": "sequence"
+    },
+    {
+      "from": "st03-m03-u01-l01",
+      "to": "st03-m03-u01-l02",
+      "kind": "sequence"
+    },
+    {
+      "from": "st03-m03-u01-l02",
+      "to": "st03-m03-u01-l03",
+      "kind": "sequence"
+    },
+    {
+      "from": "st03-m03-u01-l03",
+      "to": "st03-m03-u01-checkpoint",
+      "kind": "sequence"
+    },
+    {
+      "from": "st03-m03-u01-checkpoint",
+      "to": "st03-m03-u02-l01",
+      "kind": "sequence"
+    },
+    {
+      "from": "st03-m03-u02-l01",
+      "to": "st03-m03-u02-checkpoint",
+      "kind": "sequence"
+    },
+    {
+      "from": "st03-m03-u02-checkpoint",
+      "to": "st03-m03-exit",
+      "kind": "sequence"
+    },
+    {
+      "from": "st03-m03-exit",
+      "to": "st03-exit",
+      "kind": "sequence"
+    },
+    {
+      "from": "st02-exit",
+      "to": "st03-m01-u01-l01",
+      "kind": "entry"
+    },
+    {
+      "from": "st03-exit",
+      "to": "st04",
+      "kind": "entry"
+    },
+    {
+      "from": "st04-m01-u01-l01",
+      "to": "st04-m01-u01-l02",
+      "kind": "sequence"
+    },
+    {
+      "from": "st04-m01-u01-l02",
+      "to": "st04-m01-u01-checkpoint",
+      "kind": "sequence"
+    },
+    {
+      "from": "st04-m01-u01-checkpoint",
+      "to": "st04-m01-u02-l01",
+      "kind": "sequence"
+    },
+    {
+      "from": "st04-m01-u02-l01",
+      "to": "st04-m01-u02-l02",
+      "kind": "sequence"
+    },
+    {
+      "from": "st04-m01-u02-l02",
+      "to": "st04-m01-u02-checkpoint",
+      "kind": "sequence"
+    },
+    {
+      "from": "st04-m01-u01-checkpoint",
+      "to": "st04-m01-u03-l01",
+      "kind": "sequence"
+    },
+    {
+      "from": "st04-m01-u02-checkpoint",
+      "to": "st04-m01-u03-l01",
+      "kind": "sequence"
+    },
+    {
+      "from": "st04-m01-u03-l01",
+      "to": "st04-m01-u03-l02",
+      "kind": "sequence"
+    },
+    {
+      "from": "st04-m01-u03-l02",
+      "to": "st04-m01-u03-checkpoint",
+      "kind": "sequence"
+    },
+    {
+      "from": "st04-m01-u01-checkpoint",
+      "to": "st04-m01-u04-l01",
+      "kind": "sequence"
+    },
+    {
+      "from": "st04-m01-u02-checkpoint",
+      "to": "st04-m01-u04-l01",
+      "kind": "sequence"
+    },
+    {
+      "from": "st04-m01-u03-checkpoint",
+      "to": "st04-m01-u04-l01",
+      "kind": "sequence"
+    },
+    {
+      "from": "st04-m01-u04-l01",
+      "to": "st04-m01-u04-l02",
+      "kind": "sequence"
+    },
+    {
+      "from": "st04-m01-u04-l02",
+      "to": "st04-m01-u04-l03",
+      "kind": "sequence"
+    },
+    {
+      "from": "st04-m01-u04-l03",
+      "to": "st04-m01-u04-checkpoint",
+      "kind": "sequence"
+    },
+    {
+      "from": "st04-m01-u01-checkpoint",
+      "to": "st04-m01-u05-l01",
+      "kind": "sequence"
+    },
+    {
+      "from": "st04-m01-u02-checkpoint",
+      "to": "st04-m01-u05-l01",
+      "kind": "sequence"
+    },
+    {
+      "from": "st04-m01-u03-checkpoint",
+      "to": "st04-m01-u05-l01",
+      "kind": "sequence"
+    },
+    {
+      "from": "st04-m01-u04-checkpoint",
+      "to": "st04-m01-u05-l01",
+      "kind": "sequence"
+    },
+    {
+      "from": "st04-m01-u05-l01",
+      "to": "st04-m01-u05-l02",
+      "kind": "sequence"
+    },
+    {
+      "from": "st04-m01-u05-l02",
+      "to": "st04-m01-u05-l03",
+      "kind": "sequence"
+    },
+    {
+      "from": "st04-m01-u05-l03",
+      "to": "st04-m01-u05-checkpoint",
+      "kind": "sequence"
+    },
+    {
+      "from": "st04-m01-u05-checkpoint",
+      "to": "st04-m01-exit",
+      "kind": "sequence"
+    },
+    {
+      "from": "st04-m01-exit",
+      "to": "st04-m02-u01-l01",
+      "kind": "sequence"
+    },
+    {
+      "from": "st04-m02-u01-l01",
+      "to": "st04-m02-u01-checkpoint",
+      "kind": "sequence"
+    },
+    {
+      "from": "st04-m02-u01-checkpoint",
+      "to": "st04-m02-u02-l01",
+      "kind": "sequence"
+    },
+    {
+      "from": "st04-m02-u02-l01",
+      "to": "st04-m02-u02-l02",
+      "kind": "sequence"
+    },
+    {
+      "from": "st04-m02-u02-l02",
+      "to": "st04-m02-u02-checkpoint",
+      "kind": "sequence"
+    },
+    {
+      "from": "st04-m02-u01-checkpoint",
+      "to": "st04-m02-u03-l01",
+      "kind": "sequence"
+    },
+    {
+      "from": "st04-m02-u02-checkpoint",
+      "to": "st04-m02-u03-l01",
+      "kind": "sequence"
+    },
+    {
+      "from": "st04-m02-u03-l01",
+      "to": "st04-m02-u03-l02",
+      "kind": "sequence"
+    },
+    {
+      "from": "st04-m02-u03-l02",
+      "to": "st04-m02-u03-checkpoint",
+      "kind": "sequence"
+    },
+    {
+      "from": "st04-m02-u01-checkpoint",
+      "to": "st04-m02-u04-l01",
+      "kind": "sequence"
+    },
+    {
+      "from": "st04-m02-u02-checkpoint",
+      "to": "st04-m02-u04-l01",
+      "kind": "sequence"
+    },
+    {
+      "from": "st04-m02-u03-checkpoint",
+      "to": "st04-m02-u04-l01",
+      "kind": "sequence"
+    },
+    {
+      "from": "st04-m02-u04-l01",
+      "to": "st04-m02-u04-l02",
+      "kind": "sequence"
+    },
+    {
+      "from": "st04-m02-u04-l02",
+      "to": "st04-m02-u04-checkpoint",
+      "kind": "sequence"
+    },
+    {
+      "from": "st04-m02-u01-checkpoint",
+      "to": "st04-m02-u05-l01",
+      "kind": "sequence"
+    },
+    {
+      "from": "st04-m02-u02-checkpoint",
+      "to": "st04-m02-u05-l01",
+      "kind": "sequence"
+    },
+    {
+      "from": "st04-m02-u03-checkpoint",
+      "to": "st04-m02-u05-l01",
+      "kind": "sequence"
+    },
+    {
+      "from": "st04-m02-u04-checkpoint",
+      "to": "st04-m02-u05-l01",
+      "kind": "sequence"
+    },
+    {
+      "from": "st04-m02-u05-l01",
+      "to": "st04-m02-u05-l02",
+      "kind": "sequence"
+    },
+    {
+      "from": "st04-m02-u05-l02",
+      "to": "st04-m02-u05-checkpoint",
+      "kind": "sequence"
+    },
+    {
+      "from": "st04-m02-u05-checkpoint",
+      "to": "st04-m02-exit",
+      "kind": "sequence"
+    },
+    {
+      "from": "st04-m01-exit",
+      "to": "st04-m03-u01-l01",
+      "kind": "sequence"
+    },
+    {
+      "from": "st04-m02-exit",
+      "to": "st04-m03-u01-l01",
+      "kind": "sequence"
+    },
+    {
+      "from": "st04-m03-u01-l01",
+      "to": "st04-m03-u01-l02",
+      "kind": "sequence"
+    },
+    {
+      "from": "st04-m03-u01-l02",
+      "to": "st04-m03-u01-checkpoint",
+      "kind": "sequence"
+    },
+    {
+      "from": "st04-m03-u01-checkpoint",
+      "to": "st04-m03-u02-l01",
+      "kind": "sequence"
+    },
+    {
+      "from": "st04-m03-u02-l01",
+      "to": "st04-m03-u02-l02",
+      "kind": "sequence"
+    },
+    {
+      "from": "st04-m03-u02-l02",
+      "to": "st04-m03-u02-checkpoint",
+      "kind": "sequence"
+    },
+    {
+      "from": "st04-m03-u01-checkpoint",
+      "to": "st04-m03-u03-l01",
+      "kind": "sequence"
+    },
+    {
+      "from": "st04-m03-u02-checkpoint",
+      "to": "st04-m03-u03-l01",
+      "kind": "sequence"
+    },
+    {
+      "from": "st04-m03-u03-l01",
+      "to": "st04-m03-u03-l02",
+      "kind": "sequence"
+    },
+    {
+      "from": "st04-m03-u03-l02",
+      "to": "st04-m03-u03-checkpoint",
+      "kind": "sequence"
+    },
+    {
+      "from": "st04-m03-u01-checkpoint",
+      "to": "st04-m03-u04-l01",
+      "kind": "sequence"
+    },
+    {
+      "from": "st04-m03-u02-checkpoint",
+      "to": "st04-m03-u04-l01",
+      "kind": "sequence"
+    },
+    {
+      "from": "st04-m03-u03-checkpoint",
+      "to": "st04-m03-u04-l01",
+      "kind": "sequence"
+    },
+    {
+      "from": "st04-m03-u04-l01",
+      "to": "st04-m03-u04-l02",
+      "kind": "sequence"
+    },
+    {
+      "from": "st04-m03-u04-l02",
+      "to": "st04-m03-u04-checkpoint",
+      "kind": "sequence"
+    },
+    {
+      "from": "st04-m03-u04-checkpoint",
+      "to": "st04-m03-exit",
+      "kind": "sequence"
+    },
+    {
+      "from": "st04-m01-exit",
+      "to": "st04-m04-u01-l01",
+      "kind": "sequence"
+    },
+    {
+      "from": "st04-m02-exit",
+      "to": "st04-m04-u01-l01",
+      "kind": "sequence"
+    },
+    {
+      "from": "st04-m03-exit",
+      "to": "st04-m04-u01-l01",
+      "kind": "sequence"
+    },
+    {
+      "from": "st04-m04-u01-l01",
+      "to": "st04-m04-u01-l02",
+      "kind": "sequence"
+    },
+    {
+      "from": "st04-m04-u01-l02",
+      "to": "st04-m04-u01-checkpoint",
+      "kind": "sequence"
+    },
+    {
+      "from": "st04-m04-u01-checkpoint",
+      "to": "st04-m04-u02-l01",
+      "kind": "sequence"
+    },
+    {
+      "from": "st04-m04-u02-l01",
+      "to": "st04-m04-u02-l02",
+      "kind": "sequence"
+    },
+    {
+      "from": "st04-m04-u02-l02",
+      "to": "st04-m04-u02-checkpoint",
+      "kind": "sequence"
+    },
+    {
+      "from": "st04-m04-u01-checkpoint",
+      "to": "st04-m04-u03-l01",
+      "kind": "sequence"
+    },
+    {
+      "from": "st04-m04-u02-checkpoint",
+      "to": "st04-m04-u03-l01",
+      "kind": "sequence"
+    },
+    {
+      "from": "st04-m04-u03-l01",
+      "to": "st04-m04-u03-l02",
+      "kind": "sequence"
+    },
+    {
+      "from": "st04-m04-u03-l02",
+      "to": "st04-m04-u03-checkpoint",
+      "kind": "sequence"
+    },
+    {
+      "from": "st04-m04-u01-checkpoint",
+      "to": "st04-m04-u04-l01",
+      "kind": "sequence"
+    },
+    {
+      "from": "st04-m04-u02-checkpoint",
+      "to": "st04-m04-u04-l01",
+      "kind": "sequence"
+    },
+    {
+      "from": "st04-m04-u03-checkpoint",
+      "to": "st04-m04-u04-l01",
+      "kind": "sequence"
+    },
+    {
+      "from": "st04-m04-u04-l01",
+      "to": "st04-m04-u04-l02",
+      "kind": "sequence"
+    },
+    {
+      "from": "st04-m04-u04-l02",
+      "to": "st04-m04-u04-checkpoint",
+      "kind": "sequence"
+    },
+    {
+      "from": "st04-m04-u01-checkpoint",
+      "to": "st04-m04-u05-l01",
+      "kind": "sequence"
+    },
+    {
+      "from": "st04-m04-u02-checkpoint",
+      "to": "st04-m04-u05-l01",
+      "kind": "sequence"
+    },
+    {
+      "from": "st04-m04-u03-checkpoint",
+      "to": "st04-m04-u05-l01",
+      "kind": "sequence"
+    },
+    {
+      "from": "st04-m04-u04-checkpoint",
+      "to": "st04-m04-u05-l01",
+      "kind": "sequence"
+    },
+    {
+      "from": "st04-m04-u05-l01",
+      "to": "st04-m04-u05-checkpoint",
+      "kind": "sequence"
+    },
+    {
+      "from": "st04-m04-u05-checkpoint",
+      "to": "st04-m04-exit",
+      "kind": "sequence"
+    },
+    {
+      "from": "st04-m01-exit",
+      "to": "st04-m05-u01-l01",
+      "kind": "sequence"
+    },
+    {
+      "from": "st04-m02-exit",
+      "to": "st04-m05-u01-l01",
+      "kind": "sequence"
+    },
+    {
+      "from": "st04-m03-exit",
+      "to": "st04-m05-u01-l01",
+      "kind": "sequence"
+    },
+    {
+      "from": "st04-m04-exit",
+      "to": "st04-m05-u01-l01",
+      "kind": "sequence"
+    },
+    {
+      "from": "st04-m05-u01-l01",
+      "to": "st04-m05-u01-l02",
+      "kind": "sequence"
+    },
+    {
+      "from": "st04-m05-u01-l02",
+      "to": "st04-m05-u01-l03",
+      "kind": "sequence"
+    },
+    {
+      "from": "st04-m05-u01-l03",
+      "to": "st04-m05-u01-checkpoint",
+      "kind": "sequence"
+    },
+    {
+      "from": "st04-m05-u01-checkpoint",
+      "to": "st04-m05-u02-l01",
+      "kind": "sequence"
+    },
+    {
+      "from": "st04-m05-u02-l01",
+      "to": "st04-m05-u02-l02",
+      "kind": "sequence"
+    },
+    {
+      "from": "st04-m05-u02-l02",
+      "to": "st04-m05-u02-l03",
+      "kind": "sequence"
+    },
+    {
+      "from": "st04-m05-u02-l03",
+      "to": "st04-m05-u02-l04",
+      "kind": "sequence"
+    },
+    {
+      "from": "st04-m05-u02-l04",
+      "to": "st04-m05-u02-checkpoint",
+      "kind": "sequence"
+    },
+    {
+      "from": "st04-m05-u01-checkpoint",
+      "to": "st04-m05-u03-l01",
+      "kind": "sequence"
+    },
+    {
+      "from": "st04-m05-u02-checkpoint",
+      "to": "st04-m05-u03-l01",
+      "kind": "sequence"
+    },
+    {
+      "from": "st04-m05-u03-l01",
+      "to": "st04-m05-u03-l02",
+      "kind": "sequence"
+    },
+    {
+      "from": "st04-m05-u03-l02",
+      "to": "st04-m05-u03-l03",
+      "kind": "sequence"
+    },
+    {
+      "from": "st04-m05-u03-l03",
+      "to": "st04-m05-u03-l04",
+      "kind": "sequence"
+    },
+    {
+      "from": "st04-m05-u03-l04",
+      "to": "st04-m05-u03-checkpoint",
+      "kind": "sequence"
+    },
+    {
+      "from": "st04-m05-u01-checkpoint",
+      "to": "st04-m05-u04-l01",
+      "kind": "sequence"
+    },
+    {
+      "from": "st04-m05-u02-checkpoint",
+      "to": "st04-m05-u04-l01",
+      "kind": "sequence"
+    },
+    {
+      "from": "st04-m05-u03-checkpoint",
+      "to": "st04-m05-u04-l01",
+      "kind": "sequence"
+    },
+    {
+      "from": "st04-m05-u04-l01",
+      "to": "st04-m05-u04-l02",
+      "kind": "sequence"
+    },
+    {
+      "from": "st04-m05-u04-l02",
+      "to": "st04-m05-u04-l03",
+      "kind": "sequence"
+    },
+    {
+      "from": "st04-m05-u04-l03",
+      "to": "st04-m05-u04-l04",
+      "kind": "sequence"
+    },
+    {
+      "from": "st04-m05-u04-l04",
+      "to": "st04-m05-u04-l05",
+      "kind": "sequence"
+    },
+    {
+      "from": "st04-m05-u04-l05",
+      "to": "st04-m05-u04-l06",
+      "kind": "sequence"
+    },
+    {
+      "from": "st04-m05-u04-l06",
+      "to": "st04-m05-u04-l07",
+      "kind": "sequence"
+    },
+    {
+      "from": "st04-m05-u04-l07",
+      "to": "st04-m05-u04-checkpoint",
+      "kind": "sequence"
+    },
+    {
+      "from": "st04-m05-u01-checkpoint",
+      "to": "st04-m05-u05-l01",
+      "kind": "sequence"
+    },
+    {
+      "from": "st04-m05-u02-checkpoint",
+      "to": "st04-m05-u05-l01",
+      "kind": "sequence"
+    },
+    {
+      "from": "st04-m05-u03-checkpoint",
+      "to": "st04-m05-u05-l01",
+      "kind": "sequence"
+    },
+    {
+      "from": "st04-m05-u04-checkpoint",
+      "to": "st04-m05-u05-l01",
+      "kind": "sequence"
+    },
+    {
+      "from": "st04-m05-u05-l01",
+      "to": "st04-m05-u05-l02",
+      "kind": "sequence"
+    },
+    {
+      "from": "st04-m05-u05-l02",
+      "to": "st04-m05-u05-l03",
+      "kind": "sequence"
+    },
+    {
+      "from": "st04-m05-u05-l03",
+      "to": "st04-m05-u05-l04",
+      "kind": "sequence"
+    },
+    {
+      "from": "st04-m05-u05-l04",
+      "to": "st04-m05-u05-l05",
+      "kind": "sequence"
+    },
+    {
+      "from": "st04-m05-u05-l05",
+      "to": "st04-m05-u05-l06",
+      "kind": "sequence"
+    },
+    {
+      "from": "st04-m05-u05-l06",
+      "to": "st04-m05-u05-l07",
+      "kind": "sequence"
+    },
+    {
+      "from": "st04-m05-u05-l07",
+      "to": "st04-m05-u05-l08",
+      "kind": "sequence"
+    },
+    {
+      "from": "st04-m05-u05-l08",
+      "to": "st04-m05-u05-checkpoint",
+      "kind": "sequence"
+    },
+    {
+      "from": "st04-m05-u05-checkpoint",
+      "to": "st04-m05-exit",
+      "kind": "sequence"
+    },
+    {
+      "from": "st04-m05-exit",
+      "to": "st04-exit",
+      "kind": "sequence"
+    },
+    {
+      "from": "st03-exit",
+      "to": "st04-m01-u01-l01",
+      "kind": "entry"
+    },
+    {
+      "from": "st04-exit",
+      "to": "st05",
+      "kind": "entry"
+    },
+    {
+      "from": "st05-m01-u01-l01",
+      "to": "st05-m01-u01-l02",
+      "kind": "sequence"
+    },
+    {
+      "from": "st05-m01-u01-l02",
+      "to": "st05-m01-u01-l03",
+      "kind": "sequence"
+    },
+    {
+      "from": "st05-m01-u01-l03",
+      "to": "st05-m01-u01-l04",
+      "kind": "sequence"
+    },
+    {
+      "from": "st05-m01-u01-l04",
+      "to": "st05-m01-u01-checkpoint",
+      "kind": "sequence"
+    },
+    {
+      "from": "st05-m01-u01-checkpoint",
+      "to": "st05-m01-exit",
+      "kind": "sequence"
+    },
+    {
+      "from": "st05-m01-exit",
+      "to": "st05-m02-u01-l01",
+      "kind": "sequence"
+    },
+    {
+      "from": "st05-m02-u01-l01",
+      "to": "st05-m02-u01-l02",
+      "kind": "sequence"
+    },
+    {
+      "from": "st05-m02-u01-l02",
+      "to": "st05-m02-u01-l03",
+      "kind": "sequence"
+    },
+    {
+      "from": "st05-m02-u01-l03",
+      "to": "st05-m02-u01-l04",
+      "kind": "sequence"
+    },
+    {
+      "from": "st05-m02-u01-l04",
+      "to": "st05-m02-u01-checkpoint",
+      "kind": "sequence"
+    },
+    {
+      "from": "st05-m02-u01-checkpoint",
+      "to": "st05-m02-exit",
+      "kind": "sequence"
+    },
+    {
+      "from": "st05-m01-exit",
+      "to": "st05-m03-u01-l01",
+      "kind": "sequence"
+    },
+    {
+      "from": "st05-m02-exit",
+      "to": "st05-m03-u01-l01",
+      "kind": "sequence"
+    },
+    {
+      "from": "st05-m03-u01-l01",
+      "to": "st05-m03-u01-l02",
+      "kind": "sequence"
+    },
+    {
+      "from": "st05-m03-u01-l02",
+      "to": "st05-m03-u01-checkpoint",
+      "kind": "sequence"
+    },
+    {
+      "from": "st05-m03-u01-checkpoint",
+      "to": "st05-m03-u02-l01",
+      "kind": "sequence"
+    },
+    {
+      "from": "st05-m03-u02-l01",
+      "to": "st05-m03-u02-l02",
+      "kind": "sequence"
+    },
+    {
+      "from": "st05-m03-u02-l02",
+      "to": "st05-m03-u02-checkpoint",
+      "kind": "sequence"
+    },
+    {
+      "from": "st05-m03-u01-checkpoint",
+      "to": "st05-m03-u03-l01",
+      "kind": "sequence"
+    },
+    {
+      "from": "st05-m03-u02-checkpoint",
+      "to": "st05-m03-u03-l01",
+      "kind": "sequence"
+    },
+    {
+      "from": "st05-m03-u03-l01",
+      "to": "st05-m03-u03-l02",
+      "kind": "sequence"
+    },
+    {
+      "from": "st05-m03-u03-l02",
+      "to": "st05-m03-u03-checkpoint",
+      "kind": "sequence"
+    },
+    {
+      "from": "st05-m03-u03-checkpoint",
+      "to": "st05-m03-exit",
+      "kind": "sequence"
+    },
+    {
+      "from": "st05-m03-exit",
+      "to": "st05-exit",
+      "kind": "sequence"
+    },
+    {
+      "from": "st04-exit",
+      "to": "st05-m01-u01-l01",
+      "kind": "entry"
+    },
+    {
+      "from": "st05-exit",
+      "to": "st06",
+      "kind": "entry"
+    },
+    {
+      "from": "st06-m01-u01-l01",
+      "to": "st06-m01-u01-l02",
+      "kind": "sequence"
+    },
+    {
+      "from": "st06-m01-u01-l02",
+      "to": "st06-m01-u01-checkpoint",
+      "kind": "sequence"
+    },
+    {
+      "from": "st06-m01-u01-checkpoint",
+      "to": "st06-m01-u02-l01",
+      "kind": "sequence"
+    },
+    {
+      "from": "st06-m01-u02-l01",
+      "to": "st06-m01-u02-l02",
+      "kind": "sequence"
+    },
+    {
+      "from": "st06-m01-u02-l02",
+      "to": "st06-m01-u02-checkpoint",
+      "kind": "sequence"
+    },
+    {
+      "from": "st06-m01-u02-checkpoint",
+      "to": "st06-m01-exit",
+      "kind": "sequence"
+    },
+    {
+      "from": "st02-exit",
+      "to": "st06-m01",
+      "kind": "knowledge"
+    },
+    {
+      "from": "st06-m01-exit",
+      "to": "st06-m02-u01-l01",
+      "kind": "sequence"
+    },
+    {
+      "from": "st06-m02-u01-l01",
+      "to": "st06-m02-u01-l02",
+      "kind": "sequence"
+    },
+    {
+      "from": "st06-m02-u01-l02",
+      "to": "st06-m02-u01-checkpoint",
+      "kind": "sequence"
+    },
+    {
+      "from": "st06-m02-u01-checkpoint",
+      "to": "st06-m02-u02-l01",
+      "kind": "sequence"
+    },
+    {
+      "from": "st06-m02-u02-l01",
+      "to": "st06-m02-u02-l02",
+      "kind": "sequence"
+    },
+    {
+      "from": "st06-m02-u02-l02",
+      "to": "st06-m02-u02-checkpoint",
+      "kind": "sequence"
+    },
+    {
+      "from": "st06-m02-u02-checkpoint",
+      "to": "st06-m02-exit",
+      "kind": "sequence"
+    },
+    {
+      "from": "st03-exit",
+      "to": "st06-m02",
+      "kind": "knowledge"
+    },
+    {
+      "from": "st06-m01-exit",
+      "to": "st06-m03-u01-l01",
+      "kind": "sequence"
+    },
+    {
+      "from": "st06-m02-exit",
+      "to": "st06-m03-u01-l01",
+      "kind": "sequence"
+    },
+    {
+      "from": "st06-m03-u01-l01",
+      "to": "st06-m03-u01-l02",
+      "kind": "sequence"
+    },
+    {
+      "from": "st06-m03-u01-l02",
+      "to": "st06-m03-u01-l03",
+      "kind": "sequence"
+    },
+    {
+      "from": "st06-m03-u01-l03",
+      "to": "st06-m03-u01-checkpoint",
+      "kind": "sequence"
+    },
+    {
+      "from": "st06-m03-u01-checkpoint",
+      "to": "st06-m03-exit",
+      "kind": "sequence"
+    },
+    {
+      "from": "st05-exit",
+      "to": "st06-m03",
+      "kind": "knowledge"
+    },
+    {
+      "from": "st06-m01-exit",
+      "to": "st06-m04-u01-l01",
+      "kind": "sequence"
+    },
+    {
+      "from": "st06-m02-exit",
+      "to": "st06-m04-u01-l01",
+      "kind": "sequence"
+    },
+    {
+      "from": "st06-m03-exit",
+      "to": "st06-m04-u01-l01",
+      "kind": "sequence"
+    },
+    {
+      "from": "st06-m04-u01-l01",
+      "to": "st06-m04-u01-l02",
+      "kind": "sequence"
+    },
+    {
+      "from": "st06-m04-u01-l02",
+      "to": "st06-m04-u01-l03",
+      "kind": "sequence"
+    },
+    {
+      "from": "st06-m04-u01-l03",
+      "to": "st06-m04-u01-checkpoint",
+      "kind": "sequence"
+    },
+    {
+      "from": "st06-m04-u01-checkpoint",
+      "to": "st06-m04-exit",
+      "kind": "sequence"
+    },
+    {
+      "from": "st04-m05-exit",
+      "to": "st06-m04",
+      "kind": "knowledge"
+    },
+    {
+      "from": "st06-m04-exit",
+      "to": "st06-exit",
+      "kind": "sequence"
+    },
+    {
+      "from": "st05-exit",
+      "to": "st06-m01-u01-l01",
+      "kind": "entry"
+    },
+    {
+      "from": "st06-exit",
+      "to": "st07",
+      "kind": "entry"
+    },
+    {
+      "from": "st07-m01-u01-l01",
+      "to": "st07-m01-u01-l02",
+      "kind": "sequence"
+    },
+    {
+      "from": "st07-m01-u01-l02",
+      "to": "st07-m01-u01-l03",
+      "kind": "sequence"
+    },
+    {
+      "from": "st07-m01-u01-l03",
+      "to": "st07-m01-u01-checkpoint",
+      "kind": "sequence"
+    },
+    {
+      "from": "st07-m01-u01-checkpoint",
+      "to": "st07-m01-exit",
+      "kind": "sequence"
+    },
+    {
+      "from": "st01-exit",
+      "to": "st07-m01",
+      "kind": "knowledge"
+    },
+    {
+      "from": "st07-m01-exit",
+      "to": "st07-m02-u01-l01",
+      "kind": "sequence"
+    },
+    {
+      "from": "st07-m02-u01-l01",
+      "to": "st07-m02-u01-l02",
+      "kind": "sequence"
+    },
+    {
+      "from": "st07-m02-u01-l02",
+      "to": "st07-m02-u01-l03",
+      "kind": "sequence"
+    },
+    {
+      "from": "st07-m02-u01-l03",
+      "to": "st07-m02-u01-l04",
+      "kind": "sequence"
+    },
+    {
+      "from": "st07-m02-u01-l04",
+      "to": "st07-m02-u01-checkpoint",
+      "kind": "sequence"
+    },
+    {
+      "from": "st07-m02-u01-checkpoint",
+      "to": "st07-m02-exit",
+      "kind": "sequence"
+    },
+    {
+      "from": "st03-exit",
+      "to": "st07-m02",
+      "kind": "knowledge"
+    },
+    {
+      "from": "st07-m01-exit",
+      "to": "st07-m03-u01-l01",
+      "kind": "sequence"
+    },
+    {
+      "from": "st07-m02-exit",
+      "to": "st07-m03-u01-l01",
+      "kind": "sequence"
+    },
+    {
+      "from": "st07-m03-u01-l01",
+      "to": "st07-m03-u01-l02",
+      "kind": "sequence"
+    },
+    {
+      "from": "st07-m03-u01-l02",
+      "to": "st07-m03-u01-l03",
+      "kind": "sequence"
+    },
+    {
+      "from": "st07-m03-u01-l03",
+      "to": "st07-m03-u01-checkpoint",
+      "kind": "sequence"
+    },
+    {
+      "from": "st07-m03-u01-checkpoint",
+      "to": "st07-m03-u02-l01",
+      "kind": "sequence"
+    },
+    {
+      "from": "st07-m03-u02-l01",
+      "to": "st07-m03-u02-l02",
+      "kind": "sequence"
+    },
+    {
+      "from": "st07-m03-u02-l02",
+      "to": "st07-m03-u02-l03",
+      "kind": "sequence"
+    },
+    {
+      "from": "st07-m03-u02-l03",
+      "to": "st07-m03-u02-l04",
+      "kind": "sequence"
+    },
+    {
+      "from": "st07-m03-u02-l04",
+      "to": "st07-m03-u02-checkpoint",
+      "kind": "sequence"
+    },
+    {
+      "from": "st07-m03-u02-checkpoint",
+      "to": "st07-m03-exit",
+      "kind": "sequence"
+    },
+    {
+      "from": "st05-exit",
+      "to": "st07-m03",
+      "kind": "knowledge"
+    },
+    {
+      "from": "st07-m01-exit",
+      "to": "st07-m04-u01-l01",
+      "kind": "sequence"
+    },
+    {
+      "from": "st07-m02-exit",
+      "to": "st07-m04-u01-l01",
+      "kind": "sequence"
+    },
+    {
+      "from": "st07-m03-exit",
+      "to": "st07-m04-u01-l01",
+      "kind": "sequence"
+    },
+    {
+      "from": "st07-m04-u01-l01",
+      "to": "st07-m04-u01-l02",
+      "kind": "sequence"
+    },
+    {
+      "from": "st07-m04-u01-l02",
+      "to": "st07-m04-u01-checkpoint",
+      "kind": "sequence"
+    },
+    {
+      "from": "st07-m04-u01-checkpoint",
+      "to": "st07-m04-u02-l01",
+      "kind": "sequence"
+    },
+    {
+      "from": "st07-m04-u02-l01",
+      "to": "st07-m04-u02-l02",
+      "kind": "sequence"
+    },
+    {
+      "from": "st07-m04-u02-l02",
+      "to": "st07-m04-u02-checkpoint",
+      "kind": "sequence"
+    },
+    {
+      "from": "st07-m04-u02-checkpoint",
+      "to": "st07-m04-exit",
+      "kind": "sequence"
+    },
+    {
+      "from": "st04-m05-exit",
+      "to": "st07-m04",
+      "kind": "knowledge"
+    },
+    {
+      "from": "st07-m04-exit",
+      "to": "st07-exit",
+      "kind": "sequence"
+    },
+    {
+      "from": "st06-exit",
+      "to": "st07-m01-u01-l01",
+      "kind": "entry"
+    },
+    {
+      "from": "st07-exit",
+      "to": "st08",
+      "kind": "entry"
+    },
+    {
+      "from": "st08-m01-u01-l01",
+      "to": "st08-m01-u01-l02",
+      "kind": "sequence"
+    },
+    {
+      "from": "st08-m01-u01-l02",
+      "to": "st08-m01-u01-l03",
+      "kind": "sequence"
+    },
+    {
+      "from": "st08-m01-u01-l03",
+      "to": "st08-m01-u01-checkpoint",
+      "kind": "sequence"
+    },
+    {
+      "from": "st08-m01-u01-checkpoint",
+      "to": "st08-m01-u02-l01",
+      "kind": "sequence"
+    },
+    {
+      "from": "st08-m01-u02-l01",
+      "to": "st08-m01-u02-l02",
+      "kind": "sequence"
+    },
+    {
+      "from": "st08-m01-u02-l02",
+      "to": "st08-m01-u02-checkpoint",
+      "kind": "sequence"
+    },
+    {
+      "from": "st08-m01-u02-checkpoint",
+      "to": "st08-m01-exit",
+      "kind": "sequence"
+    },
+    {
+      "from": "st02-exit",
+      "to": "st08-m01",
+      "kind": "knowledge"
+    },
+    {
+      "from": "st08-m01-exit",
+      "to": "st08-m02-u01-l01",
+      "kind": "sequence"
+    },
+    {
+      "from": "st08-m02-u01-l01",
+      "to": "st08-m02-u01-l02",
+      "kind": "sequence"
+    },
+    {
+      "from": "st08-m02-u01-l02",
+      "to": "st08-m02-u01-checkpoint",
+      "kind": "sequence"
+    },
+    {
+      "from": "st08-m02-u01-checkpoint",
+      "to": "st08-m02-u02-l01",
+      "kind": "sequence"
+    },
+    {
+      "from": "st08-m02-u02-l01",
+      "to": "st08-m02-u02-l02",
+      "kind": "sequence"
+    },
+    {
+      "from": "st08-m02-u02-l02",
+      "to": "st08-m02-u02-l03",
+      "kind": "sequence"
+    },
+    {
+      "from": "st08-m02-u02-l03",
+      "to": "st08-m02-u02-checkpoint",
+      "kind": "sequence"
+    },
+    {
+      "from": "st08-m02-u02-checkpoint",
+      "to": "st08-m02-exit",
+      "kind": "sequence"
+    },
+    {
+      "from": "st03-exit",
+      "to": "st08-m02",
+      "kind": "knowledge"
+    },
+    {
+      "from": "st08-m01-exit",
+      "to": "st08-m03-u01-l01",
+      "kind": "sequence"
+    },
+    {
+      "from": "st08-m02-exit",
+      "to": "st08-m03-u01-l01",
+      "kind": "sequence"
+    },
+    {
+      "from": "st08-m03-u01-l01",
+      "to": "st08-m03-u01-l02",
+      "kind": "sequence"
+    },
+    {
+      "from": "st08-m03-u01-l02",
+      "to": "st08-m03-u01-checkpoint",
+      "kind": "sequence"
+    },
+    {
+      "from": "st08-m03-u01-checkpoint",
+      "to": "st08-m03-u02-l01",
+      "kind": "sequence"
+    },
+    {
+      "from": "st08-m03-u02-l01",
+      "to": "st08-m03-u02-l02",
+      "kind": "sequence"
+    },
+    {
+      "from": "st08-m03-u02-l02",
+      "to": "st08-m03-u02-checkpoint",
+      "kind": "sequence"
+    },
+    {
+      "from": "st08-m03-u02-checkpoint",
+      "to": "st08-m03-exit",
+      "kind": "sequence"
+    },
+    {
+      "from": "st02-exit",
+      "to": "st08-m03",
+      "kind": "knowledge"
+    },
+    {
+      "from": "st08-m01-exit",
+      "to": "st08-m04-u01-l01",
+      "kind": "sequence"
+    },
+    {
+      "from": "st08-m02-exit",
+      "to": "st08-m04-u01-l01",
+      "kind": "sequence"
+    },
+    {
+      "from": "st08-m03-exit",
+      "to": "st08-m04-u01-l01",
+      "kind": "sequence"
+    },
+    {
+      "from": "st08-m04-u01-l01",
+      "to": "st08-m04-u01-l02",
+      "kind": "sequence"
+    },
+    {
+      "from": "st08-m04-u01-l02",
+      "to": "st08-m04-u01-checkpoint",
+      "kind": "sequence"
+    },
+    {
+      "from": "st08-m04-u01-checkpoint",
+      "to": "st08-m04-u02-l01",
+      "kind": "sequence"
+    },
+    {
+      "from": "st08-m04-u02-l01",
+      "to": "st08-m04-u02-l02",
+      "kind": "sequence"
+    },
+    {
+      "from": "st08-m04-u02-l02",
+      "to": "st08-m04-u02-checkpoint",
+      "kind": "sequence"
+    },
+    {
+      "from": "st08-m04-u01-checkpoint",
+      "to": "st08-m04-u03-l01",
+      "kind": "sequence"
+    },
+    {
+      "from": "st08-m04-u02-checkpoint",
+      "to": "st08-m04-u03-l01",
+      "kind": "sequence"
+    },
+    {
+      "from": "st08-m04-u03-l01",
+      "to": "st08-m04-u03-l02",
+      "kind": "sequence"
+    },
+    {
+      "from": "st08-m04-u03-l02",
+      "to": "st08-m04-u03-l03",
+      "kind": "sequence"
+    },
+    {
+      "from": "st08-m04-u03-l03",
+      "to": "st08-m04-u03-checkpoint",
+      "kind": "sequence"
+    },
+    {
+      "from": "st08-m04-u03-checkpoint",
+      "to": "st08-m04-exit",
+      "kind": "sequence"
+    },
+    {
+      "from": "st05-exit",
+      "to": "st08-m04",
+      "kind": "knowledge"
+    },
+    {
+      "from": "st08-m04-exit",
+      "to": "st08-exit",
+      "kind": "sequence"
+    },
+    {
+      "from": "st07-exit",
+      "to": "st08-m01-u01-l01",
+      "kind": "entry"
+    },
+    {
+      "from": "st08-exit",
+      "to": "st09",
+      "kind": "entry"
+    },
+    {
+      "from": "st09-m01-u01-l01",
+      "to": "st09-m01-u01-l02",
+      "kind": "sequence"
+    },
+    {
+      "from": "st09-m01-u01-l02",
+      "to": "st09-m01-u01-l03",
+      "kind": "sequence"
+    },
+    {
+      "from": "st09-m01-u01-l03",
+      "to": "st09-m01-u01-checkpoint",
+      "kind": "sequence"
+    },
+    {
+      "from": "st09-m01-u01-checkpoint",
+      "to": "st09-m01-exit",
+      "kind": "sequence"
+    },
+    {
+      "from": "st01-m03-exit",
+      "to": "st09-m01",
+      "kind": "knowledge"
+    },
+    {
+      "from": "st09-m01-exit",
+      "to": "st09-m02-u01-l01",
+      "kind": "sequence"
+    },
+    {
+      "from": "st09-m02-u01-l01",
+      "to": "st09-m02-u01-l02",
+      "kind": "sequence"
+    },
+    {
+      "from": "st09-m02-u01-l02",
+      "to": "st09-m02-u01-checkpoint",
+      "kind": "sequence"
+    },
+    {
+      "from": "st09-m02-u01-checkpoint",
+      "to": "st09-m02-u02-l01",
+      "kind": "sequence"
+    },
+    {
+      "from": "st09-m02-u02-l01",
+      "to": "st09-m02-u02-l02",
+      "kind": "sequence"
+    },
+    {
+      "from": "st09-m02-u02-l02",
+      "to": "st09-m02-u02-checkpoint",
+      "kind": "sequence"
+    },
+    {
+      "from": "st09-m02-u02-checkpoint",
+      "to": "st09-m02-exit",
+      "kind": "sequence"
+    },
+    {
+      "from": "st01-m03-exit",
+      "to": "st09-m02",
+      "kind": "knowledge"
+    },
+    {
+      "from": "st09-m01-exit",
+      "to": "st09-m03-u01-l01",
+      "kind": "sequence"
+    },
+    {
+      "from": "st09-m02-exit",
+      "to": "st09-m03-u01-l01",
+      "kind": "sequence"
+    },
+    {
+      "from": "st09-m03-u01-l01",
+      "to": "st09-m03-u01-l02",
+      "kind": "sequence"
+    },
+    {
+      "from": "st09-m03-u01-l02",
+      "to": "st09-m03-u01-l03",
+      "kind": "sequence"
+    },
+    {
+      "from": "st09-m03-u01-l03",
+      "to": "st09-m03-u01-checkpoint",
+      "kind": "sequence"
+    },
+    {
+      "from": "st09-m03-u01-checkpoint",
+      "to": "st09-m03-u02-l01",
+      "kind": "sequence"
+    },
+    {
+      "from": "st09-m03-u02-l01",
+      "to": "st09-m03-u02-l02",
+      "kind": "sequence"
+    },
+    {
+      "from": "st09-m03-u02-l02",
+      "to": "st09-m03-u02-checkpoint",
+      "kind": "sequence"
+    },
+    {
+      "from": "st09-m03-u02-checkpoint",
+      "to": "st09-m03-exit",
+      "kind": "sequence"
+    },
+    {
+      "from": "st02-exit",
+      "to": "st09-m03",
+      "kind": "knowledge"
+    },
+    {
+      "from": "st09-m01-exit",
+      "to": "st09-m04-u01-l01",
+      "kind": "sequence"
+    },
+    {
+      "from": "st09-m02-exit",
+      "to": "st09-m04-u01-l01",
+      "kind": "sequence"
+    },
+    {
+      "from": "st09-m03-exit",
+      "to": "st09-m04-u01-l01",
+      "kind": "sequence"
+    },
+    {
+      "from": "st09-m04-u01-l01",
+      "to": "st09-m04-u01-l02",
+      "kind": "sequence"
+    },
+    {
+      "from": "st09-m04-u01-l02",
+      "to": "st09-m04-u01-checkpoint",
+      "kind": "sequence"
+    },
+    {
+      "from": "st09-m04-u01-checkpoint",
+      "to": "st09-m04-exit",
+      "kind": "sequence"
+    },
+    {
+      "from": "st09-m03-exit",
+      "to": "st09-m04",
+      "kind": "knowledge"
+    },
+    {
+      "from": "st09-m04-exit",
+      "to": "st09-exit",
+      "kind": "sequence"
+    },
+    {
+      "from": "st08-exit",
+      "to": "st09-m01-u01-l01",
+      "kind": "entry"
+    },
+    {
+      "from": "st09-exit",
+      "to": "st10",
+      "kind": "entry"
+    },
+    {
+      "from": "st10-m01-u01-l01",
+      "to": "st10-m01-u01-l02",
+      "kind": "sequence"
+    },
+    {
+      "from": "st10-m01-u01-l02",
+      "to": "st10-m01-u01-checkpoint",
+      "kind": "sequence"
+    },
+    {
+      "from": "st10-m01-u01-checkpoint",
+      "to": "st10-m01-u02-l01",
+      "kind": "sequence"
+    },
+    {
+      "from": "st10-m01-u02-l01",
+      "to": "st10-m01-u02-l02",
+      "kind": "sequence"
+    },
+    {
+      "from": "st10-m01-u02-l02",
+      "to": "st10-m01-u02-checkpoint",
+      "kind": "sequence"
+    },
+    {
+      "from": "st10-m01-u02-checkpoint",
+      "to": "st10-m01-exit",
+      "kind": "sequence"
+    },
+    {
+      "from": "st05-exit",
+      "to": "st10-m01",
+      "kind": "knowledge"
+    },
+    {
+      "from": "st08-m04-exit",
+      "to": "st10-m01",
+      "kind": "knowledge"
+    },
+    {
+      "from": "st10-m01-exit",
+      "to": "st10-m02-u01-l01",
+      "kind": "sequence"
+    },
+    {
+      "from": "st10-m02-u01-l01",
+      "to": "st10-m02-u01-l02",
+      "kind": "sequence"
+    },
+    {
+      "from": "st10-m02-u01-l02",
+      "to": "st10-m02-u01-checkpoint",
+      "kind": "sequence"
+    },
+    {
+      "from": "st10-m02-u01-checkpoint",
+      "to": "st10-m02-u02-l01",
+      "kind": "sequence"
+    },
+    {
+      "from": "st10-m02-u02-l01",
+      "to": "st10-m02-u02-checkpoint",
+      "kind": "sequence"
+    },
+    {
+      "from": "st10-m02-u02-checkpoint",
+      "to": "st10-m02-exit",
+      "kind": "sequence"
+    },
+    {
+      "from": "st08-m04-exit",
+      "to": "st10-m02",
+      "kind": "knowledge"
+    },
+    {
+      "from": "st10-m01-exit",
+      "to": "st10-m03-u01-l01",
+      "kind": "sequence"
+    },
+    {
+      "from": "st10-m02-exit",
+      "to": "st10-m03-u01-l01",
+      "kind": "sequence"
+    },
+    {
+      "from": "st10-m03-u01-l01",
+      "to": "st10-m03-u01-l02",
+      "kind": "sequence"
+    },
+    {
+      "from": "st10-m03-u01-l02",
+      "to": "st10-m03-u01-checkpoint",
+      "kind": "sequence"
+    },
+    {
+      "from": "st10-m03-u01-checkpoint",
+      "to": "st10-m03-u02-l01",
+      "kind": "sequence"
+    },
+    {
+      "from": "st10-m03-u02-l01",
+      "to": "st10-m03-u02-l02",
+      "kind": "sequence"
+    },
+    {
+      "from": "st10-m03-u02-l02",
+      "to": "st10-m03-u02-checkpoint",
+      "kind": "sequence"
+    },
+    {
+      "from": "st10-m03-u01-checkpoint",
+      "to": "st10-m03-u03-l01",
+      "kind": "sequence"
+    },
+    {
+      "from": "st10-m03-u02-checkpoint",
+      "to": "st10-m03-u03-l01",
+      "kind": "sequence"
+    },
+    {
+      "from": "st10-m03-u03-l01",
+      "to": "st10-m03-u03-checkpoint",
+      "kind": "sequence"
+    },
+    {
+      "from": "st10-m03-u03-checkpoint",
+      "to": "st10-m03-exit",
+      "kind": "sequence"
+    },
+    {
+      "from": "st04-m05-exit",
+      "to": "st10-m03",
+      "kind": "knowledge"
+    },
+    {
+      "from": "st06-m04-exit",
+      "to": "st10-m03",
+      "kind": "knowledge"
+    },
+    {
+      "from": "st07-m04-exit",
+      "to": "st10-m03",
+      "kind": "knowledge"
+    },
+    {
+      "from": "st10-m03-exit",
+      "to": "st10-exit",
+      "kind": "sequence"
+    },
+    {
+      "from": "st09-exit",
+      "to": "st10-m01-u01-l01",
+      "kind": "entry"
+    }
+  ],
+  "stats": {
+    "stages": 10,
+    "modules": 42,
+    "units": 112,
+    "lessons": 265,
+    "checkpoints": 112,
+    "exitAssessments": 10,
+    "coreMinutes": 3136,
+    "assessmentMinutes": 255,
+    "lessonsByCefr": {
+      "Pre-A1": 39,
+      "A1": 92,
+      "A2": 54,
+      "B1": 51,
+      "B2": 22,
+      "C1": 7
+    }
+  }
+}

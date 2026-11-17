@@ -1,0 +1,127 @@
+{
+  "id": "st08",
+  "order": 8,
+  "title": "Practical Spoken English",
+  "cefr": "A1 → B1",
+  "goal": "Communicate in the 21 core real-life situations — from first greetings to interviews and public speaking — with guided dialogues, role-plays and private speaking practice.",
+  "entryRequirements": ["st07-exit"],
+  "modules": [
+    {
+      "id": "st08-m01",
+      "title": "Everyday Talk",
+      "description": "First conversations: greetings, introducing yourself and your family, daily routines and asking questions, at A1.",
+      "entryRequirements": ["st02-exit"],
+      "units": [
+        {
+          "id": "st08-m01-u01",
+          "title": "Greetings and Introductions",
+          "lessons": [
+            {"id": "st08-m01-u01-l01", "title": "Greetings", "cefr": "A1", "minutes": 12, "objectives": ["Greet people at different times of day", "Use hello, hi, good morning, goodbye naturally"], "topics": ["greetings", "time-of-day-greetings", "farewells"], "practice": ["listen-and-repeat", "guided-dialogue", "role-play"], "assessment": "Complete 3 greeting exchanges with correct time-of-day choice", "skills": ["listening", "speaking"]},
+            {"id": "st08-m01-u01-l02", "title": "Self-Introduction", "cefr": "A1", "minutes": 12, "objectives": ["Introduce yourself: name, country, job, one interest", "Respond to Nice to meet you"], "topics": ["self-introduction", "nice-to-meet-you", "first-meetings"], "practice": ["speaking-prompts", "role-play", "guided-dialogue"], "assessment": "Deliver a 5-sentence self-introduction and respond to 3 replies", "skills": ["listening", "speaking"]},
+            {"id": "st08-m01-u01-l03", "title": "Family Introduction", "cefr": "A1", "minutes": 12, "objectives": ["Introduce family members and their basic details", "Answer 3 questions about your family"], "topics": ["family-introduction", "talking-about-family", "follow-up-questions"], "practice": ["speaking-prompts", "role-play", "picture-description"], "assessment": "Introduce a family of 3+ members and handle 3 follow-up questions", "skills": ["listening", "speaking"]}
+          ],
+          "checkpoint": {"criteria": "Greet, introduce yourself and your family in first meetings", "passThreshold": 80}
+        },
+        {
+          "id": "st08-m01-u02",
+          "title": "Daily Life",
+          "lessons": [
+            {"id": "st08-m01-u02-l01", "title": "Daily Routines", "cefr": "A1", "minutes": 12, "objectives": ["Describe your day in sequence with time phrases", "Ask about someone else's routine"], "topics": ["daily-routines", "time-phrases", "routine-dialogues"], "practice": ["speaking-prompts", "guided-dialogue", "listening-comprehension"], "assessment": "Describe your day in 6 sentences and ask 2 routine questions", "skills": ["listening", "speaking"]},
+            {"id": "st08-m01-u02-l02", "title": "Asking Questions", "cefr": "A1", "minutes": 12, "objectives": ["Ask yes/no and WH-questions to get information", "Show interest with follow-up questions"], "topics": ["asking-questions", "follow-ups", "conversation-flow"], "practice": ["interview-game", "role-play", "question-building"], "assessment": "Conduct a 6-question mini-interview with correct forms", "skills": ["listening", "speaking"]}
+          ],
+          "checkpoint": {"criteria": "Talk about daily life and drive conversations with questions", "passThreshold": 80}
+        }
+      ]
+    },
+    {
+      "id": "st08-m02",
+      "title": "Getting Things Done",
+      "description": "Transactional speaking: asking for help, giving instructions, expressing opinions, making requests and expressing preferences.",
+      "entryRequirements": ["st03-exit"],
+      "units": [
+        {
+          "id": "st08-m02-u01",
+          "title": "Help and Instructions",
+          "lessons": [
+            {"id": "st08-m02-u01-l01", "title": "Asking for Help", "cefr": "A1", "minutes": 12, "objectives": ["Ask for help politely with Can you and Could you", "Offer help and respond to thanks"], "topics": ["asking-for-help", "polite-requests", "can-you-could-you"], "practice": ["role-play", "guided-dialogue", "politeness-upgrade"], "assessment": "Make 5 help requests with appropriate politeness", "skills": ["listening", "speaking"]},
+            {"id": "st08-m02-u01-l02", "title": "Giving Instructions", "cefr": "A1", "minutes": 12, "objectives": ["Give step-by-step instructions with first, then, after that", "Check understanding: Is that clear?"], "topics": ["instructions", "sequencing-language", "checking-understanding"], "practice": ["explain-a-process", "role-play", "guided-dialogue"], "assessment": "Give a 5-step process explanation with sequencing words", "skills": ["listening", "speaking"]}
+          ],
+          "checkpoint": {"criteria": "Ask for and deliver help with polite, sequenced language", "passThreshold": 80}
+        },
+        {
+          "id": "st08-m02-u02",
+          "title": "Opinions, Requests and Preferences",
+          "lessons": [
+            {"id": "st08-m02-u02-l01", "title": "Expressing Opinions", "cefr": "A2", "minutes": 12, "objectives": ["State opinions with I think and In my opinion", "Agree and disagree politely"], "topics": ["opinions", "agree-disagree", "opinion-language"], "practice": ["discussion-prompts", "role-play", "opinion-swap"], "assessment": "Express 3 opinions with reasons and respond to agreement/disagreement", "skills": ["listening", "speaking"]},
+            {"id": "st08-m02-u02-l02", "title": "Making Requests", "cefr": "A2", "minutes": 12, "objectives": ["Make direct and indirect requests appropriately", "Handle yes and no answers gracefully"], "topics": ["requests", "direct-indirect", "responding-to-no"], "practice": ["request-scenarios", "politeness-upgrade", "role-play"], "assessment": "Make 5 requests across formality levels appropriately", "skills": ["listening", "speaking"]},
+            {"id": "st08-m02-u02-l03", "title": "Expressing Preferences", "cefr": "A2", "minutes": 12, "objectives": ["Say what you prefer with prefer, would rather and like better", "Compare two options in conversation"], "topics": ["preferences", "prefer-would-rather", "comparing-options"], "practice": ["preference-quiz", "role-play", "guided-dialogue"], "assessment": "Express and justify 4 preferences in comparison dialogues", "skills": ["listening", "speaking"]}
+          ],
+          "checkpoint": {"criteria": "Handle opinions, requests and preferences with appropriate register", "passThreshold": 80}
+        }
+      ]
+    },
+    {
+      "id": "st08-m03",
+      "title": "Out and About",
+      "description": "Situation speaking: shopping, restaurants, travel and telephone conversations at A2.",
+      "entryRequirements": ["st02-exit"],
+      "units": [
+        {
+          "id": "st08-m03-u01",
+          "title": "Shopping and Dining",
+          "lessons": [
+            {"id": "st08-m03-u01-l01", "title": "Shopping", "cefr": "A2", "minutes": 12, "objectives": ["Ask for products, sizes and prices", "Complete a buy-something dialogue start to finish"], "topics": ["shopping", "asking-for-products", "price-negotiation-basics"], "practice": ["role-play", "guided-dialogue", "listening-comprehension"], "assessment": "Complete a full shop role-play: ask, choose, pay", "skills": ["listening", "speaking"]},
+            {"id": "st08-m03-u01-l02", "title": "Restaurants", "cefr": "A2", "minutes": 12, "objectives": ["Order a meal and drinks politely", "Ask about the menu and request the bill"], "topics": ["restaurants", "ordering-food", "menu-questions"], "practice": ["role-play", "guided-dialogue", "menu-listening"], "assessment": "Complete a restaurant role-play of 8+ turns including the bill", "skills": ["listening", "speaking"]}
+          ],
+          "checkpoint": {"criteria": "Shop and order food in full transactional dialogues", "passThreshold": 80}
+        },
+        {
+          "id": "st08-m03-u02",
+          "title": "Travel and Communication",
+          "lessons": [
+            {"id": "st08-m03-u02-l01", "title": "Travel", "cefr": "A2", "minutes": 12, "objectives": ["Ask for directions and follow them", "Handle tickets, platforms and basic travel problems"], "topics": ["travel-situations", "asking-directions", "travel-problems"], "practice": ["role-play", "directions-listening", "problem-scenarios"], "assessment": "Complete directions and ticket role-plays with correct comprehension", "skills": ["listening", "speaking"]},
+            {"id": "st08-m03-u02-l02", "title": "Telephone Conversations", "cefr": "A2", "minutes": 12, "objectives": ["Answer and make calls with phone phrases", "Take a simple message: name, number, reason"], "topics": ["telephone-english", "phone-phrases", "taking-messages"], "practice": ["phone-role-play", "message-taking", "listening-comprehension"], "assessment": "Complete a phone role-play and record a 3-part message accurately", "skills": ["listening", "speaking"]}
+          ],
+          "checkpoint": {"criteria": "Handle travel and telephone situations in English", "passThreshold": 80}
+        }
+      ]
+    },
+    {
+      "id": "st08-m04",
+      "title": "Structured Speaking",
+      "description": "Extended and higher-stakes speaking at B1: classroom and workplace communication, social conversation, storytelling, interviews, group discussions and public speaking.",
+      "entryRequirements": ["st05-exit"],
+      "units": [
+        {
+          "id": "st08-m04-u01",
+          "title": "Learning and Working",
+          "lessons": [
+            {"id": "st08-m04-u01-l01", "title": "Classroom Communication", "cefr": "B1", "minutes": 12, "objectives": ["Ask for clarification and repetition in class", "Participate: volunteer answers, work in pairs"], "topics": ["classroom-language", "clarification-requests", "participation"], "practice": ["classroom-role-play", "clarification-drill", "pair-work"], "assessment": "Use 6 clarification phrases correctly in classroom scenarios", "skills": ["listening", "speaking"]},
+            {"id": "st08-m04-u01-l02", "title": "Workplace Communication", "cefr": "B1", "minutes": 12, "objectives": ["Speak in meetings: state progress, raise problems, suggest", "Use workplace politeness with colleagues and managers"], "topics": ["workplace-communication", "meeting-phrases", "professional-politeness"], "practice": ["meeting-role-play", "status-updates", "guided-dialogue"], "assessment": "Give a 30-second status update and raise one issue in a meeting role-play", "skills": ["listening", "speaking"]}
+          ],
+          "checkpoint": {"criteria": "Communicate in classroom and workplace settings", "passThreshold": 80}
+        },
+        {
+          "id": "st08-m04-u02",
+          "title": "Social and Narrative",
+          "lessons": [
+            {"id": "st08-m04-u02-l01", "title": "Social Conversations", "cefr": "B1", "minutes": 12, "objectives": ["Start, maintain and close small-talk conversations", "Talk about free time, hobbies and weekend plans"], "topics": ["small-talk", "hobbies-conversation", "conversation-management"], "practice": ["small-talk-role-play", "topic-cards", "fluency-circle"], "assessment": "Hold a 2-minute small-talk exchange with natural openers and closers", "skills": ["listening", "speaking"]},
+            {"id": "st08-m04-u02-l02", "title": "Storytelling", "cefr": "B1", "minutes": 12, "objectives": ["Tell a personal story with clear sequence and a point", "Use narrative tenses and reaction-checks"], "topics": ["storytelling", "narrative-tenses", "engaging-listeners"], "practice": ["storytelling-task", "sequence-practice", "peer-feedback"], "assessment": "Tell a 90-second personal story with clear structure", "skills": ["listening", "speaking"]}
+          ],
+          "checkpoint": {"criteria": "Hold social conversations and tell structured stories", "passThreshold": 80}
+        },
+        {
+          "id": "st08-m04-u03",
+          "title": "High-Stakes Speaking",
+          "lessons": [
+            {"id": "st08-m04-u03-l01", "title": "Interviews", "cefr": "B1", "minutes": 12, "objectives": ["Answer the 10 most common interview questions with structure", "Ask the interviewer 2 sensible questions"], "topics": ["interviews", "common-questions", "structured-answers"], "practice": ["mock-interview", "answer-frames", "role-play"], "assessment": "Complete a mock interview: 5 structured answers plus 2 questions", "skills": ["listening", "speaking"]},
+            {"id": "st08-m04-u03-l02", "title": "Group Discussions", "cefr": "B1", "minutes": 12, "objectives": ["Contribute to a discussion: opinions, agreements, interruptions", "Invite others in and manage turns"], "topics": ["group-discussions", "turn-taking", "discussion-phrases"], "practice": ["discussion-circle", "role-play", "fluency-tasks"], "assessment": "Contribute 5 turns to a group discussion with proper phrases", "skills": ["listening", "speaking"]},
+            {"id": "st08-m04-u03-l03", "title": "Public Speaking", "cefr": "B1", "minutes": 12, "objectives": ["Give a short structured talk: opening, 3 points, close", "Use signposting and manage nerves"], "topics": ["public-speaking", "talk-structure", "signposting"], "practice": ["mini-presentation", "signposting-drill", "delivery-practice"], "assessment": "Deliver a 2-minute structured mini-talk with signposting", "skills": ["listening", "speaking"]}
+          ],
+          "checkpoint": {"criteria": "Perform in interviews, discussions and short public talks", "passThreshold": 80}
+        }
+      ]
+    }
+  ],
+  "exitAssessment": {"id": "st08-exit", "title": "Spoken English Exit Test", "criteria": "A 5-minute speaking assessment covering: greetings and introductions, a transactional role-play (shop or restaurant), a telephone exchange, a 90-second personal story, 3 structured interview answers. Graded on task completion, comprehensibility and appropriateness — never on accent.", "passThreshold": 75, "minutes": 20, "unlocks": ["st09"]}
+}

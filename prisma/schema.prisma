@@ -1,0 +1,2807 @@
+generator client {
+  provider      = "prisma-client-js"
+  // `native` covers local development. The extra targets cover serverless
+  // runtimes (Amazon Linux 2 / 2023 on x64 and arm64, Debian bookworm
+  // containers) where the Prisma query engine binary must match the
+  // host's OpenSSL version — without them the engine fails to load on
+  // Vercel and every database route returns 500.
+  binaryTargets = ["native", "rhel-openssl-1.1.x", "rhel-openssl-3.0.x", "linux-arm64-openssl-3.0.x", "debian-openssl-3.0.x"]
+}
+
+datasource db {
+  provider = "sqlite"
+  url      = env("DATABASE_URL")
+}
+
+model User {
+  id                 String   @id @default(cuid())
+  email              String   @unique
+  name               String?
+  passwordHash       String
+  // RBAC: student (default) | editor | teacher | admin. Staff roles unlock
+  // the CMS; only admins manage users and publish content.
+  role               String   @default("student")
+  // active | suspended. Suspended accounts fail login AND existing sessions
+  // are rejected at the session-resolution layer.
+  status             String   @default("active")
+  // First-login gate: staff accounts seeded with a public default password
+  // must choose a new one before the CMS accepts any of their requests.
+  mustChangePassword Boolean  @default(false)
+  // Gamification + learning goal (rendered by the app shell and dashboard).
+  xp                 Int      @default(0)
+  dailyGoalMinutes   Int      @default(10)
+  createdAt          DateTime @default(now())
+  updatedAt          DateTime @updatedAt
+
+  sessions              Session[]
+  lessonProgress        LessonProgress[]
+  exerciseAttempts      ExerciseAttempt[]
+  notes                 LessonNote[]
+  assessmentResults     AssessmentResult[]
+  clinicSubmissions     GrammarClinicSubmission[]
+  vocabProgress         VocabProgress[]
+  vocabReviewLogs       VocabReviewLog[]
+  vocabBookmarks        VocabBookmark[]
+  wordLists             WordList[]
+  vocabSentences        VocabSentence[]
+  vocabChallengeRuns    VocabChallengeRun[]
+  vocabSettings         VocabSettings?
+  readingProgress       ReadingProgress[]
+  readingBookmarks      ReadingBookmark[]
+  readingAttempts       ReadingAttempt[]
+  readingRuns           ReadingRun[]
+  listeningProgress     ListeningProgress[]
+  listeningAttempts     ListeningAttempt[]
+  speakingSettings      SpeakingSettings?
+  speakingProgress      SpeakingProgress[]
+  speakingAttempts      SpeakingAttempt[]
+  conversationSessions  ConversationSession[]
+  pronunciationAttempts PronunciationAttempt[]
+  writingProgress       WritingProgress[]
+  writingDrafts         WritingDraft[]
+  writingSubmissions    WritingSubmission[]
+  learnerGoals          LearnerGoals?
+  lessonConfidence      LessonConfidence[]
+  achievementUnlocks    AchievementUnlock[]
+  certificates          Certificate[]
+  stats                 UserStats?
+  tutorConversations    TutorConversation[]
+  tutorMessages         TutorMessage[]
+  tutorUsage            TutorUsage?
+  // PROMPT 38 — AI-powered personal learning experience
+  tutorSettings         TutorSettings?
+  llmCallLogs           LlmCallLog[]
+  cmsEnrolments         CmsEnrolment[]
+  cmsLessonProgress     CmsLessonProgress[]
+  cmsSubmissions        CmsAssignmentSubmission[]
+  cmsAuditLogs          CmsAuditLog[]
+  cmsLessonVersions     CmsLessonVersion[]        @relation("LessonVersionEditor")
+  cmsQuestionVersions   CmsQuestionVersion[]      @relation("QuestionVersionEditor")
+  passwordResetTokens   PasswordResetToken[]
+  // PROMPT 36 — practice & assessment engine
+  practiceSessions      PracticeSession[]
+  // Division C — International Exam Preparation Academy
+  examProfile           ExamProfile?
+  examEstimates         ExamSectionEstimate[]
+  examStudyPlans        ExamStudyPlan[]
+  examPlannerPlans      ExamPlannerPlan[]
+  examNotificationPrefs ExamNotificationPref[]
+  examMockAttempts      MockTestAttempt[]
+  examPathwayProgress   ExamPathwayStepProgress[]
+  examEvaluations       MockEvaluation[]
+  // PROMPT 44 — IELTS Listening Masterclass audio bank attempts
+  listeningBankAttempts ListeningBankAttempt[]
+  // PROMPT 45 — IELTS Reading Masterclass passage bank attempts
+  readingBankAttempts   ReadingBankAttempt[]
+  // PROMPT 46 — IELTS Writing Masterclass task bank attempts + drafts
+  writingBankAttempts   WritingBankAttempt[]
+  writingBankDrafts     WritingBankDraft[]
+  // PROMPT 47 — IELTS Speaking Masterclass practice bank attempts
+  speakingBankAttempts  SpeakingBankAttempt[]
+  // PROMPT 49 — TOEFL Reading and Listening Practice Library attempts
+  toeflReadingBankAttempts   ToeflReadingBankAttempt[]
+  toeflListeningBankAttempts ToeflListeningBankAttempt[]
+  // PROMPT 50 — TOEFL Writing and Speaking Practice Library attempts + drafts
+  toeflWritingBankAttempts   ToeflWritingBankAttempt[]
+  toeflWritingBankDrafts     ToeflWritingBankDraft[]
+  toeflSpeakingBankAttempts  ToeflSpeakingBankAttempt[]
+  // Curriculum-mirror progress relations (content-sync schema layer)
+  dailyActivities     DailyActivity[]
+  lessonCompletions   LessonCompletion[]
+  learningPlans       LearningPlan[]
+  enrollments         Enrollment[]
+  vocabularyProgress  VocabularyProgress[]
+  learningStreak      LearningStreak?
+  learningActivities  LearningActivity[]
+  skillProgress       SkillProgress?
+  revisionItems       RevisionItem[]
+  assessmentAttempts  AssessmentAttempt[]
+  placementAttempts   PlacementAttempt[]
+  learnerProfile      LearnerProfile?
+  userProfile         UserProfile?
+  userPreference      UserPreference?
+  userAchievements    UserAchievement[]
+  speakingSubmissions SpeakingSubmission[]
+  auditLogs           AuditLog[]
+}
+
+
+model Session {
+  id        String   @id @default(cuid())
+  token     String   @unique
+  userId    String
+  user      User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+  expiresAt DateTime
+  createdAt DateTime @default(now())
+
+  @@index([userId])
+}
+
+// S1 — authentication throttling. One counter row per namespaced key:
+//   login:acct:<email> — per failing account (5 failures / 15 min)
+//   login:ip:<ip>      — secondary per-IP guard across accounts (30 / 15 min)
+//   register:ip:<ip>   — registrations per IP (post-validation)
+//   forgot:ip:<ip> / reset:ip:<ip> — password-reset endpoints
+// When a key reaches its limit it locks for 15 minutes, doubling with
+// every repeat offence, capped at 24 hours.
+model AuthThrottle {
+  id          String    @id @default(cuid())
+  key         String    @unique
+  count       Int       @default(0)
+  strikes     Int       @default(0)
+  windowStart DateTime  @default(now())
+  lockedUntil DateTime?
+  updatedAt   DateTime  @updatedAt
+}
+
+// S2 — token-based password reset. Only sha256(token) is stored; the raw
+// token exists solely inside the reset link. Single use, 30-minute TTL;
+// a successful reset revokes every session of that account.
+model PasswordResetToken {
+  id        String    @id @default(cuid())
+  userId    String
+  user      User      @relation(fields: [userId], references: [id], onDelete: Cascade)
+  tokenHash String    @unique
+  expiresAt DateTime
+  usedAt    DateTime?
+  createdAt DateTime  @default(now())
+
+  @@index([userId])
+}
+
+// Learner progress per lesson. Created on first open, but NEVER auto-completed:
+// completion is derived server-side from explicit section completions (+ passed assessment).
+model LessonProgress {
+  id                String    @id @default(cuid())
+  userId            String
+  user              User      @relation(fields: [userId], references: [id], onDelete: Cascade)
+  lessonSlug        String
+  status            String    @default("in-progress") // "in-progress" | "completed"
+  sectionsCompleted String    @default("[]") // JSON array of section ids
+  lastSectionId     String?
+  bookmarked        Boolean   @default(false)
+  completedAt       DateTime?
+  createdAt         DateTime  @default(now())
+  updatedAt         DateTime  @updatedAt
+
+  @@unique([userId, lessonSlug])
+  @@index([userId])
+}
+
+// Every graded submission is recorded: answer, correctness, hints used, time spent.
+model ExerciseAttempt {
+  id                String   @id @default(cuid())
+  userId            String
+  user              User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+  exerciseId        String
+  lessonSlug        String
+  type              String
+  difficulty        String
+  skill             String   @default("vocabulary")
+  context           String   @default("practice") // "practice" | "assessment" | "challenge" | practice-zone session mode
+  // "core" = content-as-code lesson exercise, "cms" = question-bank question
+  // served from a published CMS lesson.
+  source            String   @default("core")
+  // PROMPT 36: set when the attempt belongs to a practice-zone session;
+  // links the graded row to the session that drew the question.
+  sessionId         String?
+  // Set when source = "cms": the immutable question version that graded this
+  // attempt. Editing the question later never rewrites this history.
+  questionVersionId String?
+  isCorrect         Boolean
+  score             Float    @default(0)
+  hintsUsed         Int      @default(0)
+  durationMs        Int      @default(0)
+  answer            String   @default("") // JSON-encoded submitted answer
+  createdAt         DateTime @default(now())
+
+  @@index([userId, exerciseId])
+  @@index([userId, lessonSlug])
+  @@index([sessionId])
+}
+
+// ---------------------------------------------------------------------------
+// PROMPT 36 — interactive practice & assessment engine
+//
+// One row per practice-zone session: the seven practice modes plus chapter
+// tests and course milestone assessments. Assessment-style sessions
+// (chapter-test, course-assessment, timed) collect answers silently and are
+// graded in one server-side batch on submit; practice-style sessions record
+// per-question attempts through /api/exercises/attempt (carrying sessionId +
+// context = the mode) and are finalised from those attempts on finish.
+// ---------------------------------------------------------------------------
+model PracticeSession {
+  id        String    @id @default(cuid())
+  userId    String
+  user      User      @relation(fields: [userId], references: [id], onDelete: Cascade)
+  // guided | independent | revision | mixed | timed | weak-area | chapter-test | course-assessment
+  mode      String
+  status    String    @default("active") // active | completed
+  // JSON assembly config: { chapterSlug?, courseSlug?, levelId?, count, timeLimitSec?, passScore? }
+  config    String    @default("{}")
+  // Deterministic draw seed (stable within a run, varies between retries).
+  seed      String
+  // JSON string[] of question ids in play order.
+  questionIds String  @default("[]")
+  // Grading (filled on submit/finish).
+  score     Float     @default(0)
+  total     Int       @default(0)
+  correct   Int       @default(0)
+  passed    Boolean   @default(false)
+  // JSON report payload (src/lib/practice/report.ts) once completed.
+  report    String?
+  // Whether the mode offers hints to the learner at all.
+  hintsAllowed Boolean @default(true)
+  startedAt   DateTime  @default(now())
+  completedAt DateTime?
+  // Timed sessions expire; late auto-submits are graded as submitted.
+  expiresAt   DateTime?
+
+  @@index([userId, status])
+  @@index([userId, mode])
+}
+
+// Free-form learner notes, one per lesson section.
+model LessonNote {
+  id         String   @id @default(cuid())
+  userId     String
+  user       User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+  lessonSlug String
+  sectionId  String
+  content    String
+  createdAt  DateTime @default(now())
+  updatedAt  DateTime @updatedAt
+
+  @@unique([userId, lessonSlug, sectionId])
+}
+
+// Grammar Error Clinic: every submitted sentence with its corrections and
+// detected error categories (used to recommend additional lessons).
+model GrammarClinicSubmission {
+  id         String   @id @default(cuid())
+  userId     String
+  user       User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+  sentence   String
+  corrected  String   @default("")
+  issues     String   @default("[]") // JSON GrammarIssue[]
+  categories String   @default("[]") // JSON error categories
+  createdAt  DateTime @default(now())
+
+  @@index([userId])
+}
+
+// End-of-lesson assessment runs. Created "pending" on start (with the
+// deterministically selected question set), finalized on submit.
+model AssessmentResult {
+  id          String    @id @default(cuid())
+  userId      String
+  user        User      @relation(fields: [userId], references: [id], onDelete: Cascade)
+  lessonSlug  String
+  status      String    @default("pending") // "pending" | "completed"
+  questionIds String    @default("[]") // JSON array of exercise ids
+  score       Float     @default(0)
+  passed      Boolean   @default(false)
+  total       Int       @default(0)
+  correct     Int       @default(0)
+  detail      String    @default("[]") // JSON per-question results
+  createdAt   DateTime  @default(now())
+  completedAt DateTime?
+
+  @@index([userId, lessonSlug])
+}
+
+// Aggregated performance counters, updated transactionally with attempts.
+model UserStats {
+  id              String   @id @default(cuid())
+  userId          String   @unique
+  user            User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+  totalAttempts   Int      @default(0)
+  correctAttempts Int      @default(0)
+  hintsUsed       Int      @default(0)
+  timeSpentMs     Int      @default(0)
+  byType          String   @default("{}") // JSON { exerciseType: { attempts, correct } }
+  byDifficulty    String   @default("{}") // JSON { difficulty: { attempts, correct } }
+  bySkill         String   @default("{}") // JSON { skill: { attempts, correct } }
+  streakDays      Int      @default(0)
+  lastActiveDay   String?
+  updatedAt       DateTime @updatedAt
+}
+
+// ---------------------------------------------------------------------------
+// Vocabulary system
+// ---------------------------------------------------------------------------
+
+// Spaced-repetition state per learner per word. Created on the first graded
+// review — NEVER just by opening a word. "Mastered" is a soft status: it still
+// schedules future reviews (intervals are capped) and any "again" demotes the
+// word back to learning.
+model VocabProgress {
+  id              String    @id @default(cuid())
+  userId          String
+  user            User      @relation(fields: [userId], references: [id], onDelete: Cascade)
+  wordId          String
+  status          String    @default("learning") // learning | reviewing | mastered
+  repetitions     Int       @default(0) // consecutive successful reviews
+  streak          Int       @default(0)
+  lapses          Int       @default(0) // times the learner forgot the word
+  ease            Float     @default(2.5) // SM-2 style ease factor
+  intervalMinutes Int       @default(0) // current scheduled interval
+  dueAt           DateTime?
+  lastReviewedAt  DateTime?
+  firstSeenAt     DateTime  @default(now())
+  totalReviews    Int       @default(0)
+  correctReviews  Int       @default(0)
+  isDifficult     Boolean   @default(false) // learner's own difficulty flag
+  createdAt       DateTime  @default(now())
+  updatedAt       DateTime  @updatedAt
+
+  @@unique([userId, wordId])
+  @@index([userId, dueAt])
+  @@index([userId, status])
+}
+
+// Every review event: what the learner did, from where, and what happened.
+// Powers the daily new-word budget, recent-performance factor and history.
+model VocabReviewLog {
+  id                String   @id @default(cuid())
+  userId            String
+  user              User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+  wordId            String
+  source            String // flashcard | challenge | sentence | daily | explore
+  action            String // grade | known | snooze | flag | unflag
+  rating            String? // again | hard | good | easy (null for non-grade actions)
+  correct           Boolean?
+  wasNew            Boolean  @default(false)
+  intervalBeforeMin Int      @default(0)
+  intervalAfterMin  Int      @default(0)
+  createdAt         DateTime @default(now())
+
+  @@index([userId, wordId])
+  @@index([userId, createdAt])
+}
+
+// Bookmarked words ("save for later"), independent of word lists.
+model VocabBookmark {
+  id        String   @id @default(cuid())
+  userId    String
+  user      User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+  wordId    String
+  createdAt DateTime @default(now())
+
+  @@unique([userId, wordId])
+  @@index([userId])
+}
+
+// Personal word lists created by the learner ("My travel words", …).
+model WordList {
+  id          String         @id @default(cuid())
+  userId      String
+  user        User           @relation(fields: [userId], references: [id], onDelete: Cascade)
+  name        String
+  description String         @default("")
+  items       WordListItem[]
+  createdAt   DateTime       @default(now())
+  updatedAt   DateTime       @updatedAt
+
+  @@index([userId])
+}
+
+model WordListItem {
+  id        String   @id @default(cuid())
+  listId    String
+  list      WordList @relation(fields: [listId], references: [id], onDelete: Cascade)
+  wordId    String
+  note      String   @default("")
+  createdAt DateTime @default(now())
+
+  @@unique([listId, wordId])
+}
+
+// Sentence practice: learner-written sentences with checker feedback.
+model VocabSentence {
+  id        String   @id @default(cuid())
+  userId    String
+  user      User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+  wordId    String
+  sentence  String
+  valid     Boolean
+  feedback  String   @default("[]") // JSON SentenceIssue[]
+  createdAt DateTime @default(now())
+
+  @@index([userId, wordId])
+  @@index([userId, createdAt])
+}
+
+// Vocabulary challenge runs. Created "pending" with the generation seed;
+// finalized on submit. Items are regenerated deterministically from the seed
+// for server-side grading.
+model VocabChallengeRun {
+  id          String    @id @default(cuid())
+  userId      String
+  user        User      @relation(fields: [userId], references: [id], onDelete: Cascade)
+  kind        String // category-quiz | meaning | spelling | arrangement | contextual-usage | matching
+  seed        Int
+  category    String?
+  total       Int       @default(0)
+  correct     Int       @default(0)
+  score       Float     @default(0)
+  durationMs  Int       @default(0)
+  status      String    @default("pending") // pending | completed
+  detail      String    @default("[]") // JSON per-item results (completed runs)
+  createdAt   DateTime  @default(now())
+  completedAt DateTime?
+
+  @@index([userId, createdAt])
+}
+
+// Per-learner spaced-repetition configuration (JSON SrsConfigOverrides on top
+// of the engine defaults — see src/lib/vocab/srs.ts).
+model VocabSettings {
+  id        String   @id @default(cuid())
+  userId    String   @unique
+  user      User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+  config    String   @default("{}") // JSON SrsConfigOverrides
+  updatedAt DateTime @updatedAt
+}
+
+// ---------------------------------------------------------------------------
+// Reading Room
+// ---------------------------------------------------------------------------
+
+// Learner progress per reading text. Created on first interaction, but NEVER
+// auto-completed: completion is derived server-side from paragraphs read +
+// a passed comprehension run.
+model ReadingProgress {
+  id              String    @id @default(cuid())
+  userId          String
+  user            User      @relation(fields: [userId], references: [id], onDelete: Cascade)
+  textId          String
+  status          String    @default("in-progress") // "in-progress" | "completed"
+  paragraphsRead  String    @default("[]") // JSON array of paragraph ids
+  lastParagraphId String?
+  bookmarked      Boolean   @default(false)
+  bestRunScore    Float     @default(0)
+  runsCompleted   Int       @default(0)
+  completedAt     DateTime?
+  createdAt       DateTime  @default(now())
+  updatedAt       DateTime  @updatedAt
+
+  @@unique([userId, textId])
+  @@index([userId])
+}
+
+// Paragraph-level bookmarks inside a reading text (paragraphId "" = whole text).
+model ReadingBookmark {
+  id          String   @id @default(cuid())
+  userId      String
+  user        User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+  textId      String
+  paragraphId String
+  createdAt   DateTime @default(now())
+
+  @@unique([userId, textId, paragraphId])
+  @@index([userId])
+}
+
+// Every graded comprehension-question submission (practice or assessment).
+model ReadingAttempt {
+  id         String   @id @default(cuid())
+  userId     String
+  user       User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+  textId     String
+  questionId String
+  skill      String // comprehension skill
+  format     String // choice | sequence | short-text
+  context    String   @default("practice") // "practice" | "assessment"
+  isCorrect  Boolean
+  score      Float    @default(0)
+  answer     String   @default("") // JSON-encoded submitted answer
+  createdAt  DateTime @default(now())
+
+  @@index([userId, textId])
+  @@index([userId, questionId])
+}
+
+// Comprehension-check runs. Created "pending" with the question set,
+// finalised on submit with the per-skill breakdown.
+model ReadingRun {
+  id          String    @id @default(cuid())
+  userId      String
+  user        User      @relation(fields: [userId], references: [id], onDelete: Cascade)
+  textId      String
+  status      String    @default("pending") // "pending" | "completed"
+  questionIds String    @default("[]") // JSON array of question ids
+  score       Float     @default(0)
+  passed      Boolean   @default(false)
+  correct     Int       @default(0)
+  total       Int       @default(0)
+  bySkill     String    @default("{}") // JSON { skill: { attempts, correct } }
+  detail      String    @default("[]") // JSON per-question results
+  createdAt   DateTime  @default(now())
+  completedAt DateTime?
+
+  @@index([userId, textId])
+}
+
+// ---------------------------------------------------------------------------
+// Listening Lab
+// ---------------------------------------------------------------------------
+
+// Learner progress per listening activity. An exercise is "completed" when it
+// has been answered correctly at least once; the activity completes when all
+// exercises are completed — never just by opening it. First-try results are
+// tracked separately to compute the activity score.
+model ListeningProgress {
+  id                 String    @id @default(cuid())
+  userId             String
+  user               User      @relation(fields: [userId], references: [id], onDelete: Cascade)
+  activityId         String
+  status             String    @default("in-progress") // "in-progress" | "completed"
+  exercisesCompleted String    @default("[]") // JSON array of exercise ids (correct ≥ once)
+  firstTryCorrect    String    @default("[]") // JSON array of exercise ids correct on first try
+  bestScore          Float     @default(0)
+  runsCompleted      Int       @default(0)
+  completedAt        DateTime?
+  createdAt          DateTime  @default(now())
+  updatedAt          DateTime  @updatedAt
+
+  @@unique([userId, activityId])
+  @@index([userId])
+}
+
+// Every graded listening-exercise submission.
+model ListeningAttempt {
+  id         String   @id @default(cuid())
+  userId     String
+  user       User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+  activityId String
+  exerciseId String
+  format     String // listen-select | listen-complete | …
+  isCorrect  Boolean
+  score      Float    @default(0)
+  hintsUsed  Int      @default(0)
+  answer     String   @default("") // JSON-encoded submitted answer
+  createdAt  DateTime @default(now())
+
+  @@index([userId, activityId])
+  @@index([userId, exerciseId])
+}
+
+// ---------------------------------------------------------------------------
+// IELTS Listening Masterclass (PROMPT 44) — audio question bank attempts
+// ---------------------------------------------------------------------------
+
+// ---------------------------------------------------------------------------
+// IELTS Reading Masterclass (PROMPT 45)
+// ---------------------------------------------------------------------------
+
+// One submitted reading-bank exercise (a passage — or a General Training
+// text set — with its questions). Passage content lives in code
+// (src/data/exams/ielts/reading-bank/); these rows record who read what, in
+// which mode and variant, and the headline numbers. Attempts made inside a
+// timed simulation share the client-generated simRunId so the performance
+// engine can rebuild run-level history.
+model ReadingBankAttempt {
+  id             String   @id @default(cuid())
+  userId         String
+  user           User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+  exerciseSlug   String
+  variant        String // academic | gt
+  section        Int // reading section 1-3
+  mode           String   @default("exam") // exam (timed) | practice (untimed study session)
+  // Simulation context: set when this attempt was one passage inside a timed
+  // full-length simulation run (simSlug identifies the simulation, simPart is
+  // the 1-based passage position, simRunId groups the run's attempts).
+  simRunId       String?
+  simSlug        String?
+  simPart        Int?
+  totalQuestions Int
+  correctCount   Int
+  // Reading error taxonomy counts, JSON: { spelling, wordLimit, trap,
+  // inference, vocabulary, missed, wrong }
+  errorCounts    String   @default("{}")
+  timeSpentSec   Int      @default(0)
+  createdAt      DateTime @default(now())
+
+  responses      ReadingBankResponse[]
+
+  @@index([userId, createdAt])
+  @@index([userId, exerciseSlug])
+  @@index([userId, simRunId])
+}
+
+// Per-question result inside a reading bank attempt. errorType carries the
+// reading taxonomy: correct | spelling | word-limit | trap | inference |
+// vocabulary | missed | wrong. `detail` keeps the human-facing correction
+// (e.g. the chosen letter vs the keyed answer).
+model ReadingBankResponse {
+  id           String              @id @default(cuid())
+  attemptId    String
+  attempt      ReadingBankAttempt  @relation(fields: [attemptId], references: [id], onDelete: Cascade)
+  questionId   String
+  questionType String // multiple-choice | true-false-not-given | yes-no-not-given | matching-* | *-completion | diagram-labelling
+  answer       String              @default("") // JSON-encoded submitted answer
+  isCorrect    Boolean
+  errorType    String              @default("correct")
+  detail       String? // "given answer → keyed answer" for wrong items
+  timeSpentSec Int                 @default(0)
+  createdAt    DateTime            @default(now())
+
+  @@index([attemptId])
+  @@index([questionType])
+}
+
+// One submitted audio-bank exercise (a complete recording with its question
+// set). Content lives in code (src/data/exams/ielts/listening-bank/); these
+// rows record who ran what, in which mode, and the headline numbers. The
+// per-question breakdown (with the error taxonomy) lives in
+// ListeningBankResponse rows.
+model ListeningBankAttempt {
+  id              String   @id @default(cuid())
+  userId          String
+  user            User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+  exerciseSlug    String
+  part            Int // recording part 1-4
+  mode            String   @default("exam") // exam (audio once) | practice (replay allowed)
+  totalQuestions  Int
+  correctCount    Int
+  // Headline error taxonomy counts, JSON: { spelling, wordLimit, distractor, missed, wrong, unanswered }
+  errorCounts    String   @default("{}")
+  timeSpentSec   Int      @default(0)
+  createdAt       DateTime @default(now())
+
+  responses       ListeningBankResponse[]
+
+  @@index([userId, createdAt])
+  @@index([userId, exerciseSlug])
+}
+
+// Per-question result inside a bank attempt. errorType carries the
+// masterclass taxonomy: correct | spelling | word-limit | distractor |
+// missed | wrong | unanswered. `detail` keeps the human-facing correction
+// (e.g. the misspelling the learner typed vs the keyed answer).
+model ListeningBankResponse {
+  id           String                @id @default(cuid())
+  attemptId    String
+  attempt      ListeningBankAttempt  @relation(fields: [attemptId], references: [id], onDelete: Cascade)
+  questionId   String
+  questionType String // form | note | table | flowchart | summary | sentence | mcq-single | mcq-multi | matching | map | short-answer
+  answer       String                @default("") // JSON-encoded submitted answer
+  isCorrect    Boolean
+  errorType    String                @default("correct")
+  detail       String? // "given answer → keyed answer" for spelling/limit errors
+  timeSpentSec Int                   @default(0)
+  createdAt    DateTime              @default(now())
+
+  @@index([attemptId])
+  @@index([questionType])
+}
+
+// ---------------------------------------------------------------------------
+// TOEFL Reading and Listening Practice Library (PROMPT 49)
+// ---------------------------------------------------------------------------
+
+// One submitted reading-bank exercise. Content lives in code
+// (src/data/exams/toefl/reading-bank/ — 100 original exercises across the
+// three 2026-format task types); these rows record who read what, in which
+// mode, and the headline numbers.
+model ToeflReadingBankAttempt {
+  id             String   @id @default(cuid())
+  userId         String
+  user           User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+  exerciseSlug   String
+  taskType       String // complete-words | daily-life | academic-passage
+  difficulty     Int // 1-5
+  mode           String   @default("exam") // exam (timed) | practice (untimed study)
+  totalQuestions Int
+  correctCount   Int
+  // Per-skill tallies over the seven tracked library dimensions, JSON:
+  //   { "vocabulary": {total, correct}, "comprehension": {...}, ... }
+  skillCounts    String   @default("{}")
+  // Reading error taxonomy counts, JSON: { spelling, trap, inference, vocabulary, missed, wrong }
+  errorCounts    String   @default("{}")
+  timeSpentSec   Int      @default(0)
+  createdAt      DateTime @default(now())
+
+  responses      ToeflReadingBankResponse[]
+
+  @@index([userId, createdAt])
+  @@index([userId, exerciseSlug])
+  @@index([taskType])
+}
+
+// Per-question result inside a reading bank attempt. skill carries the
+// question's primary tracked dimension (one of the seven); errorType carries
+// the reading taxonomy: correct | spelling | trap | inference | vocabulary |
+// missed | wrong.
+model ToeflReadingBankResponse {
+  id           String                 @id @default(cuid())
+  attemptId    String
+  attempt      ToeflReadingBankAttempt @relation(fields: [attemptId], references: [id], onDelete: Cascade)
+  questionId   String
+  skill        String // primary tracked dimension for this question
+  answer       String                 @default("") // JSON-encoded submitted answer
+  isCorrect    Boolean
+  errorType    String                 @default("correct")
+  detail       String? // "given answer → keyed answer" for wrong items
+  timeSpentSec Int                   @default(0)
+  createdAt    DateTime               @default(now())
+
+  @@index([attemptId])
+  @@index([skill])
+}
+
+// One submitted listening-bank exercise. Content lives in code
+// (src/data/exams/toefl/listening-bank/ — 100 original exercises across the
+// four 2026-format task families); the recording is the authored segment
+// list, spoken through on-device speech synthesis with accent-matched
+// voices, and the transcript stays gated until submission.
+model ToeflListeningBankAttempt {
+  id             String   @id @default(cuid())
+  userId         String
+  user           User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+  exerciseSlug   String
+  taskType       String // choose-response | conversation | announcement | academic-talk
+  difficulty     Int // 1-5
+  mode           String   @default("exam") // exam (audio once) | practice (replay allowed)
+  totalQuestions Int
+  correctCount   Int
+  // Per-skill tallies over the seven tracked library dimensions, JSON.
+  skillCounts    String   @default("{}")
+  // Listening error taxonomy counts, JSON: { distractor, inference, missed, wrong }
+  errorCounts    String   @default("{}")
+  timeSpentSec   Int      @default(0)
+  createdAt      DateTime @default(now())
+
+  responses      ToeflListeningBankResponse[]
+
+  @@index([userId, createdAt])
+  @@index([userId, exerciseSlug])
+  @@index([taskType])
+}
+
+// Per-question result inside a listening bank attempt. errorType carries the
+// listening taxonomy: correct | distractor | inference | missed | wrong.
+model ToeflListeningBankResponse {
+  id           String                  @id @default(cuid())
+  attemptId    String
+  attempt      ToeflListeningBankAttempt @relation(fields: [attemptId], references: [id], onDelete: Cascade)
+  questionId   String
+  skill        String // primary tracked dimension for this question
+  answer       String                 @default("") // JSON-encoded submitted answer
+  isCorrect    Boolean
+  errorType    String                 @default("correct")
+  detail       String? // "given letter → keyed letter" for wrong items
+  timeSpentSec Int                    @default(0)
+  createdAt    DateTime                @default(now())
+
+  @@index([attemptId])
+  @@index([skill])
+}
+
+// ---------------------------------------------------------------------------
+// TOEFL Writing and Speaking Practice Library (PROMPT 50)
+// ---------------------------------------------------------------------------
+
+// One submitted writing attempt.
+//  build-sentence: totalQuestions/correctCount carry the graded items,
+//    focusCounts tallies the five sentence focuses, errorCounts carries the
+//    sentence error taxonomy (correct | word-order | grammar | clause |
+//    completeness | punctuation | spelling | missed | wrong); criteria and
+//    overall are unused (0).
+//  write-email / academic-discussion: measured carries the deterministic
+//    metrics (word count, key-point coverage, register markers …), criteria
+//    carries the four 1–6 EDUCATIONAL estimate criterion reports, overall is
+//    their mean (an educational estimate, never an ETS score), and
+//    aiCommentary the optional AI layer (summary/strengths/improvements/
+//    errors/improvedExample) which never overrides the deterministic layer.
+model ToeflWritingBankAttempt {
+  id             String   @id @default(cuid())
+  userId         String
+  user           User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+  exerciseSlug   String
+  taskType       String // build-sentence | write-email | academic-discussion
+  difficulty     Int // 1-5
+  mode           String   @default("practice") // practice (untimed study) | exam (timed)
+  totalQuestions Int      @default(0)
+  correctCount   Int      @default(0)
+  focusCounts    String   @default("{}")
+  errorCounts    String   @default("{}")
+  measured       String   @default("{}")
+  overall        Float    @default(0)
+  criteria       String   @default("{}")
+  aiAvailable    Boolean  @default(false)
+  aiCommentary   String?
+  timeSpentSec   Int      @default(0)
+  createdAt      DateTime @default(now())
+
+  responses      ToeflWritingBankResponse[]
+
+  @@index([userId, createdAt])
+  @@index([userId, exerciseSlug])
+  @@index([taskType])
+}
+
+// Per-item result inside a build-sentence attempt. focus carries the item's
+// sentence focus; errorType carries the sentence taxonomy.
+model ToeflWritingBankResponse {
+  id           String   @id @default(cuid())
+  attemptId    String
+  attempt      ToeflWritingBankAttempt @relation(fields: [attemptId], references: [id], onDelete: Cascade)
+  questionId   String // item number
+  focus        String // word-order | grammar | clause-structure | completeness | punctuation
+  answer       String   @default("") // JSON-encoded submitted answer
+  isCorrect    Boolean
+  errorType    String   @default("correct")
+  detail       String? // "given → expected" for wrong items
+  timeSpentSec Int      @default(0)
+  createdAt    DateTime @default(now())
+
+  @@index([attemptId])
+  @@index([focus])
+}
+
+// Latest autosaved draft per learner per email/discussion task (upserted by
+// the player's autosave loop). Task definitions live in code.
+model ToeflWritingBankDraft {
+  id        String   @id @default(cuid())
+  userId    String
+  user      User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+  taskSlug  String
+  content   String   @default("")
+  wordCount Int      @default(0)
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  @@unique([userId, taskSlug])
+  @@index([userId])
+}
+
+// One submitted speaking attempt.
+//  listen-repeat: transcript holds what the learner said (self-transcribed);
+//    measured carries the repetition analysis (accuracy, substitutions,
+//    deletions, insertions, matched, referenceWords, withinWindow,
+//    longestRun); overall carries the accuracy 0–1; criteria is unused.
+//  take-interview: measured carries the deterministic metrics (wpm, fillers,
+//    sentences, vocab hits, question addressed), criteria carries the four
+//    1–6 EDUCATIONAL estimate criterion reports, overall is their mean — an
+//    educational estimate, never an ETS score — and aiCommentary the optional
+//    AI layer, which never overrides the deterministic layer.
+// The learner's audio never leaves the browser; only the transcript travels.
+model ToeflSpeakingBankAttempt {
+  id          String   @id @default(cuid())
+  userId      String
+  user        User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+  itemSlug    String
+  kind        String // listen-repeat | take-interview
+  topic       String // repeat focus tag or interview topic label
+  difficulty  Int // 1-5
+  mode        String   @default("practice")
+  transcript  String   @default("")
+  wordCount   Int      @default(0)
+  durationSec Int      @default(0)
+  measured    String   @default("{}")
+  overall     Float    @default(0)
+  criteria    String   @default("{}")
+  aiAvailable Boolean  @default(false)
+  aiCommentary String?
+  timeSpentSec Int     @default(0)
+  createdAt   DateTime @default(now())
+
+  @@index([userId, createdAt])
+  @@index([userId, itemSlug])
+  @@index([kind])
+}
+
+// ---------------------------------------------------------------------------
+// IELTS Writing Masterclass (PROMPT 46)
+// ---------------------------------------------------------------------------
+
+// Latest autosaved draft per learner per writing task (upserted by the
+// studio's autosave loop). Content lives with the row; task definitions live
+// in code (src/data/exams/ielts/writing-bank/).
+model WritingBankDraft {
+  id        String   @id @default(cuid())
+  userId    String
+  user      User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+  taskSlug  String
+  content   String   @default("")
+  wordCount Int      @default(0)
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  @@unique([userId, taskSlug])
+  @@index([userId])
+}
+
+// One submitted writing attempt (a timed or untimed response to one task).
+// `criteria` carries the four per-criterion estimates as JSON:
+//   { task: {score, band, feedback[], evidence[]}, cc: {...}, lr: {...}, gra: {...} }
+// `measured` carries the deterministic metrics the engine measured, and
+// `aiCommentary` the optional AI-layer summary (null when the provider was
+// unavailable — the deterministic report still stands alone).
+// Revisions chain through version (version n revises version n-1).
+model WritingBankAttempt {
+  id           String   @id @default(cuid())
+  userId       String
+  user         User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+  taskSlug     String
+  channel      String // academic | gt
+  taskType     String // task-1 | task-2
+  family       String // bar | line | pie | table | mixed | process | map | opinion | … | complaint | …
+  register     String? // GT letters: formal | semi-formal | informal
+  mode         String   @default("exam") // exam (timed) | practice (untimed study session)
+  timed        Boolean  @default(true)
+  version      Int      @default(1)
+  wordCount    Int
+  timeSpentSec Int      @default(0)
+  content      String
+  overall      Float    @default(0) // band estimate 0–9 (mean of criteria)
+  criteria     String   @default("{}") // JSON per-criterion estimates + feedback
+  measured     String   @default("{}") // JSON deterministic metrics
+  aiAvailable  Boolean  @default(false)
+  aiCommentary String? // JSON AI-layer summary payload
+  createdAt    DateTime @default(now())
+
+  @@index([userId, createdAt])
+  @@index([userId, taskSlug])
+  @@index([channel, taskType])
+}
+
+// ---------------------------------------------------------------------------
+// PROMPT 47 — IELTS Speaking Masterclass practice bank
+// ---------------------------------------------------------------------------
+
+// One submitted speaking attempt against a practice-bank item (a Part 1
+// interview round, a Part 2 cue card or a Part 3 discussion set). The
+// AUDIO NEVER LEAVES THE BROWSER — what the server stores is the
+// learner-supplied transcript (typed or browser-transcribed), the spoken
+// duration, and the evaluation payloads:
+//   criteria — JSON { fc|lr|gra|pron: {score, name, feedback[], evidence[]} }
+//   measured — JSON deterministic metrics (fillers, linkers, wpm, coverage…)
+//   extras   — JSON sentence corrections, vocabulary suggestions, fluency
+//              feedback, pronunciation observations, improved responses
+//   aiCommentary — optional AI-layer summary (null when the provider was
+//              unavailable; the deterministic report stands alone)
+// Re-attempts chain through version (version n follows version n-1).
+model SpeakingBankAttempt {
+  id           String   @id @default(cuid())
+  userId       String
+  user         User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+  itemSlug     String
+  part         Int // 1 | 2 | 3
+  kind         String // part1 | cue-card | practice-cue-card | part3
+  family       String // topic (Part 1) or description family (Part 2) or theme (Part 3)
+  mode         String   @default("simulation") // simulation (three-part run) | practice (single item)
+  version      Int      @default(1)
+  transcript   String
+  wordCount    Int
+  durationSec  Int      @default(0)
+  wpm          Float    @default(0)
+  overall      Float    @default(0) // band estimate 0–9 (mean of criteria)
+  criteria     String   @default("{}") // JSON per-criterion estimates + feedback
+  measured     String   @default("{}") // JSON deterministic metrics
+  extras       String   @default("{}") // JSON corrections/suggestions/observations
+  aiAvailable  Boolean  @default(false)
+  aiCommentary String? // JSON AI-layer summary payload
+  createdAt    DateTime @default(now())
+
+  @@index([userId, createdAt])
+  @@index([userId, itemSlug])
+  @@index([part, kind])
+}
+
+// ---------------------------------------------------------------------------
+// Speaking Laboratory
+// ---------------------------------------------------------------------------
+
+// Per-learner speaking configuration: which speech-to-text provider to use,
+// how long transcripts are retained, and explicit microphone consent.
+// AUDIO IS NEVER STORED SERVER-SIDE — recordings live in the browser only,
+// long enough to be replayed and transcribed on explicit submission.
+model SpeakingSettings {
+  id            String    @id @default(cuid())
+  userId        String    @unique
+  user          User      @relation(fields: [userId], references: [id], onDelete: Cascade)
+  provider      String    @default("auto") // auto | server | browser | manual
+  retentionDays Int       @default(90) // 0 = do not store transcripts at all
+  consentedAt   DateTime? // null until the learner accepts the mic + privacy notice
+  updatedAt     DateTime  @updatedAt
+}
+
+// Progress per speaking activity. Created on first attempt — NEVER just by
+// opening. Completed only when every task has a passing attempt (graded via
+// transcript) or an explicit self-assessed pass (no-transcript fallback).
+model SpeakingProgress {
+  id                 String    @id @default(cuid())
+  userId             String
+  user               User      @relation(fields: [userId], references: [id], onDelete: Cascade)
+  activityId         String
+  tier               String // beginner | elementary | intermediate | advanced
+  status             String    @default("in-progress") // "in-progress" | "completed"
+  tasksAttempted     String    @default("[]") // JSON array of task ids attempted
+  tasksPassed        String    @default("[]") // JSON array of task ids passed
+  selfAssessedPassed String    @default("[]") // JSON task ids passed via self-assessment
+  bestScore          Float     @default(0)
+  attemptsCount      Int       @default(0)
+  completedAt        DateTime?
+  createdAt          DateTime  @default(now())
+  updatedAt          DateTime  @updatedAt
+
+  @@unique([userId, activityId])
+  @@index([userId])
+}
+
+// Every speaking submission. transcript kept per retention setting ("" when
+// retention is 0 or the purge window has passed); metrics/scores are the
+// deterministic measured results; suggestions carry AI-coach text (labeled).
+model SpeakingAttempt {
+  id           String   @id @default(cuid())
+  userId       String
+  user         User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+  activityId   String
+  taskId       String
+  kind         String // repeat-word | read-aloud | …
+  provider     String // server | browser | manual | self
+  transcript   String   @default("") // kept per retentionDays; never the audio
+  selfAssessed Boolean  @default(false)
+  durationMs   Int      @default(0)
+  wordCount    Int      @default(0)
+  score        Float    @default(0) // overall measured rubric / match score
+  scores       String   @default("{}") // JSON per-dimension measured scores
+  measured     String   @default("{}") // JSON measured metrics
+  suggestions  String   @default("null") // JSON AI suggestions (or null)
+  createdAt    DateTime @default(now())
+
+  @@index([userId, activityId])
+  @@index([userId, taskId])
+  @@index([userId, createdAt])
+}
+
+// One role-play conversation run (AI partner when reachable, authored script
+// otherwise). Turns are JSON [{role, text}]; engine says which ran.
+model ConversationSession {
+  id          String    @id @default(cuid())
+  userId      String
+  user        User      @relation(fields: [userId], references: [id], onDelete: Cascade)
+  scenarioId  String
+  level       String // beginner | intermediate | advanced
+  engine      String    @default("ai") // ai | scripted
+  status      String    @default("active") // active | completed
+  turns       String    @default("[]") // JSON {role: "partner"|"learner", text}[]
+  measured    String    @default("{}") // JSON measured stats (set on finish)
+  aiFeedback  String    @default("null") // JSON coach feedback (set on finish)
+  score       Float     @default(0)
+  createdAt   DateTime  @default(now())
+  completedAt DateTime?
+
+  @@index([userId, scenarioId])
+  @@index([userId, createdAt])
+}
+
+// Pronunciation practice submissions: what the recogniser heard (when a
+// provider ran), the match score against the target (-1 = no transcript),
+// and the learner's own playback-compare rating.
+model PronunciationAttempt {
+  id         String   @id @default(cuid())
+  userId     String
+  user       User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+  itemId     String
+  category   String // stress | sounds | rhythm | intonation
+  transcript String   @default("")
+  matchScore Float    @default(-1) // 0–1 similarity to target; -1 when no ASR
+  selfRating Int      @default(0) // 0–5 learner self-assessment after replay
+  createdAt  DateTime @default(now())
+
+  @@index([userId, category])
+  @@index([userId, createdAt])
+}
+
+// ---------------------------------------------------------------------------
+// Writing Studio
+// ---------------------------------------------------------------------------
+
+// Progress per writing assignment. Created on first draft or submission —
+// never just by opening. "Completed" requires a submission whose overall
+// rubric score reaches the assignment pass threshold. Writing scores are
+// kept entirely in these tables: they never feed the general UserStats
+// proficiency counters.
+model WritingProgress {
+  id               String    @id @default(cuid())
+  userId           String
+  user             User      @relation(fields: [userId], references: [id], onDelete: Cascade)
+  assignmentId     String
+  tier             String // beginner | elementary | intermediate | advanced
+  status           String    @default("in-progress") // "in-progress" | "completed"
+  draftsCount      Int       @default(0)
+  submissionsCount Int       @default(0)
+  bestScore        Float     @default(0)
+  lastScore        Float     @default(0)
+  completedAt      DateTime?
+  createdAt        DateTime  @default(now())
+  updatedAt        DateTime  @updatedAt
+
+  @@unique([userId, assignmentId])
+  @@index([userId])
+}
+
+// Latest autosaved draft per learner per assignment (upserted).
+model WritingDraft {
+  id           String   @id @default(cuid())
+  userId       String
+  user         User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+  assignmentId String
+  content      String   @default("")
+  wordCount    Int      @default(0)
+  charCount    Int      @default(0)
+  createdAt    DateTime @default(now())
+  updatedAt    DateTime @updatedAt
+
+  @@unique([userId, assignmentId])
+  @@index([userId])
+}
+
+// Every submitted version, with the full deterministic analysis + AI coach
+// feedback. Versions form the revision history and enable before/after
+// comparison (version n compares against version n-1).
+model WritingSubmission {
+  id           String   @id @default(cuid())
+  userId       String
+  user         User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+  // writing-assignments family
+  assignmentId String?
+  version      Int      @default(1)
+  content      String   @default("")
+  // v1 AI writing-submission family (exercise-scoped free practice)
+  exerciseId   String?
+  lessonSlug   String?
+  promptText   String   @default("")
+  text         String   @default("")
+  feedback     WritingFeedback?
+  wordCount    Int      @default(0)
+  charCount    Int      @default(0)
+  durationMs   Int      @default(0)
+  overall      Float    @default(0)
+  scores       String   @default("{}") // JSON { dimension: 0-100 }
+  measured     String   @default("{}") // JSON measured stats
+  issues       String   @default("[]") // JSON deterministic WritingIssue[]
+  aiFeedback   String   @default("null") // JSON AI coach payload (or null)
+  passed       Boolean  @default(false)
+  createdAt    DateTime @default(now())
+
+  @@unique([userId, assignmentId, version])
+  @@index([userId, assignmentId])
+  @@index([userId, createdAt])
+}
+
+// ---------------------------------------------------------------------------
+// Learning Progression System
+// ---------------------------------------------------------------------------
+
+// Learner-chosen point goals. Points are derived from verified activity only
+// (see src/lib/progress/facts.ts), so a goal can never be progressed by
+// passively opening content.
+model LearnerGoals {
+  id           String   @id @default(cuid())
+  userId       String   @unique
+  user         User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+  dailyPoints  Int      @default(30)
+  weeklyPoints Int      @default(150)
+  updatedAt    DateTime @updatedAt
+}
+
+// Self-reported confidence per lesson (1 = shaky … 5 = confident). Feeds the
+// revision scheduler: low confidence on a completed lesson raises revision
+// urgency. It is never displayed as a performance score.
+model LessonConfidence {
+  id         String   @id @default(cuid())
+  userId     String
+  user       User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+  lessonSlug String
+  confidence Int // 1..5
+  updatedAt  DateTime @updatedAt
+
+  @@unique([userId, lessonSlug])
+  @@index([userId])
+}
+
+// Persisted state for achievements and milestones. The unlock CONDITION is
+// always re-derived from verified activity on load; this row only caches the
+// derived unlock timestamp (so badges keep their real "earned on" date) and
+// tracks whether the learner has already seen the unlock.
+model AchievementUnlock {
+  id            String    @id @default(cuid())
+  userId        String
+  user          User      @relation(fields: [userId], references: [id], onDelete: Cascade)
+  achievementId String
+  unlockedAt    DateTime  @default(now())
+  seenAt        DateTime?
+  createdAt     DateTime  @default(now())
+
+  @@unique([userId, achievementId])
+  @@index([userId])
+}
+
+// Course completion certificates. A course is a curriculum unit (or a whole
+// level); the certificate is issued automatically when every lesson in the
+// course has a VERIFIED completion (LessonProgress.completedAt), never for
+// merely opening content.
+model Certificate {
+  id               String   @id @default(cuid())
+  userId           String
+  user             User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+  courseId         String // unit id "<level>:<n>" or level id
+  kind             String // "unit" | "level"
+  title            String
+  code             String   @unique // display / verification code
+  lessonsCompleted Int
+  issuedAt         DateTime @default(now())
+
+  @@unique([userId, courseId])
+  @@index([userId])
+}
+
+// ---------------------------------------------------------------------------
+// AI Tutor
+// ---------------------------------------------------------------------------
+
+// One chat thread per learner per teaching mode. lessonRef links a Doubt
+// Solver thread to a specific lesson or activity ("lesson:<slug>",
+// "reading:<id>", "listening:<id>", "speaking:<slug>", "writing:<slug>").
+// includeContext is the privacy switch: when false the system prompt omits
+// the learner's history snapshot entirely — the learner teaches without it.
+model TutorConversation {
+  id             String         @id @default(cuid())
+  userId         String
+  user           User           @relation(fields: [userId], references: [id], onDelete: Cascade)
+  mode           String // grammar | vocabulary | sentence | conversation | writing | listening | reading | interview | doubt
+  lessonRef      String?
+  includeContext Boolean        @default(true)
+  title          String         @default("") // derived from the first learner message
+  createdAt      DateTime       @default(now())
+  updatedAt      DateTime       @updatedAt
+  messages       TutorMessage[]
+
+  @@index([userId, updatedAt])
+}
+
+// Chat messages. userId is denormalised so rate limits and bulk deletion
+// never depend on a join. meta carries {"greeting": true} for the canned
+// opener and {"mode": …} bookkeeping — never grading data.
+model TutorMessage {
+  id             String            @id @default(cuid())
+  userId         String
+  user           User              @relation(fields: [userId], references: [id], onDelete: Cascade)
+  conversationId String
+  conversation   TutorConversation @relation(fields: [conversationId], references: [id], onDelete: Cascade)
+  role           String // "learner" | "tutor"
+  content        String
+  meta           String            @default("{}") // JSON bookkeeping
+  createdAt      DateTime          @default(now())
+
+  @@index([userId, conversationId, createdAt])
+  @@index([userId, createdAt])
+}
+
+// Per-learner daily request accounting for the tutor LLM (one row per user;
+// counters reset when `day` changes). Enforces the token/usage limits.
+model TutorUsage {
+  id          String   @id @default(cuid())
+  userId      String   @unique
+  user        User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+  day         String // YYYY-MM-DD
+  requests    Int      @default(0)
+  inputChars  Int      @default(0)
+  outputChars Int      @default(0)
+  updatedAt   DateTime @updatedAt
+}
+
+// ---------------------------------------------------------------------------
+// PROMPT 38 — AI-powered personal learning experience
+// ---------------------------------------------------------------------------
+
+// The learner's own teaching preferences for the AI tutor (optional — every
+// field has a neutral default, so a learner who never opens the dialog gets
+// the standard teaching behaviour). Read by the context builder and injected
+// into the system prompt as a TEACHING PREFERENCES block.
+model TutorSettings {
+  id              String   @id @default(cuid())
+  userId          String   @unique
+  user            User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+  // brief | normal | thorough — reply depth the learner asked for.
+  replyLength     String   @default("normal")
+  // fewer | normal | more — how many practice items the tutor offers.
+  practiceAppetite String  @default("normal")
+  // immediate | note-first — correct right away or keep a note for the end.
+  correctionStyle String  @default("immediate")
+  updatedAt       DateTime @updatedAt
+}
+
+// One row per provider call, for usage monitoring (which feature, which
+// provider, latency, token estimate, outcome). Never stores prompt or reply
+// content — only measurements. Written fire-and-forget by the logging
+// decorator in src/lib/llm/usage.ts; failures are swallowed (monitoring must
+// never break a live reply).
+model LlmCallLog {
+  id          String    @id @default(cuid())
+  userId      String?
+  user        User?     @relation(fields: [userId], references: [id], onDelete: SetNull)
+  // tutor | writing-coach | speaking-partner | exam-grade | exam-evaluation
+  feature     String
+  // Provider name from the registry (zai, openai, …).
+  provider    String
+  // ok | timeout | network | empty | unavailable | rate-limited
+  status      String
+  inputChars  Int       @default(0)
+  outputChars Int       @default(0)
+  estTokens   Int       @default(0) // ceil(chars/4) estimate, clearly labeled as an estimate
+  latencyMs   Int       @default(0)
+  // Tutor mode / exam section — small context tag, never content.
+  tag         String?
+  createdAt   DateTime  @default(now())
+
+  @@index([createdAt])
+  @@index([feature, createdAt])
+}
+
+// ---------------------------------------------------------------------------
+// Content management system (CMS)
+//
+// Database-backed curriculum managed by staff through the admin UI.
+// Hierarchy: Level → Course → Module → Unit → Lesson → Blocks.
+// Quality workflow: draft → review → approved (+ `live` flag for publishing).
+// Every lesson/question edit creates an immutable version snapshot; attempts
+// pin the version they were graded against, so historical assessment data is
+// never rewritten when content changes.
+// ---------------------------------------------------------------------------
+
+// A CEFR-style learning level (Pre-A1, A1, A2 …) used to organise courses.
+model CmsLevel {
+  id          String      @id @default(cuid())
+  slug        String      @unique
+  name        String
+  description String      @default("")
+  order       Int         @default(0)
+  createdAt   DateTime    @default(now())
+  courses     CmsCourse[]
+}
+
+// A course. `status` is the working-copy workflow state; `live` controls
+// learner visibility. Only admins toggle `live`.
+model CmsCourse {
+  id          String    @id @default(cuid())
+  slug        String    @unique
+  title       String
+  description String    @default("")
+  levelId     String?
+  level       CmsLevel? @relation(fields: [levelId], references: [id], onDelete: SetNull)
+  status      String    @default("draft") // draft | review | approved
+  live        Boolean   @default(false)
+  order       Int       @default(0)
+  createdById String?
+  createdAt   DateTime  @default(now())
+  updatedAt   DateTime  @updatedAt
+
+  modules    CmsModule[]
+  enrolments CmsEnrolment[]
+}
+
+model CmsModule {
+  id          String    @id @default(cuid())
+  courseId    String
+  course      CmsCourse @relation(fields: [courseId], references: [id], onDelete: Cascade)
+  slug        String    @unique
+  title       String
+  description String    @default("")
+  order       Int       @default(0)
+  units       CmsUnit[]
+}
+
+model CmsUnit {
+  id          String      @id @default(cuid())
+  moduleId    String
+  module      CmsModule   @relation(fields: [moduleId], references: [id], onDelete: Cascade)
+  slug        String      @unique
+  title       String
+  description String      @default("")
+  order       Int         @default(0)
+  lessons     CmsLesson[]
+}
+
+// A lesson inside a unit. `version` counts working-copy saves; each save
+// appends a CmsLessonVersion snapshot. `publishedVersion` points at the
+// snapshot learners see while `live` is true — later edits never leak to the
+// live lesson until it is re-approved and re-published.
+model CmsLesson {
+  id               String    @id @default(cuid())
+  unitId           String
+  unit             CmsUnit   @relation(fields: [unitId], references: [id], onDelete: Cascade)
+  slug             String    @unique
+  title            String
+  description      String    @default("")
+  objectives       String    @default("[]") // JSON string[]
+  estimatedMinutes Int       @default(10)
+  order            Int       @default(0)
+  status           String    @default("draft") // draft | review | approved
+  // Educational content-review pipeline (PROMPT 35): draft → ai-reviewed →
+  // human-reviewed → approved. AI-authored content is never seeded above
+  // "ai-reviewed"; human staff promote explicitly. "Published" is the
+  // derived terminal state: approved + live.
+  reviewStatus     String    @default("draft") // draft | ai-reviewed | human-reviewed | approved
+  live             Boolean   @default(false)
+  version          Int       @default(1)
+  publishedVersion Int?
+  publishedAt      DateTime?
+  createdById      String?
+  createdAt        DateTime  @default(now())
+  updatedAt        DateTime  @updatedAt
+
+  blocks        CmsLessonBlock[]
+  versions      CmsLessonVersion[]
+  prerequisites CmsPrerequisite[]         @relation("LessonRequires")
+  requiredBy    CmsPrerequisite[]         @relation("LessonRequired")
+  progress      CmsLessonProgress[]
+  submissions   CmsAssignmentSubmission[]
+  relatedAssets CmsAsset[]
+}
+
+// Ordered structured content block of a lesson working copy.
+// `type` is one of the CMS block kinds; `data` is the type-specific JSON.
+model CmsLessonBlock {
+  id       String    @id @default(cuid())
+  lessonId String
+  lesson   CmsLesson @relation(fields: [lessonId], references: [id], onDelete: Cascade)
+  order    Int
+  type     String
+  data     String // JSON block payload
+
+  @@index([lessonId, order])
+}
+
+// Immutable revision snapshot of a lesson (metadata + blocks).
+model CmsLessonVersion {
+  id          String    @id @default(cuid())
+  lessonId    String
+  lesson      CmsLesson @relation(fields: [lessonId], references: [id], onDelete: Cascade)
+  version     Int
+  snapshot    String // JSON { title, description, objectives, estimatedMinutes, blocks[] }
+  changedById String?
+  changedBy   User?     @relation("LessonVersionEditor", fields: [changedById], references: [id], onDelete: SetNull)
+  changeNote  String    @default("")
+  createdAt   DateTime  @default(now())
+
+  @@unique([lessonId, version])
+}
+
+// Lesson A requires lesson B to be completed first (learner-side lock).
+model CmsPrerequisite {
+  id               String    @id @default(cuid())
+  lessonId         String
+  lesson           CmsLesson @relation("LessonRequires", fields: [lessonId], references: [id], onDelete: Cascade)
+  requiresLessonId String
+  requiresLesson   CmsLesson @relation("LessonRequired", fields: [requiresLessonId], references: [id], onDelete: Cascade)
+
+  @@unique([lessonId, requiresLessonId])
+}
+
+// A question-bank question. `data` holds the full Exercise JSON (options,
+// accepted answers, feedback, hints) using the same content model as the
+// code-based exercises, so grading and client rendering are shared.
+model CmsQuestion {
+  id          String   @id @default(cuid())
+  slug        String   @unique
+  type        String // ExerciseType
+  skill       String   @default("vocabulary")
+  difficulty  String   @default("easy")
+  prompt      String
+  tags        String   @default("[]") // JSON string[] (topics)
+  // PROMPT 36 practice-engine metadata: the chapter (CMS unit slug, e.g.
+  // "ch-13") and lesson (CMS lesson slug) the question belongs to, used by
+  // practice-mode assembly and chapter tests. Null for questions outside the
+  // chapter-organised programme.
+  chapterSlug String?
+  lessonSlug  String?
+  data        String // JSON exercise payload (id = question id)
+  status      String   @default("draft") // draft | review | approved | published | retired
+  version     Int      @default(1)
+  createdById String?
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+
+  versions CmsQuestionVersion[]
+
+  @@index([status, chapterSlug])
+  @@index([chapterSlug, difficulty])
+}
+
+// Immutable revision snapshot of a question.
+model CmsQuestionVersion {
+  id          String      @id @default(cuid())
+  questionId  String
+  question    CmsQuestion @relation(fields: [questionId], references: [id], onDelete: Cascade)
+  version     Int
+  snapshot    String // JSON { type, skill, difficulty, prompt, tags, data }
+  changedById String?
+  changedBy   User?       @relation("QuestionVersionEditor", fields: [changedById], references: [id], onDelete: SetNull)
+  changeNote  String      @default("")
+  createdAt   DateTime    @default(now())
+
+  @@unique([questionId, version])
+}
+
+// Uploaded media asset (audio or image). File bytes live on disk under
+// db/media/<id>.<ext>; only metadata is stored here.
+model CmsAsset {
+  id              String     @id @default(cuid())
+  kind            String // "audio" | "image"
+  title           String
+  fileName        String
+  mimeType        String
+  sizeBytes       Int        @default(0)
+  durationSeconds Float?
+  transcript      String     @default("")
+  language        String     @default("en")
+  pronunciation   String     @default("")
+  licence         String     @default("")
+  source          String     @default("")
+  relatedLessonId String?
+  relatedLesson   CmsLesson? @relation(fields: [relatedLessonId], references: [id], onDelete: SetNull)
+  uploadedById    String?
+  createdAt       DateTime   @default(now())
+}
+
+// Learner enrolment in a published course.
+model CmsEnrolment {
+  id        String    @id @default(cuid())
+  userId    String
+  user      User      @relation(fields: [userId], references: [id], onDelete: Cascade)
+  courseId  String
+  course    CmsCourse @relation(fields: [courseId], references: [id], onDelete: Cascade)
+  createdAt DateTime  @default(now())
+
+  @@unique([userId, courseId])
+}
+
+// Learner progress on a CMS lesson. Completion is server-verified: every
+// exercise block must have an attempt and every assignment a submission.
+model CmsLessonProgress {
+  id               String    @id @default(cuid())
+  userId           String
+  user             User      @relation(fields: [userId], references: [id], onDelete: Cascade)
+  lessonId         String
+  lesson           CmsLesson @relation(fields: [lessonId], references: [id], onDelete: Cascade)
+  status           String    @default("in-progress") // in-progress | completed
+  completedVersion Int? // lesson version that was completed
+  completedAt      DateTime?
+  createdAt        DateTime  @default(now())
+  updatedAt        DateTime  @updatedAt
+
+  @@unique([userId, lessonId])
+}
+
+// Free-text submission for an assignment block of a CMS lesson.
+model CmsAssignmentSubmission {
+  id        String    @id @default(cuid())
+  userId    String
+  user      User      @relation(fields: [userId], references: [id], onDelete: Cascade)
+  lessonId  String
+  lesson    CmsLesson @relation(fields: [lessonId], references: [id], onDelete: Cascade)
+  blockId   String
+  text      String
+  wordCount Int       @default(0)
+  createdAt DateTime  @default(now())
+
+  @@unique([userId, blockId])
+}
+
+// Append-only audit trail for the content quality workflow: who changed
+// what, when, and which status transition happened.
+// ---------------------------------------------------------------------------
+// PROMPT 39 §6 — managed vocabulary (bulk import + editing)
+//
+// Extension words authored in the admin Vocabulary tab. Draft entries are
+// invisible to learners; approved entries are merged into the Word Explorer
+// (search + detail) with an "Extension" provenance. The core 135-word library
+// remains content-as-code; this table adds to it — it never rewrites it.
+// ---------------------------------------------------------------------------
+model VocabEntry {
+  id                 String   @id @default(cuid())
+  word               String
+  partOfSpeech       String
+  definition         String
+  // "im-PO-tant" stress notation (validated loosely; never IPA-strict).
+  pronunciation      String   @default("")
+  example            String   @default("")
+  exampleTranslation String   @default("")
+  // Support-language meaning (displayed alongside the English definition).
+  translation        String   @default("")
+  difficulty         String   @default("medium") // easy | medium | hard
+  categoryId         String   @default("everyday")
+  // draft | approved — approval is the editorial gate; nothing implicit.
+  status             String   @default("draft")
+  source             String   @default("manual") // manual | import
+  note               String   @default("")
+  createdAt          DateTime @default(now())
+  updatedAt          DateTime @updatedAt
+
+  @@unique([word, partOfSpeech])
+  @@index([status])
+  @@index([categoryId])
+}
+
+model CmsAuditLog {
+  id         String   @id @default(cuid())
+  actorId    String?
+  actor      User?    @relation(fields: [actorId], references: [id], onDelete: SetNull)
+  action     String // e.g. "lesson.publish", "question.update", "user.role"
+  entityType String // course | module | unit | lesson | question | asset | user | import
+  entityId   String
+  detail     String   @default("{}") // JSON { from, to, note, … }
+  createdAt  DateTime @default(now())
+
+  @@index([entityType, entityId])
+  @@index([createdAt])
+}
+
+// ===========================================================================
+// Division C — International Exam Preparation Academy
+//
+// Design rules (docs/EXAM_ACADEMY.md):
+//  * Examination rules are DATA, never code: every format detail (sections,
+//    timing, task types, scoring) lives in TestSpecification rows that
+//    administrators can version when providers change the test. Frontend
+//    components read specs through src/lib/exams/* only.
+//  * IELTS and TOEFL are modelled separately — different section configs,
+//    question types, timing rules, scoring models and rubrics.
+//  * The academy never duplicates the common English curriculum: pathways
+//    and recommendations REFERENCE existing modules by route/ID.
+//  * SQLite has no enums — every enum-like field is a validated string
+//    (zod schemas in src/lib/exams/types.ts are the source of truth).
+// ===========================================================================
+
+// Versioned test specification — the authoritative record of an exam's
+// current format. One row per exam + variant + version. Exactly one row
+// per (examKey, variant) may be "active" at a time; prior versions stay
+// as "retired" history (mock attempts pin the spec they were built with).
+model TestSpecification {
+  id             String   @id @default(cuid())
+  examKey        String // IELTS | TOEFL_IBT
+  variant        String   @default("STANDARD") // ACADEMIC | GENERAL_TRAINING | STANDARD
+  name           String // "IELTS Academic"
+  version        Int // 1, 2, 3 … per exam+variant
+  status         String   @default("draft") // draft | active | retired
+  effectiveDate  DateTime // when this format came/will come into force
+  lastReviewedAt DateTime // last time an administrator verified the data
+  // PROMPT 55 §5 — planned re-verification date for the specification.
+  // Analytics surface "review due / overdue" from this field; a past date
+  // marks the exam's content as outdated content in the governance
+  // dashboard. Historical attempts keep their pinned spec regardless.
+  reviewDueAt    DateTime?
+  // Structured JSON, validated by src/lib/exams/types.ts on every write:
+  sections       String // [{key,label,timingSec,taskTypes,questionCount,directions,adaptive}]
+  scoringModel   String // {kind, sectionScales, rawToScore, overallRule, validityMonths}
+  taskTypes      String // catalog: [{type,label,description,objective,rubricKey?}]
+  sourceRefs     String // [{label,url,retrievedAt,note}] — official provider pages
+  notes          String?
+  createdAt      DateTime @default(now())
+  updatedAt      DateTime @updatedAt
+
+  mocks MockTest[]
+
+  @@unique([examKey, variant, version])
+  @@index([examKey, variant, status])
+}
+
+// Learner's exam-preparation goals, captured by the onboarding wizard and
+// editable at any time ("Change my goals" on the dashboard).
+model ExamProfile {
+  id                String    @id @default(cuid())
+  userId            String    @unique
+  examKey           String // IELTS | TOEFL_IBT
+  variant           String    @default("STANDARD")
+  // Delivery context the learner is preparing for. IELTS for UKVI shares the
+  // standard format and difficulty (official guidance); it changes registration
+  // and delivery expectations, never the test rules.
+  delivery          String    @default("STANDARD") // STANDARD | UKVI
+  proficiency       String    @default("UNKNOWN") // CEFR self-rating: A1..C2 | UNKNOWN
+  targetScore       Float // IELTS band (e.g. 7.0) or TOEFL band (e.g. 5.0)
+  examDate          DateTime?
+  dailyMinutes      Int       @default(30)
+  difficultSections String    @default("[]") // JSON array of section keys
+  // Planner initial-assessment extras (strongest section + real sitting
+  // history). previousAttempts is JSON [{exam, overall, date}].
+  strongestSection String? // listening | reading | writing | speaking | null
+  previousAttempts String    @default("[]")
+  // Self-reported "if I sat the exam today" score (onboarding question).
+  // Honest context for the coach — never treated as measured evidence.
+  currentScoreEstimate Float?
+  onboardedAt       DateTime?
+  createdAt         DateTime  @default(now())
+  updatedAt         DateTime  @updatedAt
+
+  user User @relation(fields: [userId], references: [id], onDelete: Cascade)
+}
+
+// Rolling per-section performance estimate (dashboard "current estimated
+// performance" + strengths/weaknesses). Recomputed from onboarding
+// self-rating, common-curriculum attempt data and mock results.
+model ExamSectionEstimate {
+  id         String   @id @default(cuid())
+  userId     String
+  examKey    String
+  section    String // listening | reading | writing | speaking
+  estimated  Float // on the exam's own section scale
+  confidence Float    @default(0.3) // 0..1 — how much evidence backs the number
+  evidence   String   @default("{}") // JSON {sources:[{kind,detail,at}]}
+  updatedAt  DateTime @updatedAt
+
+  user User @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  @@unique([userId, examKey, section])
+}
+
+// Generated day-by-day study plan (one row per user+exam, regenerated on
+// demand). Tasks reference existing curriculum routes and mock tests.
+model ExamStudyPlan {
+  id          String   @id @default(cuid())
+  userId      String
+  examKey     String
+  plan        String // JSON StudyPlan {days:[{date,minutes,tasks:[…]}],notes}
+  generatedAt DateTime @default(now())
+
+  user User @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  @@unique([userId, examKey])
+}
+
+// ---------------------------------------------------------------------------
+// Personalized examination study planner (initial assessment → baseline
+// diagnostic → duration-driven plan → adaptive replanning → readiness).
+// One ACTIVE plan per user+exam; older plans are archived for history.
+// Days and tasks are real rows so completion, progress and adaptation can
+// update them individually.
+// ---------------------------------------------------------------------------
+
+model ExamPlannerPlan {
+  id           String   @id @default(cuid())
+  userId       String
+  examKey      String
+  variant      String   @default("STANDARD")
+  durationDays Int // planned length in days (7/14/30/60/90/custom)
+  startDate    DateTime
+  endDate      DateTime // startDate + effectiveDays - 1 (clamped to exam date)
+  status       String   @default("active") // active | archived
+  // In-app study reminder: "19:30" plus the weekdays (0=Sun…6=Sat) it fires.
+  // Honest scope: reminders surface while EnglishPath is open in a tab.
+  reminderTime String? // HH:MM 24h
+  reminderDays String   @default("[]") // JSON number[]
+  // JSON PlanMeta: phase boundaries, section focus weights, per-section
+  // difficulty, honesty notes, adaptation history, evidence snapshot.
+  meta         String   @default("{}")
+  generatedAt  DateTime @default(now())
+  updatedAt    DateTime @updatedAt
+
+  user User            @relation(fields: [userId], references: [id], onDelete: Cascade)
+  days ExamPlannerDay[]
+
+  @@index([userId, status])
+}
+
+model ExamPlannerDay {
+  id       String @id @default(cuid())
+  planId   String
+  dayIndex Int // 1-based day of the plan
+  date     String // YYYY-MM-DD
+  phase    String // foundation | skills | mock_cycle | final_review
+  focus    String // human focus label, e.g. "Listening & vocabulary"
+  plan     ExamPlannerPlan @relation(fields: [planId], references: [id], onDelete: Cascade)
+  tasks    ExamPlannerTask[]
+
+  @@unique([planId, dayIndex])
+}
+
+model ExamPlannerTask {
+  id         String        @id @default(cuid())
+  dayId      String
+  day        ExamPlannerDay @relation(fields: [dayId], references: [id], onDelete: Cascade)
+  // vocabulary | grammar | reading | listening | writing | speaking |
+  // mock_exam | mistake_revision | diagnostic | review
+  type       String
+  section    String? // listening | reading | writing | speaking | null = cross-section
+  title      String
+  detail     String        @default("") // what to do, in one honest sentence
+  minutes    Int
+  difficulty String        @default("medium") // easier | medium | harder
+  href       String // hash route into the app (existing content only)
+  stepId     String? // ExamPathwayStep — auto-completed via pathway progress
+  mockTestId String? // MockTest when type = mock_exam
+  status     String        @default("todo") // todo | done | skipped
+  completedAt DateTime?
+  sortOrder  Int           @default(0)
+  // Why this task is scheduled (adaptive evidence, phase, warm-up …).
+  reason     String        @default("")
+}
+
+// PROMPT 53 — coach notification preferences. One row per learner and
+// notification category (daily study, upcoming mock, revision, exam date,
+// incomplete assignments). `config` is a small JSON payload per category
+// (e.g. {"time":"19:30","days":[1..5]} for daily study or
+// {"leadDays":[7,3,1]} for the exam-date countdown). lastFiredAt backs the
+// anti-spam rule: at most one notification per category per day, and a
+// small daily total cap — the coach must never nag.
+model ExamNotificationPref {
+  id          String    @id @default(cuid())
+  userId      String
+  category    String // daily_study | upcoming_mock | revision | exam_date | incomplete_assignments
+  enabled     Boolean   @default(true)
+  config      String    @default("{}") // JSON, shape depends on the category
+  lastFiredAt DateTime? // rate-limit anchor (max 1 per category per day)
+  createdAt   DateTime  @default(now())
+  updatedAt   DateTime  @updatedAt
+
+  user User @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  @@unique([userId, category])
+}
+
+// Exam-specific course structure (the "pathway"). Modules are phases;
+// steps reference common-curriculum routes, exam drills or mock tests.
+model ExamPathway {
+  id      String              @id @default(cuid())
+  examKey String
+  variant String              @default("STANDARD")
+  title   String
+  summary String
+  status  String              @default("published") // draft | published | archived
+  modules ExamPathwayModule[]
+  steps   ExamPathwayStep[]
+
+  @@unique([examKey, variant])
+}
+
+model ExamPathwayModule {
+  id        String            @id @default(cuid())
+  pathwayId String
+  title     String
+  goal      String
+  order     Int
+  pathway   ExamPathway       @relation(fields: [pathwayId], references: [id], onDelete: Cascade)
+  steps     ExamPathwayStep[]
+
+  @@index([pathwayId])
+}
+
+model ExamPathwayStep {
+  id            String                    @id @default(cuid())
+  moduleId      String
+  order         Int
+  label         String
+  refType       String // curriculum | grammar | vocabulary | reading | listening | speaking | writing | lab | tutor | drill | mock
+  refId         String? // slug/id inside that module (null = module hub)
+  examSection   String? // listening | reading | writing | speaking — bridging tag
+  focus         String? // what this step trains, shown on the pathway page
+  minutes       Int                       @default(20)
+  module        ExamPathwayModule         @relation(fields: [moduleId], references: [id], onDelete: Cascade)
+  progress      ExamPathwayStepProgress[]
+  examPathway   ExamPathway?              @relation(fields: [examPathwayId], references: [id])
+  examPathwayId String?
+
+  @@index([moduleId])
+}
+
+// A learner's completion of a pathway step (marks preparation progress).
+model ExamPathwayStepProgress {
+  id          String   @id @default(cuid())
+  userId      String
+  stepId      String
+  completedAt DateTime @default(now())
+
+  user User            @relation(fields: [userId], references: [id], onDelete: Cascade)
+  step ExamPathwayStep @relation(fields: [stepId], references: [id], onDelete: Cascade)
+
+  @@unique([userId, stepId])
+}
+
+// Assessment rubrics for constructed-response tasks (writing/speaking).
+// Seeded from the providers' public band descriptors; used by AI grading
+// and shown to learners for self-assessment.
+model ExamRubric {
+  id         String   @id @default(cuid())
+  examKey    String
+  taskKey    String // e.g. ielts.writing.task2 | toefl.speaking.interview | toefl.writing.reconstruction
+  title      String
+  scale      String // JSON [{score, criteria:[{name,descriptor}]}]
+  sourceRefs String // JSON [{label,url}]
+  updatedAt  DateTime @updatedAt
+
+  @@unique([examKey, taskKey])
+}
+
+// A configured mock test, built on a pinned TestSpecification. Separate
+// IELTS and TOEFL configurations — question types, timing and section
+// order come from the spec, question content from MockTestQuestion rows.
+model MockTest {
+  id          String   @id @default(cuid())
+  examKey     String
+  variant     String   @default("STANDARD")
+  specId      String
+  title       String
+  kind        String   @default("full") // full | section | drill
+  lengthLabel String   @default("sample") // full-length | sample
+  status      String   @default("draft") // draft | published | archived
+  description String?
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+
+  spec     TestSpecification @relation(fields: [specId], references: [id])
+  sections MockTestSection[]
+  attempts MockTestAttempt[]
+
+  @@index([examKey, status])
+}
+
+model MockTestSection {
+  id         String             @id @default(cuid())
+  mockTestId String
+  key        String // listening | reading | writing | speaking
+  title      String
+  directions String?
+  timingSec  Int
+  order      Int
+  // JSON — section-level metadata. PROMPT 44: listening simulations store
+  // audioParts here (per-recording scripts shared by a group of questions).
+  payload    String?
+  mockTest   MockTest           @relation(fields: [mockTestId], references: [id], onDelete: Cascade)
+  questions  MockTestQuestion[]
+
+  @@index([mockTestId])
+}
+
+// One question/task inside a mock section. `type` comes from the spec's
+// task-type catalog; `payload` holds type-specific content (options,
+// passages, blanks, prompts); `answer` holds the key for objective items
+// (never sent to the client before submission).
+model MockTestQuestion {
+  id        String             @id @default(cuid())
+  sectionId String
+  order     Int
+  type      String // MCQ_SINGLE | MCQ_MULTI | TFNG | MATCHING | FILL_BLANK | COMPLETE_WORDS | SENTENCE_RECONSTRUCTION | DICTATION | LISTEN_REPEAT | WRITING_TASK | EMAIL_WRITING | DISCUSSION_TASK | SPEAKING_TASK | …
+  stem      String?
+  payload   String // JSON (validated per type in src/lib/exams/types.ts)
+  answer    String? // JSON key for objective types; null for constructed responses
+  points    Int                @default(1)
+  skills    String             @default("[]") // JSON ["detail","paraphrase","academic-vocab",…] for diagnostics
+  // PROMPT 44: audio-part grouping for listening simulations ("part-1");
+  // questions sharing a group hear ONE section-level recording.
+  groupTag  String?
+  // Assessment metadata (engine requirement: every item carries difficulty,
+  // a post-submission explanation, and a source/content status pair).
+  difficulty    Int    @default(2) // 1–5, 1 = foundation (A2-B1) … 5 = advanced (C1-C2)
+  explanation   String? // shown after submission so learners can inspect errors
+  source        String @default("original-practice") // provenance of the item
+  contentStatus String @default("published") // draft | in-review | published
+  section   MockTestSection    @relation(fields: [sectionId], references: [id], onDelete: Cascade)
+  responses MockTestResponse[]
+  evaluations MockEvaluation[]
+
+  @@index([sectionId])
+}
+
+model MockTestAttempt {
+  id            String             @id @default(cuid())
+  userId        String
+  mockTestId    String
+  specId        String // pinned spec version — survives spec updates
+  status        String             @default("in_progress") // in_progress | submitted | scored | abandoned (unfinished, answers preserved)
+  // Which practice mode this run used (PROMPT 51 catalogue). Legacy rows
+  // store "exam" | "practice"; readers normalise via attemptModeLabel/isTimedMode.
+  mode          String             @default("full_mock") // full_mock | section | timed | untimed | topic | weakness | diagnostic | adaptive | mistakes | custom | exam | practice (legacy)
+  timed         Boolean            @default(true) // whether section clocks were enforced
+  startedAt     DateTime           @default(now())
+  submittedAt   DateTime?
+  scoredAt      DateTime?
+  sectionScores String? // JSON [{section,raw,max,score}] on the exam's scale
+  totalScore    Float? // overall on the exam's scale (band average)
+  scoreDisplay  String? // formatted per exam rules, e.g. "Band 7.0" / "Band 4.5"
+  feedback      String? // JSON summary {strengths:[],weaknesses:[],notes}
+  user          User               @relation(fields: [userId], references: [id], onDelete: Cascade)
+  mockTest      MockTest           @relation(fields: [mockTestId], references: [id], onDelete: Cascade)
+  responses     MockTestResponse[]
+  evaluations   MockEvaluation[]
+
+  @@index([userId, startedAt])
+}
+
+model MockTestResponse {
+  id          String   @id @default(cuid())
+  attemptId   String
+  questionId  String
+  answer      String? // JSON — shape depends on the question type
+  flagged     Boolean  @default(false) // learner's mark-for-review flag
+  timeSpentSec Int    @default(0) // accumulated seconds on this question
+  autoScore   Float? // objective points awarded
+  rubricScore Float? // constructed-response score (AI or teacher)
+  feedback    String? // JSON {criteria:[{name,score,comment}],summary}
+  status      String   @default("answered") // answered | pending_review | ai_scored | teacher_scored
+  updatedAt   DateTime @updatedAt
+
+  attempt  MockTestAttempt  @relation(fields: [attemptId], references: [id], onDelete: Cascade)
+  question MockTestQuestion @relation(fields: [questionId], references: [id], onDelete: Cascade)
+
+  @@unique([attemptId, questionId])
+}
+
+// AI-assisted writing/speaking evaluation for a single exam task response
+// (IELTS writing/speaking, TOEFL writing/speaking). The learner's response
+// is re-evaluated through a revision chain: each revision points at the
+// evaluation it revises, so improvement can be tracked over time. The
+// result JSON always separates verified facts, rule-based checks, AI
+// feedback and estimated performance — and always carries the
+// "not an official score" safeguards.
+model MockEvaluation {
+  id            String   @id @default(cuid())
+  userId        String
+  attemptId     String? // linked mock attempt (null for free evaluations)
+  questionId    String? // linked MockTestQuestion (null for free evaluations)
+  examKey       String // IELTS | TOEFL_IBT
+  section       String // writing | speaking
+  evaluatorKey  String // IELTS_WRITING_ACADEMIC_T1 | … (src/lib/exams/evaluation/tasks.ts)
+  taskTitle     String // resolved task label, e.g. "Academic Task 1 — report"
+  // The evaluated response text (for speaking: the transcript).
+  inputText     String
+  transcriptSource String @default("typed") // typed | browser-stt | server-stt | unknown
+  audioSec      Float? // speaking: recording length when known
+  revisionOfId  String? // self-relation — the evaluation this one revises
+  result        String // JSON EvaluationResultDto
+  status        String @default("complete") // complete | partial (rule-based only) | insufficient
+  // Human-reviewed assessment (PROMPT 52): a teacher/admin can add their own
+  // note on top of the AI report. The AI report itself is never altered —
+  // the review is a clearly separated, separately-labelled layer.
+  reviewStatus  String   @default("not_reviewed") // not_reviewed | human_reviewed
+  reviewerRole  String? // teacher | editor | admin (who reviewed)
+  reviewerNote  String? // the human reviewer's note (shown verbatim to the learner)
+  reviewedAt    DateTime?
+  createdAt     DateTime @default(now())
+
+  user               User            @relation(fields: [userId], references: [id], onDelete: Cascade)
+  attempt            MockTestAttempt? @relation(fields: [attemptId], references: [id], onDelete: SetNull)
+  question           MockTestQuestion? @relation(fields: [questionId], references: [id], onDelete: SetNull)
+  revisionOf         MockEvaluation?  @relation("EvaluationRevisions", fields: [revisionOfId], references: [id], onDelete: Cascade)
+  revisions          MockEvaluation[] @relation("EvaluationRevisions")
+
+  @@index([userId, createdAt])
+  @@index([questionId])
+}
+
+// ===========================================================================
+// Division C — Examination content governance (PROMPT 55)
+//
+// The six-stage approval pipeline overlay for examination content:
+//
+//   draft → educational-review → examination-review → answer-validation
+//         → approved → published
+//
+// One row per governed content entity (lesson, question, mock, course, bank
+// exercise, pathway, rubric, audio, passage, model answer…), keyed by a
+// stable (entityType, entityKey) pair. Rows are created ONLY by explicit
+// staff actions — nothing in the codebase, seeder or AI pipeline may create
+// an override, so AI-generated content can never automatically receive
+// human-approved status. `humanApproved` flips to true only when a
+// teacher-or-above performs the answer-validation sign-off.
+//
+// The overlay is deliberately separate from the delivery systems
+// (CmsLesson.live, MockTestQuestion.contentStatus, …): delivery answers
+// "can learners see this?", governance answers "did humans approve this?".
+// ===========================================================================
+model ExamContentReview {
+  id            String   @id @default(cuid())
+  // lesson | question | exercise | mock | course | module | chapter |
+  // pathway | rubric | audio | passage | model-answer
+  entityType    String
+  // Stable key: CmsLesson slug, MockTestQuestion id, bank item id ("bank:<id>")…
+  entityKey     String
+  // draft | educational-review | examination-review | answer-validation |
+  // approved | published (src/lib/exams/governance/types.ts is the contract)
+  status        String   @default("draft")
+  // ai-generated | ai-assisted | human-authored — TalkSy original content
+  // is honestly labelled ai-generated until a human rewrites it.
+  provenance    String   @default("ai-generated")
+  // True only after a teacher+ answer-validation sign-off. Never defaulted.
+  humanApproved Boolean  @default(false)
+  note          String   @default("") // the reviewer's accountable note
+  updatedById   String?
+  updatedAt     DateTime @updatedAt
+  createdAt     DateTime @default(now())
+
+  @@unique([entityType, entityKey])
+  @@index([status])
+  @@index([entityType])
+}
+
+// ============================================================================
+// CURRICULUM CONTENT MIRROR + LEARNER PROGRESS
+// The relational mirror of the TypeScript curriculum (populated by the admin
+// content sync) and the progress tables of the course-delivery stack.
+// SQLite: status/category values are plain strings with documented defaults.
+// ============================================================================
+
+/* ---------- Content mirror (sync-written) ---------- */
+
+model LearningLanguage {
+  id             String         @id @default(cuid())
+  code           String         @unique
+  name           String
+  nativeName     String         @default("")
+  isActive       Boolean        @default(true)
+  courses        Course[]
+  nativeSpeakers UserProfile[]
+}
+
+model Course {
+  id          String            @id @default(cuid())
+  slug        String            @unique
+  title       String
+  tagline     String            @default("")
+  description String            @default("")
+  version     String            @default("1.0.0")
+  status      String            @default("PUBLISHED")
+  sortOrder   Int               @default(0)
+  languageId  String
+  language    LearningLanguage  @relation(fields: [languageId], references: [id])
+  levels      LearningLevel[]
+  modules     CurriculumModule[]
+  enrollments Enrollment[]
+
+  @@index([languageId])
+}
+
+model CurriculumModule {
+  id          String @id @default(cuid())
+  courseId    String
+  course      Course @relation(fields: [courseId], references: [id], onDelete: Cascade)
+  code        String @unique
+  title       String
+  description String @default("")
+  sortOrder   Int    @default(0)
+  units       Unit[]
+}
+
+model LearningLevel {
+  id          String  @id @default(cuid())
+  courseId    String
+  course      Course  @relation(fields: [courseId], references: [id], onDelete: Cascade)
+  code        String  @unique
+  name        String
+  cefrLabel   String  @default("")
+  tagline     String  @default("")
+  description String  @default("")
+  sortOrder   Int     @default(0)
+  status      String  @default("AVAILABLE")
+  units       Unit[]
+  lessons     Lesson[]
+}
+
+model Unit {
+  id          String             @id @default(cuid())
+  slug        String             @unique
+  levelId     String
+  level       LearningLevel      @relation(fields: [levelId], references: [id], onDelete: Cascade)
+  moduleId    String?
+  module      CurriculumModule?  @relation(fields: [moduleId], references: [id])
+  code        String             @default("")
+  title       String             @default("")
+  description String             @default("")
+  sortOrder   Int                @default(0)
+  lessons     Lesson[]
+}
+
+model Lesson {
+  id             String        @id @default(cuid())
+  slug           String        @unique
+  unitId         String
+  unit           Unit          @relation(fields: [unitId], references: [id], onDelete: Cascade)
+  levelId        String
+  level          LearningLevel @relation(fields: [levelId], references: [id], onDelete: Cascade)
+  title          String
+  subtitle       String?
+  description    String        @default("")
+  minutes        Int           @default(10)
+  status         String        @default("PUBLISHED")
+  contentVersion String        @default("1.0.0")
+  isStructured   Boolean       @default(false)
+  skillsJson     String        @default("[]")
+  sortOrder      Int           @default(0)
+
+  sections         LessonSection[]
+  objectives       LessonObjective[]
+  vocab            Vocabulary[]
+  dialogue         Dialogue?
+  passage          ReadingPassage?
+  exampleSentences ExampleSentence[]
+  exercises        Exercise[]
+  assignments      Assignment[]
+  audioAssets      AudioAsset[]
+  grammarTopics    LessonGrammarTopic[]
+  assessments      Assessment[]
+  prerequisites    LessonPrerequisite[] @relation("LessonPrerequisites")
+  prerequisiteFor  LessonPrerequisite[] @relation("LessonPrerequisiteFor")
+
+  @@index([unitId])
+  @@index([levelId])
+}
+
+model LessonSection {
+  id          String @id @default(cuid())
+  lessonId    String
+  lesson      Lesson @relation(fields: [lessonId], references: [id], onDelete: Cascade)
+  type        String
+  title       String @default("")
+  contentJson String @default("{}")
+  sortOrder   Int    @default(0)
+
+  @@unique([lessonId, type])
+}
+
+model LearningObjective {
+  id      String            @id @default(cuid())
+  code    String            @unique
+  text    String
+  skill   String?
+  lessons LessonObjective[]
+}
+
+model LessonObjective {
+  lessonId    String
+  lesson      Lesson            @relation(fields: [lessonId], references: [id], onDelete: Cascade)
+  objectiveId String
+  objective   LearningObjective @relation(fields: [objectiveId], references: [id], onDelete: Cascade)
+  sortOrder   Int               @default(0)
+
+  @@id([lessonId, objectiveId])
+}
+
+model LessonPrerequisite {
+  lessonId             String
+  lesson               Lesson @relation("LessonPrerequisites", fields: [lessonId], references: [id], onDelete: Cascade)
+  prerequisiteLessonId String
+  prerequisiteLesson   Lesson @relation("LessonPrerequisiteFor", fields: [prerequisiteLessonId], references: [id], onDelete: Cascade)
+  kind                 String @default("SEQUENTIAL")
+
+  @@id([lessonId, prerequisiteLessonId])
+}
+
+model Vocabulary {
+  id            String         @id @default(cuid())
+  wordId        String         @unique
+  lessonId      String
+  lesson        Lesson         @relation(fields: [lessonId], references: [id], onDelete: Cascade)
+  term          String
+  pos           String         @default("")
+  definition    String         @default("")
+  example       String         @default("")
+  sortOrder     Int            @default(0)
+  audio         AudioAsset[]
+  revisionItems RevisionItem[]
+}
+
+model Dialogue {
+  id       String        @id @default(cuid())
+  lessonId String        @unique
+  lesson   Lesson        @relation(fields: [lessonId], references: [id], onDelete: Cascade)
+  title    String        @default("")
+  context  String        @default("")
+  lines    DialogueLine[]
+}
+
+model DialogueLine {
+  id         String   @id @default(cuid())
+  dialogueId String
+  dialogue   Dialogue @relation(fields: [dialogueId], references: [id], onDelete: Cascade)
+  speaker    String   @default("")
+  text       String   @default("")
+  sortOrder  Int      @default(0)
+
+  @@unique([dialogueId, sortOrder])
+}
+
+model ReadingPassage {
+  id        String @id @default(cuid())
+  lessonId  String @unique
+  lesson    Lesson @relation(fields: [lessonId], references: [id], onDelete: Cascade)
+  title     String @default("")
+  text      String @default("")
+  wordCount Int    @default(0)
+}
+
+model ExampleSentence {
+  id        String @id
+  lessonId  String
+  lesson    Lesson @relation(fields: [lessonId], references: [id], onDelete: Cascade)
+  category  String @default("BASIC")
+  text      String @default("")
+  note      String?
+  sortOrder Int    @default(0)
+}
+
+model AudioAsset {
+  id           String      @id
+  kind         String      @default("TTS_SENTENCE")
+  text         String      @default("")
+  rate         Float?
+  sortOrder    Int         @default(0)
+  lessonId     String?
+  lesson       Lesson?     @relation(fields: [lessonId], references: [id], onDelete: Cascade)
+  vocabularyId String?
+  vocabulary   Vocabulary? @relation(fields: [vocabularyId], references: [id], onDelete: Cascade)
+  exerciseId   String?
+  exercise     Exercise?   @relation(fields: [exerciseId], references: [id], onDelete: Cascade)
+}
+
+model Exercise {
+  id          String             @id @default(cuid())
+  exerciseId  String             @unique
+  lessonId    String
+  lesson      Lesson             @relation(fields: [lessonId], references: [id], onDelete: Cascade)
+  type        String
+  phase       String?
+  prompt      String             @default("")
+  audioText   String?
+  wordId      String?
+  isGradable  Boolean            @default(true)
+  payloadJson String             @default("{}")
+  sortOrder   Int                @default(0)
+  status      String             @default("PUBLISHED")
+  questions          ExerciseQuestion[]
+  audio              AudioAsset[]
+  assessmentQuestions AssessmentQuestion[] @relation("AssessmentQuestionExercise")
+
+  @@index([lessonId])
+}
+
+model ExerciseQuestion {
+  id                  String             @id @default(cuid())
+  exerciseId          String
+  exercise            Exercise           @relation(fields: [exerciseId], references: [id], onDelete: Cascade)
+  prompt              String             @default("")
+  sortOrder           Int                @default(1)
+  options             AnswerOption[]
+  key                 AnswerKey?
+
+  @@unique([exerciseId, sortOrder])
+}
+
+model AnswerOption {
+  id         String           @id @default(cuid())
+  questionId String
+  question   ExerciseQuestion @relation(fields: [questionId], references: [id], onDelete: Cascade)
+  content    String           @default("")
+  sortOrder  Int              @default(0)
+
+  @@unique([questionId, sortOrder])
+}
+
+model AnswerKey {
+  id           String           @id @default(cuid())
+  questionId   String           @unique
+  question     ExerciseQuestion @relation(fields: [questionId], references: [id], onDelete: Cascade)
+  keyType      String           @default("OPTION_INDEX")
+  correctIndex Int?
+  answerText   String?
+  acceptedJson String?
+  explanation  String?
+  modelAnswer  String?
+}
+
+model Assessment {
+  id        String               @id @default(cuid())
+  slug      String               @unique
+  lessonId  String
+  lesson    Lesson               @relation(fields: [lessonId], references: [id], onDelete: Cascade)
+  title     String               @default("")
+  kind      String               @default("LESSON_CHECK")
+  passScore Int                  @default(60)
+  questions AssessmentQuestion[]
+  attempts  AssessmentAttempt[]
+}
+
+model AssessmentQuestion {
+  id           String     @id @default(cuid())
+  assessmentId String
+  assessment   Assessment @relation(fields: [assessmentId], references: [id], onDelete: Cascade)
+  exerciseId   String
+  exercise     Exercise   @relation("AssessmentQuestionExercise", fields: [exerciseId], references: [id], onDelete: Cascade)
+  sortOrder    Int        @default(0)
+
+  @@unique([assessmentId, sortOrder])
+}
+
+model Assignment {
+  id        String @id
+  lessonId  String
+  lesson    Lesson @relation(fields: [lessonId], references: [id], onDelete: Cascade)
+  kind      String @default("HOMEWORK")
+  taskText  String @default("")
+  sortOrder Int    @default(0)
+}
+
+model GrammarTopic {
+  id         String              @id @default(cuid())
+  slug       String              @unique
+  name       String
+  definition String?
+  lessons    LessonGrammarTopic[]
+}
+
+model LessonGrammarTopic {
+  lessonId String
+  lesson   Lesson       @relation(fields: [lessonId], references: [id], onDelete: Cascade)
+  topicId  String
+  topic    GrammarTopic @relation(fields: [topicId], references: [id], onDelete: Cascade)
+  role     String       @default("INTRODUCES")
+
+  @@id([lessonId, topicId])
+}
+
+model ContentVersion {
+  id          String         @id @default(cuid())
+  contentType String
+  contentKey  String
+  version     String         @default("1.0.0")
+  contentHash String
+  changelog   String         @default("")
+  createdFrom String?
+  createdAt   DateTime       @default(now())
+  review      ContentReview?
+
+  @@index([contentType, contentKey])
+}
+
+model ContentReview {
+  id                   String            @id @default(cuid())
+  contentVersionId     String            @unique
+  contentVersion       ContentVersion    @relation(fields: [contentVersionId], references: [id], onDelete: Cascade)
+  statusId             String
+  status               PublicationStatus @relation(fields: [statusId], references: [id])
+  authoredBy           String            @default("")
+  isAiAssisted         Boolean           @default(false)
+  catalogueTargetsJson String            @default("[]")
+  reviewNotes          String?
+  reviewedBy           String?
+  reviewedAt           DateTime?
+}
+
+model PublicationStatus {
+  id      String          @id @default(cuid())
+  key     String          @unique
+  label   String          @default("")
+  reviews ContentReview[]
+}
+
+/* ---------- Learner progress ---------- */
+
+model LessonCompletion {
+  id              String   @id @default(cuid())
+  userId          String
+  user            User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+  lessonSlug      String
+  bestScore       Int      @default(0)
+  timesCompleted  Int      @default(1)
+  lastCompletedAt DateTime @default(now())
+  createdAt       DateTime @default(now())
+
+  @@unique([userId, lessonSlug])
+}
+
+model DailyActivity {
+  id                 String @id @default(cuid())
+  userId             String
+  user               User   @relation(fields: [userId], references: [id], onDelete: Cascade)
+  date               String
+  xpEarned           Int    @default(0)
+  lessonsCompleted   Int    @default(0)
+  exercisesCompleted Int    @default(0)
+
+  @@unique([userId, date])
+}
+
+model LearningPlan {
+  id              String   @id @default(cuid())
+  userId          String
+  user            User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+  status          String   @default("PROPOSED")
+  startLessonSlug String?
+  createdAt       DateTime @default(now())
+  updatedAt       DateTime @updatedAt
+
+  @@index([userId])
+}
+
+model Enrollment {
+  id          String    @id @default(cuid())
+  userId      String
+  user        User      @relation(fields: [userId], references: [id], onDelete: Cascade)
+  courseId    String
+  course      Course    @relation(fields: [courseId], references: [id], onDelete: Cascade)
+  status      String    @default("ACTIVE")
+  enrolledAt  DateTime  @default(now())
+  completedAt DateTime?
+
+  @@unique([userId, courseId])
+}
+
+model VocabularyProgress {
+  id             String    @id @default(cuid())
+  userId         String
+  user           User      @relation(fields: [userId], references: [id], onDelete: Cascade)
+  wordId         String
+  strength       Int       @default(0)
+  lastReviewedAt DateTime?
+  createdAt      DateTime  @default(now())
+  updatedAt      DateTime  @updatedAt
+
+  @@unique([userId, wordId])
+}
+
+model LearningStreak {
+  id            String   @id @default(cuid())
+  userId        String   @unique
+  user          User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+  currentDays   Int      @default(0)
+  longestDays   Int      @default(0)
+  lastActiveDay String?
+  updatedAt     DateTime @updatedAt
+}
+
+model LearningActivity {
+  id           String   @id @default(cuid())
+  userId       String
+  user         User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+  type         String
+  lessonSlug   String?
+  exerciseId   String?
+  assessmentId String?
+  metadataJson String?
+  occurredAt   DateTime @default(now())
+
+  @@index([userId, occurredAt])
+}
+
+model SkillProgress {
+  id        String   @id @default(cuid())
+  userId    String   @unique
+  user      User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+  xp        Int      @default(0)
+  updatedAt DateTime @updatedAt
+}
+
+model RevisionItem {
+  id             String      @id @default(cuid())
+  userId         String
+  user           User        @relation(fields: [userId], references: [id], onDelete: Cascade)
+  itemKey        String
+  itemType       String      @default("VOCABULARY")
+  vocabularyId   String?
+  vocabulary     Vocabulary? @relation(fields: [vocabularyId], references: [id])
+  dueAt          DateTime
+  intervalDays   Int         @default(0)
+  easeFactor     Float       @default(2.5)
+  repetitions    Int         @default(0)
+  lapses         Int         @default(0)
+  lastOutcome    Boolean?
+  lastReviewedAt DateTime?
+  createdAt      DateTime    @default(now())
+
+  @@unique([userId, itemKey])
+}
+
+model AssessmentAttempt {
+  id           String     @id @default(cuid())
+  userId       String
+  user         User       @relation(fields: [userId], references: [id], onDelete: Cascade)
+  assessmentId String
+  assessment   Assessment @relation(fields: [assessmentId], references: [id], onDelete: Cascade)
+  status       String     @default("IN_PROGRESS")
+  score        Int?
+  maxScore     Int?
+  passed       Boolean?
+  answersJson  String?
+  startedAt    DateTime   @default(now())
+  submittedAt  DateTime?
+
+  @@index([userId, assessmentId])
+}
+
+model PlacementAttempt {
+  id             String            @id @default(cuid())
+  userId         String
+  user           User              @relation(fields: [userId], references: [id], onDelete: Cascade)
+  status         String            @default("IN_PROGRESS")
+  step           Int               @default(0)
+  stateJson      String            @default("{}")
+  audioAvailable Boolean           @default(false)
+  startedAt      DateTime          @default(now())
+  completedAt    DateTime?
+  answers        PlacementAnswer[]
+
+  @@index([userId, status])
+}
+
+model PlacementAnswer {
+  id         String           @id @default(cuid())
+  attemptId  String
+  attempt    PlacementAttempt @relation(fields: [attemptId], references: [id], onDelete: Cascade)
+  itemId     String
+  skill      String
+  tier       String?
+  kind       String           @default("choice")
+  correct    Boolean?
+  response   String?
+  selfRating Int?
+  skipped    Boolean          @default(false)
+  createdAt  DateTime         @default(now())
+
+  @@unique([attemptId, itemId])
+}
+
+/* ---------- Achievements ---------- */
+
+model Achievement {
+  id          String            @id @default(cuid())
+  code        String            @unique
+  title       String            @default("")
+  description String            @default("")
+  category    String            @default("LESSONS")
+  threshold   Int               @default(1)
+  icon        String?
+  xpReward    Int               @default(0)
+  unlocked    UserAchievement[]
+}
+
+model UserAchievement {
+  id            String      @id @default(cuid())
+  userId        String
+  user          User        @relation(fields: [userId], references: [id], onDelete: Cascade)
+  achievementId String
+  achievement   Achievement @relation(fields: [achievementId], references: [id], onDelete: Cascade)
+  unlockedAt    DateTime    @default(now())
+
+  @@unique([userId, achievementId])
+}
+
+/* ---------- Profiles & preferences ---------- */
+
+model LearnerProfile {
+  id                  String   @id @default(cuid())
+  userId              String   @unique
+  user                User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+  overallAbility      String?
+  speakingConfidence  String?
+  listeningConfidence String?
+  readingConfidence   String?
+  writingConfidence   String?
+  explanationLanguage String?
+  dailyMinutes        Int?
+  purposesJson        String   @default("[]")
+  createdAt           DateTime @default(now())
+  updatedAt           DateTime @updatedAt
+}
+
+model UserProfile {
+  id               String            @id @default(cuid())
+  userId           String            @unique
+  user             User              @relation(fields: [userId], references: [id], onDelete: Cascade)
+  bio              String?
+  country          String?
+  timezone         String?
+  targetCefrLevel  String?
+  nativeLanguageId String?
+  nativeLanguage   LearningLanguage? @relation(fields: [nativeLanguageId], references: [id])
+
+  @@index([nativeLanguageId])
+}
+
+model UserPreference {
+  id                   String   @id @default(cuid())
+  userId               String   @unique
+  user                 User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+  theme                String   @default("system")
+  notificationsEnabled Boolean  @default(true)
+  audioRate            Float    @default(1)
+  subtitlesDefault     Boolean  @default(true)
+  weeklyProgressEmail  Boolean  @default(false)
+  updatedAt            DateTime @updatedAt
+}
+
+model UserRole {
+  id    String @id @default(cuid())
+  key   String @unique
+  label String @default("")
+}
+
+/* ---------- AI writing & speaking feedback ---------- */
+
+
+
+model WritingFeedback {
+  id               String            @id @default(cuid())
+  submissionId     String            @unique
+  submission       WritingSubmission @relation(fields: [submissionId], references: [id], onDelete: Cascade)
+  overallScore     Float?
+  summary          String            @default("")
+  strengthsJson    String            @default("[]")
+  improvementsJson String            @default("[]")
+  checksJson       String            @default("[]")
+  createdAt        DateTime          @default(now())
+}
+
+model SpeakingSubmission {
+  id           String            @id @default(cuid())
+  userId       String
+  user         User              @relation(fields: [userId], references: [id], onDelete: Cascade)
+  exerciseId   String?
+  lessonSlug   String?
+  promptText   String            @default("")
+  expectedText String            @default("")
+  transcript   String?
+  durationMs   Int?
+  createdAt    DateTime          @default(now())
+  feedback     SpeakingFeedback?
+
+  @@index([userId])
+}
+
+model SpeakingFeedback {
+  id              String             @id @default(cuid())
+  submissionId    String             @unique
+  submission      SpeakingSubmission @relation(fields: [submissionId], references: [id], onDelete: Cascade)
+  similarityScore Float?
+  wordMatchRatio  Float?
+  summary         String             @default("")
+  tipsJson        String             @default("[]")
+  createdAt       DateTime           @default(now())
+}
+
+/* ---------- Site ---------- */
+
+model ContactMessage {
+  id        String   @id @default(cuid())
+  name      String
+  email     String
+  topic     String   @default("general")
+  message   String
+  createdAt DateTime @default(now())
+}
+
+model AuditLog {
+  id           String   @id @default(cuid())
+  actorId      String?
+  actor        User?    @relation(fields: [actorId], references: [id])
+  action       String
+  entityType   String?
+  entityId     String?
+  metadataJson String?
+  createdAt    DateTime @default(now())
+
+  @@index([createdAt])
+  @@index([actorId])
+}

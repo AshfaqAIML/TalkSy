@@ -1,0 +1,852 @@
+/**
+ * Chapter 1C — Reading foundations (PROMPT 45, Part A).
+ *
+ * Four more foundation lessons: vocabulary in context, inference, the
+ * writer's opinion and the writer's purpose.
+ */
+
+import type { LessonSpec } from "../types";
+import { ex, fb } from "../types";
+
+export const foundationsLessonsC: LessonSpec[] = [
+  // ---------------------------------------------------------------------------
+  {
+    slug: "ielts-areading-vocabulary",
+    title: "Vocabulary in context",
+    description:
+      "The unknown-word protocol: word class, context clues, word parts — and the discipline of moving past a word the passage never tests.",
+    objectives: [
+      "apply the four-step unknown-word protocol in under ten seconds",
+      "use definition, contrast, example and cause context clues to estimate meaning",
+      "copy answers with the passage's exact spelling, every time",
+    ],
+    minutes: 12,
+    blocks: [
+      {
+        type: "lesson-intro",
+        text: "Every Reading passage contains words you will not know — by design. The paper is built so that no answer depends on knowing them: unknown words are either guessable from context, irrelevant to the questions, or defined in the passage itself. This lesson installs the protocol that keeps an unknown word from costing you time or marks: classify, clue-hunt, estimate, move on — and, when a word IS the answer, copy it exactly as the passage spells it.",
+        beforeYouStart: [
+          "You can name a word's part of speech from its sentence.",
+          "You know the close read's three jobs from the intensive lesson.",
+        ],
+      },
+      {
+        type: "table",
+        title: "Examination relevance",
+        headers: ["Aspect", "This lesson"],
+        rows: [
+          ["Section", "Reading — every passage; the glossaries of the passage library"],
+          ["Task & question types", "Completion answers are copied words; vocabulary-skilled items are tagged for the performance engine"],
+          ["What is assessed", "Dealing with unfamiliar vocabulary without breaking the question's budget"],
+          ["Why this matters", "One frozen candidate can lose a whole passage's budget; the protocol keeps unknowns in their ten-second box"],
+        ],
+      },
+      { type: "heading", text: "The unknown-word protocol" },
+      {
+        type: "steps",
+        title: "Four moves in ten seconds",
+        steps: [
+          { title: "Move one: classify", text: "Name the word's class from its slot: after 'the' it is a noun; before a noun it is an adjective; after 'to' it is a verb. Class alone often tells you what job the word does in the sentence, which is half of what you need.", examples: [{ english: "'the attenuation of floods' — after 'the', before 'of': a noun naming a process. What process? The sentence around it says.", note: "Class first: the slot declares the job." }] },
+          { title: "Move two: clue-hunt", text: "Four clue types surround unknown words: definition clues ('X — a device that…'), contrast clues ('unlike Y, the Z…'), example clues ('such as…') and cause clues ('because…'). Find the clue type and the sentence hands you the meaning's shape.", examples: [{ english: "'castoreum — a gland oil once prized as medicine': the appositive defines it outright.", note: "Writers define exactly the words they know you won't know." }] },
+          { title: "Move three: estimate and label", text: "Give the word a rough label — 'something good for', 'a part of the machine', 'an official process' — and keep reading. An estimate plus the word's class carries you through every question the passage actually asks.", examples: [{ english: "'the char layer insulates the core' — 'char' stays a fuzzy noun meaning 'the burnt outer part', and both diagram blanks still fall.", note: "Estimates, not definitions, win questions." }] },
+          { title: "Move four: move on — or copy exactly", text: "If the word is not the answer, leave it. If it IS the answer (a completion gap), copy the passage's spelling letter for letter — a copied word misspelled scores zero, which is why the sweep re-checks every copied answer.", examples: [{ english: "Gap needs 'attenuation': the candidate types 'attenation' — the meaning was right, the mark is gone, and the sweep catches it.", note: "Copying is a vocabulary skill too: exact, not approximate." }] },
+        ],
+      },
+      {
+        type: "table",
+        title: "The four context clues, with signals",
+        headers: ["Clue", "Signal", "What it gives you"],
+        rows: [
+          ["Definition", "commas, dashes, 'that is', 'called'", "The meaning stated outright"],
+          ["Contrast", "'unlike', 'whereas', 'rather than', 'but'", "The meaning by opposition"],
+          ["Example", "'such as', 'including', 'like'", "The meaning's neighbourhood"],
+          ["Cause / effect", "'because', 'so', 'leading to'", "The meaning by consequence"],
+        ],
+        caption: "The library's glossaries exist for exactly these words — after submission, read the glossary of every passage you attempt and log the words behind your wrong answers.",
+      },
+      {
+        type: "example",
+        title: "Unknown words, handled",
+        items: [
+          { english: "'The reef was attenuated' — no: 'attenuation of the flood peak' — contrast clue 'rather than flashing from flood to flood' gives 'softening, slowing'.", note: "The passage defines its own technical terms in the same sentence.", domain: "exam" },
+          { english: "'dovetail joints' in the lighthouse passage — example clue 'shaping each block so that it locked' supplies 'interlocking' without any dictionary.", note: "Mechanism words come with mechanism clues.", domain: "exam" },
+          { english: "'regressive' in the traffic passage — the cause clue 'takes the same money from a wealthy driver as from a shift worker' defines it economically.", note: "Policy vocabulary self-defines through examples.", domain: "exam" },
+          { english: "A candidate stops at 'serge de Nîmes' for thirty seconds — but the denim passage defines it in the same breath: 'a hard-wearing cloth'.", note: "The freeze is optional; the definition was free.", domain: "exam" },
+          { english: "A learner keeps a 'words behind my wrong answers' log from the library's glossaries, and the performance dashboard counts them automatically.", note: "Vocabulary difficulties are tracked per word — study what you actually missed.", domain: "study" },
+          { english: "A copied answer 'calendar days' goes in as 'calender days' — the sweep's spelling check restores the mark.", note: "Copy exact; check in the sweep.", domain: "exam" },
+        ],
+      },
+      {
+        type: "mistakes",
+        title: "Vocabulary mistakes corrected",
+        items: [
+          { wrong: "I cannot answer questions about paragraphs containing words I don't know.", right: "No answer depends on an unknown word's definition: classify it, read its clue, estimate, and answer from the sentence's remaining ninety per cent.", reason: "The paper is engineered for non-specialists; the unknown word is scenery, not the door." },
+          { wrong: "I stop and puzzle out every unknown word as I meet it.", right: "Box unknowns to ten seconds with the four moves; anything longer is a time sink wearing a vocabulary costume.", reason: "The budget lesson's arithmetic has no exemption for interesting words." },
+          { wrong: "If I know the word's meaning, my own spelling is good enough for a completion answer.", right: "Completion answers are copied — the passage's spelling, letter for letter, checked in the sweep.", reason: "A misspelled copy scores exactly zero; approximation is the most expensive habit in the completion family." },
+        ],
+      },
+      {
+        type: "table",
+        title: "Examination strategy",
+        headers: ["Moment", "Do this"],
+        rows: [
+          ["Before you start", "Accept that unknowns are designed in — decide now that none of them will freeze you."],
+          ["While the clock runs", "Classify, clue-hunt, estimate, move on — ten seconds per unknown, then reading resumes."],
+          ["If you are stuck", "A whole clause unreadable? Read the sentences either side and answer from the passage's framing of it."],
+          ["Final minutes", "Re-check every copied answer's spelling against the passage — the cheapest mark-recovery on the paper."],
+        ],
+      },
+      {
+        type: "summary",
+        points: [
+          "Unknown words are designed in and never gate the answers: the protocol keeps them in a ten-second box.",
+          "Four moves: classify the word class, hunt the context clue, estimate a label, move on — or copy exactly.",
+          "Four clue types — definition, contrast, example, cause — surround exactly the words writers expect you not to know.",
+          "When an unknown word IS the answer, copy the passage's spelling letter for letter; approximation scores zero.",
+          "After each attempt, read the passage's glossary and log the words behind wrong answers — the dashboard tracks them for you.",
+        ],
+      },
+      {
+        type: "revision",
+        title: "Recall check",
+        intro: "One item per earlier module.",
+        items: [
+          { question: "Which close-read job does exact copying belong to?", options: ["Claim comparison", "Grammar fit", "Qualifier check — and the sweep's spelling pass"], correctIndex: 2, explanation: "Copied answers must fit their new sentence and keep the passage's spelling — the sweep's third job re-checks them.", from: "Intensive reading" },
+          { question: "The paraphrase lesson taught translation between which two dialects?", options: ["Question and passage", "British and American English", "Formal and informal registers"], correctIndex: 0, explanation: "Synonym chains run question-into-passage for hunting and passage-into-question for deciding — vocabulary families are the chain's links.", from: "Understanding paraphrasing" },
+          { question: "What does the sweep do with a misspelled copied answer?", options: ["Leaves it — spelling cannot be repaired", "Restores the passage's spelling", "Deletes the answer"], correctIndex: 1, explanation: "The sweep's checklist ends with spelling: every copied word re-checked against the passage.", from: "Reading time management" },
+        ],
+      },
+    ],
+    questions: [
+      ex({
+        type: "mcq",
+        difficulty: "easy",
+        skill: "vocabulary",
+        prompt: "You meet an unknown noun mid-passage. What is the FIRST move?",
+        hints: ["The word's slot tells you its job before anything else."],
+        options: [
+          { id: "a", text: "Look it up mentally — guessing is risky." },
+          { id: "b", text: "Classify it: its position names its word class and job in the sentence." },
+          { id: "c", text: "Skip the sentence entirely." },
+        ],
+        correctOptionId: "b",
+        feedback: fb(
+          "Classify it: its position names its word class and job in the sentence.",
+          "After 'the' a noun is declared; before another noun, an adjective; after 'to', a verb. Class is the cheapest information in the sentence and half the meaning's shape.",
+          "(a) freezes on scenery; (c) throws away the sentence's remaining ninety per cent.",
+        ),
+        tags: ["areading", "vocabulary"],
+      }),
+      ex({
+        type: "read-answer",
+        difficulty: "medium",
+        skill: "vocabulary",
+        prompt: "Guided practice. Use the context clue to label the unknown word.",
+        hints: ["Name the clue type first — the dashes are a signal."],
+        passageTitle: "Context clue drill",
+        passage: "The divers' prize was encrusted with centuries of growth, but the museum's conservators cared only for what lay beneath: the corrosion — a chalky crust that forms when bronze reacts with seawater — hid gear teeth cut with a fineness no hand should have managed.",
+        question: "What does 'corrosion' mean here, and which clue type defined it?",
+        options: [
+          { id: "a", text: "A chemical process — defined by the appositive clue 'a chalky crust that forms when bronze reacts with seawater'." },
+          { id: "b", text: "A kind of gear — defined by the example 'gear teeth'." },
+          { id: "c", text: "Impossible to tell without a dictionary." },
+        ],
+        correctOptionId: "a",
+        feedback: fb(
+          "A chemical process — defined by the appositive clue 'a chalky crust that forms when bronze reacts with seawater'.",
+          "The dashes open a definition clue that states the meaning outright: corrosion is the crust formed by bronze meeting seawater. Writers define exactly the words they expect you not to know.",
+          "(b) mistakes neighbouring vocabulary for a clue; (c) ignores a definition sitting in the sentence.",
+        ),
+        tags: ["areading", "vocabulary", "clues"],
+      }),
+      ex({
+        type: "mcq",
+        difficulty: "medium",
+        skill: "vocabulary",
+        prompt: "Guided practice. A completion gap needs the passage's word for the flood-softening effect. The passage prints 'attenuation'. What does the protocol say about typing it?",
+        hints: ["Copied answers live or die on exactness."],
+        options: [
+          { id: "a", text: "Type your best approximation — examiners accept near spellings." },
+          { id: "b", text: "Copy the passage's spelling letter for letter: 'attenuation', checked again in the sweep." },
+          { id: "c", text: "Paraphrase it in your own words to show understanding." },
+        ],
+        correctOptionId: "b",
+        feedback: fb(
+          "Copy the passage's spelling letter for letter: 'attenuation', checked again in the sweep.",
+          "Completion answers are copied words: a misspelled copy scores zero exactly like a wrong word, and no credit exists for paraphrase. Exactness is the whole game.",
+          "(a) is the most expensive habit in the completion family; (c) answers a different task entirely.",
+        ),
+        tags: ["areading", "vocabulary", "copying"],
+      }),
+      ex({
+        type: "short-answer",
+        difficulty: "hard",
+        skill: "vocabulary",
+        prompt: "Independent practice. Name the four context-clue types.",
+        question: "List the four clue types in one short answer.",
+        acceptedAnswers: ["definition, contrast, example, cause (and effect)", "definition, contrast, example, cause", "definition clues, contrast clues, example clues, cause clues", "definition, opposition, examples, cause/effect"],
+        keywords: ["definition", "contrast", "example", "cause"],
+        hints: [],
+        feedback: fb(
+          "Definition, contrast, example and cause (and effect).",
+          "Those four clue types surround precisely the words writers expect readers not to know — and each one hands over the unknown's meaning in the same sentence.",
+          "Partial lists usually lose contrast, the clue that defines by opposition.",
+        ),
+        tags: ["areading", "vocabulary"],
+      }),
+      ex({
+        type: "mcq",
+        difficulty: "hard",
+        skill: "vocabulary",
+        prompt: "Independent practice. An unknown word sits in a sentence you must understand for a verdict statement. The word resists all four moves after ten seconds. What next?",
+        hints: [],
+        options: [
+          { id: "a", text: "Keep puzzling — this sentence is clearly the answer." },
+          { id: "b", text: "Read the sentences on either side and decide from the passage's framing: what the neighbours say the sentence does." },
+          { id: "c", text: "Guess TRUE — unknown words usually accompany true statements." },
+        ],
+        correctOptionId: "b",
+        feedback: fb(
+          "Read the sentences on either side and decide from the passage's framing: what the neighbours say the sentence does.",
+          "The protocol's escape hatch: passages frame their hard sentences — the sentence before sets up, the sentence after concludes. Framing settles most verdicts without the unknown word ever being decoded.",
+          "(a) is the freeze in its purest form; (c) is superstition wearing a method's clothes.",
+        ),
+        tags: ["areading", "vocabulary", "framing"],
+      }),
+    ],
+    homework: [
+      "After your next library passage, read its glossary and copy any three entries into your own notes — one for each clue type that surrounded it.",
+      "In your next timed run, count the unknown words that froze you for more than ten seconds and write what the four moves would have given you.",
+    ],
+  },
+  // ---------------------------------------------------------------------------
+  {
+    slug: "ielts-areading-inference",
+    title: "Inference",
+    description:
+      "Reading between the lines without inventing them: the one-step rule, implication triggers, and the discipline that separates NOT GIVEN from imagination.",
+    objectives: [
+      "apply the one-step rule: an inference is a consequence the passage states indirectly",
+      "recognise implication triggers and what each licenses you to conclude",
+      "distinguish absent information (NOT GIVEN) from implied contradiction",
+    ],
+    minutes: 13,
+    blocks: [
+      {
+        type: "lesson-intro",
+        text: "Inference questions ask what the passage meant without saying — and the difference between a good answer and an invented one is exactly one step. 'Only after the archive was digitised did the pattern become visible' implies that before digitisation nobody could see the pattern: a consequence the writer states indirectly, with no outside knowledge added. Read two steps past the text and you have left the question; read one step and you have answered it.",
+        beforeYouStart: [
+          "You can close-read a located line for its claim.",
+          "You have met NOT GIVEN as a verdict label in the format lesson.",
+        ],
+      },
+      {
+        type: "table",
+        title: "Examination relevance",
+        headers: ["Aspect", "This lesson"],
+        rows: [
+          ["Section", "Reading — the skill behind implication MCQs and half of all NOT GIVEN decisions"],
+          ["Task & question types", "'What does the writer imply/suggest?' MCQs; TRUE/FALSE/NOT GIVEN boundary items; Yes/No/Not Given stances"],
+          ["What is assessed", "Understanding implied meaning — consequences the text states indirectly"],
+          ["Why this matters", "Inference mistakes are tracked as their own error class in your performance dashboard: over-reading is as costly as under-reading"],
+        ],
+      },
+      { type: "heading", text: "The one-step rule" },
+      {
+        type: "steps",
+        title: "Implication, without invention",
+        steps: [
+          { title: "Find the trigger, not the topic", text: "Implications are carried by grammatical triggers: 'only after X did Y' implies not-Y before X; 'even' implies surprise against expectation; 'managed to' implies effort or difficulty; 'failed to' implies obligation. Hunt the trigger word and the inference is usually pre-assembled.", examples: [{ english: "'The study managed to recruit forty patients' implies recruitment was difficult — 'managed' carries the effort.", note: "Triggers pre-assemble the inference for you." }] },
+          { title: "Take exactly one step", text: "The licensed inference is the nearest consequence: the pattern was invisible before digitisation; recruitment was hard; the writer thinks the delay was ideological. Anything further — why it was invisible, whether digitisation was worth it — is a second step the text never took.", examples: [{ english: "'Only after digitisation did the pattern become visible' → invisible before: one step. 'Digitisation was underfunded': two steps, invented.", note: "Count your steps; the paper counts them too." }] },
+          { title: "Test the inference against the sentence", text: "Reverse the test: would the writer DISAGREE with your inference? If the sentence can stand while your inference falls, the inference was never licensed. The strongest inferences are ones the sentence needs.", examples: [{ english: "'Roughly half the viewers had no idea any such thing had happened' — the sentence needs 'the gorilla was missed'; it merely permits 'attention is limited'.", note: "Need beats permit when choosing." }] },
+          { title: "When nothing triggers: NOT GIVEN", text: "If the located lines neither state nor imply the claim — no trigger, no consequence, just silence — the verdict is NOT GIVEN, however plausible the claim feels. Plausibility is outside knowledge; NOT GIVEN is the label for the text's silence.", examples: [{ english: "'The writer has taught in a primary school' — no trigger, no consequence, no biography: NOT GIVEN.", note: "The boundary discipline lives here." }] },
+        ],
+      },
+      {
+        type: "grammar-rule",
+        title: "Trigger grammar and what each licenses",
+        rule: "Each implication trigger licenses exactly one inference: 'only after X, Y' → not-Y before X; 'even X' → X was unexpected; 'managed to X' → X was difficult; 'had to X' → obligation; 'no longer X' → X was once true; 'X, let alone Y' → Y is even less likely than X.",
+        explanation:
+          "Learning triggers as grammar is what makes inference fast: the license is attached to the construction, so the inference arrives pre-checked and never runs to a second step.",
+        examples: [
+          { english: "'The ponds no longer flash from flood to flood' → they once did: licensed by 'no longer'.", translation: "Cada estructura gramatical trae su inferencia ya hecha." },
+        ],
+        exceptions: ["Triggers license, they do not prove: the licensed inference still faces the reverse test before you commit."],
+      },
+      {
+        type: "example",
+        title: "One step, two steps, no steps",
+        items: [
+          { english: "'Its cost was not measured in research grants but in children who reached the middle years of school still unable to read' → implies the cost was human: one step, licensed by the contrast.", note: "The contrast trigger hands over the inference.", domain: "exam" },
+          { english: "Same sentence → 'the writer favours smaller classes': two steps, never licensed — class size is never mentioned.", note: "The second step is where marks go to die.", domain: "exam" },
+          { english: "'The studies were small and far from perfect, but they kept pointing the same way' → implies the direction was consistent despite weak evidence: 'but' carries it.", note: "Concession triggers license measured conclusions.", domain: "exam" },
+          { english: "'Nobody serious in the field proposes that' → implies some non-serious people do: one step; 'the field is corrupt': two steps.", note: "Even ironic lines license only their nearest consequence.", domain: "exam" },
+          { english: "A learner marks every inference MCQ with '1' or '2' — one step or two — and reviews only the 2s after grading.", note: "Step-counting turns inference into an auditable habit.", domain: "study" },
+          { english: "A candidate answers NOT GIVEN to 'inference' items because 'it never says so' — forgetting that implication is the whole task.", note: "Under-reading is the mirror error of over-reading.", domain: "exam" },
+        ],
+      },
+      {
+        type: "mistakes",
+        title: "Inference mistakes corrected",
+        items: [
+          { wrong: "Inference means reading the writer's mind about the topic.", right: "Inference means taking the one licensed consequence of the sentence's own grammar — triggers, not telepathy.", reason: "The paper tests whether you can follow an implication, not whether you share the writer's worldview." },
+          { wrong: "If it isn't stated, it must be NOT GIVEN — even for implication questions.", right: "Implication questions ask for the unstated consequence the sentence NEEDS; NOT GIVEN is the verdict for silence, not for indirectness.", reason: "Under-reading loses implication items exactly as over-reading loses boundary items." },
+          { wrong: "Plausible claims about the topic are fair inferences.", right: "Only consequences licensed by the located lines are inferences; plausibility is outside knowledge by another name.", reason: "Every distractor in an implication item is topic-plausible and trigger-absent — engineered exactly so." },
+        ],
+      },
+      {
+        type: "table",
+        title: "Examination strategy",
+        headers: ["Moment", "Do this"],
+        rows: [
+          ["Before you start", "Decide that inference is grammar, not intuition: the trigger licenses exactly one step."],
+          ["While the clock runs", "Hunt the trigger; take the licensed step; run the reverse test — would the writer disagree?"],
+          ["If you are stuck", "Two options both one step? Choose the one the sentence NEEDS over the one it merely permits."],
+          ["Final minutes", "Re-check implication answers for smuggled second steps — the commonest late correction."],
+        ],
+      },
+      {
+        type: "summary",
+        points: [
+          "An inference is the one-step consequence the passage states indirectly; the second step belongs to imagination, not the paper.",
+          "Triggers license inferences: 'only after', 'even', 'managed to', 'no longer', 'let alone' — each carries exactly one licensed step.",
+          "The reverse test: if the sentence can stand while the inference falls, the inference was never needed — and need beats permit.",
+          "Silence on a claim — no trigger, no consequence — is NOT GIVEN, whatever the claim's plausibility.",
+          "Under-reading ('it never says so') loses implication items exactly as over-reading loses boundary items.",
+        ],
+      },
+      {
+        type: "revision",
+        title: "Recall check",
+        intro: "One item per earlier module.",
+        items: [
+          { question: "Which close-read job does the reverse test extend?", options: ["Claim comparison", "Grammar fit", "Qualifier counting"], correctIndex: 0, explanation: "The reverse test asks whether the writer would disagree with your inference — claim comparison, applied one step beyond the text.", from: "Intensive reading" },
+          { question: "What did the paraphrase lesson say about distractors that quote the passage?", options: ["They are always correct", "They echo with one edited relation — the engineered trap", "They appear only in headings"], correctIndex: 1, explanation: "Implication distractors work the same way: topic-plausible, trigger-absent — quoting the neighbourhood while missing the license.", from: "Understanding paraphrasing" },
+          { question: "NOT GIVEN means the passage…", options: ["disagrees with the statement", "takes no position on the statement — silence, not contradiction", "agrees indirectly"], correctIndex: 1, explanation: "NOT GIVEN is the label for the text's silence: no trigger, no consequence, nothing that settles the claim.", from: "The one-step rule" },
+        ],
+      },
+    ],
+    questions: [
+      ex({
+        type: "mcq",
+        difficulty: "easy",
+        skill: "reading",
+        prompt: "What is a licensed inference?",
+        hints: ["Think about how many steps past the text an inference may travel."],
+        options: [
+          { id: "a", text: "Any reasonable claim about the passage's topic." },
+          { id: "b", text: "The one-step consequence that the sentence's own grammar licenses — no further." },
+          { id: "c", text: "The writer's unstated biography and beliefs." },
+        ],
+        correctOptionId: "b",
+        feedback: fb(
+          "The one-step consequence that the sentence's own grammar licenses — no further.",
+          "Inference on this paper is grammatical: triggers like 'only after', 'managed to' and 'no longer' carry exactly one licensed step, and everything beyond it is invention.",
+          "(a) is plausibility — outside knowledge in disguise; (c) is telepathy, not reading.",
+        ),
+        tags: ["areading", "inference"],
+      }),
+      ex({
+        type: "read-answer",
+        difficulty: "medium",
+        skill: "reading",
+        prompt: "Guided practice. Take the licensed inference — exactly one step.",
+        hints: ["Find the trigger first; it licenses one step only."],
+        passageTitle: "Inference drill",
+        passage: "The library's plan survived six committees unchanged — even the finance sub-group, which had quietly returned every other capital proposal that spring with instructions to halve it, let the drawings pass with a single notation.",
+        question: "What does the sentence imply about the finance sub-group's treatment of the library plan?",
+        options: [
+          { id: "a", text: "The finance sub-group had been cutting other proposals' budgets that spring — the library plan escaped unusually lightly." },
+          { id: "b", text: "The finance sub-group had always supported library building." },
+          { id: "c", text: "The sub-group's notation demanded the plan be halved." },
+        ],
+        correctOptionId: "a",
+        feedback: fb(
+          "The finance sub-group had been cutting other proposals' budgets that spring — the library plan escaped unusually lightly.",
+          "'Even' is the trigger: it sets the sub-group's habit (halving every proposal) against the exception (the library passing), and the licensed step is that this plan was treated unusually well — no more.",
+          "(b) generalises one exception into a policy; (c) contradicts the notation's singularity.",
+        ),
+        tags: ["areading", "inference", "triggers"],
+      }),
+      ex({
+        type: "mcq",
+        difficulty: "medium",
+        skill: "reading",
+        prompt: "Guided practice. 'Only after the archive was digitised did the pattern become visible.' Which inference is licensed?",
+        hints: ["One step only — and the reverse test must hold."],
+        options: [
+          { id: "a", text: "Before digitisation, the pattern could not be seen." },
+          { id: "b", text: "Digitisation was underfunded." },
+          { id: "c", text: "The archive was in a foreign country." },
+        ],
+        correctOptionId: "a",
+        feedback: fb(
+          "Before digitisation, the pattern could not be seen.",
+          "'Only after X did Y' licenses exactly not-Y before X — the sentence needs its negative prehistory. Funding and geography are second steps the sentence never took.",
+          "(b) and (c) are plausible topic claims with no trigger and no license.",
+        ),
+        tags: ["areading", "inference"],
+      }),
+      ex({
+        type: "short-answer",
+        difficulty: "hard",
+        skill: "reading",
+        prompt: "Independent practice. State the reverse test.",
+        question: "In one sentence: how does the reverse test check a candidate inference?",
+        acceptedAnswers: ["ask whether the writer would disagree with it — if the sentence can stand while the inference falls, it was never licensed", "if the writer would disagree, the inference is wrong; if the sentence survives without it, it was not needed", "test whether the writer would dispute the inference — an unlicensed one can be denied without cost", "would the writer disagree? if not, and the sentence needs it, the inference holds"],
+        keywords: ["writer", "disagree", "sentence", "licensed"],
+        hints: [],
+        feedback: fb(
+          "Ask whether the writer would disagree — if the sentence can stand while the inference falls, it was never licensed.",
+          "The reverse test makes step-counting practical: needed inferences cannot be denied without breaking the sentence, while merely permitted ones can — and need beats permit.",
+          "Answers describing rereading or feeling have imported a different lesson's tools.",
+        ),
+        tags: ["areading", "inference"],
+      }),
+      ex({
+        type: "mcq",
+        difficulty: "hard",
+        skill: "reading",
+        prompt: "Independent practice. A verdict statement is topic-plausible, and the located lines mention its subject — but no trigger licenses the claim, and no consequence follows. The verdict is…",
+        hints: [],
+        options: [
+          { id: "a", text: "TRUE — the passage clearly discusses the subject." },
+          { id: "b", text: "FALSE — if it is not supported, it is contradicted." },
+          { id: "c", text: "NOT GIVEN — the text is silent on the claim itself, whatever the subject overlap." },
+        ],
+        correctOptionId: "c",
+        feedback: fb(
+          "NOT GIVEN — the text is silent on the claim itself, whatever the subject overlap.",
+          "Mention is not position: no trigger, no consequence and no contradiction means the passage takes no stance, and NOT GIVEN is precisely the label for that silence.",
+          "(a) confuses topic overlap with support; (b) confuses absence with contradiction — the two errors the boundary exists to catch.",
+        ),
+        tags: ["areading", "inference", "not-given"],
+      }),
+    ],
+    homework: [
+      "Collect five trigger sentences from any library passage and write the one licensed inference for each — then check them against the passage's question explanations.",
+      "In your next practice set, mark every inference item '1' or '2' for steps taken, and review all the 2s for the second step you invented.",
+    ],
+  },
+  // ---------------------------------------------------------------------------
+  {
+    slug: "ielts-areading-opinion",
+    title: "The writer's opinion",
+    description:
+      "Whose voice is this? Stance signals, reported views versus held views, and the attribution discipline that Yes/No/Not Given items are built to test.",
+    objectives: [
+      "identify stance signals: what the writer asserts, concedes and rejects",
+      "separate reported views from views the writer holds",
+      "apply attribution checks to Yes/No/Not Given statements",
+    ],
+    minutes: 12,
+    blocks: [
+      {
+        type: "lesson-intro",
+        text: "An academic passage is a room with several voices in it: the writer's, the researchers the writer quotes, the critics the writer answers, and the public view the writer dismisses. Yes/No/Not Given questions ask about ONE of those voices — the writer's — and the most expensive mistake on the paper is answering about somebody else's. This lesson teaches the voice inventory and the signals that tell you who is speaking.",
+        beforeYouStart: [
+          "You can close-read a located claim from the intensive lesson.",
+          "You know the verdict families: TRUE/FALSE/NOT GIVEN tests facts; YES/NO/NOT GIVEN tests the writer's views.",
+        ],
+      },
+      {
+        type: "table",
+        title: "Examination relevance",
+        headers: ["Aspect", "This lesson"],
+        rows: [
+          ["Section", "Reading — Yes/No/Not Given blocks and opinion MCQs"],
+          ["Task & question types", "Yes/No/Not Given directly; matching features (attribution); 'the writer's attitude' MCQs"],
+          ["What is assessed", "Recognising the writer's views, claims and attitude as distinct from reported views"],
+          ["Why this matters", "Attribution traps are a designed error family in the library — your dashboard tracks them by name"],
+        ],
+      },
+      { type: "heading", text: "The voice inventory" },
+      {
+        type: "table",
+        title: "Four voices, four signal sets",
+        headers: ["Voice", "Signals", "YNNG treatment"],
+        rows: [
+          ["The writer asserting", "I would argue; clearly; in fact; the evidence suggests; the fairest conclusion", "Answers YES when a statement matches it"],
+          ["The writer conceding", "Admittedly; granted; it is true that", "Still the writer's view — a concession is held, not reported"],
+          ["Reported others", "Some researchers claim; critics argue; it is often said; advocates counter", "NOT the writer's view — do not attribute it"],
+          ["Facts of the world", "Dates, figures, events stated without evaluation", "Belongs to TRUE/FALSE logic, not YES/NO"],
+        ],
+        caption: "Answer the family you were asked about: a YES on a facts block and a TRUE on a views block both score zero.",
+      },
+      {
+        type: "steps",
+        title: "The attribution check",
+        steps: [
+          { title: "Locate the claim the statement makes", text: "Scan and close-read exactly as for TRUE/FALSE — the mechanics of locating never change. The verdict family changes only the final comparison: whose view is it?", examples: [{ english: "Statement: 'The writer accepts that open-label placebos helped some patients.' — located lines in the trials paragraph.", note: "Locate first; attribute second." }] },
+          { title: "Name the voice holding the located view", text: "Read the sentence's attribution frame before its content: 'critics reply that…' holds the view for the critics; 'the fairest conclusion is…' holds it for the writer. The frame decides the verdict family's answer.", examples: [{ english: "'Some commentators still insist… though they offer no data' — the view is theirs; the writer's own sentence calls it data-free.", note: "The frame is the verdict." }] },
+          { title: "Compare the statement with the WRITER's position only", text: "For YES/NO/NOT GIVEN, ask: does the writer hold this view, oppose it, or take no position? A reported view that matches the statement is still NOT GIVEN territory if the writer never endorses it.", examples: [{ english: "Statement matches the commentators' view word for word — but the writer only reports it: NOT GIVEN (or NO if the writer distances explicitly).", note: "Endorsement, not similarity, earns YES." }] },
+          { title: "Watch for the writer's endorsements of reported views", text: "Writers do adopt quoted views: 'as X showed', 'the evidence my team reviewed tells a different story'. Endorsement phrases convert a reported view into the writer's — and the verdict into YES.", examples: [{ english: "'The results were not what the textbooks predicted' plus the writer's own summary = the writer holds the surprise.", note: "Endorsement phrases are the conversion mechanism." }] },
+        ],
+      },
+      {
+        type: "example",
+        title: "Voices on library passages",
+        items: [
+          { english: "Reading-wars passage: 'Some education authorities mandated phonics screening' — reported; 'the fairest conclusion is blunt' — the writer's. A YNNG item quoting the mandate needs the writer's stance on it, not the mandate's content.", note: "The passage's spine is exactly this voice split.", domain: "exam" },
+          { english: "Placebo passage: 'Sceptics raise a boundary that matters' — reported sceptics; 'Even the cautious version changes the conversation' — the writer's verdict on their boundary.", note: "Concession plus verdict: the writer holds the second.", domain: "exam" },
+          { english: "Traffic passage: 'critics call congestion charging regressive' and 'defenders answer with the uses of the revenue' — two reported voices; the writer's own conclusion arrives only in the final paragraph.", note: "Until the final paragraph, the passage is a debate transcript.", domain: "exam" },
+          { english: "A candidate answers YES to 'the writer believes remote work reduces productivity' because the passage reports that view at length.", note: "The length of a report is not the strength of an endorsement.", domain: "exam" },
+          { english: "A learner underlines every attribution frame in one library passage — 'argues', 'reply', 'concede', 'conclude' — and labels each W (writer) or R (reported).", note: "The voice inventory, trained as a marking habit.", domain: "study" },
+          { english: "'Granted, the studies were small' — a candidate files the smallness under reported sceptics and misses the writer's own concession.", note: "Concessions are held views; 'granted' is a writer-signal.", domain: "exam" },
+        ],
+      },
+      {
+        type: "mistakes",
+        title: "Opinion mistakes corrected",
+        items: [
+          { wrong: "If the passage reports a view at length, the writer must hold it.", right: "Length is reporting, not endorsement: check the attribution frame and any endorsement phrases before attributing.", reason: "Long report blocks exist precisely to bait attribution errors — the frame, not the footage, decides." },
+          { wrong: "Concessions ('admittedly', 'granted') don't count as the writer's views.", right: "A concession is a held view with a 'but' attached: YES items are built on concessions as often as on assertions.", reason: "The concession's content is the writer's; only the follow-up qualifies it." },
+          { wrong: "YES/NO and TRUE/FALSE are interchangeable labels for the same decision.", right: "TRUE/FALSE answers about facts; YES/NO answers about the writer's views — answering the wrong family scores zero on a correct comparison.", reason: "The rubric's family is information; using it wrong is the cheapest self-inflicted loss on the paper." },
+        ],
+      },
+      {
+        type: "table",
+        title: "Examination strategy",
+        headers: ["Moment", "Do this"],
+        rows: [
+          ["Before you start", "Read the rubric's family first: views (YES/NO/NOT GIVEN) or facts (TRUE/FALSE/NOT GIVEN)."],
+          ["While the clock runs", "Locate as always; then read the attribution FRAME before the content, and endorse only where the writer does."],
+          ["If you are stuck", "Ask: if the writer were here, would they nod, shake their head, or shrug? Only the nod earns YES."],
+          ["Final minutes", "Spot-check YNNG answers for reported views you may have adopted — the attribution frame is the fastest re-check."],
+        ],
+      },
+      {
+        type: "summary",
+        points: [
+          "A passage holds four voices: the writer asserting, the writer conceding, reported others, and world facts.",
+          "Attribution frames ('critics argue', 'it is often said') hold views for their owners; endorsement phrases convert reports into the writer's.",
+          "Yes/No/Not Given tests the writer's views only — a matching reported view without endorsement is NOT GIVEN.",
+          "Concessions ('granted', 'admittedly') are held views: YES items sit on them as often as on assertions.",
+          "Answer the family the rubric names: TRUE on a views block and YES on a facts block both score zero.",
+        ],
+      },
+      {
+        type: "revision",
+        title: "Recall check",
+        intro: "One item per earlier module.",
+        items: [
+          { question: "Which verdict family tests the writer's views?", options: ["TRUE/FALSE/NOT GIVEN", "YES/NO/NOT GIVEN", "Both interchangeably"], correctIndex: 1, explanation: "Yes/No/Not Given asks whether the writer would agree; TRUE/FALSE asks whether the information is correct — the family is the rubric's first instruction.", from: "Understanding the reading test" },
+          { question: "What did the inference lesson license for 'nobody serious proposes that'?", options: ["One step: some non-serious people do", "Two steps: the field is corrupt", "No inference at all"], correctIndex: 0, explanation: "The one licensed consequence — attribution discipline tells you it describes others, not the writer's endorsement of them.", from: "Inference" },
+          { question: "Which support family feeds attribution questions most directly?", options: ["Figures", "Concessions and objections", "Mechanisms"], correctIndex: 1, explanation: "Concessions and objections are reported-voice support — the family matching features and YNNG items are built from.", from: "Locating supporting details" },
+        ],
+      },
+    ],
+    questions: [
+      ex({
+        type: "mcq",
+        difficulty: "easy",
+        skill: "reading",
+        prompt: "A Yes/No/Not Given statement matches a view the passage reports from critics, and the writer never endorses it. The verdict is…",
+        hints: ["Whose agreement does YES record?"],
+        options: [
+          { id: "a", text: "YES — the view is in the passage." },
+          { id: "b", text: "NOT GIVEN — the writer takes no position on the view; only the critics hold it." },
+          { id: "c", text: "NO — reported views are always rejected." },
+        ],
+        correctOptionId: "b",
+        feedback: fb(
+          "NOT GIVEN — the writer takes no position on the view; only the critics hold it.",
+          "YES records the writer's agreement: a view's presence in the passage is not its endorsement, and a bare report without endorsement phrases leaves the writer's stance unstated.",
+          "(a) attributes the critics' view to the writer — the classic attribution trap; (c) overcorrects.",
+        ),
+        tags: ["areading", "opinion", "attribution"],
+      }),
+      ex({
+        type: "read-answer",
+        difficulty: "medium",
+        skill: "reading",
+        prompt: "Guided practice. Name the voice holding each view.",
+        hints: ["Read the attribution frame before the content."],
+        passageTitle: "Voice drill",
+        passage: "Admittedly, the trial's sample was small enough to doubt. But the pattern was consistent across every site, and the fairest reading of the diaries is that the tram lines moved door-to-door times, not the weather.",
+        question: "The view that the sample was 'small enough to doubt' is held by…",
+        options: [
+          { id: "a", text: "Reported critics — it is their objection, not the writer's." },
+          { id: "b", text: "The writer — 'admittedly' opens a concession, which is a held view." },
+          { id: "c", text: "Nobody: it is a fact, not a view." },
+        ],
+        correctOptionId: "b",
+        feedback: fb(
+          "The writer — 'admittedly' opens a concession, which is a held view.",
+          "Concession signals ('admittedly', 'granted', 'it is true that') hold the conceded point for the writer: the 'but' that follows qualifies it, but the concession itself is the writer's own position, and YES items sit on exactly such sentences.",
+          "(a) misfiles the writer's own concession as a report; (c) ignores the evaluative phrase 'enough to doubt'.",
+        ),
+        tags: ["areading", "opinion", "concessions"],
+      }),
+      ex({
+        type: "mcq",
+        difficulty: "medium",
+        skill: "reading",
+        prompt: "Guided practice. Which phrase converts a reported view into the writer's?",
+        hints: ["Look for the phrase that puts the writer's weight behind the finding."],
+        options: [
+          { id: "a", text: "'Some researchers claim that…'" },
+          { id: "b", text: "'It is often said that…'" },
+          { id: "c", text: "'The evidence my team reviewed tells a different story.'" },
+        ],
+        correctOptionId: "c",
+        feedback: fb(
+          "'The evidence my team reviewed tells a different story.'",
+          "Endorsement phrases — 'my team reviewed', 'as X showed', 'the fairest conclusion' — put the writer's weight behind a claim and convert it from report to held view. Bare reporting frames keep the view with its owners.",
+          "(a) and (b) are pure reporting frames: the views stay with the researchers and the sayers.",
+        ),
+        tags: ["areading", "opinion", "endorsement"],
+      }),
+      ex({
+        type: "short-answer",
+        difficulty: "hard",
+        skill: "reading",
+        prompt: "Independent practice. List the four voices of the inventory.",
+        question: "Name the four voices in one short answer.",
+        acceptedAnswers: ["the writer asserting, the writer conceding, reported others, world facts", "writer's assertions, writer's concessions, reported views, facts", "asserting writer, conceding writer, reported voices, factual statements", "writer asserting, writer conceding, others reported, facts of the world"],
+        keywords: ["writer", "conceding", "reported", "facts"],
+        hints: [],
+        feedback: fb(
+          "The writer asserting; the writer conceding; reported others; world facts.",
+          "The inventory's four voices decide every verdict family's answers: YES/NO lives on the writer's two, attribution items live on the reported one, and TRUE/FALSE lives on the facts.",
+          "Lists that merge concessions into reports have lost the lesson's most tested distinction.",
+        ),
+        tags: ["areading", "opinion"],
+      }),
+      ex({
+        type: "mcq",
+        difficulty: "hard",
+        skill: "reading",
+        prompt: "Independent practice. A statement on a TRUE/FALSE block reads: 'The writer's own trial involved forty patients.' The passage reports trials by other researchers and never describes the writer's own. The verdict is…",
+        hints: [],
+        options: [
+          { id: "a", text: "FALSE — the writer clearly ran no trial." },
+          { id: "b", text: "TRUE — someone's trial had forty patients." },
+          { id: "c", text: "NOT GIVEN — the passage says nothing about the writer's own trials; biography is absent." },
+        ],
+        correctOptionId: "c",
+        feedback: fb(
+          "NOT GIVEN — the passage says nothing about the writer's own trials; biography is absent.",
+          "Statements about the writer's personal history test the same boundary as any other silence: other people's trials are present, the writer's are simply never mentioned, and silence is NOT GIVEN in both directions.",
+          "(a) infers absence of evidence as evidence of absence; (b) answers about the wrong subject entirely.",
+        ),
+        tags: ["areading", "opinion", "not-given"],
+      }),
+    ],
+    homework: [
+      "Underline every attribution frame in one library passage and label each W or R (writer or reported); then answer its YNNG block using only the W sentences.",
+      "Write three concession openers ('Granted…', 'Admittedly…', 'It is true that…') from any English opinion piece, and note what each writer concedes before their 'but'.",
+    ],
+  },
+  // ---------------------------------------------------------------------------
+  {
+    slug: "ielts-areading-purpose",
+    title: "The writer's purpose",
+    description:
+      "Why this text, for whom: informing, persuading, illustrating and entertaining — and the audience questions that follow the answer.",
+    objectives: [
+      "classify a text's purpose from its signals: inform, persuade, illustrate, warn, entertain",
+      "infer the intended audience from vocabulary, assumptions and address",
+      "answer 'why does the writer mention X?' items with function, not topic",
+    ],
+    minutes: 12,
+    blocks: [
+      {
+        type: "lesson-intro",
+        text: "Every passage was written for a reason and a reader, and the test asks about both: 'Why does the writer mention the gorilla experiment?' 'Who is this text intended for?' Purpose questions are function questions — the example serves the argument, the anecdote earns the attention, the warning protects the reader — and they are answered by asking what JOB each piece does, never what topic it touches.",
+        beforeYouStart: [
+          "You can separate claim from support from the main-ideas lesson.",
+          "You can recognise reported voices from the opinion lesson.",
+        ],
+      },
+      {
+        type: "table",
+        title: "Examination relevance",
+        headers: ["Aspect", "This lesson"],
+        rows: [
+          ["Section", "Reading — purpose and audience items on academic and GT passages"],
+          ["Task & question types", "'Why does the writer mention…?' MCQs; audience inference; GT texts' practical purposes"],
+          ["What is assessed", "Recognising purpose and function — why a text or an element exists"],
+          ["Why this matters", "Purpose items are cheap marks for function-thinking and expensive ones for topic-thinking"],
+        ],
+      },
+      { type: "heading", text: "The five purposes" },
+      {
+        type: "table",
+        title: "Purposes and their signals",
+        headers: ["Purpose", "Signals", "Example territory"],
+        rows: [
+          ["To inform", "Neutral reporting, definitions, balanced evidence", "Science explainers, history narratives"],
+          ["To persuade", "Conclusions urged, opponents answered, evaluative adjectives", "Opinion essays, policy arguments"],
+          ["To illustrate", "One vivid case standing for a general claim", "Anecdote openings, worked examples"],
+          ["To warn / advise", "Consequences stressed, instructions implied", "Policy documents, safety notes (GT)"],
+          ["To entertain / interest", "Narrative pleasure, colour, personality", "Feature journalism (GT Section 3)"],
+        ],
+        caption: "Most passages hold a primary purpose plus local functions: an informative history can still illustrate one claim with one diver's story.",
+      },
+      {
+        type: "steps",
+        title: "The function method for 'why does the writer mention X?'",
+        steps: [
+          { title: "Find X's neighbours — what comes before and after", text: "A mentioned element's job is visible in its wiring: the claim before it that X supports, or the claim after it that X earns. Read one sentence each side before reading options.", examples: [{ english: "The gorilla experiment sits between 'we experience seeing as a recording' and 'the experiment suggests otherwise' — its job is to break the folk model.", note: "Wiring reveals function." }] },
+          { title: "Name the function in one verb", text: "Illustrates, challenges, defines, qualifies, warns, contrasts, concedes — pick the verb that X performs for the surrounding argument. If you cannot name the verb, you have named the topic instead.", examples: [{ english: "The tram diary anecdote ILLUSTRATES the diaries' reliability — it does not 'add information about trams'.", note: "The verb is the answer's skeleton." }] },
+          { title: "Match the option that carries your verb", text: "Purpose options dress functions in different clothes; hunt the option whose verb matches yours. Options describing X's TOPIC — however accurately — are the engineered distractors.", examples: [{ english: "Options 'to describe how the machine worked' (topic) versus 'to show how strange the find was' (function) — the second matches the verb.", note: "Function options paraphrase the job." }] },
+          { title: "For audience: read the assumptions", text: "Audience lives in what the text assumes and how it addresses you: unexplained jargon assumes specialists; defined terms and step-by-step guidance assume learners; 'you' and imperatives assume actors (GT instructions).", examples: [{ english: "'Check the pack contains sixteen screws' — imperative, zero jargon: the reader is the assembler, a general audience.", note: "Address and assumption expose the reader." }] },
+        ],
+      },
+      {
+        type: "example",
+        title: "Purposes at work",
+        items: [
+          { english: "The Antikythera passage opens with a storm at sea — narrative colour whose job is to interest before the technical paragraphs arrive: a local 'entertain/interest' function inside an informative history.", note: "Primary purpose and local functions coexist.", domain: "exam" },
+          { english: "The placebo passage's court of sceptics: their boundary is mentioned to QUALIFY the finding — the writer concedes before concluding.", note: "Qualifying is a verb options will offer.", domain: "exam" },
+          { english: "GT warehouse induction: 'no one here has ever been in trouble for reporting one' — the sentence's job is to REASSURE, protecting the reporting culture.", note: "Workplace texts carry purpose in their reassurances.", domain: "exam" },
+          { english: "'Why does the writer mention the twenty-three umbrellas?' — their job is to AMUSE and humanise the lost-property notice; 'to list the items lost' is the topic-trap.", note: "GT notices test function in miniature.", domain: "exam" },
+          { english: "A learner takes one library passage and writes one verb beside each paragraph: narrates, explains, argues, concedes, concludes — then checks the verbs against the question set.", note: "Function-labelling is a two-minute study drill.", domain: "study" },
+          { english: "A candidate answers 'to give information about lighthouses' for the Alexandria sentence — and misses that its job was to establish antiquity, one step into the argument.", note: "Topic answers feel safe and score nothing.", domain: "exam" },
+        ],
+      },
+      {
+        type: "mistakes",
+        title: "Purpose mistakes corrected",
+        items: [
+          { wrong: "'Why does the writer mention X?' is asking what X is about.", right: "It asks what X DOES for the argument — name the function verb, then match the option that carries it.", reason: "Topic options are engineered to feel right: they describe X accurately while ignoring its job." },
+          { wrong: "A passage's purpose is always 'to inform' if it contains facts.", right: "Facts serve purposes: a persuasive essay is full of facts arranged to persuade — read the conclusions and evaluations for the primary purpose.", reason: "The verdict paragraphs, not the content type, declare the purpose." },
+          { wrong: "Audience questions are about who the passage mentions.", right: "Audience questions are about who the passage addresses — its assumptions, its jargon, its imperatives.", reason: "The passage's cast and its readership are different inventories." },
+        ],
+      },
+      {
+        type: "table",
+        title: "Examination strategy",
+        headers: ["Moment", "Do this"],
+        rows: [
+          ["Before you start", "Decide to think in verbs: every mentioned element performs one — find it before reading options."],
+          ["While the clock runs", "Read X's neighbours; name the function verb; match the option carrying that verb, not X's topic."],
+          ["If you are stuck", "Two options both functional? Choose the one serving the PARAGRAPH's claim — local functions serve local claims."],
+          ["Final minutes", "Spot-check purpose answers for topic-descriptions masquerading as functions."],
+        ],
+      },
+      {
+        type: "summary",
+        points: [
+          "Purpose is function: inform, persuade, illustrate, warn, entertain — decided by signals, not content type.",
+          "For 'why mention X?': read X's neighbours, name the function in one verb, then match the option carrying that verb.",
+          "Topic-describing options are the engineered distractors of purpose items — accuracy about X is not a function of X.",
+          "Audience lives in assumptions and address: jargon assumes specialists, definitions assume learners, imperatives assume actors.",
+          "Primary purpose and local functions coexist: an informative history can still illustrate one claim and open with one colour anecdote.",
+        ],
+      },
+      {
+        type: "revision",
+        title: "Recall check",
+        intro: "One item per earlier module.",
+        items: [
+          { question: "Which lesson separates the claim a paragraph serves from its examples?", options: ["Identifying main ideas", "Scanning", "The writer's opinion"], correctIndex: 0, explanation: "The claim-support distinction is the backbone of function questions: examples are mentioned to serve claims.", from: "Identifying main ideas" },
+          { question: "Concession signals ('granted', 'admittedly') hold views for whom?", options: ["The reported critics", "The writer", "Nobody in particular"], correctIndex: 1, explanation: "Concessions are the writer's held views — and mentioning them serves the purpose of qualifying before concluding.", from: "The writer's opinion" },
+          { question: "What does a purpose option that describes X's topic fail to carry?", options: ["A function verb — what X does for the argument", "A definition of X", "A paraphrase of X"], correctIndex: 0, explanation: "Topic options describe X accurately while omitting its job — the function verb is the missing organ.", from: "The function method" },
+        ],
+      },
+    ],
+    questions: [
+      ex({
+        type: "mcq",
+        difficulty: "easy",
+        skill: "reading",
+        prompt: "What is a purpose question really asking?",
+        hints: ["Topic or job?"],
+        options: [
+          { id: "a", text: "What the mentioned element is about." },
+          { id: "b", text: "What job the mentioned element performs for the passage's argument." },
+          { id: "c", text: "Where the mentioned element appears in the passage." },
+        ],
+        correctOptionId: "b",
+        feedback: fb(
+          "What job the mentioned element performs for the passage's argument.",
+          "Purpose is function: name the verb — illustrates, challenges, qualifies, reassures — and match the option that carries it. Topic-describing options feel accurate and score nothing.",
+          "(a) is the distractor workshop's favourite costume; (c) is location, not purpose.",
+        ),
+        tags: ["areading", "purpose"],
+      }),
+      ex({
+        type: "read-answer",
+        difficulty: "medium",
+        skill: "reading",
+        prompt: "Guided practice. Name the function of the mentioned element.",
+        hints: ["Read what comes immediately after the anecdote — that is its wiring."],
+        passageTitle: "Function drill",
+        passage: "The first candidate to be fitted with the device reported that the tones were 'like rain on a tent'. It was a charming image, and the engineers printed it on the first page of the manual — but the fitting data told a plainer story: adaptation took six weeks for every single user, the poets included.",
+        question: "Why does the writer mention the 'rain on a tent' remark?",
+        options: [
+          { id: "a", text: "To describe what the device sounds like." },
+          { id: "b", text: "To contrast a charming first impression with the plainer data that followed — the anecdote serves the contrast." },
+          { id: "c", text: "To criticise the engineers' manual." },
+        ],
+        correctOptionId: "b",
+        feedback: fb(
+          "To contrast a charming first impression with the plainer data that followed — the anecdote serves the contrast.",
+          "The anecdote's wiring gives it away: 'but the fitting data told a plainer story' — the remark exists to be outweighed, which is the function verb (contrasts), not the topic (sound).",
+          "(a) describes the topic with total accuracy and no function; (c) reads a criticism the passage never makes.",
+        ),
+        tags: ["areading", "purpose", "function"],
+      }),
+      ex({
+        type: "mcq",
+        difficulty: "medium",
+        skill: "reading",
+        prompt: "Guided practice. A GT text opens: 'Check the pack contains two side panels, four shelves and sixteen screws before starting.' Who is the intended reader?",
+        hints: ["Read the address and the assumptions."],
+        options: [
+          { id: "a", text: "Furniture retail staff." },
+          { id: "b", text: "The general buyer assembling the shelf at home — imperatives, zero jargon, step-by-step assumptions." },
+          { id: "c", text: "Professional carpenters." },
+        ],
+        correctOptionId: "b",
+        feedback: fb(
+          "The general buyer assembling the shelf at home — imperatives, zero jargon, step-by-step assumptions.",
+          "The imperative 'check', the plain vocabulary and the assumption of no prior skill together address a general audience of assemblers — audience lives in address and assumption.",
+          "(a) and (c) would tolerate jargon and skip instructions for the obvious.",
+        ),
+        tags: ["areading", "purpose", "audience"],
+      }),
+      ex({
+        type: "short-answer",
+        difficulty: "hard",
+        skill: "reading",
+        prompt: "Independent practice. Give the method for any 'why does the writer mention X?' item.",
+        question: "In one sentence: what are the three moves of the function method?",
+        acceptedAnswers: ["read X's neighbours, name the function in one verb, match the option that carries that verb", "read around X, name its job as a verb, choose the option with that verb", "check the sentences either side, state the function verb, match the option carrying it", "neighbours, function verb, verb-matched option"],
+        keywords: ["neighbours", "verb", "function"],
+        hints: [],
+        feedback: fb(
+          "Read X's neighbours, name the function in one verb, match the option that carries that verb.",
+          "The three moves make purpose items mechanical: the wiring shows the job, the verb states it, and only options carrying the verb are candidates.",
+          "Answers without the verb step leave the method open to topic-traps.",
+        ),
+        tags: ["areading", "purpose"],
+      }),
+      ex({
+        type: "mcq",
+        difficulty: "hard",
+        skill: "reading",
+        prompt: "Independent practice. A persuasive essay is packed with statistics. A candidate concludes its purpose is 'to inform'. What was missed?",
+        hints: [],
+        options: [
+          { id: "a", text: "Nothing — statistics mean information." },
+          { id: "b", text: "Facts serve purposes: read the verdict paragraphs — statistics arranged to urge a conclusion reveal persuasion, not neutrality." },
+          { id: "c", text: "The distinction between primary and secondary purposes, which cancels the question." },
+        ],
+        correctOptionId: "b",
+        feedback: fb(
+          "Facts serve purposes: read the verdict paragraphs — statistics arranged to urge a conclusion reveal persuasion, not neutrality.",
+          "Content type never settles purpose: the conclusions urged, the opponents answered and the evaluations offered are the signals, and a persuasive essay is exactly an informative costume worn by an arguing body.",
+          "(a) is the costume taken at face value; (c) invents a cancellation.",
+        ),
+        tags: ["areading", "purpose", "persuasion"],
+      }),
+    ],
+    homework: [
+      "Take one library passage and write one function verb beside every paragraph; then check the passage's questions for any purpose item your verbs answer.",
+      "Find a GT-style text (a notice, an instruction leaflet) in your daily life and write its purpose, its audience and the two signals that gave you each.",
+    ],
+  },
+];

@@ -1,0 +1,323 @@
+{
+  "id": "st02",
+  "order": 2,
+  "title": "Word Building and Vocabulary",
+  "cefr": "Pre-A1 → A1",
+  "goal": "Build the learner's first working vocabulary and word skills — from word structure and formation to 23 thematic word sets — with every word heard, said, read and used in context.",
+  "entryRequirements": ["st01-exit"],
+  "modules": [
+    {
+      "id": "st02-m01",
+      "title": "Word Knowledge",
+      "description": "What words are made of: structure, syllables, three- and four-letter words, spelling patterns, word families, compounds, prefixes, suffixes and word formation.",
+      "units": [
+        {
+          "id": "st02-m01-u01",
+          "title": "What Is a Word?",
+          "lessons": [
+            {"id": "st02-m01-u01-l01", "title": "What Is a Word? Word Structure", "cefr": "Pre-A1", "minutes": 12, "objectives": ["Explain what a word is", "Break a word into letters and sounds"], "topics": ["what-is-a-word", "word-structure", "letters-and-sounds"], "practice": ["count-the-words", "word-or-not", "break-the-word"], "assessment": "Count words in a sentence and split 5 words into letters", "skills": ["reading", "listening"]},
+            {"id": "st02-m01-u01-l02", "title": "Letters and Syllables", "cefr": "Pre-A1", "minutes": 12, "objectives": ["Hear syllable breaks in words", "Clap and count syllables"], "topics": ["syllables", "clapping-count", "word-parts"], "practice": ["clap-the-syllables", "count-syllables", "syllable-sorting"], "assessment": "Count syllables correctly in 8 of 10 words", "skills": ["listening", "speaking"]},
+            {"id": "st02-m01-u01-l03", "title": "Three-Letter and Four-Letter Words", "cefr": "Pre-A1", "minutes": 12, "objectives": ["Read and spell common three- and four-letter words", "Build words letter by letter"], "topics": ["cvc-words", "four-letter-words", "word-building"], "practice": ["build-the-word", "read-and-spell", "word-match"], "assessment": "Read and spell 16 of 20 short words", "skills": ["reading", "writing"]}
+          ],
+          "checkpoint": {"criteria": "Explain word structure, count syllables and read/spell short words", "passThreshold": 80}
+        },
+        {
+          "id": "st02-m01-u02",
+          "title": "Spelling Patterns and Families",
+          "lessons": [
+            {"id": "st02-m01-u02-l01", "title": "Common Spelling Patterns", "cefr": "Pre-A1", "minutes": 12, "objectives": ["Read CVC, CVCe and double-letter patterns", "Choose the right pattern when spelling"], "topics": ["cvc-pattern", "magic-e", "double-letters", "patterns-have-exceptions"], "practice": ["pattern-sorting", "finish-the-spelling", "pattern-quiz"], "assessment": "Apply spelling patterns to 8 of 10 words and flag 2 known exceptions", "skills": ["reading", "writing"]},
+            {"id": "st02-m01-u02-l02", "title": "Word Families", "cefr": "Pre-A1", "minutes": 12, "objectives": ["Read word families like -at, -an, -ing and -og", "Build new words by swapping onset letters"], "topics": ["word-families", "onset-rime", "family-building"], "practice": ["family-builder", "read-the-family", "odd-one-out"], "assessment": "Generate 6 of 8 correct family members from a rime", "skills": ["reading"]}
+          ],
+          "checkpoint": {"criteria": "Use spelling patterns and word families when reading and spelling", "passThreshold": 80}
+        },
+        {
+          "id": "st02-m01-u03",
+          "title": "Building Words",
+          "lessons": [
+            {"id": "st02-m01-u03-l01", "title": "Compound Words", "cefr": "A1", "minutes": 12, "objectives": ["Build compounds from two words like bedroom and raincoat", "Split compounds into their parts"], "topics": ["compound-words", "word-plus-word", "compound-meaning"], "practice": ["compound-builder", "split-the-compound", "match-meanings"], "assessment": "Build or split 8 of 10 compound words with correct meaning", "skills": ["reading", "writing"]},
+            {"id": "st02-m01-u03-l02", "title": "Prefixes", "cefr": "A1", "minutes": 12, "objectives": ["Understand how un- and re- change meaning", "Decode new words using prefixes"], "topics": ["prefixes", "un-", "re-", "meaning-change"], "practice": ["prefix-match", "build-with-prefixes", "meaning-quiz"], "assessment": "Explain and use 8 of 10 prefixed words correctly", "skills": ["reading", "writing"]},
+            {"id": "st02-m01-u03-l03", "title": "Suffixes", "cefr": "A1", "minutes": 12, "objectives": ["Understand how -s, -er and -ing attach to words", "Form correct spelling changes when adding suffixes"], "topics": ["suffixes", "-s", "-er", "-ing", "spelling-changes"], "practice": ["suffix-adder", "choose-the-suffix", "spelling-dictation"], "assessment": "Add suffixes correctly to 8 of 10 base words", "skills": ["reading", "writing"]},
+            {"id": "st02-m01-u03-l04", "title": "Word Formation Overview", "cefr": "A1", "minutes": 10, "objectives": ["Combine families, compounds, prefixes and suffixes to grow vocabulary", "Explain how a new word was built"], "topics": ["word-formation", "word-parts-strategy", "vocabulary-growth"], "practice": ["word-building-challenge", "explain-the-word", "mixed-quiz"], "assessment": "Build and explain 6 of 8 target words from parts", "skills": ["reading", "writing", "speaking"]}
+          ],
+          "checkpoint": {"criteria": "Build words with compounds, prefixes and suffixes and explain their structure", "passThreshold": 80}
+        }
+      ]
+    },
+    {
+      "id": "st02-m02",
+      "title": "Word Meaning and Relationships",
+      "description": "How words relate: singular and plural forms, synonyms, antonyms, homophones, homonyms, collocations and a first look at phrasal verbs.",
+      "units": [
+        {
+          "id": "st02-m02-u01",
+          "title": "Word Forms",
+          "lessons": [
+            {"id": "st02-m02-u01-l01", "title": "Singular and Plural Forms", "cefr": "A1", "minutes": 12, "objectives": ["Form regular plurals with -s and -es", "Recognise common irregular plurals like children and feet"], "topics": ["singular-plural", "regular-plurals", "irregular-plurals"], "practice": ["plural-transformer", "odd-one-out", "spelling-dictation"], "assessment": "Form 16 of 20 plurals correctly including 4 irregulars", "skills": ["reading", "writing", "listening"]}
+          ],
+          "checkpoint": {"criteria": "Transform singular to plural including common irregular forms", "passThreshold": 80}
+        },
+        {
+          "id": "st02-m02-u02",
+          "title": "Meaning Relations",
+          "lessons": [
+            {"id": "st02-m02-u02-l01", "title": "Synonyms", "cefr": "A1", "minutes": 12, "objectives": ["Match words with similar meanings like big and large", "Choose the best synonym for a context"], "topics": ["synonyms", "similar-meaning", "word-choice"], "practice": ["synonym-match", "best-choice-quiz", "word-map"], "assessment": "Match 8 of 10 synonym pairs and use one in a sentence", "skills": ["reading", "writing"]},
+            {"id": "st02-m02-u02-l02", "title": "Antonyms", "cefr": "A1", "minutes": 12, "objectives": ["Match opposite word pairs like hot and cold", "Use antonym pairs in simple sentences"], "topics": ["antonyms", "opposites", "contrast"], "practice": ["opposites-match", "complete-the-pair", "sentence-writing"], "assessment": "Match 9 of 10 antonym pairs", "skills": ["reading", "writing"]},
+            {"id": "st02-m02-u02-l03", "title": "Homophones", "cefr": "A1", "minutes": 12, "objectives": ["Hear that words like to, two and too sound the same", "Choose the correct homophone in writing"], "topics": ["homophones", "same-sound-different-spelling", "to-two-too"], "practice": ["choose-the-spelling", "listen-and-choose", "sentence-fill"], "assessment": "Choose correct homophones in 8 of 10 sentences", "skills": ["listening", "reading", "writing"]},
+            {"id": "st02-m02-u02-l04", "title": "Homonyms", "cefr": "A1", "minutes": 12, "objectives": ["Understand words with one form and two meanings like bat", "Decide meaning from context"], "topics": ["homonyms", "multiple-meanings", "context-clues"], "practice": ["two-meanings-quiz", "context-choose", "draw-both-meanings"], "assessment": "Explain both meanings of 6 of 8 homonyms with examples", "skills": ["reading", "listening"]},
+            {"id": "st02-m02-u02-l05", "title": "Collocations", "cefr": "A1", "minutes": 12, "objectives": ["Recognise natural word partners like make coffee and do homework", "Reject unnatural pairings"], "topics": ["collocations", "word-partners", "natural-english"], "practice": ["collocation-match", "natural-or-not", "complete-the-phrase"], "assessment": "Choose the natural collocation in 8 of 10 items", "skills": ["reading", "listening"]}
+          ],
+          "checkpoint": {"criteria": "Navigate synonyms, antonyms, homophones, homonyms and collocations", "passThreshold": 80}
+        },
+        {
+          "id": "st02-m02-u03",
+          "title": "Multi-Word Verbs",
+          "lessons": [
+            {"id": "st02-m02-u03-l01", "title": "Phrasal Verbs: Introduction", "cefr": "A1", "minutes": 12, "objectives": ["Understand that verb plus particle makes a new meaning like get up", "Use 6 high-frequency phrasal verbs"], "topics": ["phrasal-verbs", "verb-plus-particle", "get-up-stand-up"], "practice": ["match-the-meaning", "fill-the-particle", "mini-dialogues"], "assessment": "Use 5 of 6 target phrasal verbs correctly in context", "skills": ["reading", "listening", "speaking"]}
+          ],
+          "checkpoint": {"criteria": "Recognise and use the six target phrasal verbs", "passThreshold": 80}
+        }
+      ]
+    },
+    {
+      "id": "st02-m03",
+      "title": "People and Emotions",
+      "description": "Thematic vocabulary for people, relationships, family and emotions — the first full thematic sets, taught to the 12-field vocabulary standard.",
+      "units": [
+        {
+          "id": "st02-m03-u01",
+          "title": "People and Relationships",
+          "lessons": [
+            {"id": "st02-m03-u01-l01", "title": "People Words: Who We Are", "cefr": "A1", "minutes": 12, "objectives": ["Learn 10-12 core people words like man, woman, boy and friend", "Describe who someone is in one sentence"], "topics": ["people", "man-woman-friend", "describing-people"], "practice": ["vocab-cards", "listen-and-choose", "describe-the-picture"], "assessment": "Recognise and produce all core people words; describe 3 pictures", "skills": ["listening", "speaking", "reading", "writing"]},
+            {"id": "st02-m03-u01-l02", "title": "Relationships: Family, Friends and Others", "cefr": "A1", "minutes": 12, "objectives": ["Learn relationship words like neighbour, classmate and best friend", "Talk about who people are to you"], "topics": ["relationships", "neighbour-classmate", "social-words"], "practice": ["vocab-cards", "word-to-definition", "speaking-prompts"], "assessment": "Use 8 of 10 relationship words in sentences about your life", "skills": ["listening", "speaking", "reading", "writing"]}
+          ],
+          "checkpoint": {"criteria": "Use people and relationship vocabulary accurately in description and dialogue", "passThreshold": 80}
+        },
+        {
+          "id": "st02-m03-u02",
+          "title": "Family",
+          "lessons": [
+            {"id": "st02-m03-u02-l01", "title": "Family Members", "cefr": "A1", "minutes": 12, "objectives": ["Learn 14-16 family words from mother to grandparents", "Ask and answer the question: Is this your family member?"], "topics": ["family", "mother-father-sister", "family-questions"], "practice": ["vocab-cards", "family-tree", "listen-and-identify"], "assessment": "Name 14 of 16 family members on a family tree from audio", "skills": ["listening", "speaking", "reading", "writing"]},
+            {"id": "st02-m03-u02-l02", "title": "Talking about Your Family", "cefr": "A1", "minutes": 12, "objectives": ["Describe your family in 3-4 sentences", "Understand a simple family introduction dialogue"], "topics": ["family-description", "have-got", "family-dialogue"], "practice": ["guided-dialogue", "speaking-prompts", "listening-comprehension"], "assessment": "Speak 4 sentences about your family and answer 3 questions", "skills": ["listening", "speaking"]}
+          ],
+          "checkpoint": {"criteria": "Describe a family accurately and understand family dialogues", "passThreshold": 80}
+        },
+        {
+          "id": "st02-m03-u03",
+          "title": "Emotions",
+          "lessons": [
+            {"id": "st02-m03-u03-l01", "title": "Feelings and Emotions", "cefr": "A1", "minutes": 12, "objectives": ["Learn 12 feeling words from happy to tired", "Say how you feel today and why in one sentence"], "topics": ["emotions", "happy-sad-tired", "how-are-you"], "practice": ["vocab-cards", "face-match", "how-do-you-feel-dialogue"], "assessment": "Match 11 of 12 emotion words to situations and use them in answers", "skills": ["listening", "speaking", "reading", "writing"]}
+          ],
+          "checkpoint": {"criteria": "Name emotions and express feelings in simple sentences", "passThreshold": 80}
+        }
+      ]
+    },
+    {
+      "id": "st02-m04",
+      "title": "Body and Health",
+      "description": "Body parts, describing people, health and illness vocabulary, and first doctor conversations.",
+      "units": [
+        {
+          "id": "st02-m04-u01",
+          "title": "Body",
+          "lessons": [
+            {"id": "st02-m04-u01-l01", "title": "Parts of the Body", "cefr": "A1", "minutes": 12, "objectives": ["Learn 14-16 body words from head to feet", "Point to and name body parts on request"], "topics": ["body-parts", "head-hands-feet", "touch-and-name"], "practice": ["vocab-cards", "listen-and-point", "body-quiz"], "assessment": "Name 14 of 16 body parts; respond to 8 touch-and-name prompts", "skills": ["listening", "speaking", "reading", "writing"]},
+            {"id": "st02-m04-u01-l02", "title": "Describing People and Bodies", "cefr": "A1", "minutes": 12, "objectives": ["Describe height, hair and age with simple adjectives", "Understand descriptions and identify the person"], "topics": ["physical-description", "tall-short-hair", "identifying-people"], "practice": ["describe-the-picture", "guess-who", "listening-comprehension"], "assessment": "Describe 2 people so a listener identifies them from 4 options", "skills": ["listening", "speaking", "reading"]}
+          ],
+          "checkpoint": {"criteria": "Name body parts and describe people physically", "passThreshold": 80}
+        },
+        {
+          "id": "st02-m04-u02",
+          "title": "Health",
+          "lessons": [
+            {"id": "st02-m04-u02-l01", "title": "Health and Illness Words", "cefr": "A1", "minutes": 12, "objectives": ["Learn illness words like headache, cold and fever", "Say what hurts using My ... hurts"], "topics": ["health", "illness-words", "my-head-hurts"], "practice": ["vocab-cards", "what-is-the-matter", "match-symptom-to-picture"], "assessment": "Match 10 of 12 illness words to situations and produce My...hurts sentences", "skills": ["listening", "speaking", "reading", "writing"]},
+            {"id": "st02-m04-u02-l02", "title": "At the Doctor: First Conversation", "cefr": "A1", "minutes": 12, "objectives": ["Follow and produce a 6-line doctor dialogue", "Answer the questions: How do you feel, and what hurts?"], "topics": ["doctor-conversation", "symptoms", "simple-advice"], "practice": ["guided-dialogue", "role-play", "listening-comprehension"], "assessment": "Complete a doctor role-play exchanging 6 turns", "skills": ["listening", "speaking"]}
+          ],
+          "checkpoint": {"criteria": "Describe symptoms and complete a first doctor conversation", "passThreshold": 80}
+        }
+      ]
+    },
+    {
+      "id": "st02-m05",
+      "title": "Home, Food and Clothes",
+      "description": "Everyday living vocabulary: rooms, furniture, household objects, food and drink, meals, clothes and describing what people wear.",
+      "units": [
+        {
+          "id": "st02-m05-u01",
+          "title": "Home",
+          "lessons": [
+            {"id": "st02-m05-u01-l01", "title": "Rooms and Furniture", "cefr": "A1", "minutes": 12, "objectives": ["Learn 12-14 words for rooms and main furniture", "Describe where things are in a home"], "topics": ["home", "rooms", "furniture"], "practice": ["vocab-cards", "find-the-room", "describe-the-house"], "assessment": "Label 12 of 14 rooms and furniture items correctly", "skills": ["listening", "speaking", "reading", "writing"]},
+            {"id": "st02-m05-u01-l02", "title": "Things at Home", "cefr": "A1", "minutes": 12, "objectives": ["Learn 12 household objects from chair to window", "Say what is in a room using there is / there are"], "topics": ["household-objects", "there-is-there-are", "home-inventory"], "practice": ["vocab-cards", "what-is-in-the-room", "listening-comprehension"], "assessment": "Describe a room with 5 correct there is/are sentences", "skills": ["listening", "speaking", "reading", "writing"]}
+          ],
+          "checkpoint": {"criteria": "Describe a home: rooms, furniture and objects with there is/are", "passThreshold": 80}
+        },
+        {
+          "id": "st02-m05-u02",
+          "title": "Food",
+          "lessons": [
+            {"id": "st02-m05-u02-l01", "title": "Food and Drink", "cefr": "A1", "minutes": 12, "objectives": ["Learn 16 core food and drink words", "Sort foods into categories like fruit, drink and meat"], "topics": ["food", "drink", "food-categories"], "practice": ["vocab-cards", "food-sorting", "listen-and-choose"], "assessment": "Recognise all core food words and sort 14 of 16 into categories", "skills": ["listening", "speaking", "reading", "writing"]},
+            {"id": "st02-m05-u02-l02", "title": "Meals and Eating", "cefr": "A1", "minutes": 12, "objectives": ["Use meal words breakfast, lunch and dinner with times", "Say what you like, love and do not like"], "topics": ["meals", "like-dislike", "eating-habits"], "practice": ["guided-dialogue", "like-dislike-survey", "speaking-prompts"], "assessment": "Talk about your meals and preferences in 5 sentences", "skills": ["listening", "speaking", "reading"]}
+          ],
+          "checkpoint": {"criteria": "Name foods and meals and express likes and dislikes", "passThreshold": 80}
+        },
+        {
+          "id": "st02-m05-u03",
+          "title": "Clothes",
+          "lessons": [
+            {"id": "st02-m05-u03-l01", "title": "Clothes and Accessories", "cefr": "A1", "minutes": 12, "objectives": ["Learn 12-14 clothing words from shirt to shoes", "Match clothes to weather and situations"], "topics": ["clothes", "accessories", "clothes-for-weather"], "practice": ["vocab-cards", "dress-the-person", "listen-and-choose"], "assessment": "Name 12 of 14 clothing items and match 8 to situations", "skills": ["listening", "speaking", "reading", "writing"]},
+            {"id": "st02-m05-u03-l02", "title": "Describing Clothes", "cefr": "A1", "minutes": 12, "objectives": ["Describe what someone is wearing with colours", "Identify a person from a clothing description"], "topics": ["describing-clothes", "wearing", "colour-plus-noun"], "practice": ["describe-and-guess", "listening-comprehension", "picture-description"], "assessment": "Describe 2 people's clothing so a listener identifies them", "skills": ["listening", "speaking", "reading"]}
+          ],
+          "checkpoint": {"criteria": "Name clothes and describe what people are wearing", "passThreshold": 80}
+        }
+      ]
+    },
+    {
+      "id": "st02-m06",
+      "title": "Numbers, Time, Colours and Shopping",
+      "description": "The number system, telling the time, days, months and dates, colours, shops, products, money and prices.",
+      "units": [
+        {
+          "id": "st02-m06-u01",
+          "title": "Numbers",
+          "lessons": [
+            {"id": "st02-m06-u01-l01", "title": "Numbers 1-20", "cefr": "A1", "minutes": 12, "objectives": ["Count from 1 to 20 aloud", "Recognise numbers heard quickly"], "topics": ["numbers-1-20", "counting", "number-recognition"], "practice": ["count-aloud", "number-bingo", "listen-and-write-numbers"], "assessment": "Count 1-20 and identify 10 of 12 numbers by ear", "skills": ["listening", "speaking", "reading", "writing"]},
+            {"id": "st02-m06-u01-l02", "title": "Numbers 20-100 and Beyond", "cefr": "A1", "minutes": 12, "objectives": ["Say and understand numbers to 100 and to 1000", "Use numbers for ages, quantities and years"], "topics": ["numbers-20-100", "hundreds", "ages-and-years"], "practice": ["number-dictation", "how-many-quiz", "price-quiz"], "assessment": "Write 8 of 10 dictated numbers correctly; say 5 ages and years", "skills": ["listening", "speaking", "reading", "writing"]}
+          ],
+          "checkpoint": {"criteria": "Count, understand and use numbers to 100 and beyond", "passThreshold": 80}
+        },
+        {
+          "id": "st02-m06-u02",
+          "title": "Time",
+          "lessons": [
+            {"id": "st02-m06-u02-l01", "title": "Telling the Time", "cefr": "A1", "minutes": 12, "objectives": ["Say times with o'clock, half past and quarter past/to", "Ask and answer the question: What time is it?"], "topics": ["telling-time", "oclock-half-past", "daily-times"], "practice": ["clock-reading", "listen-and-set-the-clock", "time-dialogues"], "assessment": "Tell 8 of 10 clock times correctly and ask for the time", "skills": ["listening", "speaking", "reading"]}
+          ],
+          "checkpoint": {"criteria": "Tell the time and exchange times in dialogue", "passThreshold": 80}
+        },
+        {
+          "id": "st02-m06-u03",
+          "title": "Days and Months",
+          "lessons": [
+            {"id": "st02-m06-u03-l01", "title": "Days, Months and Dates", "cefr": "A1", "minutes": 12, "objectives": ["Say the days of the week and months in order", "Say and write dates like the 3rd of May"], "topics": ["days", "months", "dates", "ordinals-intro"], "practice": ["sequence-the-months", "date-writing", "calendar-quiz"], "assessment": "Order all months and write 5 dates correctly", "skills": ["listening", "speaking", "reading", "writing"]}
+          ],
+          "checkpoint": {"criteria": "Use days, months and dates accurately", "passThreshold": 80}
+        },
+        {
+          "id": "st02-m06-u04",
+          "title": "Colours",
+          "lessons": [
+            {"id": "st02-m06-u04-l01", "title": "Colours and Shades", "cefr": "A1", "minutes": 12, "objectives": ["Learn 10-12 colour words", "Describe objects with colour plus noun order"], "topics": ["colours", "colour-adjectives", "adjective-order-intro"], "practice": ["vocab-cards", "colour-the-picture", "describe-and-draw"], "assessment": "Use 10 colour words correctly in descriptions", "skills": ["listening", "speaking", "reading", "writing"]}
+          ],
+          "checkpoint": {"criteria": "Describe things using colour vocabulary correctly", "passThreshold": 80}
+        },
+        {
+          "id": "st02-m06-u05",
+          "title": "Shopping",
+          "lessons": [
+            {"id": "st02-m06-u05-l01", "title": "Shops and Products", "cefr": "A1", "minutes": 12, "objectives": ["Learn shop types and common products", "Say where you buy things"], "topics": ["shops", "products", "where-to-buy"], "practice": ["vocab-cards", "match-shop-to-product", "listen-and-choose"], "assessment": "Match 10 of 12 products to the right shop", "skills": ["listening", "speaking", "reading", "writing"]},
+            {"id": "st02-m06-u05-l02", "title": "Money and Prices", "cefr": "A1", "minutes": 12, "objectives": ["Ask and say prices: How much is it?", "Understand prices said aloud and written"], "topics": ["money", "prices", "how-much"], "practice": ["price-quiz", "listen-and-write-prices", "shopping-dialogue"], "assessment": "Complete a 6-turn shopping dialogue including price questions", "skills": ["listening", "speaking", "reading", "writing"]}
+          ],
+          "checkpoint": {"criteria": "Shop vocabulary mastery: products, shops, money and prices in dialogue", "passThreshold": 80}
+        }
+      ]
+    },
+    {
+      "id": "st02-m07",
+      "title": "The World Around Us",
+      "description": "Weather, animals, transport, travel words and travel situations, and nature and environment vocabulary.",
+      "units": [
+        {
+          "id": "st02-m07-u01",
+          "title": "Weather",
+          "lessons": [
+            {"id": "st02-m07-u01-l01", "title": "Weather Words", "cefr": "A1", "minutes": 12, "objectives": ["Learn 10-12 weather words from sunny to snowy", "Ask and answer the question: What is the weather like?"], "topics": ["weather", "sunny-rainy-windy", "weather-questions"], "practice": ["vocab-cards", "weather-map", "describe-today"], "assessment": "Describe 6 weather pictures and answer the weather question", "skills": ["listening", "speaking", "reading", "writing"]}
+          ],
+          "checkpoint": {"criteria": "Describe weather and exchange weather information", "passThreshold": 80}
+        },
+        {
+          "id": "st02-m07-u02",
+          "title": "Animals",
+          "lessons": [
+            {"id": "st02-m07-u02-l01", "title": "Animals and Pets", "cefr": "A1", "minutes": 12, "objectives": ["Learn 12-14 animal words including pets and farm animals", "Say which animals you like and have"], "topics": ["animals", "pets", "farm-animals"], "practice": ["vocab-cards", "animal-sounds-match", "like-and-have-quiz"], "assessment": "Name 12 of 14 animals and talk about pets in 3 sentences", "skills": ["listening", "speaking", "reading", "writing"]}
+          ],
+          "checkpoint": {"criteria": "Name animals and talk about them simply", "passThreshold": 80}
+        },
+        {
+          "id": "st02-m07-u03",
+          "title": "Transportation",
+          "lessons": [
+            {"id": "st02-m07-u03-l01", "title": "Transport and Getting Around", "cefr": "A1", "minutes": 12, "objectives": ["Learn 10-12 transport words", "Say how you travel: by bus, by car, on foot"], "topics": ["transport", "by-bus-by-car", "getting-around"], "practice": ["vocab-cards", "how-do-you-travel", "match-transport-to-place"], "assessment": "Use 10 transport words and by-phrases correctly", "skills": ["listening", "speaking", "reading", "writing"]}
+          ],
+          "checkpoint": {"criteria": "Name transport modes and describe how you travel", "passThreshold": 80}
+        },
+        {
+          "id": "st02-m07-u04",
+          "title": "Travel",
+          "lessons": [
+            {"id": "st02-m07-u04-l01", "title": "Travel Words and Places", "cefr": "A1", "minutes": 12, "objectives": ["Learn 12-14 travel words from ticket to suitcase", "Understand simple travel announcements"], "topics": ["travel", "ticket-luggage", "travel-places"], "practice": ["vocab-cards", "announcement-listening", "word-to-picture"], "assessment": "Recognise all travel words and understand 3 announcements", "skills": ["listening", "speaking", "reading", "writing"]},
+            {"id": "st02-m07-u04-l02", "title": "Travel Situations: Airport and Hotel", "cefr": "A1", "minutes": 12, "objectives": ["Handle check-in and simple airport situations", "Ask 3 hotel questions: room, key, breakfast"], "topics": ["airport", "hotel-check-in", "travel-dialogues"], "practice": ["role-play", "guided-dialogue", "listening-comprehension"], "assessment": "Complete airport and hotel role-plays of 6 turns each", "skills": ["listening", "speaking"]}
+          ],
+          "checkpoint": {"criteria": "Use travel vocabulary in airport and hotel situations", "passThreshold": 80}
+        },
+        {
+          "id": "st02-m07-u05",
+          "title": "Environment",
+          "lessons": [
+            {"id": "st02-m07-u05-l01", "title": "Nature and the Environment", "cefr": "A1", "minutes": 12, "objectives": ["Learn 10-12 nature words like tree, river and sky", "Describe a simple natural scene"], "topics": ["nature", "environment", "tree-river-sky"], "practice": ["vocab-cards", "describe-the-scene", "listen-and-choose"], "assessment": "Describe a nature scene using 8 target words", "skills": ["listening", "speaking", "reading", "writing"]}
+          ],
+          "checkpoint": {"criteria": "Use nature and environment vocabulary to describe scenes", "passThreshold": 80}
+        }
+      ]
+    },
+    {
+      "id": "st02-m08",
+      "title": "School, Work and Society",
+      "description": "Education and classroom words, jobs, the workplace, everyday technology, and people and places in society.",
+      "units": [
+        {
+          "id": "st02-m08-u01",
+          "title": "Education",
+          "lessons": [
+            {"id": "st02-m08-u01-l01", "title": "School and University Words", "cefr": "A1", "minutes": 12, "objectives": ["Learn 12-14 school words from teacher to student", "Describe your school simply"], "topics": ["school", "teacher-student", "school-places"], "practice": ["vocab-cards", "label-the-school", "describe-your-school"], "assessment": "Label 12 of 14 school items and describe your school in 3 sentences", "skills": ["listening", "speaking", "reading", "writing"]},
+            {"id": "st02-m08-u01-l02", "title": "Subjects and the Classroom", "cefr": "A1", "minutes": 12, "objectives": ["Name school subjects like maths and history", "Follow 8 classroom instructions"], "topics": ["subjects", "classroom-language", "instructions"], "practice": ["subject-quiz", "listen-and-do", "classroom-dialogue"], "assessment": "Match 8 subjects and respond to 8 classroom instructions", "skills": ["listening", "speaking", "reading"]}
+          ],
+          "checkpoint": {"criteria": "Use school vocabulary and follow classroom language", "passThreshold": 80}
+        },
+        {
+          "id": "st02-m08-u02",
+          "title": "Jobs",
+          "lessons": [
+            {"id": "st02-m08-u02-l01", "title": "Jobs and Work Words", "cefr": "A1", "minutes": 12, "objectives": ["Learn 12-14 job words from doctor to driver", "Ask the question: What do you do?"], "topics": ["jobs", "what-do-you-do", "workplaces"], "practice": ["vocab-cards", "guess-the-job", "job-dialogues"], "assessment": "Name 12 of 14 jobs and exchange what-do-you-do dialogues", "skills": ["listening", "speaking", "reading", "writing"]},
+            {"id": "st02-m08-u02-l02", "title": "Describing Your Job", "cefr": "A1", "minutes": 12, "objectives": ["Say where you work and what you do in 3 sentences", "Understand simple job descriptions"], "topics": ["job-description", "work-activities", "i-work-in"], "practice": ["speaking-prompts", "listening-comprehension", "match-job-to-description"], "assessment": "Describe a real or imagined job in 4 sentences", "skills": ["listening", "speaking", "reading"]}
+          ],
+          "checkpoint": {"criteria": "Talk about jobs: names, workplaces and activities", "passThreshold": 80}
+        },
+        {
+          "id": "st02-m08-u03",
+          "title": "Workplace",
+          "lessons": [
+            {"id": "st02-m08-u03-l01", "title": "The Workplace and Office Words", "cefr": "A2", "minutes": 12, "objectives": ["Learn 12 office words from meeting to colleague", "Describe a typical workplace"], "topics": ["workplace", "office-words", "meetings"], "practice": ["vocab-cards", "label-the-office", "describe-the-workplace"], "assessment": "Use 12 workplace words correctly in descriptions", "skills": ["listening", "speaking", "reading", "writing"]},
+            {"id": "st02-m08-u03-l02", "title": "Colleagues and Work Life", "cefr": "A2", "minutes": 12, "objectives": ["Talk about colleagues and work routines", "Understand a simple workplace dialogue"], "topics": ["colleagues", "work-routines", "office-dialogues"], "practice": ["guided-dialogue", "listening-comprehension", "speaking-prompts"], "assessment": "Talk about work life in 4-5 sentences and understand a workplace dialogue", "skills": ["listening", "speaking", "reading"]}
+          ],
+          "checkpoint": {"criteria": "Discuss workplaces, colleagues and routines with core office vocabulary", "passThreshold": 80}
+        },
+        {
+          "id": "st02-m08-u04",
+          "title": "Technology",
+          "lessons": [
+            {"id": "st02-m08-u04-l01", "title": "Everyday Technology", "cefr": "A2", "minutes": 12, "objectives": ["Learn 12 technology words from phone to internet", "Say which devices you use and what for"], "topics": ["technology", "devices", "everyday-tech"], "practice": ["vocab-cards", "tech-quiz", "i-use-it-for"], "assessment": "Use all 12 technology words and describe 3 devices you use", "skills": ["listening", "speaking", "reading", "writing"]},
+            {"id": "st02-m08-u04-l02", "title": "Using Phones and Computers", "cefr": "A2", "minutes": 12, "objectives": ["Use action words like send, download and charge", "Handle simple digital situations: password, message, app"], "topics": ["tech-actions", "send-download-charge", "digital-situations"], "practice": ["action-match", "digital-dialogues", "listen-and-choose"], "assessment": "Complete a phone-help dialogue using 6 tech action words", "skills": ["listening", "speaking", "reading", "writing"]}
+          ],
+          "checkpoint": {"criteria": "Use everyday technology vocabulary for devices, actions and situations", "passThreshold": 80}
+        },
+        {
+          "id": "st02-m08-u05",
+          "title": "Society",
+          "lessons": [
+            {"id": "st02-m08-u05-l01", "title": "People and Places in Society", "cefr": "A2", "minutes": 12, "objectives": ["Learn 10-12 words for places and roles in society like city, village and police officer", "Describe where you live"], "topics": ["society", "city-village", "community-roles"], "practice": ["vocab-cards", "describe-your-town", "who-helps-us"], "assessment": "Use 10 society words in a description of where you live", "skills": ["listening", "speaking", "reading", "writing"]}
+          ],
+          "checkpoint": {"criteria": "Describe community and society with the target vocabulary", "passThreshold": 80}
+        }
+      ]
+    }
+  ],
+  "exitAssessment": {"id": "st02-exit", "title": "Word Builder Exit Test", "criteria": "Word structure and formation (compounds, prefixes, suffixes); plural forms; meaning relations (synonyms, antonyms, homophones); listening recognition of 60+ thematic words across all 23 themes; production of 40+ words in context; first dialogues (family, shopping, doctor).", "passThreshold": 75, "minutes": 25, "unlocks": ["st03"]}
+}

@@ -1,0 +1,1667 @@
+/**
+ * Chapter 1A — Writing foundations (Part A).
+ *
+ * The first six lessons of the Writing Masterclass foundations chapter:
+ * the printed instructions, question requirements, planning, paragraph
+ * organisation, grammar accuracy and vocabulary. Every strategy is taught
+ * on original practice material written in the shape of the test — never
+ * reproduced exam content — and every band reference reads as an estimate.
+ */
+
+import type { LessonSpec } from "../types";
+import { ex, fb } from "../types";
+
+export const awritingFoundationsLessonsA: LessonSpec[] = [
+  // ---------------------------------------------------------------------------
+  {
+    slug: "ielts-awriting-instructions",
+    title: "Understanding task instructions",
+    description:
+      "The printed band above every task is a scoring contract: what the summary rubric, the reasons-and-examples rubric, the word limits and the fixed openings each require of your answer.",
+    objectives: [
+      "decode every printed instruction verb into a concrete deliverable your answer must contain",
+      "treat the 150-word and 250-word minima as scoring rules with band consequences",
+      "keep the report, the argument and the letter in their separate genres",
+    ],
+    minutes: 14,
+    blocks: [
+      {
+        type: "lesson-intro",
+        text: "Every IELTS Writing task arrives with a printed instruction band above the answer space, and most candidates read it once, in their first practice, and never again. That band is not decoration: each of its lines is a requirement the examiner will check your answer against, from the summary verb of Task 1 to the word limit at the bottom. This lesson converts the printed wording into a deliverables list you can hold in your head while you write — the cheapest band-protection on the whole paper.",
+        beforeYouStart: [
+          "You know the paper's two-task shape and its 20/40 minute guidance from the Fundamentals module.",
+          "You can name the four Writing criteria and the double weight of Task 2.",
+        ],
+      },
+      {
+        type: "table",
+        title: "Examination relevance",
+        headers: ["Aspect", "This lesson"],
+        rows: [
+          ["Section", "Writing — Task 1 (report or letter) and Task 2 (essay), both variants"],
+          ["Task & question types", "The printed bands: the summary rubric, the reasons-and-examples rubric, the word limits, the fixed openings"],
+          ["What is assessed", "Task Achievement and Task Response — the criteria that read your answer against the instructions line by line"],
+          ["Why this matters", "An answer that misses one line of its band counts as partially addressing the task, whatever its language quality"],
+        ],
+      },
+      { type: "heading", text: "Component 1 — The anatomy of a printed task" },
+      {
+        type: "text",
+        text: "Every Writing task, whatever its content, has the same two-storey structure: one or more situation sentences that set the scene (the chart, the claim, the everyday problem), and beneath them the instruction band that tells you what to produce. For Academic Task 1 the band reads, in the standard wording: 'You should spend about 20 minutes on this task. Summarise the information by selecting and reporting the main features, and make comparisons where relevant. Write at least 150 words.' For Task 2, on both variants, it reads: 'Give reasons for your answer and include any relevant examples from your own knowledge or experience. Write at least 250 words.' General Training Task 1 replaces the summary rubric with a letter brief: a situation, three bullet points, and the note that no addresses are needed. Learn the bands now, so that on test day you read them as a checklist you already own rather than as new information competing for your attention.",
+      },
+      { type: "heading", text: "Component 2 — The instruction verbs, decoded" },
+      {
+        type: "steps",
+        title: "From printed verb to scored deliverable",
+        steps: [
+          { title: "Step 1: 'Summarise' — the whole picture, not the whole inventory", text: "A summary compresses. The examiner expects a report that could be read aloud in under two minutes and still convey what the visual shows overall. Listing every category and every figure is the opposite of summarising, and reports that do it run out of words before they reach the comparisons.", examples: [{ english: "A twelve-category table summarised in one overview sentence that names the two dominant categories and the one that collapsed.", note: "Compression is the deliverable, not a style choice." }] },
+          { title: "Step 2: 'Select' — omission is authorised, and it must be visible", text: "The word 'select' is written permission to leave things out. Your job is the main features: the largest category, the sharpest change, the most striking contrast, the overall pattern. A report that hides its selection behind uniform coverage reads as though it never made one, so foreground your choices in the overview and the topic sentences.", examples: [{ english: "From six transport modes, the report names the two that grew and the one that vanished, and says so explicitly.", note: "Selection must be visible in what the report foregrounds." }] },
+          { title: "Step 3: 'Report' — the objective voice", text: "To report is to describe what the visual shows in neutral language, without evaluation. No 'unfortunately', no 'the council should', no visible surprise. The moment a report judges the data it has left its genre and drifted into Task 2's territory.", examples: [{ english: "'Guesthouse stays fell by two thirds' — reported. 'Guesthouse stays collapsed, which is a shame for the town' — judged.", note: "Adjectives of opinion are the genre leak." }] },
+          { title: "Step 4: 'Make comparisons where relevant' — a deliverable, not a suggestion", text: "The comparisons line obliges you to contrast wherever the data holds a meaningful difference: between categories, between the two years, between the two charts. A report that describes each category in turn without ever setting them beside each other has missed a printed instruction, and the task criterion records it.", examples: [{ english: "Bar chart, 2014 beside 2024 for each venue: 'By 2024, campsites had overtaken hotels as the most-used accommodation' — the cross-year comparison the band asked for.", note: "'Where relevant' means 'wherever the data supports one', which is nearly always." }] },
+          { title: "Step 5: The essay band — reasons and examples are obligatory", text: "The Task 2 rubric attaches two standing demands to every essay family: your positions must come with reasons, and your reasons must touch ground in examples drawn from knowledge or experience. An essay of pure assertion, however fluent, is answering at half its task.", examples: [{ english: "Claim: household waste sorting should be compulsory — reason: it makes disposal costs visible at the kitchen bin — example: cities where separation rules cut landfill by a third.", note: "Position, reason, example: the rubric's own three-beat." }] },
+        ],
+      },
+      { type: "heading", text: "Component 3 — The word limits as scoring rules" },
+      {
+        type: "text",
+        text: "The two printed minima are floors with teeth. An answer visibly under length is scored against the task criterion as incomplete: the published descriptors place partial addressing in the Band 5 territory, and shortness is the commonest route there (every level statement in this course is an estimate, never a guarantee). Prudent targets sit safely above the floor — roughly 170 to 190 words for Task 1 and 270 to 320 for Task 2. No maximum exists, but extra length has a price: every unnecessary sentence is a fresh opportunity for error, and an essay of four hundred words with no clear position fails the same criterion that length was meant to please. Count by lines as you write rather than by words at the end; knowing your average words per line turns the count into a two-second glance.",
+      },
+      { type: "heading", text: "Component 4 — Fixed openings and the three genres' jobs" },
+      {
+        type: "text",
+        text: "Some tasks — most often General Training letters with a required level of formality — print an opening line such as 'Begin your answer as follows: Dear Sir or Madam,'. The requirement is exact: copy the printed opening word for word, let it set the register for everything that follows, and count it as part of your answer. Improvising a friendlier greeting breaks a printed instruction just as surely as ignoring a bullet. Keep the three genres' jobs separate in your mind as well: Academic Task 1 is a report (select, report, compare — no opinion), Task 2 on both variants is an argument (position, reasons, examples — nothing reported at second hand), and the GT letter is a transaction (cover the three bullets, hold the tone, land the purpose). Most mixed-genre answers — the report that argues, the letter that lectures — are instruction-reading failures before they are language failures.",
+      },
+      {
+        type: "example",
+        title: "The band in action — seven encounters",
+        items: [
+          { english: "A candidate writes 142 words on Task 1, four sentences short of the floor; the response reads as finished but scores as incomplete against the task criterion.", note: "Under length is a scoring rule, not a stylistic note.", domain: "exam" },
+          { english: "A two-year bar chart described venue by venue, 2014 paragraph then 2024 paragraph, with the two years never placed in the same sentence: the comparisons line unanswered.", note: "Structure can hide a missed instruction.", domain: "exam" },
+          { english: "A table report that names the two dominant categories and the sharpest decline in its opening lines, then supports them with figures — selection made visible.", note: "The 'select' verb, obeyed where the reader can see it.", domain: "exam" },
+          { english: "A learner copies each instruction verb onto a card with its deliverable beside it, then drills by turning the verbs into checklist questions before every practice task.", note: "The band converted into a personal checklist.", domain: "study" },
+          { english: "A manager asks a new analyst for a summary of the quarterly figures: the memo that names the trend, the exception and one comparison gets read to the end; the memo that lists every row does not.", note: "Selecting and comparing are professional writing skills, not test quirks.", domain: "work" },
+          { english: "A letter task prints a fixed formal opening; the candidate, worried it sounds stiff, swaps it for 'Hi there' — a friendly instinct scored as a broken instruction.", note: "Printed openings are requirements, not suggestions.", domain: "exam" },
+          { english: "Explaining to a flatmate why their message to the landlord achieved nothing: it described the broken heating in detail but never requested a repair date, so the reader had nothing to act on.", note: "Instructions define the reader's next move — in letters as in life.", domain: "life" },
+        ],
+      },
+      { type: "heading", text: "Component 5 — Common traps" },
+      {
+        type: "mistakes",
+        title: "Instruction mistakes corrected",
+        items: [
+          { wrong: "The instruction band is identical on every task, so I read it once and never again.", right: "Read the band on every task: the situation changes, the verbs can change, and the GT bullets redefine what 'complete' means each time.", reason: "Familiarity with the band's shape is an asset; assuming its content is the classic half-read that loses a deliverable." },
+          { wrong: "'At least 150 words' means roughly 150, and stopping at 145 avoids extra mistakes.", right: "Aim comfortably above each floor — about 180 words for the report and 300 for the essay — so the extra sentences do coverage work.", reason: "The minimum is a requirement, and under-length answers are scored as incomplete however polished their sentences are." },
+          { wrong: "'Where relevant' means I can skip the comparisons if the clock is tight.", right: "Cut a detail sentence instead: cross-category and cross-year contrasts are printed deliverables wherever the data holds them.", reason: "The wording invites judgement about relevance, but in practice the data's own contrasts decide it, and they almost always exist." },
+        ],
+      },
+      {
+        type: "four-skills",
+        title: "One task, audited end to end",
+        reading: {
+          text: "Practice task in the style of the test: 'The chart below shows the number of overnight stays, in thousands, in three types of accommodation in one coastal town in 2014 and 2024. Summarise the information by selecting and reporting the main features, and make comparisons where relevant. You should spend about 20 minutes on this task. Write at least 150 words.' The chart's headline facts: hotels 96 in 2014 and 104 in 2024; campsites 40 in 2014 and 88 in 2024; guesthouses 64 in 2014 and 22 in 2024.",
+          task: "List the deliverables this band demands before you open the writing tab.",
+        },
+        writing: {
+          task: "Restate the situation line in your own words, name the three deliverables the band demands, then draft the two sentences that would open your report — one introduction, one overview.",
+          guide: [
+            "The situation in my words: The chart compares… / The chart shows how…",
+            "Deliverables to name: the main features selected; the comparisons across years and categories; the word floor.",
+            "Introduction move: what the chart is, when, where, in what units.",
+            "Overview move: the headline pattern — the faller, the riser, the constant.",
+          ],
+          model: "Situation, restated: the chart compares how many thousands of guest nights a seaside town's hotels, campsites and guesthouses recorded in 2014 and 2024. Deliverables: a visible selection of main features reported in neutral language; comparisons wherever the years or the venue types contrast; a length safely above the floor, with no opinion anywhere. Opening two sentences: The chart compares overnight stays in three types of accommodation in one coastal town in 2014 and 2024. Overall, guesthouse numbers fell steeply while campsites more than doubled, and hotels remained the town's most-used accommodation in both years.",
+        },
+        listening: {
+          script: "Tutor: Let's look at why this report lost task marks. You described each venue in its own paragraph, and your figures were accurate. But the band asked for two things the report never did. First, you reported — well done — but you never selected: every venue got equal space, so no main features stood out. Second, the comparisons line: 2014 and 2024 sit side by side in the chart, and your paragraphs never once put them in the same sentence. Fix those two, keep the language exactly as it is, and the same answer addresses the task completely.",
+          task: "Which two printed instructions does the tutor say the report missed?",
+        },
+        speaking: {
+          task: "Explain to a partner, in under a minute, what an Academic Task 1 band requires — using only the verbs from this lesson.",
+          frames: [
+            "The band asks me to summarise, which means…",
+            "'Select' gives me permission to…",
+            "The comparisons line obliges me to…",
+            "The word limit is a floor, so my working target is…",
+          ],
+          checklist: [
+            "Did I name every instruction verb?",
+            "Did I give one deliverable example for each?",
+            "Did I state my working word targets for both tasks?",
+          ],
+        },
+      },
+      {
+        type: "table",
+        title: "Why this model works",
+        headers: ["Aspect", "What the model does"],
+        rows: [
+          ["Organisation", "The two-sentence opening does the report's two orientation jobs in order — what the chart is, then what it shows overall — which is the architecture the task criterion reads for."],
+          ["Grammar", "Neutral report structures carry the data: 'compares', 'fell steeply', 'more than doubled', 'remained' — past simple for the closed years, present simple for the chart's existence, with no tense drift."],
+          ["Vocabulary", "Force-matched trend language says exactly what the numbers did, and the restated situation line paraphrases the rubric without recycling its sentence."],
+          ["Coherence", "The overview sentence sets up the detail paragraphs to come — one for the riser, one for the faller — so the reader holds the map before the numbers arrive."],
+          ["Task fulfilment", "Every deliverable named in the audit appears in the model: selection made visible, comparisons drawn across both years and all three venues, opinion absent, the floor respected with room to spare."],
+        ],
+      },
+      {
+        type: "table",
+        title: "Examination strategy",
+        headers: ["Moment", "Do this"],
+        rows: [
+          ["Before you start", "Read the band before the data: name its verbs, convert each into a deliverable, note the word limit line — in that order."],
+          ["While the clock runs", "Keep the deliverables at the top of your plan and tick each one off as its paragraph lands; a deliverable with no home is a mark already lost."],
+          ["If you are stuck", "Return to the verbs: 'select' tells you to cut, 'compare' tells you to connect, 'explain' tells you to open the mechanism behind your claim."],
+          ["Final minutes", "Audit the finished answer against the band line by line: every verb answered, the floor passed, any printed opening copied exactly."],
+        ],
+      },
+      {
+        type: "summary",
+        points: [
+          "Every task prints a situation plus an instruction band; the band is a checklist, and each of its lines is a deliverable the examiner will look for.",
+          "The verbs decode as: summarise (compress), select (omit visibly), report (stay neutral), compare (contrast wherever the data holds one), and — in the essay band — support every position with reasons and examples.",
+          "The printed minima are scoring rules: work to roughly 180 words for the report and 300 for the essay, counting by lines as you go.",
+          "Fixed openings are copied word for word and set the register; the report, the argument and the letter keep their separate jobs.",
+          "Genre leaks — the report that judges, the essay that merely reports — are instruction-reading failures before they are language failures.",
+        ],
+      },
+      {
+        type: "revision",
+        title: "Recall check",
+        intro: "One item per earlier module.",
+        items: [
+          { question: "How does the Writing paper divide its hour?", options: ["Two tasks of thirty minutes each", "About 20 minutes for Task 1 and about 40 for Task 2", "About 40 minutes for Task 1 and about 20 for Task 2"], correctIndex: 1, explanation: "The printed guidance gives Task 1 roughly a third of the hour and Task 2 two thirds — matching Task 2's double weight in the final writing band.", from: "The examination format, section by section" },
+          { question: "Which criterion reads your answer against the task's printed instructions?", options: ["Coherence and Cohesion", "Lexical Resource", "Task Achievement for Task 1 and Task Response for Task 2"], correctIndex: 2, explanation: "The task criterion — named differently for each task — scores coverage of the set job; the other three criteria score the language and organisation it arrives in.", from: "How Writing and Speaking are assessed" },
+          { question: "Within the Writing score, how do the two tasks combine?", options: ["Task 2's band counts twice against Task 1's once", "The higher of the two bands is awarded", "The two bands are averaged with a bonus for length"], correctIndex: 0, explanation: "Task 2 is double-weighted, which is why an instruction-reading failure in the essay costs more than the same failure in the report.", from: "The band scoring system" },
+        ],
+      },
+    ],
+    questions: [
+      ex({
+        type: "mcq",
+        difficulty: "easy",
+        skill: "writing",
+        prompt: "In the Academic Task 1 band, what does the verb 'select' authorise — and require?",
+        hints: ["Think about a twelve-category table: must all twelve get equal space?"],
+        options: [
+          { id: "a", text: "Covering every category equally, because completeness is what 'summarise' means." },
+          { id: "b", text: "Choosing the main features — the biggest, the sharpest, the most contrasting — and leaving the rest out, visibly." },
+          { id: "c", text: "Choosing only the category you find most interesting, since selection is personal." },
+        ],
+        correctOptionId: "b",
+        feedback: fb(
+          "Choosing the main features — the biggest, the sharpest, the most contrasting — and leaving the rest out, visibly.",
+          "Select is written permission to omit: the report's job is the headline pattern, and a selection hidden behind uniform coverage reads as though no selection was ever made.",
+          "(a) reverses the verb — that is inventory, not summary; (c) confuses personal preference with data relevance.",
+        ),
+        tags: ["awriting", "instructions", "rubric"],
+      }),
+      ex({
+        type: "read-answer",
+        difficulty: "medium",
+        skill: "writing",
+        prompt: "Guided practice. Read the scene and find the two missed instructions.",
+        hints: ["Check the venue paragraphs: do the two years ever meet in one sentence?"],
+        passageTitle: "The margin notes",
+        passage: "Marta's report on a two-year bar chart ran to 180 accurate words. She opened with what the chart showed, gave one paragraph to 2014 and one to 2024, listed every venue's figures in both paragraphs, and closed with a sentence hoping the town's tourism would recover soon. Her tutor wrote two words in the margin: 'comparisons?' and 'genre?'.",
+        question: "Which two printed instructions did Marta's report miss?",
+        options: [
+          { id: "a", text: "The word limit and the fixed opening." },
+          { id: "b", text: "The comparisons line — the two years never meet in one sentence — and the neutral report voice, broken by her hopeful closing sentence." },
+          { id: "c", text: "The instruction to select main features and the requirement to give examples from her own experience." },
+        ],
+        correctOptionId: "b",
+        feedback: fb(
+          "The comparisons line — the two years never meet in one sentence — and the neutral report voice, broken by her hopeful closing sentence.",
+          "The tutor's two margin notes map onto two lines of the band: the paragraphs report each year separately, so no cross-year contrast exists, and a wish for recovery is an opinion — a genre leak that the report voice forbids.",
+          "(a) names two requirements she actually satisfied — 180 words and no printed opening to copy; (c) imports the essay band's examples requirement into a report task.",
+        ),
+        tags: ["awriting", "instructions", "worked"],
+      }),
+      ex({
+        type: "mcq",
+        difficulty: "medium",
+        skill: "writing",
+        prompt: "Guided practice. The Task 2 band asks you to include reasons and relevant examples. What does this make obligatory in every essay you write?",
+        hints: ["Assertion alone is half an answer."],
+        options: [
+          { id: "a", text: "A paragraph of statistics recalled from memory, with sources named." },
+          { id: "b", text: "Support for every position you take: a reason that explains why it holds and an example that grounds it." },
+          { id: "c", text: "A personal story in every paragraph, whatever the prompt's topic." },
+        ],
+        correctOptionId: "b",
+        feedback: fb(
+          "Support for every position you take: a reason that explains why it holds and an example that grounds it.",
+          "The essay band attaches two standing demands to all essay families: positions arrive with reasons, and reasons touch ground in examples from knowledge or experience — fluency without them is assertion.",
+          "(a) over-specifies what counts as support and risks invented statistics; (c) narrows examples to one type the band never demands.",
+        ),
+        tags: ["awriting", "instructions", "essay-band"],
+      }),
+      ex({
+        type: "short-answer",
+        difficulty: "hard",
+        skill: "writing",
+        prompt: "Independent practice. State your two working word targets and say why neither sits at the printed minimum.",
+        question: "What word counts should you aim at for Task 1 and Task 2 — and why not the exact minima?",
+        acceptedAnswers: [
+          "about 180 for task 1 and 300 for task 2, because under-length answers score as incomplete",
+          "roughly 170 to 190 for task 1 and 270 to 320 for task 2 — the floor is a minimum, not a target",
+          "task 1 about 180 words and task 2 about 300 words, comfortably above the floor to avoid the incomplete verdict",
+          "180 and 300 — the minima are scoring rules, so stay safely above them",
+        ],
+        keywords: ["180", "300"],
+        hints: [],
+        feedback: fb(
+          "Roughly 170 to 190 words for Task 1 and 270 to 320 for Task 2.",
+          "The printed minima are requirements, not goals: an answer visibly under length is scored as incomplete against the task criterion, while a modest margin above the floor costs nothing and buys coverage.",
+          "Answers quoting the exact minima as targets have read a floor as a finish line.",
+        ),
+        tags: ["awriting", "instructions", "word-count"],
+      }),
+      ex({
+        type: "mcq",
+        difficulty: "hard",
+        skill: "writing",
+        prompt: "Independent practice. A letter task prints a fixed opening before the answer space. What does honest compliance look like?",
+        hints: [],
+        options: [
+          { id: "a", text: "Improve the printed opening so the letter sounds warmer — natural tone always scores." },
+          { id: "b", text: "Copy the printed opening word for word, let it set the register for everything that follows, and count it inside your words." },
+          { id: "c", text: "Skip the printed opening so your own greeting starts the letter fresh." },
+        ],
+        correctOptionId: "b",
+        feedback: fb(
+          "Copy the printed opening word for word, let it set the register for everything that follows, and count it inside your words.",
+          "A printed opening is an instruction with a fixed form: it tells you the level of formality the whole letter must hold, and improvising around it breaks the band exactly as a skipped bullet does — while still costing you the words you wrote.",
+          "(a) treats a requirement as a style suggestion; (c) discards an instruction outright and starts the letter off-task.",
+        ),
+        tags: ["awriting", "instructions", "letters"],
+      }),
+    ],
+    assignment: {
+      title: "Deliverables audit",
+      instructions:
+        "A practice task in the style of the test reads: 'The table below shows how households in one country divided their leisure spending among four categories in 2004 and 2024.' Assume the headline facts are: holidays up sharply, meals out down slightly, streaming up from almost nothing, sport roughly unchanged. Write (1) the situation restated in your own words, (2) a numbered list of the deliverables the instruction band demands of your report, and (3) the two sentences you would open the report with — one introduction, one overview.",
+      minWords: 60,
+      maxWords: 180,
+    },
+    homework: [
+      "Copy the full Task 2 instruction band from memory, then check it phrase by phrase against this lesson; the words you missed are the requirements you would have skipped under pressure.",
+      "Take any practice Task 1 from the Writing task library and mark its instruction verbs in the margin, converting each into a question your report must answer before it counts as complete.",
+    ],
+  },
+  // ---------------------------------------------------------------------------
+  {
+    slug: "ielts-awriting-requirements",
+    title: "Analysing question requirements",
+    description:
+      "Any prompt in three parts — topic, instruction, limiting scope — plus the one-underline two-circle marking method and the arithmetic of deliverables a prompt can hide.",
+    objectives: [
+      "split any Writing prompt into its topic, its instruction and its limiting scope",
+      "run the one-underline two-circle marking method on unseen prompts",
+      "count a prompt's deliverables and land each one in the answer before it finishes",
+    ],
+    minutes: 14,
+    blocks: [
+      {
+        type: "lesson-intro",
+        text: "Most lost bands in Writing are decided before the first sentence is written: the candidate answered the prompt they assumed rather than the prompt on the page. Every prompt, however elaborate, is built from three parts — a topic, a task instruction and a limiting scope — and every mark of analysis you spend on those parts is repaid in coverage. This lesson installs a thirty-second marking ritual that finds every deliverable a prompt contains before you commit to a position you cannot fully deliver.",
+        beforeYouStart: [
+          "You can decode the printed instruction verbs from the previous lesson.",
+          "You have written at least one timed essay, even a rough one.",
+        ],
+      },
+      {
+        type: "table",
+        title: "Examination relevance",
+        headers: ["Aspect", "This lesson"],
+        rows: [
+          ["Section", "Writing — the opening minute of every task, both variants"],
+          ["Task & question types", "Two-clause opinion prompts, two-question prompts, two-chart Task 1 tasks, three-bullet letters"],
+          ["What is assessed", "Task Achievement and Task Response — an answer that handles only part of the prompt is a partially addressed answer"],
+          ["Why this matters", "One ignored clause or bullet caps the task criterion at the partial-coverage level, whatever the language around it achieves"],
+        ],
+      },
+      { type: "heading", text: "Component 1 — The three parts of any prompt" },
+      {
+        type: "text",
+        text: "Strip away the subject matter and every prompt has the same skeleton. The topic is the noun phrase the whole prompt orbits — waste sorting, car-park closures, handwriting lessons. The task instruction is what you must DO with that topic — agree, discuss, explain, suggest, summarise, compare — and each instruction verb carries the deliverables decoded in the previous lesson. The limiting scope is the fence around the argument: 'in your country', 'for young people', 'in the future', 'at primary school'. Answers that never find the fence write about everywhere and everyone, and the examiner reads the drift as off-topic even when the vocabulary is on-topic.",
+      },
+      { type: "heading", text: "Component 2 — The marking method" },
+      {
+        type: "steps",
+        title: "One underline, two circles, one box",
+        steps: [
+          { title: "Step 1: Underline the topic once", text: "Run a single line under the noun phrase the prompt orbits. If two nouns compete, the one the question sentence returns to is the topic. This underline is your anchor: every paragraph you write will mention it or its paraphrase.", examples: [{ english: "Prompt about handwriting lessons and keyboards: the question sentence asks about handwriting teaching, so handwriting lessons take the underline — keyboards are the reason clause, not the topic.", note: "The question sentence usually names the true topic." }] },
+          { title: "Step 2: Circle the instruction words twice", text: "Every verb or noun that names a job — 'agree or disagree', 'discuss both views', 'explain', 'suggest', 'describe', 'compare' — gets a double circle. Each double circle is one deliverable, and the deliverables decide your paragraph map before any plan is drawn.", examples: [{ english: "'Discuss both these views and give your own opinion' carries two circles: the balanced discussion of both views, and your own stated position.", note: "Two circles, two obligations — neither folds into the other." }] },
+          { title: "Step 3: Box the limiting scope", text: "Draw a box around the fence: the place, the population, the time period. The box is smaller than you think — 'primary schools' is not 'education', and 'in your country' is not 'in general'. Examples drawn from outside the fence count half, because they answer a question the prompt did not ask.", examples: [{ english: "A prompt about commuting in your country: an example about a colleague's move abroad sits outside the box; an example from your own city sits inside it.", note: "The box disciplines example choice, not just argument." }] },
+          { title: "Step 4: Count the deliverables", text: "Add the double circles, the question marks and the bullets: that number is what 'complete' means for this prompt. A two-question prompt owns two; a three-bullet letter owns three; a two-chart Task 1 owns three — the features of each chart plus the link between them. Write the number in the margin where your plan will see it.", examples: [{ english: "Prompt: 'Why are fewer young people entering farming, and what could attract them back?' — two circles, two deliverables, and an answer that explains only the causes finishes half the task.", note: "The count is the answer's completeness test." }] },
+          { title: "Step 5: Give every deliverable a home", text: "Convert the count into the plan: each deliverable is assigned to a paragraph or a paragraph pair before drafting starts. Deliverables without a home get forgotten in paragraph three, and the examiner's tick-list records the gap.", examples: [{ english: "Two-question prompt, four paragraphs: causes in body one, attractions in body two, both named again in the close — each deliverable owns visible space.", note: "Assignment before drafting is what makes the count stick." }] },
+        ],
+      },
+      { type: "heading", text: "Component 3 — Two worked dissections" },
+      {
+        type: "text",
+        text: "First, a Task 2 opinion prompt with two clauses, written in the style of the test: 'Some educationalists argue that handwriting lessons should be dropped from primary schools because keyboards have made neat writing unnecessary. To what extent do you agree or disagree?' The underline falls on handwriting lessons; the first circle falls on the extent question; the second circle is hiding inside the claim — the keyboard reason, which your answer must confront rather than walk past. The box reads primary schools. An essay that states an extent but never touches the keyboard reason has answered the question beside the prompt, not the prompt itself. Second, a Task 1 task with two charts: a pie pair showing graduate destinations in 2004 and the same pair for 2024. The deliverable count is three — the 2004 pattern, the 2024 pattern, and the change between them — and the third deliverable is the one reports most often lose, because each chart can be described beautifully in isolation.",
+      },
+      { type: "heading", text: "Component 4 — What one missed part costs" },
+      {
+        type: "text",
+        text: "The published Task Response descriptors describe the Band 5 answer as one that addresses the task only partially — and a prompt part left unhandled is the most mechanical route into that description, however strong the language around it (as ever, band talk here is an informed estimate, not a promise). The arithmetic is unsentimental: a two-part prompt where one part is missed leaves the examiner half a tick-list, and half a tick-list cannot support a full-coverage verdict. The cost is doubled in Task 2 by its double weight, and it survives good vocabulary: the criterion reads coverage first, language second. This is why the marking method comes before planning, and planning before writing — each earlier stage protects the stages after it.",
+      },
+      {
+        type: "example",
+        title: "Prompts under the pencil — seven markings",
+        items: [
+          { english: "The handwriting prompt marked: underline on handwriting lessons, one circle on the extent question, a second circle on the keyboard reason, box on primary schools — four marks, thirty seconds.", note: "The hiding reason clause is the prompt's real test.", domain: "exam" },
+          { english: "The two-chart graduate destinations task marked with a three-count: each year's pattern plus the change between years — and the essay plan gives the change its own overview sentence.", note: "The link between charts is a deliverable, not a bonus.", domain: "exam" },
+          { english: "A three-bullet letter task marked with three circles: the description, the request, the deadline — and a margin note fixing one paragraph per bullet.", note: "Bullets are printed paragraphs waiting to happen.", domain: "exam" },
+          { english: "A learner keeps a deliverable ledger for a fortnight: every practice prompt gets its count written in the margin, and every graded answer gets a tick per deliverable — the missed-count rate falls from three in ten to zero.", note: "Counting is a habit before it is a skill.", domain: "study" },
+          { english: "A client brief arrives with three requests — a summary, a timeline, a budget line; the reply that answers two of the three is returned once for completion, exactly like a partially addressed task.", note: "The working world grades on the same tick-list.", domain: "work" },
+          { english: "A candidate writes a polished essay on farming's hardships and never reaches the second question about attracting young people back — 280 fluent words, half the deliverables, and the task criterion records the missing half.", note: "Fluency cannot buy back a missing answer.", domain: "exam" },
+          { english: "Replying to a party invitation that asks for the arrival time and any dietary needs: a guest who confirms the time but forgets the food question sends half a reply and gets a follow-up message.", note: "Everyday inboxes run the same arithmetic.", domain: "life" },
+        ],
+      },
+      { type: "heading", text: "Component 5 — Common traps" },
+      {
+        type: "mistakes",
+        title: "Analysis mistakes corrected",
+        items: [
+          { wrong: "If I write about the right subject, I am on task — the rest is style.", right: "Topic plus instruction plus scope makes a task: the topic is what to write about, the instruction is what to do, and the fence is where to stop.", reason: "An essay can be topically relevant and still miss every deliverable — the criterion ticks jobs done, not subjects mentioned." },
+          { wrong: "A second question in a prompt is just a follow-on that my conclusion can absorb.", right: "Each question is a scored deliverable that needs visible coverage — normally its own body paragraph, not a closing aside.", reason: "Examiners tick parts they can find; a deliverable compressed into one final sentence reads as untouched." },
+          { wrong: "Limiters like 'in your country' are politeness, not scope.", right: "The limiter is a fence for your argument and your examples: inside it counts fully, outside it counts as drift.", reason: "The prompt set a bounded question, and general-world answers to a bounded question are off-task by definition." },
+        ],
+      },
+      {
+        type: "four-skills",
+        title: "Marking, then committing to a position",
+        reading: {
+          text: "Practice prompt in the style of the test: 'Some educationalists argue that handwriting lessons should be dropped from primary schools because keyboards have made neat writing unnecessary. To what extent do you agree or disagree?' Beside it sits a candidate's first-draft position sentence: 'I completely agree that handwriting is old-fashioned, so schools should teach typing instead.' The tutor's margin note reads: 'You answered a different prompt — where is the reason clause?'",
+          task: "Mark the prompt with the one-underline two-circle method and find the deliverable the draft position missed.",
+        },
+        writing: {
+          task: "Mark the prompt above, then write the two-sentence position statement your essay will carry: one sentence answering the extent question directly, one sentence taking a stance on the keyboard reason.",
+          guide: [
+            "Underline once: handwriting lessons — the topic the question returns to.",
+            "Circle twice: the extent question, and the keyboard reason hiding in the claim clause.",
+            "Box: primary schools — not education in general, not adult life.",
+            "Position sentence frames: 'While I accept that…, I disagree that…' / 'To a limited extent I agree, because…'",
+          ],
+          model: "Marked prompt: the underline falls on handwriting lessons in primary schools; the first circle falls on the extent instruction; the second circle falls on the keyboard reason; the box holds primary schools. Position statement: While I accept that typing now deserves a larger share of the primary timetable, I disagree that handwriting has become unnecessary: young pupils still write by hand through every subject, and early handwriting practice is closely tied to early reading. The essay that follows will therefore take the keyboard reason on directly in its first body paragraph, before widening to handwriting's developmental role in the second.",
+        },
+        listening: {
+          script: "Tutor: Before you plan, mark the prompt. What is underlined? Student: Handwriting lessons. Tutor: Circles? Student: 'Agree or disagree'… and I think the reason about keyboards. Tutor: Good — that reason is inside the claim, and the prompt's question covers it. How many deliverables? Student: The extent, plus the reason. Two. Tutor: Then your position statement needs both, or the examiner finds only half a tick-list. Box? Student: Primary schools. So my university example from last draft is out.",
+          task: "Why did the tutor reject the student's university example?",
+        },
+        speaking: {
+          task: "Take any prompt from your practice list and talk a partner through its marking in under forty-five seconds: underline, circles, box, count.",
+          frames: [
+            "The topic — what I underline — is…",
+            "The instruction circles are… and…, which makes two deliverables.",
+            "The fence is…, so my examples must come from…",
+            "That gives my answer a count of… parts to cover.",
+          ],
+          checklist: [
+            "Did I find an instruction that was hiding inside a clause?",
+            "Did I name where each deliverable will live in the essay?",
+            "Did I check my examples against the fence?",
+          ],
+        },
+      },
+      {
+        type: "table",
+        title: "Why this model works",
+        headers: ["Aspect", "What the model does"],
+        rows: [
+          ["Organisation", "The marking is shown before the position, and the position statement then announces the essay's route — reason first, developmental evidence second — so the reader can predict the paragraph order."],
+          ["Grammar", "A while-concession sentence carries the extent answer in one controlled complex structure: 'While I accept that…, I disagree that…', with the colon correctly introducing the supporting clause pair."],
+          ["Vocabulary", "Topic words are precise and unshowy — 'a larger share of the primary timetable', 'developmental role' — and the prompt's keywords survive because they are the subject, not because they were copied."],
+          ["Coherence", "The second sentence's colon works as a signpost: two supports are promised, and the final sentence maps them onto the essay's two body paragraphs in order."],
+          ["Task fulfilment", "Both deliverables are visibly answered — the extent question by 'to a limited extent' language, the keyboard reason by direct disagreement — and the box keeps every promise inside primary schooling."],
+        ],
+      },
+      {
+        type: "table",
+        title: "Examination strategy",
+        headers: ["Moment", "Do this"],
+        rows: [
+          ["Before you start", "Run the thirty-second marking: one underline, two circles per instruction, a box round the fence, and a deliverable count in the margin."],
+          ["While the clock runs", "Work to the count: every deliverable holds assigned space in the plan, and no paragraph is 'finished' until its deliverable is touched."],
+          ["If you are stuck", "Re-read only the marked words — the underline tells you the subject, the circles tell you the jobs, the box tells you the boundary of usable examples."],
+          ["Final minutes", "Tick the deliverables off the margin count one by one; any tick still missing gets its sentence now, however short, before the paper closes."],
+        ],
+      },
+      {
+        type: "summary",
+        points: [
+          "Every prompt splits into three parts: the topic (what), the instruction (do what) and the limiting scope (where and for whom).",
+          "The marking method is one underline for the topic, double circles for every instruction, a box for the fence — thirty seconds, done before planning.",
+          "The deliverable count defines 'complete': two circles or two questions mean two parts, three bullets mean three, two charts mean three including the link.",
+          "A missed clause, bullet or question is the mechanical route to a partially addressed verdict on the task criterion — an outcome no language quality repairs.",
+          "The fence disciplines examples as much as argument: material from outside the limiter answers a question the prompt never asked.",
+        ],
+      },
+      {
+        type: "revision",
+        title: "Recall check",
+        intro: "One item per earlier module.",
+        items: [
+          { question: "Which two verbs in the Task 1 band give you permission to leave categories out?", options: ["Summarise and select", "Report and describe", "Compare and explain"], correctIndex: 0, explanation: "Summarise demands compression and select authorises omission — together they make the main features the report's real subject.", from: "Understanding task instructions" },
+          { question: "Task 2's band counts twice against Task 1's. What does that imply for where your analysis minutes go?", options: ["Split evenly between the two tasks", "The essay's prompt deserves the deeper dissection, because its missed deliverables cost double", "Task 1 only, because it comes first"], correctIndex: 1, explanation: "Double weight doubles the price of every missed part, so the essay's marking is the more valuable thirty seconds you spend.", from: "How Writing and Speaking are assessed" },
+          { question: "What does the essay band make obligatory besides your opinion?", options: ["Nothing — the position is the task", "Reasons for the position and examples that ground them", "A reference to the prompt's wording in every paragraph"], correctIndex: 1, explanation: "The printed rubric attaches standing demands for reasons and examples to every essay family — assertion alone is half an answer.", from: "Understanding task instructions" },
+        ],
+      },
+    ],
+    questions: [
+      ex({
+        type: "mcq",
+        difficulty: "easy",
+        skill: "writing",
+        prompt: "What are the three parts every Writing prompt splits into?",
+        hints: ["What to write about, what to do with it, and where the argument is fenced."],
+        options: [
+          { id: "a", text: "Introduction, body and conclusion." },
+          { id: "b", text: "The topic, the task instruction, and the limiting scope." },
+          { id: "c", text: "The chart, the rubric and the word limit." },
+        ],
+        correctOptionId: "b",
+        feedback: fb(
+          "The topic, the task instruction, and the limiting scope.",
+          "The topic is the noun phrase the prompt orbits, the instruction names the jobs your answer must do, and the limiting scope fences where the argument and its examples may go — three parts, found in thirty seconds.",
+          "(a) describes the answer's structure, not the prompt's; (c) lists three printed elements but misses the instruction and the fence entirely.",
+        ),
+        tags: ["awriting", "requirements", "method"],
+      }),
+      ex({
+        type: "read-answer",
+        difficulty: "medium",
+        skill: "writing",
+        prompt: "Guided practice. Mark the prompt, then judge the outline.",
+        hints: ["Count the deliverables first — how many questions does the prompt actually ask?"],
+        passageTitle: "The outline that missed",
+        passage: "Practice prompt in the style of the test: 'In many countries, fewer young people are choosing careers in farming. Why is this happening, and what could encourage more of them into the profession?' A candidate's plan reads: introduction — the problem of ageing farmers; body one — farm work is hard and badly paid; body two — city careers look more exciting; conclusion — farming matters to everyone, so young people should care more.",
+        question: "Which deliverable does the outline leave without a home?",
+        options: [
+          { id: "a", text: "The reasons why young people avoid farming — the outline never handles them." },
+          { id: "b", text: "The second question's deliverable — the suggestions that could attract young people — which the conclusion merely wishes at instead of answering." },
+          { id: "c", text: "The topic itself, because farming is only mentioned in passing." },
+        ],
+        correctOptionId: "b",
+        feedback: fb(
+          "The second question's deliverable — the suggestions that could attract young people — which the conclusion merely wishes at instead of answering.",
+          "The prompt carries two circles: the causes question and the attraction question. Both bodies serve the first circle; the second circle gets one sentiment in the close, which is where deliverables go to disappear — the count in the margin would have caught it.",
+          "(a) is wrong because the two body paragraphs do handle the causes; (c) is wrong because the topic is present throughout — the failure is coverage, not relevance.",
+        ),
+        tags: ["awriting", "requirements", "worked"],
+      }),
+      ex({
+        type: "mcq",
+        difficulty: "medium",
+        skill: "writing",
+        prompt: "Guided practice. Under the marking method, how many deliverables does 'Discuss both these views and give your own opinion' contain?",
+        hints: ["Give each circled instruction its own tick."],
+        options: [
+          { id: "a", text: "One — the essay is simply a discussion." },
+          { id: "b", text: "Two — a balanced discussion of both views, and your own stated opinion." },
+          { id: "c", text: "Three — the first view, the second view, and a conclusion." },
+        ],
+        correctOptionId: "b",
+        feedback: fb(
+          "Two — a balanced discussion of both views, and your own stated opinion.",
+          "The instruction carries two circles: the discussion job, which must give both views fair airtime, and the opinion job, which must be answered in the introduction as well as the conclusion — two tick-list entries, either of which caps the criterion when missed.",
+          "(a) folds the opinion into the discussion and loses the essay's position; (c) confuses paragraphs with deliverables — two views inside one discussion job still count once.",
+        ),
+        tags: ["awriting", "requirements", "counting"],
+      }),
+      ex({
+        type: "fill-blank",
+        difficulty: "hard",
+        skill: "writing",
+        prompt: "Independent practice. Complete the counting rule.",
+        hints: [],
+        sentence: "Each circled instruction in a prompt is one ___ that the examiner will look for somewhere in the finished answer.",
+        acceptedAnswers: ["deliverable", "deliverable part", "task part", "requirement"],
+        feedback: fb(
+          "deliverable",
+          "The counting rule turns instructions into tick-list entries: every circled verb, question mark and bullet is one deliverable, and 'complete' means every one of them found visible space in the answer.",
+          "Words like 'paragraph' or 'sentence' confuse the container with the content — deliverables live in paragraphs but are not paragraphs.",
+        ),
+        tags: ["awriting", "requirements", "vocabulary-of-analysis"],
+      }),
+      ex({
+        type: "mcq",
+        difficulty: "hard",
+        skill: "writing",
+        prompt: "Independent practice. A Task 1 task shows two charts — graduate destinations in 2004 and the same data for 2024. Under the counting rule, what does 'complete' mean?",
+        hints: [],
+        options: [
+          { id: "a", text: "Describe each chart's main features in turn; two descriptions, two paragraphs, task complete." },
+          { id: "b", text: "Report each year's pattern and the change between the years — three deliverables, because the link between the charts is printed work, not a bonus." },
+          { id: "c", text: "Focus on the more recent chart, since 2024 carries the interesting data." },
+        ],
+        correctOptionId: "b",
+        feedback: fb(
+          "Report each year's pattern and the change between the years — three deliverables, because the link between the charts is printed work, not a bonus.",
+          "Two charts print three obligations: each visual's main features plus the connection between them — and the connection is the deliverable most often lost, because each chart can be described beautifully in isolation while the comparison never happens.",
+          "(a) is the classic two-thirds answer that reads as partially addressed; (c) discards a whole visual and half the task with it.",
+        ),
+        tags: ["awriting", "requirements", "two-charts"],
+      }),
+    ],
+    assignment: {
+      title: "Dissect, then commit",
+      instructions:
+        "Take this practice prompt in the style of the test: 'Many city centres now charge drivers a fee to enter during busy hours. Do the benefits of this policy outweigh the drawbacks?' Write (1) your marked analysis — the underlined topic, the circled instructions, the boxed fence; (2) a numbered deliverable count with one line on where each deliverable will live; and (3) a two-sentence position statement that commits to a clear extent.",
+      minWords: 50,
+      maxWords: 160,
+    },
+    homework: [
+      "Collect three practice prompts from the Writing task library and mark each with one underline, double circles and a box; write the deliverable count in the margin and check your counts against a tutor's or partner's.",
+      "Find one prompt you misread in an earlier practice essay: write down which part you skipped — topic, instruction or fence — and the sentence that would have supplied the missing deliverable.",
+    ],
+  },
+  // ---------------------------------------------------------------------------
+  {
+    slug: "ielts-awriting-planning",
+    title: "Planning",
+    description:
+      "The four-minute essay plan and the two-minute report plan: position first, the 2-3-1 body map, notation fast enough to keep, and the overview drafted before any detail paragraph.",
+    objectives: [
+      "produce a four-minute Task 2 plan and a two-minute Task 1 plan under test conditions",
+      "plan the position first and let it generate the body map",
+      "draft the overview in notes before writing any Task 1 detail paragraph",
+    ],
+    minutes: 16,
+    blocks: [
+      {
+        type: "lesson-intro",
+        text: "Ask a stalled candidate what they are doing at minute twenty-eight of the essay and the honest answer is planning — re-planning, sentence by sentence, in the middle of prose they have already written. Planning is the discipline that moves every one of those decisions to the front, where they cost four minutes instead of fourteen. This lesson builds the two plans the Writing test rewards: a four-minute essay plan that fixes position, paragraphs and examples, and a two-minute report plan that drafts the overview before a single detail sentence exists.",
+        beforeYouStart: [
+          "You can mark a prompt and count its deliverables from the previous lesson.",
+          "You have written at least one timed essay and felt the clock bite.",
+        ],
+      },
+      {
+        type: "table",
+        title: "Examination relevance",
+        headers: ["Aspect", "This lesson"],
+        rows: [
+          ["Section", "Writing — the opening minutes of Task 2 and the first read of any Task 1"],
+          ["Task & question types", "Every essay family on Task 2; every chart, process, map and letter on Task 1"],
+          ["What is assessed", "Indirectly everything: the plan fixes Task Response coverage and Coherence before language enters the page"],
+          ["Why this matters", "The unplanned essay re-plans itself midstream — the stall that costs the second body paragraph and the conclusion's freshness"],
+        ],
+      },
+      { type: "heading", text: "Component 1 — Position first, always" },
+      {
+        type: "text",
+        text: "An essay plan starts with the position, not the ideas. Decide what you will argue — including how far you agree, and what you will concede — and write it in one sentence of seven words or fewer. A position you cannot state in seven words is not yet a position; it is a mood, and moods change halfway through essays, which is the most expensive kind of change available. The position then generates the paragraph briefs: each body paragraph exists to carry one part of the case, so the plan lists what each paragraph will argue, in the order the argument needs. Ideas that do not serve the sentence you wrote are left off the plan, whatever their brilliance — the plan is a commitment device, not a brainstorm.",
+      },
+      { type: "heading", text: "Component 2 — The 2-3-1 body map" },
+      {
+        type: "steps",
+        title: "Two paragraphs, three moves, one close",
+        steps: [
+          { title: "Step 1: The '2' — two body paragraphs, one job each", text: "A 250-word essay carries two body paragraphs comfortably: two supports for your position, or one support plus one concede-and-counter for discussion prompts. Three bodies work only for very fast writers and very short paragraphs — the third paragraph is where undeveloped ideas go to be noticed by the criterion.", examples: [{ english: "Position: car-park closures are worth it. Body one argues the air case; body two argues the land case; the shoppers' complaint is conceded inside body two's closing move.", note: "Two paragraphs, each with its own job title." }] },
+          { title: "Step 2: The '3' — three moves inside each paragraph", text: "Each body paragraph runs point, explanation, example: a sentence that argues, a sentence or two that opens the mechanism, and a sentence or two that grounds it in a case. The full pattern is taught in the next lesson — for planning, the three moves are three slots on the page, filled with keywords rather than prose.", examples: [{ english: "Body one, planned in six words: 'cleaner air — fewer kerbside engines — city readings fell'.", note: "Three slots, keywords only — prose is for drafting." }] },
+          { title: "Step 3: The '1' — one short close", text: "The conclusion restates the position in fresh words and names the strongest support; it adds nothing new. One planned line is enough: 'restate + air case + land case, new wording'. A conclusion planned for more than two sentences is a second essay starting.", examples: [{ english: "Close, planned in five words: 'worth it — air, land — rephrase'.", note: "The close is an echo, not an encore." }] },
+          { title: "Step 4: The word arithmetic that makes the map safe", text: "Introduction about forty words, each body about eighty-five, close about forty: the map lands around 250 with a margin, which is why it needs no third paragraph and fears no count. Knowing the arithmetic in advance removes the word-count anxiety that otherwise interrupts drafting every fifty words.", examples: [{ english: "40 + 85 + 85 + 40 = 250: the map's sums, known before the first sentence is written.", note: "Arithmetic is part of the plan, not an afterthought." }] },
+        ],
+      },
+      { type: "heading", text: "Component 3 — Notation fast enough to keep" },
+      {
+        type: "text",
+        text: "A plan slower than the writing it serves is a decoration. Keep the notation brutal: five to eight words per line, arrows for consequence, symbols for the three moves, abbreviations you recognise an hour later. A plan written in sentences is a draft, and a draft is not a plan — it has already spent the decision-making the plan exists to bank. Write the plan where the answer will be written, in the margin or above the lines, because a plan on a scrap that drifts away protects nothing. And freeze the plan when it is done: a new idea that arrives mid-essay is noted in two words and judged at the end, not adopted on arrival. Mid-essay adoption is how one strong paragraph eats the space of two.",
+      },
+      { type: "heading", text: "Component 4 — The two-minute Task 1 plan" },
+      {
+        type: "text",
+        text: "Task 1 planning is selection, and selection happens before any prose. Two minutes, in this order: read the title, axes, units and time span — what is counted, in what, between when; then hunt the two or three main features the selection verb demands, writing each as a fragment ('campsites double', 'guesthouses collapse', 'hotels flat'); then draft the overview as one or two note-form sentences; only then group the remaining detail into two paragraph bundles. Drafting the overview before the detail paragraphs is the whole discipline: the overview is the report's thesis, and a thesis written after the details tends to merely summarise them, while a thesis written first decides which details deserve paragraphs at all. When the clock bites late, it is the overview that saves the report's grade — and the plan is where it was protected.",
+      },
+      {
+        type: "example",
+        title: "Plans on the page — seven cases",
+        items: [
+          { english: "An eleven-line essay plan — position, two body briefs with P-E-E keywords, one close note — written in four minutes; the candidate then drafts 265 words without a stop longer than a breath.", note: "Transcription speed is the plan's dividend.", domain: "exam" },
+          { english: "A Task 1 plan of six fragments: three main-feature notes, a drafted overview sentence, two grouping notes — and the report writes itself into the shape they set.", note: "Two minutes of selection, twenty of writing.", domain: "exam" },
+          { english: "A learner times five planning sessions and finds a pattern: plans finished inside four minutes produced the longest, calmest essays; plans that ran past seven produced shorter ones than no plan at all.", note: "Over-planning is a real failure mode — time it.", domain: "study" },
+          { english: "A team briefed before a client pitch in two minutes — position, two supports, the close — opens with its conclusion and holds the room; the team that 'discovers' its position mid-pitch loses it.", note: "Position-first is a professional habit, not a test trick.", domain: "work" },
+          { english: "At word 160, an unplanned candidate stops for ninety seconds hunting a second idea; the planned candidate at the same word count is already writing a close, because the second idea has been sitting in the margin since minute four.", note: "The stall is a planning hole wearing a clock.", domain: "exam" },
+          { english: "A new example strikes a candidate mid-paragraph; she notes it in two words, finishes the planned paragraph, and swaps it in during the final check because it genuinely beat the planned one.", note: "The freeze rule lets good ideas in without letting them take over.", domain: "exam" },
+          { english: "Planning a difficult phone call in the same way — the outcome you want, your two reasons, the fallback — turns a confrontation into a conversation that ends with the outcome.", note: "Plans are decision-banking everywhere.", domain: "life" },
+        ],
+      },
+      { type: "heading", text: "Component 5 — Common traps" },
+      {
+        type: "mistakes",
+        title: "Planning mistakes corrected",
+        items: [
+          { wrong: "Planning is a luxury — I need all forty minutes for writing itself.", right: "Four minutes of planning buys a faster draft, a longer answer and a calmer clock: the essay written from a plan is transcription, and transcription does not stall.", reason: "The stall the unplanned essay hits at word 160 costs more minutes than the plan ever did, and it arrives when the minutes are worth most." },
+          { wrong: "A good plan lists everything I might possibly say.", right: "A plan is a commitment device: one position sentence, two paragraph briefs, three keyword slots each — nothing else earns its place.", reason: "A plan that keeps every option open has made no decisions, and undecided plans produce the drifting essays they were meant to prevent." },
+          { wrong: "In Task 1 I will find the overview after writing the details, once I know the data better.", right: "Select the main features and draft the overview in the plan, before any detail sentence: the thesis written first decides which details deserve space.", reason: "An overview assembled afterwards tends to summarise whatever was written, which is the opposite of selecting and reporting the main features." },
+        ],
+      },
+      {
+        type: "four-skills",
+        title: "From prompt to plan to opening",
+        reading: {
+          text: "Practice prompt in the style of the test: 'Some city councils are closing town-centre car parks to discourage commuting by car. To what extent do you agree that the benefits of this policy outweigh its drawbacks?' A candidate's four-minute plan reads: position — benefits clearly outweigh, one honest drawback kept. Body one: cleaner air — fewer kerbside engines — pollution readings fell in cities that tried it. Body two: land released — car parks to housing — one multi-storey converted to apartments. Concession inside body two: shoppers with heavy goods lose ease; deliveries absorb much of it. Close: restate, fresh words. Eleven lines, none of them a sentence.",
+          task: "Name what this plan has already decided before any sentence exists.",
+        },
+        writing: {
+          task: "For the prompt in the reading tab, write your own four-minute plan in note form — position sentence, two body briefs with three keyword slots each, one close note — then write the introduction the plan generates: position first, background second, inside three sentences.",
+          guide: [
+            "Position in seven words or fewer: 'benefits outweigh — air and land — shoppers lose some ease'.",
+            "Body briefs as keywords: what argues, what mechanism, what case.",
+            "Close note: restate plus strongest support, in fresh words.",
+            "Introduction frames: 'Of the tools councils hold for…, this is among the sharpest' / 'I believe its gains clearly outweigh…'.",
+          ],
+          model: "Plan: position — benefits outweigh, one drawback kept. Body one — cleaner air: fewer kerbside engines, pollution readings fell in cities that tried it. Body two — land released: car parks become housing, one multi-storey converted to apartments; concede the shoppers' loss, counter with deliveries. Close — restate with air and land in fresh words. Introduction: Closing town-centre car parks is one of the sharpest tools a council owns for cutting commuter traffic, and I believe its benefits clearly outweigh its drawbacks. Cleaner streets and land for housing are worth more than the convenience some shoppers lose, and this essay defends that weighing in two steps — the air case first, then the land case.",
+        },
+        listening: {
+          script: "Tutor: Four minutes on the clock — plan only, no prose. Position? Student: Councils are right, though the policy hurts some shoppers. Tutor: Good — a position with a concession already inside it. Your two supports? Student: Cleaner air… and land released for housing. Tutor: Note each in two words. Now one example phrase per support. Student: City-centre pollution readings… the multi-storey that became apartments. Tutor: Close? Student: Restate, new words. Tutor: That is a complete plan in eleven words. Now write — and when a new idea arrives, note it and keep writing; the plan is frozen.",
+          task: "What two rules does the tutor enforce once the plan is finished?",
+        },
+        speaking: {
+          task: "Defend a plan in thirty seconds: state the position, the two supports and the close, in that order, from a prompt your partner chooses.",
+          frames: [
+            "My position, in seven words, is…",
+            "My first support is…, grounded by the example of…",
+            "My second support is…, and I concede…",
+            "My close will restate… in fresh words.",
+          ],
+          checklist: [
+            "Did the position arrive in one sentence, with its extent and its concession?",
+            "Did each support have its example?",
+            "Did the whole defence take less than a minute?",
+          ],
+        },
+      },
+      {
+        type: "table",
+        title: "Why this model works",
+        headers: ["Aspect", "What the model does"],
+        rows: [
+          ["Organisation", "The plan's paragraph briefs convert directly into the introduction's promised route — air case, then land case — so the essay's shape is announced and then kept."],
+          ["Grammar", "The introduction's sentences are built to be hard to break: a fronted appositive, one belief verb, and a two-item list whose parallel structure survives drafting pressure."],
+          ["Vocabulary", "The position language is exact about extent — 'clearly outweigh' — and the supports are named in concrete nouns (streets, housing, shoppers) rather than abstractions."],
+          ["Coherence", "The final sentence works as a signpost: 'two steps' promises two bodies, and 'first, then' orders them — the reader can navigate before the paragraphs arrive."],
+          ["Task fulfilment", "The extent question is answered outright, the drawbacks are kept honest through the planned concession, and the introduction commits to the weighing the prompt demanded."],
+        ],
+      },
+      {
+        type: "table",
+        title: "Examination strategy",
+        headers: ["Moment", "Do this"],
+        rows: [
+          ["Before you start", "Protect the planning minutes like writing minutes: four for the essay, two for the report, marked off mentally before the first sentence."],
+          ["While the clock runs", "Transcribe the plan: one paragraph per brief, three moves per paragraph, and new ideas noted in two words for the final check, not adopted on arrival."],
+          ["If you are stuck", "The stall is a planning hole — refill it with an example for the current brief, never with a new idea that rewrites the map midstream."],
+          ["Final minutes", "Read the answer against the plan: every brief landed, every deliverable from the marking lesson still visibly owned, the word count safely past the floor."],
+        ],
+      },
+      {
+        type: "summary",
+        points: [
+          "Plan position first: one sentence of seven words or fewer, with the extent and the concession inside it.",
+          "The 2-3-1 map gives the essay its skeleton: two body paragraphs, three keyword slots each — point, explanation, example — and one short close in fresh words.",
+          "The map's arithmetic — roughly 40, 85, 85 and 40 — lands the essay past the floor with a margin, which is why a third body paragraph is a risk, not a bonus.",
+          "Task 1 planning is selection: features hunted, overview drafted and details grouped before any prose, because the thesis written first decides which details deserve space.",
+          "Freeze the plan when it is done: mid-essay ideas are noted and judged later, and the notation stays brutal — keywords, arrows, abbreviations, never sentences.",
+        ],
+      },
+      {
+        type: "revision",
+        title: "Recall check",
+        intro: "One item per earlier lesson.",
+        items: [
+          { question: "What must be counted before a plan can be drawn?", options: ["The words in the prompt", "The prompt's deliverables — each circled instruction gets a home in the plan", "The paragraphs in the model answer"], correctIndex: 1, explanation: "The requirements lesson's count defines completeness; a plan that has not given every deliverable a home is a plan to be partially addressed.", from: "Analysing question requirements" },
+          { question: "Which essay-band obligation does the three-slot body brief build in from the start?", options: ["A fixed word count per paragraph", "Reasons and examples beside every point", "A quotation in every body paragraph"], correctIndex: 1, explanation: "The point-explanation-example slots are the printed rubric's demands, planned as keywords before any prose exists.", from: "Understanding task instructions" },
+          { question: "A prompt fenced by 'in your country' — what does the plan do with the fence?", options: ["Ignores it, since arguments are general", "Writes it into the briefs so supports and examples are chosen from inside it", "Mentions it once in the introduction"], correctIndex: 1, explanation: "The box from the marking method disciplines example choice at planning time, when swapping an outside example costs two words instead of a paragraph.", from: "Analysing question requirements" },
+        ],
+      },
+    ],
+    questions: [
+      ex({
+        type: "mcq",
+        difficulty: "easy",
+        skill: "writing",
+        prompt: "In the 2-3-1 body map, what does each number stand for?",
+        hints: ["Think paragraphs, slots, close — in that order."],
+        options: [
+          { id: "a", text: "Two ideas per paragraph, three paragraphs, one conclusion." },
+          { id: "b", text: "Two body paragraphs, three moves inside each — point, explanation, example — and one short close." },
+          { id: "c", text: "Two minutes planning, three minutes checking, one draft." },
+        ],
+        correctOptionId: "b",
+        feedback: fb(
+          "Two body paragraphs, three moves inside each — point, explanation, example — and one short close.",
+          "The map encodes the essay's arithmetic as well as its shape: two developed bodies with the rubric's reasons-and-examples built into their slots, plus a close that restates rather than adds.",
+          "(a) reverses the numbers and buries the essay in paragraphs; (c) confuses the map's structure with the clock's budget.",
+        ),
+        tags: ["awriting", "planning", "body-map"],
+      }),
+      ex({
+        type: "read-answer",
+        difficulty: "medium",
+        skill: "writing",
+        prompt: "Guided practice. Read the case and find the planning rule that was broken.",
+        hints: ["Where should a mid-essay idea go when the plan is frozen?"],
+        passageTitle: "The paragraph that ate the essay",
+        passage: "Ken planned his essay in three minutes: position, two body briefs, close. At word 170, halfway through body two, he remembered a striking statistic about a city that had reversed a similar policy. He abandoned his planned example, wrote a fresh paragraph about the reversal, ran out of time before his close, and submitted an essay with three bodies and no conclusion. His language had been accurate throughout.",
+        question: "Which planning rule did Ken break, and what did it cost him?",
+        options: [
+          { id: "a", text: "He planned too briefly — three minutes instead of four." },
+          { id: "b", text: "He broke the freeze: the striking idea should have been noted in two words and judged in the final check, not adopted midstream to eat his close." },
+          { id: "c", text: "He used the wrong position — the statistic proved him wrong." },
+        ],
+        correctOptionId: "b",
+        feedback: fb(
+          "He broke the freeze: the striking idea should have been noted in two words and judged in the final check, not adopted midstream to eat his close.",
+          "The plan is a commitment device: mid-essay adoption rewrites the map while the clock runs, and the missing close is the visible cost — a restate paragraph is cheap, but only if its space survives to the end.",
+          "(a) misreads the failure — the plan was fine and then abandoned; (c) invents a content problem the passage never states.",
+        ),
+        tags: ["awriting", "planning", "freeze"],
+      }),
+      ex({
+        type: "mcq",
+        difficulty: "medium",
+        skill: "writing",
+        prompt: "Guided practice. Why does four minutes of planning make the essay faster rather than slower?",
+        hints: ["What is the unplanned candidate doing at word 160?"],
+        options: [
+          { id: "a", text: "Because the plan's vocabulary can be copied into the essay verbatim." },
+          { id: "b", text: "Because the plan banks the mid-essay decisions once, up front — drafting becomes transcription, and transcription does not stall." },
+          { id: "c", text: "Because planned essays are allowed to be shorter." },
+        ],
+        correctOptionId: "b",
+        feedback: fb(
+          "Because the plan banks the mid-essay decisions once, up front — drafting becomes transcription, and transcription does not stall.",
+          "The unplanned essay pays for its decisions at word 160, when each minute is worth most; the planned essay paid for them at minute four, in keywords, and spends the middle of the hour writing prose it already chose.",
+          "(a) mistakes a plan for a word bank — plans hold decisions, not sentences to copy; (c) is false — the floor binds everyone.",
+        ),
+        tags: ["awriting", "planning", "time"],
+      }),
+      ex({
+        type: "short-answer",
+        difficulty: "hard",
+        skill: "writing",
+        prompt: "Independent practice. Name the three moves inside each body paragraph of the map, in order.",
+        question: "List the three slots every body-paragraph brief carries, in the order they run.",
+        acceptedAnswers: [
+          "point, explanation, example",
+          "point then explanation then example",
+          "the point, the explanation of the mechanism, the example that grounds it",
+          "argue, explain, exemplify",
+        ],
+        keywords: ["point", "explanation", "example"],
+        hints: [],
+        feedback: fb(
+          "Point, explanation, example.",
+          "The three slots mirror the essay band's own demands: a sentence that argues, sentences that open the mechanism, and sentences that ground the case — planned as keywords, written as a paragraph.",
+          "Lists that open with an example or a mechanism have the engine running backwards; the argument always leads.",
+        ),
+        tags: ["awriting", "planning", "pee"],
+      }),
+      ex({
+        type: "mcq",
+        difficulty: "hard",
+        skill: "writing",
+        prompt: "Independent practice. In the two-minute Task 1 plan, what is drafted before any detail paragraph is written?",
+        hints: [],
+        options: [
+          { id: "a", text: "The introduction only — details come first, the thesis can wait." },
+          { id: "b", text: "Nothing — Task 1 plans are written after the report, as a check." },
+          { id: "c", text: "The overview — the report's thesis is drafted in notes first, because it decides which details deserve space at all." },
+        ],
+        correctOptionId: "c",
+        feedback: fb(
+          "The overview — the report's thesis is drafted in notes first, because it decides which details deserve space at all.",
+          "An overview assembled after the details merely summarises whatever was written; an overview drafted from the selected main features decides the paragraph bundles, which is the whole point of planning a report — and the late-clock protection the thesis provides is exactly what a pressured report needs.",
+          "(a) keeps the report's most criterion-visible sentence for last, when pressure is highest; (b) reverses the plan's purpose entirely.",
+        ),
+        tags: ["awriting", "planning", "overview"],
+      }),
+    ],
+    assignment: {
+      title: "The four-minute map",
+      instructions:
+        "Take this practice prompt in the style of the test: 'Many people believe that school uniforms should be optional rather than compulsory. To what extent do you agree?' Write (1) your position sentence in seven words or fewer; (2) two body briefs, each with three keyword slots — point, mechanism, case; (3) one close note; and (4) the full introduction your plan generates, in three sentences or fewer. Keywords only in the plan — no sentences until the introduction.",
+      minWords: 50,
+      maxWords: 200,
+    },
+    homework: [
+      "Time your next three practice plans; any plan that passes five minutes gets its notation cut until every line is five words or fewer.",
+      "Write the two-minute plan for one chart task in the Writing task library: three main-feature notes, one drafted overview sentence, two grouping notes — then check that the report you wrote follows the bundles the plan set.",
+    ],
+  },
+  // ---------------------------------------------------------------------------
+  {
+    slug: "ielts-awriting-paragraphs",
+    title: "Paragraph organisation",
+    description:
+      "One controlling idea per paragraph: topic sentences that argue or group, the point-explain-example engine, length discipline between two and five sentences, and each task type's architecture.",
+    objectives: [
+      "build every body paragraph on a single controlling idea",
+      "write topic sentences that argue in essays and group data in reports",
+      "run the point-explain-example engine inside a two-to-five sentence discipline",
+    ],
+    minutes: 15,
+    blocks: [
+      {
+        type: "lesson-intro",
+        text: "A paragraph is not a visual unit — it is a unit of thought, and the Writing criteria read it that way: Coherence and Cohesion explicitly credit a clear central topic in each paragraph, and progression from paragraph to paragraph. The candidate who breaks paragraphs where a block of text looks long enough is paragraphing for the eye; the candidate who breaks where the controlling idea changes is paragraphing for the criterion. This lesson installs the second habit: one idea per paragraph, a topic sentence that earns its place at the top, and the engine that develops it without sprawl.",
+        beforeYouStart: [
+          "You can plan an essay's paragraphs with the 2-3-1 map.",
+          "You can write a position sentence and hold it across a draft.",
+        ],
+      },
+      {
+        type: "table",
+        title: "Examination relevance",
+        headers: ["Aspect", "This lesson"],
+        rows: [
+          ["Section", "Writing — every paragraph of both tasks, both variants"],
+          ["Task & question types", "Essay bodies, report detail paragraphs, letter bullet paragraphs"],
+          ["What is assessed", "Coherence and Cohesion — paragraphing with a central topic per paragraph and progression between them"],
+          ["Why this matters", "The single-block essay caps the organisation criterion whatever its sentences achieve, because the criterion reads structure before it reads prose"],
+        ],
+      },
+      { type: "heading", text: "Component 1 — One paragraph, one controlling idea" },
+      {
+        type: "text",
+        text: "The controlling idea is the one claim this paragraph exists to advance — in a report, the one grouping of data it presents. Everything else in the paragraph is support: explanation, example, figures. The test of a controlling idea is subtraction: remove any supporting sentence and the paragraph still stands, thinner; remove the controlling idea and the paragraph has nothing to stand on. When you can write the paragraph's point in a five-word margin note, the paragraph is single-minded; when the margin note needs the word 'and', you have two paragraphs lying in one another's arms, and the fix is a paragraph break, not a tighter sentence.",
+      },
+      { type: "heading", text: "Component 2 — Topic sentences that argue or group" },
+      {
+        type: "steps",
+        title: "The first sentence's two jobs, by task",
+        steps: [
+          { title: "Step 1: In essays, the topic sentence argues", text: "A Task 2 body opens with a claim in the argument's service, not a topic announcement. 'Convenience' is a topic; 'Compulsory sorting works because it moves the cost of waste to the people who create it' is an argument the paragraph can then carry. The arguing topic sentence lets the examiner find your essay's spine in its first sentences alone.", examples: [{ english: "Topic announcement: 'This paragraph will discuss pollution.' Argument: 'Cutting kerbside engines cuts the air city dwellers breathe at pavement level.'", note: "The second sentence could be disagreed with — that is the test." }] },
+          { title: "Step 2: In reports, the topic sentence groups", text: "A Task 1 detail paragraph opens by naming the bundle it presents: which categories, which direction, which years. The grouping sentence lets the reader predict the paragraph's contents before a figure arrives — 'The decade's growth came almost entirely from two categories' — and grouping is selection made visible.", examples: [{ english: "'Both traditional venues held their ground, while the new category transformed the market' — a grouping that two paragraphs of figures can now fill.", note: "Grouping sentences are the report's paragraph map." }] },
+          { title: "Step 3: In letters, the topic sentence covers its bullet", text: "A GT letter's middle paragraphs each open by picking up one bullet from the brief — the description, the request, the explanation — so the examiner can tick deliverables paragraph by paragraph. The opening sentence of each paragraph should make its bullet identifiable without looking back at the task.", examples: [{ english: "Bullet: 'say what you want the bakery to do.' Opening: 'What I would ask is a full refund or a remade cake before Saturday.'", note: "Bullet-to-paragraph mapping is the letter's tick-list." }] },
+          { title: "Step 4: End where the idea ends — the break test", text: "Break paragraphs when the controlling idea changes, and only then. The discipline runs both ways: a one-sentence paragraph is usually a stray point begging for development (or a break made for drama), and a seven-sentence paragraph almost always hides a second idea that deserves its own margin note, its own topic sentence and its own break.", examples: [{ english: "A nine-sentence body paragraph split at sentence five, where the margin note needed 'and' — becoming a five-four pair with cleaner topic sentences and a higher progression read.", note: "The break test is mechanical: split where the note says 'and'." }] },
+        ],
+      },
+      { type: "heading", text: "Component 3 — The point-explain-example engine" },
+      {
+        type: "text",
+        text: "Inside a body paragraph, the engine runs three moves. Point: one sentence that argues the controlling idea. Explain: one or two sentences that open the mechanism — why does the point hold, what causes what, what follows from what. Example: one or two sentences that ground the mechanism in a case, a figure pair or an instance from knowledge and experience, exactly as the essay band demands. A fourth move, the wrap, is optional: one sentence that ties the paragraph back to the position or hands the reader to the next paragraph — useful at the essay's joints, surplus in the middle of a two-paragraph body. The whole engine fits inside two to five sentences, which is the length discipline: paragraphs below two sentences are usually unengineered claims; paragraphs above five are usually two engines in one chassis.",
+      },
+      { type: "heading", text: "Component 4 — Architecture per task type" },
+      {
+        type: "table",
+        title: "What each answer is built of",
+        headers: ["Answer", "Blocks", "Notes"],
+        rows: [
+          ["Task 2 essay", "Introduction · Body 1 · Body 2 · Conclusion", "Four blocks; the introduction commits to the position, bodies carry the map's briefs, the close restates in fresh words"],
+          ["Task 1 report", "Introduction · Overview · Detail A · Detail B", "Four blocks; the overview is the report's thesis and sits second — a separate conclusion would only repeat it and spend lines saying nothing new"],
+          ["GT letter", "Opening · Bullet 1 · Bullet 2 · Bullet 3 · Close", "Five short blocks; the opening states the purpose, each bullet owns a paragraph, the close requests the action and signs off"],
+        ],
+        caption: "The report's overview does the essay-conclusion's job — which is why reports do not need conclusions, and essays cannot survive without them.",
+      },
+      { type: "heading", text: "Component 5 — The single-paragraph-essay trap" },
+      {
+        type: "text",
+        text: "The trap has two forms: the one-block essay and the two-block compromise — 250 or 300 words in one or two slabs, sometimes with impressive sentences inside. The organisation criterion reads such answers as essays without paragraphing: no central topics to find, no progression to follow, no route from position to close. The language criteria may admire the prose; the paragraphing criterion holds the ceiling, and the answer sits under it (an estimate of how the descriptors behave, not a guarantee). The cure is mechanical rather than verbal: give each planned brief its paragraph, give each paragraph its arguing or grouping first sentence, and the trap cannot re-form — because it is a structural failure, and structure is what the engine installs.",
+      },
+      {
+        type: "example",
+        title: "Paragraphs under the lens — seven cases",
+        items: [
+          { english: "An essay body with its moves labelled: point ('A healthy-only canteen reshapes the whole school day'), explanation (defaults decide teenage eating, not lectures), example (schools that removed sugary drinks saw sugar intake fall within a term).", note: "Three moves, four sentences, one engine.", domain: "exam" },
+          { english: "A report detail paragraph opening on its grouping — 'The decade's growth came almost entirely from two categories' — and holding to them for four sentences.", note: "The grouping sentence is the selection made visible.", domain: "exam" },
+          { english: "A letter's second paragraph opens 'What I would ask for is…' and the reader can tick the request bullet without returning to the brief.", note: "Bullet-paragraph mapping in one opening move.", domain: "exam" },
+          { english: "A learner writes only topic sentences for three prompts — no support — and checks each one: can a reader disagree with it, or only nod at it?", note: "The disagree test is the fastest paragraph training there is.", domain: "study" },
+          { english: "A project update opens its second paragraph with the controlling news — 'The launch slips two weeks, and the cause is ours' — before any history; the version that opened with history never reached the news.", note: "Readers navigate by controlling ideas at work too.", domain: "work" },
+          { english: "A one-block, 280-word essay with strong vocabulary and no paragraphing: the organisation criterion finds no route through it, and the language cannot compensate for the missing structure.", note: "The trap's plainest form.", domain: "exam" },
+          { english: "A complaint email rewritten from one furious block into three controlled paragraphs — what happened, what was promised, what is required now — and finally answered by its recipient.", note: "Paragraphing is persuasion's scaffolding everywhere.", domain: "life" },
+        ],
+      },
+      { type: "heading", text: "Component 6 — Common traps" },
+      {
+        type: "mistakes",
+        title: "Paragraphing mistakes corrected",
+        items: [
+          { wrong: "Paragraphs are visual: I break when a block of text looks long enough.", right: "Break when the controlling idea changes — write the paragraph's margin note, and if the note needs 'and', make two paragraphs with two notes.", reason: "The criterion reads structure, and length-based breaks scatter one idea across blocks while burying the next." },
+          { wrong: "A general topic sentence is safer, because everything I write will fit under it.", right: "A topic sentence narrow enough to be proved in two to five sentences is the one that argues; generality is the smell of a paragraph with no engine.", reason: "The disagree test settles it: if nobody could disagree with your opening sentence, it is a topic label, not a claim." },
+          { wrong: "Task 1 needs a conclusion, so I will repeat my overview as a final paragraph.", right: "The overview is the report's thesis and sits second; a closing paragraph repeating it spends lines saying nothing new and reads as padding.", reason: "Reports inform; the verdict job is done by the overview, and the detail paragraphs exist to support it — not to be re-summarised after it." },
+        ],
+      },
+      {
+        type: "four-skills",
+        title: "Two paragraphs, engine exposed",
+        reading: {
+          text: "A candidate's body paragraphs for the position 'school canteens should serve only healthy options'. Paragraph one: 'A healthy-only canteen reshapes the whole school day, not just lunch. When the easiest food available is the healthiest, pupils' default choice changes without any lecture, and defaults — not education — decide most teenage eating. Schools that removed sugary drinks from vending machines reported a fall in daily sugar intake within a single term.' Paragraph two: 'Admittedly, a canteen that bans familiar food can push pupils off-site to the shops opposite the gate. The risk is real in the first weeks, and a school that ignores it simply exports the problem across the road. However, the schools that paired the new menu with a price cut kept more than nine in ten pupils on site.'",
+          task: "Label each paragraph's moves, then say where the second paragraph's concession and counter live.",
+        },
+        writing: {
+          task: "Using the position 'governments should fund free public transport', write two body paragraphs: one supporting, one conceding a real drawback and then countering it — each with a topic sentence that argues, an explanation move, and an example move, inside two to five sentences.",
+          guide: [
+            "Paragraph one, supporting: point ('free transport changes the commuter's maths'), mechanism (price is the lever…), case (a city that scrapped fares…).",
+            "Paragraph two, conceding then countering: point ('admittedly, the tax bill is heavy'), counter ('but road spending and health costs already carry it…').",
+            "Run the disagree test on each topic sentence before you write the second sentence.",
+            "Keep each paragraph inside five sentences; if you reach six, look for the hidden second idea.",
+          ],
+          model: "Paragraph one: Free transport changes the commuter's daily maths more than any poster campaign ever has. When the bus costs nothing, the comparison is no longer between a ticket and petrol but between nothing and something, and at that price the car loses the commute. Cities that scrapped fares on inner routes recorded double-digit jumps in ridership within a year, mostly from former drivers. Paragraph two: Admittedly, the tax bill for a fare-free network is heavy, and voters feel it in the year it lands. However, the same taxpayers already carry the road repairs, the congestion and the health costs of a car-first city, and much of the fare-free bill is a transfer of spending they were already making. In the cities that have made the switch, the visible tax rose less than the invisible costs fell.",
+        },
+        listening: {
+          script: "Tutor: Your first paragraph is doing two jobs, so I lost the thread at sentence four. Student: It argues the cost point, then it sort of becomes about fairness? Tutor: Exactly — two controlling ideas, one chassis. Which one carries your position better? Student: Cost, I think. Tutor: Then fairness gets its own paragraph next draft, with its own topic sentence — or it gets cut. And your topic sentence: could I disagree with it? Student: 'Transport should be free because it is fair' — yes, actually, I could. Tutor: Then it argues. Keep it.",
+          task: "What two fixes does the tutor prescribe for the two-idea paragraph?",
+        },
+        speaking: {
+          task: "Explain the point-explain-example engine to a partner using one of your own practice paragraphs, naming each move as you reach it.",
+          frames: [
+            "My topic sentence argues that…",
+            "The explanation opens the mechanism, which is…",
+            "The example grounds it: for instance…",
+            "My wrap, where I use one, hands the reader to…",
+          ],
+          checklist: [
+            "Did I run the disagree test on the topic sentence aloud?",
+            "Did I keep the whole paragraph inside five sentences?",
+            "Did I name which move each sentence performs?",
+          ],
+        },
+      },
+      {
+        type: "table",
+        title: "Why this model works",
+        headers: ["Aspect", "What the model does"],
+        rows: [
+          ["Organisation", "Two paragraphs, two jobs — support then concede-and-counter — with each controlling idea owning its chassis, so the structure the criterion reads is the structure the reader feels."],
+          ["Grammar", "Comparatives and parallel structures carry the argument ('no longer between a ticket and petrol but between nothing and something'), and the concession paragraph's 'admittedly… however' frame controls two ideas in one accurate sequence."],
+          ["Vocabulary", "Concrete, collocated nouns do the arguing — 'the commuter's daily maths', 'a transfer of spending' — with no showpiece vocabulary anywhere near the load-bearing sentences."],
+          ["Coherence", "Each topic sentence predicts its paragraph, and the second paragraph's counter explicitly answers its own concession, so progression runs within paragraphs as well as between them."],
+          ["Task fulfilment", "The supporting paragraph supplies the reason-and-example support the essay band prints, and the concede-counter paragraph shows the position surviving contact with its strongest objection."],
+        ],
+      },
+      {
+        type: "table",
+        title: "Examination strategy",
+        headers: ["Moment", "Do this"],
+        rows: [
+          ["Before you start", "Give every planned brief a margin note of five words or fewer: the note is the paragraph's controlling idea, written before the paragraph is."],
+          ["While the clock runs", "Open each body with the arguing or grouping sentence, run the three moves, and break paragraphs only where the margin note changes."],
+          ["If you are stuck", "Return to the paragraph's margin note: every sentence either serves the note or leaves — a stuck paragraph is usually two notes in disguise."],
+          ["Final minutes", "Scan the answer's first sentences only: they should read as the essay's spine — position, argument, argument, restatement — with each letter bullet identifiable from its opener."],
+        ],
+      },
+      {
+        type: "summary",
+        points: [
+          "A paragraph advances one controlling idea; the subtraction test and the five-word margin note decide whether it truly has only one.",
+          "Topic sentences argue in essays, group data in reports, and map to bullets in letters — the disagree test tells an argument from a topic label.",
+          "The engine runs point, explanation, example, with an optional wrap at the essay's joints, and the whole paragraph lives inside two to five sentences.",
+          "Each answer type has its architecture: four blocks for the essay and the report (the overview is the report's thesis, so reports need no conclusion), five short blocks for the letter.",
+          "The single-block essay caps the organisation criterion regardless of its prose, because paragraphing is a structural requirement the criterion reads first.",
+        ],
+      },
+      {
+        type: "revision",
+        title: "Recall check",
+        intro: "One item per earlier lesson.",
+        items: [
+          { question: "How many body paragraphs does the 2-3-1 map give an essay — and what runs inside each?", options: ["Three bodies, one idea each", "Two bodies, with point, explanation and example inside each", "One body, twice as long"], correctIndex: 1, explanation: "The planning lesson's map builds exactly the chassis this lesson's engine fills: two bodies, three moves each, one close.", from: "Planning" },
+          { question: "A GT letter brief prints three bullets. What does paragraph organisation owe each one?", options: ["A mention somewhere in the letter", "Its own paragraph, identifiable from its opening sentence", "A single sentence each, in the conclusion"], correctIndex: 1, explanation: "Bullet-to-paragraph mapping lets the examiner tick deliverables paragraph by paragraph — the requirements lesson's count, given visible homes.", from: "Analysing question requirements" },
+          { question: "Which criterion explicitly credits a clear central topic in each paragraph?", options: ["Task Achievement", "Lexical Resource", "Coherence and Cohesion"], correctIndex: 2, explanation: "The organisation criterion reads paragraphing and progression, which is why structural failures cap it before language gets a hearing.", from: "How Writing and Speaking are assessed" },
+        ],
+      },
+    ],
+    questions: [
+      ex({
+        type: "mcq",
+        difficulty: "easy",
+        skill: "writing",
+        prompt: "What is a controlling idea?",
+        hints: ["Try the subtraction test: which sentence holds the paragraph up?"],
+        options: [
+          { id: "a", text: "The paragraph's longest sentence, which usually carries the example." },
+          { id: "b", text: "The one claim the paragraph exists to advance — remove it and the paragraph has nothing to stand on." },
+          { id: "c", text: "The paragraph's first word, which sets the topic area." },
+        ],
+        correctOptionId: "b",
+        feedback: fb(
+          "The one claim the paragraph exists to advance — remove it and the paragraph has nothing to stand on.",
+          "The controlling idea is the load-bearing claim: supporting sentences can be lost one by one without the paragraph collapsing, but the idea itself cannot, and the five-word margin note is how you check you have exactly one.",
+          "(a) mistakes support for structure; (c) confuses a topic label with the argument the paragraph actually makes.",
+        ),
+        tags: ["awriting", "paragraphs", "controlling-idea"],
+      }),
+      ex({
+        type: "read-answer",
+        difficulty: "medium",
+        skill: "writing",
+        prompt: "Guided practice. Read the paragraph and find the break.",
+        hints: ["Write the margin note — does it need the word 'and'?"],
+        passageTitle: "Two engines, one chassis",
+        passage: "A candidate's paragraph for an essay on city parks: 'Inner-city parks make surrounding districts wealthier, because green space raises nearby property values and pulls in cafés and small shops. My own neighbourhood changed within two years of its park opening, with three new businesses on the street. Parks also carry health benefits that reduce public spending: people who live within a ten-minute walk of a park exercise more and visit their doctors less. A study of two thousand households found exactly that distance effect.'",
+        question: "Where should this paragraph break, and how do you know?",
+        options: [
+          { id: "a", text: "It should not break — both points are about parks, so one paragraph is correct." },
+          { id: "b", text: "Break before 'Parks also carry health benefits' — the margin note needs 'and', the controlling idea changes from wealth to health, and the second idea deserves its own topic sentence." },
+          { id: "c", text: "Break before 'My own neighbourhood changed' — examples always start new paragraphs." },
+        ],
+        correctOptionId: "b",
+        feedback: fb(
+          "Break before 'Parks also carry health benefits' — the margin note needs 'and', the controlling idea changes from wealth to health, and the second idea deserves its own topic sentence.",
+          "The paragraph runs one engine (wealth) to sentence two, then starts a second engine (health) with its own example — the 'and' in the margin note and the pivot word 'also' both flag the seam, and splitting there gives each claim its own chassis and its own arguing first sentence.",
+          "(a) applies the topic test instead of the idea test — related topics can still be two claims; (c) turns a mechanical rule of thumb into a law the engine never printed.",
+        ),
+        tags: ["awriting", "paragraphs", "break-test"],
+      }),
+      ex({
+        type: "mcq",
+        difficulty: "medium",
+        skill: "writing",
+        prompt: "Guided practice. In a Task 1 report, what does a detail paragraph's topic sentence do?",
+        hints: ["Essays argue — reports do something else with their openings."],
+        options: [
+          { id: "a", text: "It argues the writer's view of the data, as in an essay." },
+          { id: "b", text: "It groups the data the paragraph will present — which categories, which direction, which years — so the reader can predict the contents before a figure arrives." },
+          { id: "c", text: "It quotes the chart's title so the examiner can see the task was read." },
+        ],
+        correctOptionId: "b",
+        feedback: fb(
+          "It groups the data the paragraph will present — which categories, which direction, which years — so the reader can predict the contents before a figure arrives.",
+          "A report's first sentences are its paragraph map: grouping statements make selection visible, and the examiner can trace the overview's claims into the bundles that support them.",
+          "(a) imports the essay's arguing job into a genre whose voice must stay neutral; (c) wastes the paragraph's most valuable sentence on information the examiner already has.",
+        ),
+        tags: ["awriting", "paragraphs", "reports"],
+      }),
+      ex({
+        type: "fill-blank",
+        difficulty: "hard",
+        skill: "writing",
+        prompt: "Independent practice. Complete the engine's description.",
+        hints: [],
+        sentence: "In the point-explain-example engine, the move that opens the mechanism behind the claim — why it holds — is the ___ move.",
+        acceptedAnswers: ["explain", "explanation", "the explanation"],
+        feedback: fb(
+          "explain",
+          "The engine's second move opens the mechanism: it answers why the point holds and what follows from what, before the example move grounds the mechanism in a case.",
+          "Answers naming the point or the example have the engine's order reversed — the mechanism always sits between the claim and its case.",
+        ),
+        tags: ["awriting", "paragraphs", "engine"],
+      }),
+      ex({
+        type: "mcq",
+        difficulty: "hard",
+        skill: "writing",
+        prompt: "Independent practice. A 280-word essay arrives as one solid block, its sentences accurate and its vocabulary strong. What has the organisation criterion seen?",
+        hints: [],
+        options: [
+          { id: "a", text: "A strong answer with an unusual but valid layout — the criterion scores sentences, not blocks." },
+          { id: "b", text: "An essay without paragraphing: no central topics to find, no progression to follow, and a structural ceiling that strong prose does not lift." },
+          { id: "c", text: "An automatic zero for format, whatever the language achieves." },
+        ],
+        correctOptionId: "b",
+        feedback: fb(
+          "An essay without paragraphing: no central topics to find, no progression to follow, and a structural ceiling that strong prose does not lift.",
+          "The organisation criterion reads structure before prose — a one-block essay gives it no route from position to close, so the answer sits under a ceiling the vocabulary cannot raise (an estimate of descriptor behaviour, never a fixed verdict).",
+          "(a) misreads what the criterion is for; (c) overstates the consequence — the answer is capped, not erased.",
+        ),
+        tags: ["awriting", "paragraphs", "trap"],
+      }),
+    ],
+    assignment: {
+      title: "Two paragraphs, one engine",
+      instructions:
+        "Using the position 'governments should fund free public transport in cities', write two body paragraphs: one supporting, one conceding a genuine drawback and then countering it. Each paragraph needs a topic sentence that passes the disagree test, an explanation move, and an example move, held inside two to five sentences. Label each move in brackets — [point], [explain], [example] — so the engine is visible to your reader.",
+      minWords: 80,
+      maxWords: 220,
+    },
+    homework: [
+      "Write only the topic sentences for three essay prompts — no support — and run the disagree test on each: a sentence nobody could disagree with is a label, not a claim.",
+      "Take one of your own graded essays and write a five-word margin note beside every paragraph; any note that needs 'and' marks a paragraph to split in your next draft.",
+    ],
+  },
+  // ---------------------------------------------------------------------------
+  {
+    slug: "ielts-awriting-grammar",
+    title: "Grammar accuracy",
+    description:
+      "The seven error families that decide the accuracy half of the grammar criterion — agreement, articles, tense discipline, prepositions, data plurals, fragments, run-ons — plus the error log and the targeted final two minutes.",
+    objectives: [
+      "apply the seven highest-value accuracy rules under timed conditions",
+      "keep an error log and self-edit its top three personal patterns",
+      "distinguish accuracy from range inside the grammar criterion",
+    ],
+    minutes: 16,
+    blocks: [
+      {
+        type: "lesson-intro",
+        text: "Grammar is the criterion candidates most often try to fix by writing more slowly, which is like fixing a budget by earning less. Accuracy under the clock comes from three specific things instead: knowing the small set of error families that actually appear in timed writing, knowing which of those families you personally commit, and spending the final two minutes sweeping for those families only. This lesson installs the seven families, the log that personalises them, and the distinction between accuracy and range that stops candidates trading one for the other at a loss.",
+        beforeYouStart: [
+          "You can write a full timed essay and a full report.",
+          "You can find the subject and the main verb in a long sentence.",
+        ],
+      },
+      {
+        type: "table",
+        title: "Examination relevance",
+        headers: ["Aspect", "This lesson"],
+        rows: [
+          ["Section", "Writing — every sentence of both tasks, both variants"],
+          ["Task & question types", "Reports, essays and letters: the accuracy half of the grammar criterion is task-blind"],
+          ["What is assessed", "Grammatical Range and Accuracy — error density and error-free sentences first, structural variety second"],
+          ["Why this matters", "Seven error families account for most timed-writing losses, and all seven are checkable patterns rather than knowledge gaps"],
+        ],
+      },
+      { type: "heading", text: "Component 1 — Accuracy and range are different currencies" },
+      {
+        type: "text",
+        text: "The grammar criterion has two halves. Range counts the variety of structures you attempt — simple, compound and complex sentences, different clause types, varied openings. Accuracy counts how many sentences survive unbroken, and error density is what the published descriptors track across the middle of the scale: frequent errors that impede communication sit low; errors that remain but rarely block meaning sit higher; a steady rate of error-free sentences sits higher still (as throughout this course, a description of descriptor territory, not a promise of a number). The practical consequence: a clean simple sentence outperforms a broken complex one at every level of the scale, and the exam-smart trade is to attempt complexity only where you can carry it. Range is built in practice sessions; accuracy is protected in the final two minutes.",
+      },
+      { type: "heading", text: "Component 2 — The seven families" },
+      {
+        type: "steps",
+        title: "The errors that decide the middle bands",
+        steps: [
+          { title: "Family 1: Subject-verb agreement over distance", text: "The verb agrees with the head noun of the subject phrase, however many words sit between them. Prepositional phrases and relative clauses are the fog: 'the number of visitors to the island' is singular because the head noun is 'number'. Learn the two special cases — 'the number of X is' and 'a number of X are' — and re-read every long subject before you finalise its verb.", examples: [{ english: "Wrong: 'The number of students who cycle have doubled.' Right: '…has doubled' — the subject is 'the number', singular.", note: "Distance is where agreement goes to hide." }] },
+          { title: "Family 2: Articles with data and general nouns", text: "Specific, identified things take 'the' — the chart, the graph, the period shown, the proportion of households. General plural statements take no article — 'Cities are growing', 'Governments invest'. The reliable anchor: a noun followed by an 'of' phrase that specifies it almost always wants 'the', because the phrase itself identifies which one.", examples: [{ english: "Wrong: 'Proportion of income spent on rent rose.' Right: 'The proportion of income spent on rent rose.' — the of-phrase identifies the proportion.", note: "Of-phrases are article magnets." }] },
+          { title: "Family 3: Tense discipline per task type", text: "Reports describe closed data in the past simple — 'sales rose', 'the figure fell' — unless the visual has no time span, in which case the present describes what the chart shows. Essays argue in the present simple, with the past reserved for examples. The discipline is per paragraph: pick the frame at the paragraph's first sentence and let no sentence drift out of it.", examples: [{ english: "Drift: 'The chart shows that visits rose, and the museum is expanding since 2015.' Repair: hold the past frame for the data and move the change-of-state into its own present-simple sentence.", note: "One frame per paragraph, exceptions announced." }] },
+          { title: "Family 4: Prepositions after reporting verbs", text: "A small set of fixed pairs covers most report sentences: rise from X to Y, an increase in, a fall of two per cent, spend money on, consist of, account for, depend on. These are checked collocations, not logic — 'an increase of spending' is wrong however reasonable it sounds, because the noun 'increase' takes 'in' for the thing increasing.", examples: [{ english: "Wrong: 'an increase of spending on housing'. Right: 'an increase in spending on housing'.", note: "Learn the pair, not the reasoning." }] },
+          { title: "Family 5: The missing plural on data nouns", text: "Quantified and fractioned nouns take their plural: 'two thirds of households', 'half of all visitors', 'six in ten respondents'. The singular creeps in under time pressure and reads as a basic slip even when everything around it is sophisticated — which is exactly what makes it expensive.", examples: [{ english: "Wrong: 'two thirds of household'. Right: 'two thirds of households'.", note: "Quantifier plus plural is a reflex worth drilling." }] },
+          { title: "Family 6: Fragments — the sentence with no engine", text: "A fragment has no main verb: 'The main reason being cost.' has a participle where a verb belongs. Under the clock, fragments usually arrive as intended overviews or emphatic afterthoughts, and the repair is mechanical — give the sentence a real verb ('The main reason is cost.') or attach it to the previous sentence with a comma or dash.", examples: [{ english: "Fragment: 'The most striking feature being the collapse of guesthouse stays.' Repair: 'The most striking feature is the collapse of guesthouse stays.'", note: "Being is the fragment's signature word." }] },
+          { title: "Family 7: Run-ons — two sentences on one comma", text: "A comma splice joins two complete sentences with a comma: 'Cities are growing, this creates pressure on housing.' The repairs are three: a full stop, a semicolon, or a connector that legitimises the comma ('Cities are growing, and this creates pressure'). Checking for splices is a forty-second sweep: hunt commas with a complete sentence on each side.", examples: [{ english: "Splice: 'The scheme was popular, funding ended in 2020.' Repairs: '…popular; funding ended…' / '…popular. Funding ended…' / '…popular, but funding ended…'", note: "Comma, complete sentence, complete sentence — the tell is mechanical." }] },
+        ],
+      },
+      { type: "heading", text: "Component 3 — The error-log method" },
+      {
+        type: "text",
+        text: "The error log is three columns and five minutes per practice answer. Column one, what I wrote, copied exactly. Column two, the correction, in the examiner's wording. Column three, the rule, in five words or fewer — 'number of takes singular', 'of-phrases want the' — because a rule you cannot say in five words is a rule you will not retrieve under pressure. Log every error from every practice answer for two weeks, then rank the rows: your top three patterns are your personal error profile, and they are almost never the families a grammar textbook would predict. The log's top three become the content of your final two minutes — which converts checking from a vague re-read, which finds nothing, into a targeted sweep, which finds exactly what you actually write.",
+      },
+      { type: "heading", text: "Component 4 — The final two minutes" },
+      {
+        type: "text",
+        text: "The last two minutes of each task run one drill: sweep the finished answer for your logged top three families and nothing else. A full grammar re-read under time pressure reads at skimming speed and catches almost nothing — the eyes glide over the sentences they just wrote. A sweep for three named patterns reads each sentence once, asking one question per family: does every long subject's verb agree? does every quantified noun carry its plural? does any comma have a sentence on both sides? Candidates who sweep three families fix more in two minutes than general re-readers fix in five, because search beats review when the target is named. Log after every practice, sweep after every answer: the loop is the whole method.",
+      },
+      {
+        type: "example",
+        title: "Families in the wild — seven repairs",
+        items: [
+          { english: "Agreement repaired at distance: 'The range of goods available in the town centre have narrowed' becomes '…has narrowed' — the head noun is 'range', and the fog between subject and verb hid it.", note: "Family one, the classic long subject.", domain: "exam" },
+          { english: "Article repaired by the of-anchor: 'Share of income spent on food fell' becomes 'The share of income spent on food fell' — the of-phrase identifies the share.", note: "Family two, anchor rule applied.", domain: "exam" },
+          { english: "Preposition repaired by the fixed pair: 'a rise of two per cent in average fares' — check which noun owns which preposition: a rise OF an amount, IN the thing rising.", note: "Family four, both pairs in one sentence.", domain: "exam" },
+          { english: "Splice repaired in three ways at once: 'Housing is scarce, young workers leave' becomes 'Housing is scarce; young workers leave' — or a full stop, or 'and so young workers leave'.", note: "Family seven has three exits; any exit works.", domain: "exam" },
+          { english: "An error log after one month shows a surprise: the writer's top three patterns are plurals after fractions, 'being'-fragments and tense drift in example sentences — none of them the relative clauses they had been drilling.", note: "The log finds what intuition misses.", domain: "study" },
+          { english: "A work memo repaired before sending: 'Revenue rose 12%, costs rose 8%' — a splice under deadline pressure, fixed with a semicolon by a colleague who runs the same sweep at her desk.", note: "The families are universal, not exam-only.", domain: "work" },
+          { english: "A message to a landlord repaired mid-draft: 'The problem being the boiler' — caught by the writer's own being-alarm and rebuilt as 'The problem is the boiler' before it confused anyone.", note: "Personal alarms fire outside exams too.", domain: "life" },
+        ],
+      },
+      { type: "heading", text: "Component 5 — Common traps" },
+      {
+        type: "mistakes",
+        title: "Accuracy mistakes corrected",
+        items: [
+          { wrong: "I will fix my grammar by writing more slowly and thinking about each sentence.", right: "Speed is not the cause: accuracy comes from pattern knowledge and the targeted sweep — log your errors, learn your three families, and spend the final two minutes on them.", reason: "Slow writing under exam pressure mostly adds hesitation, not correctness, and the errors that survive are the unrecognised patterns, not the rushed ones." },
+          { wrong: "Complex sentences raise the band, so I should write them even when they break.", right: "Write complex sentences you can carry cleanly, and let simple sentences carry the load where they do it better — clean simple structures outrank broken complexes on this criterion.", reason: "Range and accuracy are scored together, and error density dominates the middle of the scale: a broken complex sentence pays range and loses accuracy at a net loss." },
+          { wrong: "I do not know my personal error patterns, so in the final minutes I re-read everything.", right: "Build the log first — even one week of rows gives you a top three — and sweep for those three named families in the final minutes.", reason: "General re-reading runs at skim speed over familiar sentences; a named-pattern sweep gives the reading a target, and targeted search is what finds errors under pressure." },
+        ],
+      },
+      {
+        type: "four-skills",
+        title: "Repair, then rebuild",
+        reading: {
+          text: "A candidate's report paragraph before repair: 'The graph what shows visitor numbers to two museums between 2000 and 2020. Visitor numbers at the science museum rises from two millions to five millions, while the art gallery's figure is falling steady. An increase of around three millions over the two decades, this was the largest change on the chart. However, the art gallery was more popular in 2000, the science museum overtook it by 2005.'",
+          task: "Find one example of each family the paragraph plants: the fragment, the agreement error, the splice, and the tense drift.",
+        },
+        writing: {
+          task: "Repair the paragraph in the reading tab, then write two fresh sentences of your own — one comparing two figures from the paragraph, one stating the general trend — using the repaired structures.",
+          guide: [
+            "Give every sentence a main verb; hunt the word 'being' first.",
+            "Match each verb to its head noun before finalising: numbers, figure, increase.",
+            "Hold one tense frame per sentence pair, and announce any change.",
+            "Fix the splice with a semicolon, a full stop or a real connector — then read the comma aloud and check both sides.",
+          ],
+          model: "Repaired paragraph: The graph shows visitor numbers at two museums between 2000 and 2020. Visitor numbers at the science museum rose from two million to five million, while the art gallery's figure fell steadily. The increase of around three million over the two decades was the largest change on the chart. The art gallery was the more popular venue in 2000, but the science museum had overtaken it by 2005. Fresh sentences: By 2020, the science museum was attracting roughly twice as many visitors as the art gallery. Across the period as a whole, spending on both venues moved in step with their attendance.",
+        },
+        listening: {
+          script: "Tutor: Two minutes left — sweep time. What are your three? Student: Plurals after numbers, 'being' fragments, and comma splices. Tutor: Then sweep for those three only. Sentence one: 'two millions' — plural error, fix it. Sentence three: 'The most striking feature being…' — fragment, give it a verb. Last sentence: comma with a full sentence either side — splice. Anything else? Student: No — and I checked the long subjects for agreement on the way through, since that was last month's family. Tutor: Then you are done; do not re-read for style.",
+          task: "Which three families did the student sweep for, and what did the tutor forbid?",
+        },
+        speaking: {
+          task: "Say your own top three error patterns from memory, with one fixed example of each — then have a partner test you on the repair.",
+          frames: [
+            "My most frequent pattern is…, for example…, which repairs as…",
+            "My second pattern appears when…",
+            "My final two minutes sweep for exactly these three families, in this order:…",
+          ],
+          checklist: [
+            "Did each pattern come with a real example from my own writing?",
+            "Could I state each rule in five words or fewer?",
+            "Did I describe the sweep order I will use in the test?",
+          ],
+        },
+      },
+      {
+        type: "table",
+        title: "Why this model works",
+        headers: ["Aspect", "What the model does"],
+        rows: [
+          ["Organisation", "The repair keeps the paragraph's four-sentence shape intact — nothing is reordered, because the errors were sentence-level and the sweep is surgical rather than structural."],
+          ["Grammar", "Every family from the reading is visibly repaired: the fragment gains a main verb, 'rose' agrees with 'numbers', 'millions' loses its stray plural, and the splice becomes a 'but' sentence with a legitimate comma."],
+          ["Vocabulary", "The reporting pairs are correct under pressure — 'rose from… to…', 'an increase of around three million', 'the more popular venue' — all checked collocations rather than improvised ones."],
+          ["Coherence", "The tense frames are now disciplined: past simple holds the data sentence, past perfect marks the overtaking before 2005, and the fresh comparison sentence announces its own frame with 'By 2020'."],
+          ["Task fulfilment", "The repaired paragraph still selects, reports and compares exactly as the instruction band demands — accuracy work that cost the coverage nothing, which is the standard every edit should meet."],
+        ],
+      },
+      {
+        type: "table",
+        title: "Examination strategy",
+        headers: ["Moment", "Do this"],
+        rows: [
+          ["Before you start", "Recite your logged top three families and their five-word rules; they are the sweep's shopping list before the writing begins."],
+          ["While the clock runs", "Attempt complexity only where you can carry it, hold one tense frame per paragraph, and let clean simple sentences carry load when a complex one wobbles."],
+          ["If you are stuck", "Build the sentence simple first, then upgrade one joint — a relative clause or a subordinator — rather than composing complex from a standing start."],
+          ["Final minutes", "Run the three-family sweep: long subjects' verbs, quantified nouns' plurals, commas with sentences on both sides — and nothing else."],
+        ],
+      },
+      {
+        type: "summary",
+        points: [
+          "The grammar criterion scores range and accuracy together, but error density dominates the middle of the scale: clean simple sentences outrank broken complex ones.",
+          "Seven families cause most timed-writing losses: distant agreement, articles with data and general nouns, tense drift, reporting prepositions, missing plurals, fragments and comma splices.",
+          "The error log is three columns — what I wrote, the correction, the rule in five words — and its ranked top three is your personal error profile.",
+          "The final two minutes sweep for the logged top three only: named-pattern search finds errors that general re-reading never does.",
+          "Range is built in practice sessions; accuracy is protected in the final two minutes — build and protect are different jobs at different times.",
+        ],
+      },
+      {
+        type: "revision",
+        title: "Recall check",
+        intro: "One item per earlier lesson.",
+        items: [
+          { question: "Which engine move does a 'being'-fragment abort, and what does the paragraph lose?", options: ["The point move — the claim disappears", "The explanation move — the sentence has no main verb to open the mechanism", "The wrap move — the paragraph loses its handover"], correctIndex: 1, explanation: "The paragraphs lesson's second move needs a working verb; a fragment leaves the mechanism unstated and the reader stranded mid-analysis.", from: "Paragraph organisation" },
+          { question: "What does the report voice forbid, and which printed verb establishes it?", options: ["Opinion — established by 'report'", "Comparisons — established by 'select'", "Examples — established by 'summarise'"], correctIndex: 0, explanation: "The instructions lesson decoded 'report' as the neutral voice: judgement words leak the report into essay territory and cost the task criterion.", from: "Understanding task instructions" },
+          { question: "What are the two halves of the grammar criterion, and which dominates the middle bands?", options: ["Range and accuracy; error density — the accuracy side — dominates", "Spelling and punctuation; spelling dominates", "Complexity and vocabulary; complexity dominates"], correctIndex: 0, explanation: "The assessment module named both halves, and this lesson's reading of the descriptors makes accuracy the one to protect under pressure — range is for practice sessions.", from: "How Writing and Speaking are assessed" },
+        ],
+      },
+    ],
+    questions: [
+      ex({
+        type: "mcq",
+        difficulty: "easy",
+        skill: "writing",
+        prompt: "Which sentence is correct?",
+        hints: ["Find the head noun of each subject before you check its verb."],
+        options: [
+          { id: "a", text: "The number of visitors to the island have increased steadily since 2010." },
+          { id: "b", text: "The number of visitors to the island has increased steadily since 2010." },
+          { id: "c", text: "A number of visitors has increased steadily since 2010." },
+        ],
+        correctOptionId: "b",
+        feedback: fb(
+          "The number of visitors to the island has increased steadily since 2010.",
+          "'The number' is the head noun and is singular, so its verb is 'has' — the intervening phrase 'of visitors to the island' is fog, not subject matter, and the special case runs: 'the number of X is/has', 'a number of X are/have'.",
+          "(a) lets the plural 'visitors' pull the verb; (c) reverses the special case — 'a number of' behaves like a quantifier and takes a plural verb.",
+        ),
+        tags: ["awriting", "grammar", "agreement"],
+      }),
+      ex({
+        type: "fill-blank",
+        difficulty: "medium",
+        skill: "writing",
+        prompt: "Guided practice. Complete the sentence with the correct preposition.",
+        hints: ["Which preposition follows the noun 'spending', and which follows the verb 'spend'?"],
+        sentence: "Households in the survey spent the largest share of their income ___ housing.",
+        acceptedAnswers: ["on"],
+        feedback: fb(
+          "on",
+          "The fixed pair is 'spend money ON something' — one of the small set of checked preposition pairs that report and essay sentences lean on constantly, learned as pairs rather than reasoned out.",
+          "'in' and 'for' are the classic misfires: they sound reasonable and fail as collocations, which is exactly why the family is drilled rather than deduced.",
+        ),
+        tags: ["awriting", "grammar", "prepositions"],
+      }),
+      ex({
+        type: "read-answer",
+        difficulty: "medium",
+        skill: "writing",
+        prompt: "Guided practice. Read the paragraph and find the splice.",
+        hints: ["Hunt commas with a complete sentence on both sides."],
+        passageTitle: "The sweep's target",
+        passage: "A candidate's final paragraph reads: 'Overall, the town's transport habits changed sharply over the decade. Bus use doubled while the share of commuters driving alone fell by a third. Cycling remained marginal throughout the period, it never passed one trip in twenty.'",
+        question: "Which sentence contains a comma splice?",
+        options: [
+          { id: "a", text: "The first sentence — 'Overall, the town's transport habits changed sharply over the decade.'", },
+          { id: "b", text: "The second sentence — 'Bus use doubled while the share of commuters driving alone fell by a third.'", },
+          { id: "c", text: "The third sentence — 'Cycling remained marginal throughout the period, it never passed one trip in twenty.'", },
+        ],
+        correctOptionId: "c",
+        feedback: fb(
+          "The third sentence — 'Cycling remained marginal throughout the period, it never passed one trip in twenty.'",
+          "The third sentence is the splice: a comma sits between two complete statements — 'Cycling remained…' and 'it never passed…' — with no connector to license it, and the repair set is the usual three: a semicolon, a full stop, or a real connector such as 'and' or 'yet'.",
+          "(a) has only one clause after the linking adverb 'Overall'; (b) is a legitimate complex sentence, because 'while' is a subordinating connector that licenses the join — the splice hunt checks for commas with sentences on both sides and nothing holding them.",
+        ),
+        tags: ["awriting", "grammar", "run-ons"],
+      }),
+      ex({
+        type: "short-answer",
+        difficulty: "hard",
+        skill: "writing",
+        prompt: "Independent practice. Name the three columns of the error log.",
+        question: "What are the error log's three columns, and what size is the rule column allowed to be?",
+        acceptedAnswers: [
+          "what i wrote, the correction, and the rule in five words or fewer",
+          "the sentence i wrote, the corrected sentence, the rule in under five words",
+          "my version, the right version, a five-word rule",
+          "what i wrote; the correction; the rule — five words maximum",
+        ],
+        keywords: ["wrote", "correction", "rule"],
+        hints: [],
+        feedback: fb(
+          "What I wrote, the correction, and the rule in five words or fewer.",
+          "The log works because it is cheap and specific: the exact error, the exact repair, and a rule short enough to retrieve under exam pressure — long rules are essays, and essays do not fire in two minutes.",
+          "Answers without the five-word limit have kept the columns but lost the retrieval discipline the limit exists to force.",
+        ),
+        tags: ["awriting", "grammar", "error-log"],
+      }),
+      ex({
+        type: "mcq",
+        difficulty: "hard",
+        skill: "writing",
+        prompt: "Independent practice. You can write reliable simple sentences and shaky complex ones. What does the accuracy half of the criterion actually reward?",
+        hints: [],
+        options: [
+          { id: "a", text: "Attempting complexity everywhere, because range is scored first and errors are forgiven at the top." },
+          { id: "b", text: "A steady rate of error-free sentences — so carry complexity where you can, and let clean simple structures take the load where you cannot." },
+          { id: "c", text: "Writing short sentences only, since any error anywhere cancels the variety." },
+        ],
+        correctOptionId: "b",
+        feedback: fb(
+          "A steady rate of error-free sentences — so carry complexity where you can, and let clean simple structures take the load where you cannot.",
+          "Error density dominates the middle of the scale, so every broken complex sentence pays range and loses accuracy at a net loss; the exam-smart trade keeps complexity where it is safe and keeps the error-free rate high (descriptor-informed estimate, as always).",
+          "(a) reverses the scoring story; (c) abandons range entirely — the criterion's other half still wants variety, built in practice and deployed where it holds.",
+        ),
+        tags: ["awriting", "grammar", "range"],
+      }),
+    ],
+    assignment: {
+      title: "Repair, then rebuild",
+      instructions:
+        "Take this faulty sentence set from a practice report and repair it: 'The chart what compare four sources of energy. Electricity from wind rose sharp, solar was remain tiny. An increase of six per cent in wind, this made it the fastest grower. Coal fall steady, gas has overtake it by 2019.' Write the repaired version of all four sentences, then add two sentences of your own that reuse one repaired structure each — one comparison, one general trend.",
+      minWords: 60,
+      maxWords: 170,
+    },
+    homework: [
+      "Start your error log tonight: three columns, five rows from your most recent practice answer, every rule five words or fewer.",
+      "Before your next timed essay, read only your log's top three rows for two minutes — then run the essay's final two minutes hunting exactly those families and count what the sweep catches.",
+    ],
+  },
+  // ---------------------------------------------------------------------------
+  {
+    slug: "ielts-awriting-vocabulary",
+    title: "Vocabulary",
+    description:
+      "Precision over decoration: trend verbs at the force the data shows, proportion language, stance adverbs, collocation awareness, the topic bank habit — and the spelling risks worth eliminating forever.",
+    objectives: [
+      "match trend verbs and degree adverbs to the force the data actually shows",
+      "use proportion language and stance adverbs with precision",
+      "control spelling risk on the words examiners see in every answer",
+    ],
+    minutes: 15,
+    blocks: [
+      {
+        type: "lesson-intro",
+        text: "The vocabulary criterion is where candidates most often reach for decoration — memorised showpieces, synonym swarms, the longest word that will fit — and where examiners most often reward the opposite. What the Lexical Resource descriptors respond to is precision: the verb whose force matches the data, the proportion stated so the reader need not do arithmetic, the collocation a native writer would actually produce. This lesson builds the precision toolkit for both tasks, the paraphrase habit that avoids recycling the rubric, and the spelling discipline that stops common words from undercutting uncommonly good sentences.",
+        beforeYouStart: [
+          "You can describe a chart's main features in simple language.",
+          "You can edit your own sentences for agreement, tense and splices.",
+        ],
+      },
+      {
+        type: "table",
+        title: "Examination relevance",
+        headers: ["Aspect", "This lesson"],
+        rows: [
+          ["Section", "Writing — word choice across both tasks, with the double-weighted essay most exposed"],
+          ["Task & question types", "Task 1 trend and proportion language; Task 2 stance and topic vocabulary; both tasks' paraphrase and spelling"],
+          ["What is assessed", "Lexical Resource — range, collocation and precision, with spelling counted inside it"],
+          ["Why this matters", "A misused showpiece costs more than a plain word, and common-word misspellings read as carelessness in every paragraph they touch"],
+        ],
+      },
+      { type: "heading", text: "Component 1 — Precision beats decoration" },
+      {
+        type: "text",
+        text: "The decoration instinct is understandable but backwards: 'utilise' for use, 'plethora' for many and 'myriad' for countless add length and subtract accuracy, because each carries a shade the plain word does not and the shade is usually wrong. The criterion rewards the exact word at the right moment — 'plateau' when a curve flattens, 'twice as many' when a share doubles — and notices misfires sharply: a 'plethora' attached to a singular noun, an 'albeit' carrying a clause it cannot grammatically carry. The working rule for both tasks: before deploying an impressive word, name the plain word it would replace, and if the plain word does the job exactly, deploy the plain word. Precision is the impression that scores; decoration is only louder.",
+      },
+      { type: "heading", text: "Component 2 — The trend toolkit, at three forces" },
+      {
+        type: "table",
+        title: "Force-matched description for Task 1",
+        headers: ["Force", "Verbs", "Adverbs of degree"],
+        rows: [
+          ["Sharp movement", "surge, soar, rocket; plummet, collapse", "sharply, dramatically, more than doubling"],
+          ["Steady movement", "rise, climb, grow; fall, decline, dip slightly", "steadily, gradually, consistently"],
+          ["No movement", "plateau, level off, remain stable, hold steady", "roughly unchanged, at around… throughout"],
+        ],
+        caption: "Force is a fact about the data, not a mood: read the slope, pick the row, then choose the verb inside it.",
+      },
+      { type: "heading", text: "Component 3 — Proportion language and stance adverbs" },
+      {
+        type: "steps",
+        title: "Two precision habits, one for each task",
+        steps: [
+          { title: "Step 1: Do the arithmetic for the reader", text: "A chart that moves from 15 to 30 per cent is 'a share that doubled' or 'twice as many households' — the reader sees the change's size without reaching for a calculator. Proportion language — one in three, a quarter of, three in ten, half as many — converts percentages into pictures, and it is almost always shorter than the percentage sentence it replaces.", examples: [{ english: "Instead of 'participation rose from 15 per cent to 30 per cent of households', write 'the share of participating households doubled' — same fact, half the words, all of the force.", note: "Doubling language is arithmetic made visible." }] },
+          { title: "Step 2: Stance adverbs keep the argument's spine visible", text: "In Task 2, stance adverbs do structural work: 'admittedly' opens a concession, 'crucially' re-asserts a priority, 'arguably' hedges a claim to exactly the right width, 'inevitably' commits a prediction. One adverb per job, placed at the sentence's front where the reader meets it before the claim — an adverb buried mid-sentence loses its signalling force.", examples: [{ english: "'Admittedly, online courses are cheaper to run; crucially, though, they exclude learners without reliable connections.' — one sentence concedes, one re-prioritises.", note: "The pair 'admittedly… crucially' is a concession and a counter in two words." }] },
+          { title: "Step 3: Test collocations in pairs, never alone", text: "Words apply for their jobs in pairs: raise awareness, impose a tax, reach a peak, exert pressure, heavy traffic. Learning singles produces the classic misfires — 'make awareness', 'put a tax', 'arrive a peak' — and the test is always the same: would an English writer naturally pair these two? Build your topic bank as pairs and phrases, never as lone words.", examples: [{ english: "Bank entry: 'impose a tax on' — verb, object and preposition filed as one item, deployed as one item.", note: "Collocations are stored whole or misfired separately." }] },
+          { title: "Step 4: Paraphrase the sentence, keep the keywords", text: "The introduction restates the prompt's situation in your own words — but the technical keywords stay: 'recycling' remains 'recycling', because a forced synonym like 'reprocessing of used materials' is wrong precision and reads as avoidance. The rule has two halves: the prompt's sentence must never reappear, and the prompt's keywords must — everything else is rebuilt.", examples: [{ english: "Prompt: 'Some people believe that unpaid community service should be compulsory in secondary schools.' Opening: 'Whether school pupils should be required to give their time to unpaid community work is a live debate in many systems.' — keywords kept, sentence rebuilt.", note: "Same subject, different sentence, no recycled clause." }] },
+        ],
+      },
+      { type: "heading", text: "Component 4 — The topic bank and the spelling list" },
+      {
+        type: "text",
+        text: "The topic bank is a page per Task 2 theme — education, environment, work, technology, cities, health — holding ten items: words, their partners and one example phrase each, collected from reading and recycled into a practice paragraph the same week they are collected. Ten items recycled beat a hundred collected, because the criterion rewards the words you can deploy, not the words you can recognise. Alongside the bank runs the spelling list: the common words that appear in almost every answer and that examiners see misspelled daily — government, environment, which, definitely, furthermore, percentage, proportion, opportunity, society, nowadays, receive, their. Choose one spelling convention, British or American, and hold it across the whole answer; the words you personally misspell go into the error log from the grammar lesson, on its spelling page, and are drilled the same way: written, checked, five-word rule.",
+      },
+      { type: "heading", text: "Component 5 — Common traps" },
+      {
+        type: "mistakes",
+        title: "Vocabulary mistakes corrected",
+        items: [
+          { wrong: "Impressive words lift the criterion, so I will memorise a list of showpieces and open my essay with one.", right: "Precision and natural collocation lift the criterion: name the plain word a showpiece would replace, and keep the showpiece only when its shade is exactly right.", reason: "A misused rare word is an error wearing a bow tie — the criterion's descriptors reward range used accurately and appropriately, and a wrong flourish is simply wrong." },
+          { wrong: "Paraphrasing means replacing every word of the prompt with a synonym.", right: "Rebuild the prompt's sentence and keep its technical keywords: forced synonyms of subject terms read as avoidance and cost precision.", reason: "The paraphrase job is done at sentence level, not word level — keyword-swapping produces the 'reprocessing of used materials' style that examiners recognise and discount." },
+          { wrong: "Spelling does not matter much if the word is recognisable.", right: "Spelling sits inside the criterion, and the common words are the ones to protect: a misspelled 'government' in every paragraph reads as an unedited answer.", reason: "Recognisability is the minimum for communication, not the standard for the criterion — and the never-misspell list is short enough to make the risk controllable." },
+        ],
+      },
+      {
+        type: "example",
+        title: "Word choice at work — seven cases",
+        items: [
+          { english: "A curve that climbs until 2016 and then flattens for eight years, described as 'surged, then plateaued' — two verbs, the whole shape, no numbers needed.", note: "Force-matched pairs paint the line.", domain: "exam" },
+          { english: "A share moving from 15 to 30 per cent, reported as 'the share of participating households doubled' — the arithmetic done once, by the writer.", note: "Proportion language saves words and shows the change.", domain: "exam" },
+          { english: "A Task 2 paragraph built on 'admittedly… crucially…': one sentence conceding the cost objection, one re-asserting the access argument — the spine visible from the adverbs alone.", note: "Stance adverbs are signposts, not garnish.", domain: "exam" },
+          { english: "A learner's topic bank page for urban transport — congestion, rush hour, fare, commute, park-and-ride, cycle lane — each with a partner phrase, all ten recycled into one paragraph inside a week.", note: "Recycled within the week or not really learned.", domain: "study" },
+          { english: "A colleague's draft memo promises to 'utilise the plethora of available options'; the manager's reply asks for plain words, and 'use the options available' gets the approval.", note: "Decoration misfires at work exactly as it does in exams.", domain: "work" },
+          { english: "A family budget meeting told that spending 'surged dramatically' checks the numbers and finds a two per cent rise — the wrong force verb has misled the whole room.", note: "Force is a fact; matching it is honesty.", domain: "life" },
+          { english: "An essay introduction that keeps 'community service' and 'compulsory' from the prompt while rebuilding everything around them — keywords intact, sentence fresh.", note: "The paraphrase rule working as designed.", domain: "exam" },
+        ],
+      },
+      {
+        type: "four-skills",
+        title: "Forces, proportions, stances",
+        reading: {
+          text: "Two descriptions of the same chart fact — a participation rate that grew from 15 to 30 per cent of households between 2014 and 2024. Version A: 'The percentage went up a lot over the period shown, which is a significant increase for this category.' Version B: 'The share of participating households doubled, so that by 2024 three in ten households took part.' Same data; one description makes the reader do the arithmetic, the other has already done it.",
+          task: "List every precision tool Version B uses that Version A lacks.",
+        },
+        writing: {
+          task: "Describe these three facts with exact force and proportion language, then add one stance sentence that concedes a drawback and re-asserts a position: (a) a rise from 15 to 30 per cent; (b) a fall from 40 to 38 per cent; (c) a figure unchanged at 12 per cent; stance claim — 'participation should be compulsory'.",
+          guide: [
+            "Fact (a): doubling language — 'twice as many…', 'the share doubled'.",
+            "Fact (b): a two-point fall is a dip, not a collapse — match the force to the slope.",
+            "Fact (c): 'remained stable', 'held at around… throughout'.",
+            "Stance frame: 'Admittedly, …; crucially, though, …'.",
+          ],
+          model: "The share of households taking part doubled over the decade, so that by 2024 three in ten participated. The proportion with a paid subscription, by contrast, dipped slightly, from 40 per cent to 38, while the weekly attendance figure remained stable at 12 per cent throughout. Admittedly, compulsory participation would reach the households that voluntary schemes never touch; crucially, though, a rule this intrusive turns a community habit into an obligation, and the decade's doubling was achieved without one.",
+        },
+        listening: {
+          script: "Tutor: Read me your overview sentence. Student: 'Participation surged dramatically between 2014 and 2024.' Tutor: Look at the slope again — the line doubles, but it doubles over ten years. Is that a surge? Student: Steady, more like — it climbs steadily. Tutor: Then say so: 'climbed steadily' or 'the share doubled over the decade'. Force is a fact about the data. Now your second sentence — 'the figure for subscriptions plummeted'? Student: From forty to thirty-eight per cent… that is a dip. Tutor: 'Dipped slightly' — you have just fixed both sentences by matching verbs to slopes.",
+          task: "What two misfires does the tutor correct, and by what test?",
+        },
+        speaking: {
+          task: "Describe one trend aloud to a partner using a force-matched verb, a degree adverb and one proportion phrase — then have the partner guess the slope you described.",
+          frames: [
+            "The figure…, moving from… to…, so the share…",
+            "Over the period shown, the number…, which means roughly one in…",
+            "By contrast, the other category…, a movement best described as…",
+          ],
+          checklist: [
+            "Did my verb's force match the slope I imagined?",
+            "Did I do the arithmetic for my listener?",
+            "Could my partner sketch the line from my words alone?",
+          ],
+        },
+      },
+      {
+        type: "table",
+        title: "Why this model works",
+        headers: ["Aspect", "What the model does"],
+        rows: [
+          ["Organisation", "Three facts in three sentences and a stance pair in the fourth: the paragraph moves from the strongest change to the stable figure, then turns to the argument — data first, judgement last, exactly the report-to-argument seam the tasks keep separate."],
+          ["Grammar", "Quantified nouns keep their plurals, the proportion phrases carry their articles ('the share of households'), and the stance sentence's semicolon joins two complete sentences legitimately rather than splicing them."],
+          ["Vocabulary", "Every force word is matched to its slope — doubled, dipped slightly, remained stable — and the proportion language ('three in ten') does the arithmetic for the reader while staying four words long."],
+          ["Coherence", "'By contrast' and 'while' carry the comparison load without a single mechanical linker, and 'Admittedly… crucially, though' walks the reader through concession and counter in order."],
+          ["Task fulfilment", "The three facts are reported at their true forces with no opinion until the stance sentence — where the concession-and-counter pattern does the essay band's reasons-and-positions work in two clauses."],
+        ],
+      },
+      {
+        type: "table",
+        title: "Examination strategy",
+        headers: ["Moment", "Do this"],
+        rows: [
+          ["Before you start", "Skim your topic bank page for the prompt's theme and pick five deployable items; note your never-misspell words at the top of your plan."],
+          ["While the clock runs", "Read the slope before naming the force, do the arithmetic for the reader, and paraphrase at sentence level — keywords kept, sentence rebuilt."],
+          ["If you are stuck", "Reach for the plain word you know is right rather than the impressive word you half-know: precision is the impression that scores."],
+          ["Final minutes", "Sweep your never-misspell list against the finished answer, and replace any showpiece you cannot defend with the plain word it was standing on."],
+        ],
+      },
+      {
+        type: "summary",
+        points: [
+          "Precision beats decoration: name the plain word a showpiece would replace, and keep the showpiece only when its shade is exactly right.",
+          "Force is a fact about the data: read the slope, choose the row — surge, climb or plateau — and let a degree adverb fine-tune rather than inflate.",
+          "Proportion language does the reader's arithmetic — doubled, three in ten, twice as many — and stance adverbs keep an essay's spine visible: admittedly, crucially, arguably.",
+          "Collocations are learned and stored as pairs — raise awareness, impose a tax, reach a peak — because words apply for their jobs in pairs, never alone.",
+          "Paraphrase at sentence level: the prompt's sentence never reappears, its keywords always do; and the short never-misspell list is spelling risk reduced to a controllable size.",
+        ],
+      },
+      {
+        type: "revision",
+        title: "Recall check",
+        intro: "One item per earlier lesson.",
+        items: [
+          { question: "Where do your three most frequent error patterns belong when the final two minutes arrive?", options: ["A full grammar re-read of the whole answer", "A targeted sweep for exactly those logged families", "A vocabulary upgrade pass"], correctIndex: 1, explanation: "The grammar lesson's sweep runs on named patterns from your log; the vocabulary lesson adds only the never-misspell list to the same two minutes.", from: "Grammar accuracy" },
+          { question: "What does a Task 1 detail paragraph's topic sentence group, and why does that protect precision?", options: ["It groups the categories and direction the paragraph will present, which forces the force-matching to happen at planning level", "It groups the examiner's criteria, which raises all four at once", "It groups the prompt's keywords, which completes the paraphrase"], correctIndex: 0, explanation: "The grouping sentence names which data the paragraph holds, so the trend verbs are chosen against named slopes rather than discovered mid-sentence.", from: "Paragraph organisation" },
+          { question: "What may a report never do to its data, whichever verbs it chooses?", options: ["Compare two categories or two years", "Judge it — the report voice is neutral, and force-matching is description, not opinion", "Use the same verb twice"], correctIndex: 1, explanation: "The instructions lesson's 'report' verb demands the objective voice; force-matched description is exactly what neutrality looks like in practice.", from: "Understanding task instructions" },
+        ],
+      },
+    ],
+    questions: [
+      ex({
+        type: "mcq",
+        difficulty: "easy",
+        skill: "writing",
+        prompt: "A line rises steeply until 2016, then stays level for the rest of the period. Which pairing describes it best?",
+        hints: ["Two movements, two verbs — match each to its slope."],
+        options: [
+          { id: "a", text: "It surged before plateauing for the remainder of the period." },
+          { id: "b", text: "It dipped slightly and then levelled off." },
+          { id: "c", text: "It remained stable throughout the period shown." },
+        ],
+        correctOptionId: "a",
+        feedback: fb(
+          "It surged before plateauing for the remainder of the period.",
+          "Force is a fact about the data: a steep climb is a surge, a flat stretch is a plateau, and the pairing says the line's whole story in nine words — the force-matched verb is description at its most precise.",
+          "(b) invents a fall the line never made; (c) erases the climb, which is the bigger half of the story.",
+        ),
+        tags: ["awriting", "vocabulary", "force"],
+      }),
+      ex({
+        type: "fill-blank",
+        difficulty: "medium",
+        skill: "writing",
+        prompt: "Guided practice. Complete the collocation.",
+        hints: ["Which verb naturally partners 'awareness' in a campaign sentence?"],
+        sentence: "The council launched a campaign to ___ awareness of the new recycling rules.",
+        acceptedAnswers: ["raise"],
+        feedback: fb(
+          "raise",
+          "The checked pair is 'raise awareness' — one of the collocations that examiners meet in every essay on campaigns and public policy, filed and deployed as a whole phrase rather than assembled from parts.",
+          "'make' and 'increase' are the classic near-misses: 'increase awareness' survives in some registers, but 'make awareness' is the misfire the pair exists to prevent.",
+        ),
+        tags: ["awriting", "vocabulary", "collocation"],
+      }),
+      ex({
+        type: "read-answer",
+        difficulty: "medium",
+        skill: "writing",
+        prompt: "Guided practice. Read both versions and find the misfire.",
+        hints: ["Read the slope: what size of movement is two percentage points?"],
+        passageTitle: "Two versions, one slope",
+        passage: "The same fact — a fall from 40 per cent to 38 per cent across a decade — described in two drafts. Draft one: 'The figure plummeted dramatically over the period, a collapse in the category's fortunes.' Draft two: 'The proportion dipped slightly, from 40 per cent to 38 per cent.' The chart shows a shallow, almost flat decline.",
+        question: "Which draft matches the force to the data, and what is the other draft's error?",
+        options: [
+          { id: "a", text: "Draft one matches — 'plummeted dramatically' shows strong vocabulary whatever the data did." },
+          { id: "b", text: "Draft two matches: a two-point fall is a slight dip, and 'plummeted… collapse' overstates the slope into inaccuracy — force is a fact, not a mood." },
+          { id: "c", text: "Neither matches — figures should always be given without verbs." },
+        ],
+        correctOptionId: "b",
+        feedback: fb(
+          "Draft two matches: a two-point fall is a slight dip, and 'plummeted… collapse' overstates the slope into inaccuracy — force is a fact, not a mood.",
+          "Force-matching is precision, not modesty: a verb that overshoots the data is wrong in exactly the way a verb that understates it is wrong, and the criterion's precision credit follows the match.",
+          "(a) rewards decoration over accuracy — the exact instinct the criterion penalises; (c) abandons verbs altogether, surrendering the description job the report band prints.",
+        ),
+        tags: ["awriting", "vocabulary", "force-matching"],
+      }),
+      ex({
+        type: "short-answer",
+        difficulty: "hard",
+        skill: "writing",
+        prompt: "Independent practice. State the paraphrase rule in one sentence.",
+        question: "What may you keep from the prompt's wording, and what must you rebuild?",
+        acceptedAnswers: [
+          "keep the technical keywords, rebuild the sentence — the prompt's sentence never reappears",
+          "keep keywords, rebuild the sentence around them",
+          "the keywords stay, the sentence is rebuilt in your own words",
+          "keep the subject terms, never reuse the prompt's sentence",
+        ],
+        keywords: ["keywords", "sentence"],
+        hints: [],
+        feedback: fb(
+          "Keep the technical keywords; rebuild the sentence around them.",
+          "The paraphrase job is done at sentence level: swapping keywords for forced synonyms reads as avoidance and costs precision, while copying the sentence reads as recycling — both halves of the rule protect a different criterion.",
+          "Answers that keep or rebuild everything have applied the rule to the wrong unit — the sentence is rebuilt, the keywords are kept.",
+        ),
+        tags: ["awriting", "vocabulary", "paraphrase"],
+      }),
+      ex({
+        type: "mcq",
+        difficulty: "hard",
+        skill: "writing",
+        prompt: "Independent practice. Which single change most improves a draft's Lexical Resource at a stroke?",
+        hints: [],
+        options: [
+          { id: "a", text: "Replacing every repeated word with a synonym, however forced the fit." },
+          { id: "b", text: "Replacing each misused showpiece with the exact plain word it was standing on, and adding one precise collocation where the argument needs it." },
+          { id: "c", text: "Doubling the length of every sentence with additional adjectives." },
+        ],
+        correctOptionId: "b",
+        feedback: fb(
+          "Replacing each misused showpiece with the exact plain word it was standing on, and adding one precise collocation where the argument needs it.",
+          "The criterion rewards range used accurately and appropriately: removing wrong flourishes removes errors, one well-chosen pair adds visible precision, and neither move risks the false synonyms that synonym-swapping produces.",
+          "(a) generates the 'reprocessing of used materials' school of paraphrase — recognisable and discounted; (c) adds length, which the criterion never scores, and usually adds errors along with it.",
+        ),
+        tags: ["awriting", "vocabulary", "precision"],
+      }),
+    ],
+    assignment: {
+      title: "Forces, proportions, stances",
+      instructions:
+        "Write one paragraph that describes these four facts with force-matched verbs and proportion language: cycling to work rose from 8 to 24 per cent of commuters; bus use fell from 30 to 27 per cent; driving stayed at around 45 per cent; walking halved, from 12 to 6 per cent. Close the paragraph with one stance sentence using 'admittedly… crucially…' on the claim that 'cities should charge drivers to enter their centres'. No opinion before the final sentence, and no verb whose force overshoots its slope.",
+      minWords: 60,
+      maxWords: 160,
+    },
+    homework: [
+      "Start one topic bank page this week — ten items for a single Task 2 theme, each with its partner phrase — and recycle all ten inside one practice paragraph before the week ends.",
+      "Write your personal never-misspell list: ten words you have actually misspelled in your own practice, corrected and copied onto the error log's spelling page, and checked against your next three answers.",
+    ],
+  },
+];
